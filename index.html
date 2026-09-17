@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="STR Launch helps new short-term rentals launch with premium photography, sharper positioning, and a practical STR optimization audit." />
+  <meta name="description" content="STR Launch helps new short-term rentals launch with premium photography, sharper positioning, and an optimized STR launch audit." />
   <meta name="theme-color" content="#171717" />
   <title>STR LAUNCH — Launch like a luxury stay.</title>
   <style>
@@ -39,12 +39,12 @@
     .eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.19em;color:var(--accent);margin-bottom:18px}
     .eyebrow.light{color:var(--accent-pale)}
     h1{font-size:clamp(56px,7.2vw,98px);line-height:.92;letter-spacing:-.055em;margin:0 0 25px;font-weight:900;max-width:760px;color:#fffdf8;text-shadow:0 2px 18px rgba(0,0,0,.22)}
-    .hero p{font-size:18px;color:#ddd7cf;max-width:650px;margin:0 0 30px}
+    .hero p{font-size:18px;color:#aaa49c;max-width:650px;margin:0 0 30px}
     .hero-title-line{display:block}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 21px;border-radius:999px;font-size:13px;font-weight:850;transition:.2s ease;border:1px solid transparent}
-    .btn.primary{background:var(--accent);color:#fff}
-    .btn.primary:hover{background:#e18561;transform:translateY(-2px)}
+    .btn.primary{background:#fffdf8;color:var(--charcoal);font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+    .btn.primary:hover{background:#f4efe6;transform:translateY(-2px)}
     .btn.ghost{border-color:rgba(255,255,255,.18);color:var(--white);background:rgba(255,255,255,.03)}
     .micro{margin-top:22px;color:#918b83;font-size:12px;max-width:610px}
     .micro strong{color:#d8d2c8}
@@ -125,9 +125,11 @@
     select{color:white}
     option{color:#111;background:white}
     textarea{min-height:96px;resize:vertical}
-    form .btn{background:var(--charcoal);color:var(--white)}
+    form .btn{background:var(--charcoal);color:var(--white);font-weight:900}
+    form .btn:hover{background:#000;transform:translateY(-2px)}
     .contact .fine{color:#f7d9ce}
-    footer{background:var(--charcoal);color:#77736d;padding:24px 0 46px;font-size:11px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    footer{background:var(--charcoal);color:#77736d;padding:24px 0 46px;font-size:11px}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .tiny-banner{font-size:11px;color:#aa9f95;margin-top:14px}
     .tiny-banner strong{color:#d8d0c7}
     @media(max-width:930px){
@@ -185,7 +187,7 @@
       <div class="cards">
         <article class="card"><div class="num">01 / VISUAL</div><h3>Photography that sells the stay.</h3><p>A deliberate set of hero, room, amenity and experience images — captured to tell a clearer story, not simply document the space.</p></article>
         <article class="card"><div class="num">02 / POSITIONING</div><h3>A concept guests can understand.</h3><p>We identify what makes the property worth choosing and turn that into a stronger title, description, angle and guest-facing narrative.</p></article>
-        <article class="card"><div class="num">03 / OPTIMIZATION</div><h3>A practical launch audit.</h3><p>An STR specialist reviews the listing through a conversion lens: copy, sequencing, amenities, competitive positioning and presentation.</p></article>
+        <article class="card"><div class="num">03 / OPTIMIZATION</div><h3>An optimized launch audit.</h3><p>Our STR specialist reviews the listing through a conversion lens: copy, sequencing, amenities, competitive positioning and presentation.</p></article>
       </div>
     </section>
 
@@ -229,15 +231,12 @@
     </section>
 
     <section class="wrap">
-      <div class="section-head">
-        <h2>Simple for the host. Structured behind the scenes.</h2>
-        <p>Every property moves through the same focused workflow so the team can move quickly without sacrificing quality.</p>
-      </div>
+      <h2 style="font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0 0 42px;">Simple for the host. Structured behind the scenes.</h2>
       <div class="process">
         <div class="step"><strong>01. Book</strong><span>Share the property and basic listing details.</span></div>
         <div class="step"><strong>02. Capture</strong><span>Photography and visual content are created on site.</span></div>
         <div class="step"><strong>03. Optimize</strong><span>The listing is reviewed through an STR conversion lens.</span></div>
-        <div class="step"><strong>04. Launch</strong><span>Receive the assets and recommendations in one package.</span></div>
+        <div class="step"><strong>04. Get booked</strong><span>Publish your optimized listing and start attracting guest bookings with confidence.</span></div>
       </div>
     </section>
 
@@ -250,7 +249,6 @@
         <div>
           <details open><summary>Is this only for brand-new listings?</summary><p>The founding offer is designed primarily for new listings, especially properties with little or no review history. Existing listings may also qualify where the visual presentation clearly needs a reset.</p></details>
           <details><summary>How long is the shoot?</summary><p>Most 2–3 bedroom properties are planned around a 75–90 minute shoot. Larger or more complex homes receive additional time based on scope.</p></details>
-          <details><summary>Do you guarantee more bookings or revenue?</summary><p>No. The service is designed to strengthen presentation and conversion fundamentals, but booking pace and revenue depend on many factors beyond the listing itself.</p></details>
           <details><summary>What happens after the launch package?</summary><p>Owners who want deeper support can continue into ongoing listing optimization, pricing strategy and broader STR performance work.</p></details>
         </div>
       </div>
@@ -281,9 +279,11 @@
     </div>
   </section>
 
-  <footer class="wrap">
-    <span>© 2026 STR LAUNCH</span>
-    <span>Photography · Positioning · Optimization</span>
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© 2026 STR LAUNCH</span>
+      <span>Photography · Positioning · Optimization</span>
+    </div>
   </footer>
 
   <script>
