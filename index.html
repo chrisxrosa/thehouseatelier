@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="STR Launch helps new short-term rentals launch with premium photography, sharper positioning, and a practical STR optimization audit." />
+  <meta name="theme-color" content="#171717" />
+  <title>STR LAUNCH — Launch like a luxury stay.</title>
+  <style>
+    :root{
+      --charcoal:#171717;
+      --charcoal-2:#202020;
+      --ink:#171717;
+      --ivory:#f4efe6;
+      --paper:#fbf8f2;
+      --white:#fffdf8;
+      --muted:#8f8980;
+      --muted-dark:#6f6a62;
+      --line:rgba(23,23,23,.12);
+      --line-light:rgba(255,255,255,.16);
+      --accent:#d8744f;
+      --accent-2:#b85738;
+      --accent-pale:#efc0ae;
+      --shadow:0 28px 90px rgba(0,0,0,.24);
+      --radius:28px;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--ivory);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;position:relative;z-index:5}
+    .brand{font-size:12px;font-weight:900;letter-spacing:.22em;color:#fffdf8}
+    .nav-cta{font-size:12px;font-weight:850;letter-spacing:.04em;border:1px solid rgba(255,255,255,.22);padding:10px 15px;border-radius:999px;color:#fffdf8;background:rgba(255,255,255,.045)}
+    .hero-shell{background:var(--charcoal);color:var(--white);overflow:hidden;position:relative}
+    .hero-shell::before{content:"";position:absolute;inset:-20% auto auto 58%;width:52vw;height:52vw;background:radial-gradient(circle,rgba(216,116,79,.18),transparent 58%);pointer-events:none}
+    .hero{padding:62px 0 90px;display:grid;grid-template-columns:1.02fr .98fr;gap:62px;align-items:center;position:relative;z-index:1}
+    .eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.19em;color:var(--accent);margin-bottom:18px}
+    .eyebrow.light{color:var(--accent-pale)}
+    h1{font-size:clamp(56px,7.2vw,98px);line-height:.92;letter-spacing:-.055em;margin:0 0 25px;font-weight:900;max-width:760px;color:#fffdf8;text-shadow:0 2px 18px rgba(0,0,0,.22)}
+    .hero p{font-size:18px;color:#ddd7cf;max-width:650px;margin:0 0 30px}
+    .hero-title-line{display:block}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 21px;border-radius:999px;font-size:13px;font-weight:850;transition:.2s ease;border:1px solid transparent}
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.primary:hover{background:#e18561;transform:translateY(-2px)}
+    .btn.ghost{border-color:rgba(255,255,255,.18);color:var(--white);background:rgba(255,255,255,.03)}
+    .micro{margin-top:22px;color:#918b83;font-size:12px;max-width:610px}
+    .micro strong{color:#d8d2c8}
+    .visual{position:relative;min-height:590px}
+    .photo-card{position:absolute;inset:0 18px 42px 0;border-radius:34px;overflow:hidden;background:linear-gradient(135deg,#5e564c 0%,#2d302d 52%,#1c2320 100%);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
+    .photo-card::before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 26%),linear-gradient(180deg,transparent 32%,rgba(0,0,0,.5));z-index:3}
+    .sky{position:absolute;inset:0;background:linear-gradient(180deg,#d9d2c5 0%,#bcb6a9 39%,#76837b 40%,#39433e 100%)}
+    .horizon{position:absolute;left:0;right:0;top:39%;height:16%;background:linear-gradient(180deg,rgba(74,98,92,.2),rgba(49,68,65,.65))}
+    .villa{position:absolute;left:8%;right:9%;bottom:16%;height:50%;background:linear-gradient(180deg,#eee8dd 0 48%,#bcb5aa 48%);box-shadow:0 26px 70px rgba(0,0,0,.32);z-index:2}
+    .villa::before{content:"";position:absolute;left:-8%;right:33%;top:-17%;height:19%;background:#444b45;clip-path:polygon(10% 100%,25% 0,100% 100%);opacity:.96}
+    .glass{position:absolute;left:7%;right:44%;top:15%;height:57%;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;background:#8f897d}
+    .glass i{display:block;background:linear-gradient(150deg,#5e6f71,#b4b6ae 45%,#4b5e62)}
+    .door{position:absolute;right:10%;top:16%;width:18%;height:60%;background:linear-gradient(150deg,#475a5c,#98a6a1 48%,#324244);border:4px solid #7c756b}
+    .pool{position:absolute;right:-2%;left:42%;bottom:-6%;height:22%;background:linear-gradient(135deg,#4c7270,#b4d0c7);transform:skewX(-6deg);box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:2}
+    .palm{position:absolute;right:11%;bottom:20%;width:21px;height:49%;background:#3b3026;border-radius:18px;transform:rotate(7deg);z-index:1}
+    .palm::before,.palm::after{content:"";position:absolute;width:124px;height:82px;top:-10px;left:-63px;background:radial-gradient(ellipse at 10% 50%,#364938 0 24%,transparent 25%),radial-gradient(ellipse at 45% 30%,#4b5e43 0 24%,transparent 25%),radial-gradient(ellipse at 75% 50%,#364938 0 24%,transparent 25%)}
+    .image-label{position:absolute;left:22px;top:22px;z-index:5;font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:#f7eee6;background:rgba(23,23,23,.48);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(8px);padding:9px 11px;border-radius:999px}
+    .stamp{position:absolute;right:0;bottom:0;background:var(--white);color:var(--ink);padding:22px 22px;border-radius:22px;box-shadow:0 18px 46px rgba(0,0,0,.22);max-width:245px;z-index:6}
+    .stamp strong{display:block;font-size:25px;letter-spacing:-.045em;line-height:1;margin-bottom:8px}
+    .stamp span{font-size:12px;color:#69645d}
+    .ticker{background:#222;color:#bcb5ad;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .ticker .wrap{padding:15px 0;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+    main{background:var(--ivory)}
+    section{padding:96px 0}
+    .section-head{display:grid;grid-template-columns:.76fr 1.24fr;gap:60px;align-items:start;margin-bottom:42px}
+    .section-head h2{font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0}
+    .section-head p{font-size:17px;color:var(--muted-dark);max-width:640px;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{background:var(--paper);border:1px solid var(--line);padding:29px;border-radius:var(--radius);min-height:248px}
+    .num{font-size:10px;font-weight:900;color:var(--accent-2);letter-spacing:.14em}
+    .card h3{font-size:25px;letter-spacing:-.04em;line-height:1.03;margin:54px 0 10px}
+    .card p{color:var(--muted-dark);font-size:14px;margin:0}
+    .dark-band{background:var(--charcoal);color:var(--white)}
+    .offer{background:var(--charcoal-2);border:1px solid rgba(255,255,255,.07);border-radius:34px;padding:54px;display:grid;grid-template-columns:1fr .9fr;gap:48px;align-items:center;box-shadow:0 24px 80px rgba(0,0,0,.18)}
+    .offer h2{font-size:clamp(40px,5.1vw,66px);line-height:.93;letter-spacing:-.065em;margin:0 0 19px}
+    .offer p{color:#c2bcb4;max-width:590px;font-size:16px}
+    .offer-list{display:grid;gap:12px;margin:28px 0 0;padding:0;list-style:none}
+    .offer-list li{display:flex;gap:11px;align-items:flex-start;color:#eee9e2;font-size:14px}
+    .check{width:20px;height:20px;display:grid;place-items:center;border:1px solid #635f59;border-radius:50%;flex:none;font-size:11px;color:var(--accent-pale)}
+    .price-box{background:var(--ivory);color:var(--ink);border-radius:25px;padding:30px}
+    .price-box .small{font-size:10px;font-weight:900;letter-spacing:.15em;text-transform:uppercase;color:#756f67}
+    .price{font-size:68px;line-height:1;letter-spacing:-.065em;margin:11px 0 2px}
+    .local{font-size:14px;font-weight:800;color:#736c64;margin-bottom:7px}
+    .price-note{color:#6e6860;font-size:12px;margin-bottom:20px}
+    .price-box .btn{width:100%;background:var(--ink);color:var(--white)}
+    .fine{font-size:11px;color:#8e877e;line-height:1.45}
+    .subnote{margin-top:12px;font-size:11px;color:#7b756d}
+    .proof{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .quote{background:#e9dfd2;border-radius:28px;padding:38px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote p{font-size:31px;line-height:1.04;letter-spacing:-.045em;margin:0;max-width:520px}
+    .quote small{color:#756f67;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
+    .credentials{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:38px}
+    .credentials h3{font-size:31px;line-height:1;letter-spacing:-.045em;margin:0 0 15px}
+    .credentials p{color:var(--muted-dark);font-size:15px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+    .chip{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:9px 11px;border-radius:999px;background:white}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .step{padding:28px 18px;border-right:1px solid var(--line)}
+    .step:last-child{border-right:0}
+    .step strong{display:block;font-size:16px;margin-bottom:8px}
+    .step span{font-size:13px;color:var(--muted-dark)}
+    .faq{display:grid;grid-template-columns:.78fr 1.22fr;gap:62px}
+    details{border-top:1px solid var(--line);padding:20px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:20px}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";font-weight:500;color:#777169}
+    details[open] summary::after{content:"–"}
+    details p{color:var(--muted-dark);font-size:14px;max-width:720px}
+    .contact-shell{background:var(--charcoal);color:var(--white);padding:96px 0}
+    .contact{background:var(--accent);border-radius:34px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:42px;position:relative;overflow:hidden}
+    .contact::after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-140px;bottom:-180px;background:rgba(0,0,0,.12)}
+    .contact h2{font-size:clamp(44px,5.3vw,70px);line-height:.92;letter-spacing:-.065em;margin:0 0 18px;max-width:620px}
+    .contact p{color:#f8dfd4;max-width:560px}
+    form{display:grid;gap:11px;position:relative;z-index:2}
+    input,select,textarea{width:100%;font:inherit;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.10);color:white;padding:14px 15px;border-radius:14px;outline:none}
+    input::placeholder,textarea::placeholder{color:#f7ddd4}
+    select{color:white}
+    option{color:#111;background:white}
+    textarea{min-height:96px;resize:vertical}
+    form .btn{background:var(--charcoal);color:var(--white)}
+    .contact .fine{color:#f7d9ce}
+    footer{background:var(--charcoal);color:#77736d;padding:24px 0 46px;font-size:11px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .tiny-banner{font-size:11px;color:#aa9f95;margin-top:14px}
+    .tiny-banner strong{color:#d8d0c7}
+    @media(max-width:930px){
+      .hero,.offer,.section-head,.faq,.contact{grid-template-columns:1fr}
+      .visual{min-height:500px}.cards,.proof{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}
+    }
+    @media(max-width:580px){
+      .wrap{width:min(calc(100% - 24px),var(--max))}
+      .nav{padding:18px 0}.nav-cta{padding:8px 12px;font-size:11px}
+      .hero{padding:50px 0 70px;gap:34px}.hero h1{font-size:clamp(48px,15vw,72px)}.visual{min-height:360px}.photo-card{inset:0 7px 28px 0}.stamp{padding:16px 17px;max-width:195px}
+      section{padding:66px 0}.offer,.contact{padding:30px 22px}.price{font-size:56px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:25px}.contact-shell{padding:66px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-shell">
+    <header class="wrap nav">
+      <a class="brand" href="#top">STR LAUNCH</a>
+      <a class="nav-cta" href="#contact">Claim a launch slot</a>
+    </header>
+
+    <main id="top">
+      <section class="wrap hero">
+        <div>
+          <div class="eyebrow light">For newly launched short-term rentals</div>
+          <h1><span class="hero-title-line">Launch like a</span> <span class="hero-title-line">luxury stay.</span></h1>
+          <p>Premium property photography, sharper listing positioning, and a practical STR optimization audit — built for the moment a new listing needs to make its first impression count.</p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Request a launch slot →</a>
+            <a class="btn ghost" href="#offer">See the founding offer</a>
+          </div>
+          <div class="micro"><strong>Designed for new listings with little or no review history.</strong> We focus on what a guest sees before the first stay ever happens.</div>
+        </div>
+        <div class="visual" aria-label="Stylized luxury vacation rental visual">
+          <div class="photo-card">
+            <div class="image-label">Luxury STR / Launch Visual</div>
+            <div class="sky"></div><div class="horizon"></div>
+            <div class="villa"><div class="glass"><i></i><i></i><i></i></div><div class="door"></div></div>
+            <div class="pool"></div><div class="palm"></div>
+          </div>
+          <div class="stamp"><strong>Built to convert.</strong><span>Photography + positioning + optimization, coordinated in one focused launch package.</span></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="ticker"><div class="wrap"><span>Photography</span><span>Positioning</span><span>Listing strategy</span><span>Guest-facing story</span><span>STR audit</span></div></div>
+
+  <main>
+    <section class="wrap">
+      <div class="section-head">
+        <h2>New listings don't get a second first impression.</h2>
+        <p>Before reviews, the listing itself has to create confidence. We improve the visual story, the positioning, and the details that help a guest quickly understand why this property is worth choosing.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="num">01 / VISUAL</div><h3>Photography that sells the stay.</h3><p>A deliberate set of hero, room, amenity and experience images — captured to tell a clearer story, not simply document the space.</p></article>
+        <article class="card"><div class="num">02 / POSITIONING</div><h3>A concept guests can understand.</h3><p>We identify what makes the property worth choosing and turn that into a stronger title, description, angle and guest-facing narrative.</p></article>
+        <article class="card"><div class="num">03 / OPTIMIZATION</div><h3>A practical launch audit.</h3><p>An STR specialist reviews the listing through a conversion lens: copy, sequencing, amenities, competitive positioning and presentation.</p></article>
+      </div>
+    </section>
+
+    <section class="dark-band" id="offer">
+      <div class="wrap">
+        <div class="offer">
+          <div>
+            <div class="eyebrow light">Founding launch package</div>
+            <h2>One focused refresh. One stronger launch.</h2>
+            <p>We're opening a limited first cohort at a founding rate while we build the initial portfolio and case studies.</p>
+            <ul class="offer-list">
+              <li><span class="check">✓</span><span>Professional photo refresh for the property</span></li>
+              <li><span class="check">✓</span><span>STR listing audit covering title, description, concept, photo sequence and guest-facing positioning</span></li>
+              <li><span class="check">✓</span><span>Clear recommendations to implement before the listing starts collecting reviews</span></li>
+              <li><span class="check">✓</span><span>One coordinated delivery instead of juggling a photographer and a separate listing consultant</span></li>
+            </ul>
+            <div class="tiny-banner"><strong>Portfolio partnerships:</strong> a very small number of complementary launch projects may be selected by invitation before the paid cohort closes.</div>
+          </div>
+          <aside class="price-box">
+            <div class="small">2–3 bedroom properties</div>
+            <div class="price">US$399</div>
+            <div class="local">or approximately Cg 715</div>
+            <div class="price-note">Founding-client rate · limited launch slots</div>
+            <a class="btn" href="#contact">Check availability →</a>
+            <div class="subnote">4–5 BR: US$499 / ~Cg 895<br>6+ BR: US$649 / ~Cg 1,160</div>
+            <div class="fine" style="margin-top:12px">Larger or complex properties are quoted by size, travel and shoot complexity.</div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2>The perspective behind the work.</h2>
+        <p>This isn't positioned as a generic photo shoot. The service is built around understanding how a guest reads a vacation rental — and how the property needs to present itself to earn that first booking.</p>
+      </div>
+      <div class="proof">
+        <div class="quote"><p>“The goal isn't to make the listing prettier. It's to make the right guest understand why they should book it.”</p><small>STR Launch philosophy</small></div>
+        <div class="credentials"><h3>Built on STR, hospitality and marketing experience.</h3><p>The founder brings experience as an Airbnb Luxe inspector and former marketing manager for CoveCasa, a luxury short-term rental property management company in Sint Maarten. Technical listing optimization is supported by a dedicated STR optimization specialist.</p><div class="chips"><span class="chip">Airbnb Luxe</span><span class="chip">Luxury STR</span><span class="chip">Hospitality</span><span class="chip">Marketing</span><span class="chip">Optimization</span></div></div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <h2>Simple for the host. Structured behind the scenes.</h2>
+        <p>Every property moves through the same focused workflow so the team can move quickly without sacrificing quality.</p>
+      </div>
+      <div class="process">
+        <div class="step"><strong>01. Book</strong><span>Share the property and basic listing details.</span></div>
+        <div class="step"><strong>02. Capture</strong><span>Photography and visual content are created on site.</span></div>
+        <div class="step"><strong>03. Optimize</strong><span>The listing is reviewed through an STR conversion lens.</span></div>
+        <div class="step"><strong>04. Launch</strong><span>Receive the assets and recommendations in one package.</span></div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="faq">
+        <div>
+          <div class="eyebrow">Before you book</div>
+          <h2 style="font-size:clamp(40px,5vw,58px);line-height:.96;letter-spacing:-.06em;margin:0">A few useful answers.</h2>
+        </div>
+        <div>
+          <details open><summary>Is this only for brand-new listings?</summary><p>The founding offer is designed primarily for new listings, especially properties with little or no review history. Existing listings may also qualify where the visual presentation clearly needs a reset.</p></details>
+          <details><summary>How long is the shoot?</summary><p>Most 2–3 bedroom properties are planned around a 75–90 minute shoot. Larger or more complex homes receive additional time based on scope.</p></details>
+          <details><summary>Do you guarantee more bookings or revenue?</summary><p>No. The service is designed to strengthen presentation and conversion fundamentals, but booking pace and revenue depend on many factors beyond the listing itself.</p></details>
+          <details><summary>What happens after the launch package?</summary><p>Owners who want deeper support can continue into ongoing listing optimization, pricing strategy and broader STR performance work.</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <section class="contact-shell" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <div class="eyebrow light">Limited founding slots</div>
+          <h2>Let's make the listing worth clicking.</h2>
+          <p>Tell us a little about the property. We'll review the basics and come back with next steps for a launch slot.</p>
+        </div>
+        <form onsubmit="submitLead(event)">
+          <input required name="name" placeholder="Your name" />
+          <input required name="email" type="email" placeholder="Email" />
+          <input name="url" placeholder="Airbnb listing URL (optional)" />
+          <select name="beds" required>
+            <option value="" disabled selected>Bedrooms</option>
+            <option>2–3</option><option>4–5</option><option>6+</option>
+          </select>
+          <textarea name="notes" placeholder="Property location or anything we should know"></textarea>
+          <button class="btn primary" type="submit">Request a launch slot →</button>
+          <div class="fine">This demo form opens an email draft. Replace the destination address in the script before publishing.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <span>© 2026 STR LAUNCH</span>
+    <span>Photography · Positioning · Optimization</span>
+  </footer>
+
+  <script>
+    function submitLead(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      const to = 'hello@yourdomain.com'; // REPLACE BEFORE PUBLISHING
+      const subject = encodeURIComponent('STR Launch Slot Request');
+      const body = encodeURIComponent(
+        `Name: ${data.get('name')}\nEmail: ${data.get('email')}\nAirbnb URL: ${data.get('url') || 'N/A'}\nBedrooms: ${data.get('beds')}\nNotes: ${data.get('notes') || 'N/A'}`
+      );
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
