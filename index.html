@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="The House Atelier — Professional photography and STR listing optimization for vacation rentals in Curaçao." />
   <meta name="theme-color" content="#122026" />
-  <title>The House Atelier — Launch your STR like it's already a five-star stay.</title>
+  <title>The House Atelier — Launch your STR like an established five-star stay.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Lora:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -37,16 +37,15 @@
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
     
     /* NAV */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;position:relative;z-index:5}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;position:relative;z-index:5}
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
-    .brand span{display:block;font-size:10px;color:var(--muted-dark);font-weight:500;letter-spacing:.05em}
     .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
 
     /* HERO SECTION */
     .hero-shell{
       background:var(--paper);
       color:var(--ink);
-      padding-bottom:50px;
+      padding-bottom:40px;
       border-bottom:1px solid var(--line);
     }
     .hero-content-wrap{
@@ -65,15 +64,15 @@
       background:rgba(40,107,107,.08);
       padding:6px 14px;
       border-radius:999px;
-      margin-bottom:14px;
+      margin-bottom:12px;
     }
     
-    .airbnb-header{margin-bottom:18px}
+    .airbnb-header{margin-bottom:16px}
     .airbnb-header h1{
       font-size:clamp(20px,3.6vw,42px);
       line-height:1.25;
       letter-spacing:-.015em;
-      margin:0 0 12px;
+      margin:0 0 10px;
       color:var(--charcoal);
       white-space:nowrap;
       overflow:hidden;
@@ -81,10 +80,10 @@
       padding-bottom:6px;
     }
     .hero-subhead{
-      font-size:18px;
+      font-size:17px;
       color:var(--muted-dark);
       max-width:780px;
-      margin:0 0 16px;
+      margin:0 0 14px;
       line-height:1.5;
     }
     .hero-cred-bar{
@@ -103,7 +102,7 @@
     }
 
     /* Airbnb 5-Photo Bento Grid */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:205px 205px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:32px;cursor:pointer}
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:190px 190px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:28px;cursor:pointer}
     .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden;transition:filter .2s ease}
     .grid-img:hover{filter:brightness(.95)}
     .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
@@ -207,56 +206,54 @@
       background-size:cover;
       background-position:center;
     }
-    .lightbox-img-label{
-      position:absolute;
-      left:16px;
-      bottom:16px;
-      background:rgba(18,32,38,0.7);
-      backdrop-filter:blur(6px);
-      color:white;
-      font-size:11px;
-      font-weight:600;
-      padding:6px 12px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,0.2);
-    }
 
     /* HERO OFFER & VALUE PROPOSITION LAYOUT */
     .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
-    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:0}
+    .listing-main h2{font-size:24px;margin:0 0 10px;line-height:1.25;color:var(--charcoal)}
+    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:4px}
     
-    .divider{height:1px;background:var(--line);margin:20px 0}
+    .divider{height:1px;background:var(--line);margin:18px 0}
 
     .host-row{display:flex;align-items:center;gap:14px}
     .host-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--charcoal);flex:none}
     .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
     .host-info span{font-size:12px;color:var(--muted-dark)}
 
-    .highlight-list{display:grid;gap:16px;margin-top:12px}
+    .highlight-list{display:grid;gap:14px;margin-top:14px}
     .highlight-item{display:flex;gap:14px;align-items:flex-start}
     .highlight-icon{width:24px;height:24px;color:var(--accent);flex:none;margin-top:3px}
     .highlight-title{display:block;font-size:24px;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
     .highlight-item span{display:block;font-size:13px;color:var(--muted-dark);line-height:1.4}
 
-    /* HOUSE ATELIER OFFER CARD (HERO) */
-    .booking-card{background:var(--white);border:2px solid var(--charcoal);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
-    .booking-card-header{margin-bottom:16px}
+    /* HOUSE ATELIER OFFER CARD (HERO) - COMPACT SIDE-BY-SIDE FIELDS */
+    .booking-card{background:var(--white);border:2px solid var(--charcoal);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+    .booking-card-header{margin-bottom:12px}
     .booking-card-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--terracotta);display:block;margin-bottom:4px}
     .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:4px}
-    .booking-price strong{font-size:32px;color:var(--charcoal)}
-    .booking-price strike{font-size:16px;color:var(--muted);margin-left:6px;font-weight:400}
-    .booking-urgency{font-size:12px;font-weight:700;color:var(--terracotta);margin-top:4px}
+    .booking-price strong{font-size:30px;color:var(--charcoal)}
+    .booking-price strike{font-size:15px;color:var(--muted);margin-left:6px;font-weight:400}
+    .booking-urgency{font-size:12px;font-weight:700;color:var(--terracotta);margin-top:2px}
 
-    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:16px;margin-bottom:14px}
-    .booking-field{padding:8px 12px;background:white}
-    .booking-field:not(:last-child){border-bottom:1px solid var(--line)}
+    .booking-box-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      border:1px solid var(--line);
+      border-radius:10px;
+      overflow:hidden;
+      margin-top:14px;
+      margin-bottom:12px;
+    }
+    .booking-field{padding:7px 10px;background:white;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+    .booking-field.full-width{grid-column:span 2;border-right:none}
+    .booking-field:nth-child(2n){border-right:none}
+    .booking-field:last-child{border-bottom:none}
     .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
     .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:2px 0 0}
 
-    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:14px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:13px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
     .btn-booking:hover{background:#b5593c}
-    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:10px}
+    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:8px}
 
     /* GENERAL SECTIONS */
     main{background:var(--ivory)}
@@ -264,7 +261,7 @@
     .light-band{background:var(--paper)}
     .section-head{margin-bottom:36px}
     .section-head h2{font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 12px}
-    .section-head p{font-size:16px;color:var(--muted-dark);max-width:720px;margin:0;line-height:1.6}
+    .section-head p{font-size:16px;color:var(--muted-dark);margin:0;line-height:1.6}
     
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .card{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:var(--radius);min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
@@ -363,6 +360,9 @@
       .lightbox-img-full{height:300px}
       .lightbox-img-half{height:200px}
       .lightbox-grid-half{grid-template-columns:1fr}
+      .booking-box-grid{grid-template-columns:1fr}
+      .booking-field{border-right:none!important}
+      .booking-field.full-width{grid-column:span 1}
     }
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
@@ -388,53 +388,43 @@
       <!-- Image 1: Main Villa Infinity Pool -->
       <div class="lightbox-img-item">
         <div class="lightbox-img-full" style="background:linear-gradient(135deg,#286b6b 0%,#192930 100%)"></div>
-        <span class="lightbox-img-label">01 / Infinity Pool & Ocean Panorama</span>
       </div>
 
       <!-- Image 2 & 3: Interiors -->
       <div class="lightbox-grid-half">
         <div class="lightbox-img-item">
           <div class="lightbox-img-half" style="background:linear-gradient(135deg,#c8684a 0%,#596266 100%)"></div>
-          <span class="lightbox-img-label">02 / Open Living Space</span>
         </div>
         <div class="lightbox-img-item">
           <div class="lightbox-img-half" style="background:linear-gradient(135deg,#4e6b6b 0%,#344347 100%)"></div>
-          <span class="lightbox-img-label">03 / Master Suite View</span>
         </div>
       </div>
 
       <!-- Image 4: Chef Kitchen & Island -->
       <div class="lightbox-img-item">
         <div class="lightbox-img-full" style="background:linear-gradient(135deg,#7e8e8c 0%,#2b3d42 100%)"></div>
-        <span class="lightbox-img-label">04 / Gourmet Kitchen & Island</span>
       </div>
 
       <!-- Image 5 & 6: Outdoor Terrace & Bathroom -->
       <div class="lightbox-grid-half">
         <div class="lightbox-img-item">
           <div class="lightbox-img-half" style="background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)"></div>
-          <span class="lightbox-img-label">05 / Covered Terrace Dining</span>
         </div>
         <div class="lightbox-img-item">
           <div class="lightbox-img-half" style="background:linear-gradient(135deg,#3c4a4a 0%,#1e3032 100%)"></div>
-          <span class="lightbox-img-label">06 / Rain Shower & En-Suite</span>
         </div>
       </div>
 
       <!-- Image 7: Evening Ambiance -->
       <div class="lightbox-img-item">
         <div class="lightbox-img-full" style="background:linear-gradient(135deg,#213838 0%,#0e191d 100%)"></div>
-        <span class="lightbox-img-label">07 / Evening Sunset Atmosphere</span>
       </div>
     </div>
   </div>
 
   <div class="hero-shell">
     <header class="wrap nav">
-      <a class="brand" href="#top">
-        The House Atelier
-        <span>Luxury STR Launch Services · Curaçao</span>
-      </a>
+      <a class="brand" href="#top">The House Atelier</a>
       <a class="nav-cta" href="#contact">Apply for a slot</a>
     </header>
 
@@ -442,12 +432,12 @@
       <!-- Hero Value Proposition -->
       <div class="airbnb-header">
         <div class="hero-tagline">Exclusively for new & outdated listings</div>
-        <h1>Launch your STR like it's already a five-star stay.</h1>
+        <h1>Launch your STR like an established five-star stay.</h1>
         <div class="hero-subhead">Professional photography + STR listing optimization for short-term rentals in Curaçao.</div>
         <div class="hero-cred-bar">
-          <span>✓ Airbnb Luxe Inspector Background</span>
+          <span>✓ Airbnb Luxe Inspector</span>
           <span>·</span>
-          <span>✓ Former CoveCasa Marketing Manager</span>
+          <span>✓ Photography Team</span>
           <span>·</span>
           <span>✓ STR Optimization Team</span>
         </div>
@@ -455,7 +445,7 @@
 
       <!-- Airbnb 5-Photo Bento Grid -->
       <div class="photo-grid" onclick="openLightbox()">
-        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Curaçao</span></div>
+        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten</span></div>
         <div class="grid-img grid-img-2"></div>
         <div class="grid-img grid-img-3"></div>
         <div class="grid-img grid-img-4"></div>
@@ -476,7 +466,7 @@
 
           <div class="divider"></div>
 
-          <!-- Host Row (Updated photo map: operatorimage1) -->
+          <!-- Host Row -->
           <div class="host-row">
             <img class="host-avatar" src="https://thehouseatelier.com/assets/operatorimage1" alt="Chris from The House Atelier" />
             <div class="host-info">
@@ -515,7 +505,7 @@
           </div>
         </div>
 
-        <!-- Right Hero Offer Card (Form fields updated) -->
+        <!-- Right Hero Offer Card (Form fields arranged side by side) -->
         <aside class="booking-card">
           <div class="booking-card-header">
             <span class="booking-card-badge">Founding Launch Offer</span>
@@ -538,7 +528,7 @@
               </div>
               <div class="booking-field">
                 <div class="booking-label">Phone / WhatsApp</div>
-                <input required name="phone" type="tel" placeholder="Phone or WhatsApp" style="color:var(--charcoal);" />
+                <input required name="phone" type="tel" placeholder="Phone / WhatsApp" style="color:var(--charcoal);" />
               </div>
               <div class="booking-field">
                 <div class="booking-label">Property Size</div>
@@ -549,7 +539,7 @@
                   <option>6+ Bedrooms (US$649 / Cg 1,160)</option>
                 </select>
               </div>
-              <div class="booking-field">
+              <div class="booking-field full-width">
                 <div class="booking-label">Listing Info</div>
                 <input required name="url" placeholder="Listing URL or description" style="color:var(--charcoal);" />
               </div>
@@ -565,14 +555,14 @@
   </div>
 
   <main>
-    <!-- NEW LISTINGS NICHE PROMINENCE SECTION -->
+    <!-- NEW LISTINGS NICHE PROMINENCE SECTION (Full-length description width) -->
     <section class="wrap">
       <div class="section-head">
         <h2>Just launched? Don't launch halfway.</h2>
-        <p style="font-size:18px;color:var(--charcoal);font-weight:500;margin-top:10px;">
+        <p style="font-size:18px;color:var(--charcoal);font-weight:500;margin-top:10px;max-width:100%;">
           New listings don't get a second first impression.
         </p>
-        <p style="margin-top:12px;">
+        <p style="margin-top:12px;max-width:100%;">
           Your first photographs become your first impression. Your first description becomes your property's story. And your initial positioning decision can influence how guests perceive the entire stay before you ever collect a review.<br><br>
           The House Atelier helps STR owners in Curaçao get the listing right before they start sending guests to it. Designed specifically for new or outdated properties needing a complete presentation reset.
         </p>
@@ -646,7 +636,7 @@
       </div>
     </section>
 
-    <!-- CREDIBILITY & PHILOSOPHY (Featuring Chris with operatorimage2) -->
+    <!-- CREDIBILITY & PHILOSOPHY -->
     <section class="wrap">
       <div class="section-head">
         <h2>The thinking behind the work</h2>
@@ -679,7 +669,7 @@
       </div>
     </section>
 
-    <!-- PROCESS (Updated 3-Step Structure: Book, Audit, Optimize) -->
+    <!-- PROCESS (Book, Audit, Optimize) -->
     <section class="light-band">
       <div class="wrap">
         <h2 style="font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 36px;">How it works</h2>
