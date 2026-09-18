@@ -224,8 +224,7 @@
     /* HERO OFFER & VALUE PROPOSITION LAYOUT */
     .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
-    .listing-main h2{font-size:24px;margin:0 0 10px;line-height:1.25;color:var(--charcoal)}
-    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:4px}
+    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:0}
     
     .divider{height:1px;background:var(--line);margin:20px 0}
 
@@ -234,7 +233,7 @@
     .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
     .host-info span{font-size:12px;color:var(--muted-dark)}
 
-    .highlight-list{display:grid;gap:16px;margin-top:16px}
+    .highlight-list{display:grid;gap:16px;margin-top:12px}
     .highlight-item{display:flex;gap:14px;align-items:flex-start}
     .highlight-icon{width:24px;height:24px;color:var(--accent);flex:none;margin-top:3px}
     .highlight-title{display:block;font-size:24px;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
@@ -303,7 +302,7 @@
     .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
     .chip{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:white;color:var(--accent-2)}
 
-    .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .process{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .step{padding:24px 16px;border-right:1px solid var(--line)}
     .step:last-child{border-right:0}
     .step strong{display:block;font-size:16px;margin-bottom:6px;font-family:'Lora', serif; font-weight:500;color:var(--charcoal)}
@@ -354,6 +353,9 @@
       .photo-grid{grid-template-columns:1fr;grid-template-rows:200px}
       .grid-img-2,.grid-img-3,.grid-img-4,.grid-img-5{display:none}
       .cards,.proof{grid-template-columns:1fr}
+      .process{grid-template-columns:1fr}
+      .step{border-right:0!important;border-bottom:1px solid var(--line)}
+      .step:last-child{border-bottom:0}
       .contact{grid-template-columns:1fr}
       form.bottom-form{grid-template-columns:1fr}
       .form-group-half,.form-group-full,.btn-submit{grid-column:span 1}
@@ -365,7 +367,7 @@
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
       .nav{padding:14px 0}.nav-cta{padding:6px 10px;font-size:11px}
-      section{padding:56px 0}.offer,.contact{padding:26px 18px}.price{font-size:42px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:20px}.contact-shell{padding:56px 0}
+      section{padding:56px 0}.offer,.contact{padding:26px 18px}.price{font-size:42px}.quote p{font-size:20px}.contact-shell{padding:56px 0}
     }
   </style>
 </head>
@@ -451,7 +453,7 @@
         </div>
       </div>
 
-      <!-- Airbnb 5-Photo Bento Grid (Click opens Lightbox) -->
+      <!-- Airbnb 5-Photo Bento Grid -->
       <div class="photo-grid" onclick="openLightbox()">
         <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Curaçao</span></div>
         <div class="grid-img grid-img-2"></div>
@@ -468,16 +470,15 @@
       <div class="listing-layout">
         <!-- Left Content -->
         <div class="listing-main">
-          <h2>Thoughtful optimization designed to reach your rental's full potential</h2>
           <div class="listing-rating">
             Founding Launch Package · 10 Properties Only
           </div>
 
           <div class="divider"></div>
 
-          <!-- Host Row -->
+          <!-- Host Row (Updated photo map: operatorimage1) -->
           <div class="host-row">
-            <img class="host-avatar" src="https://thehouseatelier.com/assets/hostimage" alt="Chris from The House Atelier" />
+            <img class="host-avatar" src="https://thehouseatelier.com/assets/operatorimage1" alt="Chris from The House Atelier" />
             <div class="host-info">
               <strong>Hosted by Chris from The House Atelier</strong>
               <span>Inspector for Airbnb Luxe · STR Optimization Specialist</span>
@@ -514,7 +515,7 @@
           </div>
         </div>
 
-        <!-- Right Hero Offer Card -->
+        <!-- Right Hero Offer Card (Form fields updated) -->
         <aside class="booking-card">
           <div class="booking-card-header">
             <span class="booking-card-badge">Founding Launch Offer</span>
@@ -528,8 +529,16 @@
           <form onsubmit="submitLead(event)">
             <div class="booking-box-grid">
               <div class="booking-field">
-                <div class="booking-label">Listing URL</div>
-                <input required name="url" placeholder="Listing URL" style="color:var(--charcoal);" />
+                <div class="booking-label">Your Name</div>
+                <input required name="name" placeholder="Your name" style="color:var(--charcoal);" />
+              </div>
+              <div class="booking-field">
+                <div class="booking-label">Contact Email</div>
+                <input required name="email" type="email" placeholder="Your email" style="color:var(--charcoal);" />
+              </div>
+              <div class="booking-field">
+                <div class="booking-label">Phone / WhatsApp</div>
+                <input required name="phone" type="tel" placeholder="Phone or WhatsApp" style="color:var(--charcoal);" />
               </div>
               <div class="booking-field">
                 <div class="booking-label">Property Size</div>
@@ -541,12 +550,8 @@
                 </select>
               </div>
               <div class="booking-field">
-                <div class="booking-label">Contact Email / WhatsApp</div>
-                <input required name="email" type="text" placeholder="Email or Phone" style="color:var(--charcoal);" />
-              </div>
-              <div class="booking-field">
-                <div class="booking-label">Your Name</div>
-                <input required name="name" placeholder="Your name" style="color:var(--charcoal);" />
+                <div class="booking-label">Listing Info</div>
+                <input required name="url" placeholder="Listing URL or description" style="color:var(--charcoal);" />
               </div>
             </div>
 
@@ -641,7 +646,7 @@
       </div>
     </section>
 
-    <!-- CREDIBILITY & PHILOSOPHY -->
+    <!-- CREDIBILITY & PHILOSOPHY (Featuring Chris with operatorimage2) -->
     <section class="wrap">
       <div class="section-head">
         <h2>The thinking behind the work</h2>
@@ -655,8 +660,14 @@
           <small style="margin-top:24px;">The House Atelier philosophy</small>
         </div>
         <div class="credentials">
-          <h3>Built from inside the luxury STR industry.</h3>
-          <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. The founder's background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong>. Supported by a dedicated STR optimization specialist.</p>
+          <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
+            <img src="https://thehouseatelier.com/assets/operatorimage2" alt="Chris - Founder of The House Atelier" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex:none;" />
+            <div>
+              <h3 style="margin:0;font-size:22px;line-height:1.2;">Built by Chris & The House Atelier Team</h3>
+              <span style="font-size:13px;color:var(--muted-dark);font-weight:500;">Luxury Short-Term Rental Specialists</span>
+            </div>
+          </div>
+          <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. Founded by Chris, whose background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
           <div class="chips">
             <span class="chip">Airbnb Luxe</span>
             <span class="chip">Luxury STR</span>
@@ -668,15 +679,23 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
+    <!-- PROCESS (Updated 3-Step Structure: Book, Audit, Optimize) -->
     <section class="light-band">
       <div class="wrap">
         <h2 style="font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 36px;">How it works</h2>
         <div class="process">
-          <div class="step"><strong>01. BOOK</strong><span>Tell us about the property and share the basic listing details.</span></div>
-          <div class="step"><strong>02. CAPTURE</strong><span>We visit the property and create a considered set of photographs capturing the space and experience.</span></div>
-          <div class="step"><strong>03. OPTIMIZE</strong><span>Your listing is reviewed through an STR conversion lens with clear recommendations.</span></div>
-          <div class="step"><strong>04. LAUNCH</strong><span>Put the listing live with a stronger visual story, clearer positioning, and higher confidence.</span></div>
+          <div class="step">
+            <strong>01. BOOK</strong>
+            <span>Tell us about your property and share your basic listing or property details.</span>
+          </div>
+          <div class="step">
+            <strong>02. AUDIT</strong>
+            <span>We review your listing through a guest conversion lens, evaluating copy, photo sequencing, amenities, and positioning.</span>
+          </div>
+          <div class="step">
+            <strong>03. OPTIMIZE</strong>
+            <span>Receive clear recommendations alongside professional property photography tailored to elevate presentation and drive bookings.</span>
+          </div>
         </div>
       </div>
     </section>
@@ -741,8 +760,8 @@
             </select>
           </div>
           <div class="form-group-full">
-            <label>Listing URL</label>
-            <input required name="url" placeholder="https://airbnb.com/h/yourlisting" />
+            <label>Listing Info</label>
+            <input required name="url" placeholder="Listing URL or description" />
           </div>
           <button class="btn-submit" type="submit">Apply for a founding slot →</button>
         </form>
