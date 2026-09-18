@@ -68,9 +68,8 @@
     .ticker .wrap{padding:15px 0;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
     main{background:var(--ivory)}
     section{padding:96px 0}
-    .section-head{display:grid;grid-template-columns:.76fr 1.24fr;gap:60px;align-items:start;margin-bottom:42px}
+    .section-head{margin-bottom:42px}
     .section-head h2{font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0}
-    .section-head p{font-size:17px;color:var(--muted-dark);max-width:640px;margin:0}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
     .card{background:var(--paper);border:1px solid var(--line);padding:29px;border-radius:var(--radius);min-height:248px}
     .num{font-size:10px;font-weight:900;color:var(--accent-2);letter-spacing:.14em}
@@ -130,7 +129,7 @@
     footer{background:var(--charcoal);color:#77736d;padding:24px 0 46px;font-size:11px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     @media(max-width:930px){
-      .hero,.offer,.section-head,.faq,.contact{grid-template-columns:1fr}
+      .hero,.offer,.faq,.contact{grid-template-columns:1fr}
       .visual{min-height:500px}.cards,.proof{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}
     }
     @media(max-width:580px){
@@ -176,8 +175,7 @@
   <main>
     <section class="wrap">
       <div class="section-head">
-        <h2>New listings don't get a second first impression.</h2>
-        <p>Before reviews, the listing itself has to create confidence. We improve the visual story, the positioning, and the details that help a guest quickly understand why this property is worth choosing.</p>
+        <h2>What we do.</h2>
       </div>
       <div class="cards">
         <article class="card"><div class="num">01 / VISUAL</div><h3>Photography that sells the stay.</h3><p>A deliberate set of hero, room, amenity and experience images — captured to tell a clearer story, not simply document the space.</p></article>
@@ -215,7 +213,7 @@
     <section class="wrap">
       <div class="section-head">
         <h2>The perspective behind the work.</h2>
-        <p>This isn't positioned as a generic photo shoot. The service is built around understanding how a guest reads a vacation rental — and how the property needs to present itself to earn that first booking.</p>
+        <p style="font-size:17px;color:var(--muted-dark);max-width:640px;margin:18px 0 0;">This isn't positioned as a generic photo shoot. The service is built around understanding how a guest reads a vacation rental — and how the property needs to present itself to earn that first booking.</p>
       </div>
       <div class="proof">
         <div class="quote"><p>“The goal isn't to make the listing prettier. It's to make the right guest understand why they should book it.”</p><small>The House Atellier philosophy</small></div>
@@ -224,7 +222,7 @@
     </section>
 
     <section class="wrap">
-      <h2 style="font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0 0 42px;">Simple for the host. Structured behind the scenes.</h2>
+      <h2 style="font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0 0 42px;">How it Works</h2>
       <div class="process">
         <div class="step"><strong>01. Book</strong><span>Share the property and basic listing details.</span></div>
         <div class="step"><strong>02. Capture</strong><span>Photography and visual content are created on site.</span></div>
