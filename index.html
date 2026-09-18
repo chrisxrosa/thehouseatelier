@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The House Atelier — Professional photography and STR listing optimization for newly launched vacation rentals in Curaçao & Sint Maarten." />
+  <meta name="description" content="The House Atelier — Professional photography and STR listing optimization for vacation rentals in Curaçao." />
   <meta name="theme-color" content="#122026" />
   <title>The House Atelier — Launch your STR like it's already a five-star stay.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,14 +68,17 @@
       margin-bottom:14px;
     }
     
-    .airbnb-header{margin-bottom:24px}
+    .airbnb-header{margin-bottom:18px}
     .airbnb-header h1{
-      font-size:clamp(32px,4.5vw,54px);
-      line-height:1.1;
+      font-size:clamp(20px,3.6vw,42px);
+      line-height:1.25;
       letter-spacing:-.015em;
       margin:0 0 12px;
       color:var(--charcoal);
-      max-width:920px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      padding-bottom:6px;
     }
     .hero-subhead{
       font-size:18px;
@@ -100,8 +103,9 @@
     }
 
     /* Airbnb 5-Photo Bento Grid */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:32px}
-    .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden}
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:205px 205px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:32px;cursor:pointer}
+    .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden;transition:filter .2s ease}
+    .grid-img:hover{filter:brightness(.95)}
     .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
     .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
     .grid-img-3{background:linear-gradient(135deg,#4e6b6b 0%,#344347 100%)}
@@ -110,25 +114,130 @@
     
     .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3))}
     .grid-badge{position:absolute;left:16px;bottom:16px;z-index:2;color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
-    .show-all-btn{position:absolute;right:16px;bottom:16px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:8px 15px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
+    .show-all-btn{position:absolute;right:16px;bottom:16px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:8px 15px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1);cursor:pointer;transition:.2s ease}
+    .show-all-btn:hover{background:#f0ebe1}
+
+    /* FULLSCREEN LIGHTBOX STYLES */
+    .lightbox-modal{
+      position:fixed;
+      inset:0;
+      background:#ffffff;
+      z-index:9999;
+      display:none;
+      overflow-y:auto;
+      flex-direction:column;
+    }
+    .lightbox-modal.active{
+      display:flex;
+    }
+    .lightbox-top-bar{
+      position:sticky;
+      top:0;
+      background:rgba(255,255,255,0.96);
+      backdrop-filter:blur(10px);
+      z-index:100;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 32px;
+      border-bottom:1px solid var(--line);
+    }
+    .lightbox-back-btn{
+      background:none;
+      border:none;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:40px;
+      height:40px;
+      border-radius:50%;
+      color:var(--charcoal);
+      transition:background .2s ease;
+    }
+    .lightbox-back-btn:hover{
+      background:rgba(0,0,0,0.06);
+    }
+    .lightbox-actions-right{
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .lightbox-cta{
+      background:var(--terracotta);
+      color:white;
+      padding:10px 20px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      text-decoration:none;
+      transition:background .2s ease;
+    }
+    .lightbox-cta:hover{
+      background:#b5593c;
+    }
+    .lightbox-body{
+      max-width:840px;
+      width:100%;
+      margin:32px auto 60px;
+      padding:0 20px;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+    .lightbox-img-item{
+      border-radius:14px;
+      overflow:hidden;
+      position:relative;
+      box-shadow:0 4px 20px rgba(0,0,0,0.06);
+    }
+    .lightbox-img-full{
+      width:100%;
+      height:480px;
+      background-size:cover;
+      background-position:center;
+    }
+    .lightbox-grid-half{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .lightbox-img-half{
+      height:320px;
+      background-size:cover;
+      background-position:center;
+    }
+    .lightbox-img-label{
+      position:absolute;
+      left:16px;
+      bottom:16px;
+      background:rgba(18,32,38,0.7);
+      backdrop-filter:blur(6px);
+      color:white;
+      font-size:11px;
+      font-weight:600;
+      padding:6px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.2);
+    }
 
     /* HERO OFFER & VALUE PROPOSITION LAYOUT */
     .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
-    .listing-main h2{font-size:26px;margin:0 0 10px;line-height:1.25;color:var(--charcoal)}
+    .listing-main h2{font-size:24px;margin:0 0 10px;line-height:1.25;color:var(--charcoal)}
     .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:4px}
     
     .divider{height:1px;background:var(--line);margin:20px 0}
 
     .host-row{display:flex;align-items:center;gap:14px}
-    .host-avatar{width:46px;height:44px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:13px}
+    .host-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--charcoal);flex:none}
     .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
     .host-info span{font-size:12px;color:var(--muted-dark)}
 
     .highlight-list{display:grid;gap:16px;margin-top:16px}
     .highlight-item{display:flex;gap:14px;align-items:flex-start}
     .highlight-icon{width:24px;height:24px;color:var(--accent);flex:none;margin-top:3px}
-    .highlight-title{display:block;font-size:18px;font-weight:600;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
+    .highlight-title{display:block;font-size:24px;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
     .highlight-item span{display:block;font-size:13px;color:var(--muted-dark);line-height:1.4}
 
     /* HOUSE ATELIER OFFER CARD (HERO) */
@@ -248,6 +357,10 @@
       .contact{grid-template-columns:1fr}
       form.bottom-form{grid-template-columns:1fr}
       .form-group-half,.form-group-full,.btn-submit{grid-column:span 1}
+      .airbnb-header h1{white-space:normal}
+      .lightbox-img-full{height:300px}
+      .lightbox-img-half{height:200px}
+      .lightbox-grid-half{grid-template-columns:1fr}
     }
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
@@ -257,11 +370,68 @@
   </style>
 </head>
 <body>
+
+  <!-- FULLSCREEN LIGHTBOX MODAL -->
+  <div class="lightbox-modal" id="lightbox">
+    <div class="lightbox-top-bar">
+      <button class="lightbox-back-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="lightbox-actions-right">
+        <a class="lightbox-cta" href="#contact" onclick="closeLightbox()">Apply for a founding slot →</a>
+      </div>
+    </div>
+
+    <div class="lightbox-body">
+      <!-- Image 1: Main Villa Infinity Pool -->
+      <div class="lightbox-img-item">
+        <div class="lightbox-img-full" style="background:linear-gradient(135deg,#286b6b 0%,#192930 100%)"></div>
+        <span class="lightbox-img-label">01 / Infinity Pool & Ocean Panorama</span>
+      </div>
+
+      <!-- Image 2 & 3: Interiors -->
+      <div class="lightbox-grid-half">
+        <div class="lightbox-img-item">
+          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#c8684a 0%,#596266 100%)"></div>
+          <span class="lightbox-img-label">02 / Open Living Space</span>
+        </div>
+        <div class="lightbox-img-item">
+          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#4e6b6b 0%,#344347 100%)"></div>
+          <span class="lightbox-img-label">03 / Master Suite View</span>
+        </div>
+      </div>
+
+      <!-- Image 4: Chef Kitchen & Island -->
+      <div class="lightbox-img-item">
+        <div class="lightbox-img-full" style="background:linear-gradient(135deg,#7e8e8c 0%,#2b3d42 100%)"></div>
+        <span class="lightbox-img-label">04 / Gourmet Kitchen & Island</span>
+      </div>
+
+      <!-- Image 5 & 6: Outdoor Terrace & Bathroom -->
+      <div class="lightbox-grid-half">
+        <div class="lightbox-img-item">
+          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)"></div>
+          <span class="lightbox-img-label">05 / Covered Terrace Dining</span>
+        </div>
+        <div class="lightbox-img-item">
+          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#3c4a4a 0%,#1e3032 100%)"></div>
+          <span class="lightbox-img-label">06 / Rain Shower & En-Suite</span>
+        </div>
+      </div>
+
+      <!-- Image 7: Evening Ambiance -->
+      <div class="lightbox-img-item">
+        <div class="lightbox-img-full" style="background:linear-gradient(135deg,#213838 0%,#0e191d 100%)"></div>
+        <span class="lightbox-img-label">07 / Evening Sunset Atmosphere</span>
+      </div>
+    </div>
+  </div>
+
   <div class="hero-shell">
     <header class="wrap nav">
       <a class="brand" href="#top">
         The House Atelier
-        <span>Luxury STR Launch Services · Curaçao & Sint Maarten</span>
+        <span>Luxury STR Launch Services · Curaçao</span>
       </a>
       <a class="nav-cta" href="#contact">Apply for a slot</a>
     </header>
@@ -269,9 +439,9 @@
     <div class="wrap hero-content-wrap" id="top">
       <!-- Hero Value Proposition -->
       <div class="airbnb-header">
-        <div class="hero-tagline">Exclusively for New & Newly Refreshed Listings</div>
+        <div class="hero-tagline">Exclusively for new & outdated listings</div>
         <h1>Launch your STR like it's already a five-star stay.</h1>
-        <div class="hero-subhead">Professional photography + STR listing optimization for newly launched short-term rentals in Curaçao & Sint Maarten.</div>
+        <div class="hero-subhead">Professional photography + STR listing optimization for short-term rentals in Curaçao.</div>
         <div class="hero-cred-bar">
           <span>✓ Airbnb Luxe Inspector Background</span>
           <span>·</span>
@@ -281,14 +451,14 @@
         </div>
       </div>
 
-      <!-- Airbnb 5-Photo Bento Grid -->
-      <div class="photo-grid">
-        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten & Curaçao</span></div>
+      <!-- Airbnb 5-Photo Bento Grid (Click opens Lightbox) -->
+      <div class="photo-grid" onclick="openLightbox()">
+        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Curaçao</span></div>
         <div class="grid-img grid-img-2"></div>
         <div class="grid-img grid-img-3"></div>
         <div class="grid-img grid-img-4"></div>
         <div class="grid-img grid-img-5"></div>
-        <button class="show-all-btn">
+        <button class="show-all-btn" onclick="openLightbox(); event.stopPropagation();">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"/></svg>
           Show all photos
         </button>
@@ -307,7 +477,7 @@
 
           <!-- Host Row -->
           <div class="host-row">
-            <div class="host-avatar">THA</div>
+            <img class="host-avatar" src="https://thehouseatelier.com/assets/hostimage" alt="Chris from The House Atelier" />
             <div class="host-info">
               <strong>Hosted by Chris from The House Atelier</strong>
               <span>Inspector for Airbnb Luxe · STR Optimization Specialist</span>
@@ -321,24 +491,24 @@
             <div class="highlight-item">
               <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
               <div>
-                <div class="highlight-title">Professional Photography</div>
-                <span>Hero shots, room sequencing, and detail images structured specifically to drive booking conversion.</span>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              <div>
-                <div class="highlight-title">STR Listing Optimization</div>
-                <span>Listing title, description, guest positioning, amenity presentation, and photo sequencing audit.</span>
+                <div class="highlight-title">Photography & listing optimization</div>
+                <span>Tailored visual storytelling, photo sequencing, and conversion-focused copy.</span>
               </div>
             </div>
 
             <div class="highlight-item">
               <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               <div>
-                <div class="highlight-title">Built for Conversion</div>
-                <span>Fix your presentation fundamentals before you spend money driving traffic or wait for your first reviews.</span>
+                <div class="highlight-title">Revenue Optimization</div>
+                <span>Strategic pricing alignment and positioning designed to maximize booking yield.</span>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.91 5.87H20l-4.78 3.47 1.83 5.87L12 14.74l-5.05 3.47 1.83-5.87L4 8.87h6.09z"/></svg>
+              <div>
+                <div class="highlight-title">Experience & Design Consultation</div>
+                <span>Elevating guest-facing hospitality details that create lasting initial impressions.</span>
               </div>
             </div>
           </div>
@@ -399,7 +569,7 @@
         </p>
         <p style="margin-top:12px;">
           Your first photographs become your first impression. Your first description becomes your property's story. And your initial positioning decision can influence how guests perceive the entire stay before you ever collect a review.<br><br>
-          The House Atelier helps new STR owners get the listing right before they start sending guests to it. Designed specifically for newly launched properties or listings needing a complete presentation reset.
+          The House Atelier helps STR owners in Curaçao get the listing right before they start sending guests to it. Designed specifically for new or outdated properties needing a complete presentation reset.
         </p>
       </div>
     </section>
@@ -443,7 +613,7 @@
           <div>
             <div class="eyebrow light">Founding Client Offer</div>
             <h2>One focused refresh. Built for launch.</h2>
-            <p>We're opening The House Atelier with 10 founding clients across Curaçao & Sint Maarten at an introductory rate while building initial case studies.</p>
+            <p>We're opening The House Atelier with 10 founding clients across Curaçao at an introductory rate while building initial case studies.</p>
             <div class="offer-list-title">What's Included</div>
             <ul class="offer-list">
               <li><span class="check">✓</span><span>Professional property photography</span></li>
@@ -486,7 +656,7 @@
         </div>
         <div class="credentials">
           <h3>Built from inside the luxury STR industry.</h3>
-          <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. The founder's background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong> in Sint Maarten. Supported by a dedicated STR optimization specialist.</p>
+          <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. The founder's background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong>. Supported by a dedicated STR optimization specialist.</p>
           <div class="chips">
             <span class="chip">Airbnb Luxe</span>
             <span class="chip">Luxury STR</span>
@@ -544,7 +714,7 @@
           <div>
             <div class="eyebrow light">Before you welcome your first guest</div>
             <h2>Get the listing right.</h2>
-            <p>Tell us a little about the property and share your listing link. If it feels like the right fit, we'll confirm availability for one of our 10 founding client slots in Curaçao or Sint Maarten.</p>
+            <p>Tell us a little about the property and share your listing link. If it feels like the right fit, we'll confirm availability for one of our 10 founding client slots in Curaçao.</p>
           </div>
         </div>
 
@@ -583,11 +753,21 @@
   <footer>
     <div class="wrap footer-inner">
       <span>© 2026 The House Atelier</span>
-      <span>Luxury STR Launch Services · Curaçao & Sint Maarten</span>
+      <span>Luxury STR Launch Services · Curaçao</span>
     </div>
   </footer>
 
   <script>
+    function openLightbox(){
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(){
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
     async function submitLead(e){
       e.preventDefault();
       const form = e.target;
