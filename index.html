@@ -58,19 +58,20 @@
       justify-content:center;
     }
     
-    /* Listing Title Bar */
+    /* Listing Title Bar (Fixed clipping on descenders like 'g') */
     .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;margin-bottom:18px;flex-wrap:nowrap;gap:12px}
     .airbnb-header h1{
       font-size:clamp(20px,3.6vw,42px);
-      line-height:1.05;
+      line-height:1.25;
       letter-spacing:-.015em;
       margin:0;
+      padding-bottom:6px;
       color:var(--charcoal);
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
     }
-    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:4px;flex-shrink:0}
+    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:8px;flex-shrink:0}
 
     /* Airbnb 5-Photo Bento Grid */
     .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:205px 205px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:28px}
@@ -98,7 +99,7 @@
     .host-info strong{display:block;font-size:14px;color:var(--charcoal)}
     .host-info span{font-size:12px;color:var(--muted-dark)}
 
-    /* Airbnb Feature Highlights List (Non-bold 24px Titles) */
+    /* Airbnb Feature Highlights List */
     .highlight-list{display:grid;gap:16px;margin-top:12px}
     .highlight-item{display:flex;gap:14px;align-items:flex-start}
     .highlight-icon{width:24px;height:24px;color:var(--charcoal);flex:none;margin-top:3px}
@@ -277,7 +278,7 @@
 
           <div class="divider"></div>
 
-          <!-- Feature Highlight Rows with Icons (Equalized 24px Titles) -->
+          <!-- Feature Highlight Rows with Icons -->
           <div class="highlight-list">
             <div class="highlight-item">
               <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
