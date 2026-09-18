@@ -35,12 +35,14 @@
     .nav-cta{font-size:12px;font-weight:850;letter-spacing:.04em;border:1px solid var(--line);padding:10px 15px;border-radius:999px;color:var(--ink);background:rgba(23,23,23,.045)}
     .hero-shell{background:var(--paper);color:var(--ink);overflow:hidden;position:relative}
     .hero-shell::before{content:"";position:absolute;inset:-20% auto auto 58%;width:52vw;height:52vw;background:radial-gradient(circle,rgba(216,116,79,.12),transparent 58%);pointer-events:none}
+    .hero-shell main{background:transparent}
     .hero{padding:62px 0 90px;display:grid;grid-template-columns:1.02fr .98fr;gap:62px;align-items:center;position:relative;z-index:1}
     .eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.19em;color:var(--accent);margin-bottom:18px}
     .eyebrow.light{color:var(--accent-pale)}
-    h1{font-size:clamp(56px,7.2vw,98px);line-height:.92;letter-spacing:-.055em;margin:0 0 25px;font-weight:900;max-width:760px;color:var(--ink)}
+    h1{font-size:clamp(52px,6.8vw,90px);line-height:1.15;letter-spacing:.03em;margin:0 0 28px;font-weight:300;max-width:760px;color:#7a7267}
     .hero p{font-size:18px;color:var(--muted-dark);max-width:650px;margin:0 0 30px}
-    .hero-title-line{display:block}
+    .hero-title-line{display:block;margin-bottom:6px}
+    .hero-title-line:last-child{margin-bottom:0}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 21px;border-radius:999px;font-size:13px;font-weight:850;transition:.2s ease;border:1px solid transparent}
     .btn.primary{background:var(--charcoal);color:var(--white);font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.12)}
@@ -133,7 +135,7 @@
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
       .nav{padding:18px 0}.nav-cta{padding:8px 12px;font-size:11px}
-      .hero{padding:50px 0 70px;gap:34px}.hero h1{font-size:clamp(48px,15vw,72px)}.visual{min-height:360px}.photo-card{inset:0 7px 28px 0}.stamp{padding:16px 17px;max-width:195px}
+      .hero{padding:50px 0 70px;gap:34px}.hero h1{font-size:clamp(44px,12vw,68px)}.visual{min-height:360px}.photo-card{inset:0 7px 28px 0}.stamp{padding:16px 17px;max-width:195px}
       section{padding:66px 0}.offer,.contact{padding:30px 22px}.price{font-size:56px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:25px}.contact-shell{padding:66px 0}
     }
   </style>
@@ -233,7 +235,7 @@
       <div class="faq">
         <div>
           <div class="eyebrow">Before you book</div>
-          <h2 style="font-size:clamp(40px,5vw,58px);line-height:.96;letter-spacing:-.06em;margin:0">Frequently Asked</h2>
+          <h2 style="font-size:clamp(40px,5vw,58px);line-height:.96;letter-spacing:-.06em;margin:0">Frequently Asked.</h2>
         </div>
         <div>
           <details open><summary>Is this only for brand-new listings?</summary><p>The founding offer is designed primarily for new listings, especially properties with little or no review history. Existing listings may also qualify where the visual presentation clearly needs a reset.</p></details>
