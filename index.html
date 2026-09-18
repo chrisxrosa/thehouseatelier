@@ -36,21 +36,21 @@
     h1, h2, h3, .quote p {font-family:'Lora', Georgia, serif; font-weight:400}
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
     
-    /* NAV */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;position:relative;z-index:5}
+    /* NAV (Compact for above-the-fold fit) */
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;position:relative;z-index:5}
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
-    .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 14px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
+    .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:7px 14px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
 
     /* HERO AIRBNB MOCKUP */
-    .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:32px;border-bottom:1px solid var(--line)}
+    .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:20px;border-bottom:1px solid var(--line)}
     
     /* Listing Title Bar */
-    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;flex-wrap:wrap;gap:12px}
-    .airbnb-header h1{font-size:clamp(32px,4.2vw,56px);line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:850px}
-    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:4px}
+    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px;flex-wrap:wrap;gap:10px}
+    .airbnb-header h1{font-size:clamp(28px,3.6vw,46px);line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:850px}
+    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:2px}
 
-    /* Airbnb 5-Photo Bento Grid */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:130px 130px;gap:6px;border-radius:18px;overflow:hidden;position:relative;margin-bottom:20px}
+    /* Airbnb 5-Photo Bento Grid (SQUARISH THUMBNAILS) */
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:165px 165px;gap:6px;border-radius:18px;overflow:hidden;position:relative;margin-bottom:16px}
     .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden}
     .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
     .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
@@ -63,35 +63,40 @@
     .show-all-btn{position:absolute;right:14px;bottom:14px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:7px 14px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
 
     /* Listing Body Layout */
-    .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
+    .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start}
     
-    .listing-main h2{font-size:22px;margin:0 0 12px;line-height:1.25;color:var(--charcoal)}
-    .listing-subtext{font-size:14px;color:var(--muted-dark);margin-bottom:12px;line-height:1.6}
-    .listing-subtext span{display:block}
-    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal)}
+    .listing-main h2{font-size:20px;margin:0 0 6px;line-height:1.25;color:var(--charcoal)}
+    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal);margin-top:4px}
     
-    .divider{height:1px;background:var(--line);margin:16px 0}
+    .divider{height:1px;background:var(--line);margin:12px 0}
 
-    .host-row{display:flex;align-items:center;gap:14px}
-    .host-avatar{width:44px;height:44px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:14px}
-    .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
-    .host-info span{font-size:13px;color:var(--muted-dark)}
+    .host-row{display:flex;align-items:center;gap:12px}
+    .host-avatar{width:40px;height:40px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:13px}
+    .host-info strong{display:block;font-size:14px;color:var(--charcoal)}
+    .host-info span{font-size:12px;color:var(--muted-dark)}
+
+    /* Airbnb Feature Highlights List */
+    .highlight-list{display:grid;gap:12px;margin-top:12px}
+    .highlight-item{display:flex;gap:12px;align-items:flex-start}
+    .highlight-icon{width:22px;height:22px;color:var(--charcoal);flex:none;margin-top:1px}
+    .highlight-item strong{display:block;font-size:14px;font-weight:600;color:var(--charcoal)}
+    .highlight-item span{display:block;font-size:12px;color:var(--muted-dark);line-height:1.4;margin-top:1px}
 
     /* Hero Booking Card Widget */
-    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
-    .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:12px}
-    .booking-price strong{font-size:24px}
-    .booking-price span{font-size:13px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
+    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .booking-price{font-size:17px;font-family:'Lora',serif;margin-bottom:10px}
+    .booking-price strong{font-size:22px}
+    .booking-price span{font-size:12px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
 
-    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
-    .booking-field{padding:8px 12px;background:white}
+    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px}
+    .booking-field{padding:7px 10px;background:white}
     .booking-field:not(:last-child){border-bottom:1px solid var(--line)}
     .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
     .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:1px 0 0}
 
-    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:12px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:11px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
     .btn-booking:hover{background:#b5593c}
-    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:10px}
+    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:8px}
 
     /* GENERAL SECTIONS */
     main{background:var(--ivory)}
@@ -212,7 +217,7 @@
         </div>
       </div>
 
-      <!-- Airbnb 5-Photo Bento Grid -->
+      <!-- Airbnb 5-Photo Bento Grid (Squarish Thumbnails) -->
       <div class="photo-grid">
         <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten</span></div>
         <div class="grid-img grid-img-2"></div>
@@ -230,12 +235,6 @@
         <!-- Left Content -->
         <div class="listing-main">
           <h2>Thoughtful optimization designed to reach your rental's full potential</h2>
-          <div class="listing-subtext">
-            <span>Photography</span>
-            <span>Audits</span>
-            <span>Listing Optimization</span>
-            <span>Revenue Optimization</span>
-          </div>
           <div class="listing-rating">
             ★ 5.0 · Founding Launch Package Available.
           </div>
@@ -248,6 +247,35 @@
             <div class="host-info">
               <strong>Hosted by Chris from The House Atelier</strong>
               <span>Inspector for Airbnb Luxe · STR Optimization Specialist</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Feature Highlight Rows with Icons -->
+          <div class="highlight-list">
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              <div>
+                <strong>Photography & listing optimization</strong>
+                <span>Tailored visual storytelling, photo sequencing, and conversion-focused copy.</span>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <div>
+                <strong>Revenue Optimization</strong>
+                <span>Strategic pricing alignment and positioning designed to maximize booking yield.</span>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.91 5.87H20l-4.78 3.47 1.83 5.87L12 14.74l-5.05 3.47 1.83-5.87L4 8.87h6.09z"/></svg>
+              <div>
+                <strong>Experience & Design Consultation</strong>
+                <span>Elevating guest-facing hospitality details that create lasting initial impressions.</span>
+              </div>
             </div>
           </div>
         </div>
