@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="The House Atelier helps new short-term rentals launch with premium photography, sharper positioning, and an optimized STR launch audit." />
   <meta name="theme-color" content="#122026" />
-  <title>The House Atelier — The experience starts at the listing.</title>
+  <title>The House Atelier — The experience starts before they arrive.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Lora:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -25,8 +25,8 @@
       --accent-2:#1d4e4e;
       --accent-pale:#b2d8d8;
       --terracotta:#c8684a;
-      --shadow:0 28px 90px rgba(18,32,38,.18);
-      --radius:28px;
+      --shadow:0 18px 40px rgba(18,32,38,.08);
+      --radius:20px;
       --max:1180px;
     }
     *{box-sizing:border-box}
@@ -35,43 +35,66 @@
     a{color:inherit;text-decoration:none}
     h1, h2, h3, .quote p {font-family:'Lora', Georgia, serif; font-weight:400}
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+    
+    /* NAV */
     .nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;position:relative;z-index:5}
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
     .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:10px 16px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
-    .hero-shell{background:var(--paper);color:var(--ink);overflow:hidden;position:relative}
-    .hero-shell::before{content:"";position:absolute;inset:-20% auto auto 58%;width:52vw;height:52vw;background:radial-gradient(circle,rgba(40,107,107,.14),transparent 58%);pointer-events:none}
-    .hero-shell main{background:transparent}
-    .hero{padding:62px 0 90px;display:grid;grid-template-columns:1.02fr .98fr;gap:62px;align-items:center;position:relative;z-index:1}
-    .eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--accent);margin-bottom:18px}
-    .eyebrow.light{color:var(--accent-pale)}
-    h1{font-size:clamp(48px,6.2vw,80px);line-height:1.08;letter-spacing:-.015em;margin:0 0 24px;font-weight:400;max-width:760px;color:#3c484c}
-    .hero .subhead-lead{font-size:19px;color:var(--charcoal);font-weight:600;margin-bottom:16px;line-height:1.5;max-width:680px}
-    .hero p{font-size:16px;color:var(--muted-dark);max-width:650px;margin:0 0 32px;font-weight:400;line-height:1.65}
-    .hero-title-line{display:block;margin-bottom:4px}
-    .hero-title-line:last-child{margin-bottom:0}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 22px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.01em;transition:.2s ease;border:1px solid transparent}
-    .btn.primary{background:var(--charcoal);color:var(--white);font-weight:600;box-shadow:0 4px 14px rgba(18,32,38,.15)}
-    .btn.primary:hover{background:#0a1317;transform:translateY(-2px)}
-    .btn.ghost{border-color:var(--line);color:var(--ink);background:rgba(18,32,38,.04)}
-    .btn.ghost:hover{background:rgba(18,32,38,.08);transform:translateY(-2px)}
-    .visual{position:relative;min-height:590px}
-    .photo-card{position:absolute;inset:0 18px 42px 0;border-radius:34px;overflow:hidden;background:linear-gradient(135deg,#3c4a4a 0%,#1e3032 52%,#111d21 100%);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.14)}
-    .photo-card::before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 26%),linear-gradient(180deg,transparent 32%,rgba(0,0,0,.5));z-index:3}
-    .sky{position:absolute;inset:0;background:linear-gradient(180deg,#dbe3df 0%,#b5c4bf 39%,#6f8582 40%,#2d3f42 100%)}
-    .horizon{position:absolute;left:0;right:0;top:39%;height:16%;background:linear-gradient(180deg,rgba(40,107,107,.25),rgba(25,60,62,.65))}
-    .villa{position:absolute;left:8%;right:9%;bottom:16%;height:50%;background:linear-gradient(180deg,#efe9de 0 48%,#c2baa9 48%);box-shadow:0 26px 70px rgba(0,0,0,.32);z-index:2}
-    .villa::before{content:"";position:absolute;left:-8%;right:33%;top:-17%;height:19%;background:#384542;clip-path:polygon(10% 100%,25% 0,100% 100%);opacity:.96}
-    .glass{position:absolute;left:7%;right:44%;top:15%;height:57%;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;background:#858a82}
-    .glass i{display:block;background:linear-gradient(150deg,#4d6d70,#a2b8b5 45%,#3a5558)}
-    .door{position:absolute;right:10%;top:16%;width:18%;height:60%;background:linear-gradient(150deg,#3b5456,#879f9b 48%,#2b3e40);border:4px solid #737367}
-    .pool{position:absolute;right:-2%;left:42%;bottom:-6%;height:22%;background:linear-gradient(135deg,#367a7b,#92cbca);transform:skewX(-6deg);box-shadow:0 12px 30px rgba(0,0,0,.18);z-index:2}
-    .palm{position:absolute;right:11%;bottom:20%;width:21px;height:49%;background:#3b2d22;border-radius:18px;transform:rotate(7deg);z-index:1}
-    .palm::before,.palm::after{content:"";position:absolute;width:124px;height:82px;top:-10px;left:-63px;background:radial-gradient(ellipse at 10% 50%,#274034 0 24%,transparent 25%),radial-gradient(ellipse at 45% 30%,#375443 0 24%,transparent 25%),radial-gradient(ellipse at 75% 50%,#274034 0 24%,transparent 25%)}
-    .image-label{position:absolute;left:22px;top:22px;z-index:5;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#f7f2ea;background:rgba(18,32,38,.55);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(8px);padding:9px 11px;border-radius:999px}
-    .stamp{position:absolute;right:0;bottom:0;background:var(--white);color:var(--ink);padding:22px 22px;border-radius:22px;box-shadow:0 18px 46px rgba(18,32,38,.16);max-width:245px;z-index:6}
-    .stamp strong{display:block;font-size:24px;letter-spacing:-.01em;line-height:1.1;margin-bottom:8px;font-family:'Lora', serif; font-weight:500;}
-    .stamp span{font-size:12px;color:#606666}
+
+    /* HERO AIRBNB MOCKUP */
+    .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:60px;border-bottom:1px solid var(--line)}
+    
+    /* Listing Title Bar */
+    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;flex-wrap:wrap;gap:16px}
+    .airbnb-header h1{font-size:clamp(44px,5.8vw,72px);line-height:1.08;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:900px}
+    .airbnb-actions{display:flex;gap:16px;font-size:14px;font-weight:600;text-decoration:underline;margin-bottom:8px}
+
+    /* Airbnb 5-Photo Grid */
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px;border-radius:24px;overflow:hidden;position:relative;margin-bottom:40px}
+    .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden}
+    .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
+    .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
+    .grid-img-3{background:linear-gradient(135deg,#4e6b6b 0%,#344347 100%)}
+    .grid-img-4{background:linear-gradient(135deg,#7e8e8c 0%,#2b3d42 100%)}
+    .grid-img-5{background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)}
+    
+    /* Grid Visual Accents */
+    .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3))}
+    .grid-badge{position:absolute;left:18px;bottom:18px;z-index:2;color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+    .show-all-btn{position:absolute;right:18px;bottom:18px;z-index:3;background:var(--white);color:var(--ink);font-size:13px;font-weight:600;padding:9px 16px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.15);display:flex;align-items:center;gap:8px;border:1px solid rgba(0,0,0,.1)}
+
+    /* Listing Body (Left details, Right Floating Booking Box) */
+    .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:64px;align-items:start}
+    
+    .listing-main h2{font-size:28px;margin:0 0 10px;line-height:1.2;color:var(--charcoal)}
+    .listing-subtext{font-size:16px;color:var(--muted-dark);margin-bottom:14px;line-height:1.5}
+    .listing-rating{font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal)}
+    
+    .divider{height:1px;background:var(--line);margin:28px 0}
+
+    .host-row{display:flex;align-items:center;gap:18px}
+    .host-avatar{width:52px;height:52px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:16px}
+    .host-info strong{display:block;font-size:16px;color:var(--charcoal)}
+    .host-info span{font-size:14px;color:var(--muted-dark)}
+
+    /* Airbnb Reservation Widget (Right Column) */
+    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:24px;padding:28px;box-shadow:var(--shadow);position:sticky;top:24px}
+    .booking-price{font-size:22px;font-family:'Lora',serif;margin-bottom:18px}
+    .booking-price strong{font-size:30px}
+    .booking-price span{font-size:14px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
+
+    /* Form inside booking widget */
+    .booking-box-grid{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:18px}
+    .booking-field{padding:10px 14px;background:white}
+    .booking-field:first-child{border-bottom:1px solid var(--line)}
+    .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
+    .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:13px;color:var(--charcoal);background:transparent;padding:2px 0 0}
+
+    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:15px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .btn-booking:hover{background:#b5593c}
+    .booking-footnote{text-align:center;font-size:12px;color:var(--muted-dark);margin-top:14px}
+
+    /* GENERAL SECTIONS */
     main{background:var(--ivory)}
     section{padding:96px 0}
     .light-band{background:var(--paper)}
@@ -124,25 +147,18 @@
     .contact{background:var(--terracotta);border-radius:34px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:42px;position:relative;overflow:hidden}
     .contact h2{font-size:clamp(42px,5vw,66px);line-height:1.05;letter-spacing:-.01em;margin:0 0 18px;max-width:620px}
     .contact p{color:#f9e6df;max-width:560px}
-    form{display:grid;gap:11px;position:relative;z-index:2}
-    input,select,textarea{width:100%;font:inherit;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.12);color:white;padding:14px 15px;border-radius:14px;outline:none}
-    input::placeholder,textarea::placeholder{color:#f7dcd3}
-    select{color:white}
-    option{color:#111;background:white}
-    textarea{min-height:96px;resize:vertical}
-    form .btn{background:var(--charcoal);color:var(--white);font-weight:600}
-    form .btn:hover{background:#0a1317;transform:translateY(-2px)}
-    .contact .fine{color:#f7d2c6}
     footer{background:var(--charcoal);color:#708085;padding:24px 0 46px;font-size:11px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    @media(max-width:930px){
-      .hero,.offer,.faq,.contact{grid-template-columns:1fr}
-      .visual{min-height:500px}.cards,.proof{grid-template-columns:1fr}.process{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid var(--line)}
+
+    @media(max-width:960px){
+      .listing-layout{grid-template-columns:1fr}
+      .booking-card{position:static;margin-top:24px}
+      .photo-grid{grid-template-columns:1fr;grid-template-rows:240px}
+      .grid-img-2,.grid-img-3,.grid-img-4,.grid-img-5{display:none}
     }
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
       .nav{padding:18px 0}.nav-cta{padding:8px 12px;font-size:11px}
-      .hero{padding:50px 0 70px;gap:34px}.hero h1{font-size:clamp(40px,10vw,60px)}.visual{min-height:360px}.photo-card{inset:0 7px 28px 0}.stamp{padding:16px 17px;max-width:195px}
       section{padding:66px 0}.offer,.contact{padding:30px 22px}.price{font-size:52px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:24px}.contact-shell{padding:66px 0}
     }
   </style>
@@ -154,44 +170,93 @@
       <a class="nav-cta" href="#contact">Claim a launch slot</a>
     </header>
 
-    <main id="top">
-      <section class="wrap hero">
-        <div>
-          <h1><span class="hero-title-line">The experience starts</span> <span class="hero-title-line">at the listing.</span></h1>
-          <div class="subhead-lead">Thoughtful photography, considered positioning, and practical STR expertise for properties that deserve to be experienced.</div>
-          <p>Before a guest arrives, they have already begun their stay. It starts with the first photograph. The way the property is described. The details they notice. The feeling they get when they imagine being there. We bring those moments together to create a listing that feels as considered as the stay itself.</p>
-          <div class="actions">
-            <a class="btn primary" href="#contact">Request a launch slot →</a>
-            <a class="btn ghost" href="#offer">See the founding offer →</a>
+    <div class="wrap" id="top">
+      <!-- Airbnb Top Bar -->
+      <div class="airbnb-header">
+        <h1>The experience starts before they arrive.</h1>
+        <div class="airbnb-actions">
+          <a href="#offer">See founding offer</a>
+          <a href="#contact">Share property</a>
+        </div>
+      </div>
+
+      <!-- Airbnb 5-Photo Bento Grid -->
+      <div class="photo-grid">
+        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten</span></div>
+        <div class="grid-img grid-img-2"></div>
+        <div class="grid-img grid-img-3"></div>
+        <div class="grid-img grid-img-4"></div>
+        <div class="grid-img grid-img-5"></div>
+        <button class="show-all-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"/></svg>
+          Show all photos
+        </button>
+      </div>
+
+      <!-- Airbnb Listing Summary & Booking Card Layout -->
+      <div class="listing-layout">
+        <!-- Left Content -->
+        <div class="listing-main">
+          <h2>Thoughtful photography, considered positioning, and practical STR expertise</h2>
+          <div class="listing-subtext">Designed to help properties command to reach their full potential.</div>
+          <div class="listing-rating">
+            ★ 5.0 · Founding Launch Package Available.
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Host Row -->
+          <div class="host-row">
+            <div class="host-avatar">THA</div>
+            <div class="host-info">
+              <strong>Hosted by The House Atelier</strong>
+              <span>Airbnb Luxe inspection background · STR Optimization Specialist</span>
+            </div>
           </div>
         </div>
-        <div class="visual" aria-label="Stylized luxury vacation rental visual">
-          <div class="photo-card">
-            <div class="image-label">Luxury STR / Launch Visual</div>
-            <div class="sky"></div><div class="horizon"></div>
-            <div class="villa"><div class="glass"><i></i><i></i><i></i></div><div class="door"></div></div>
-            <div class="pool"></div><div class="palm"></div>
+
+        <!-- Right Airbnb Booking Box -->
+        <aside class="booking-card">
+          <div class="booking-price">
+            <strong>US$399</strong> <span>/ founding rate</span>
           </div>
-          <div class="stamp"><strong>Built to convert.</strong><span>Photography + positioning + optimization, coordinated in one focused launch package.</span></div>
-        </div>
-      </section>
-    </main>
+
+          <form onsubmit="submitLead(event)">
+            <div class="booking-box-grid">
+              <div class="booking-field">
+                <div class="booking-label">Listing Details</div>
+                <input required name="url" placeholder="Listing URL" style="color:var(--charcoal);" />
+              </div>
+              <div class="booking-field">
+                <div class="booking-label">Bedrooms</div>
+                <select name="beds" required style="color:var(--charcoal);">
+                  <option value="" disabled selected>Select size</option>
+                  <option>2–3 Bedrooms (US$399)</option>
+                  <option>4–5 Bedrooms (US$499)</option>
+                  <option>6+ Bedrooms (US$649)</option>
+                </select>
+              </div>
+              <div class="booking-field">
+                <div class="booking-label">Contact Email</div>
+                <input required name="email" type="email" placeholder="Your email" style="color:var(--charcoal);" />
+              </div>
+              <div class="booking-field">
+                <div class="booking-label">Owner / Host Name</div>
+                <input required name="name" placeholder="Your name" style="color:var(--charcoal);" />
+              </div>
+            </div>
+
+            <button class="btn-booking" type="submit">Request a launch slot →</button>
+          </form>
+
+          <div class="booking-footnote">Limited launch slots available</div>
+        </aside>
+      </div>
+    </div>
   </div>
 
   <main>
     <section class="wrap">
-      <div class="section-head">
-        <h2>Your guest's first impression happens here.</h2>
-        <p style="font-size:17px;color:var(--muted-dark);max-width:720px;margin:18px 0 0;line-height:1.7;">
-          Before they open the door, they open your listing.<br><br>
-          A vacation rental is more than a collection of rooms. It's the morning coffee on the terrace. The afternoon by the pool. Dinner that lingers a little longer. The feeling of arriving somewhere beautiful and knowing you've chosen well.<br><br>
-          Your listing is where that experience begins. We help you introduce the property with photography, language, and presentation that give guests a glimpse of what it feels like to be there.<br><br>
-          <strong>The goal is simple. Make them want to arrive.</strong>
-        </p>
-      </div>
-    </section>
-
-    <section class="wrap" style="padding-top:0;">
       <div class="section-head">
         <h2>What we do</h2>
       </div>
