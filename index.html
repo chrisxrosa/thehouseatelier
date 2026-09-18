@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The House Atelier helps new short-term rentals launch with premium photography, sharper positioning, and an optimized STR launch audit." />
+  <meta name="description" content="The House Atelier — Professional photography and STR listing optimization for newly launched vacation rentals in Curaçao & Sint Maarten." />
   <meta name="theme-color" content="#122026" />
-  <title>The House Atelier — The guest experience starts here</title>
+  <title>The House Atelier — Launch your STR like it's already a five-star stay.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Lora:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -37,44 +37,70 @@
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
     
     /* NAV */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0 16px;position:relative;z-index:5}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;position:relative;z-index:5}
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
+    .brand span{display:block;font-size:10px;color:var(--muted-dark);font-weight:500;letter-spacing:.05em}
     .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
 
-    /* HERO AIRBNB MOCKUP */
+    /* HERO SECTION */
     .hero-shell{
       background:var(--paper);
       color:var(--ink);
-      padding-bottom:40px;
+      padding-bottom:50px;
       border-bottom:1px solid var(--line);
-      min-height:100vh;
-      display:flex;
-      flex-direction:column;
     }
     .hero-content-wrap{
-      flex:1;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+      padding-top:10px;
+    }
+
+    .hero-tagline{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:11px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--accent);
+      background:rgba(40,107,107,.08);
+      padding:6px 14px;
+      border-radius:999px;
+      margin-bottom:14px;
     }
     
-    /* Listing Title Bar (Fixed clipping on descenders like 'g') */
-    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;margin-bottom:18px;flex-wrap:nowrap;gap:12px}
+    .airbnb-header{margin-bottom:24px}
     .airbnb-header h1{
-      font-size:clamp(20px,3.6vw,42px);
-      line-height:1.25;
+      font-size:clamp(32px,4.5vw,54px);
+      line-height:1.1;
       letter-spacing:-.015em;
-      margin:0;
-      padding-bottom:6px;
+      margin:0 0 12px;
       color:var(--charcoal);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
+      max-width:920px;
     }
-    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:8px;flex-shrink:0}
+    .hero-subhead{
+      font-size:18px;
+      color:var(--muted-dark);
+      max-width:780px;
+      margin:0 0 16px;
+      line-height:1.5;
+    }
+    .hero-cred-bar{
+      display:flex;
+      gap:16px;
+      font-size:13px;
+      font-weight:600;
+      color:var(--charcoal);
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .hero-cred-bar span{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+    }
 
     /* Airbnb 5-Photo Bento Grid */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:205px 205px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:28px}
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:200px 200px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:32px}
     .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden}
     .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
     .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
@@ -86,79 +112,84 @@
     .grid-badge{position:absolute;left:16px;bottom:16px;z-index:2;color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
     .show-all-btn{position:absolute;right:16px;bottom:16px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:8px 15px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
 
-    /* Listing Body Layout */
+    /* HERO OFFER & VALUE PROPOSITION LAYOUT */
     .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
-    .listing-main h2{font-size:24px;margin:0 0 8px;line-height:1.25;color:var(--charcoal)}
-    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal);margin-top:4px}
+    .listing-main h2{font-size:26px;margin:0 0 10px;line-height:1.25;color:var(--charcoal)}
+    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:4px}
     
-    .divider{height:1px;background:var(--line);margin:14px 0}
+    .divider{height:1px;background:var(--line);margin:20px 0}
 
     .host-row{display:flex;align-items:center;gap:14px}
-    .host-avatar{width:42px;height:42px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:13px}
-    .host-info strong{display:block;font-size:14px;color:var(--charcoal)}
+    .host-avatar{width:46px;height:44px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:13px}
+    .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
     .host-info span{font-size:12px;color:var(--muted-dark)}
 
-    /* Airbnb Feature Highlights List */
-    .highlight-list{display:grid;gap:16px;margin-top:12px}
+    .highlight-list{display:grid;gap:16px;margin-top:16px}
     .highlight-item{display:flex;gap:14px;align-items:flex-start}
-    .highlight-icon{width:24px;height:24px;color:var(--charcoal);flex:none;margin-top:3px}
-    .highlight-title{display:block;font-size:24px;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
+    .highlight-icon{width:24px;height:24px;color:var(--accent);flex:none;margin-top:3px}
+    .highlight-title{display:block;font-size:18px;font-weight:600;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
     .highlight-item span{display:block;font-size:13px;color:var(--muted-dark);line-height:1.4}
 
-    /* Hero Booking Card Widget */
-    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
-    .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:12px}
-    .booking-price strong{font-size:24px}
-    .booking-price span{font-size:13px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
+    /* HOUSE ATELIER OFFER CARD (HERO) */
+    .booking-card{background:var(--white);border:2px solid var(--charcoal);border-radius:20px;padding:24px;box-shadow:var(--shadow)}
+    .booking-card-header{margin-bottom:16px}
+    .booking-card-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--terracotta);display:block;margin-bottom:4px}
+    .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:4px}
+    .booking-price strong{font-size:32px;color:var(--charcoal)}
+    .booking-price strike{font-size:16px;color:var(--muted);margin-left:6px;font-weight:400}
+    .booking-urgency{font-size:12px;font-weight:700;color:var(--terracotta);margin-top:4px}
 
-    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
-    .booking-field{padding:7px 11px;background:white}
+    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:16px;margin-bottom:14px}
+    .booking-field{padding:8px 12px;background:white}
     .booking-field:not(:last-child){border-bottom:1px solid var(--line)}
     .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
-    .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:1px 0 0}
+    .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:2px 0 0}
 
-    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:12px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:14px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s ease}
     .btn-booking:hover{background:#b5593c}
-    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:8px}
+    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:10px}
 
     /* GENERAL SECTIONS */
     main{background:var(--ivory)}
     section{padding:80px 0}
     .light-band{background:var(--paper)}
     .section-head{margin-bottom:36px}
-    .section-head h2{font-size:clamp(36px,4.8vw,62px);line-height:1.05;letter-spacing:-.01em;margin:0}
+    .section-head h2{font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 12px}
+    .section-head p{font-size:16px;color:var(--muted-dark);max-width:720px;margin:0;line-height:1.6}
     
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .card{background:var(--paper);border:1px solid var(--line);padding:26px;border-radius:var(--radius);min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:var(--radius);min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
     .num{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.14em}
-    .card h3{font-size:24px;letter-spacing:-.01em;line-height:1.1;margin:32px 0 10px}
+    .card h3{font-size:22px;letter-spacing:-.01em;line-height:1.2;margin:24px 0 10px}
     .card p{color:var(--muted-dark);font-size:14px;margin:0;line-height:1.55}
 
     .dark-band{background:var(--charcoal);color:var(--white)}
     .offer{background:var(--charcoal-2);border:1px solid rgba(255,255,255,.08);border-radius:30px;padding:48px;display:grid;grid-template-columns:1fr .9fr;gap:44px;align-items:center;box-shadow:0 24px 80px rgba(0,0,0,.22)}
-    .offer h2{font-size:clamp(36px,4.5vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px}
+    .offer h2{font-size:clamp(36px,4.5vw,56px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px}
     .offer p{color:#c4cfd2;max-width:590px;font-size:15px}
     .offer-list-title{margin-top:24px;font-size:13px;font-weight:700;color:var(--accent-pale);text-transform:uppercase;letter-spacing:.08em}
     .offer-list{display:grid;gap:10px;margin:14px 0 0;padding:0;list-style:none}
     .offer-list li{display:flex;gap:10px;align-items:flex-start;color:#f0f5f5;font-size:14px}
     .check{width:18px;height:18px;display:grid;place-items:center;border:1px solid #4a6365;border-radius:50%;flex:none;font-size:10px;color:var(--accent-pale)}
     
-    .price-box{background:var(--ivory);color:var(--ink);border-radius:22px;padding:26px}
+    .price-box{background:var(--ivory);color:var(--ink);border-radius:22px;padding:28px}
     .price-box .small{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#6b7370}
-    .price{font-size:56px;line-height:1;letter-spacing:-.02em;margin:10px 0 2px;font-family:'Lora', serif;color:var(--charcoal)}
+    .price{font-size:52px;line-height:1;letter-spacing:-.02em;margin:10px 0 2px;font-family:'Lora', serif;color:var(--charcoal)}
+    .price strike{font-size:24px;color:var(--muted);font-weight:400;margin-left:8px}
     .local{font-size:13px;font-weight:700;color:#636c6b;margin-bottom:6px}
-    .price-note{color:#596262;font-size:12px;margin-bottom:18px}
-    .price-box .btn{width:100%;background:var(--ink);color:var(--white)}
+    .price-note{color:var(--terracotta);font-size:12px;font-weight:700;margin-bottom:18px}
+    .price-box .btn{width:100%;background:var(--terracotta);color:var(--white);border:none;padding:12px;border-radius:10px;font-weight:600;display:block;text-align:center}
+    .price-box .btn:hover{background:#b5593c}
     .tiers-list{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;display:grid;gap:6px;color:var(--charcoal)}
     .fine{font-size:11px;color:#7e8785;line-height:1.45}
 
-    .proof{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .proof{display:grid;grid-template-columns:1fr 1fr;gap:16px}
     .quote{background:#e7ded2;border-radius:24px;padding:34px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
-    .quote p{font-size:28px;line-height:1.18;letter-spacing:-.01em;margin:0;max-width:520px;color:#3a322b}
+    .quote p{font-size:26px;line-height:1.2;letter-spacing:-.01em;margin:0;max-width:520px;color:#3a322b}
     .quote small{color:#6c645b;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-family:'DM Sans', sans-serif;}
     .credentials{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:34px}
-    .credentials h3{font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0 0 14px}
+    .credentials h3{font-size:26px;line-height:1.15;letter-spacing:-.01em;margin:0 0 14px}
     .credentials p{color:var(--muted-dark);font-size:14px;line-height:1.6}
     .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
     .chip{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:white;color:var(--accent-2)}
@@ -166,7 +197,7 @@
     .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .step{padding:24px 16px;border-right:1px solid var(--line)}
     .step:last-child{border-right:0}
-    .step strong{display:block;font-size:17px;margin-bottom:6px;font-family:'Lora', serif; font-weight:500;color:var(--charcoal)}
+    .step strong{display:block;font-size:16px;margin-bottom:6px;font-family:'Lora', serif; font-weight:500;color:var(--charcoal)}
     .step span{font-size:13px;color:var(--muted-dark)}
 
     .faq{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px}
@@ -182,7 +213,7 @@
     .contact-shell{background:var(--charcoal);color:var(--white);padding:80px 0}
     .contact{background:var(--terracotta);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.2)}
     .contact-info-col{display:flex;flex-direction:column;justify-content:space-between}
-    .contact h2{font-size:clamp(36px,4.5vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px;color:white}
+    .contact h2{font-size:clamp(36px,4.5vw,52px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px;color:white}
     .contact p{color:#fbebe4;max-width:480px;font-size:15px;line-height:1.6;margin:0}
 
     form.bottom-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:2;background:rgba(0,0,0,.1);padding:24px;border-radius:20px;border:1px solid rgba(255,255,255,.18)}
@@ -209,12 +240,11 @@
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
     @media(max-width:960px){
-      .hero-shell{min-height:auto}
-      .airbnb-header h1{white-space:normal}
       .listing-layout{grid-template-columns:1fr}
       .booking-card{position:static;margin-top:20px}
       .photo-grid{grid-template-columns:1fr;grid-template-rows:200px}
       .grid-img-2,.grid-img-3,.grid-img-4,.grid-img-5{display:none}
+      .cards,.proof{grid-template-columns:1fr}
       .contact{grid-template-columns:1fr}
       form.bottom-form{grid-template-columns:1fr}
       .form-group-half,.form-group-full,.btn-submit{grid-column:span 1}
@@ -222,30 +252,38 @@
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
       .nav{padding:14px 0}.nav-cta{padding:6px 10px;font-size:11px}
-      section{padding:56px 0}.offer,.contact{padding:26px 18px}.price{font-size:46px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:22px}.contact-shell{padding:56px 0}
+      section{padding:56px 0}.offer,.contact{padding:26px 18px}.price{font-size:42px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:20px}.contact-shell{padding:56px 0}
     }
   </style>
 </head>
 <body>
   <div class="hero-shell">
     <header class="wrap nav">
-      <a class="brand" href="#top">The House Atelier</a>
-      <a class="nav-cta" href="#contact">Claim a launch slot</a>
+      <a class="brand" href="#top">
+        The House Atelier
+        <span>Luxury STR Launch Services · Curaçao & Sint Maarten</span>
+      </a>
+      <a class="nav-cta" href="#contact">Apply for a slot</a>
     </header>
 
     <div class="wrap hero-content-wrap" id="top">
-      <!-- Airbnb Top Bar -->
+      <!-- Hero Value Proposition -->
       <div class="airbnb-header">
-        <h1>The guest experience starts here</h1>
-        <div class="airbnb-actions">
-          <a href="#offer">See founding offer</a>
-          <a href="#contact">Share property</a>
+        <div class="hero-tagline">Exclusively for New & Newly Refreshed Listings</div>
+        <h1>Launch your STR like it's already a five-star stay.</h1>
+        <div class="hero-subhead">Professional photography + STR listing optimization for newly launched short-term rentals in Curaçao & Sint Maarten.</div>
+        <div class="hero-cred-bar">
+          <span>✓ Airbnb Luxe Inspector Background</span>
+          <span>·</span>
+          <span>✓ Former CoveCasa Marketing Manager</span>
+          <span>·</span>
+          <span>✓ STR Optimization Team</span>
         </div>
       </div>
 
       <!-- Airbnb 5-Photo Bento Grid -->
       <div class="photo-grid">
-        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten</span></div>
+        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten & Curaçao</span></div>
         <div class="grid-img grid-img-2"></div>
         <div class="grid-img grid-img-3"></div>
         <div class="grid-img grid-img-4"></div>
@@ -256,13 +294,13 @@
         </button>
       </div>
 
-      <!-- Airbnb Listing Summary & Booking Card Layout -->
+      <!-- Hero Layout (Left Summary, Right Offer Card) -->
       <div class="listing-layout">
         <!-- Left Content -->
         <div class="listing-main">
           <h2>Thoughtful optimization designed to reach your rental's full potential</h2>
           <div class="listing-rating">
-            ★ 5.0 · Founding Launch Package Available.
+            Founding Launch Package · 10 Properties Only
           </div>
 
           <div class="divider"></div>
@@ -278,38 +316,43 @@
 
           <div class="divider"></div>
 
-          <!-- Feature Highlight Rows with Icons -->
+          <!-- Feature Highlight Rows -->
           <div class="highlight-list">
             <div class="highlight-item">
               <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
               <div>
-                <div class="highlight-title">Photography & listing optimization</div>
-                <span>Tailored visual storytelling, photo sequencing, and conversion-focused copy.</span>
+                <div class="highlight-title">Professional Photography</div>
+                <span>Hero shots, room sequencing, and detail images structured specifically to drive booking conversion.</span>
+              </div>
+            </div>
+
+            <div class="highlight-item">
+              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              <div>
+                <div class="highlight-title">STR Listing Optimization</div>
+                <span>Listing title, description, guest positioning, amenity presentation, and photo sequencing audit.</span>
               </div>
             </div>
 
             <div class="highlight-item">
               <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
               <div>
-                <div class="highlight-title">Revenue Optimization</div>
-                <span>Strategic pricing alignment and positioning designed to maximize booking yield.</span>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.91 5.87H20l-4.78 3.47 1.83 5.87L12 14.74l-5.05 3.47 1.83-5.87L4 8.87h6.09z"/></svg>
-              <div>
-                <div class="highlight-title">Experience & Design Consultation</div>
-                <span>Elevating guest-facing hospitality details that create lasting initial impressions.</span>
+                <div class="highlight-title">Built for Conversion</div>
+                <span>Fix your presentation fundamentals before you spend money driving traffic or wait for your first reviews.</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Airbnb Booking Box -->
+        <!-- Right Hero Offer Card -->
         <aside class="booking-card">
-          <div class="booking-price">
-            <strong>US$399</strong> <span>/ founding rate</span>
+          <div class="booking-card-header">
+            <span class="booking-card-badge">Founding Launch Offer</span>
+            <div class="booking-price">
+              <strong>US$399</strong> <strike>US$649</strike>
+            </div>
+            <div class="local">≈ Cg 715 · 2–3 Bedrooms</div>
+            <div class="booking-urgency">⚡ Strictly limited to 10 founding properties</div>
           </div>
 
           <form onsubmit="submitLead(event)">
@@ -319,94 +362,108 @@
                 <input required name="url" placeholder="Listing URL" style="color:var(--charcoal);" />
               </div>
               <div class="booking-field">
-                <div class="booking-label">Bedrooms</div>
+                <div class="booking-label">Property Size</div>
                 <select name="beds" required style="color:var(--charcoal);">
                   <option value="" disabled selected>Select size</option>
-                  <option>2–3 Bedrooms (US$399)</option>
-                  <option>4–5 Bedrooms (US$499)</option>
-                  <option>6+ Bedrooms (US$649)</option>
+                  <option>2–3 Bedrooms (US$399 / Cg 715)</option>
+                  <option>4–5 Bedrooms (US$499 / Cg 895)</option>
+                  <option>6+ Bedrooms (US$649 / Cg 1,160)</option>
                 </select>
               </div>
               <div class="booking-field">
-                <div class="booking-label">Contact Email</div>
-                <input required name="email" type="email" placeholder="Your email" style="color:var(--charcoal);" />
+                <div class="booking-label">Contact Email / WhatsApp</div>
+                <input required name="email" type="text" placeholder="Email or Phone" style="color:var(--charcoal);" />
               </div>
               <div class="booking-field">
-                <div class="booking-label">Phone Number</div>
-                <input required name="phone" type="tel" placeholder="Phone number" style="color:var(--charcoal);" />
-              </div>
-              <div class="booking-field">
-                <div class="booking-label">Owner / Host Name</div>
+                <div class="booking-label">Your Name</div>
                 <input required name="name" placeholder="Your name" style="color:var(--charcoal);" />
               </div>
             </div>
 
-            <button class="btn-booking" type="submit">Request a launch slot →</button>
+            <button class="btn-booking" type="submit">Apply for a founding slot →</button>
           </form>
 
-          <div class="booking-footnote">Limited launch slots available</div>
+          <div class="booking-footnote">No commitment until property is reviewed</div>
         </aside>
       </div>
     </div>
   </div>
 
   <main>
+    <!-- NEW LISTINGS NICHE PROMINENCE SECTION -->
     <section class="wrap">
       <div class="section-head">
-        <h2>What we do</h2>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div>
-            <div class="num">01 / VISUAL</div>
-            <h3>Photograph the feeling, not just the space.</h3>
-            <p>Good property photography shows a guest where they'll sleep. Great property photography helps them imagine waking up there. We create a considered collection of hero, room, amenity, detail, and experience images that captures what makes your property special. Every image has a role. Together, they tell the story of the stay.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div>
-            <div class="num">02 / POSITIONING</div>
-            <h3>Find the story worth telling.</h3>
-            <p>Every property has something that makes it different. Sometimes it's the setting. Sometimes it's the architecture, the view, the privacy, the design, or simply the way the house makes you feel. We identify what makes your property worth choosing and bring that idea into the listing. From the title and description to the details worth putting in front of a guest, we make the story clearer and more compelling. Less noise. More reason to choose you.</p>
-          </div>
-        </article>
-        <article class="card">
-          <div>
-            <div class="num">03 / OPTIMIZATION</div>
-            <h3>Make the listing as thoughtful as the property.</h3>
-            <p>A beautiful home can still have a listing that works against it. Our STR optimization specialist reviews the guest-facing experience from the first impression through to the booking decision. We look at your copy, photography, sequencing, amenities, positioning, and overall presentation. Then we give you clear recommendations for what to change and why. Practical advice. No unnecessary complexity. Just a better foundation for launch.</p>
-          </div>
-        </article>
+        <h2>Just launched? Don't launch halfway.</h2>
+        <p style="font-size:18px;color:var(--charcoal);font-weight:500;margin-top:10px;">
+          New listings don't get a second first impression.
+        </p>
+        <p style="margin-top:12px;">
+          Your first photographs become your first impression. Your first description becomes your property's story. And your initial positioning decision can influence how guests perceive the entire stay before you ever collect a review.<br><br>
+          The House Atelier helps new STR owners get the listing right before they start sending guests to it. Designed specifically for newly launched properties or listings needing a complete presentation reset.
+        </p>
       </div>
     </section>
 
+    <!-- WHAT WE DO -->
+    <section class="light-band">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>What we do</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div>
+              <div class="num">01 / PHOTOGRAPH</div>
+              <h3>Photograph the feeling, not just the space.</h3>
+              <p>Good property photography shows a guest where they'll sleep. Great property photography helps them imagine waking up there. We create a considered collection of hero, room, amenity, detail, and experience images that captures what makes your property special.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div>
+              <div class="num">02 / POSITION</div>
+              <h3>Find the story worth telling.</h3>
+              <p>We look at what makes your property distinctive and turn that into a clear, compelling idea guests can understand. From the title and description to the photo sequence and key selling points, we make your value unmistakable.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div>
+              <div class="num">03 / OPTIMIZE</div>
+              <h3>Turn the listing into a stronger first impression.</h3>
+              <p>Our STR optimization specialist reviews the listing through a conversion lens — covering copy, photo sequencing, amenities, competitive positioning, and guest psychology. You receive clear, actionable recommendations before launch.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDING OFFER SECTION -->
     <section class="dark-band" id="offer">
       <div class="wrap">
         <div class="offer">
           <div>
-            <div class="eyebrow light">The Founding Launch Package</div>
-            <h2>A considered start to your next chapter.</h2>
-            <p>We're opening The House Atelier with a limited number of founding clients. The launch package brings photography, positioning, and STR optimization together for owners preparing a new property for market or giving an existing listing a thoughtful reset.</p>
-            <div class="offer-list-title">Included</div>
+            <div class="eyebrow light">Founding Client Offer</div>
+            <h2>One focused refresh. Built for launch.</h2>
+            <p>We're opening The House Atelier with 10 founding clients across Curaçao & Sint Maarten at an introductory rate while building initial case studies.</p>
+            <div class="offer-list-title">What's Included</div>
             <ul class="offer-list">
               <li><span class="check">✓</span><span>Professional property photography</span></li>
               <li><span class="check">✓</span><span>Complete STR listing audit</span></li>
               <li><span class="check">✓</span><span>Listing title and description recommendations</span></li>
-              <li><span class="check">✓</span><span>Property concept and positioning</span></li>
+              <li><span class="check">✓</span><span>Property concept and positioning strategy</span></li>
               <li><span class="check">✓</span><span>Photo selection and sequencing recommendations</span></li>
               <li><span class="check">✓</span><span>Guest-facing presentation review</span></li>
-              <li><span class="check">✓</span><span>Practical pre-launch recommendations</span></li>
+              <li><span class="check">✓</span><span>Practical pre-launch conversion recommendations</span></li>
             </ul>
           </div>
           <aside class="price-box">
             <div class="small">2–3 bedrooms</div>
-            <div class="price">US$399</div>
-            <div class="local">Approximately Cg 715</div>
-            <div class="price-note">Founding client rate · Limited launch slots</div>
-            <a class="btn" href="#contact">Check availability →</a>
+            <div class="price">US$399 <strike>US$649</strike></div>
+            <div class="local">≈ Cg 715</div>
+            <div class="price-note">⚡ Founding client rate · 10 properties only</div>
+            <a class="btn" href="#contact">Apply for a founding slot →</a>
             <div class="tiers-list">
-              <div><strong>4–5 bedrooms:</strong> US$499 · Approximately Cg 895</div>
-              <div><strong>6+ bedrooms:</strong> US$649 · Approximately Cg 1,160</div>
+              <div><strong>4–5 bedrooms:</strong> US$499 · ≈ Cg 895 <strike>(Reg $799)</strike></div>
+              <div><strong>6+ bedrooms:</strong> US$649 · ≈ Cg 1,160 <strike>(Reg $999)</strike></div>
             </div>
             <div class="fine" style="margin-top:14px">Larger or more complex properties are quoted based on size, travel, and shoot requirements.</div>
           </aside>
@@ -414,22 +471,22 @@
       </div>
     </section>
 
+    <!-- CREDIBILITY & PHILOSOPHY -->
     <section class="wrap">
       <div class="section-head">
-        <h2>The perspective behind the work</h2>
-        <h3>The stay begins long before check-in.</h3>
-        <p style="font-size:17px;color:var(--muted-dark);max-width:680px;margin:0;">We believe the best listings do more than answer questions. They create anticipation. A guest should be able to look through the photographs and already picture themselves there. They should understand what makes the property special without having to search for it. That is the standard we bring to every launch.</p>
+        <h2>The thinking behind the work</h2>
+        <p style="font-size:18px;color:var(--charcoal);margin-top:8px;">The stay begins long before check-in.</p>
       </div>
       <div class="proof">
         <div class="quote">
           <div>
-            <p>“The experience starts at the listing.”</p>
+            <p>“Don't just make the listing prettier. Make the right guest understand why they should book it.”</p>
           </div>
           <small style="margin-top:24px;">The House Atelier philosophy</small>
         </div>
         <div class="credentials">
-          <h3>Built from experience in luxury STR.</h3>
-          <p>The House Atelier brings together experience in luxury short-term rentals, hospitality, and marketing. The founder has worked as an <strong>Airbnb Luxe inspector</strong> and previously served as marketing manager for <strong>CoveCasa</strong>, a luxury short-term rental management company in Sint Maarten. The work is supported by a dedicated STR optimization specialist, combining creative perspective with practical listing expertise.</p>
+          <h3>Built from inside the luxury STR industry.</h3>
+          <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. The founder's background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong> in Sint Maarten. Supported by a dedicated STR optimization specialist.</p>
           <div class="chips">
             <span class="chip">Airbnb Luxe</span>
             <span class="chip">Luxury STR</span>
@@ -441,51 +498,53 @@
       </div>
     </section>
 
+    <!-- PROCESS -->
     <section class="light-band">
       <div class="wrap">
-        <h2 style="font-size:clamp(40px,5.2vw,68px);line-height:1.05;letter-spacing:-.01em;margin:0 0 42px;">How it works</h2>
+        <h2 style="font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 36px;">How it works</h2>
         <div class="process">
-          <div class="step"><strong>01. Book</strong><span>Tell us about the property and share the basic listing details.</span></div>
-          <div class="step"><strong>02. Capture</strong><span>We visit the property and create a considered set of photographs that captures both the space and the experience.</span></div>
-          <div class="step"><strong>03. Refine</strong><span>We review the listing through an STR lens and identify the changes that can strengthen its presentation before launch.</span></div>
-          <div class="step"><strong>04. Welcome your first guests</strong><span>Put the listing live knowing that the first impression has been thoughtfully considered.</span></div>
+          <div class="step"><strong>01. BOOK</strong><span>Tell us about the property and share the basic listing details.</span></div>
+          <div class="step"><strong>02. CAPTURE</strong><span>We visit the property and create a considered set of photographs capturing the space and experience.</span></div>
+          <div class="step"><strong>03. OPTIMIZE</strong><span>Your listing is reviewed through an STR conversion lens with clear recommendations.</span></div>
+          <div class="step"><strong>04. LAUNCH</strong><span>Put the listing live with a stronger visual story, clearer positioning, and higher confidence.</span></div>
         </div>
       </div>
     </section>
 
+    <!-- FAQ -->
     <section class="wrap">
       <div class="faq">
         <div>
-          <div class="eyebrow">Before you book</div>
-          <h2 style="font-size:clamp(40px,5vw,62px);line-height:1.05;letter-spacing:-.01em;margin:0">Frequently Asked.</h2>
+          <div class="eyebrow">Before you apply</div>
+          <h2 style="font-size:clamp(36px,4.5vw,56px);line-height:1.05;letter-spacing:-.01em;margin:0">Frequently Asked.</h2>
         </div>
         <div>
           <details open>
             <summary>Is this only for brand-new listings?</summary>
-            <p>The founding offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings may also be a good fit if the property has outgrown its current photography, positioning, or presentation.</p>
+            <p>The founding offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings may also be a good fit if the property has outgrown its current presentation or needs a visual reset.</p>
           </details>
           <details>
             <summary>How long is the shoot?</summary>
-            <p>Most 2–3 bedroom properties take around 75–90 minutes. Larger or more complex properties receive additional time based on the scope of the shoot.</p>
+            <p>Most 2–3 bedroom properties take around 75–90 minutes. Larger or more complex properties receive additional time based on scope.</p>
           </details>
           <details>
             <summary>What happens after the launch package?</summary>
-            <p>The launch package is designed to give your listing a stronger foundation from the start. For owners who want continued support, we can also work on ongoing listing optimization, pricing strategy, and broader STR performance.</p>
+            <p>The launch package gives your listing a stronger foundation. For owners who want continued support, we also offer ongoing pricing alignment, listing maintenance, and performance optimization.</p>
           </details>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FIXED BOTTOM CONTACT FORM UI -->
+  <!-- BOTTOM CONTACT FORM -->
   <section class="contact-shell" id="contact">
     <div class="wrap">
       <div class="contact">
         <div class="contact-info-col">
           <div>
-            <div class="eyebrow light">Let the experience begin.</div>
-            <h2>Your guests are already imagining their stay.</h2>
-            <p>Let's give them something worth imagining. Tell us a little about the property and we'll take a look. If it feels like the right fit, we'll come back with the next steps for your launch.</p>
+            <div class="eyebrow light">Before you welcome your first guest</div>
+            <h2>Get the listing right.</h2>
+            <p>Tell us a little about the property and share your listing link. If it feels like the right fit, we'll confirm availability for one of our 10 founding client slots in Curaçao or Sint Maarten.</p>
           </div>
         </div>
 
@@ -499,7 +558,7 @@
             <input required name="email" type="email" placeholder="john@example.com" />
           </div>
           <div class="form-group-half">
-            <label>Phone Number</label>
+            <label>Phone Number / WhatsApp</label>
             <input required name="phone" type="tel" placeholder="+1 (721) 000-0000" />
           </div>
           <div class="form-group-half">
@@ -515,11 +574,7 @@
             <label>Listing URL</label>
             <input required name="url" placeholder="https://airbnb.com/h/yourlisting" />
           </div>
-          <div class="form-group-full">
-            <label>Notes / Property Details</label>
-            <textarea name="notes" placeholder="Property location or anything we should know..."></textarea>
-          </div>
-          <button class="btn-submit" type="submit">Request a launch slot →</button>
+          <button class="btn-submit" type="submit">Apply for a founding slot →</button>
         </form>
       </div>
     </div>
@@ -528,7 +583,7 @@
   <footer>
     <div class="wrap footer-inner">
       <span>© 2026 The House Atelier</span>
-      <span>Photography · Positioning · Optimization</span>
+      <span>Luxury STR Launch Services · Curaçao & Sint Maarten</span>
     </div>
   </footer>
 
@@ -552,10 +607,10 @@
         });
 
         if (response.ok) {
-          alert('Thank you! Your request has been submitted successfully.');
+          alert('Thank you! Your application has been submitted successfully.');
           form.reset();
         } else {
-          alert('There was an issue sending your request. Please try again.');
+          alert('There was an issue sending your application. Please try again.');
         }
       } catch (err) {
         console.error('Webhook error:', err);
