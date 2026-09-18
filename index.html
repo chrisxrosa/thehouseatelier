@@ -36,21 +36,35 @@
     h1, h2, h3, .quote p {font-family:'Lora', Georgia, serif; font-weight:400}
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
     
-    /* NAV (Compact for above-the-fold fit) */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:10px 0;position:relative;z-index:5}
+    /* NAV */
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0 16px;position:relative;z-index:5}
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
-    .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:7px 14px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
+    .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
 
-    /* HERO AIRBNB MOCKUP */
-    .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:20px;border-bottom:1px solid var(--line)}
+    /* HERO AIRBNB MOCKUP (EXPANDED TO FILL FULL SCREEN) */
+    .hero-shell{
+      background:var(--paper);
+      color:var(--ink);
+      padding-bottom:40px;
+      border-bottom:1px solid var(--line);
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+    }
+    .hero-content-wrap{
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
     
-    /* Listing Title Bar */
-    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8px;flex-wrap:wrap;gap:10px}
-    .airbnb-header h1{font-size:clamp(28px,3.6vw,46px);line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:850px}
-    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:2px}
+    /* Listing Title Bar with Breathing Room */
+    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-top:16px;margin-bottom:18px;flex-wrap:wrap;gap:12px}
+    .airbnb-header h1{font-size:clamp(34px,4.5vw,58px);line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:850px}
+    .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:4px}
 
-    /* Airbnb 5-Photo Bento Grid (SQUARISH THUMBNAILS) */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:165px 165px;gap:6px;border-radius:18px;overflow:hidden;position:relative;margin-bottom:16px}
+    /* Airbnb 5-Photo Bento Grid (Taller, Squarer Thumbnails) */
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:205px 205px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:28px}
     .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden}
     .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
     .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
@@ -59,19 +73,19 @@
     .grid-img-5{background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)}
     
     .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3))}
-    .grid-badge{position:absolute;left:14px;bottom:14px;z-index:2;color:white;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
-    .show-all-btn{position:absolute;right:14px;bottom:14px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:7px 14px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
+    .grid-badge{position:absolute;left:16px;bottom:16px;z-index:2;color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+    .show-all-btn{position:absolute;right:16px;bottom:16px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:8px 15px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
 
     /* Listing Body Layout */
-    .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:start}
+    .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
-    .listing-main h2{font-size:20px;margin:0 0 6px;line-height:1.25;color:var(--charcoal)}
+    .listing-main h2{font-size:21px;margin:0 0 8px;line-height:1.25;color:var(--charcoal)}
     .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal);margin-top:4px}
     
-    .divider{height:1px;background:var(--line);margin:12px 0}
+    .divider{height:1px;background:var(--line);margin:14px 0}
 
-    .host-row{display:flex;align-items:center;gap:12px}
-    .host-avatar{width:40px;height:40px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:13px}
+    .host-row{display:flex;align-items:center;gap:14px}
+    .host-avatar{width:42px;height:42px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:13px}
     .host-info strong{display:block;font-size:14px;color:var(--charcoal)}
     .host-info span{font-size:12px;color:var(--muted-dark)}
 
@@ -83,18 +97,18 @@
     .highlight-item span{display:block;font-size:12px;color:var(--muted-dark);line-height:1.4;margin-top:1px}
 
     /* Hero Booking Card Widget */
-    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
-    .booking-price{font-size:17px;font-family:'Lora',serif;margin-bottom:10px}
-    .booking-price strong{font-size:22px}
-    .booking-price span{font-size:12px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
+    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:18px;padding:20px;box-shadow:var(--shadow)}
+    .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:12px}
+    .booking-price strong{font-size:24px}
+    .booking-price span{font-size:13px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
 
-    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:10px}
-    .booking-field{padding:7px 10px;background:white}
+    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
+    .booking-field{padding:7px 11px;background:white}
     .booking-field:not(:last-child){border-bottom:1px solid var(--line)}
     .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
     .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:1px 0 0}
 
-    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:11px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:12px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
     .btn-booking:hover{background:#b5593c}
     .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:8px}
 
@@ -185,6 +199,7 @@
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
     @media(max-width:960px){
+      .hero-shell{min-height:auto}
       .listing-layout{grid-template-columns:1fr}
       .booking-card{position:static;margin-top:20px}
       .photo-grid{grid-template-columns:1fr;grid-template-rows:200px}
@@ -207,7 +222,7 @@
       <a class="nav-cta" href="#contact">Claim a launch slot</a>
     </header>
 
-    <div class="wrap" id="top">
+    <div class="wrap hero-content-wrap" id="top">
       <!-- Airbnb Top Bar -->
       <div class="airbnb-header">
         <h1>The guest experience starts here</h1>
