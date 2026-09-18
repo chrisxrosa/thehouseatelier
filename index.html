@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="The House Atelier helps new short-term rentals launch with premium photography, sharper positioning, and an optimized STR launch audit." />
   <meta name="theme-color" content="#122026" />
-  <title>The House Atelier — The guest experience starts here.</title>
+  <title>The House Atelier — The guest experience starts here</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Lora:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -41,7 +41,7 @@
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
     .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 14px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
 
-    /* HERO AIRBNB MOCKUP (COMPACT FOR ABOVE THE FOLD) */
+    /* HERO AIRBNB MOCKUP */
     .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:32px;border-bottom:1px solid var(--line)}
     
     /* Listing Title Bar */
@@ -65,8 +65,9 @@
     /* Listing Body Layout */
     .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
-    .listing-main h2{font-size:22px;margin:0 0 6px;line-height:1.25;color:var(--charcoal)}
-    .listing-subtext{font-size:14px;color:var(--muted-dark);margin-bottom:10px;line-height:1.4}
+    .listing-main h2{font-size:22px;margin:0 0 12px;line-height:1.25;color:var(--charcoal)}
+    .listing-subtext{font-size:14px;color:var(--muted-dark);margin-bottom:12px;line-height:1.6}
+    .listing-subtext span{display:block}
     .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal)}
     
     .divider{height:1px;background:var(--line);margin:16px 0}
@@ -148,7 +149,7 @@
     details[open] summary::after{content:"–"}
     details p{color:var(--muted-dark);font-size:14px;max-width:720px}
 
-    /* BOTTOM CONTACT FORM FIX */
+    /* BOTTOM CONTACT FORM UI */
     .contact-shell{background:var(--charcoal);color:var(--white);padding:80px 0}
     .contact{background:var(--terracotta);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.2)}
     .contact-info-col{display:flex;flex-direction:column;justify-content:space-between}
@@ -204,7 +205,7 @@
     <div class="wrap" id="top">
       <!-- Airbnb Top Bar -->
       <div class="airbnb-header">
-        <h1>The guest experience starts here.</h1>
+        <h1>The guest experience starts here</h1>
         <div class="airbnb-actions">
           <a href="#offer">See founding offer</a>
           <a href="#contact">Share property</a>
@@ -228,8 +229,13 @@
       <div class="listing-layout">
         <!-- Left Content -->
         <div class="listing-main">
-          <h2>thoughtful optimization designed to help vacation rentals reach their full potential.</h2>
-          <div class="listing-subtext">Photography · Audits · Listing Optimization · Revenue Optimization.</div>
+          <h2>Thoughtful optimization designed to reach your rental's full potential</h2>
+          <div class="listing-subtext">
+            <span>Photography</span>
+            <span>Audits</span>
+            <span>Listing Optimization</span>
+            <span>Revenue Optimization</span>
+          </div>
           <div class="listing-rating">
             ★ 5.0 · Founding Launch Package Available.
           </div>
