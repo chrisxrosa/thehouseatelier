@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="The House Atelier helps new short-term rentals launch with premium photography, sharper positioning, and an optimized STR launch audit." />
   <meta name="theme-color" content="#122026" />
-  <title>The House Atelier — The experience starts before they arrive.</title>
+  <title>The House Atelier — The guest experience starts here.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Lora:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
@@ -31,26 +31,26 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--ivory);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    body{margin:0;background:var(--ivory);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
     a{color:inherit;text-decoration:none}
     h1, h2, h3, .quote p {font-family:'Lora', Georgia, serif; font-weight:400}
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
     
     /* NAV */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;position:relative;z-index:5}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;position:relative;z-index:5}
     .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
     .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 14px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
 
-    /* HERO AIRBNB MOCKUP */
-    .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:24px;border-bottom:1px solid var(--line)}
+    /* HERO AIRBNB MOCKUP (COMPACT FOR ABOVE THE FOLD) */
+    .hero-shell{background:var(--paper);color:var(--ink);padding-bottom:32px;border-bottom:1px solid var(--line)}
     
     /* Listing Title Bar */
-    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:10px;flex-wrap:wrap;gap:12px}
-    .airbnb-header h1{font-size:clamp(44px,5.8vw,72px);line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:900px}
+    .airbnb-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:12px;flex-wrap:wrap;gap:12px}
+    .airbnb-header h1{font-size:clamp(32px,4.2vw,56px);line-height:1.05;letter-spacing:-.015em;margin:0;color:var(--charcoal);max-width:850px}
     .airbnb-actions{display:flex;gap:16px;font-size:13px;font-weight:600;text-decoration:underline;margin-bottom:4px}
 
-    /* Airbnb 5-Photo Bento Grid - Compact Above-The-Fold Heights */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:125px 125px;gap:6px;border-radius:18px;overflow:hidden;position:relative;margin-bottom:20px}
+    /* Airbnb 5-Photo Bento Grid */
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:130px 130px;gap:6px;border-radius:18px;overflow:hidden;position:relative;margin-bottom:20px}
     .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden}
     .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
     .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
@@ -58,149 +58,139 @@
     .grid-img-4{background:linear-gradient(135deg,#7e8e8c 0%,#2b3d42 100%)}
     .grid-img-5{background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)}
     
-    /* Grid Visual Accents */
     .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3))}
-    .grid-badge{position:absolute;left:14px;bottom:14px;z-index:2;color:white;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
-    .show-all-btn{position:absolute;right:14px;bottom:14px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:7px 14px;border-radius:8px;box-shadow:0 2px 10px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
+    .grid-badge{position:absolute;left:14px;bottom:14px;z-index:2;color:white;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:6px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
+    .show-all-btn{position:absolute;right:14px;bottom:14px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:7px 14px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1)}
 
-    /* Listing Body (Left details, Right Floating Booking Box) */
+    /* Listing Body Layout */
     .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
     
     .listing-main h2{font-size:22px;margin:0 0 6px;line-height:1.25;color:var(--charcoal)}
-    .listing-subtext{font-size:15px;color:var(--muted-dark);margin-bottom:8px;line-height:1.4}
+    .listing-subtext{font-size:14px;color:var(--muted-dark);margin-bottom:10px;line-height:1.4}
     .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--charcoal)}
     
-    .divider{height:1px;background:var(--line);margin:14px 0}
+    .divider{height:1px;background:var(--line);margin:16px 0}
 
     .host-row{display:flex;align-items:center;gap:14px}
-    .host-avatar{width:46px;height:46px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:15px;flex:none}
+    .host-avatar{width:44px;height:44px;border-radius:50%;background:var(--charcoal);color:var(--white);display:grid;place-items:center;font-weight:700;font-size:14px}
     .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
     .host-info span{font-size:13px;color:var(--muted-dark)}
 
-    /* Airbnb Reservation Widget (Right Column) */
-    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:20px;padding:20px;box-shadow:var(--shadow);position:sticky;top:16px}
-    .booking-price{font-size:20px;font-family:'Lora',serif;margin-bottom:12px}
-    .booking-price strong{font-size:26px}
+    /* Hero Booking Card Widget */
+    .booking-card{background:var(--white);border:1px solid rgba(0,0,0,.12);border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+    .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:12px}
+    .booking-price strong{font-size:24px}
     .booking-price span{font-size:13px;color:var(--muted-dark);font-family:'DM Sans',sans-serif}
 
-    /* Form inside booking widget */
-    .booking-box-grid{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:12px}
+    .booking-box-grid{border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:12px}
     .booking-field{padding:8px 12px;background:white}
     .booking-field:not(:last-child){border-bottom:1px solid var(--line)}
     .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
-    .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:13px;color:var(--charcoal);background:transparent;padding:1px 0 0}
+    .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:1px 0 0}
 
-    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:13px;border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;transition:.2s ease}
+    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:12px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
     .btn-booking:hover{background:#b5593c}
     .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:10px}
 
     /* GENERAL SECTIONS */
     main{background:var(--ivory)}
-    section{padding:96px 0}
+    section{padding:80px 0}
     .light-band{background:var(--paper)}
-    .section-head{margin-bottom:42px}
-    .section-head h2{font-size:clamp(40px,5.2vw,68px);line-height:1.05;letter-spacing:-.01em;margin:0}
+    .section-head{margin-bottom:36px}
+    .section-head h2{font-size:clamp(36px,4.8vw,62px);line-height:1.05;letter-spacing:-.01em;margin:0}
+    
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-    .card{background:var(--paper);border:1px solid var(--line);padding:29px;border-radius:var(--radius);min-height:248px;display:flex;flex-direction:column;justify-content:space-between}
+    .card{background:var(--paper);border:1px solid var(--line);padding:26px;border-radius:var(--radius);min-height:230px;display:flex;flex-direction:column;justify-content:space-between}
     .num{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.14em}
-    .card h3{font-size:26px;letter-spacing:-.01em;line-height:1.1;margin:42px 0 10px}
-    .card p{color:var(--muted-dark);font-size:14px;margin:0;line-height:1.6}
+    .card h3{font-size:24px;letter-spacing:-.01em;line-height:1.1;margin:32px 0 10px}
+    .card p{color:var(--muted-dark);font-size:14px;margin:0;line-height:1.55}
+
     .dark-band{background:var(--charcoal);color:var(--white)}
-    .offer{background:var(--charcoal-2);border:1px solid rgba(255,255,255,.08);border-radius:34px;padding:54px;display:grid;grid-template-columns:1fr .9fr;gap:48px;align-items:center;box-shadow:0 24px 80px rgba(0,0,0,.22)}
-    .offer h2{font-size:clamp(40px,5vw,64px);line-height:1.05;letter-spacing:-.01em;margin:0 0 19px}
-    .offer p{color:#c4cfd2;max-width:590px;font-size:16px}
-    .offer-list-title{margin-top:28px;font-size:14px;font-weight:700;color:var(--accent-pale);text-transform:uppercase;letter-spacing:.08em}
-    .offer-list{display:grid;gap:12px;margin:16px 0 0;padding:0;list-style:none}
-    .offer-list li{display:flex;gap:11px;align-items:flex-start;color:#f0f5f5;font-size:14px}
-    .check{width:20px;height:20px;display:grid;place-items:center;border:1px solid #4a6365;border-radius:50%;flex:none;font-size:11px;color:var(--accent-pale)}
-    .price-box{background:var(--ivory);color:var(--ink);border-radius:25px;padding:30px}
+    .offer{background:var(--charcoal-2);border:1px solid rgba(255,255,255,.08);border-radius:30px;padding:48px;display:grid;grid-template-columns:1fr .9fr;gap:44px;align-items:center;box-shadow:0 24px 80px rgba(0,0,0,.22)}
+    .offer h2{font-size:clamp(36px,4.5vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px}
+    .offer p{color:#c4cfd2;max-width:590px;font-size:15px}
+    .offer-list-title{margin-top:24px;font-size:13px;font-weight:700;color:var(--accent-pale);text-transform:uppercase;letter-spacing:.08em}
+    .offer-list{display:grid;gap:10px;margin:14px 0 0;padding:0;list-style:none}
+    .offer-list li{display:flex;gap:10px;align-items:flex-start;color:#f0f5f5;font-size:14px}
+    .check{width:18px;height:18px;display:grid;place-items:center;border:1px solid #4a6365;border-radius:50%;flex:none;font-size:10px;color:var(--accent-pale)}
+    
+    .price-box{background:var(--ivory);color:var(--ink);border-radius:22px;padding:26px}
     .price-box .small{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#6b7370}
-    .price{font-size:62px;line-height:1;letter-spacing:-.02em;margin:11px 0 2px;font-family:'Lora', serif;color:var(--charcoal)}
-    .local{font-size:14px;font-weight:700;color:#636c6b;margin-bottom:7px}
-    .price-note{color:#596262;font-size:12px;margin-bottom:20px}
+    .price{font-size:56px;line-height:1;letter-spacing:-.02em;margin:10px 0 2px;font-family:'Lora', serif;color:var(--charcoal)}
+    .local{font-size:13px;font-weight:700;color:#636c6b;margin-bottom:6px}
+    .price-note{color:#596262;font-size:12px;margin-bottom:18px}
     .price-box .btn{width:100%;background:var(--ink);color:var(--white)}
-    .tiers-list{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;display:grid;gap:6px;color:var(--charcoal)}
+    .tiers-list{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;display:grid;gap:6px;color:var(--charcoal)}
     .fine{font-size:11px;color:#7e8785;line-height:1.45}
+
     .proof{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .quote{background:#e7ded2;border-radius:28px;padding:38px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
-    .quote p{font-size:30px;line-height:1.18;letter-spacing:-.01em;margin:0;max-width:520px;color:#3a322b}
+    .quote{background:#e7ded2;border-radius:24px;padding:34px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote p{font-size:28px;line-height:1.18;letter-spacing:-.01em;margin:0;max-width:520px;color:#3a322b}
     .quote small{color:#6c645b;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-family:'DM Sans', sans-serif;}
-    .credentials{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:38px}
-    .credentials h3{font-size:32px;line-height:1.1;letter-spacing:-.01em;margin:0 0 15px}
-    .credentials p{color:var(--muted-dark);font-size:15px}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
-    .chip{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:9px 11px;border-radius:999px;background:white;color:var(--accent-2)}
+    .credentials{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:34px}
+    .credentials h3{font-size:28px;line-height:1.1;letter-spacing:-.01em;margin:0 0 14px}
+    .credentials p{color:var(--muted-dark);font-size:14px;line-height:1.6}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+    .chip{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:white;color:var(--accent-2)}
+
     .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .step{padding:28px 18px;border-right:1px solid var(--line)}
+    .step{padding:24px 16px;border-right:1px solid var(--line)}
     .step:last-child{border-right:0}
-    .step strong{display:block;font-size:18px;margin-bottom:8px;font-family:'Lora', serif; font-weight:500;color:var(--charcoal)}
+    .step strong{display:block;font-size:17px;margin-bottom:6px;font-family:'Lora', serif; font-weight:500;color:var(--charcoal)}
     .step span{font-size:13px;color:var(--muted-dark)}
-    .faq{display:grid;grid-template-columns:.78fr 1.22fr;gap:62px}
-    details{border-top:1px solid var(--line);padding:20px 0}
+
+    .faq{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px}
+    details{border-top:1px solid var(--line);padding:18px 0}
     details:last-child{border-bottom:1px solid var(--line)}
     summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px}
     summary::-webkit-details-marker{display:none}
     summary::after{content:"+";font-weight:400;color:#616c6d}
     details[open] summary::after{content:"–"}
     details p{color:var(--muted-dark);font-size:14px;max-width:720px}
-    
-    /* REFINED BOTTOM CONTACT FORM */
-    .contact-shell{background:var(--charcoal);color:var(--white);padding:96px 0}
-    .contact{background:var(--terracotta);border-radius:34px;padding:56px;display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;position:relative;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.25)}
-    .contact h2{font-size:clamp(38px,4.5vw,60px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px;max-width:560px}
-    .contact p{color:#f9e6df;max-width:500px;font-size:16px;line-height:1.6;margin:0}
-    
-    .contact-form{display:grid;gap:12px;position:relative;z-index:2}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    .contact-form input, .contact-form select, .contact-form textarea{
-      width:100%;
-      font-family:inherit;
-      font-size:14px;
-      border:1px solid rgba(255,255,255,.32);
-      background:rgba(255,255,255,.14);
-      color:white;
-      padding:13px 16px;
-      border-radius:14px;
-      outline:none;
-      transition:all .2s ease;
-    }
-    .contact-form input::placeholder, .contact-form textarea::placeholder{color:#f8d8cd}
-    .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus{
-      background:rgba(255,255,255,.22);
-      border-color:rgba(255,255,255,.8);
-      box-shadow:0 0 0 3px rgba(255,255,255,.15);
-    }
-    .contact-form select{color:white}
-    .contact-form option{color:#111;background:white}
-    .contact-form textarea{min-height:92px;resize:vertical}
-    .contact-form .btn-submit{
-      background:var(--charcoal);
-      color:var(--white);
-      font-weight:600;
-      border:none;
-      padding:16px;
-      border-radius:14px;
-      font-size:15px;
-      cursor:pointer;
-      transition:all .2s ease;
-      box-shadow:0 4px 14px rgba(0,0,0,.15);
-    }
-    .contact-form .btn-submit:hover{background:#0a1317;transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.22)}
 
-    footer{background:var(--charcoal);color:#708085;padding:24px 0 46px;font-size:11px}
+    /* BOTTOM CONTACT FORM FIX */
+    .contact-shell{background:var(--charcoal);color:var(--white);padding:80px 0}
+    .contact{background:var(--terracotta);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.2)}
+    .contact-info-col{display:flex;flex-direction:column;justify-content:space-between}
+    .contact h2{font-size:clamp(36px,4.5vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px;color:white}
+    .contact p{color:#fbebe4;max-width:480px;font-size:15px;line-height:1.6;margin:0}
+
+    form.bottom-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:2;background:rgba(0,0,0,.1);padding:24px;border-radius:20px;border:1px solid rgba(255,255,255,.18)}
+    .form-group-full{grid-column:span 2}
+    .form-group-half{grid-column:span 1}
+    
+    form.bottom-form label{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fde0d6;margin-bottom:4px}
+    form.bottom-form input, form.bottom-form select, form.bottom-form textarea{
+      width:100%;font:inherit;font-size:13px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.15);color:white;padding:11px 13px;border-radius:10px;outline:none;transition:.2s ease
+    }
+    form.bottom-form input:focus, form.bottom-form select:focus, form.bottom-form textarea:focus{
+      border-color:white;background:rgba(255,255,255,.22)
+    }
+    form.bottom-form input::placeholder, form.bottom-form textarea::placeholder{color:#f7cca6}
+    form.bottom-form select{color:white}
+    form.bottom-form option{color:#111;background:white}
+    form.bottom-form textarea{min-height:80px;resize:vertical}
+    form.bottom-form .btn-submit{
+      grid-column:span 2;background:var(--charcoal);color:var(--white);font-weight:600;padding:14px;border:none;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s ease;margin-top:4px
+    }
+    form.bottom-form .btn-submit:hover{background:#0a1317;transform:translateY(-2px)}
+
+    footer{background:var(--charcoal);color:#708085;padding:24px 0 42px;font-size:11px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
     @media(max-width:960px){
-      .listing-layout,.contact{grid-template-columns:1fr}
-      .booking-card{position:static;margin-top:24px}
-      .photo-grid{grid-template-columns:1fr;grid-template-rows:220px}
+      .listing-layout{grid-template-columns:1fr}
+      .booking-card{position:static;margin-top:20px}
+      .photo-grid{grid-template-columns:1fr;grid-template-rows:200px}
       .grid-img-2,.grid-img-3,.grid-img-4,.grid-img-5{display:none}
+      .contact{grid-template-columns:1fr}
+      form.bottom-form{grid-template-columns:1fr}
+      .form-group-half,.form-group-full,.btn-submit{grid-column:span 1}
     }
     @media(max-width:580px){
       .wrap{width:min(calc(100% - 24px),var(--max))}
-      .nav{padding:12px 0}.nav-cta{padding:6px 12px;font-size:11px}
-      .form-row{grid-template-columns:1fr}
-      section{padding:66px 0}.offer,.contact{padding:30px 22px}.price{font-size:52px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:24px}.contact-shell{padding:66px 0}
+      .nav{padding:14px 0}.nav-cta{padding:6px 10px;font-size:11px}
+      section{padding:56px 0}.offer,.contact{padding:26px 18px}.price{font-size:46px}.process{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}.quote p{font-size:22px}.contact-shell{padding:56px 0}
     }
   </style>
 </head>
@@ -214,7 +204,7 @@
     <div class="wrap" id="top">
       <!-- Airbnb Top Bar -->
       <div class="airbnb-header">
-        <h1>The experience starts before they arrive.</h1>
+        <h1>The guest experience starts here.</h1>
         <div class="airbnb-actions">
           <a href="#offer">See founding offer</a>
           <a href="#contact">Share property</a>
@@ -265,7 +255,7 @@
           <form onsubmit="submitLead(event)">
             <div class="booking-box-grid">
               <div class="booking-field">
-                <div class="booking-label">Listing Details</div>
+                <div class="booking-label">Listing URL</div>
                 <input required name="url" placeholder="Listing URL" style="color:var(--charcoal);" />
               </div>
               <div class="booking-field">
@@ -278,12 +268,12 @@
                 </select>
               </div>
               <div class="booking-field">
-                <div class="booking-label">Phone Number</div>
-                <input required name="phone" type="tel" placeholder="Your phone number" style="color:var(--charcoal);" />
-              </div>
-              <div class="booking-field">
                 <div class="booking-label">Contact Email</div>
                 <input required name="email" type="email" placeholder="Your email" style="color:var(--charcoal);" />
+              </div>
+              <div class="booking-field">
+                <div class="booking-label">Phone Number</div>
+                <input required name="phone" type="tel" placeholder="Phone number" style="color:var(--charcoal);" />
               </div>
               <div class="booking-field">
                 <div class="booking-label">Owner / Host Name</div>
@@ -427,30 +417,48 @@
     </section>
   </main>
 
+  <!-- FIXED BOTTOM CONTACT FORM UI -->
   <section class="contact-shell" id="contact">
     <div class="wrap">
       <div class="contact">
-        <div>
-          <div class="eyebrow light">Let the experience begin.</div>
-          <h2>Your guests are already imagining their stay.</h2>
-          <p>Let's give them something worth imagining. Tell us a little about the property and we'll take a look. If it feels like the right fit, we'll come back with the next steps for your launch.</p>
+        <div class="contact-info-col">
+          <div>
+            <div class="eyebrow light">Let the experience begin.</div>
+            <h2>Your guests are already imagining their stay.</h2>
+            <p>Let's give them something worth imagining. Tell us a little about the property and we'll take a look. If it feels like the right fit, we'll come back with the next steps for your launch.</p>
+          </div>
         </div>
-        <form class="contact-form" onsubmit="submitLead(event)">
-          <div class="form-row">
-            <input required name="name" placeholder="Your name" />
-            <input required name="email" type="email" placeholder="Email address" />
+
+        <form class="bottom-form" onsubmit="submitLead(event)">
+          <div class="form-group-half">
+            <label>Your Name</label>
+            <input required name="name" placeholder="John Doe" />
           </div>
-          <div class="form-row">
-            <input required name="phone" type="tel" placeholder="Phone number" />
-            <input required name="url" placeholder="Listing URL" />
+          <div class="form-group-half">
+            <label>Email Address</label>
+            <input required name="email" type="email" placeholder="john@example.com" />
           </div>
-          <select name="beds" required>
-            <option value="" disabled selected>Select Bedrooms</option>
-            <option>2–3 Bedrooms</option>
-            <option>4–5 Bedrooms</option>
-            <option>6+ Bedrooms</option>
-          </select>
-          <textarea name="notes" placeholder="Property location or details worth knowing"></textarea>
+          <div class="form-group-half">
+            <label>Phone Number</label>
+            <input required name="phone" type="tel" placeholder="+1 (721) 000-0000" />
+          </div>
+          <div class="form-group-half">
+            <label>Bedrooms</label>
+            <select name="beds" required>
+              <option value="" disabled selected>Select size</option>
+              <option>2–3 Bedrooms</option>
+              <option>4–5 Bedrooms</option>
+              <option>6+ Bedrooms</option>
+            </select>
+          </div>
+          <div class="form-group-full">
+            <label>Listing URL</label>
+            <input required name="url" placeholder="https://airbnb.com/h/yourlisting" />
+          </div>
+          <div class="form-group-full">
+            <label>Notes / Property Details</label>
+            <textarea name="notes" placeholder="Property location or anything we should know..."></textarea>
+          </div>
           <button class="btn-submit" type="submit">Request a launch slot →</button>
         </form>
       </div>
