@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="The House Atellier helps new short-term rentals launch with premium photography, sharper positioning, and an optimized STR launch audit." />
-  <meta name="theme-color" content="#171717" />
+  <meta name="theme-color" content="#fbf8f2" />
   <title>The House Atellier — Launch like a luxury stay.</title>
   <style>
     :root{
@@ -31,22 +31,22 @@
     a{color:inherit;text-decoration:none}
     .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0;position:relative;z-index:5}
-    .brand{font-size:12px;font-weight:900;letter-spacing:.22em;color:#fffdf8}
-    .nav-cta{font-size:12px;font-weight:850;letter-spacing:.04em;border:1px solid rgba(255,255,255,.22);padding:10px 15px;border-radius:999px;color:#fffdf8;background:rgba(255,255,255,.045)}
-    .hero-shell{background:var(--charcoal);color:var(--white);overflow:hidden;position:relative}
-    .hero-shell::before{content:"";position:absolute;inset:-20% auto auto 58%;width:52vw;height:52vw;background:radial-gradient(circle,rgba(216,116,79,.18),transparent 58%);pointer-events:none}
+    .brand{font-size:12px;font-weight:900;letter-spacing:.22em;color:var(--ink)}
+    .nav-cta{font-size:12px;font-weight:850;letter-spacing:.04em;border:1px solid var(--line);padding:10px 15px;border-radius:999px;color:var(--ink);background:rgba(23,23,23,.045)}
+    .hero-shell{background:var(--paper);color:var(--ink);overflow:hidden;position:relative;border-bottom:1px solid var(--line)}
+    .hero-shell::before{content:"";position:absolute;inset:-20% auto auto 58%;width:52vw;height:52vw;background:radial-gradient(circle,rgba(216,116,79,.12),transparent 58%);pointer-events:none}
     .hero{padding:62px 0 90px;display:grid;grid-template-columns:1.02fr .98fr;gap:62px;align-items:center;position:relative;z-index:1}
     .eyebrow{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.19em;color:var(--accent);margin-bottom:18px}
     .eyebrow.light{color:var(--accent-pale)}
-    h1{font-size:clamp(56px,7.2vw,98px);line-height:.92;letter-spacing:-.055em;margin:0 0 25px;font-weight:900;max-width:760px;color:#fffdf8;text-shadow:0 2px 18px rgba(0,0,0,.22)}
-    .hero p{font-size:18px;color:#aaa49c;max-width:650px;margin:0 0 30px}
+    h1{font-size:clamp(56px,7.2vw,98px);line-height:.92;letter-spacing:-.055em;margin:0 0 25px;font-weight:900;max-width:760px;color:var(--ink)}
+    .hero p{font-size:18px;color:var(--muted-dark);max-width:650px;margin:0 0 30px}
     .hero-title-line{display:block}
     .actions{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 21px;border-radius:999px;font-size:13px;font-weight:850;transition:.2s ease;border:1px solid transparent}
-    .btn.primary{background:#fffdf8;color:var(--charcoal);font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.18)}
-    .btn.primary:hover{background:#f4efe6;transform:translateY(-2px)}
-    .btn.ghost{border-color:rgba(255,255,255,.35);color:var(--white);background:rgba(0,0,0,.45);font-weight:800}
-    .btn.ghost:hover{background:rgba(0,0,0,.65);transform:translateY(-2px)}
+    .btn.primary{background:var(--charcoal);color:var(--white);font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+    .btn.primary:hover{background:#000;transform:translateY(-2px)}
+    .btn.ghost{border-color:var(--line);color:var(--ink);background:rgba(23,23,23,.04);font-weight:800}
+    .btn.ghost:hover{background:rgba(23,23,23,.08);transform:translateY(-2px)}
     .visual{position:relative;min-height:590px}
     .photo-card{position:absolute;inset:0 18px 42px 0;border-radius:34px;overflow:hidden;background:linear-gradient(135deg,#5e564c 0%,#2d302d 52%,#1c2320 100%);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.12)}
     .photo-card::before{content:"";position:absolute;inset:0;background:linear-gradient(145deg,rgba(255,255,255,.18),transparent 26%),linear-gradient(180deg,transparent 32%,rgba(0,0,0,.5));z-index:3}
@@ -68,6 +68,7 @@
     .ticker .wrap{padding:15px 0;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;font-size:10px;text-transform:uppercase;letter-spacing:.16em}
     main{background:var(--ivory)}
     section{padding:96px 0}
+    .paper-band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .section-head{margin-bottom:42px}
     .section-head h2{font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0}
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -221,13 +222,15 @@
       </div>
     </section>
 
-    <section class="wrap">
-      <h2 style="font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0 0 42px;">How it Works</h2>
-      <div class="process">
-        <div class="step"><strong>01. Book</strong><span>Share the property and basic listing details.</span></div>
-        <div class="step"><strong>02. Capture</strong><span>Photography and visual content are created on site.</span></div>
-        <div class="step"><strong>03. Optimize</strong><span>The listing is reviewed through an STR conversion lens.</span></div>
-        <div class="step"><strong>04. Get booked</strong><span>Publish your optimized listing and start attracting guest bookings with confidence.</span></div>
+    <section class="paper-band">
+      <div class="wrap">
+        <h2 style="font-size:clamp(40px,5.2vw,68px);line-height:.94;letter-spacing:-.065em;margin:0 0 42px;">How it works.</h2>
+        <div class="process">
+          <div class="step"><strong>01. Book</strong><span>Share the property and basic listing details.</span></div>
+          <div class="step"><strong>02. Capture</strong><span>Photography and visual content are created on site.</span></div>
+          <div class="step"><strong>03. Optimize</strong><span>The listing is reviewed through an STR conversion lens.</span></div>
+          <div class="step"><strong>04. Get booked</strong><span>Publish your optimized listing and start attracting guest bookings with confidence.</span></div>
+        </div>
       </div>
     </section>
 
@@ -235,7 +238,7 @@
       <div class="faq">
         <div>
           <div class="eyebrow">Before you book</div>
-          <h2 style="font-size:clamp(40px,5vw,58px);line-height:.96;letter-spacing:-.06em;margin:0">A few useful answers.</h2>
+          <h2 style="font-size:clamp(40px,5vw,58px);line-height:.96;letter-spacing:-.06em;margin:0">Frequently Asked</h2>
         </div>
         <div>
           <details open><summary>Is this only for brand-new listings?</summary><p>The founding offer is designed primarily for new listings, especially properties with little or no review history. Existing listings may also qualify where the visual presentation clearly needs a reset.</p></details>
