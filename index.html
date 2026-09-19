@@ -158,12 +158,12 @@
     .chip{font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--sage);background:#fffdf8}
 
     /* PROCESS */
-    .process{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .step{padding:28px 20px 30px;border-right:1px solid var(--line)}
     .step:last-child{border-right:0}
     .step-num{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
-    .step h3{font-size:25px;line-height:1.1;margin:20px 0 8px}
-    .step p{font-size:13px;line-height:1.55;color:var(--muted-dark);margin:0;max-width:340px}
+    .step h3{font-size:20px;line-height:1.2;margin:18px 0 8px}
+    .step p{font-size:12.5px;line-height:1.55;color:var(--muted-dark);margin:0}
 
     /* FAQ */
     .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
@@ -204,6 +204,9 @@
       .offer-shell,.story-grid,.contact-grid{grid-template-columns:1fr}
       .faq-grid{grid-template-columns:1fr;gap:28px}
       .pricing-card{max-width:540px}
+      .process{grid-template-columns:repeat(2,1fr)}
+      .step:nth-child(2){border-right:0}
+      .step:nth-child(1),.step:nth-child(2){border-bottom:1px solid var(--line)}
     }
 
     @media(max-width:720px){
@@ -478,19 +481,24 @@
         </div>
         <div class="process">
           <article class="step">
-            <div class="step-num">01 / REVIEW</div>
-            <h3>We look at the listing.</h3>
-            <p>We review the property's presentation through a guest and conversion lens before the shoot.</p>
+            <div class="step-num">01 / AUDIT</div>
+            <h3>We find the opportunity.</h3>
+            <p>We review your listing through a guest, conversion, and revenue lens—identifying what’s working, what’s holding it back, and where the biggest opportunities lie.</p>
           </article>
           <article class="step">
-            <div class="step-num">02 / REFRESH</div>
-            <h3>We capture the property.</h3>
-            <p>We create a focused set of images designed to show the property at its strongest.</p>
+            <div class="step-num">02 / PHOTOGRAPHY</div>
+            <h3>We capture the property at its best.</h3>
+            <p>We create a focused set of professional images designed to showcase the property, highlight its strongest features, and make the right first impression when guests discover the listing.</p>
           </article>
           <article class="step">
-            <div class="step-num">03 / RECOMMEND</div>
-            <h3>You know what to change.</h3>
-            <p>You receive clear recommendations for the listing itself, with optional implementation and ongoing optimization available.</p>
+            <div class="step-num">03 / OPTIMIZE</div>
+            <h3>We build the strategy.</h3>
+            <p>We turn what we see into a clear optimization plan—from photo sequence and listing copy to positioning, amenities, pricing considerations, and the overall guest experience.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">04 / EXECUTE</div>
+            <h3>We put it into action.</h3>
+            <p>Once approved, we implement the agreed changes so the property launches with a stronger, more compelling listing built to compete.</p>
           </article>
         </div>
       </div>
