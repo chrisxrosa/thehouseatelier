@@ -3,752 +3,543 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="The House Atelier — Professional photography and STR listing optimization for vacation rentals in Curaçao." />
-  <meta name="theme-color" content="#122026" />
-  <title>The House Atelier — Launch your STR like an established five-star stay.</title>
+  <meta name="description" content="The House Atelier — premium photography and STR listing optimization for vacation rentals in Curaçao." />
+  <meta name="theme-color" content="#1b2524" />
+  <title>The House Atelier — Launch your STR beautifully.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Lora:ital,wght@0,400..600;1,400..500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
     :root{
-      --charcoal:#122026;
-      --charcoal-2:#192930;
-      --ink:#122026;
-      --ivory:#f5f0e6;
-      --paper:#faf7f2;
-      --white:#fffdfa;
-      --muted:#88847c;
-      --muted-dark:#596266;
-      --line:rgba(18,32,38,.12);
-      --line-light:rgba(255,255,255,.16);
-      --accent:#286b6b;
-      --accent-2:#1d4e4e;
-      --accent-pale:#b2d8d8;
-      --terracotta:#c8684a;
-      --shadow:0 18px 40px rgba(18,32,38,.08);
-      --radius:20px;
+      --bone:#f7f4ec;
+      --bone-2:#fbfaf6;
+      --bone-3:#f0ece2;
+      --charcoal:#1b2524;
+      --charcoal-2:#23312f;
+      --ink:#202927;
+      --muted:#737a76;
+      --muted-dark:#56615d;
+      --line:rgba(27,37,36,.12);
+      --line-dark:rgba(255,255,255,.14);
+      --white:#fffefa;
+      --accent:#b85f47;
+      --accent-dark:#9e4e3a;
+      --accent-soft:#edd8cf;
+      --sage:#315b57;
+      --shadow:0 18px 55px rgba(27,37,36,.08);
+      --shadow-lg:0 28px 90px rgba(27,37,36,.14);
+      --radius:24px;
       --max:1180px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--ivory);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}
+    body{margin:0;background:var(--bone);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+    body.modal-open{overflow:hidden}
     a{color:inherit;text-decoration:none}
-    h1, h2, h3, .quote p, .highlight-title {font-family:'Lora', Georgia, serif; font-weight:400}
-    .wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
-    
+    button,input,select,textarea{font:inherit}
+    h1,h2,h3,.display,.quote p,.listing-title{font-family:'Lora',Georgia,serif;font-weight:400}
+    .wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+
     /* NAV */
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0;position:relative;z-index:5}
-    .brand{font-size:12px;font-weight:700;letter-spacing:.22em;color:var(--ink);text-transform:uppercase}
-    .nav-cta{font-size:12px;font-weight:600;letter-spacing:.03em;border:1px solid var(--line);padding:8px 16px;border-radius:999px;color:var(--ink);background:rgba(18,32,38,.04)}
+    .site-header{background:var(--bone);position:relative;z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+    .brand{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+    .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.28);transition:.2s ease}
+    .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
 
-    /* HERO SECTION */
-    .hero-shell{
-      background:var(--paper);
-      color:var(--ink);
-      padding-bottom:40px;
-      border-bottom:1px solid var(--line);
-    }
-    .hero-content-wrap{
-      padding-top:10px;
-    }
+    /* HERO */
+    .hero{padding:18px 0 76px}
+    .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+    .hero-copy{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:48px;align-items:end;margin:8px 0 24px}
+    .hero h1{font-size:clamp(46px,6.7vw,84px);line-height:.98;letter-spacing:-.04em;margin:8px 0 18px;max-width:850px}
+    .hero-sub{max-width:680px;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
+    .hero-meta{justify-self:end;max-width:280px;border-left:1px solid var(--line);padding-left:24px}
+    .hero-meta p{margin:0 0 13px;font-size:13px;color:var(--muted-dark)}
+    .hero-meta strong{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
 
-    .hero-tagline{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      font-size:11px;
-      font-weight:700;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:var(--accent);
-      background:rgba(40,107,107,.08);
-      padding:6px 14px;
-      border-radius:999px;
-      margin-bottom:12px;
-    }
-    
-    .airbnb-header{margin-bottom:16px}
-    .airbnb-header h1{
-      font-size:clamp(20px,3.6vw,42px);
-      line-height:1.25;
-      letter-spacing:-.015em;
-      margin:0 0 10px;
-      color:var(--charcoal);
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-      padding-bottom:6px;
-    }
-    .hero-cred-bar{
-      display:flex;
-      gap:16px;
-      font-size:13px;
-      font-weight:600;
-      color:var(--charcoal);
-      flex-wrap:wrap;
-      align-items:center;
-    }
-    .hero-cred-bar span{
-      display:inline-flex;
-      align-items:center;
-      gap:6px;
-    }
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:250px 190px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
+    .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
+    .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.25))}
+    .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
+    .grid-img-2{grid-column:2;grid-row:1;background:linear-gradient(135deg,#d49a7b 0%,#8c5f52 100%)}
+    .grid-img-3{grid-column:3;grid-row:1;background:linear-gradient(135deg,#d9d8cb 0%,#758078 100%)}
+    .grid-img-4{grid-column:2;grid-row:2;background:linear-gradient(135deg,#a7b7ae 0%,#435b57 100%)}
+    .grid-img-5{grid-column:3;grid-row:2;background:linear-gradient(135deg,#eadbc9 0%,#8a6d5e 100%)}
+    .grid-badge{position:absolute;z-index:2;left:18px;bottom:18px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:rgba(27,37,36,.64);backdrop-filter:blur(9px);padding:8px 12px;border:1px solid rgba(255,255,255,.16);border-radius:999px}
+    .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer}
+    .show-all-btn:hover{background:#fff}
 
-    /* Airbnb 5-Photo Bento Grid */
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:190px 190px;gap:8px;border-radius:20px;overflow:hidden;position:relative;margin-bottom:28px;cursor:pointer}
-    .grid-img{position:relative;background-size:cover;background-position:center;overflow:hidden;transition:filter .2s ease}
-    .grid-img:hover{filter:brightness(.95)}
-    .grid-img-1{grid-column:1 / 2;grid-row:1 / 3;background:linear-gradient(135deg,#286b6b 0%,#192930 100%)}
-    .grid-img-2{background:linear-gradient(135deg,#c8684a 0%,#596266 100%)}
-    .grid-img-3{background:linear-gradient(135deg,#4e6b6b 0%,#344347 100%)}
-    .grid-img-4{background:linear-gradient(135deg,#7e8e8c 0%,#2b3d42 100%)}
-    .grid-img-5{background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)}
-    
-    .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.3))}
-    .grid-badge{position:absolute;left:16px;bottom:16px;z-index:2;color:white;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:rgba(18,32,38,.65);backdrop-filter:blur(8px);padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2)}
-    .show-all-btn{position:absolute;right:16px;bottom:16px;z-index:3;background:var(--white);color:var(--ink);font-size:12px;font-weight:600;padding:8px 15px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;gap:6px;border:1px solid rgba(0,0,0,.1);cursor:pointer;transition:.2s ease}
-    .show-all-btn:hover{background:#f0ebe1}
+    .hero-offer-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+    .cred-list{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted-dark);font-size:12px;font-weight:600}
+    .cred-list span{display:inline-flex;align-items:center;gap:7px}
+    .cred-list span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .offer-chip{display:flex;align-items:center;gap:16px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}
+    .offer-chip small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+    .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
+    .offer-chip em{font-style:normal;font-size:10px;color:var(--muted-dark);display:block;margin-top:2px}
+    .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
+    .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
-    /* FULLSCREEN LIGHTBOX STYLES */
-    .lightbox-modal{
-      position:fixed;
-      inset:0;
-      background:#ffffff;
-      z-index:9999;
-      display:none;
-      overflow-y:auto;
-      flex-direction:column;
-    }
-    .lightbox-modal.active{
-      display:flex;
-    }
-    .lightbox-top-bar{
-      position:sticky;
-      top:0;
-      background:rgba(255,255,255,0.96);
-      backdrop-filter:blur(10px);
-      z-index:100;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:16px 32px;
-      border-bottom:1px solid var(--line);
-    }
-    .lightbox-back-btn{
-      background:none;
-      border:none;
-      cursor:pointer;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      width:40px;
-      height:40px;
-      border-radius:50%;
-      color:var(--charcoal);
-      transition:background .2s ease;
-    }
-    .lightbox-back-btn:hover{
-      background:rgba(0,0,0,0.06);
-    }
-    .lightbox-actions-right{
-      display:flex;
-      align-items:center;
-      gap:16px;
-    }
-    .lightbox-cta{
-      background:var(--terracotta);
-      color:white;
-      padding:10px 20px;
-      border-radius:999px;
-      font-size:13px;
-      font-weight:600;
-      text-decoration:none;
-      transition:background .2s ease;
-    }
-    .lightbox-cta:hover{
-      background:#b5593c;
-    }
-    .lightbox-body{
-      max-width:840px;
-      width:100%;
-      margin:32px auto 60px;
-      padding:0 20px;
-      display:flex;
-      flex-direction:column;
-      gap:16px;
-    }
-    .lightbox-img-item{
-      border-radius:14px;
-      overflow:hidden;
-      position:relative;
-      box-shadow:0 4px 20px rgba(0,0,0,0.06);
-    }
-    .lightbox-img-full{
-      width:100%;
-      height:480px;
-      background-size:cover;
-      background-position:center;
-    }
-    .lightbox-grid-half{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:16px;
-    }
-    .lightbox-img-half{
-      height:320px;
-      background-size:cover;
-      background-position:center;
-    }
+    /* MODAL */
+    .lightbox{position:fixed;inset:0;background:#fff;z-index:9999;display:none;overflow-y:auto}
+    .lightbox.active{display:block}
+    .lightbox-top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line)}
+    .icon-btn{width:38px;height:38px;border:0;background:transparent;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--charcoal)}
+    .icon-btn:hover{background:#f3f0ea}
+    .lightbox-body{width:min(calc(100% - 40px),900px);margin:26px auto 64px;display:grid;gap:12px}
+    .lb-item{border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+    .lb-full{height:500px}
+    .lb-half-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .lb-half{height:320px}
+    .lb-1{background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
+    .lb-2{background:linear-gradient(135deg,#d49a7b 0%,#8c5f52 100%)}
+    .lb-3{background:linear-gradient(135deg,#d9d8cb 0%,#758078 100%)}
+    .lb-4{background:linear-gradient(135deg,#a7b7ae 0%,#435b57 100%)}
+    .lb-5{background:linear-gradient(135deg,#eadbc9 0%,#8a6d5e 100%)}
+    .lb-6{background:linear-gradient(135deg,#8f9a95 0%,#354744 100%)}
+    .lb-7{background:linear-gradient(135deg,#365754 0%,#171f1e 100%)}
 
-    /* HERO OFFER & VALUE PROPOSITION LAYOUT */
-    .listing-layout{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
-    
-    .listing-rating{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px;color:var(--accent-2);background:rgba(40,107,107,.08);padding:6px 12px;border-radius:6px;width:fit-content;margin-top:0}
-    
-    .divider{height:1px;background:var(--line);margin:18px 0}
+    /* SECTIONS */
+    main{background:var(--bone)}
+    section{padding:88px 0}
+    .band-light{background:var(--bone-2)}
+    .band-dark{background:var(--charcoal);color:var(--white)}
+    .section-heading{max-width:700px;margin-bottom:42px}
+    .section-heading h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
+    .section-heading p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark)}
+    .band-dark .section-heading p{color:#c5cdca}
 
-    .host-row{display:flex;align-items:center;gap:14px}
-    .host-avatar{width:46px;height:46px;border-radius:50%;object-fit:cover;border:1px solid var(--line);background:var(--charcoal);flex:none}
-    .host-info strong{display:block;font-size:15px;color:var(--charcoal)}
-    .host-info span{font-size:12px;color:var(--muted-dark)}
+    /* PILLARS */
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .pillar{padding:28px 24px 30px;border-right:1px solid var(--line)}
+    .pillar:last-child{border-right:0}
+    .pillar-index{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--accent)}
+    .pillar h3{font-size:26px;line-height:1.1;margin:22px 0 9px}
+    .pillar p{font-size:13px;line-height:1.58;color:var(--muted-dark);margin:0;max-width:320px}
 
-    .highlight-list{display:grid;gap:14px;margin-top:14px}
-    .highlight-item{display:flex;gap:14px;align-items:flex-start}
-    .highlight-icon{width:24px;height:24px;color:var(--accent);flex:none;margin-top:3px}
-    .highlight-title{display:block;font-size:24px;font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2px}
-    .highlight-item span{display:block;font-size:13px;color:var(--muted-dark);line-height:1.4}
+    /* OFFER */
+    .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:center}
+    .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
+    .offer-copy{max-width:620px;color:#c7cfcc;font-size:15px;line-height:1.7}
+    .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:11px}
+    .included li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#f1f4f2}
+    .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
+    .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
+    .pricing-card .eyebrow{color:var(--accent-dark)}
+    .price{font-family:'Lora',serif;font-size:56px;line-height:1;letter-spacing:-.03em;margin:12px 0 4px}
+    .price small{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);letter-spacing:0}
+    .price-note{font-size:11px;color:var(--muted-dark);margin-bottom:19px}
+    .price-card-btn{width:100%}
+    .price-tiers{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:grid;gap:8px;font-size:12px;color:var(--muted-dark)}
+    .price-tiers strong{color:var(--ink)}
+    .micro{font-size:10px;color:#848a86;line-height:1.5;margin-top:15px}
 
-    /* HOUSE ATELIER OFFER CARD (HERO) - COMPACT SIDE-BY-SIDE FIELDS */
-    .booking-card{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
-    .booking-card-header{margin-bottom:12px}
-    .booking-card-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--terracotta);display:block;margin-bottom:4px}
-    .booking-price{font-size:18px;font-family:'Lora',serif;margin-bottom:4px}
-    .booking-price strong{font-size:30px;color:var(--charcoal)}
-    .booking-price strike{font-size:15px;color:var(--muted);margin-left:6px;font-weight:400}
-    .booking-urgency{font-size:12px;font-weight:700;color:var(--terracotta);margin-top:2px}
+    /* CREDIBILITY */
+    .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+    .quote-card{background:#eee9df;border:1px solid rgba(27,37,36,.05);border-radius:24px;padding:38px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between}
+    .quote-mark{font-family:'Lora',serif;font-size:68px;line-height:.7;color:var(--accent)}
+    .quote-card p{font-size:29px;line-height:1.16;letter-spacing:-.025em;max-width:550px;margin:0;color:#403a33}
+    .quote-card small{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#786f64}
+    .bio-card{background:var(--bone-2);border:1px solid var(--line);border-radius:24px;padding:34px}
+    .bio-top{display:flex;align-items:center;gap:15px;margin-bottom:18px}
+    .avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;background:var(--charcoal);border:1px solid var(--line);flex:none}
+    .bio-top h3{font-size:24px;line-height:1.1;margin:0 0 3px}
+    .bio-top span{font-size:12px;color:var(--muted-dark)}
+    .bio-card p{font-size:14px;line-height:1.65;color:var(--muted-dark);margin:0}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .chip{font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--sage);background:#fffdf8}
 
-    .booking-box-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      border:1px solid var(--line);
-      border-radius:10px;
-      overflow:hidden;
-      margin-top:14px;
-      margin-bottom:12px;
-    }
-    .booking-field{padding:7px 10px;background:white;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
-    .booking-field.full-width{grid-column:span 2;border-right:none}
-    .booking-field:nth-child(2n){border-right:none}
-    .booking-field:last-child{border-bottom:none}
-    .booking-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--charcoal)}
-    .booking-field select, .booking-field input{border:0;outline:none;width:100%;font-family:inherit;font-size:12px;color:var(--charcoal);background:transparent;padding:2px 0 0}
-
-    .btn-booking{width:100%;background:var(--terracotta);color:white;border:none;padding:13px;border-radius:10px;font-size:13px;font-weight:600;cursor:pointer;transition:.2s ease}
-    .btn-booking:hover{background:#b5593c}
-    .booking-footnote{text-align:center;font-size:11px;color:var(--muted-dark);margin-top:8px}
-
-    /* GENERAL SECTIONS */
-    main{background:var(--ivory)}
-    section{padding:80px 0}
-    .light-band{background:var(--paper)}
-    .section-head{margin-bottom:36px}
-    .section-head h2{font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 12px}
-    .section-head p{font-size:16px;color:var(--muted-dark);margin:0;line-height:1.6}
-    
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .card{background:var(--paper);border:1px solid var(--line);padding:28px;border-radius:var(--radius);min-height:240px;display:flex;flex-direction:column;justify-content:space-between}
-    .num{font-size:10px;font-weight:700;color:var(--accent);letter-spacing:.14em}
-    .card h3{font-size:22px;letter-spacing:-.01em;line-height:1.2;margin:24px 0 10px}
-    .card p{color:var(--muted-dark);font-size:14px;margin:0;line-height:1.55}
-
-    .dark-band{background:var(--charcoal);color:var(--white)}
-    .offer{background:var(--charcoal-2);border:1px solid rgba(255,255,255,.08);border-radius:30px;padding:48px;display:grid;grid-template-columns:1fr .9fr;gap:44px;align-items:center;box-shadow:0 24px 80px rgba(0,0,0,.22)}
-    .offer h2{font-size:clamp(36px,4.5vw,56px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px}
-    .offer p{color:#c4cfd2;max-width:590px;font-size:15px}
-    .offer-list-title{margin-top:24px;font-size:13px;font-weight:700;color:var(--accent-pale);text-transform:uppercase;letter-spacing:.08em}
-    .offer-list{display:grid;gap:10px;margin:14px 0 0;padding:0;list-style:none}
-    .offer-list li{display:flex;gap:10px;align-items:flex-start;color:#f0f5f5;font-size:14px}
-    .check{width:18px;height:18px;display:grid;place-items:center;border:1px solid #4a6365;border-radius:50%;flex:none;font-size:10px;color:var(--accent-pale)}
-    
-    .price-box{background:var(--ivory);color:var(--ink);border-radius:22px;padding:28px}
-    .price-box .small{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#6b7370}
-    .price{font-size:52px;line-height:1;letter-spacing:-.02em;margin:10px 0 2px;font-family:'Lora', serif;color:var(--charcoal)}
-    .price strike{font-size:24px;color:var(--muted);font-weight:400;margin-left:8px}
-    .local{font-size:13px;font-weight:700;color:#636c6b;margin-bottom:6px}
-    .price-note{color:var(--terracotta);font-size:12px;font-weight:700;margin-bottom:18px}
-    .price-box .btn{width:100%;background:var(--terracotta);color:var(--white);border:none;padding:12px;border-radius:10px;font-weight:600;display:block;text-align:center}
-    .price-box .btn:hover{background:#b5593c}
-    .tiers-list{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13px;display:grid;gap:6px;color:var(--charcoal)}
-    .fine{font-size:11px;color:#7e8785;line-height:1.45}
-
-    .proof{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .quote{background:#e7ded2;border-radius:24px;padding:34px;min-height:280px;display:flex;flex-direction:column;justify-content:space-between}
-    .quote p{font-size:26px;line-height:1.2;letter-spacing:-.01em;margin:0;max-width:520px;color:#3a322b}
-    .quote small{color:#6c645b;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;font-family:'DM Sans', sans-serif;}
-    .credentials{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:34px}
-    .credentials h3{font-size:26px;line-height:1.15;letter-spacing:-.01em;margin:0 0 14px}
-    .credentials p{color:var(--muted-dark);font-size:14px;line-height:1.6}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
-    .chip{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:8px 10px;border-radius:999px;background:white;color:var(--accent-2)}
-
+    /* PROCESS */
     .process{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-    .step{padding:24px 16px;border-right:1px solid var(--line)}
+    .step{padding:28px 20px 30px;border-right:1px solid var(--line)}
     .step:last-child{border-right:0}
-    .step strong{display:block;font-size:16px;margin-bottom:6px;font-family:'Lora', serif; font-weight:500;color:var(--charcoal)}
-    .step span{font-size:13px;color:var(--muted-dark)}
+    .step-num{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
+    .step h3{font-size:25px;line-height:1.1;margin:20px 0 8px}
+    .step p{font-size:13px;line-height:1.55;color:var(--muted-dark);margin:0;max-width:340px}
 
-    .faq{display:grid;grid-template-columns:.78fr 1.22fr;gap:56px}
+    /* FAQ */
+    .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
     details{border-top:1px solid var(--line);padding:18px 0}
     details:last-child{border-bottom:1px solid var(--line)}
-    summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:20px}
+    summary{cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:14px;font-weight:600;list-style:none}
     summary::-webkit-details-marker{display:none}
-    summary::after{content:"+";font-weight:400;color:#616c6d}
-    details[open] summary::after{content:"–"}
-    details p{color:var(--muted-dark);font-size:14px;max-width:720px}
+    summary::after{content:'+';font-weight:400;color:var(--muted)}
+    details[open] summary::after{content:'–'}
+    details p{font-size:13px;line-height:1.65;color:var(--muted-dark);max-width:700px;margin:10px 0 2px}
 
-    /* BOTTOM CONTACT FORM UI */
-    .contact-shell{background:var(--charcoal);color:var(--white);padding:80px 0}
-    .contact{background:var(--terracotta);border-radius:28px;padding:48px;display:grid;grid-template-columns:1fr 1.1fr;gap:40px;position:relative;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.2)}
-    .contact-info-col{display:flex;flex-direction:column;justify-content:space-between}
-    .contact h2{font-size:clamp(36px,4.5vw,52px);line-height:1.05;letter-spacing:-.01em;margin:0 0 16px;color:white}
-    .contact p{color:#fbebe4;max-width:480px;font-size:15px;line-height:1.6;margin:0}
+    /* CONTACT */
+    .contact-band{background:var(--charcoal);padding:92px 0 70px}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
+    .contact-band h2{font-size:clamp(44px,5.5vw,70px);line-height:.98;letter-spacing:-.04em;margin:8px 0 16px;font-family:'Lora',serif;font-weight:400;color:#fff}
+    .contact-band p{color:#c6cfcc;font-size:15px;line-height:1.7;max-width:500px;margin:0}
+    .form-card{background:var(--bone-2);border-radius:24px;padding:25px;border:1px solid rgba(255,255,255,.06)}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field-full{grid-column:1 / -1}
+    label{display:block;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted-dark);margin-bottom:5px}
+    input,select,textarea{width:100%;border:1px solid var(--line);background:#fffefb;color:var(--ink);padding:12px 13px;border-radius:11px;outline:none;font-size:13px;transition:.2s ease}
+    input:focus,select:focus,textarea:focus{border-color:rgba(184,95,71,.65);box-shadow:0 0 0 3px rgba(184,95,71,.08)}
+    textarea{min-height:84px;resize:vertical}
+    .submit{grid-column:1 / -1;background:var(--accent);color:#fff;border:0;padding:14px;border-radius:11px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s ease}
+    .submit:hover{background:var(--accent-dark);transform:translateY(-1px)}
+    .form-note{font-size:10px;color:#8a918d;text-align:center;margin:10px 0 0}
 
-    form.bottom-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;position:relative;z-index:2;background:rgba(0,0,0,.1);padding:24px;border-radius:20px;border:1px solid rgba(255,255,255,.18)}
-    .form-group-full{grid-column:span 2}
-    .form-group-half{grid-column:span 1}
-    
-    form.bottom-form label{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fde0d6;margin-bottom:4px}
-    form.bottom-form input, form.bottom-form select, form.bottom-form textarea{
-      width:100%;font:inherit;font-size:13px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.15);color:white;padding:11px 13px;border-radius:10px;outline:none;transition:.2s ease
-    }
-    form.bottom-form input:focus, form.bottom-form select:focus, form.bottom-form textarea:focus{
-      border-color:white;background:rgba(255,255,255,.22)
-    }
-    form.bottom-form input::placeholder, form.bottom-form textarea::placeholder{color:#f7cca6}
-    form.bottom-form select{color:white}
-    form.bottom-form option{color:#111;background:white}
-    form.bottom-form textarea{min-height:80px;resize:vertical}
-    form.bottom-form .btn-submit{
-      grid-column:span 2;background:var(--charcoal);color:var(--white);font-weight:600;padding:14px;border:none;border-radius:10px;cursor:pointer;font-size:14px;transition:.2s ease;margin-top:4px
-    }
-    form.bottom-form .btn-submit:hover{background:#0a1317;transform:translateY(-2px)}
-
-    footer{background:var(--charcoal);color:#708085;padding:24px 0 42px;font-size:11px}
+    footer{background:var(--charcoal);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
     .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 
+    /* MOBILE CTA */
+    .mobile-cta{display:none}
+
+    /* RESPONSIVE */
     @media(max-width:960px){
-      .listing-layout{grid-template-columns:1fr}
-      .booking-card{position:static;margin-top:20px}
-      .photo-grid{grid-template-columns:1fr;grid-template-rows:200px}
-      .grid-img-2,.grid-img-3,.grid-img-4,.grid-img-5{display:none}
-      .cards,.proof{grid-template-columns:1fr}
-      .process{grid-template-columns:1fr}
-      .step{border-right:0!important;border-bottom:1px solid var(--line)}
-      .step:last-child{border-bottom:0}
-      .contact{grid-template-columns:1fr}
-      form.bottom-form{grid-template-columns:1fr}
-      .form-group-half,.form-group-full,.btn-submit{grid-column:span 1}
-      .airbnb-header h1{white-space:normal}
-      .lightbox-img-full{height:300px}
-      .lightbox-img-half{height:200px}
-      .lightbox-grid-half{grid-template-columns:1fr}
-      .booking-box-grid{grid-template-columns:1fr}
-      .booking-field{border-right:none!important}
-      .booking-field.full-width{grid-column:span 1}
+      .hero-copy{grid-template-columns:1fr;gap:18px}
+      .hero-meta{justify-self:start;border-left:0;border-top:1px solid var(--line);padding:14px 0 0;max-width:none}
+      .offer-shell,.story-grid,.contact-grid{grid-template-columns:1fr}
+      .faq-grid{grid-template-columns:1fr;gap:28px}
+      .pricing-card{max-width:540px}
     }
-    @media(max-width:580px){
-      .wrap{width:min(calc(100% - 24px),var(--max))}
-      .nav{padding:14px 0}.nav-cta{padding:6px 10px;font-size:11px}
-      section{padding:56px 0}.offer,.contact{padding:26px 18px}.price{font-size:42px}.quote p{font-size:20px}.contact-shell{padding:56px 0}
+
+    @media(max-width:720px){
+      body{padding-bottom:72px}
+      .wrap{width:min(calc(100% - 28px),var(--max))}
+      .nav{padding:16px 0}
+      .brand{font-size:10px;letter-spacing:.2em}
+      .nav-link{padding:8px 12px;font-size:11px}
+      .hero{padding:10px 0 58px}
+      .hero h1{font-size:clamp(42px,12vw,62px);margin-bottom:15px}
+      .hero-sub{font-size:15px;line-height:1.58}
+      .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:205px 135px 135px;gap:6px;border-radius:20px}
+      .grid-img-1{grid-column:1 / -1;grid-row:1}
+      .grid-img-2{grid-column:1;grid-row:2}
+      .grid-img-3{grid-column:2;grid-row:2}
+      .grid-img-4{grid-column:1;grid-row:3}
+      .grid-img-5{grid-column:2;grid-row:3}
+      .grid-badge{left:12px;bottom:12px;font-size:8px;padding:7px 9px}
+      .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
+      .hero-offer-row{grid-template-columns:1fr;gap:16px;margin-top:22px;padding-top:20px}
+      .cred-list{gap:10px 15px;font-size:11px}
+      .offer-chip{justify-content:space-between}
+      .hero-offer-row .accent-btn{width:100%}
+      .pillars,.process{grid-template-columns:1fr}
+      .pillar,.step{border-right:0;border-bottom:1px solid var(--line);padding:24px 0}
+      .pillar:last-child,.step:last-child{border-bottom:0}
+      section{padding:66px 0}
+      .section-heading{margin-bottom:30px}
+      .section-heading h2{font-size:42px}
+      .pillar h3,.step h3{font-size:24px}
+      .offer-shell{gap:34px}
+      .display{font-size:46px}
+      .pricing-card{padding:24px}
+      .price{font-size:48px}
+      .quote-card{min-height:300px;padding:28px}
+      .quote-card p{font-size:25px}
+      .bio-card{padding:26px}
+      .contact-band{padding:68px 0 50px}
+      .contact-band h2{font-size:48px}
+      form{grid-template-columns:1fr}
+      .field-full,.submit{grid-column:1}
+      .mobile-cta{position:fixed;display:flex;left:12px;right:12px;bottom:12px;z-index:50;background:rgba(27,37,36,.96);backdrop-filter:blur(14px);padding:8px;border:1px solid rgba(255,255,255,.1);border-radius:15px;box-shadow:0 16px 45px rgba(0,0,0,.24);align-items:center;justify-content:space-between;gap:12px}
+      .mobile-cta .mini-price{color:#fff;min-width:0}
+      .mobile-cta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
+      .mobile-cta strong{display:block;font-family:'Lora',serif;font-size:17px;font-weight:400;line-height:1.05}
+      .mobile-cta .accent-btn{padding:10px 13px;border-radius:10px;font-size:11px}
+      .lightbox-body{width:min(calc(100% - 24px),900px);margin-top:14px}
+      .lb-full{height:320px}
+      .lb-half-grid{grid-template-columns:1fr}
+      .lb-half{height:240px}
+    }
+
+    @media(max-width:420px){
+      .hero h1{font-size:43px}
+      .hero-meta{font-size:12px}
+      .grid-img-1{background-position:center}
+      .offer-chip strong{font-size:21px}
+      .price{font-size:43px}
     }
   </style>
 </head>
 <body>
 
-  <!-- FULLSCREEN LIGHTBOX MODAL -->
-  <div class="lightbox-modal" id="lightbox">
-    <div class="lightbox-top-bar">
-      <button class="lightbox-back-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+  <!-- PHOTO LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-top">
+      <button class="icon-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <div class="lightbox-actions-right">
-        <a class="lightbox-cta" href="#contact" onclick="closeLightbox()">Apply for a founding slot →</a>
-      </div>
+      <a class="accent-btn" href="#contact" onclick="closeLightbox()">Apply for a founding slot →</a>
     </div>
-
     <div class="lightbox-body">
-      <!-- Image 1: Main Villa Infinity Pool -->
-      <div class="lightbox-img-item">
-        <div class="lightbox-img-full" style="background:linear-gradient(135deg,#286b6b 0%,#192930 100%)"></div>
+      <div class="lb-item"><div class="lb-full lb-1"></div></div>
+      <div class="lb-half-grid">
+        <div class="lb-item"><div class="lb-half lb-2"></div></div>
+        <div class="lb-item"><div class="lb-half lb-3"></div></div>
       </div>
-
-      <!-- Image 2 & 3: Interiors -->
-      <div class="lightbox-grid-half">
-        <div class="lightbox-img-item">
-          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#c8684a 0%,#596266 100%)"></div>
-        </div>
-        <div class="lightbox-img-item">
-          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#4e6b6b 0%,#344347 100%)"></div>
-        </div>
+      <div class="lb-item"><div class="lb-full lb-4"></div></div>
+      <div class="lb-half-grid">
+        <div class="lb-item"><div class="lb-half lb-5"></div></div>
+        <div class="lb-item"><div class="lb-half lb-6"></div></div>
       </div>
-
-      <!-- Image 4: Chef Kitchen & Island -->
-      <div class="lightbox-img-item">
-        <div class="lightbox-img-full" style="background:linear-gradient(135deg,#7e8e8c 0%,#2b3d42 100%)"></div>
-      </div>
-
-      <!-- Image 5 & 6: Outdoor Terrace & Bathroom -->
-      <div class="lightbox-grid-half">
-        <div class="lightbox-img-item">
-          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#9eb5b3 0%,#1a2d33 100%)"></div>
-        </div>
-        <div class="lightbox-img-item">
-          <div class="lightbox-img-half" style="background:linear-gradient(135deg,#3c4a4a 0%,#1e3032 100%)"></div>
-        </div>
-      </div>
-
-      <!-- Image 7: Evening Ambiance -->
-      <div class="lightbox-img-item">
-        <div class="lightbox-img-full" style="background:linear-gradient(135deg,#213838 0%,#0e191d 100%)"></div>
-      </div>
+      <div class="lb-item"><div class="lb-full lb-7"></div></div>
     </div>
   </div>
 
-  <div class="hero-shell">
-    <header class="wrap nav">
+  <header class="site-header">
+    <div class="wrap nav">
       <a class="brand" href="#top">The House Atelier</a>
-      <a class="nav-cta" href="#contact">Apply for a slot</a>
-    </header>
-
-    <div class="wrap hero-content-wrap" id="top">
-      <!-- Hero Value Proposition -->
-      <div class="airbnb-header">
-        <div class="hero-tagline">Exclusively for new & outdated listings</div>
-        <h1>Launch your STR like an established five-star stay.</h1>
-        <div class="hero-cred-bar">
-          <span>✓ Airbnb Luxe Inspector</span>
-          <span>·</span>
-          <span>✓ Photography Team</span>
-          <span>·</span>
-          <span>✓ STR Optimization Team</span>
-        </div>
-      </div>
-
-      <!-- Airbnb 5-Photo Bento Grid -->
-      <div class="photo-grid" onclick="openLightbox()">
-        <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier in Sint Maarten</span></div>
-        <div class="grid-img grid-img-2"></div>
-        <div class="grid-img grid-img-3"></div>
-        <div class="grid-img grid-img-4"></div>
-        <div class="grid-img grid-img-5"></div>
-        <button class="show-all-btn" onclick="openLightbox(); event.stopPropagation();">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"/></svg>
-          Show all photos
-        </button>
-      </div>
-
-      <!-- Hero Layout (Left Summary, Right Offer Card) -->
-      <div class="listing-layout">
-        <!-- Left Content -->
-        <div class="listing-main">
-          <div class="listing-rating">
-            Founding Launch Package · 10 Properties Only
-          </div>
-
-          <div class="divider"></div>
-
-          <!-- Host Row -->
-          <div class="host-row">
-            <img class="host-avatar" src="https://thehouseatelier.com/assets/operatorimage1" alt="Chris from The House Atelier" />
-            <div class="host-info">
-              <strong>By Chris · The House Atelier</strong>
-              <span>Inspector for Airbnb Luxe · STR Optimization Specialist</span>
-            </div>
-          </div>
-
-          <div class="divider"></div>
-
-          <!-- Feature Highlight Rows -->
-          <div class="highlight-list">
-            <div class="highlight-item">
-              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-              <div>
-                <div class="highlight-title">Professional Photo Refresh</div>
-                <span>Showcase the property at its true potential with high-end, conversion-focused photography.</span>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-              <div>
-                <div class="highlight-title">STR Listing Optimization</div>
-                <span>Refine the title, description, positioning, photo sequence, amenities, and overall guest-facing presentation.</span>
-              </div>
-            </div>
-
-            <div class="highlight-item">
-              <svg class="highlight-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-              <div>
-                <div class="highlight-title">Revenue-Focused Audit</div>
-                <span>Identify missed opportunities and actionable changes designed to help the property compete more effectively and maximize its earning potential.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Hero Offer Card (Side-by-side fields) -->
-        <aside class="booking-card">
-          <div class="booking-card-header">
-            <span class="booking-card-badge">Founding Launch Offer</span>
-            <div class="booking-price">
-              <strong>US$399</strong> <strike>US$649</strike>
-            </div>
-            <div class="local">≈ Cg 715 · 2–3 Bedrooms</div>
-            <div class="booking-urgency">⚡ Strictly limited to 10 founding properties</div>
-          </div>
-
-          <form onsubmit="submitLead(event)">
-            <div class="booking-box-grid">
-              <div class="booking-field">
-                <div class="booking-label">Your Name</div>
-                <input required name="name" placeholder="Your name" style="color:var(--charcoal);" />
-              </div>
-              <div class="booking-field">
-                <div class="booking-label">Contact Email</div>
-                <input required name="email" type="email" placeholder="Your email" style="color:var(--charcoal);" />
-              </div>
-              <div class="booking-field">
-                <div class="booking-label">Phone / WhatsApp</div>
-                <input required name="phone" type="tel" placeholder="Phone / WhatsApp" style="color:var(--charcoal);" />
-              </div>
-              <div class="booking-field">
-                <div class="booking-label">Property Size</div>
-                <select name="beds" required style="color:var(--charcoal);">
-                  <option value="" disabled selected>Select size</option>
-                  <option>2–3 Bedrooms (US$399 / Cg 715)</option>
-                  <option>4–5 Bedrooms (US$499 / Cg 895)</option>
-                  <option>6+ Bedrooms (US$649 / Cg 1,160)</option>
-                </select>
-              </div>
-              <div class="booking-field full-width">
-                <div class="booking-label">Listing Info</div>
-                <input required name="url" placeholder="Listing URL or description" style="color:var(--charcoal);" />
-              </div>
-            </div>
-
-            <button class="btn-booking" type="submit">Apply for a founding slot →</button>
-          </form>
-
-          <div class="booking-footnote">No commitment until property is reviewed</div>
-        </aside>
-      </div>
+      <a class="nav-link" href="#contact">Apply for a slot <span aria-hidden="true">↗</span></a>
     </div>
-  </div>
+  </header>
+
+  <div id="top"></div>
 
   <main>
-    <!-- NEW LISTINGS NICHE PROMINENCE SECTION -->
-    <section class="wrap">
-      <div class="section-head">
-        <h2>Don't launch halfway.</h2>
-        <p style="font-size:18px;color:var(--charcoal);font-weight:500;margin-top:10px;max-width:100%;">
-          New listings don't get a second first impression.
-        </p>
-        <p style="margin-top:12px;max-width:100%;">
-          Your first photographs become your first impression. Your first description becomes your property's story. And your initial positioning decision can influence how guests perceive the entire stay before you ever collect a review.<br><br>
-          The House Atelier helps STR owners in Curaçao get the listing right before they start sending guests to it. Designed specifically for new or outdated properties needing a complete presentation reset.
-        </p>
-      </div>
-    </section>
-
-    <!-- WHAT WE DO -->
-    <section class="light-band">
+    <!-- HERO -->
+    <section class="hero">
       <div class="wrap">
-        <div class="section-head">
-          <h2>What we do</h2>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <div>
-              <div class="num">01 / PHOTOGRAPHY</div>
-              <h3>Photograph the feeling, not just the space.</h3>
-              <p>Good property photography shows a guest where they'll sleep. Great property photography helps them imagine waking up there. We create a considered collection of hero, room, amenity, detail, and experience images captured to convey the full story of the stay.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div>
-              <div class="num">02 / OPTIMIZATION</div>
-              <h3>Listing & Revenue Optimization.</h3>
-              <p>We analyze every conversion lever — from title positioning and photo sequencing to copy narrative and strategic pricing alignment. We refine your presentation so your listing commands attention, communicates value clearly, and drives higher booking yield.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div>
-              <div class="num">03 / CONSULTATION</div>
-              <h3>Guest Experience Consultation.</h3>
-              <p>Great hospitality is built in the details. We evaluate guest-facing touchpoints, amenity choices, presentation standards, and arrival moments to ensure the live experience matches the listing's promise and delivers five-star reviews.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOUNDING OFFER SECTION -->
-    <section class="dark-band" id="offer">
-      <div class="wrap">
-        <div class="offer">
+        <div class="hero-copy">
           <div>
-            <div class="eyebrow light">Founding Client Offer</div>
-            <h2>One focused refresh. Built for launch.</h2>
-            <p>We're opening The House Atelier with 10 founding clients across Curaçao at an introductory rate while building initial case studies.</p>
-            <div class="offer-list-title">What's Included</div>
-            <ul class="offer-list">
+            <div class="eyebrow">For new &amp; outdated STR listings in Curaçao</div>
+            <h1>Launch your STR like an established five-star stay.</h1>
+            <p class="hero-sub">Professional photography and strategic listing optimization, built around how guests actually discover, judge, and book a property.</p>
+          </div>
+          <aside class="hero-meta">
+            <p><strong>Built by hospitality specialists.</strong> Airbnb Luxe inspection experience, luxury STR marketing, and a dedicated optimization team.</p>
+            <p><strong>Designed for the first impression.</strong> Especially useful for new listings with little or no review history.</p>
+          </aside>
+        </div>
+
+        <div class="photo-grid" onclick="openLightbox()" role="button" tabindex="0" aria-label="Open property photo gallery">
+          <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier · Curaçao</span></div>
+          <div class="grid-img grid-img-2"></div>
+          <div class="grid-img grid-img-3"></div>
+          <div class="grid-img grid-img-4"></div>
+          <div class="grid-img grid-img-5"></div>
+          <button class="show-all-btn" onclick="openLightbox();event.stopPropagation();" type="button">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"/></svg>
+            View gallery
+          </button>
+        </div>
+
+        <div class="hero-offer-row">
+          <div class="cred-list" aria-label="Credentials">
+            <span>Airbnb Luxe Inspector</span>
+            <span>Luxury STR Marketing</span>
+            <span>Listing Optimization</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
+            <div class="offer-chip">
+              <div><small>Founding launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
+            </div>
+            <a class="accent-btn" href="#offer">See what's included →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE PROBLEM -->
+    <section class="band-light">
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">The first impression matters</div>
+          <h2>Don't launch halfway.</h2>
+          <p>A new listing does not get a second first impression. Your photography, title, description, positioning, and overall presentation all shape how a guest perceives the stay before you ever collect a review.</p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-index">01 / PHOTOGRAPHY</div>
+            <h3>Make the property feel bookable.</h3>
+            <p>Capture the hero moments, spaces, details, and amenities that help the right guest imagine being there.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-index">02 / OPTIMIZATION</div>
+            <h3>Make the listing make sense.</h3>
+            <p>Refine the title, story, photo sequence, amenities, positioning, and guest-facing presentation.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-index">03 / OPPORTUNITY</div>
+            <h3>Find what the current listing misses.</h3>
+            <p>Identify practical changes that can strengthen the property's presentation and booking potential.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section class="band-dark" id="offer">
+      <div class="wrap">
+        <div class="offer-shell">
+          <div>
+            <div class="eyebrow" style="color:#d7a08e">Founding client offer</div>
+            <div class="display">One focused refresh.<br>Built for launch.</div>
+            <p class="offer-copy">We're opening The House Atelier with a limited number of founding properties in Curaçao. The goal is simple: make the listing look, read, and feel like the stay deserves.</p>
+            <ul class="included">
               <li><span class="check">✓</span><span>Professional property photography</span></li>
               <li><span class="check">✓</span><span>Complete STR listing audit</span></li>
-              <li><span class="check">✓</span><span>Listing title and description recommendations</span></li>
-              <li><span class="check">✓</span><span>Property concept and positioning strategy</span></li>
-              <li><span class="check">✓</span><span>Photo selection and sequencing recommendations</span></li>
+              <li><span class="check">✓</span><span>Title + description recommendations</span></li>
+              <li><span class="check">✓</span><span>Property concept + positioning strategy</span></li>
+              <li><span class="check">✓</span><span>Photo selection + sequencing recommendations</span></li>
               <li><span class="check">✓</span><span>Guest-facing presentation review</span></li>
-              <li><span class="check">✓</span><span>Practical pre-launch conversion recommendations</span></li>
             </ul>
           </div>
-          <aside class="price-box">
-            <div class="small">2–3 bedrooms</div>
-            <div class="price">US$399 <strike>US$649</strike></div>
-            <div class="local">≈ Cg 715</div>
-            <div class="price-note">⚡ Founding client rate · 10 properties only</div>
-            <a class="btn" href="#contact">Apply for a founding slot →</a>
-            <div class="tiers-list">
-              <div><strong>4–5 bedrooms:</strong> US$499 · ≈ Cg 895 <strike>(Reg $799)</strike></div>
-              <div><strong>6+ bedrooms:</strong> US$649 · ≈ Cg 1,160 <strike>(Reg $999)</strike></div>
+
+          <aside class="pricing-card">
+            <div class="eyebrow">2–3 bedrooms</div>
+            <div class="price">US$399</div>
+            <div class="price-note">≈ Cg 715 · founding client rate · 10 properties only</div>
+            <a class="accent-btn price-card-btn" href="#contact">Apply for a founding slot →</a>
+            <div class="price-tiers">
+              <div><strong>4–5 bedrooms:</strong> US$499 · ≈ Cg 895</div>
+              <div><strong>6+ bedrooms:</strong> US$649 · ≈ Cg 1,160</div>
             </div>
-            <div class="fine" style="margin-top:14px">Larger or more complex properties are quoted based on size, travel, and shoot requirements.</div>
+            <div class="micro">Larger or more complex properties are quoted based on scope, travel, and shoot requirements.</div>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- CREDIBILITY & PHILOSOPHY -->
-    <section class="wrap">
-      <div class="section-head">
-        <h2>The thinking behind the work</h2>
-        <p style="font-size:18px;color:var(--charcoal);margin-top:8px;">The stay begins long before check-in.</p>
-      </div>
-      <div class="proof">
-        <div class="quote">
-          <div>
-            <p>“Don't just make the listing prettier. Make the right guest understand why they should book it.”</p>
-          </div>
-          <small style="margin-top:24px;">The House Atelier philosophy</small>
+    <!-- CREDIBILITY -->
+    <section>
+      <div class="wrap">
+        <div class="section-heading">
+          <div class="eyebrow">Hospitality is the lens</div>
+          <h2>Not just a photographer.</h2>
+          <p>The work combines visual presentation with the operational and marketing perspective that helps a vacation rental compete.</p>
         </div>
-        <div class="credentials">
-          <div style="display:flex;align-items:center;gap:16px;margin-bottom:18px;">
-            <img src="https://thehouseatelier.com/assets/operatorimage2" alt="Chris - Founder of The House Atelier" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:1px solid var(--line);flex:none;" />
-            <div>
-              <h3 style="margin:0;font-size:22px;line-height:1.2;">Built by Chris & The House Atelier Team</h3>
-              <span style="font-size:13px;color:var(--muted-dark);font-weight:500;">Luxury Short-Term Rental Specialists</span>
-            </div>
+
+        <div class="story-grid">
+          <div class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Don't just make the listing prettier. Make the right guest understand why they should book it.</p>
+            <small>The House Atelier philosophy</small>
           </div>
-          <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. Founded by Chris, whose background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
-          <div class="chips">
-            <span class="chip">Airbnb Luxe</span>
-            <span class="chip">Luxury STR</span>
-            <span class="chip">Hospitality</span>
-            <span class="chip">Marketing</span>
-            <span class="chip">Optimization</span>
+          <div class="bio-card">
+            <div class="bio-top">
+              <img class="avatar" src="https://thehouseatelier.com/assets/operatorimage2" alt="Chris — Founder of The House Atelier" />
+              <div>
+                <h3>Built by Chris &amp; The House Atelier Team</h3>
+                <span>Luxury short-term rental specialists</span>
+              </div>
+            </div>
+            <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. Founded by Chris, whose background includes serving as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
+            <div class="chips">
+              <span class="chip">Airbnb Luxe</span>
+              <span class="chip">Luxury STR</span>
+              <span class="chip">Hospitality</span>
+              <span class="chip">Marketing</span>
+              <span class="chip">Optimization</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PROCESS -->
-    <section class="light-band">
+    <section class="band-light">
       <div class="wrap">
-        <h2 style="font-size:clamp(36px,4.8vw,58px);line-height:1.05;letter-spacing:-.01em;margin:0 0 36px;">How it works</h2>
+        <div class="section-heading">
+          <div class="eyebrow">A simple process</div>
+          <h2>From listing to launch-ready.</h2>
+        </div>
         <div class="process">
-          <div class="step">
-            <strong>01. BOOK</strong>
-            <span>Tell us about your property and share your basic listing or property details.</span>
-          </div>
-          <div class="step">
-            <strong>02. AUDIT</strong>
-            <span>We review your listing through a guest conversion lens, evaluating copy, photo sequencing, amenities, and positioning.</span>
-          </div>
-          <div class="step">
-            <strong>03. OPTIMIZE</strong>
-            <span>Receive clear recommendations alongside professional property photography tailored to elevate presentation and drive bookings.</span>
-          </div>
+          <article class="step">
+            <div class="step-num">01 / REVIEW</div>
+            <h3>We look at the listing.</h3>
+            <p>We review the property's presentation through a guest and conversion lens before the shoot.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">02 / REFRESH</div>
+            <h3>We capture the property.</h3>
+            <p>We create a focused set of images designed to show the property at its strongest.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">03 / RECOMMEND</div>
+            <h3>You know what to change.</h3>
+            <p>You receive clear recommendations for the listing itself, with optional implementation and ongoing optimization available.</p>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- FAQ -->
-    <section class="wrap">
-      <div class="faq">
-        <div>
-          <div class="eyebrow">Before you apply</div>
-          <h2 style="font-size:clamp(36px,4.5vw,56px);line-height:1.05;letter-spacing:-.01em;margin:0">Frequently Asked.</h2>
+    <section>
+      <div class="wrap">
+        <div class="faq-grid">
+          <div class="section-heading" style="margin-bottom:0">
+            <div class="eyebrow">Before you apply</div>
+            <h2>Frequently asked.</h2>
+          </div>
+          <div>
+            <details open>
+              <summary>Is this only for brand-new listings?</summary>
+              <p>The founding offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
+            </details>
+            <details>
+              <summary>What happens after I apply?</summary>
+              <p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected to secure the shoot; the remaining balance is due on delivery.</p>
+            </details>
+            <details>
+              <summary>How long is the shoot?</summary>
+              <p>Most 2–3 bedroom properties take roughly 75–90 minutes. Larger or more complex properties receive additional time based on scope.</p>
+            </details>
+            <details>
+              <summary>Can you implement the recommendations too?</summary>
+              <p>Yes. Implementation and ongoing STR optimization are available separately for owners who want the strategy handled for them.</p>
+            </details>
+          </div>
         </div>
-        <div>
-          <details open>
-            <summary>Is this only for brand-new listings?</summary>
-            <p>The founding offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings may also be a good fit if the property has outgrown its current presentation or needs a visual reset.</p>
-          </details>
-          <details>
-            <summary>How long is the shoot?</summary>
-            <p>Most 2–3 bedroom properties take around 75–90 minutes. Larger or more complex properties receive additional time based on scope.</p>
-          </details>
-          <details>
-            <summary>What happens after the launch package?</summary>
-            <p>The launch package gives your listing a stronger foundation. For owners who want continued support, we also offer ongoing pricing alignment, listing maintenance, and performance optimization.</p>
-          </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact-band" id="contact">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <div class="eyebrow" style="color:#d7a08e">Before you welcome your first guest</div>
+            <h2>Get the listing right.</h2>
+            <p>Tell us a little about the property and share your listing link. If it looks like a fit, we'll confirm availability for one of the founding client slots in Curaçao.</p>
+          </div>
+
+          <div class="form-card">
+            <form onsubmit="submitLead(event)">
+              <div>
+                <label for="name">Your name</label>
+                <input id="name" required name="name" placeholder="Your name" />
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input id="email" required name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div>
+                <label for="phone">Phone / WhatsApp</label>
+                <input id="phone" required name="phone" type="tel" placeholder="+599 ..." />
+              </div>
+              <div>
+                <label for="beds">Bedrooms</label>
+                <select id="beds" required name="beds">
+                  <option value="" disabled selected>Select size</option>
+                  <option>2–3 Bedrooms</option>
+                  <option>4–5 Bedrooms</option>
+                  <option>6+ Bedrooms</option>
+                </select>
+              </div>
+              <div class="field-full">
+                <label for="url">Listing URL</label>
+                <input id="url" required name="url" placeholder="https://airbnb.com/..." />
+              </div>
+              <div class="field-full">
+                <label for="notes">Anything we should know?</label>
+                <textarea id="notes" name="notes" placeholder="Property location, launch timing, or anything else useful."></textarea>
+              </div>
+              <button class="submit" type="submit">Apply for a founding slot →</button>
+            </form>
+            <p class="form-note">No commitment until the property is reviewed and availability is confirmed.</p>
+          </div>
         </div>
       </div>
     </section>
   </main>
-
-  <!-- BOTTOM CONTACT FORM -->
-  <section class="contact-shell" id="contact">
-    <div class="wrap">
-      <div class="contact">
-        <div class="contact-info-col">
-          <div>
-            <div class="eyebrow light">Before you welcome your first guest</div>
-            <h2>Get the listing right.</h2>
-            <p>Tell us a little about the property and share your listing link. If it feels like the right fit, we'll confirm availability for one of our 10 founding client slots in Curaçao.</p>
-          </div>
-        </div>
-
-        <form class="bottom-form" onsubmit="submitLead(event)">
-          <div class="form-group-half">
-            <label>Your Name</label>
-            <input required name="name" placeholder="John Doe" />
-          </div>
-          <div class="form-group-half">
-            <label>Email Address</label>
-            <input required name="email" type="email" placeholder="john@example.com" />
-          </div>
-          <div class="form-group-half">
-            <label>Phone Number / WhatsApp</label>
-            <input required name="phone" type="tel" placeholder="+1 (721) 000-0000" />
-          </div>
-          <div class="form-group-half">
-            <label>Bedrooms</label>
-            <select name="beds" required>
-              <option value="" disabled selected>Select size</option>
-              <option>2–3 Bedrooms</option>
-              <option>4–5 Bedrooms</option>
-              <option>6+ Bedrooms</option>
-            </select>
-          </div>
-          <div class="form-group-full">
-            <label>Listing Info</label>
-            <input required name="url" placeholder="Listing URL or description" />
-          </div>
-          <button class="btn-submit" type="submit">Apply for a founding slot →</button>
-        </form>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <div class="wrap footer-inner">
@@ -757,44 +548,51 @@
     </div>
   </footer>
 
+  <div class="mobile-cta">
+    <div class="mini-price"><small>Founding rate</small><strong>US$399 · Cg 715</strong></div>
+    <a class="accent-btn" href="#contact">Apply →</a>
+  </div>
+
   <script>
     function openLightbox(){
-      document.getElementById('lightbox').classList.add('active');
-      document.body.style.overflow = 'hidden';
+      const modal=document.getElementById('lightbox');
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden','false');
+      document.body.classList.add('modal-open');
     }
 
     function closeLightbox(){
-      document.getElementById('lightbox').classList.remove('active');
-      document.body.style.overflow = '';
+      const modal=document.getElementById('lightbox');
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden','true');
+      document.body.classList.remove('modal-open');
     }
+
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape') closeLightbox();
+    });
 
     async function submitLead(e){
       e.preventDefault();
-      const form = e.target;
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
+      const form=e.target;
+      const payload=Object.fromEntries(new FormData(form).entries());
+      const webhookUrl='https://hook.make.com/YOUR_WEBHOOK_ID';
 
-      // Replace this URL with your Make.com Webhook URL
-      const webhookUrl = 'https://hook.make.com/YOUR_WEBHOOK_ID';
-
-      try {
-        const response = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(payload)
+      try{
+        const response=await fetch(webhookUrl,{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(payload)
         });
-
-        if (response.ok) {
-          alert('Thank you! Your application has been submitted successfully.');
+        if(response.ok){
+          alert('Thank you — your application has been submitted.');
           form.reset();
-        } else {
-          alert('There was an issue sending your application. Please try again.');
+        }else{
+          alert('There was an issue sending the application. Please try again.');
         }
-      } catch (err) {
-        console.error('Webhook error:', err);
-        alert('Could not submit form. Please check your network connection.');
+      }catch(err){
+        console.error(err);
+        alert('Could not submit the form. Please check your connection or contact us directly.');
       }
     }
   </script>
