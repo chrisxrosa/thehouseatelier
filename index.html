@@ -58,7 +58,8 @@
     .hero-meta p{margin:0 0 13px;font-size:13px;color:var(--muted-dark)}
     .hero-meta strong{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
 
-    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:250px 190px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
+    /* Equalized row height to make right tiles square and uniform */
+    .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
     .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
     .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.25))}
     .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
@@ -209,7 +210,7 @@
       .hero h1{font-size:clamp(42px,12vw,62px);margin-bottom:15px}
       .desktop-break{display:none}
       .hero-sub{font-size:15px;line-height:1.58}
-      .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:205px 135px 135px;gap:6px;border-radius:20px}
+      .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:205px 145px 145px;gap:6px;border-radius:20px}
       .grid-img-1{grid-column:1 / -1;grid-row:1}
       .grid-img-2{grid-column:1;grid-row:2}
       .grid-img-3{grid-column:2;grid-row:2}
@@ -266,7 +267,7 @@
       <button class="icon-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
       </button>
-      <a class="accent-btn" href="#contact" onclick="closeLightbox()">Apply for a founding slot →</a>
+      <a class="accent-btn" href="#contact" onclick="closeLightbox()">Apply for an inaugural slot →</a>
     </div>
     <div class="lightbox-body">
       <div class="lb-item"><div class="lb-full lb-1"></div></div>
@@ -321,10 +322,10 @@
         </div>
 
         <div class="hero-offer-row">
-          <div class="hero-note"><span class="hero-note-dot"></span>Now accepting 10 founding properties in Curaçao.</div>
+          <div class="hero-note"><span class="hero-note-dot"></span>Now accepting 10 inaugural launch properties in Curaçao.</div>
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
             <div class="offer-chip">
-              <div><small>Founding launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
+              <div><small>Inaugural launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
             </div>
             <a class="accent-btn" href="#offer">See what's included →</a>
           </div>
@@ -366,9 +367,9 @@
       <div class="wrap">
         <div class="offer-shell">
           <div>
-            <div class="eyebrow" style="color:#d7a08e">Founding client offer</div>
+            <div class="eyebrow" style="color:#d7a08e">Inaugural Launch Offer</div>
             <div class="display">One focused refresh.<br>Built for launch.</div>
-            <p class="offer-copy">We're opening The House Atelier with a limited number of founding properties in Curaçao. The goal is simple: make the listing look, read, and feel like the stay deserves.</p>
+            <p class="offer-copy">We're opening The House Atelier with a limited number of inaugural properties in Curaçao. The goal is simple: make the listing look, read, and feel like the stay deserves.</p>
             <ul class="included">
               <li><span class="check">✓</span><span>Professional property photography</span></li>
               <li><span class="check">✓</span><span>Complete STR listing audit</span></li>
@@ -382,8 +383,8 @@
           <aside class="pricing-card">
             <div class="eyebrow">2–3 bedrooms</div>
             <div class="price">US$399</div>
-            <div class="price-note">≈ Cg 715 · founding client rate · 10 properties only</div>
-            <a class="accent-btn price-card-btn" href="#contact">Apply for a founding slot →</a>
+            <div class="price-note">≈ Cg 715 · inaugural launch rate · 10 properties only</div>
+            <a class="accent-btn price-card-btn" href="#contact">Apply for an inaugural slot →</a>
             <div class="price-tiers">
               <div><strong>4–5 bedrooms:</strong> US$499 · ≈ Cg 895</div>
               <div><strong>6+ bedrooms:</strong> US$649 · ≈ Cg 1,160</div>
@@ -468,7 +469,7 @@
           <div>
             <details open>
               <summary>Is this only for brand-new listings?</summary>
-              <p>The founding offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
+              <p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
             </details>
             <details>
               <summary>What happens after I apply?</summary>
@@ -494,7 +495,7 @@
           <div>
             <div class="eyebrow" style="color:#d7a08e">Before you welcome your first guest</div>
             <h2>Get the listing right.</h2>
-            <p>Tell us a little about the property and share your listing link. If it looks like a fit, we'll confirm availability for one of the founding client slots in Curaçao.</p>
+            <p>Tell us a little about the property and share your listing link. If it looks like a fit, we'll confirm availability for one of the inaugural slots in Curaçao.</p>
           </div>
 
           <div class="form-card">
@@ -528,7 +529,7 @@
                 <label for="notes">Anything we should know?</label>
                 <textarea id="notes" name="notes" placeholder="Property location, launch timing, or anything else useful."></textarea>
               </div>
-              <button class="submit" type="submit">Apply for a founding slot →</button>
+              <button class="submit" type="submit">Apply for an inaugural slot →</button>
             </form>
             <p class="form-note">No commitment until the property is reviewed and availability is confirmed.</p>
           </div>
@@ -545,7 +546,7 @@
   </footer>
 
   <div class="mobile-cta">
-    <div class="mini-price"><small>Founding rate</small><strong>US$399 · Cg 715</strong></div>
+    <div class="mini-price"><small>Inaugural rate</small><strong>US$399 · Cg 715</strong></div>
     <a class="accent-btn" href="#contact">Apply →</a>
   </div>
 
