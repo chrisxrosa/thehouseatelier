@@ -58,7 +58,7 @@
     .hero-meta p{margin:0 0 13px;font-size:13px;color:var(--muted-dark)}
     .hero-meta strong{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
 
-    /* Equalized row height to make right tiles square and uniform */
+    /* PHOTO GRID */
     .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
     .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
     .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.25))}
@@ -116,7 +116,8 @@
     .pillar{padding:28px 24px 30px;border-right:1px solid var(--line)}
     .pillar:last-child{border-right:0}
     .pillar-index{font-size:10px;letter-spacing:.14em;font-weight:700;color:var(--accent)}
-    .pillar h3{font-size:24px;line-height:1.15;margin:22px 0 9px}
+    .pillar h3{font-size:22px;line-height:1.15;margin:18px 0 8px}
+    .pillar-tagline{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--sage);margin-bottom:8px;}
     .pillar p{font-size:13px;line-height:1.58;color:var(--muted-dark);margin:0;max-width:320px}
 
     /* OFFER */
@@ -124,11 +125,11 @@
     .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
     .offer-copy{max-width:620px;color:#c7cfcc;font-size:15px;line-height:1.7}
     
-    .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:18px}
+    .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:14px}
     .included li{display:flex;gap:12px;align-items:flex-start;font-size:13px}
-    .included li div{display:flex;flex-direction:column;gap:3px}
-    .included li strong{color:#fff;font-weight:700;font-size:14px;}
-    .included li span{color:#c7cfcc;line-height:1.55;}
+    .included li div{display:flex;flex-direction:column;gap:2px}
+    .included li strong{color:#fff;font-weight:700;font-size:13.5px;}
+    .included li span{color:#c7cfcc;line-height:1.45;font-size:12.5px;}
     
     .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
     .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
@@ -306,7 +307,7 @@
           <div>
             <div class="eyebrow">For new &amp; outdated STR listings in Curaçao</div>
             <h1>Make your listing<br class="desktop-break">unmistakable.</h1>
-            <p class="hero-sub">We help you command higher value through high-end photography, conversion-focused copywriting, and thoughtful design recommendations.</p>
+            <p class="hero-sub">We help you command higher value through high-end photography, conversion-focused copywriting, and strategic pricing alignment.</p>
           </div>
           <aside class="hero-meta">
             <p><strong>Founded by Chris.</strong> Airbnb Luxe Inspector and former Marketing Manager at CoveCasa, a luxury STR property management company in Sint Maarten.</p>
@@ -338,30 +339,33 @@
       </div>
     </section>
 
-    <!-- THE PROBLEM -->
+    <!-- THE PROBLEM / WHAT WE DO -->
     <section class="band-light">
       <div class="wrap">
         <div class="section-heading">
           <div class="eyebrow">The first impression matters</div>
           <h2>Don't launch halfway.</h2>
-          <p>A new listing does not get a second first impression. Your photography, title, description, positioning, and overall presentation all shape how a guest perceives the stay before you ever collect a review.</p>
+          <p>A new listing does not get a second first impression. Your photography, title, description, photo sequence, and pricing alignment shape how guests perceive your property before you ever collect a review.</p>
         </div>
 
         <div class="pillars">
           <article class="pillar">
             <div class="pillar-index">01 / PHOTOGRAPHY</div>
-            <h3>Shoot for the click, not just the room.</h3>
-            <p>Beautiful spaces don't book themselves. We capture high-end, wide-angle interior and exterior photography lit, formatted, and ordered specifically to maximize your search-grid click-through rate.</p>
+            <div class="pillar-tagline">Get the click</div>
+            <h3>High-Impact Photography</h3>
+            <p>Wide-angle interior and exterior shots lit, formatted, and ordered specifically to elevate search-grid appeal and capture immediate traveler attention.</p>
           </article>
           <article class="pillar">
             <div class="pillar-index">02 / OPTIMIZATION</div>
-            <h3>Turn listing views into bookings.</h3>
-            <p>We rewrite your property narrative with a search-optimized title framework and a strategic positioning blueprint, ensuring your listing aligns with the algorithm and prices competitively against top-tier local comps.</p>
+            <div class="pillar-tagline">Get the booking</div>
+            <h3>Copy &amp; Pricing Alignment</h3>
+            <p>Algorithm-optimized title, compelling description narrative, and market positioning blueprint engineered to convert search views into high-yield bookings.</p>
           </article>
           <article class="pillar">
-            <div class="pillar-index">03 / STAGING &amp; EXPERIENCE</div>
-            <h3>Secure 5-star reviews from day one.</h3>
-            <p>We audit your physical space and guest touchpoints, providing actionable recommendations on amenity placement and arrival details to guarantee glowing reviews right out of the gate.</p>
+            <div class="pillar-index">03 / DIAGNOSTIC</div>
+            <div class="pillar-tagline">Get the 5-star review</div>
+            <h3>Leak Audit &amp; Staging</h3>
+            <p>A deep-dive review of your layout, metrics, and physical guest touchpoints to eliminate friction bottlenecks and ensure glowing initial reviews.</p>
           </article>
         </div>
       </div>
@@ -374,41 +378,41 @@
           <div>
             <div class="eyebrow" style="color:#d7a08e">Inaugural Launch Offer</div>
             <div class="display">One focused refresh.<br>Built for launch.</div>
-            <p class="offer-copy">We're opening The House Atelier with a limited number of inaugural properties in Curaçao. The goal is simple: make the listing look, read, and feel like the stay deserves.</p>
+            <p class="offer-copy">We're opening The House Atelier with a limited number of inaugural properties in Curaçao. The goal is simple: make the listing look, read, and price like the stay deserves.</p>
             <ul class="included">
               <li>
                 <span class="check">✓</span>
                 <div>
                   <strong>High-Impact Property Photography</strong>
-                  <span>Wide-angle interior and exterior shots lit, formatted, and ordered specifically to double your search-grid click-through rate.</span>
+                  <span>Formatted &amp; ordered to maximize search-grid click-throughs (Get the click).</span>
                 </div>
               </li>
               <li>
                 <span class="check">✓</span>
                 <div>
-                  <strong>Revenue & Conversion Leak Audit</strong>
-                  <span>A deep-dive diagnostic of your listing’s metrics and layout to expose hidden bottlenecks that are costing you bookings.</span>
+                  <strong>Revenue &amp; Conversion Leak Audit</strong>
+                  <span>Diagnostic review to expose metrics and layout bottlenecks costing you yield.</span>
                 </div>
               </li>
               <li>
                 <span class="check">✓</span>
                 <div>
                   <strong>Search-Optimized Listing Copy</strong>
-                  <span>A high-converting title framework and persuasive property narrative engineered to align with Airbnb's search algorithm and retain guest attention.</span>
+                  <span>High-converting title framework &amp; narrative engineered for Airbnb’s algorithm.</span>
                 </div>
               </li>
               <li>
                 <span class="check">✓</span>
                 <div>
                   <strong>Market Positioning Blueprint</strong>
-                  <span>Strategic brand narrative that highlights your property’s best selling points, allowing you to price against top-tier comps in your market.</span>
+                  <span>Strategic brand narrative and pricing alignment to capture top-tier comp rates.</span>
                 </div>
               </li>
               <li>
                 <span class="check">✓</span>
                 <div>
-                  <strong>5-Star Staging & Presentation Framework</strong>
-                  <span>Actionable recommendations on physical amenity placement, lighting, and guest touchpoints to guarantee glowing reviews right out of the gate.</span>
+                  <strong>5-Star Staging &amp; Presentation Framework</strong>
+                  <span>Actionable amenity placement &amp; arrival touchpoints to guarantee glowing reviews.</span>
                 </div>
               </li>
             </ul>
