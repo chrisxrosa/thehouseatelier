@@ -11,9 +11,9 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bone:#f7f4ec;
-      --bone-2:#fbfaf6;
-      --bone-3:#f0ece2;
+      --bone:#faf7f0;
+      --bone-2:#fdfbf7;
+      --bone-3:#f4efe5;
       --charcoal:#1b2524;
       --charcoal-2:#23312f;
       --ink:#202927;
@@ -52,7 +52,7 @@
     .hero{padding:18px 0 76px}
     .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
     .hero-copy{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:48px;align-items:end;margin:8px 0 24px}
-    .hero h1{font-size:clamp(46px,6.7vw,84px);line-height:.98;letter-spacing:-.04em;margin:8px 0 18px;max-width:850px}
+    .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:900px}
     .hero-sub{max-width:680px;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
     .hero-meta{justify-self:end;max-width:280px;border-left:1px solid var(--line);padding-left:24px}
     .hero-meta p{margin:0 0 13px;font-size:13px;color:var(--muted-dark)}
@@ -71,9 +71,9 @@
     .show-all-btn:hover{background:#fff}
 
     .hero-offer-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
-    .cred-list{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted-dark);font-size:12px;font-weight:600}
-    .cred-list span{display:inline-flex;align-items:center;gap:7px}
-    .cred-list span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+    .hero-note{display:flex;align-items:center;gap:9px;color:var(--muted-dark);font-size:12px;font-weight:600}
+    .hero-note-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+    .desktop-break{display:block}
     .offer-chip{display:flex;align-items:center;gap:16px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}
     .offer-chip small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
     .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
@@ -207,6 +207,7 @@
       .nav-link{padding:8px 12px;font-size:11px}
       .hero{padding:10px 0 58px}
       .hero h1{font-size:clamp(42px,12vw,62px);margin-bottom:15px}
+      .desktop-break{display:none}
       .hero-sub{font-size:15px;line-height:1.58}
       .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:205px 135px 135px;gap:6px;border-radius:20px}
       .grid-img-1{grid-column:1 / -1;grid-row:1}
@@ -217,7 +218,6 @@
       .grid-badge{left:12px;bottom:12px;font-size:8px;padding:7px 9px}
       .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
       .hero-offer-row{grid-template-columns:1fr;gap:16px;margin-top:22px;padding-top:20px}
-      .cred-list{gap:10px 15px;font-size:11px}
       .offer-chip{justify-content:space-between}
       .hero-offer-row .accent-btn{width:100%}
       .pillars,.process{grid-template-columns:1fr}
@@ -299,12 +299,12 @@
         <div class="hero-copy">
           <div>
             <div class="eyebrow">For new &amp; outdated STR listings in Curaçao</div>
-            <h1>Launch your STR like an established five-star stay.</h1>
+            <h1>Launch your STR like an<br class="desktop-break">established five-star stay.</h1>
             <p class="hero-sub">Professional photography and strategic listing optimization, built around how guests actually discover, judge, and book a property.</p>
           </div>
           <aside class="hero-meta">
-            <p><strong>Built by hospitality specialists.</strong> Airbnb Luxe inspection experience, luxury STR marketing, and a dedicated optimization team.</p>
-            <p><strong>Designed for the first impression.</strong> Especially useful for new listings with little or no review history.</p>
+            <p><strong>Founded by Chris.</strong> Airbnb Luxe Inspector and former Marketing Manager at CoveCasa, a luxury STR property management company in Sint Maarten.</p>
+            <p><strong>Built for the launch moment.</strong> Photography, listing strategy, and optimization brought together in one focused refresh.</p>
           </aside>
         </div>
 
@@ -321,11 +321,7 @@
         </div>
 
         <div class="hero-offer-row">
-          <div class="cred-list" aria-label="Credentials">
-            <span>Airbnb Luxe Inspector</span>
-            <span>Luxury STR Marketing</span>
-            <span>Listing Optimization</span>
-          </div>
+          <div class="hero-note"><span class="hero-note-dot"></span>Now accepting 10 founding properties in Curaçao.</div>
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
             <div class="offer-chip">
               <div><small>Founding launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
