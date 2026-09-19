@@ -123,8 +123,13 @@
     .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:center}
     .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
     .offer-copy{max-width:620px;color:#c7cfcc;font-size:15px;line-height:1.7}
-    .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:11px}
-    .included li{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:#f1f4f2}
+    
+    .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:18px}
+    .included li{display:flex;gap:12px;align-items:flex-start;font-size:13px}
+    .included li div{display:flex;flex-direction:column;gap:3px}
+    .included li strong{color:#fff;font-weight:700;font-size:14px;}
+    .included li span{color:#c7cfcc;line-height:1.55;}
+    
     .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
     .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
     .pricing-card .eyebrow{color:var(--accent-dark)}
@@ -322,10 +327,10 @@
         </div>
 
         <div class="hero-offer-row">
-          <div class="hero-note"><span class="hero-note-dot"></span>Now accepting 10 founding properties in Curaçao.</div>
+          <div class="hero-note"><span class="hero-note-dot"></span>Now accepting 10 inaugural launch properties in Curaçao.</div>
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
             <div class="offer-chip">
-              <div><small>Founding launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
+              <div><small>Inaugural launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
             </div>
             <a class="accent-btn" href="#offer">See what's included →</a>
           </div>
@@ -367,24 +372,53 @@
       <div class="wrap">
         <div class="offer-shell">
           <div>
-            <div class="eyebrow" style="color:#d7a08e">Founding client offer</div>
+            <div class="eyebrow" style="color:#d7a08e">Inaugural Launch Offer</div>
             <div class="display">One focused refresh.<br>Built for launch.</div>
-            <p class="offer-copy">We're opening The House Atelier with a limited number of founding properties in Curaçao. The goal is simple: make the listing look, read, and feel like the stay deserves.</p>
+            <p class="offer-copy">We're opening The House Atelier with a limited number of inaugural properties in Curaçao. The goal is simple: make the listing look, read, and feel like the stay deserves.</p>
             <ul class="included">
-              <li><span class="check">✓</span><span>Professional property photography</span></li>
-              <li><span class="check">✓</span><span>Complete STR listing audit</span></li>
-              <li><span class="check">✓</span><span>Title + description recommendations</span></li>
-              <li><span class="check">✓</span><span>Property concept + positioning strategy</span></li>
-              <li><span class="check">✓</span><span>Photo selection + sequencing recommendations</span></li>
-              <li><span class="check">✓</span><span>Guest-facing presentation review</span></li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>High-Impact Property Photography</strong>
+                  <span>Wide-angle interior and exterior shots lit, formatted, and ordered specifically to double your search-grid click-through rate.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Revenue & Conversion Leak Audit</strong>
+                  <span>A deep-dive diagnostic of your listing’s metrics and layout to expose hidden bottlenecks that are costing you bookings.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Search-Optimized Listing Copy</strong>
+                  <span>A high-converting title framework and persuasive property narrative engineered to align with Airbnb's search algorithm and retain guest attention.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Market Positioning Blueprint</strong>
+                  <span>Strategic brand narrative that highlights your property’s best selling points, allowing you to price against top-tier comps in your market.</span>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>5-Star Staging & Presentation Framework</strong>
+                  <span>Actionable recommendations on physical amenity placement, lighting, and guest touchpoints to guarantee glowing reviews right out of the gate.</span>
+                </div>
+              </li>
             </ul>
           </div>
 
           <aside class="pricing-card">
             <div class="eyebrow">2–3 bedrooms</div>
             <div class="price">US$399</div>
-            <div class="price-note">≈ Cg 715 · founding client rate · 10 properties only</div>
-            <a class="accent-btn price-card-btn" href="#contact">Apply for a founding slot →</a>
+            <div class="price-note">≈ Cg 715 · inaugural launch rate · 10 properties only</div>
+            <a class="accent-btn price-card-btn" href="#contact">Apply for an inaugural slot →</a>
             <div class="price-tiers">
               <div><strong>4–5 bedrooms:</strong> US$499 · ≈ Cg 895</div>
               <div><strong>6+ bedrooms:</strong> US$649 · ≈ Cg 1,160</div>
@@ -469,7 +503,7 @@
           <div>
             <details open>
               <summary>Is this only for brand-new listings?</summary>
-              <p>The founding offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
+              <p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
             </details>
             <details>
               <summary>What happens after I apply?</summary>
@@ -495,7 +529,7 @@
           <div>
             <div class="eyebrow" style="color:#d7a08e">Before you welcome your first guest</div>
             <h2>Get the listing right.</h2>
-            <p>Tell us a little about the property and share your listing link. If it looks like a fit, we'll confirm availability for one of the founding client slots in Curaçao.</p>
+            <p>Tell us a little about the property and share your listing link. If it looks like a fit, we'll confirm availability for one of the inaugural slots in Curaçao.</p>
           </div>
 
           <div class="form-card">
@@ -529,7 +563,7 @@
                 <label for="notes">Anything we should know?</label>
                 <textarea id="notes" name="notes" placeholder="Property location, launch timing, or anything else useful."></textarea>
               </div>
-              <button class="submit" type="submit">Apply for a founding slot →</button>
+              <button class="submit" type="submit">Apply for an inaugural slot →</button>
             </form>
             <p class="form-note">No commitment until the property is reviewed and availability is confirmed.</p>
           </div>
@@ -546,7 +580,7 @@
   </footer>
 
   <div class="mobile-cta">
-    <div class="mini-price"><small>Founding rate</small><strong>US$399 · Cg 715</strong></div>
+    <div class="mini-price"><small>Inaugural rate</small><strong>US$399 · Cg 715</strong></div>
     <a class="accent-btn" href="#contact">Apply →</a>
   </div>
 
