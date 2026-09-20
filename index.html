@@ -78,7 +78,8 @@
     .offer-chip{display:flex;align-items:center;gap:16px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}
     .offer-chip small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
     .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
-    .offer-chip em{font-style:normal;font-size:10px;color:var(--muted-dark);display:block;margin-top:2px}
+    .offer-chip em{font-style:normal;font-size:11px;color:var(--muted-dark);display:block;margin-top:2px}
+    .offer-chip span{color:var(--accent-dark);font-weight:600;}
     .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
     .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
@@ -119,7 +120,7 @@
     .pillar p{font-size:13.5px;line-height:1.6;color:var(--muted-dark);margin:0;max-width:320px}
 
     /* OFFER */
-    .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:center}
+    .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:start}
     .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
     .offer-copy{max-width:620px;color:#c7cfcc;font-size:15px;line-height:1.7}
     
@@ -134,15 +135,17 @@
     .included li strong .sep { color: rgba(255,255,255,0.3); font-weight: 400; margin: 0 6px; }
 
     .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
+    
+    /* PRICING CARD */
     .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
     .pricing-card .eyebrow{color:var(--accent-dark)}
     .price{font-family:'Lora',serif;font-size:56px;line-height:1;letter-spacing:-.03em;margin:12px 0 4px}
-    .price small{font-family:'DM Sans',sans-serif;font-size:13px;color:var(--muted);letter-spacing:0}
-    .price-note{font-size:11px;color:var(--muted-dark);margin-bottom:19px}
+    .price-note{font-size:11.5px;color:var(--muted-dark);margin-bottom:19px;line-height:1.5}
     .price-card-btn{width:100%}
-    .price-tiers{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:grid;gap:8px;font-size:12px;color:var(--muted-dark)}
+    .price-tiers{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:grid;gap:14px;font-size:12.5px;color:var(--muted-dark)}
     .price-tiers strong{color:var(--ink)}
-    .micro{font-size:10px;color:#848a86;line-height:1.5;margin-top:15px}
+    .price-tiers strike{color:var(--muted); font-weight:400; margin-left:4px}
+    .micro{font-size:10.5px;color:#848a86;line-height:1.5;margin-top:18px}
 
     /* CREDIBILITY */
     .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
@@ -238,7 +241,8 @@
       section{padding:66px 0}
       .section-heading{margin-bottom:30px}
       .section-heading h2{font-size:42px}
-      .pillar h3,.step h3{font-size:24px}
+      .pillar h3{font-size:26px}
+      .step h3{font-size:24px}
       .offer-shell{gap:34px}
       .display{font-size:46px}
       .pricing-card{padding:24px}
@@ -336,7 +340,7 @@
           <div class="hero-note"><span class="hero-note-dot"></span>Now accepting 10 inaugural launch properties in Curaçao.</div>
           <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end">
             <div class="offer-chip">
-              <div><small>Inaugural launch rate</small><strong>US$399</strong><em>≈ Cg 715 · 2–3 bedrooms</em></div>
+              <div><small>Inaugural launch rate</small><strong>US$625</strong><em>1–2 Bedrooms · <span>ROI: ~5–6 Nights</span></em></div>
             </div>
             <a class="accent-btn" href="#offer">See what's included →</a>
           </div>
@@ -344,7 +348,7 @@
       </div>
     </section>
 
-    <!-- EDUCATIONAL FUNNEL -->
+    <!-- THE PROBLEM / EDUCATIONAL FUNNEL -->
     <section class="band-light">
       <div class="wrap">
         <div class="section-heading">
@@ -418,15 +422,24 @@
           </div>
 
           <aside class="pricing-card">
-            <div class="eyebrow">2–3 bedrooms</div>
-            <div class="price">US$399</div>
-            <div class="price-note">≈ Cg 715 · inaugural launch rate · 10 properties only</div>
+            <div class="eyebrow">1–2 Bedrooms (Condo/Suite)</div>
+            <div class="price">US$625</div>
+            <div class="price-note">
+              <strike style="margin-right:6px;">US$1,250</strike> Inaugural rate · 10 properties only<br>
+              <strong style="color:var(--sage);">Net ROI Equivalent: ~5 to 6 Nights</strong>
+            </div>
             <a class="accent-btn price-card-btn" href="#contact">Apply for an inaugural slot →</a>
             <div class="price-tiers">
-              <div><strong>4–5 bedrooms:</strong> US$499 · ≈ Cg 895</div>
-              <div><strong>6+ bedrooms:</strong> US$649 · ≈ Cg 1,160</div>
+              <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
+                <strong>3–5 Beds (Luxury Villa):</strong> US$1,250 <strike>(US$2,500)</strike><br>
+                <span style="color:var(--sage); font-weight:600;">Net ROI Equivalent: ~3 to 4 Nights</span>
+              </div>
+              <div>
+                <strong>6+ Beds (Estate/Compound):</strong> US$2,250 <strike>(US$4,500)</strike><br>
+                <span style="color:var(--sage); font-weight:600;">Net ROI Equivalent: ~3 to 4 Nights</span>
+              </div>
             </div>
-            <div class="micro">Larger or more complex properties are quoted based on scope, travel, and shoot requirements.</div>
+            <div class="micro">Prices are strictly limited to the first 10 foundational properties in the local market.</div>
           </aside>
         </div>
       </div>
@@ -519,7 +532,7 @@
             </details>
             <details>
               <summary>How long is the shoot?</summary>
-              <p>Most 2–3 bedroom properties take roughly 75–90 minutes. Larger or more complex properties receive additional time based on scope.</p>
+              <p>Most 1–2 bedroom properties take roughly 75–90 minutes. Larger or more complex properties receive additional time based on scope.</p>
             </details>
             <details>
               <summary>Can you implement the recommendations too?</summary>
@@ -558,9 +571,9 @@
                 <label for="beds">Bedrooms</label>
                 <select id="beds" required name="beds">
                   <option value="" disabled selected>Select size</option>
-                  <option>2–3 Bedrooms</option>
-                  <option>4–5 Bedrooms</option>
-                  <option>6+ Bedrooms</option>
+                  <option>1–2 Bedrooms (Condo/Suite)</option>
+                  <option>3–5 Bedrooms (Luxury Villa)</option>
+                  <option>6+ Bedrooms (Estate/Compound)</option>
                 </select>
               </div>
               <div class="field-full">
@@ -588,7 +601,7 @@
   </footer>
 
   <div class="mobile-cta">
-    <div class="mini-price"><small>Inaugural rate</small><strong>US$399 · Cg 715</strong></div>
+    <div class="mini-price"><small>Inaugural rate</small><strong>US$625 · 1–2 Beds</strong></div>
     <a class="accent-btn" href="#contact">Apply →</a>
   </div>
 
