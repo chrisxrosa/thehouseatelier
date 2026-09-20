@@ -71,16 +71,24 @@
     .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer}
     .show-all-btn:hover{background:#fff}
 
+    /* HERO OFFER CHIP & BEACON */
     .hero-offer-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
     .hero-note{display:flex;align-items:center;gap:12px;color:var(--ink);font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.4}
-    .hero-note strong{font-weight:700;color:var(--accent)}
-    .hero-note-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex:none;box-shadow:0 0 0 4px rgba(184,95,71,.15)}
+    .hero-note strong{font-weight:700;color:var(--sage)}
+    .hero-note-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex:none;animation:pulse 2s infinite}
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0.4); }
+      70% { box-shadow: 0 0 0 8px rgba(49, 91, 87, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0); }
+    }
+
     .desktop-break{display:block}
     .offer-chip{display:flex;align-items:center;gap:16px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}
     .offer-chip small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
     .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
     .offer-chip em{font-style:normal;font-size:11px;color:var(--muted-dark);display:block;margin-top:2px}
-    .offer-chip span{color:var(--accent-dark);font-weight:600;}
+    .offer-chip span{color:var(--sage);font-weight:600;}
     .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
     .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
