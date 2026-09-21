@@ -626,6 +626,7 @@
 
    const small=cta.querySelector('small');
    const mobileQuery=window.matchMedia('(max-width:720px)');
+   const headerOffset=0;
 
    function updateCta(){
     if(!mobileQuery.matches){
@@ -636,7 +637,7 @@
     const scrollY=window.scrollY || window.pageYOffset;
     const offerY=offer.getBoundingClientRect().top + scrollY;
     const contactTitleRect=contactTitle.getBoundingClientRect();
-    const titleIsVisible=contactTitleRect.top < window.innerHeight && contactTitleRect.bottom > 0;
+    const titleIsVisible=contactTitleRect.top <= window.innerHeight && contactTitleRect.bottom >= 0;
 
     if(titleIsVisible){
      cta.classList.add('is-hidden');
