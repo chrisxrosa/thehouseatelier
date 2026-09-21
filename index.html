@@ -621,7 +621,8 @@
    const link=document.getElementById('mobileCtaLink');
    const offer=document.getElementById('offer');
    const contact=document.getElementById('contact');
-   if(!cta || !link || !offer || !contact) return;
+   const contactTitle=contact ? contact.querySelector('h2') : null;
+   if(!cta || !link || !offer || !contact || !contactTitle) return;
 
    const small=cta.querySelector('small');
    const mobileQuery=window.matchMedia('(max-width:720px)');
@@ -634,10 +635,10 @@
 
     const scrollY=window.scrollY || window.pageYOffset;
     const offerY=offer.getBoundingClientRect().top + scrollY;
-    const contactY=contact.getBoundingClientRect().top + scrollY;
-    const headerOffset=8;
+    const contactTitleRect=contactTitle.getBoundingClientRect();
+    const titleIsVisible=contactTitleRect.top < window.innerHeight && contactTitleRect.bottom > 0;
 
-    if(scrollY >= contactY - headerOffset){
+    if(titleIsVisible){
      cta.classList.add('is-hidden');
      return;
     }
