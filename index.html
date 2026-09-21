@@ -51,16 +51,18 @@
   .hero-copy{display:block;margin:8px 0 24px}
   .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:920px}
   .hero-sub{display:block;width:100%;max-width:780px;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
-  /* PHOTO GRID */
+  /* HERO GALLERY */
   .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
   .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
-  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.25))}
+  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(0,0,0,.46) 100%);pointer-events:none}
+  .grid-video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
   .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
-  .grid-img-2{grid-column:2;grid-row:1;background:linear-gradient(135deg,#d49a7b 0%,#8c5f52 100%)}
-  .grid-img-3{grid-column:3;grid-row:1;background:linear-gradient(135deg,#d9d8cb 0%,#758078 100%)}
-  .grid-img-4{grid-column:2;grid-row:2;background:linear-gradient(135deg,#a7b7ae 0%,#435b57 100%)}
-  .grid-img-5{grid-column:3;grid-row:2;background:linear-gradient(135deg,#eadbc9 0%,#8a6d5e 100%)}
-  .grid-badge{position:absolute;z-index:2;left:18px;bottom:18px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:rgba(27,37,36,.64);backdrop-filter:blur(9px);padding:8px 12px;border:1px solid rgba(255,255,255,.16);border-radius:999px}
+  .grid-img-2{grid-column:2;grid-row:1;background-image:linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/property-1-before.jpg');background-color:#8c5f52}
+  .grid-img-3{grid-column:3;grid-row:1;background-image:linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/property-1-after.jpg');background-color:#758078}
+  .grid-img-4{grid-column:2;grid-row:2;background-image:linear-gradient(135deg,rgba(167,183,174,.18) 0%,rgba(67,91,87,.26) 100%),url('assets/property-2-before.jpg');background-color:#435b57}
+  .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/property-2-after.jpg');background-color:#8a6d5e}
+  .grid-label{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+  .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
   .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer}
   .show-all-btn:hover{background:#fff}
   /* HERO OFFER CHIP & BEACON */
@@ -100,24 +102,67 @@
   }
   .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
-  /* MODAL */
+  /* LIGHTBOX / SERVICE CASE STUDIES */
   .lightbox{position:fixed;inset:0;background:#fff;z-index:9999;display:none;overflow-y:auto}
   .lightbox.active{display:block}
-  .lightbox-top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line)}
+  .lightbox-top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line)}
+  .lightbox-top-title{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dark)}
+  .lightbox-top-title span{width:6px;height:6px;border-radius:50%;background:var(--accent)}
   .icon-btn{width:38px;height:38px;border:0;background:transparent;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--charcoal)}
   .icon-btn:hover{background:#f3f0ea}
-  .lightbox-body{width:min(calc(100% - 40px),900px);margin:26px auto 64px;display:grid;gap:12px}
-  .lb-item{border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06)}
-  .lb-full{height:500px}
-  .lb-half-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .lb-half{height:320px}
-  .lb-1{background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
-  .lb-2{background:linear-gradient(135deg,#d49a7b 0%,#8c5f52 100%)}
-  .lb-3{background:linear-gradient(135deg,#d9d8cb 0%,#758078 100%)}
-  .lb-4{background:linear-gradient(135deg,#a7b7ae 0%,#435b57 100%)}
-  .lb-5{background:linear-gradient(135deg,#eadbc9 0%,#8a6d5e 100%)}
-  .lb-6{background:linear-gradient(135deg,#8f9a95 0%,#354744 100%)}
-  .lb-7{background:linear-gradient(135deg,#365754 0%,#171f1e 100%)}
+  .lightbox-body{width:min(calc(100% - 40px),980px);margin:46px auto 76px}
+  .lb-intro{max-width:760px;margin-bottom:40px}
+  .lb-intro h2{font-size:clamp(42px,5.4vw,64px);line-height:1;letter-spacing:-.04em;margin:8px 0 14px}
+  .lb-intro p{font-size:15px;line-height:1.7;color:var(--muted-dark);margin:0;max-width:700px}
+  .lb-service{padding:34px 0 42px;border-top:1px solid var(--line)}
+  .lb-service:last-child{border-bottom:1px solid var(--line)}
+  .lb-service-head{display:grid;grid-template-columns:90px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:22px}
+  .lb-service-num{font-family:'Lora',serif;font-size:42px;line-height:1;color:var(--accent);letter-spacing:-.04em}
+  .lb-service h3{font-size:34px;line-height:1.05;letter-spacing:-.03em;margin:6px 0 8px}
+  .lb-service p{font-size:13px;line-height:1.65;color:var(--muted-dark);margin:0;max-width:710px}
+  .lb-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lb-card{border-radius:18px;overflow:hidden;background:var(--bone-3);border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05)}
+  .lb-media{position:relative;min-height:300px;background:var(--charcoal);overflow:hidden}
+  .lb-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(0,0,0,.42) 100%)}
+  .lb-media-label{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+  .lb-card-copy{padding:16px 17px 18px}
+  .lb-card-copy strong{display:block;font-size:13px;margin-bottom:4px;color:var(--ink)}
+  .lb-card-copy span{display:block;font-size:12px;line-height:1.55;color:var(--muted-dark)}
+  .lb-photo-before{background:linear-gradient(135deg,#bca997 0%,#75645b 100%)}
+  .lb-photo-after{background:linear-gradient(135deg,#e8d7c6 0%,#7a958d 100%)}
+  .lb-copy-before{background:#f4efe5;padding:18px;display:flex;align-items:stretch}
+  .lb-copy-after{background:#e5eee9;padding:18px;display:flex;align-items:stretch}
+  .lb-copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
+  .lb-copy-after .lb-copy-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.10)}
+  .lb-copy-ui-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+  .lb-copy-ui-kicker{font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+  .lb-copy-ui-search{font-size:8px;color:var(--muted-dark);border:1px solid var(--line);padding:5px 7px;border-radius:999px;background:var(--bone-2);white-space:nowrap}
+  .lb-copy-ui h4{font-family:'Lora',serif;font-size:25px;line-height:1.05;font-weight:400;letter-spacing:-.025em;margin:16px 0 8px;color:var(--ink)}
+  .lb-copy-ui p{font-size:10.5px;line-height:1.52;color:var(--muted-dark);margin:0}
+  .lb-copy-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+  .lb-copy-tags span{font-size:8px;font-weight:700;letter-spacing:.04em;color:var(--sage);background:#edf4f1;padding:5px 7px;border-radius:999px}
+  .lb-copy-before .lb-copy-tags span{color:#78726a;background:#f0ece4}
+  .lb-revenue-before{background:#eee9df;padding:18px;display:flex;align-items:stretch}
+  .lb-revenue-after{background:#dfe9e5;padding:18px;display:flex;align-items:stretch}
+  .lb-revenue-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:15px;box-shadow:0 8px 24px rgba(27,37,36,.06)}
+  .lb-revenue-after .lb-revenue-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.09)}
+  .lb-revenue-ui-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+  .lb-revenue-ui-head small{display:block;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+  .lb-revenue-ui-head strong{font-family:'Lora',serif;font-size:25px;line-height:1;color:var(--ink);font-weight:400}
+  .lb-revenue-after .lb-revenue-ui-head strong{color:var(--sage)}
+  .lb-calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:14px}
+  .lb-day{border:1px solid var(--line);border-radius:8px;padding:7px 4px;text-align:center;background:#fbfaf6}
+  .lb-day b{display:block;font-size:7px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .lb-day span{display:block;font-size:10px;font-weight:700;color:var(--ink);margin-top:4px}
+  .lb-revenue-after .lb-day.hot{background:#315b57;border-color:#315b57}
+  .lb-revenue-after .lb-day.hot b,.lb-revenue-after .lb-day.hot span{color:#fff}
+  .lb-revenue-after .lb-day.soft{background:#f0e7df;border-color:#ead9cc}
+  .lb-demand-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+  .lb-demand-row span{font-size:8px;font-weight:700;padding:5px 7px;border-radius:999px;background:#f3efe8;color:var(--muted-dark)}
+  .lb-revenue-after .lb-demand-row span:first-child{background:#e7f1ed;color:var(--sage)}
+  .lb-experience-before{background-image:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.48) 100%),url('assets/property-setup-before.jpg');background-size:cover;background-position:center}
+  .lb-experience-after{background-image:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.38) 100%),url('assets/property-guest-ready-after.jpg');background-size:cover;background-position:center}
+  .lb-note{margin-top:14px;font-size:10px;line-height:1.5;color:var(--muted);text-align:center}
   /* SECTIONS */
   main{background:var(--bone)}
   section{padding:88px 0}
@@ -239,7 +284,8 @@
    .grid-img-3{grid-column:2;grid-row:2}
    .grid-img-4{grid-column:1;grid-row:3}
    .grid-img-5{grid-column:2;grid-row:3}
-   .grid-badge{left:12px;bottom:12px;font-size:8px;padding:7px 9px}
+   .grid-label{left:12px;bottom:12px;font-size:8px;max-width:72%}
+   .grid-label span{font-size:8px}
    .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
    .hero-offer-row{grid-template-columns:1fr;gap:16px;margin-top:22px;padding-top:20px;text-align:center}
    .hero-note{font-size:15px;justify-content:center;text-align:center}
@@ -274,10 +320,20 @@
    .mobile-cta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
    .mobile-cta strong{display:block;font-family:'Lora',serif;font-size:17px;font-weight:400;line-height:1.05}
    .mobile-cta .accent-btn{padding:10px 13px;border-radius:10px;font-size:11px}
-   .lightbox-body{width:min(calc(100% - 24px),900px);margin-top:14px}
-   .lb-full{height:320px}
-   .lb-half-grid{grid-template-columns:1fr}
-   .lb-half{height:240px}
+   .lightbox-top{padding:10px 12px}
+   .lightbox-top-title{font-size:9px}
+   .lightbox-top .accent-btn{display:none}
+   .lightbox-body{width:min(calc(100% - 24px),980px);margin-top:24px}
+   .lb-intro{margin-bottom:28px}
+   .lb-service-head{grid-template-columns:46px 1fr;gap:12px}
+   .lb-service-num{font-size:31px}
+   .lb-service h3{font-size:29px}
+   .lb-pair{grid-template-columns:1fr}
+   .lb-media{min-height:240px}
+   .lb-copy-ui h4{font-size:22px}
+   .lb-copy-ui p{font-size:10px}
+   .lb-revenue-ui-head strong{font-size:22px}
+   .lb-day{padding:6px 3px}
   }
   @media(max-width:420px){
    .hero h1{font-size:43px}
@@ -288,26 +344,58 @@
  </style>
 </head>
 <body>
-<!-- PHOTO LIGHTBOX -->
+<!-- PHOTO / CASE STUDY LIGHTBOX -->
 <div aria-hidden="true" class="lightbox" id="lightbox">
 <div class="lightbox-top">
-<button aria-label="Close photo gallery" class="icon-btn" onclick="closeLightbox()">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="2.1" viewbox="0 0 24 24" width="20"><path d="M15 18l-6-6 6-6"></path></svg>
-</button>
+<div class="lightbox-top-title"><span></span> Before → After · The House Atelier</div>
+<div style="display:flex;align-items:center;gap:10px">
 <a class="accent-btn" href="#contact" onclick="closeLightbox()">Request an inaugural launch slot →</a>
+<button aria-label="Close gallery" class="icon-btn" onclick="closeLightbox()">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="2.1" viewbox="0 0 24 24" width="20"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+</button>
+</div>
 </div>
 <div class="lightbox-body">
-<div class="lb-item"><div class="lb-full lb-1"></div></div>
-<div class="lb-half-grid">
-<div class="lb-item"><div class="lb-half lb-2"></div></div>
-<div class="lb-item"><div class="lb-half lb-3"></div></div>
+<div class="lb-intro">
+<div class="eyebrow">The work, side by side</div>
+<h2>See what changes when the listing gets the full treatment.</h2>
+<p>This gallery is organized around the same levers we use in a launch or repositioning engagement: stronger visuals, sharper listing language and search visibility, and a pricing foundation built around demand instead of a single flat rate.</p>
 </div>
-<div class="lb-item"><div class="lb-full lb-4"></div></div>
-<div class="lb-half-grid">
-<div class="lb-item"><div class="lb-half lb-5"></div></div>
-<div class="lb-item"><div class="lb-half lb-6"></div></div>
+
+<section class="lb-service">
+<div class="lb-service-head">
+<div class="lb-service-num">01</div>
+<div><div class="eyebrow">The Visuals</div><h3>Photography</h3><p>From “technically photographed” to a sequence that makes the property feel immediately worth opening, exploring, and remembering.</p></div>
 </div>
-<div class="lb-item"><div class="lb-full lb-7"></div></div>
+<div class="lb-pair">
+<article class="lb-card"><div class="lb-media lb-photo-before"><div class="lb-media-label">Property example · Before</div></div><div class="lb-card-copy"><strong>Before</strong><span>Coverage that records the space, but does not create a clear visual hierarchy or emotional hook.</span></div></article>
+<article class="lb-card"><div class="lb-media lb-photo-after"><div class="lb-media-label">Property example · After</div></div><div class="lb-card-copy"><strong>After</strong><span>Purposeful framing, light, sequence, and detail that give the listing a recognizable visual point of view.</span></div></article>
+</div>
+</section>
+
+<section class="lb-service">
+<div class="lb-service-head">
+<div class="lb-service-num">02</div>
+<div><div class="eyebrow">The Words</div><h3>Listing Copy + SEO</h3><p>Instead of asking the guest to decode a generic description, we turn the listing into a clear promise: what makes the place special, who it is for, and why it deserves the click.</p></div>
+</div>
+<div class="lb-pair">
+<article class="lb-card"><div class="lb-media lb-copy-before"><div class="lb-copy-ui"><div class="lb-copy-ui-top"><span class="lb-copy-ui-kicker">Search result</span><span class="lb-copy-ui-search">generic villa</span></div><h4>Beautiful Villa in Curaçao</h4><p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home with everything you need for a relaxing vacation.</p><div class="lb-copy-tags"><span>villa</span><span>pool</span><span>Curaçao</span><span>vacation</span></div></div><div class="lb-media-label">Before</div></div><div class="lb-card-copy"><strong>Before</strong><span>Describes the property, but gives the guest little reason to remember it or understand its specific appeal.</span></div></article>
+<article class="lb-card"><div class="lb-media lb-copy-after"><div class="lb-copy-ui"><div class="lb-copy-ui-top"><span class="lb-copy-ui-kicker">Search result</span><span class="lb-copy-ui-search">west coast villa</span></div><h4>Private West Coast Villa · Pool · Sunset Views</h4><p>A private hillside escape for slow mornings, poolside afternoons, and easy access to Curaçao’s west coast. Designed for couples and small groups who want space, privacy, and an easy island rhythm.</p><div class="lb-copy-tags"><span>west coast</span><span>private pool</span><span>sunset</span><span>couples</span></div></div><div class="lb-media-label">After</div></div><div class="lb-card-copy"><strong>After</strong><span>Positioning, benefit-led language, and natural search phrases work together to make the property easier to understand and easier to choose.</span></div></article>
+</div>
+</section>
+
+<section class="lb-service">
+<div class="lb-service-head">
+<div class="lb-service-num">03</div>
+<div><div class="eyebrow">The Numbers</div><h3>Revenue Optimization</h3><p>We replace “one price fits every night” with a visual pricing rhythm that responds to demand, seasonality, day-of-week behavior, and local competition.</p></div>
+</div>
+<div class="lb-pair">
+<article class="lb-card"><div class="lb-media lb-revenue-before"><div class="lb-revenue-ui"><div class="lb-revenue-ui-head"><div><small>Calendar pricing</small><strong>$250 / night</strong></div><span class="lb-copy-ui-search">flat rate</span></div><div class="lb-calendar"><div class="lb-day"><b>Mon</b><span>$250</span></div><div class="lb-day"><b>Tue</b><span>$250</span></div><div class="lb-day"><b>Wed</b><span>$250</span></div><div class="lb-day"><b>Thu</b><span>$250</span></div><div class="lb-day"><b>Fri</b><span>$250</span></div><div class="lb-day"><b>Sat</b><span>$250</span></div><div class="lb-day"><b>Sun</b><span>$250</span></div></div><div class="lb-demand-row"><span>No demand signal</span><span>No day-of-week adjustment</span></div></div><div class="lb-media-label">Before</div></div><div class="lb-card-copy"><strong>Before</strong><span>One nightly rate treats quiet weekdays, strong weekends, and high-demand periods as though they are the same market.</span></div></article>
+<article class="lb-card"><div class="lb-media lb-revenue-after"><div class="lb-revenue-ui"><div class="lb-revenue-ui-head"><div><small>Calendar pricing</small><strong>$205–$380</strong></div><span class="lb-copy-ui-search">demand-aware</span></div><div class="lb-calendar"><div class="lb-day soft"><b>Mon</b><span>$205</span></div><div class="lb-day"><b>Tue</b><span>$225</span></div><div class="lb-day"><b>Wed</b><span>$235</span></div><div class="lb-day"><b>Thu</b><span>$245</span></div><div class="lb-day hot"><b>Fri</b><span>$310</span></div><div class="lb-day hot"><b>Sat</b><span>$380</span></div><div class="lb-day"><b>Sun</b><span>$250</span></div></div><div class="lb-demand-row"><span>Weekend lift</span><span>Seasonality considered</span><span>Competitive context</span></div></div><div class="lb-media-label">After</div></div><div class="lb-card-copy"><strong>After</strong><span>The rate changes with the market instead of fighting it—giving the property room to capture more when demand strengthens and stay competitive when it softens.</span></div></article>
+</div>
+<div class="lb-note">Illustrative example only. The actual pricing calendar is built around the property’s market, seasonality, demand patterns, and competitive set.</div>
+</section>
+
 </div>
 </div>
 <header class="site-header">
@@ -328,16 +416,30 @@
 <p class="hero-sub">New listings lose the first 90 days to weak photos, generic copy, and flat pricing. We fix that in one focused engagement, bringing you high-impact photography, clear brand identity, search-optimized writing, and a data-backed pricing foundation so your property stands out in an increasingly competitive market and starts earning faster.</p>
 </div>
 </div>
-<div aria-label="Open property photo gallery" class="photo-grid" onclick="openLightbox()" role="button" tabindex="0">
-<div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier · Curaçao</span></div>
-<div class="grid-img grid-img-2"></div>
-<div class="grid-img grid-img-3"></div>
-<div class="grid-img grid-img-4"></div>
-<div class="grid-img grid-img-5"></div>
+<div aria-label="Open property before-and-after gallery" class="photo-grid" onclick="openLightbox()" role="button" tabindex="0">
+<div class="grid-img grid-img-1">
+<!-- Replace this source with the short property reel. -->
+<video class="grid-video" autoplay muted loop playsinline poster="assets/hero-properties-poster.jpg">
+<source src="assets/hero-properties-reel.mp4" type="video/mp4"/>
+</video>
+<div class="grid-label">The House Atelier · SXM</div>
+</div>
+<div class="grid-img grid-img-2" aria-label="Property 1 before">
+<div class="grid-label">Before</div>
+</div>
+<div class="grid-img grid-img-3" aria-label="Property 1 after">
+<div class="grid-label">After</div>
+</div>
+<div class="grid-img grid-img-4" aria-label="Property 2 before">
+<div class="grid-label">Before</div>
+</div>
+<div class="grid-img grid-img-5" aria-label="Property 2 after">
+<div class="grid-label">After</div>
+</div>
 <button class="show-all-btn" onclick="openLightbox();event.stopPropagation();" type="button">
 <svg aria-hidden="true" fill="currentColor" height="13" viewbox="0 0 16 16" width="13"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"></path></svg>
-      View gallery
-     </button>
+View gallery
+</button>
 </div>
 <div class="hero-offer-row">
 <div class="hero-note">
@@ -704,4 +806,3 @@
  </script>
 </body>
 </html>
-
