@@ -77,7 +77,7 @@
   .hero-note strong{font-weight:700;color:var(--sage)}
   .hero-note-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex:none;animation:pulse 2s infinite}
   .hero-offer-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-  
+
   @keyframes pulse {
    0% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0.4); }
    70% { box-shadow: 0 0 0 8px rgba(49, 91, 87, 0); }
@@ -133,19 +133,15 @@
   .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:start}
   .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
   .offer-copy{max-width:620px;color:#c7cfcc;font-size:15px;line-height:1.7}
-  
   .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:14px}
   .included li{display:flex;gap:12px;align-items:flex-start;font-size:13px}
   .included li div{display:flex;flex-direction:column;gap:2px}
   .included li strong{color:#fff;font-weight:700;font-size:13.5px;}
   .included li span{color:#c7cfcc;line-height:1.45;font-size:12.5px;}
-  
-  /* Elegant styling for the conceptual deliverable titles */
   .included li strong em { font-family: 'Lora', Georgia, serif; font-style: italic; font-weight: 500; color: var(--accent-soft); font-size: 15px; letter-spacing: 0.01em; }
   .included li strong .sep { color: rgba(255,255,255,0.3); font-weight: 400; margin: 0 6px; }
-
   .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
-  
+
   /* PRICING CARD */
   .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
   .pricing-card .eyebrow{color:var(--accent-dark)}
@@ -155,7 +151,7 @@
   .price-card-btn{width:100%}
   .price-tiers{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:grid;gap:14px;font-size:12.5px;color:var(--muted-dark)}
   .price-tiers strong{color:var(--ink)}
-  .price-tiers strike{color:var(--muted); font-weight:400; margin-left:4px}
+  .price-tiers strike{color:var(--muted);font-weight:400;margin-left:4px}
   .micro{font-size:10.5px;color:#848a86;line-height:1.5;margin-top:18px}
 
   /* CREDIBILITY */
@@ -173,13 +169,13 @@
   .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
   .chip{font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--sage);background:#fffdf8}
 
-  /* PROCESS */
-  .process{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .step{padding:28px 20px 30px;border-right:1px solid var(--line)}
-  .step:last-child{border-right:0}
-  .step-num{font-size:10px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
-  .step h3{font-size:20px;line-height:1.2;margin:18px 0 8px}
-  .step p{font-size:12.5px;line-height:1.55;color:var(--muted-dark);margin:0}
+  /* ROI */
+  .roi-grid .pillar h3{font-size:38px;line-height:1;margin:8px 0 12px;letter-spacing:-.03em}
+  .roi-grid .pillar p{max-width:360px}
+  .roi-grid .pillar p strong{color:var(--ink);font-weight:700}
+  .decision-row{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .decision-copy{min-width:240px}
+  .decision-copy p{margin:7px 0 0;color:var(--muted-dark);font-size:14px;line-height:1.55}
 
   /* FAQ */
   .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
@@ -196,6 +192,11 @@
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
   .contact-band h2{font-size:clamp(44px,5.5vw,70px);line-height:.98;letter-spacing:-.04em;margin:8px 0 16px;font-family:'Lora',serif;font-weight:400;color:#fff}
   .contact-band p{color:#c6cfcc;font-size:15px;line-height:1.7;max-width:500px;margin:0}
+  .contact-steps{margin-top:26px;display:grid;gap:12px}
+  .contact-step{display:flex;gap:12px;align-items:flex-start}
+  .contact-step .step-dot{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
+  .contact-step div{color:#c6cfcc;font-size:13px;line-height:1.45}
+  .contact-step strong{color:#fff;font-weight:700}
   .form-card{background:var(--bone-2);border-radius:24px;padding:25px;border:1px solid rgba(255,255,255,.06)}
   form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   .field-full{grid-column:1 / -1}
@@ -205,7 +206,7 @@
   textarea{min-height:84px;resize:vertical}
   .submit{grid-column:1 / -1;background:var(--accent);color:#fff;border:0;padding:14px;border-radius:11px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s ease}
   .submit:hover{background:var(--accent-dark);transform:translateY(-1px)}
-  .form-note{font-size:10px;color:#8a918d;text-align:center;margin:10px 0 0}
+  .form-note{font-size:10px!important;color:#8a918d!important;text-align:center;margin:10px 0 0!important;max-width:none!important}
 
   footer{background:var(--charcoal);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
   .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -221,9 +222,6 @@
    .offer-shell,.story-grid,.contact-grid{grid-template-columns:1fr}
    .faq-grid{grid-template-columns:1fr;gap:28px}
    .pricing-card{max-width:540px}
-   .process{grid-template-columns:repeat(2,1fr)}
-   .step:nth-child(2){border-right:0}
-   .step:nth-child(1),.step:nth-child(2){border-bottom:1px solid var(--line)}
   }
 
   @media(max-width:720px){
@@ -249,14 +247,14 @@
    .hero-offer-actions{justify-content:center;flex-direction:column;width:100%}
    .offer-chip{justify-content:center;text-align:center;width:100%}
    .hero-offer-row .accent-btn{width:100%}
-   .pillars,.process{grid-template-columns:1fr}
-   .pillar,.step{border-right:0;border-bottom:1px solid var(--line);padding:24px 0}
-   .pillar:last-child,.step:last-child{border-bottom:0}
+   .pillars{grid-template-columns:1fr}
+   .pillar{border-right:0;border-bottom:1px solid var(--line);padding:24px 0}
+   .pillar:last-child{border-bottom:0}
+   .roi-grid .pillar h3{font-size:36px}
    section{padding:66px 0}
    .section-heading{margin-bottom:30px}
    .section-heading h2{font-size:42px}
    .pillar h3{font-size:26px}
-   .step h3{font-size:24px}
    .offer-shell{gap:34px}
    .display{font-size:46px}
    .pricing-card{padding:24px}
@@ -264,6 +262,8 @@
    .quote-card{min-height:300px;padding:28px}
    .quote-card p{font-size:25px}
    .bio-card{padding:26px}
+   .decision-row{align-items:stretch}
+   .decision-row .accent-btn{width:100%}
    .contact-band{padding:68px 0 50px}
    .contact-band h2{font-size:48px}
    form{grid-template-columns:1fr}
@@ -296,7 +296,7 @@
    <button class="icon-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
    </button>
-   <a class="accent-btn" href="#contact" onclick="closeLightbox()">Apply for an inaugural slot →</a>
+   <a class="accent-btn" href="#contact" onclick="closeLightbox()">Request an inaugural launch slot →</a>
   </div>
   <div class="lightbox-body">
    <div class="lb-item"><div class="lb-full lb-1"></div></div>
@@ -316,7 +316,7 @@
  <header class="site-header">
   <div class="wrap nav">
    <a class="brand" href="#top">The House Atelier</a>
-   <a class="nav-link" href="#contact">Apply for a slot <span aria-hidden="true">↗</span></a>
+   <a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
   </div>
  </header>
 
@@ -357,7 +357,7 @@
      </div>
      <div class="hero-offer-actions">
       <div class="offer-chip">
-       <div><small>Inaugural launch rate</small><strong>US$625</strong><em>1–2 Bedrooms · <span>ROI equivalent ~5 to 6 nights</span></em></div>
+       <div><small>Inaugural launch rate</small><strong>US$625</strong><em>1–2 Bedrooms · <span>Revenue equivalent · ~5 to 6 booked nights</span></em></div>
       </div>
       <a class="accent-btn" href="#offer">See what's included →</a>
      </div>
@@ -417,7 +417,7 @@
        <li>
         <span class="check">✓</span>
         <div>
-         <strong><em>The Words</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization </strong>
+         <strong><em>The Words</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization</strong>
          <span>We create a recognizable property identity you'll be proud of and express it through clear, searchable listing language that showcases its true value to renters.</span>
         </div>
        </li>
@@ -425,7 +425,7 @@
         <span class="check">✓</span>
         <div>
          <strong><em>The Numbers</em> <span class="sep">·</span> Dynamic Pricing Foundation</strong>
-         <span>We conduct a local competitive analysis to program the optimal rate structure for your property, facoring in seasonality, demand periods, and day-of-week trends to maximize booking yield.</span>
+         <span>We conduct a local competitive analysis to program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends to maximize booking yield.</span>
         </div>
        </li>
        <li>
@@ -444,17 +444,17 @@
       <div class="price">US$625</div>
       <div class="price-note">
        <strike style="margin-right:6px;">US$1,250</strike> Inaugural rate<br>
-       <strong style="color:var(--sage);">Net ROI equivalent · about 5 to 6 nights</strong>
+       <strong style="color:var(--sage);">Revenue equivalent · about 5 to 6 booked nights</strong>
       </div>
-      <a class="accent-btn price-card-btn" href="#contact">Apply for an inaugural slot →</a>
+      <a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
       <div class="price-tiers">
        <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
         <strong>3–5 Beds (Luxury Villa)</strong> US$1,250 <strike>(US$2,500)</strike><br>
-        <span style="color:var(--sage); font-weight:600;">Net ROI equivalent · about 3 to 4 nights</span>
+        <span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 3 to 4 booked nights</span>
        </div>
        <div>
         <strong>6+ Beds (Estate/Compound)</strong> US$2,250 <strike>(US$4,500)</strike><br>
-        <span style="color:var(--sage); font-weight:600;">Net ROI equivalent · about 2 to 3 nights</span>
+        <span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 2 to 3 booked nights</span>
        </div>
       </div>
       <div class="micro">Ten slots are available across all three tiers.</div>
@@ -499,34 +499,39 @@
    </div>
   </section>
 
-  <!-- PROCESS -->
+  <!-- ROI / DECISION -->
   <section class="band-light">
    <div class="wrap">
     <div class="section-heading">
-     <div class="eyebrow">What happens next</div>
-     <h2>A practical path to a stronger listing.</h2>
+     <div class="eyebrow">Put the investment in perspective</div>
+     <h2>The investment is small compared with the revenue opportunity.</h2>
+     <p>The inaugural package is designed to strengthen the parts of your listing that influence visibility, conversion, pricing, and guest perception — before you spend months trying to fix them one at a time.</p>
     </div>
-    <div class="process">
-     <article class="step">
-      <div class="step-num">01 / REACH OUT</div>
-      <h3>You send us the listing.</h3>
-      <p>Tell us about the property, share the listing, and let us know what you are trying to achieve.</p>
+
+    <div class="pillars roi-grid">
+     <article class="pillar">
+      <div class="eyebrow" style="color:var(--accent-dark)">1–2 Bedrooms</div>
+      <h3>US$625</h3>
+      <p>Roughly equivalent to <strong>5–6 booked nights</strong> at the target net rate used for the inaugural offer.</p>
      </article>
-     <article class="step">
-      <div class="step-num">02 / AUDIT</div>
-      <h3>We find the opportunities.</h3>
-      <p>We audit the listing through a guest, conversion, and revenue lens to identify what is working and what is holding it back.</p>
+     <article class="pillar">
+      <div class="eyebrow" style="color:var(--accent-dark)">3–5 Bedrooms</div>
+      <h3>US$1,250</h3>
+      <p>Roughly equivalent to <strong>3–4 booked nights</strong> at the target net rate used for the inaugural offer.</p>
      </article>
-     <article class="step">
-      <div class="step-num">03 / OPTIMIZE</div>
-      <h3>We build the stronger listing.</h3>
-      <p>We optimize the brand, photography, title, description, pricing, and guest touchpoints so the entire listing works together.</p>
+     <article class="pillar">
+      <div class="eyebrow" style="color:var(--accent-dark)">6+ Bedrooms</div>
+      <h3>US$2,250</h3>
+      <p>Roughly equivalent to <strong>2–3 booked nights</strong> at the target net rate used for the inaugural offer.</p>
      </article>
-     <article class="step">
-      <div class="step-num">04 / IMPLEMENT</div>
-      <h3>We put it live.</h3>
-      <p>We implement the approved changes and get the refreshed listing live, ready for you to start welcoming guests and generating bookings.</p>
-     </article>
+    </div>
+
+    <div class="decision-row">
+     <div class="decision-copy">
+      <div class="eyebrow">The next step is intentionally simple</div>
+      <p>Send the listing. We review the opportunity. We confirm availability.</p>
+     </div>
+     <a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
     </div>
    </div>
   </section>
@@ -545,7 +550,7 @@
        <p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
       </details>
       <details>
-       <summary>What happens after I apply?</summary>
+       <summary>What happens after I submit the form?</summary>
        <p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected for the work to be rendered, with the remaining balance due on delivery.</p>
       </details>
       <details>
@@ -562,7 +567,7 @@
       </details>
       <details>
        <summary>Does this set up dynamic pricing?</summary>
-       <p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic, dynamic rate management. Ongoing revenue management and platform setup can be added separately.</p>
+       <p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic rate management. Ongoing revenue management and platform setup can be added separately.</p>
       </details>
      </div>
     </div>
@@ -574,9 +579,22 @@
    <div class="wrap">
     <div class="contact-grid">
      <div>
-      <div class="eyebrow" style="color:#d7a08e">Before you welcome your first guest</div>
-      <h2>Build the right foundation.</h2>
-      <p>Tell us a little about the property and share your listing link. If it looks like a fit, we'll review the opportunity and confirm availability for one of the inaugural slots in Curaçao.</p>
+      <div class="eyebrow" style="color:#d7a08e">10 inaugural properties</div>
+      <h2>Request your launch slot.</h2>
+      <div class="contact-steps">
+       <div class="contact-step">
+        <span class="step-dot">1</span>
+        <div><strong>Send the listing</strong><br>Takes about a minute.</div>
+       </div>
+       <div class="contact-step">
+        <span class="step-dot">2</span>
+        <div><strong>We review it</strong><br>We look at the property, positioning, and opportunity.</div>
+       </div>
+       <div class="contact-step">
+        <span class="step-dot">3</span>
+        <div><strong>We confirm availability</strong><br>No commitment until your property is reviewed.</div>
+       </div>
+      </div>
      </div>
 
      <div class="form-card">
@@ -586,33 +604,35 @@
         <input id="name" required name="name" placeholder="Your name" />
        </div>
        <div>
-        <label for="email">Email</label>
-        <input id="email" required name="email" type="email" placeholder="you@example.com" />
+        <label for="contact_method">Email or WhatsApp</label>
+        <input id="contact_method" required name="contact" placeholder="Best way to reach you" />
        </div>
        <div>
-        <label for="phone">Phone / WhatsApp</label>
-        <input id="phone" required name="phone" type="tel" placeholder="+599 ..." />
-       </div>
-       <div>
-        <label for="beds">Bedrooms</label>
+        <label for="beds">Property size</label>
         <select id="beds" required name="beds">
          <option value="" disabled selected>Select size</option>
-         <option>1–2 Bedrooms (Condo/Suite)</option>
-         <option>3–5 Bedrooms (Luxury Villa)</option>
-         <option>6+ Bedrooms (Estate/Compound)</option>
+         <option>1–2 Bedrooms</option>
+         <option>3–5 Bedrooms</option>
+         <option>6+ Bedrooms</option>
+        </select>
+       </div>
+       <div>
+        <label for="launch">Launch timing</label>
+        <select id="launch" name="launch">
+         <option value="" disabled selected>When are you launching?</option>
+         <option>Within 30 days</option>
+         <option>1–3 months</option>
+         <option>3–6 months</option>
+         <option>Already live</option>
         </select>
        </div>
        <div class="field-full">
         <label for="url">Listing URL</label>
-        <input id="url" required name="url" placeholder="https://airbnb.com/..." />
+        <input id="url" required name="url" type="url" placeholder="https://airbnb.com/..." />
        </div>
-       <div class="field-full">
-        <label for="notes">Anything we should know?</label>
-        <textarea id="notes" name="notes" placeholder="Property location, launch timing, or anything else useful."></textarea>
-       </div>
-       <button class="submit" type="submit">Apply for an inaugural slot →</button>
+       <button class="submit" type="submit">Request my inaugural launch slot →</button>
       </form>
-      <p class="form-note">No commitment until the property is reviewed and availability is confirmed.</p>
+      <p class="form-note">No commitment. We'll review the property and confirm fit + availability first.</p>
      </div>
     </div>
    </div>
@@ -627,8 +647,8 @@
  </footer>
 
  <div class="mobile-cta" id="mobileCta" aria-label="Mobile call to action">
-  <div class="mini-price"><small>See what’s included</small><strong>US$625 · 1–2 Beds</strong></div>
-  <a class="accent-btn" id="mobileCtaLink" href="#offer">Learn more →</a>
+  <div class="mini-price"><small>Inaugural launch rate</small><strong>US$625 · 1–2 Beds</strong></div>
+  <a class="accent-btn" id="mobileCtaLink" href="#offer">See offer →</a>
  </div>
 
  <script>
@@ -649,7 +669,6 @@
   document.addEventListener('keydown',function(e){
    if(e.key==='Escape') closeLightbox();
   });
-
 
   // Dynamic mobile CTA tied to the offer anchor and contact section
   (function(){
@@ -681,13 +700,13 @@
     cta.classList.remove('is-hidden');
 
     if(scrollY >= offerY - headerOffset){
-     link.textContent='Apply →';
+     link.textContent='Request slot →';
      link.setAttribute('href','#contact');
      small.textContent='Inaugural rate';
     }else{
-     link.textContent='Learn more →';
+     link.textContent='See offer →';
      link.setAttribute('href','#offer');
-     small.textContent='See what’s included';
+     small.textContent='Inaugural launch rate';
     }
    }
 
@@ -720,14 +739,14 @@
      body:JSON.stringify(payload)
     });
     if(response.ok){
-     alert('Thank you. Your application has been submitted.');
+     alert('Thank you. Your launch-slot request has been submitted.');
      form.reset();
     }else{
-     alert('There was an issue sending the application. Please try again.');
+     alert('There was an issue sending the request. Please try again.');
     }
    }catch(err){
     console.error(err);
-    alert('Could not submit the form. Please check your connection or contact us directly.');
+    alert('Could not submit the request. Please check your connection or contact us directly.');
    }
   }
  </script>
