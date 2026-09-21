@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="The House Atelier | High-impact photography, STR branding, search-friendly writing, and a dynamic pricing foundation for vacation rental owners in Curaçao." name="description"/>
-<meta content="#1b2524" name="theme-color"/>
-<title>The House Atelier | Make your vacation rental impossible to overlook.</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
-<style>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="description" content="The House Atelier | High-impact photography, STR branding, search-friendly writing, and a dynamic pricing foundation for vacation rental owners in Curaçao." />
+ <meta name="theme-color" content="#1b2524" />
+ <title>The House Atelier | Make your vacation rental impossible to overlook.</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+ <style>
   :root{
    --bone:#faf7f0;
    --bone-2:#fdfbf7;
@@ -31,6 +31,7 @@
    --radius:24px;
    --max:1180px;
   }
+
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bone);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
@@ -39,156 +40,95 @@
   button,input,select,textarea{font:inherit}
   h1,h2,h3,.display,.quote p,.listing-title{font-family:'Lora',Georgia,serif;font-weight:400}
   .wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+
   /* NAV */
-  .site-header{background:var(--bone-2);position:relative;z-index:20}
+  .site-header{background:var(--bone);position:relative;z-index:20}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
   .brand{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
   .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.28);transition:.2s ease}
   .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
+
   /* HERO */
-  .hero{padding:18px 0 76px;background:var(--bone-2)}
+  .hero{padding:18px 0 76px}
   .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
-  .hero-copy{display:block;margin:8px 0 24px}
-  .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:920px}
-  .hero-sub{display:block;width:100%;max-width:780px;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
-  /* HERO GALLERY */
+  .hero-copy{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:48px;align-items:end;margin:8px 0 24px}
+  .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:900px}
+  .hero-sub{max-width:none;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
+  .hero-meta{justify-self:end;max-width:280px;border-left:1px solid var(--line);padding-left:24px}
+  .hero-meta p{margin:0 0 13px;font-size:13px;color:var(--muted-dark)}
+  .hero-meta strong{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
+
+  /* PHOTO GRID */
   .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
   .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
-  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(0,0,0,.46) 100%);pointer-events:none}
-  .grid-video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,0,0,.25))}
   .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
-  .grid-img-2{grid-column:2;grid-row:1;background-image:linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/before-1.jpg');background-color:#8c5f52}
-  .grid-img-3{grid-column:3;grid-row:1;background-image:linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/after-1.jpg');background-color:#758078}
-  .grid-img-4{grid-column:2;grid-row:2;background-image:linear-gradient(135deg,rgba(167,183,174,.18) 0%,rgba(67,91,87,.26) 100%),url('assets/before-2.jpg');background-color:#435b57}
-  .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/after-2.jpg');background-color:#8a6d5e}
-  .grid-label{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
-  .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
+  .grid-img-2{grid-column:2;grid-row:1;background:linear-gradient(135deg,#d49a7b 0%,#8c5f52 100%)}
+  .grid-img-3{grid-column:3;grid-row:1;background:linear-gradient(135deg,#d9d8cb 0%,#758078 100%)}
+  .grid-img-4{grid-column:2;grid-row:2;background:linear-gradient(135deg,#a7b7ae 0%,#435b57 100%)}
+  .grid-img-5{grid-column:3;grid-row:2;background:linear-gradient(135deg,#eadbc9 0%,#8a6d5e 100%)}
+  .grid-badge{position:absolute;z-index:2;left:18px;bottom:18px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;background:rgba(27,37,36,.64);backdrop-filter:blur(9px);padding:8px 12px;border:1px solid rgba(255,255,255,.16);border-radius:999px}
   .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer}
   .show-all-btn:hover{background:#fff}
+
   /* HERO OFFER CHIP & BEACON */
   .hero-offer-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
   .hero-note{display:flex;align-items:center;gap:12px;color:var(--ink);font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.4}
   .hero-note strong{font-weight:700;color:var(--sage)}
   .hero-note-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex:none;animation:pulse 2s infinite}
   .hero-offer-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+
   @keyframes pulse {
    0% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0.4); }
    70% { box-shadow: 0 0 0 8px rgba(49, 91, 87, 0); }
    100% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0); }
   }
+
   .desktop-break{display:block}
   .offer-chip{display:flex;align-items:center;gap:16px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}
   .offer-chip small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
   .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
   .offer-chip em{font-style:normal;font-size:11px;color:var(--muted-dark);display:block;margin-top:2px}
   .offer-chip span{color:var(--sage);font-weight:600;}
-  .offer-chip .price-line{
-    display:flex;
-    align-items:baseline;
-    gap:6px;
-    margin-top:2px;
-  }
-  .offer-chip .from{
-    font-size:11px;
-    font-weight:600;
-    color:var(--muted-dark);
-    font-family:'DM Sans',system-ui,sans-serif;
-    letter-spacing:.02em;
-  }
-  .offer-chip .price-line strong{
-    display:inline;
-    margin-top:0;
-  }
   .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
-  /* LIGHTBOX / SERVICE CASE STUDIES */
+
+  /* MODAL */
   .lightbox{position:fixed;inset:0;background:#fff;z-index:9999;display:none;overflow-y:auto}
   .lightbox.active{display:block}
-  .lightbox-top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line)}
-  .lightbox-top-title{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted-dark)}
-  .lightbox-top-title span{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  .lightbox-top{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line)}
   .icon-btn{width:38px;height:38px;border:0;background:transparent;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--charcoal)}
   .icon-btn:hover{background:#f3f0ea}
-  .lightbox-body{width:min(calc(100% - 40px),980px);margin:46px auto 76px}
-  .lb-intro{max-width:760px;margin-bottom:40px}
-  .lb-intro h2{font-size:clamp(42px,5.4vw,64px);line-height:1;letter-spacing:-.04em;margin:8px 0 14px}
-  .lb-intro p{font-size:15px;line-height:1.7;color:var(--muted-dark);margin:0;max-width:700px}
-  .lb-service{padding:34px 0 42px;border-top:1px solid var(--line)}
-  .lb-service:last-child{border-bottom:1px solid var(--line)}
-  .lb-service-head{display:grid;grid-template-columns:90px minmax(0,1fr);gap:20px;align-items:start;margin-bottom:22px}
-  .lb-service-num{font-family:'Lora',serif;font-size:42px;line-height:1;color:var(--accent);letter-spacing:-.04em}
-  .lb-service h3{font-size:34px;line-height:1.05;letter-spacing:-.03em;margin:6px 0 8px}
-  .lb-service p{font-size:13px;line-height:1.65;color:var(--muted-dark);margin:0;max-width:710px}
-  .lb-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .lb-card{border-radius:18px;overflow:hidden;background:var(--bone-3);border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05)}
-  .lb-media{position:relative;min-height:300px;background:var(--charcoal);overflow:hidden}
-  .lb-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 52%,rgba(0,0,0,.42) 100%)}
-  .lb-media-label{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff;font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
-  .lb-card-copy{padding:16px 17px 18px}
-  .lb-card-copy strong{display:block;font-size:13px;margin-bottom:4px;color:var(--ink)}
-  .lb-card-copy span{display:block;font-size:12px;line-height:1.55;color:var(--muted-dark)}
-  
-  /* LIGHTBOX PHOTOGRAPHY GALLERY */
-  .lb-photo-before-1 { background: url('assets/before-1.jpg') center/cover no-repeat; }
-  .lb-photo-after-1 { background: url('assets/after-1.jpg') center/cover no-repeat; }
-  .lb-photo-before-2 { background: url('assets/before-2.jpg') center/cover no-repeat; }
-  .lb-photo-after-2 { background: url('assets/after-2.jpg') center/cover no-repeat; }
-  .lb-photo-before-3 { background: url('assets/before-3.jpg') center/cover no-repeat; }
-  .lb-photo-after-3 { background: url('assets/after-3.jpg') center/cover no-repeat; }
-  .lb-photo-before-4 { background: url('assets/before-4.jpg') center/cover no-repeat; }
-  .lb-photo-after-4 { background: url('assets/after-4.jpg') center/cover no-repeat; }
-  .lb-photo-before-5 { background: url('assets/before-5.jpg') center/cover no-repeat; }
-  .lb-photo-after-5 { background: url('assets/after-5.jpg') center/cover no-repeat; }
+  .lightbox-body{width:min(calc(100% - 40px),900px);margin:26px auto 64px;display:grid;gap:12px}
+  .lb-item{border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+  .lb-full{height:500px}
+  .lb-half-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .lb-half{height:320px}
+  .lb-1{background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
+  .lb-2{background:linear-gradient(135deg,#d49a7b 0%,#8c5f52 100%)}
+  .lb-3{background:linear-gradient(135deg,#d9d8cb 0%,#758078 100%)}
+  .lb-4{background:linear-gradient(135deg,#a7b7ae 0%,#435b57 100%)}
+  .lb-5{background:linear-gradient(135deg,#eadbc9 0%,#8a6d5e 100%)}
+  .lb-6{background:linear-gradient(135deg,#8f9a95 0%,#354744 100%)}
+  .lb-7{background:linear-gradient(135deg,#365754 0%,#171f1e 100%)}
 
-  .lb-copy-before{background:#f4efe5;padding:18px;display:flex;align-items:stretch}
-  .lb-copy-after{background:#e5eee9;padding:18px;display:flex;align-items:stretch}
-  .lb-copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
-  .lb-copy-after .lb-copy-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.10)}
-  .lb-copy-ui-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line)}
-  .lb-copy-ui-kicker{font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-  .lb-copy-ui-search{font-size:8px;color:var(--muted-dark);border:1px solid var(--line);padding:5px 7px;border-radius:999px;background:var(--bone-2);white-space:nowrap}
-  .lb-copy-ui h4{font-family:'Lora',serif;font-size:25px;line-height:1.05;font-weight:400;letter-spacing:-.025em;margin:16px 0 8px;color:var(--ink)}
-  .lb-copy-ui p{font-size:10.5px;line-height:1.52;color:var(--muted-dark);margin:0}
-  .lb-copy-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
-  .lb-copy-tags span{font-size:8px;font-weight:700;letter-spacing:.04em;color:var(--sage);background:#edf4f1;padding:5px 7px;border-radius:999px}
-  .lb-copy-before .lb-copy-tags span{color:#78726a;background:#f0ece4}
-  .lb-revenue-before{background:#eee9df;padding:18px;display:flex;align-items:stretch}
-  .lb-revenue-after{background:#dfe9e5;padding:18px;display:flex;align-items:stretch}
-  .lb-revenue-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:15px;box-shadow:0 8px 24px rgba(27,37,36,.06)}
-  .lb-revenue-after .lb-revenue-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.09)}
-  .lb-revenue-ui-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .lb-revenue-ui-head small{display:block;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-  .lb-revenue-ui-head strong{font-family:'Lora',serif;font-size:25px;line-height:1;color:var(--ink);font-weight:400}
-  .lb-revenue-after .lb-revenue-ui-head strong{color:var(--sage)}
-  .lb-calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:14px}
-  .lb-day{border:1px solid var(--line);border-radius:8px;padding:7px 4px;text-align:center;background:#fbfaf6}
-  .lb-day b{display:block;font-size:7px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-  .lb-day span{display:block;font-size:10px;font-weight:700;color:var(--ink);margin-top:4px}
-  .lb-revenue-after .lb-day.hot{background:#315b57;border-color:#315b57}
-  .lb-revenue-after .lb-day.hot b,.lb-revenue-after .lb-day.hot span{color:#fff}
-  .lb-revenue-after .lb-day.soft{background:#f0e7df;border-color:#ead9cc}
-  .lb-demand-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-  .lb-demand-row span{font-size:8px;font-weight:700;padding:5px 7px;border-radius:999px;background:#f3efe8;color:var(--muted-dark)}
-  .lb-revenue-after .lb-demand-row span:first-child{background:#e7f1ed;color:var(--sage)}
-  .lb-experience-before{background-image:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.48) 100%),url('assets/property-setup-before.jpg');background-size:cover;background-position:center}
-  .lb-experience-after{background-image:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.38) 100%),url('assets/property-guest-ready-after.jpg');background-size:cover;background-position:center}
-  .lb-note{margin-top:14px;font-size:10px;line-height:1.5;color:var(--muted);text-align:center}
   /* SECTIONS */
   main{background:var(--bone)}
   section{padding:88px 0}
   .band-light{background:var(--bone-2)}
-  .band-beige{background:var(--bone-3)}
   .band-dark{background:var(--charcoal);color:var(--white)}
   .section-heading{max-width:840px;margin-bottom:42px}
   .section-heading h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
   .section-heading p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark)}
   .band-dark .section-heading p{color:#c5cdca}
+
   /* PILLARS */
   .pillars{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
   .pillar{padding:32px 24px 34px;border-right:1px solid var(--line)}
   .pillar:last-child{border-right:0}
   .pillar h3{font-size:26px;line-height:1.15;margin:0 0 12px;color:var(--charcoal)}
   .pillar p{font-size:13.5px;line-height:1.6;color:var(--muted-dark);margin:0;max-width:320px}
+
   /* OFFER */
   .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:start}
   .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
@@ -201,6 +141,7 @@
   .included li strong em { font-family: 'Lora', Georgia, serif; font-style: italic; font-weight: 500; color: var(--accent-soft); font-size: 15px; letter-spacing: 0.01em; }
   .included li strong .sep { color: rgba(255,255,255,0.3); font-weight: 400; margin: 0 6px; }
   .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
+
   /* PRICING CARD */
   .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
   .pricing-card .eyebrow{color:var(--accent-dark)}
@@ -212,31 +153,26 @@
   .price-tiers strong{color:var(--ink)}
   .price-tiers strike{color:var(--muted);font-weight:400;margin-left:4px}
   .micro{font-size:10.5px;color:#848a86;line-height:1.5;margin-top:18px}
+
   /* CREDIBILITY */
-  .philosophy-grid{display:block}
+  .philosophy-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
   .philosophy-card{background:#eee9df;border:1px solid rgba(27,37,36,.05);border-radius:24px;padding:38px;display:flex;align-items:center}
   .philosophy-card p{font-size:31px;line-height:1.12;letter-spacing:-.03em;max-width:600px;margin:0;color:#403a33}
-  .bio-card{background:#e6dfd3;border:1px solid rgba(27,37,36,.06);border-radius:24px;padding:26px;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(220px,.78fr);gap:28px;align-items:center}
-  .bio-photo{width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#d8d0c4;border:1px solid rgba(27,37,36,.06);display:flex;align-items:center;justify-content:center;color:#7a736a;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:center;grid-column:2;grid-row:1}
-  .bio-photo span{padding:18px;line-height:1.45}
-  .bio-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
+  .bio-card{background:var(--bone-2);border:1px solid var(--line);border-radius:24px;padding:30px}
   .bio-top{display:flex;align-items:center;gap:15px;margin-bottom:14px}
+  .avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;background:var(--charcoal);border:1px solid var(--line);flex:none}
   .bio-top h3{font-size:22px;line-height:1.1;margin:0 0 3px}
   .bio-top span{font-size:11px;color:var(--muted-dark)}
   .bio-card p{font-size:13px;line-height:1.6;color:var(--muted-dark);margin:0}
+
   /* THE RETURN */
   .roi-grid .pillar h3{font-size:38px;line-height:1;margin:8px 0 12px;letter-spacing:-.03em}
   .roi-grid .pillar p{max-width:360px}
   .roi-grid .pillar p strong{color:var(--ink);font-weight:700}
   .return-standard{display:inline-block;font-size:11px;color:var(--muted);margin-bottom:2px}
   .return-standard strike{text-decoration-thickness:1px}
-  .band-beige .section-heading{text-align:center;margin-left:auto;margin-right:auto}
-  .return-cta{display:flex;justify-content:center;align-items:center;margin:34px auto 0;text-align:center}
-  .return-statement{max-width:760px;margin:10px auto 0;text-align:center;font-size:17px;line-height:1.55;letter-spacing:0;color:var(--muted-dark)}
-  .return-points{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px;margin:32px auto 0;text-align:left}
-  .return-point{background:rgba(255,255,255,.45);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
-  .return-point strong{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-  .return-point span{font-size:13px;line-height:1.5;color:var(--muted-dark)}
+  .return-cta{display:flex;justify-content:center;margin-top:34px}
+
   /* FAQ */
   .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
   details{border-top:1px solid var(--line);padding:18px 0}
@@ -246,6 +182,7 @@
   summary::after{content:'+';font-weight:400;color:var(--muted)}
   details[open] summary::after{content:'–'}
   details p{font-size:13px;line-height:1.65;color:var(--muted-dark);max-width:700px;margin:10px 0 2px}
+
   /* CONTACT */
   .contact-band{background:var(--charcoal);padding:92px 0 70px}
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
@@ -266,18 +203,23 @@
   .submit{grid-column:1 / -1;background:var(--accent);color:#fff;border:0;padding:14px;border-radius:11px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s ease}
   .submit:hover{background:var(--accent-dark);transform:translateY(-1px)}
   .form-note{font-size:10px!important;color:#8a918d!important;text-align:center;margin:10px 0 0!important;max-width:none!important}
+
   footer{background:var(--charcoal);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
   .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
   /* MOBILE CTA */
   .mobile-cta{display:none}
   .mobile-cta.is-hidden{display:none !important}
+
   /* RESPONSIVE */
   @media(max-width:960px){
+   .hero-copy{grid-template-columns:1fr;gap:18px}
+   .hero-meta{justify-self:start;border-left:0;border-top:1px solid var(--line);padding:14px 0 0;max-width:none}
    .offer-shell,.story-grid,.contact-grid{grid-template-columns:1fr}
    .faq-grid{grid-template-columns:1fr;gap:28px}
    .pricing-card{max-width:540px}
-   .return-points{grid-template-columns:1fr}
   }
+
   @media(max-width:720px){
    body{padding-bottom:72px}
    .wrap{width:min(calc(100% - 28px),var(--max))}
@@ -294,8 +236,7 @@
    .grid-img-3{grid-column:2;grid-row:2}
    .grid-img-4{grid-column:1;grid-row:3}
    .grid-img-5{grid-column:2;grid-row:3}
-   .grid-label{left:12px;bottom:12px;font-size:8px;max-width:72%}
-   .grid-label span{font-size:8px}
+   .grid-badge{left:12px;bottom:12px;font-size:8px;padding:7px 9px}
    .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
    .hero-offer-row{grid-template-columns:1fr;gap:16px;margin-top:22px;padding-top:20px;text-align:center}
    .hero-note{font-size:15px;justify-content:center;text-align:center}
@@ -317,8 +258,7 @@
    .philosophy-grid{grid-template-columns:1fr}
    .philosophy-card{padding:28px}
    .philosophy-card p{font-size:25px}
-   .bio-card{padding:22px;grid-template-columns:1fr;gap:22px}
-   .bio-photo{max-width:360px;margin:0 auto;grid-column:1;grid-row:auto}
+   .bio-card{padding:26px}
    .decision-row{align-items:stretch}
    .decision-row .accent-btn{width:100%}
    .contact-band{padding:68px 0 50px}
@@ -330,23 +270,15 @@
    .mobile-cta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
    .mobile-cta strong{display:block;font-family:'Lora',serif;font-size:17px;font-weight:400;line-height:1.05}
    .mobile-cta .accent-btn{padding:10px 13px;border-radius:10px;font-size:11px}
-   .lightbox-top{padding:10px 12px}
-   .lightbox-top-title{font-size:9px}
-   .lightbox-top .accent-btn{display:none}
-   .lightbox-body{width:min(calc(100% - 24px),980px);margin-top:24px}
-   .lb-intro{margin-bottom:28px}
-   .lb-service-head{grid-template-columns:46px 1fr;gap:12px}
-   .lb-service-num{font-size:31px}
-   .lb-service h3{font-size:29px}
-   .lb-pair{grid-template-columns:1fr}
-   .lb-media{min-height:240px}
-   .lb-copy-ui h4{font-size:22px}
-   .lb-copy-ui p{font-size:10px}
-   .lb-revenue-ui-head strong{font-size:22px}
-   .lb-day{padding:6px 3px}
+   .lightbox-body{width:min(calc(100% - 24px),900px);margin-top:14px}
+   .lb-full{height:320px}
+   .lb-half-grid{grid-template-columns:1fr}
+   .lb-half{height:240px}
   }
+
   @media(max-width:420px){
    .hero h1{font-size:43px}
+   .hero-meta{font-size:12px}
    .grid-img-1{background-position:center}
    .offer-chip strong{font-size:21px}
    .price{font-size:43px}
@@ -354,438 +286,407 @@
  </style>
 </head>
 <body>
-<!-- PHOTO / CASE STUDY LIGHTBOX -->
-<div aria-hidden="true" class="lightbox" id="lightbox">
-<div class="lightbox-top">
-<div class="lightbox-top-title"><span></span> Before → After · The House Atelier</div>
-<div style="display:flex;align-items:center;gap:10px">
-<a class="accent-btn" href="#contact" onclick="closeLightbox()">Request an inaugural launch slot →</a>
-<button aria-label="Close gallery" class="icon-btn" onclick="closeLightbox()">
-<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="2.1" viewbox="0 0 24 24" width="20"><path d="M6 6l12 12M18 6L6 18"></path></svg>
-</button>
-</div>
-</div>
-<div class="lightbox-body">
-<div class="lb-intro">
-<div class="eyebrow">The work, side by side</div>
-<h2>See what changes when the listing gets the full treatment.</h2>
-<p>This gallery is organized around the same levers we use in a launch or repositioning engagement: stronger visuals, sharper listing language and search visibility, and a pricing foundation built around demand instead of a single flat rate.</p>
-</div>
 
-<section class="lb-service">
-<div class="lb-service-head">
-<div class="lb-service-num">01</div>
-<div><div class="eyebrow">The Visuals</div><h3>Photography</h3><p>From “technically photographed” to a sequence that makes the property feel immediately worth opening, exploring, and remembering.</p></div>
-</div>
-<div class="lb-pair">
-<!-- Pair 1 -->
-<article class="lb-card"><div class="lb-media lb-photo-before-1"><div class="lb-media-label">Before</div></div></article>
-<article class="lb-card"><div class="lb-media lb-photo-after-1"><div class="lb-media-label">After</div></div></article>
-
-<!-- Pair 2 -->
-<article class="lb-card"><div class="lb-media lb-photo-before-2"><div class="lb-media-label">Before</div></div></article>
-<article class="lb-card"><div class="lb-media lb-photo-after-2"><div class="lb-media-label">After</div></div></article>
-
-<!-- Pair 3 -->
-<article class="lb-card"><div class="lb-media lb-photo-before-3"><div class="lb-media-label">Before</div></div></article>
-<article class="lb-card"><div class="lb-media lb-photo-after-3"><div class="lb-media-label">After</div></div></article>
-
-<!-- Pair 4 -->
-<article class="lb-card"><div class="lb-media lb-photo-before-4"><div class="lb-media-label">Before</div></div></article>
-<article class="lb-card"><div class="lb-media lb-photo-after-4"><div class="lb-media-label">After</div></div></article>
-
-<!-- Pair 5 -->
-<article class="lb-card"><div class="lb-media lb-photo-before-5"><div class="lb-media-label">Before</div></div></article>
-<article class="lb-card"><div class="lb-media lb-photo-after-5"><div class="lb-media-label">After</div></div></article>
-</div>
-</section>
-
-<section class="lb-service">
-<div class="lb-service-head">
-<div class="lb-service-num">02</div>
-<div><div class="eyebrow">The Words</div><h3>Listing Copy + SEO</h3><p>Instead of asking the guest to decode a generic description, we turn the listing into a clear promise: what makes the place special, who it is for, and why it deserves the click.</p></div>
-</div>
-<div class="lb-pair">
-<article class="lb-card"><div class="lb-media lb-copy-before"><div class="lb-copy-ui"><div class="lb-copy-ui-top"><span class="lb-copy-ui-kicker">Search result</span><span class="lb-copy-ui-search">generic villa</span></div><h4>Beautiful Villa in Curaçao</h4><p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home with everything you need for a relaxing vacation.</p><div class="lb-copy-tags"><span>villa</span><span>pool</span><span>Curaçao</span><span>vacation</span></div></div><div class="lb-media-label">Before</div></div><div class="lb-card-copy"><strong>Before</strong><span>Describes the property, but gives the guest little reason to remember it or understand its specific appeal.</span></div></article>
-<article class="lb-card"><div class="lb-media lb-copy-after"><div class="lb-copy-ui"><div class="lb-copy-ui-top"><span class="lb-copy-ui-kicker">Search result</span><span class="lb-copy-ui-search">west coast villa</span></div><h4>Private West Coast Villa · Pool · Sunset Views</h4><p>A private hillside escape for slow mornings, poolside afternoons, and easy access to Curaçao’s west coast. Designed for couples and small groups who want space, privacy, and an easy island rhythm.</p><div class="lb-copy-tags"><span>west coast</span><span>private pool</span><span>sunset</span><span>couples</span></div></div><div class="lb-media-label">After</div></div><div class="lb-card-copy"><strong>After</strong><span>Positioning, benefit-led language, and natural search phrases work together to make the property easier to understand and easier to choose.</span></div></article>
-</div>
-</section>
-
-<section class="lb-service">
-<div class="lb-service-head">
-<div class="lb-service-num">03</div>
-<div><div class="eyebrow">The Numbers</div><h3>Revenue Optimization</h3><p>We replace “one price fits every night” with a visual pricing rhythm that responds to demand, seasonality, day-of-week behavior, and local competition.</p></div>
-</div>
-<div class="lb-pair">
-<article class="lb-card"><div class="lb-media lb-revenue-before"><div class="lb-revenue-ui"><div class="lb-revenue-ui-head"><div><small>Calendar pricing</small><strong>$250 / night</strong></div><span class="lb-copy-ui-search">flat rate</span></div><div class="lb-calendar"><div class="lb-day"><b>Mon</b><span>$250</span></div><div class="lb-day"><b>Tue</b><span>$250</span></div><div class="lb-day"><b>Wed</b><span>$250</span></div><div class="lb-day"><b>Thu</b><span>$250</span></div><div class="lb-day"><b>Fri</b><span>$250</span></div><div class="lb-day"><b>Sat</b><span>$250</span></div><div class="lb-day"><b>Sun</b><span>$250</span></div></div><div class="lb-demand-row"><span>No demand signal</span><span>No day-of-week adjustment</span></div></div><div class="lb-media-label">Before</div></div><div class="lb-card-copy"><strong>Before</strong><span>One nightly rate treats quiet weekdays, strong weekends, and high-demand periods as though they are the same market.</span></div></article>
-<article class="lb-card"><div class="lb-media lb-revenue-after"><div class="lb-revenue-ui"><div class="lb-revenue-ui-head"><div><small>Calendar pricing</small><strong>$205–$380</strong></div><span class="lb-copy-ui-search">demand-aware</span></div><div class="lb-calendar"><div class="lb-day soft"><b>Mon</b><span>$205</span></div><div class="lb-day"><b>Tue</b><span>$225</span></div><div class="lb-day"><b>Wed</b><span>$235</span></div><div class="lb-day"><b>Thu</b><span>$245</span></div><div class="lb-day hot"><b>Fri</b><span>$310</span></div><div class="lb-day hot"><b>Sat</b><span>$380</span></div><div class="lb-day"><b>Sun</b><span>$250</span></div></div><div class="lb-demand-row"><span>Weekend lift</span><span>Seasonality considered</span><span>Competitive context</span></div></div><div class="lb-media-label">After</div></div><div class="lb-card-copy"><strong>After</strong><span>The rate changes with the market instead of fighting it—giving the property room to capture more when demand strengthens and stay competitive when it softens.</span></div></article>
-</div>
-<div class="lb-note">Illustrative example only. The actual pricing calendar is built around the property’s market, seasonality, demand patterns, and competitive set.</div>
-</section>
-
-</div>
-</div>
-<header class="site-header">
-<div class="wrap nav">
-<a class="brand" href="#top">The House Atelier</a>
-<a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
-</div>
-</header>
-<div id="top"></div>
-<main>
-<!-- HERO -->
-<section class="hero">
-<div class="wrap">
-<div class="hero-copy">
-<div>
-<div class="eyebrow">For owners launching or repositioning an STR in Curaçao</div>
-<h1>Get clicked, booked, <br/> and five-starred.</h1>
-<p class="hero-sub">New listings lose the first 90 days to weak photos, generic copy, and flat pricing. We fix that in one focused engagement, bringing you high-impact photography, clear brand identity, search-optimized writing, and a data-backed pricing foundation so your property stands out in an increasingly competitive market and starts earning faster.</p>
-</div>
-</div>
-<div aria-label="Open property before-and-after gallery" class="photo-grid" onclick="openLightbox()" role="button" tabindex="0">
-<div class="grid-img grid-img-1">
-<!-- Replace this source with the short property reel. -->
-<video class="grid-video" autoplay muted loop playsinline poster="assets/hero-properties-poster.jpg">
-<source src="assets/hero-properties-reel.mp4" type="video/mp4"/>
-</video>
-<div class="grid-label">The House Atelier · SXM</div>
-</div>
-<div class="grid-img grid-img-2" aria-label="Property 1 before">
-<div class="grid-label">Before</div>
-</div>
-<div class="grid-img grid-img-3" aria-label="Property 1 after">
-<div class="grid-label">After</div>
-</div>
-<div class="grid-img grid-img-4" aria-label="Property 2 before">
-<div class="grid-label">Before</div>
-</div>
-<div class="grid-img grid-img-5" aria-label="Property 2 after">
-<div class="grid-label">After</div>
-</div>
-<button class="show-all-btn" onclick="openLightbox();event.stopPropagation();" type="button">
-<svg aria-hidden="true" fill="currentColor" height="13" viewbox="0 0 16 16" width="13"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"></path></svg>
-View gallery
-</button>
-</div>
-<div class="hero-offer-row">
-<div class="hero-note">
-<span class="hero-note-dot"></span>
-<div>Now accepting <strong>5 inaugural launch properties</strong> in Curaçao.</div>
-</div>
-<div class="hero-offer-actions">
-<div class="offer-chip">
-  <div>
-    <small>Inaugural launch rate</small>
-    <div class="price-line">
-      <span class="from">from</span>
-      <strong>850 USD</strong>
-    </div>
-    <em><span>≈ 2–7 booked nights</span></em>
+ <!-- PHOTO LIGHTBOX -->
+ <div class="lightbox" id="lightbox" aria-hidden="true">
+  <div class="lightbox-top">
+   <button class="icon-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+   </button>
+   <a class="accent-btn" href="#contact" onclick="closeLightbox()">Request an inaugural launch slot →</a>
   </div>
-</div>
-<a class="accent-btn" href="#offer">See the Launch System →</a>
-</div>
-</div>
-</div>
-</section>
-<!-- PROBLEM / PILLARS -->
-<section class="band-beige">
-<div class="wrap">
-<div class="section-heading">
-<div class="eyebrow">The first impression compounds</div>
-<h2>Don’t launch halfway.</h2>
-<p>Hotels, resorts, and short-term rentals are expanding across Curaçao. Guests have more choices every day. Generic photos, weak positioning, and flat rates get buried. We build around the three moments that decide whether a listing earns or loses.</p>
-</div>
-<div class="pillars">
-<article class="pillar">
-<h3>Get the click.</h3>
-<p>Your primary photo is the storefront. High-impact photography and a clear visual identity make the right guest stop scrolling and open your listing instead of the one next to it.</p>
-</article>
-<article class="pillar">
-<h3>Win the booking.</h3>
-<p>Once they click, every element must reinforce the same value. Strong writing, clear positioning, a persuasive photo sequence, and a hotel-style pricing foundation turn interest into a confirmed reservation at the right rate.</p>
-</article>
-<article class="pillar">
-<h3>Earn the 5-star review.</h3>
-<p>The stay must deliver on the promise made online. We refine presentation, amenities, and guest touchpoints so the experience feels considered from arrival to departure — and generates the reviews that improve future ranking.</p>
-</article>
-</div>
-</div>
-</section>
-<!-- OFFER -->
-<section class="band-dark" id="offer">
-<div class="wrap">
-<div class="offer-shell">
-<div>
-<div class="eyebrow" style="color:#d7a08e">Inaugural Launch System</div>
-<div class="display">One focused engagement.<br/>Five levers that compound.</div>
-<p class="offer-copy">We’re opening The House Atelier with a special offer for 5 properties in Curaçao. Our system is designed to accelerate the cold-start phase that new listings typically face, while also revitalizing older, underperforming listings.</p>
-<ul class="included offer-items">
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>1. The Diagnostic</em> <span class="sep">·</span> Full Listing Audit</strong>
-<span>We review your presentation, positioning, competitive set, and revenue opportunities to identify exactly what is helping or quietly costing you.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>2. The Visuals</em> <span class="sep">·</span> Photography</strong>
-<span>Professional photography designed to create the strongest first impression, showcase the property at its best, and give the listing a distinctive visual identity in the search grid.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>3. The Words</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization</strong>
-<span>We create a clear property identity and express it through searchable, benefit-driven language that converts the click into a booking decision.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>4. The Numbers</em> <span class="sep">·</span> Dynamic Pricing Foundation</strong>
-<span>We perform a local competitive analysis and program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends so you capture more yield.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>5. The Hospitality</em> <span class="sep">·</span> 5-Star Guest Experience Playbook</strong>
-<span>We refine guest-facing details, physical presentation, and communication touchpoints so the stay delivers on the brand promise and builds the review velocity that compounds ranking.</span>
-</div>
-</li>
-</ul>
-</div>
-<aside class="pricing-card">
-<div class="eyebrow">Inaugural launch offer · only 5 properties</div>
-<div class="pricing-tier-label">1–2 Bedrooms OR Condos / Suites</div>
-<div class="price">850 USD</div>
-<div class="price-note">
-<strike style="margin-right:6px;">1,650 USD</strike> Inaugural rate<br/>
-<strong style="color:var(--sage);">≈ 5-7 booked nights of revenue</strong>
-</div>
-<a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
-<div class="price-tiers">
-<div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
-<strong>3–5 Bedrooms OR Luxury Villas</strong> 1,250 USD <strike>(2,500 USD)</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 3–4 booked nights of revenue</span>
-</div>
-<div>
-<strong>6+ Bedrooms OR Estates</strong> 2,250 USD <strike>(4,500 USD)</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 2–3 booked nights of revenue</span>
-</div>
-</div>
-<div class="micro">Five slots are available across all three tiers. No commitment until we review fit and availability.</div>
-</aside>
-</div>
-</div>
-</section>
-<!-- THE RETURN -->
-<section class="band-beige">
-<div class="wrap">
-<div class="section-heading" style="text-align:center">
-<div class="eyebrow">The Return</div>
-<h2>Easily worth it.</h2>
-</div>
-<div class="return-statement">Under a week of additional booked nights covers the full investment. Most new listings take 3 months to build the review velocity that unlocks stronger placement. Our system is designed to compress that curve.</div>
-<div class="return-points">
-<div class="return-point">
-<strong>Photography + positioning</strong>
-<span>Lift click-through so the right guests actually open the listing.</span>
-</div>
-<div class="return-point">
-<strong>Pricing foundation</strong>
-<span>Protect and grow ADR once the traffic arrives, instead of leaving money on the table.</span>
-</div>
-</div>
-<div class="return-cta">
-<a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
-</div>
-</div>
-</section>
-<!-- PHILOSOPHY / CREDIBILITY -->
-<section class="band-light">
-<div class="wrap">
-<div class="section-heading">
-<div class="eyebrow">Our philosophy</div>
-<h2>You stay in control.</h2>
-<p>We give you the foundation. We make the important decisions easier, the presentation stronger, and the business easier to build on — without taking over your property. You keep the brand, the positioning, and the keys.</p>
-</div>
-<div class="philosophy-grid">
-<div class="bio-card">
-<div class="bio-photo" aria-label="Photo of Chris seated on a vintage leather sofa">
-<img src="assets/chris-bio.jpg" alt="Chris - The House Atelier" />
-</div>
-<div>
-<div class="bio-top">
-<div>
-<h3>Chris &amp; The House Atelier</h3>
-<span>Airbnb Luxe inspector · STR &amp; hospitality specialist</span>
-</div>
-</div>
-<p>Chris brings direct experience as an <strong>Airbnb Luxe inspector</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team. The same standards used to evaluate top-tier properties are applied to the foundation of yours.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ -->
-<section class="band-beige">
-<div class="wrap">
-<div class="faq-grid">
-<div class="section-heading" style="margin-bottom:0">
-<div class="eyebrow">Before you apply</div>
-<h2>Frequently asked.</h2>
-</div>
-<div>
-<details open="">
-<summary>Is this only for brand-new listings?</summary>
-<p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a strong fit when the property has outgrown its current presentation or needs a visual and positioning reset.</p>
-</details>
-<details>
-<summary>What happens after I submit the form?</summary>
-<p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected for the work to be rendered, with the remaining balance due on delivery. There is no commitment until we confirm the property is a match.</p>
-</details>
-<details>
-<summary>How long does the work take on site?</summary>
-<p>It depends on the size and complexity of the property. Most projects take between 1 and 4 hours on site, with larger or more detailed properties requiring more time.</p>
-</details>
-<details>
-<summary>Do I have to hand over management of my property?</summary>
-<p>No. We build the foundation while you remain in the driver’s seat. You keep control of the property, the brand, the positioning, and the business. Implementation and ongoing STR optimization are available only if and when you want additional support.</p>
-</details>
-<details>
-<summary>Can you support the property beyond the initial work?</summary>
-<p>Yes. We can continue supporting the property with implementation and ongoing STR optimization. Services can include listing updates, direct booking marketing, a dedicated website, video walkthroughs for asynchronous guest communication, ongoing pricing support, and other property-specific needs.</p>
-</details>
-<details>
-<summary>Does this set up dynamic pricing?</summary>
-<p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic rate management. Ongoing revenue management and platform setup can be added separately when you are ready.</p>
-</details>
-</div>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-band" id="contact">
-<div class="wrap">
-<div class="contact-grid">
-<div>
-<div class="eyebrow" style="color:#d7a08e">5 inaugural properties</div>
-<h2>Request your launch slot.</h2>
-<p>Send us the listing and a few details about the property. We’ll review the opportunity, confirm whether it’s a fit, and let you know whether an inaugural slot is available.</p>
-<div class="contact-steps">
-<div class="contact-step">
-<span class="step-dot">1</span>
-<div><strong>Send the listing</strong><br/>Takes about a minute.</div>
-</div>
-<div class="contact-step">
-<span class="step-dot">2</span>
-<div><strong>We review it</strong><br/>We look at the property, positioning, and opportunity.</div>
-</div>
-<div class="contact-step">
-<span class="step-dot">3</span>
-<div><strong>We confirm availability</strong><br/>No commitment until your property is reviewed.</div>
-</div>
-</div>
-</div>
-<div class="form-card">
-<form onsubmit="submitLead(event)">
-<div>
-<label for="name">Your name</label>
-<input id="name" name="name" placeholder="Your name" required=""/>
-</div>
-<div>
-<label for="contact_method">Email or WhatsApp</label>
-<input id="contact_method" name="contact" placeholder="Best way to reach you" required=""/>
-</div>
-<div>
-<label for="beds">Property size</label>
-<select id="beds" name="beds" required="">
-<option disabled="" selected="" value="">Select size</option>
-<option>1–2 Bedrooms OR Condos / Suites</option>
-<option>3–5 Bedrooms OR Luxury Villas</option>
-<option>6+ Bedrooms OR Estates</option>
-</select>
-</div>
-<div>
-<label for="launch">Launch timing</label>
-<select id="launch" name="launch">
-<option disabled="" selected="" value="">When are you launching?</option>
-<option>Within 30 days</option>
-<option>1–3 months</option>
-<option>3–6 months</option>
-<option>Already live</option>
-</select>
-</div>
-<div class="field-full">
-<label for="url">Listing URL</label>
-<input id="url" name="url" placeholder="https://airbnb.com/..." required="" type="url"/>
-</div>
-<button class="submit" type="submit">Request my inaugural launch slot →</button>
-</form>
-<p class="form-note">No commitment. We’ll review the property and confirm fit + availability first.</p>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer>
-<div class="wrap footer-inner">
-<span>© 2026 The House Atelier</span>
-<span>Luxury STR Launch Services | Curaçao</span>
-</div>
-</footer>
-<div aria-label="Mobile call to action" class="mobile-cta" id="mobileCta">
-<div class="mini-price"><small>Inaugural launch rate</small><strong>850 USD · 1-2 BR</strong></div>
-<a class="accent-btn" href="#offer" id="mobileCtaLink">See offer →</a>
-</div>
-<script>
+  <div class="lightbox-body">
+   <div class="lb-item"><div class="lb-full lb-1"></div></div>
+   <div class="lb-half-grid">
+    <div class="lb-item"><div class="lb-half lb-2"></div></div>
+    <div class="lb-item"><div class="lb-half lb-3"></div></div>
+   </div>
+   <div class="lb-item"><div class="lb-full lb-4"></div></div>
+   <div class="lb-half-grid">
+    <div class="lb-item"><div class="lb-half lb-5"></div></div>
+    <div class="lb-item"><div class="lb-half lb-6"></div></div>
+   </div>
+   <div class="lb-item"><div class="lb-full lb-7"></div></div>
+  </div>
+ </div>
+
+ <header class="site-header">
+  <div class="wrap nav">
+   <a class="brand" href="#top">The House Atelier</a>
+   <a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
+  </div>
+ </header>
+
+ <div id="top"></div>
+
+ <main>
+  <!-- HERO -->
+  <section class="hero">
+   <div class="wrap">
+    <div class="hero-copy">
+     <div>
+      <div class="eyebrow">For owners launching or repositioning an STR in Curaçao</div>
+      <h1>Make your vacation rental <br class="desktop-break">impossible to overlook.</h1>
+      <p class="hero-sub">We turn your vacation rental into a distinct short-term rental brand with high-impact photography, strong branding, search-friendly writing, and a dynamic pricing foundation built for an increasingly competitive market.</p>
+     </div>
+     <aside class="hero-meta">
+      <p><strong>Operated by Chris.</strong> Airbnb Luxe Inspector and former Marketing Manager at CoveCasa, a luxury vacation rental management company in Sint Maarten.</p>
+      <p><strong>Built for owner-led hospitality.</strong> We help establish the brand, listing, guest experience, and revenue foundation without requiring you to hand over management of your property.</p>
+     </aside>
+    </div>
+
+    <div class="photo-grid" onclick="openLightbox()" role="button" tabindex="0" aria-label="Open property photo gallery">
+     <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier · Curaçao</span></div>
+     <div class="grid-img grid-img-2"></div>
+     <div class="grid-img grid-img-3"></div>
+     <div class="grid-img grid-img-4"></div>
+     <div class="grid-img grid-img-5"></div>
+     <button class="show-all-btn" onclick="openLightbox();event.stopPropagation();" type="button">
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"/></svg>
+      View gallery
+     </button>
+    </div>
+
+    <div class="hero-offer-row">
+     <div class="hero-note">
+      <span class="hero-note-dot"></span>
+      <div>Now accepting <strong>10 inaugural launch properties</strong> in Curaçao.</div>
+     </div>
+     <div class="hero-offer-actions">
+      <div class="offer-chip">
+       <div><small>Inaugural launch rate</small><strong>US$625</strong><em>1–2 Bedrooms or Condo/Suite · <span>Revenue equivalent · ~5 to 6 booked nights</span></em></div>
+      </div>
+      <a class="accent-btn" href="#offer">See what's included →</a>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- THE PROBLEM / EDUCATIONAL FUNNEL -->
+  <section class="band-light">
+   <div class="wrap">
+    <div class="section-heading">
+     <div class="eyebrow">The first impression matters</div>
+     <h2>Don't launch halfway.</h2>
+     <p>Hotels, resorts, and short-term rentals are expanding across Curaçao, giving guests more choices every day. Staying competitive means building a property with a clear identity, intelligent pricing, and a guest experience that delivers on the promise made online. We build around three critical moments.</p>
+    </div>
+
+    <div class="pillars">
+     <article class="pillar">
+      <h3>Get the click.</h3>
+      <p>Your primary photo is your storefront. High-impact photography and a recognizable visual identity help your property stand out in the search grid and give the right guest a reason to click.</p>
+     </article>
+     <article class="pillar">
+      <h3>Win the booking.</h3>
+      <p>Once they click, every element should reinforce the same value proposition. Strong writing, clear positioning, a persuasive photo sequence, and a hotel-style pricing foundation work together to make the booking decision easier.</p>
+     </article>
+     <article class="pillar">
+      <h3>Earn the 5-star review.</h3>
+      <p>A memorable stay should deliver on the brand promise. We refine the physical presentation, amenities, and guest touchpoints so the experience feels considered from arrival through departure and gives guests a reason to leave the review you want.</p>
+     </article>
+    </div>
+   </div>
+  </section>
+
+  <!-- OFFER -->
+  <section class="band-dark" id="offer">
+   <div class="wrap">
+    <div class="offer-shell">
+     <div>
+      <div class="eyebrow" style="color:#d7a08e">Inaugural Launch Offer</div>
+      <div class="display">A focused refresh.<br>Built to compete.</div>
+      <p class="offer-copy">We're opening The House Atelier with a special offer for 10 properties in Curaçao.</p>
+      <ul class="included offer-items">
+       <li>
+        <span class="check">✓</span>
+        <div>
+         <strong><em>The Diagnostic</em> <span class="sep">·</span> Full Listing Audit</strong>
+         <span>We review your presentation, positioning, competitive set, and revenue opportunities to identify what is helping or quietly holding back your listing.</span>
+        </div>
+       </li>
+       <li>
+        <span class="check">✓</span>
+        <div>
+         <strong><em>The Visuals</em> <span class="sep">·</span> Photography</strong>
+         <span>Professional photography designed to make the right first impression, showcase the property at its strongest, and give the listing a stronger visual identity.</span>
+        </div>
+       </li>
+       <li>
+        <span class="check">✓</span>
+        <div>
+         <strong><em>The Words</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization</strong>
+         <span>We create a recognizable property identity you'll be proud of and express it through clear, searchable listing language that showcases its true value to renters.</span>
+        </div>
+       </li>
+       <li>
+        <span class="check">✓</span>
+        <div>
+         <strong><em>The Numbers</em> <span class="sep">·</span> Dynamic Pricing Foundation</strong>
+         <span>We conduct a local competitive analysis to program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends to maximize booking yield.</span>
+        </div>
+       </li>
+       <li>
+        <span class="check">✓</span>
+        <div>
+         <strong><em>The Hospitality</em> <span class="sep">·</span> 5-Star Guest Experience Playbook</strong>
+         <span>We refine guest-facing details, physical presentation, and communication touchpoints so the experience delivers on the brand promise and gives you a stronger foundation for five-star reviews.</span>
+        </div>
+       </li>
+      </ul>
+     </div>
+
+     <aside class="pricing-card">
+      <div class="eyebrow">Inaugural launch offer · only 10 properties</div>
+      <div class="pricing-tier-label">1–2 Bedrooms OR Condos / Suites</div>
+      <div class="price">US$625</div>
+      <div class="price-note">
+       <strike style="margin-right:6px;">US$1,250</strike> Inaugural rate<br>
+       <strong style="color:var(--sage);">Revenue equivalent · about 5 to 6 booked nights</strong>
+      </div>
+      <a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
+      <div class="price-tiers">
+       <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
+        <strong>3–5 Bedrooms OR Luxury Villas</strong> US$1,250 <strike>(US$2,500)</strike><br>
+        <span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 3 to 4 booked nights</span>
+       </div>
+       <div>
+        <strong>6+ Bedrooms OR Estates</strong> US$2,250 <strike>(US$4,500)</strike><br>
+        <span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 2 to 3 booked nights</span>
+       </div>
+      </div>
+      <div class="micro">Ten slots are available across all three tiers.</div>
+     </aside>
+    </div>
+   </div>
+  </section>
+
+  <!-- CREDIBILITY -->
+  <section>
+   <div class="wrap">
+    <div class="section-heading">
+     <div class="eyebrow">Our philosophy</div>
+     <h2>You stay in control. We give you the foundation.</h2>
+     <p>We build the brand, listing, pricing, and guest-experience foundation. You keep ownership and control of the property.</p>
+    </div>
+
+    <div class="philosophy-grid">
+     <div class="philosophy-card">
+      <p>We make the important decisions easier, the presentation stronger, and the business easier to build on — without taking over your property.</p>
+     </div>
+     <div class="bio-card">
+      <div class="bio-top">
+       <img class="avatar" src="https://thehouseatelier.com/assets/operatorimage2" alt="Chris | The House Atelier" />
+       <div>
+        <h3>Chris &amp; The House Atelier</h3>
+        <span>Airbnb Luxe inspector · STR &amp; hospitality specialist</span>
+       </div>
+      </div>
+      <p>Chris brings experience as an <strong>Airbnb Luxe inspector</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, backed by a dedicated STR optimization team.</p>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- THE RETURN -->
+  <section class="band-light">
+   <div class="wrap">
+    <div class="section-heading">
+     <div class="eyebrow">The Return</div>
+     <h2>Easily worth it.</h2>
+     <p>A small lift in booked nights can cover the full investment, based on the target nightly rates used for the inaugural offer.</p>
+    </div>
+
+    <div class="pillars roi-grid">
+     <article class="pillar">
+      <div class="eyebrow" style="color:var(--accent-dark)">1–2 Bedrooms OR Condos / Suites</div>
+      <h3>US$625</h3>
+      <p><span class="return-standard"><strike>US$1,250</strike></span><br>Revenue equivalent: <strong>about 5–6 booked nights</strong>.</p>
+     </article>
+     <article class="pillar">
+      <div class="eyebrow" style="color:var(--accent-dark)">3–5 Bedrooms OR Luxury Villas</div>
+      <h3>US$1,250</h3>
+      <p><span class="return-standard"><strike>US$2,500</strike></span><br>Revenue equivalent: <strong>about 3–4 booked nights</strong>.</p>
+     </article>
+     <article class="pillar">
+      <div class="eyebrow" style="color:var(--accent-dark)">6+ Bedrooms OR Estates</div>
+      <h3>US$2,250</h3>
+      <p><span class="return-standard"><strike>US$4,500</strike></span><br>Revenue equivalent: <strong>about 2–3 booked nights</strong>.</p>
+     </article>
+    </div>
+
+    <div class="return-cta">
+     <a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
+    </div>
+   </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+   <div class="wrap">
+    <div class="faq-grid">
+     <div class="section-heading" style="margin-bottom:0">
+      <div class="eyebrow">Before you apply</div>
+      <h2>Frequently asked.</h2>
+     </div>
+     <div>
+      <details open>
+       <summary>Is this only for brand-new listings?</summary>
+       <p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
+      </details>
+      <details>
+       <summary>What happens after I submit the form?</summary>
+       <p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected for the work to be rendered, with the remaining balance due on delivery.</p>
+      </details>
+      <details>
+       <summary>How long does the work take on site?</summary>
+       <p>It depends on the size and complexity of the property. Most projects take between 1 and 4 hours on site, with larger or more detailed properties requiring more time.</p>
+      </details>
+      <details>
+       <summary>Do I have to hand over management of my property?</summary>
+       <p>No. We build the foundation while you remain in the driver's seat. You keep control of the property, the brand, the positioning, and the business. Implementation and ongoing STR optimization are available when you want additional support.</p>
+      </details>
+      <details>
+       <summary>Can you support the property beyond the initial work?</summary>
+       <p>Yes. We can continue supporting the property with implementation and ongoing STR optimization. Services can include listing updates, direct booking marketing, a dedicated website, video walkthroughs for asynchronous guest communication, ongoing pricing support, and other property-specific needs.</p>
+      </details>
+      <details>
+       <summary>Does this set up dynamic pricing?</summary>
+       <p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic rate management. Ongoing revenue management and platform setup can be added separately.</p>
+      </details>
+     </div>
+    </div>
+   </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-band" id="contact">
+   <div class="wrap">
+    <div class="contact-grid">
+     <div>
+      <div class="eyebrow" style="color:#d7a08e">10 inaugural properties</div>
+      <h2>Request your launch slot.</h2>
+      <p>Send us the listing and a few details about the property. We'll review the opportunity, confirm whether it's a fit, and let you know whether an inaugural slot is available.</p>
+
+      <div class="contact-steps">
+       <div class="contact-step">
+        <span class="step-dot">1</span>
+        <div><strong>Send the listing</strong><br>Takes about a minute.</div>
+       </div>
+       <div class="contact-step">
+        <span class="step-dot">2</span>
+        <div><strong>We review it</strong><br>We look at the property, positioning, and opportunity.</div>
+       </div>
+       <div class="contact-step">
+        <span class="step-dot">3</span>
+        <div><strong>We confirm availability</strong><br>No commitment until your property is reviewed.</div>
+       </div>
+      </div>
+     </div>
+
+     <div class="form-card">
+      <form onsubmit="submitLead(event)">
+       <div>
+        <label for="name">Your name</label>
+        <input id="name" required name="name" placeholder="Your name" />
+       </div>
+       <div>
+        <label for="contact_method">Email or WhatsApp</label>
+        <input id="contact_method" required name="contact" placeholder="Best way to reach you" />
+       </div>
+       <div>
+        <label for="beds">Property size</label>
+        <select id="beds" required name="beds">
+         <option value="" disabled selected>Select size</option>
+         <option>1–2 Bedrooms OR Condos / Suites</option>
+         <option>3–5 Bedrooms OR Luxury Villas</option>
+         <option>6+ Bedrooms OR Estates</option>
+        </select>
+       </div>
+       <div>
+        <label for="launch">Launch timing</label>
+        <select id="launch" name="launch">
+         <option value="" disabled selected>When are you launching?</option>
+         <option>Within 30 days</option>
+         <option>1–3 months</option>
+         <option>3–6 months</option>
+         <option>Already live</option>
+        </select>
+       </div>
+       <div class="field-full">
+        <label for="url">Listing URL</label>
+        <input id="url" required name="url" type="url" placeholder="https://airbnb.com/..." />
+       </div>
+       <button class="submit" type="submit">Request my inaugural launch slot →</button>
+      </form>
+      <p class="form-note">No commitment. We'll review the property and confirm fit + availability first.</p>
+     </div>
+    </div>
+   </div>
+  </section>
+ </main>
+
+ <footer>
+  <div class="wrap footer-inner">
+   <span>© 2026 The House Atelier</span>
+   <span>Luxury STR Launch Services | Curaçao</span>
+  </div>
+ </footer>
+
+ <div class="mobile-cta" id="mobileCta" aria-label="Mobile call to action">
+  <div class="mini-price"><small>Inaugural launch rate</small><strong>US$625 · 1–2 BR / Condo or Suite</strong></div>
+  <a class="accent-btn" id="mobileCtaLink" href="#offer">See offer →</a>
+ </div>
+
+ <script>
   function openLightbox(){
    const modal=document.getElementById('lightbox');
    modal.classList.add('active');
    modal.setAttribute('aria-hidden','false');
    document.body.classList.add('modal-open');
   }
+
   function closeLightbox(){
    const modal=document.getElementById('lightbox');
    modal.classList.remove('active');
    modal.setAttribute('aria-hidden','true');
    document.body.classList.remove('modal-open');
   }
+
   document.addEventListener('keydown',function(e){
    if(e.key==='Escape') closeLightbox();
   });
+
   // Dynamic mobile CTA tied to the offer anchor and contact section
   (function(){
    const cta=document.getElementById('mobileCta');
    const link=document.getElementById('mobileCtaLink');
    const offer=document.getElementById('offer');
    const contact=document.getElementById('contact');
-   const contactTitle=contact ? contact.querySelector('h2') : null;
-   if(!cta || !link || !offer || !contact || !contactTitle) return;
+   if(!cta || !link || !offer || !contact) return;
+
    const small=cta.querySelector('small');
    const mobileQuery=window.matchMedia('(max-width:720px)');
-   const headerOffset=0;
+
    function updateCta(){
     if(!mobileQuery.matches){
      cta.classList.add('is-hidden');
      return;
     }
+
     const scrollY=window.scrollY || window.pageYOffset;
     const offerY=offer.getBoundingClientRect().top + scrollY;
-    const contactTitleRect=contactTitle.getBoundingClientRect();
-    const titleIsVisible=contactTitleRect.top <= window.innerHeight && contactTitleRect.bottom >= 0;
-    if(titleIsVisible){
+    const contactY=contact.getBoundingClientRect().top + scrollY;
+    const headerOffset=8;
+
+    if(scrollY >= contactY - headerOffset){
      cta.classList.add('is-hidden');
      return;
     }
+
     cta.classList.remove('is-hidden');
+
     if(scrollY >= offerY - headerOffset){
-     link.textContent='Request →';
+     link.textContent='Request slot →';
      link.setAttribute('href','#contact');
      small.textContent='Inaugural rate';
     }else{
@@ -794,6 +695,7 @@ View gallery
      small.textContent='Inaugural launch rate';
     }
    }
+
    let ticking=false;
    function onScroll(){
     if(ticking) return;
@@ -803,16 +705,19 @@ View gallery
      ticking=false;
     });
    }
+
    window.addEventListener('scroll',onScroll,{passive:true});
    window.addEventListener('resize',updateCta);
    mobileQuery.addEventListener('change',updateCta);
    updateCta();
   })();
+
   async function submitLead(e){
    e.preventDefault();
    const form=e.target;
    const payload=Object.fromEntries(new FormData(form).entries());
    const webhookUrl='https://hook.make.com/YOUR_WEBHOOK_ID';
+
    try{
     const response=await fetch(webhookUrl,{
      method:'POST',
