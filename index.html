@@ -57,10 +57,10 @@
   .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(0,0,0,.46) 100%);pointer-events:none}
   .grid-video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
   .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
-  .grid-img-2{grid-column:2;grid-row:1;background-image:linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/property-1-before.jpg');background-color:#8c5f52}
-  .grid-img-3{grid-column:3;grid-row:1;background-image:linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/property-1-after.jpg');background-color:#758078}
-  .grid-img-4{grid-column:2;grid-row:2;background-image:linear-gradient(135deg,rgba(167,183,174,.18) 0%,rgba(67,91,87,.26) 100%),url('assets/property-2-before.jpg');background-color:#435b57}
-  .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/property-2-after.jpg');background-color:#8a6d5e}
+  .grid-img-2{grid-column:2;grid-row:1;background-image:linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/before-1.jpg');background-color:#8c5f52}
+  .grid-img-3{grid-column:3;grid-row:1;background-image:linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/after-1.jpg');background-color:#758078}
+  .grid-img-4{grid-column:2;grid-row:2;background-image:linear-gradient(135deg,rgba(167,183,174,.18) 0%,rgba(67,91,87,.26) 100%),url('assets/before-2.jpg');background-color:#435b57}
+  .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/after-2.jpg');background-color:#8a6d5e}
   .grid-label{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
   .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
   .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer}
@@ -82,7 +82,6 @@
   .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
   .offer-chip em{font-style:normal;font-size:11px;color:var(--muted-dark);display:block;margin-top:2px}
   .offer-chip span{color:var(--sage);font-weight:600;}
-  /* keep "from" small and inline before the price */
   .offer-chip .price-line{
     display:flex;
     align-items:baseline;
@@ -128,8 +127,19 @@
   .lb-card-copy{padding:16px 17px 18px}
   .lb-card-copy strong{display:block;font-size:13px;margin-bottom:4px;color:var(--ink)}
   .lb-card-copy span{display:block;font-size:12px;line-height:1.55;color:var(--muted-dark)}
-  .lb-photo-before{background:linear-gradient(135deg,#bca997 0%,#75645b 100%)}
-  .lb-photo-after{background:linear-gradient(135deg,#e8d7c6 0%,#7a958d 100%)}
+  
+  /* LIGHTBOX PHOTOGRAPHY GALLERY */
+  .lb-photo-before-1 { background: url('assets/before-1.jpg') center/cover no-repeat; }
+  .lb-photo-after-1 { background: url('assets/after-1.jpg') center/cover no-repeat; }
+  .lb-photo-before-2 { background: url('assets/before-2.jpg') center/cover no-repeat; }
+  .lb-photo-after-2 { background: url('assets/after-2.jpg') center/cover no-repeat; }
+  .lb-photo-before-3 { background: url('assets/before-3.jpg') center/cover no-repeat; }
+  .lb-photo-after-3 { background: url('assets/after-3.jpg') center/cover no-repeat; }
+  .lb-photo-before-4 { background: url('assets/before-4.jpg') center/cover no-repeat; }
+  .lb-photo-after-4 { background: url('assets/after-4.jpg') center/cover no-repeat; }
+  .lb-photo-before-5 { background: url('assets/before-5.jpg') center/cover no-repeat; }
+  .lb-photo-after-5 { background: url('assets/after-5.jpg') center/cover no-repeat; }
+
   .lb-copy-before{background:#f4efe5;padding:18px;display:flex;align-items:stretch}
   .lb-copy-after{background:#e5eee9;padding:18px;display:flex;align-items:stretch}
   .lb-copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
@@ -368,8 +378,25 @@
 <div><div class="eyebrow">The Visuals</div><h3>Photography</h3><p>From “technically photographed” to a sequence that makes the property feel immediately worth opening, exploring, and remembering.</p></div>
 </div>
 <div class="lb-pair">
-<article class="lb-card"><div class="lb-media lb-photo-before"><div class="lb-media-label">Property example · Before</div></div><div class="lb-card-copy"><strong>Before</strong><span>Coverage that records the space, but does not create a clear visual hierarchy or emotional hook.</span></div></article>
-<article class="lb-card"><div class="lb-media lb-photo-after"><div class="lb-media-label">Property example · After</div></div><div class="lb-card-copy"><strong>After</strong><span>Purposeful framing, light, sequence, and detail that give the listing a recognizable visual point of view.</span></div></article>
+<!-- Pair 1 -->
+<article class="lb-card"><div class="lb-media lb-photo-before-1"><div class="lb-media-label">Before</div></div></article>
+<article class="lb-card"><div class="lb-media lb-photo-after-1"><div class="lb-media-label">After</div></div></article>
+
+<!-- Pair 2 -->
+<article class="lb-card"><div class="lb-media lb-photo-before-2"><div class="lb-media-label">Before</div></div></article>
+<article class="lb-card"><div class="lb-media lb-photo-after-2"><div class="lb-media-label">After</div></div></article>
+
+<!-- Pair 3 -->
+<article class="lb-card"><div class="lb-media lb-photo-before-3"><div class="lb-media-label">Before</div></div></article>
+<article class="lb-card"><div class="lb-media lb-photo-after-3"><div class="lb-media-label">After</div></div></article>
+
+<!-- Pair 4 -->
+<article class="lb-card"><div class="lb-media lb-photo-before-4"><div class="lb-media-label">Before</div></div></article>
+<article class="lb-card"><div class="lb-media lb-photo-after-4"><div class="lb-media-label">After</div></div></article>
+
+<!-- Pair 5 -->
+<article class="lb-card"><div class="lb-media lb-photo-before-5"><div class="lb-media-label">Before</div></div></article>
+<article class="lb-card"><div class="lb-media lb-photo-after-5"><div class="lb-media-label">After</div></div></article>
 </div>
 </section>
 
@@ -589,8 +616,8 @@ View gallery
 </div>
 <div class="philosophy-grid">
 <div class="bio-card">
-<div class="bio-photo" aria-label="Photo placeholder for Chris seated on a vintage leather sofa">
-<span>Chris photo<br/>Portrait · full-body seated</span>
+<div class="bio-photo" aria-label="Photo of Chris seated on a vintage leather sofa">
+<img src="assets/chris-bio.jpg" alt="Chris - The House Atelier" />
 </div>
 <div>
 <div class="bio-top">
