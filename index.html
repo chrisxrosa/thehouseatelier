@@ -1,15 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
- <meta charset="utf-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1" />
- <meta name="description" content="The House Atelier | High-impact photography, STR branding, search-friendly writing, and a dynamic pricing foundation for vacation rental owners in Curaçao." />
- <meta name="theme-color" content="#1b2524" />
- <title>The House Atelier | Make your vacation rental impossible to overlook.</title>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
- <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="The House Atelier | High-impact photography, STR branding, search-friendly writing, and a dynamic pricing foundation for vacation rental owners in Curaçao." name="description"/>
+<meta content="#1b2524" name="theme-color"/>
+<title>The House Atelier | Make your vacation rental impossible to overlook.</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<style>
   :root{
    --bone:#faf7f0;
    --bone-2:#fdfbf7;
@@ -51,12 +52,9 @@
   /* HERO */
   .hero{padding:18px 0 76px}
   .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
-  .hero-copy{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);gap:48px;align-items:end;margin:8px 0 24px}
+  .hero-copy{display:block;margin:8px 0 24px}
   .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:900px}
-  .hero-sub{max-width:none;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
-  .hero-meta{justify-self:end;max-width:280px;border-left:1px solid var(--line);padding-left:24px}
-  .hero-meta p{margin:0 0 13px;font-size:13px;color:var(--muted-dark)}
-  .hero-meta strong{display:block;color:var(--ink);font-size:13px;margin-bottom:3px}
+  .hero-sub{display:block;width:100%;max-width:none;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
 
   /* PHOTO GRID */
   .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);cursor:pointer;background:var(--bone-3)}
@@ -116,6 +114,7 @@
   main{background:var(--bone)}
   section{padding:88px 0}
   .band-light{background:var(--bone-2)}
+  .band-beige{background:var(--bone-3)}
   .band-dark{background:var(--charcoal);color:var(--white)}
   .section-heading{max-width:840px;margin-bottom:42px}
   .section-heading h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
@@ -155,27 +154,27 @@
   .micro{font-size:10.5px;color:#848a86;line-height:1.5;margin-top:18px}
 
   /* CREDIBILITY */
-  .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
-  .quote-card{background:#eee9df;border:1px solid rgba(27,37,36,.05);border-radius:24px;padding:38px;min-height:360px;display:flex;flex-direction:column;justify-content:space-between}
-  .quote-mark{font-family:'Lora',serif;font-size:68px;line-height:.7;color:var(--accent)}
-  .quote-card p{font-size:29px;line-height:1.16;letter-spacing:-.025em;max-width:550px;margin:0;color:#403a33}
-  .quote-card small{font-size:10px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#786f64}
-  .bio-card{background:var(--bone-2);border:1px solid var(--line);border-radius:24px;padding:34px}
-  .bio-top{display:flex;align-items:center;gap:15px;margin-bottom:18px}
-  .avatar{width:58px;height:58px;border-radius:50%;object-fit:cover;background:var(--charcoal);border:1px solid var(--line);flex:none}
-  .bio-top h3{font-size:24px;line-height:1.1;margin:0 0 3px}
-  .bio-top span{font-size:12px;color:var(--muted-dark)}
-  .bio-card p{font-size:14px;line-height:1.65;color:var(--muted-dark);margin:0}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
-  .chip{font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border:1px solid var(--line);padding:8px 10px;border-radius:999px;color:var(--sage);background:#fffdf8}
+  .philosophy-grid{display:block}
+  .philosophy-card{background:#eee9df;border:1px solid rgba(27,37,36,.05);border-radius:24px;padding:38px;display:flex;align-items:center}
+  .philosophy-card p{font-size:31px;line-height:1.12;letter-spacing:-.03em;max-width:600px;margin:0;color:#403a33}
+  .bio-card{background:#e6dfd3;border:1px solid rgba(27,37,36,.06);border-radius:24px;padding:26px;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(220px,.78fr);gap:28px;align-items:center}
+  .bio-photo{width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#d8d0c4;border:1px solid rgba(27,37,36,.06);display:flex;align-items:center;justify-content:center;color:#7a736a;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:center;grid-column:2;grid-row:1}
+  .bio-photo span{padding:18px;line-height:1.45}
+  .bio-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
+  .bio-top{display:flex;align-items:center;gap:15px;margin-bottom:14px}
+  .bio-top h3{font-size:22px;line-height:1.1;margin:0 0 3px}
+  .bio-top span{font-size:11px;color:var(--muted-dark)}
+  .bio-card p{font-size:13px;line-height:1.6;color:var(--muted-dark);margin:0}
 
-  /* ROI */
+  /* THE RETURN */
   .roi-grid .pillar h3{font-size:38px;line-height:1;margin:8px 0 12px;letter-spacing:-.03em}
   .roi-grid .pillar p{max-width:360px}
   .roi-grid .pillar p strong{color:var(--ink);font-weight:700}
-  .decision-row{margin-top:32px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-  .decision-copy{min-width:240px}
-  .decision-copy p{margin:7px 0 0;color:var(--muted-dark);font-size:14px;line-height:1.55}
+  .return-standard{display:inline-block;font-size:11px;color:var(--muted);margin-bottom:2px}
+  .return-standard strike{text-decoration-thickness:1px}
+  .band-beige .section-heading{text-align:center;margin-left:auto;margin-right:auto}
+  .return-cta{display:flex;justify-content:center;align-items:center;margin:34px auto 0;text-align:center}
+  .return-statement{max-width:760px;margin:10px auto 0;text-align:center;font-size:17px;line-height:1.55;letter-spacing:0;color:var(--muted-dark)}
 
   /* FAQ */
   .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
@@ -217,8 +216,6 @@
 
   /* RESPONSIVE */
   @media(max-width:960px){
-   .hero-copy{grid-template-columns:1fr;gap:18px}
-   .hero-meta{justify-self:start;border-left:0;border-top:1px solid var(--line);padding:14px 0 0;max-width:none}
    .offer-shell,.story-grid,.contact-grid{grid-template-columns:1fr}
    .faq-grid{grid-template-columns:1fr;gap:28px}
    .pricing-card{max-width:540px}
@@ -259,9 +256,11 @@
    .display{font-size:46px}
    .pricing-card{padding:24px}
    .price{font-size:48px}
-   .quote-card{min-height:300px;padding:28px}
-   .quote-card p{font-size:25px}
-   .bio-card{padding:26px}
+   .philosophy-grid{grid-template-columns:1fr}
+   .philosophy-card{padding:28px}
+   .philosophy-card p{font-size:25px}
+   .bio-card{padding:22px;grid-template-columns:1fr;gap:22px}
+   .bio-photo{max-width:360px;margin:0 auto;grid-column:1;grid-row:auto}
    .decision-row{align-items:stretch}
    .decision-row .accent-btn{width:100%}
    .contact-band{padding:68px 0 50px}
@@ -281,7 +280,6 @@
 
   @media(max-width:420px){
    .hero h1{font-size:43px}
-   .hero-meta{font-size:12px}
    .grid-img-1{background-position:center}
    .offer-chip strong{font-size:21px}
    .price{font-size:43px}
@@ -289,369 +287,316 @@
  </style>
 </head>
 <body>
+<!-- PHOTO LIGHTBOX -->
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<div class="lightbox-top">
+<button aria-label="Close photo gallery" class="icon-btn" onclick="closeLightbox()">
+<svg fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-width="2.1" viewbox="0 0 24 24" width="20"><path d="M15 18l-6-6 6-6"></path></svg>
+</button>
+<a class="accent-btn" href="#contact" onclick="closeLightbox()">Request an inaugural launch slot →</a>
+</div>
+<div class="lightbox-body">
+<div class="lb-item"><div class="lb-full lb-1"></div></div>
+<div class="lb-half-grid">
+<div class="lb-item"><div class="lb-half lb-2"></div></div>
+<div class="lb-item"><div class="lb-half lb-3"></div></div>
+</div>
+<div class="lb-item"><div class="lb-full lb-4"></div></div>
+<div class="lb-half-grid">
+<div class="lb-item"><div class="lb-half lb-5"></div></div>
+<div class="lb-item"><div class="lb-half lb-6"></div></div>
+</div>
+<div class="lb-item"><div class="lb-full lb-7"></div></div>
+</div>
+</div>
+<header class="site-header">
+<div class="wrap nav">
+<a class="brand" href="#top">The House Atelier</a>
+<a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
+</div>
+</header>
+<div id="top"></div>
+<main>
+<!-- HERO -->
 
- <!-- PHOTO LIGHTBOX -->
- <div class="lightbox" id="lightbox" aria-hidden="true">
-  <div class="lightbox-top">
-   <button class="icon-btn" onclick="closeLightbox()" aria-label="Close photo gallery">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
-   </button>
-   <a class="accent-btn" href="#contact" onclick="closeLightbox()">Request an inaugural launch slot →</a>
-  </div>
-  <div class="lightbox-body">
-   <div class="lb-item"><div class="lb-full lb-1"></div></div>
-   <div class="lb-half-grid">
-    <div class="lb-item"><div class="lb-half lb-2"></div></div>
-    <div class="lb-item"><div class="lb-half lb-3"></div></div>
-   </div>
-   <div class="lb-item"><div class="lb-full lb-4"></div></div>
-   <div class="lb-half-grid">
-    <div class="lb-item"><div class="lb-half lb-5"></div></div>
-    <div class="lb-item"><div class="lb-half lb-6"></div></div>
-   </div>
-   <div class="lb-item"><div class="lb-full lb-7"></div></div>
-  </div>
- </div>
+<!-- THE PROBLEM / EDUCATIONAL FUNNEL -->
 
- <header class="site-header">
-  <div class="wrap nav">
-   <a class="brand" href="#top">The House Atelier</a>
-   <a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
-  </div>
- </header>
+<!-- OFFER -->
 
- <div id="top"></div>
+<!-- CREDIBILITY -->
 
- <main>
-  <!-- HERO -->
-  <section class="hero">
-   <div class="wrap">
-    <div class="hero-copy">
-     <div>
-      <div class="eyebrow">For owners launching or repositioning an STR in Curaçao</div>
-      <h1>Make your vacation rental <br class="desktop-break">impossible to overlook.</h1>
-      <p class="hero-sub">We turn your vacation rental into a distinct short-term rental brand with high-impact photography, strong branding, search-friendly writing, and a dynamic pricing foundation built for an increasingly competitive market.</p>
-     </div>
-     <aside class="hero-meta">
-      <p><strong>Operated by Chris.</strong> Airbnb Luxe Inspector and former Marketing Manager at CoveCasa, a luxury vacation rental management company in Sint Maarten.</p>
-      <p><strong>Built for owner-led hospitality.</strong> We help establish the brand, listing, guest experience, and revenue foundation without requiring you to hand over management of your property.</p>
-     </aside>
-    </div>
+<!-- THE RETURN -->
 
-    <div class="photo-grid" onclick="openLightbox()" role="button" tabindex="0" aria-label="Open property photo gallery">
-     <div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier · Curaçao</span></div>
-     <div class="grid-img grid-img-2"></div>
-     <div class="grid-img grid-img-3"></div>
-     <div class="grid-img grid-img-4"></div>
-     <div class="grid-img grid-img-5"></div>
-     <button class="show-all-btn" onclick="openLightbox();event.stopPropagation();" type="button">
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"/></svg>
+<!-- FAQ -->
+
+<!-- CONTACT -->
+
+<section class="hero">
+<div class="wrap">
+<div class="hero-copy">
+<div>
+<div class="eyebrow">For owners launching or repositioning an STR in Curaçao</div>
+<h1>Make your vacation rental <br class="desktop-break"/>impossible to overlook.</h1>
+<p class="hero-sub">We turn your vacation rental into a distinct short-term rental brand with high-impact photography, strong branding, search-friendly writing, and a dynamic pricing foundation built for an increasingly competitive market.</p>
+</div>
+</div>
+<div aria-label="Open property photo gallery" class="photo-grid" onclick="openLightbox()" role="button" tabindex="0">
+<div class="grid-img grid-img-1"><span class="grid-badge">The House Atelier · Curaçao</span></div>
+<div class="grid-img grid-img-2"></div>
+<div class="grid-img grid-img-3"></div>
+<div class="grid-img grid-img-4"></div>
+<div class="grid-img grid-img-5"></div>
+<button class="show-all-btn" onclick="openLightbox();event.stopPropagation();" type="button">
+<svg aria-hidden="true" fill="currentColor" height="13" viewbox="0 0 16 16" width="13"><path d="M2 2h3v3H2V2zm0 4.5h3v3H2v-3zm0 4.5h3v3H2v-3zM6.5 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3zM11 2h3v3h-3V2zm0 4.5h3v3h-3v-3zm0 4.5h3v3h-3v-3z"></path></svg>
       View gallery
      </button>
-    </div>
-
-    <div class="hero-offer-row">
-     <div class="hero-note">
-      <span class="hero-note-dot"></span>
-      <div>Now accepting <strong>10 inaugural launch properties</strong> in Curaçao.</div>
-     </div>
-     <div class="hero-offer-actions">
-      <div class="offer-chip">
-       <div><small>Inaugural launch rate</small><strong>US$625</strong><em>1–2 Bedrooms · <span>Revenue equivalent · ~5 to 6 booked nights</span></em></div>
-      </div>
-      <a class="accent-btn" href="#offer">See what's included →</a>
-     </div>
-    </div>
-   </div>
-  </section>
-
-  <!-- THE PROBLEM / EDUCATIONAL FUNNEL -->
-  <section class="band-light">
-   <div class="wrap">
-    <div class="section-heading">
-     <div class="eyebrow">The first impression matters</div>
-     <h2>Don't launch halfway.</h2>
-     <p>Hotels, resorts, and short-term rentals are expanding across Curaçao, giving guests more choices every day. Staying competitive means building a property with a clear identity, intelligent pricing, and a guest experience that delivers on the promise made online. We build around three critical moments.</p>
-    </div>
-
-    <div class="pillars">
-     <article class="pillar">
-      <h3>Get the click.</h3>
-      <p>Your primary photo is your storefront. High-impact photography and a recognizable visual identity help your property stand out in the search grid and give the right guest a reason to click.</p>
-     </article>
-     <article class="pillar">
-      <h3>Win the booking.</h3>
-      <p>Once they click, every element should reinforce the same value proposition. Strong writing, clear positioning, a persuasive photo sequence, and a hotel-style pricing foundation work together to make the booking decision easier.</p>
-     </article>
-     <article class="pillar">
-      <h3>Earn the 5-star review.</h3>
-      <p>A memorable stay should deliver on the brand promise. We refine the physical presentation, amenities, and guest touchpoints so the experience feels considered from arrival through departure and gives guests a reason to leave the review you want.</p>
-     </article>
-    </div>
-   </div>
-  </section>
-
-  <!-- OFFER -->
-  <section class="band-dark" id="offer">
-   <div class="wrap">
-    <div class="offer-shell">
-     <div>
-      <div class="eyebrow" style="color:#d7a08e">Inaugural Launch Offer</div>
-      <div class="display">A focused refresh.<br>Built to compete.</div>
-      <p class="offer-copy">We're opening The House Atelier with a special offer for 10 properties in Curaçao.</p>
-      <ul class="included offer-items">
-       <li>
-        <span class="check">✓</span>
-        <div>
-         <strong><em>The Diagnostic</em> <span class="sep">·</span> Full Listing Audit</strong>
-         <span>We review your presentation, positioning, competitive set, and revenue opportunities to identify what is helping or quietly holding back your listing.</span>
-        </div>
-       </li>
-       <li>
-        <span class="check">✓</span>
-        <div>
-         <strong><em>The Visuals</em> <span class="sep">·</span> Photography</strong>
-         <span>Professional photography designed to make the right first impression, showcase the property at its strongest, and give the listing a stronger visual identity.</span>
-        </div>
-       </li>
-       <li>
-        <span class="check">✓</span>
-        <div>
-         <strong><em>The Words</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization</strong>
-         <span>We create a recognizable property identity you'll be proud of and express it through clear, searchable listing language that showcases its true value to renters.</span>
-        </div>
-       </li>
-       <li>
-        <span class="check">✓</span>
-        <div>
-         <strong><em>The Numbers</em> <span class="sep">·</span> Dynamic Pricing Foundation</strong>
-         <span>We conduct a local competitive analysis to program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends to maximize booking yield.</span>
-        </div>
-       </li>
-       <li>
-        <span class="check">✓</span>
-        <div>
-         <strong><em>The Hospitality</em> <span class="sep">·</span> 5-Star Guest Experience Playbook</strong>
-         <span>We refine guest-facing details, physical presentation, and communication touchpoints so the experience delivers on the brand promise and gives you a stronger foundation for five-star reviews.</span>
-        </div>
-       </li>
-      </ul>
-     </div>
-
-     <aside class="pricing-card">
-      <div class="eyebrow">Inaugural launch offer · only 10 properties</div>
-      <div class="pricing-tier-label">1–2 Bedrooms (Condo/Suite)</div>
-      <div class="price">US$625</div>
-      <div class="price-note">
-       <strike style="margin-right:6px;">US$1,250</strike> Inaugural rate<br>
-       <strong style="color:var(--sage);">Revenue equivalent · about 5 to 6 booked nights</strong>
-      </div>
-      <a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
-      <div class="price-tiers">
-       <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
-        <strong>3–5 Beds (Luxury Villa)</strong> US$1,250 <strike>(US$2,500)</strike><br>
-        <span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 3 to 4 booked nights</span>
-       </div>
-       <div>
-        <strong>6+ Beds (Estate/Compound)</strong> US$2,250 <strike>(US$4,500)</strike><br>
-        <span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 2 to 3 booked nights</span>
-       </div>
-      </div>
-      <div class="micro">Ten slots are available across all three tiers.</div>
-     </aside>
-    </div>
-   </div>
-  </section>
-
-  <!-- CREDIBILITY -->
-  <section>
-   <div class="wrap">
-    <div class="section-heading">
-     <div class="eyebrow">Our philosophy</div>
-     <h2>Build a property you're proud to put your name on.</h2>
-     <p>A great vacation rental should have an identity of its own and a commercial foundation that gives the owner clarity without requiring them to hand over control.</p>
-    </div>
-
-    <div class="story-grid">
-     <div class="quote-card">
-      <div class="quote-mark">“</div>
-      <p>You own the property. You should own the brand, the positioning, and the strategy behind it.</p>
-      <small>The House Atelier philosophy</small>
-     </div>
-     <div class="bio-card">
-      <div class="bio-top">
-       <img class="avatar" src="https://thehouseatelier.com/assets/operatorimage2" alt="Chris | The House Atelier" />
-       <div>
-        <h3>Chris &amp; The House Atelier Team</h3>
-        <span>Airbnb Luxe consultant &amp; short-term rental specialists</span>
-       </div>
-      </div>
-      <p>The House Atelier brings together experience across luxury short-term rentals, hospitality, and marketing. Chris brings experience as an <strong>Airbnb Luxe inspector</strong> and marketing manager for <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
-      <div class="chips">
-       <span class="chip">Airbnb Luxe</span>
-       <span class="chip">Luxury STR</span>
-       <span class="chip">Hospitality</span>
-       <span class="chip">Marketing</span>
-       <span class="chip">Optimization</span>
-      </div>
-     </div>
-    </div>
-   </div>
-  </section>
-
-  <!-- ROI / DECISION -->
-  <section class="band-light">
-   <div class="wrap">
-    <div class="section-heading">
-     <div class="eyebrow">Put the investment in perspective</div>
-     <h2>The investment is small compared with the revenue opportunity.</h2>
-     <p>The inaugural package is designed to strengthen the parts of your listing that influence visibility, conversion, pricing, and guest perception — before you spend months trying to fix them one at a time.</p>
-    </div>
-
-    <div class="pillars roi-grid">
-     <article class="pillar">
-      <div class="eyebrow" style="color:var(--accent-dark)">1–2 Bedrooms</div>
-      <h3>US$625</h3>
-      <p>Roughly equivalent to <strong>5–6 booked nights</strong> at the target net rate used for the inaugural offer.</p>
-     </article>
-     <article class="pillar">
-      <div class="eyebrow" style="color:var(--accent-dark)">3–5 Bedrooms</div>
-      <h3>US$1,250</h3>
-      <p>Roughly equivalent to <strong>3–4 booked nights</strong> at the target net rate used for the inaugural offer.</p>
-     </article>
-     <article class="pillar">
-      <div class="eyebrow" style="color:var(--accent-dark)">6+ Bedrooms</div>
-      <h3>US$2,250</h3>
-      <p>Roughly equivalent to <strong>2–3 booked nights</strong> at the target net rate used for the inaugural offer.</p>
-     </article>
-    </div>
-
-    <div class="decision-row">
-     <div class="decision-copy">
-      <div class="eyebrow">The next step is intentionally simple</div>
-      <p>Send the listing. We review the opportunity. We confirm availability.</p>
-     </div>
-     <a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
-    </div>
-   </div>
-  </section>
-
-  <!-- FAQ -->
-  <section>
-   <div class="wrap">
-    <div class="faq-grid">
-     <div class="section-heading" style="margin-bottom:0">
-      <div class="eyebrow">Before you apply</div>
-      <h2>Frequently asked.</h2>
-     </div>
-     <div>
-      <details open>
-       <summary>Is this only for brand-new listings?</summary>
-       <p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
-      </details>
-      <details>
-       <summary>What happens after I submit the form?</summary>
-       <p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected for the work to be rendered, with the remaining balance due on delivery.</p>
-      </details>
-      <details>
-       <summary>How long does the work take on site?</summary>
-       <p>It depends on the size and complexity of the property. Most projects take between 1 and 4 hours on site, with larger or more detailed properties requiring more time.</p>
-      </details>
-      <details>
-       <summary>Do I have to hand over management of my property?</summary>
-       <p>No. We build the foundation while you remain in the driver's seat. You keep control of the property, the brand, the positioning, and the business. Implementation and ongoing STR optimization are available when you want additional support.</p>
-      </details>
-      <details>
-       <summary>Can you support the property beyond the initial work?</summary>
-       <p>Yes. We can continue supporting the property with implementation and ongoing STR optimization. Services can include listing updates, direct booking marketing, a dedicated website, video walkthroughs for asynchronous guest communication, ongoing pricing support, and other property-specific needs.</p>
-      </details>
-      <details>
-       <summary>Does this set up dynamic pricing?</summary>
-       <p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic rate management. Ongoing revenue management and platform setup can be added separately.</p>
-      </details>
-     </div>
-    </div>
-   </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-band" id="contact">
-   <div class="wrap">
-    <div class="contact-grid">
-     <div>
-      <div class="eyebrow" style="color:#d7a08e">10 inaugural properties</div>
-      <h2>Request your launch slot.</h2>
-      <div class="contact-steps">
-       <div class="contact-step">
-        <span class="step-dot">1</span>
-        <div><strong>Send the listing</strong><br>Takes about a minute.</div>
-       </div>
-       <div class="contact-step">
-        <span class="step-dot">2</span>
-        <div><strong>We review it</strong><br>We look at the property, positioning, and opportunity.</div>
-       </div>
-       <div class="contact-step">
-        <span class="step-dot">3</span>
-        <div><strong>We confirm availability</strong><br>No commitment until your property is reviewed.</div>
-       </div>
-      </div>
-     </div>
-
-     <div class="form-card">
-      <form onsubmit="submitLead(event)">
-       <div>
-        <label for="name">Your name</label>
-        <input id="name" required name="name" placeholder="Your name" />
-       </div>
-       <div>
-        <label for="contact_method">Email or WhatsApp</label>
-        <input id="contact_method" required name="contact" placeholder="Best way to reach you" />
-       </div>
-       <div>
-        <label for="beds">Property size</label>
-        <select id="beds" required name="beds">
-         <option value="" disabled selected>Select size</option>
-         <option>1–2 Bedrooms</option>
-         <option>3–5 Bedrooms</option>
-         <option>6+ Bedrooms</option>
-        </select>
-       </div>
-       <div>
-        <label for="launch">Launch timing</label>
-        <select id="launch" name="launch">
-         <option value="" disabled selected>When are you launching?</option>
-         <option>Within 30 days</option>
-         <option>1–3 months</option>
-         <option>3–6 months</option>
-         <option>Already live</option>
-        </select>
-       </div>
-       <div class="field-full">
-        <label for="url">Listing URL</label>
-        <input id="url" required name="url" type="url" placeholder="https://airbnb.com/..." />
-       </div>
-       <button class="submit" type="submit">Request my inaugural launch slot →</button>
-      </form>
-      <p class="form-note">No commitment. We'll review the property and confirm fit + availability first.</p>
-     </div>
-    </div>
-   </div>
-  </section>
- </main>
-
- <footer>
-  <div class="wrap footer-inner">
-   <span>© 2026 The House Atelier</span>
-   <span>Luxury STR Launch Services | Curaçao</span>
-  </div>
- </footer>
-
- <div class="mobile-cta" id="mobileCta" aria-label="Mobile call to action">
-  <div class="mini-price"><small>Inaugural launch rate</small><strong>US$625 · 1–2 Beds</strong></div>
-  <a class="accent-btn" id="mobileCtaLink" href="#offer">See offer →</a>
- </div>
-
- <script>
+</div>
+<div class="hero-offer-row">
+<div class="hero-note">
+<span class="hero-note-dot"></span>
+<div>Now accepting <strong>10 inaugural launch properties</strong> in Curaçao.</div>
+</div>
+<div class="hero-offer-actions">
+<div class="offer-chip">
+<div><small>Inaugural launch rate</small><strong>US$625</strong><em>1–2 Bedrooms or Condo/Suite · <span>Revenue equivalent · ~5 to 6 booked nights</span></em></div>
+</div>
+<a class="accent-btn" href="#offer">See what's included →</a>
+</div>
+</div>
+</div>
+</section><section class="band-light">
+<div class="wrap">
+<div class="section-heading">
+<div class="eyebrow">The first impression matters</div>
+<h2>Don't launch halfway.</h2>
+<p>Hotels, resorts, and short-term rentals are expanding across Curaçao, giving guests more choices every day. Staying competitive means building a property with a clear identity, intelligent pricing, and a guest experience that delivers on the promise made online. We build around three critical moments.</p>
+</div>
+<div class="pillars">
+<article class="pillar">
+<h3>Get the click.</h3>
+<p>Your primary photo is your storefront. High-impact photography and a recognizable visual identity help your property stand out in the search grid and give the right guest a reason to click.</p>
+</article>
+<article class="pillar">
+<h3>Win the booking.</h3>
+<p>Once they click, every element should reinforce the same value proposition. Strong writing, clear positioning, a persuasive photo sequence, and a hotel-style pricing foundation work together to make the booking decision easier.</p>
+</article>
+<article class="pillar">
+<h3>Earn the 5-star review.</h3>
+<p>A memorable stay should deliver on the brand promise. We refine the physical presentation, amenities, and guest touchpoints so the experience feels considered from arrival through departure and gives guests a reason to leave the review you want.</p>
+</article>
+</div>
+</div>
+</section><section class="band-dark" id="offer">
+<div class="wrap">
+<div class="offer-shell">
+<div>
+<div class="eyebrow" style="color:#d7a08e">Inaugural Launch Offer</div>
+<div class="display">A focused refresh.<br/>Built to compete.</div>
+<p class="offer-copy">We're opening The House Atelier with a special offer for 10 properties in Curaçao.</p>
+<ul class="included offer-items">
+<li>
+<span class="check">✓</span>
+<div>
+<strong><em>The Diagnostic</em> <span class="sep">·</span> Full Listing Audit</strong>
+<span>We review your presentation, positioning, competitive set, and revenue opportunities to identify what is helping or quietly holding back your listing.</span>
+</div>
+</li>
+<li>
+<span class="check">✓</span>
+<div>
+<strong><em>The Visuals</em> <span class="sep">·</span> Photography</strong>
+<span>Professional photography designed to make the right first impression, showcase the property at its strongest, and give the listing a stronger visual identity.</span>
+</div>
+</li>
+<li>
+<span class="check">✓</span>
+<div>
+<strong><em>The Words</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization</strong>
+<span>We create a recognizable property identity you'll be proud of and express it through clear, searchable listing language that showcases its true value to renters.</span>
+</div>
+</li>
+<li>
+<span class="check">✓</span>
+<div>
+<strong><em>The Numbers</em> <span class="sep">·</span> Dynamic Pricing Foundation</strong>
+<span>We conduct a local competitive analysis to program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends to maximize booking yield.</span>
+</div>
+</li>
+<li>
+<span class="check">✓</span>
+<div>
+<strong><em>The Hospitality</em> <span class="sep">·</span> 5-Star Guest Experience Playbook</strong>
+<span>We refine guest-facing details, physical presentation, and communication touchpoints so the experience delivers on the brand promise and gives you a stronger foundation for five-star reviews.</span>
+</div>
+</li>
+</ul>
+</div>
+<aside class="pricing-card">
+<div class="eyebrow">Inaugural launch offer · only 10 properties</div>
+<div class="pricing-tier-label">1–2 Bedrooms OR Condos / Suites</div>
+<div class="price">US$625</div>
+<div class="price-note">
+<strike style="margin-right:6px;">US$1,250</strike> Inaugural rate<br/>
+<strong style="color:var(--sage);">Revenue equivalent · about 5 to 6 booked nights</strong>
+</div>
+<a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
+<div class="price-tiers">
+<div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
+<strong>3–5 Bedrooms OR Luxury Villas</strong> US$1,250 <strike>(US$2,500)</strike><br/>
+<span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 3 to 4 booked nights</span>
+</div>
+<div>
+<strong>6+ Bedrooms OR Estates</strong> US$2,250 <strike>(US$4,500)</strike><br/>
+<span style="color:var(--sage); font-weight:600;">Revenue equivalent · about 2 to 3 booked nights</span>
+</div>
+</div>
+<div class="micro">Ten slots are available across all three tiers.</div>
+</aside>
+</div>
+</div>
+</section><section class="band-beige">
+<div class="wrap">
+<div class="section-heading" style="text-align:center">
+<div class="eyebrow">The Return</div>
+<h2>Easily worth it.</h2>
+</div>
+<div class="return-statement">A week lift in booked nights covers the full investment.</div>
+<div class="return-cta">
+<a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
+</div>
+</div>
+</section><section class="band-light">
+<div class="wrap">
+<div class="section-heading">
+<div class="eyebrow">Our philosophy</div>
+<h2>You stay in control.</h2>
+<p>We give you the foundation. We make the important decisions easier, the presentation stronger, and the business easier to build on, without taking over your property.</p>
+</div>
+<div class="philosophy-grid">
+<div class="bio-card">
+<div class="bio-photo" aria-label="Photo placeholder for Chris seated on a vintage leather sofa">
+<span>Chris photo<br/>Portrait · full-body seated</span>
+</div>
+<div>
+<div class="bio-top">
+<div>
+<h3>Chris &amp; The House Atelier</h3>
+<span>Airbnb Luxe inspector · STR &amp; hospitality specialist</span>
+</div>
+</div>
+<p>Chris brings experience as an <strong>Airbnb Luxe inspector</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, backed by a dedicated STR optimization team.</p>
+</div>
+</div>
+</div>
+</div>
+</section><section class="band-beige">
+<div class="wrap">
+<div class="faq-grid">
+<div class="section-heading" style="margin-bottom:0">
+<div class="eyebrow">Before you apply</div>
+<h2>Frequently asked.</h2>
+</div>
+<div>
+<details open="">
+<summary>Is this only for brand-new listings?</summary>
+<p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a fit when the property has outgrown its current presentation or needs a visual reset.</p>
+</details>
+<details>
+<summary>What happens after I submit the form?</summary>
+<p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected for the work to be rendered, with the remaining balance due on delivery.</p>
+</details>
+<details>
+<summary>How long does the work take on site?</summary>
+<p>It depends on the size and complexity of the property. Most projects take between 1 and 4 hours on site, with larger or more detailed properties requiring more time.</p>
+</details>
+<details>
+<summary>Do I have to hand over management of my property?</summary>
+<p>No. We build the foundation while you remain in the driver's seat. You keep control of the property, the brand, the positioning, and the business. Implementation and ongoing STR optimization are available when you want additional support.</p>
+</details>
+<details>
+<summary>Can you support the property beyond the initial work?</summary>
+<p>Yes. We can continue supporting the property with implementation and ongoing STR optimization. Services can include listing updates, direct booking marketing, a dedicated website, video walkthroughs for asynchronous guest communication, ongoing pricing support, and other property-specific needs.</p>
+</details>
+<details>
+<summary>Does this set up dynamic pricing?</summary>
+<p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic rate management. Ongoing revenue management and platform setup can be added separately.</p>
+</details>
+</div>
+</div>
+</div>
+</section><section class="contact-band" id="contact">
+<div class="wrap">
+<div class="contact-grid">
+<div>
+<div class="eyebrow" style="color:#d7a08e">10 inaugural properties</div>
+<h2>Request your launch slot.</h2>
+<p>Send us the listing and a few details about the property. We'll review the opportunity, confirm whether it's a fit, and let you know whether an inaugural slot is available.</p>
+<div class="contact-steps">
+<div class="contact-step">
+<span class="step-dot">1</span>
+<div><strong>Send the listing</strong><br/>Takes about a minute.</div>
+</div>
+<div class="contact-step">
+<span class="step-dot">2</span>
+<div><strong>We review it</strong><br/>We look at the property, positioning, and opportunity.</div>
+</div>
+<div class="contact-step">
+<span class="step-dot">3</span>
+<div><strong>We confirm availability</strong><br/>No commitment until your property is reviewed.</div>
+</div>
+</div>
+</div>
+<div class="form-card">
+<form onsubmit="submitLead(event)">
+<div>
+<label for="name">Your name</label>
+<input id="name" name="name" placeholder="Your name" required=""/>
+</div>
+<div>
+<label for="contact_method">Email or WhatsApp</label>
+<input id="contact_method" name="contact" placeholder="Best way to reach you" required=""/>
+</div>
+<div>
+<label for="beds">Property size</label>
+<select id="beds" name="beds" required="">
+<option disabled="" selected="" value="">Select size</option>
+<option>1–2 Bedrooms OR Condos / Suites</option>
+<option>3–5 Bedrooms OR Luxury Villas</option>
+<option>6+ Bedrooms OR Estates</option>
+</select>
+</div>
+<div>
+<label for="launch">Launch timing</label>
+<select id="launch" name="launch">
+<option disabled="" selected="" value="">When are you launching?</option>
+<option>Within 30 days</option>
+<option>1–3 months</option>
+<option>3–6 months</option>
+<option>Already live</option>
+</select>
+</div>
+<div class="field-full">
+<label for="url">Listing URL</label>
+<input id="url" name="url" placeholder="https://airbnb.com/..." required="" type="url"/>
+</div>
+<button class="submit" type="submit">Request my inaugural launch slot →</button>
+</form>
+<p class="form-note">No commitment. We'll review the property and confirm fit + availability first.</p>
+</div>
+</div>
+</div>
+</section></main>
+<footer>
+<div class="wrap footer-inner">
+<span>© 2026 The House Atelier</span>
+<span>Luxury STR Launch Services | Curaçao</span>
+</div>
+</footer>
+<div aria-label="Mobile call to action" class="mobile-cta" id="mobileCta">
+<div class="mini-price"><small>Inaugural launch rate</small><strong>US$625 · 1–2 BR / Condo or Suite</strong></div>
+<a class="accent-btn" href="#offer" id="mobileCtaLink">See offer →</a>
+</div>
+<script>
   function openLightbox(){
    const modal=document.getElementById('lightbox');
    modal.classList.add('active');
