@@ -52,14 +52,14 @@
   /* HERO GALLERY */
   .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);background:var(--bone-3)}
   .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
-  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 42%,rgba(0,0,0,.46) 100%);pointer-events:none}
+  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.46) 0%,rgba(0,0,0,0) 58%);pointer-events:none}
   .grid-video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
   .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
   .grid-img-2{grid-column:2;grid-row:1;background-image:linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/property-1-before.jpg');background-color:#8c5f52}
   .grid-img-3{grid-column:3;grid-row:1;background-image:linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/property-1-after.jpg');background-color:#758078}
   .grid-img-4{grid-column:2;grid-row:2;background-image:linear-gradient(135deg,rgba(167,183,174,.18) 0%,rgba(67,91,87,.26) 100%),url('assets/property-2-before.jpg');background-color:#435b57}
   .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/property-2-after.jpg');background-color:#8a6d5e}
-  .grid-label{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
+  .grid-label{position:absolute;z-index:2;right:18px;top:17px;text-align:right;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
   .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
   .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer;text-decoration:none}
   .show-all-btn:hover{background:#fff}
@@ -174,7 +174,7 @@
   .sequence-caption{padding:14px 16px 16px;font-size:12.5px;line-height:1.55;color:var(--muted-dark)}
   .sequence-caption strong{display:block;font-size:13px;color:var(--ink);margin-bottom:3px}
 
-  /* --- Block 02: Copy / SEO cards --- */
+  /* --- Block 02: Copy / Search Optimization cards --- */
   .copy-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .copy-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05)}
   .copy-media{min-height:280px;padding:18px;display:flex;align-items:stretch}
@@ -311,6 +311,75 @@
   .mobile-cta{display:none}
   .mobile-cta.is-hidden{display:none !important}
 
+  /* ========== LIGHTBOX STYLES ========== */
+  .lightbox-overlay {
+    position: fixed; inset: 0; background: var(--bone); z-index: 1000;
+    overflow-y: auto; display: flex; flex-direction: column;
+    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  }
+  .lightbox-overlay.is-active {
+    opacity: 1; pointer-events: auto;
+  }
+  .lightbox-header {
+    position: sticky; top: 0; z-index: 1001; background: rgba(253,251,247,0.95);
+    backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
+    padding: 16px 24px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .lightbox-back {
+    background: none; border: none; font-size: 13px; font-weight: 700;
+    color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 6px;
+    padding: 8px 12px; border-radius: 99px; border: 1px solid var(--line); transition: .2s ease;
+  }
+  .lightbox-back:hover { background: var(--white); }
+  .lightbox-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .lightbox-content {
+    padding: 48px 24px 80px; max-width: 800px; margin: 0 auto; width: 100%;
+  }
+  .lightbox-intro {
+    text-align: center; margin-bottom: 48px;
+  }
+  .lightbox-intro h2 {
+    font-size: clamp(28px, 4vw, 36px); margin: 0 0 12px;
+  }
+  .lightbox-intro p {
+    font-size: 15px; color: var(--muted-dark); line-height: 1.6;
+    max-width: 600px; margin: 0 auto;
+  }
+  .ba-grid { display: grid; gap: 48px; }
+  .ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ba-card {
+    border-radius: 16px; overflow: hidden; background: var(--bone-2);
+    border: 1px solid rgba(27,37,36,.08); box-shadow: 0 10px 30px rgba(0,0,0,.04);
+  }
+  .ba-label {
+    padding: 12px 16px; font-size: 11px; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    border-bottom: 1px solid var(--line); background: rgba(255,255,255,.5);
+  }
+  .ba-card.before .ba-label { color: var(--muted); }
+  .ba-card.after .ba-label { color: var(--sage); }
+  .ba-img {
+    width: 100%; aspect-ratio: 4/3; background-size: cover; background-position: center;
+  }
+  
+  /* Placeholders matching existing design tone */
+  .ba-img.b1 { background-image: linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/property-1-before.jpg'); background-color:#8c5f52; }
+  .ba-img.a1 { background-image: linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/property-1-after.jpg'); background-color:#758078; }
+  .ba-img.b2 { background-image: linear-gradient(145deg,#a89b8c 0%,#7a6d60 100%); }
+  .ba-img.a2 { background-image: linear-gradient(145deg,#e8d7c6 0%,#7a958d 100%); }
+  .ba-img.b3 { background-image: linear-gradient(145deg,#8c7f72 0%,#5c5248 100%); }
+  .ba-img.a3 { background-image: linear-gradient(145deg,#d4c4b0 0%,#5a7a72 100%); }
+  .ba-img.b4 { background-image: linear-gradient(145deg,#b0a293 0%,#7d7064 100%); }
+  .ba-img.a4 { background-image: linear-gradient(145deg,#c9b8a4 0%,#3d5c56 100%); }
+  .ba-img.b5 { background-image: linear-gradient(145deg,#96897c 0%,#645850 100%); }
+  .ba-img.a5 { background-image: linear-gradient(145deg,#f0e6d8 0%,#6b8f86 100%); }
+
+  .lightbox-cta {
+    margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--line);
+    text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .lightbox-cta h3 { font-family: 'Lora', serif; font-weight: 400; margin: 0; font-size: 28px; }
+
   /* RESPONSIVE */
   @media(max-width:960px){
    .offer-shell,.contact-grid{grid-template-columns:1fr}
@@ -335,7 +404,7 @@
    .grid-img-3{grid-column:2;grid-row:2}
    .grid-img-4{grid-column:1;grid-row:3}
    .grid-img-5{grid-column:2;grid-row:3}
-   .grid-label{left:12px;bottom:12px;font-size:8px;max-width:72%}
+   .grid-label{right:12px;top:12px;font-size:8px;max-width:72%}
    .grid-label span{font-size:8px}
    .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
    .hero-offer-row{grid-template-columns:1fr;gap:16px;margin-top:22px;padding-top:20px;text-align:center}
@@ -374,6 +443,11 @@
    .mobile-cta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
    .mobile-cta strong{display:block;font-family:'Lora',serif;font-size:17px;font-weight:400;line-height:1.05}
    .mobile-cta .accent-btn{padding:10px 13px;border-radius:10px;font-size:11px}
+   /* Mobile lightbox fixes */
+   .ba-row { grid-template-columns: 1fr; gap: 12px; }
+   .lightbox-header { padding: 12px 16px; }
+   .lightbox-content { padding: 32px 16px 64px; }
+   .lightbox-cta h3 { font-size: 24px; }
   }
   @media(max-width:420px){
    .hero h1{font-size:43px}
@@ -508,6 +582,13 @@ See the transformation
       </div>
     </div>
   </div>
+  
+  <!-- OPEN LIGHTBOX LINK -->
+  <div style="margin-top: 32px; text-align: center;">
+    <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
+      See before &amp; after photography <span aria-hidden="true">→</span>
+    </a>
+  </div>
 </article>
 
 <!-- BLOCK 02: THE PROMISE -->
@@ -516,7 +597,7 @@ See the transformation
     <div class="proof-num">02</div>
     <div>
       <div class="eyebrow">The Promise</div>
-      <h3>Listing Copy + SEO</h3>
+      <h3>Listing Copy + Search Optimization</h3>
       <p>Instead of asking the guest to decode a generic description, we turn the listing into a clear promise: what makes the place special, who it is for, and why it deserves the click.</p>
     </div>
   </div>
@@ -877,7 +958,98 @@ See the transformation
 <div class="mini-price"><small>Inaugural launch rate</small><strong>850 USD · 1-2 BR</strong></div>
 <a class="accent-btn" href="#offer" id="mobileCtaLink">See offer →</a>
 </div>
+
+<!-- ================== LIGHTBOX COMPONENT ================== -->
+<div id="photo-lightbox" class="lightbox-overlay">
+  <div class="lightbox-header">
+    <button class="lightbox-back" onclick="closeLightbox()">&lt; Back</button>
+    <div class="lightbox-title">Photography: Before &amp; After</div>
+    <div style="width: 70px;"></div><!-- Spacer for visual balance -->
+  </div>
+  <div class="lightbox-content">
+    <div class="lightbox-intro">
+      <h2>Beyond Sequencing</h2>
+      <p>Professionally photographed and edited images do more than organize a grid. They dictate the mood, convey value, and create a standard of quality that amateur photos simply can’t achieve.</p>
+    </div>
+    
+    <div class="ba-grid">
+      <!-- PAIR 1 -->
+      <div class="ba-row">
+        <div class="ba-card before">
+          <div class="ba-label">Before</div>
+          <div class="ba-img b1"></div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-label">After</div>
+          <div class="ba-img a1"></div>
+        </div>
+      </div>
+      <!-- PAIR 2 -->
+      <div class="ba-row">
+        <div class="ba-card before">
+          <div class="ba-label">Before</div>
+          <div class="ba-img b2"></div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-label">After</div>
+          <div class="ba-img a2"></div>
+        </div>
+      </div>
+      <!-- PAIR 3 -->
+      <div class="ba-row">
+        <div class="ba-card before">
+          <div class="ba-label">Before</div>
+          <div class="ba-img b3"></div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-label">After</div>
+          <div class="ba-img a3"></div>
+        </div>
+      </div>
+      <!-- PAIR 4 -->
+      <div class="ba-row">
+        <div class="ba-card before">
+          <div class="ba-label">Before</div>
+          <div class="ba-img b4"></div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-label">After</div>
+          <div class="ba-img a4"></div>
+        </div>
+      </div>
+      <!-- PAIR 5 -->
+      <div class="ba-row">
+        <div class="ba-card before">
+          <div class="ba-label">Before</div>
+          <div class="ba-img b5"></div>
+        </div>
+        <div class="ba-card after">
+          <div class="ba-label">After</div>
+          <div class="ba-img a5"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- LIGHTBOX CTA -->
+    <div class="lightbox-cta">
+      <h3>Ready to elevate your visual presence?</h3>
+      <a href="#offer" class="accent-btn" onclick="closeLightbox()" style="font-size: 14px; padding: 14px 22px;">Learn more about the offer →</a>
+    </div>
+  </div>
+</div>
+<!-- ======================================================== -->
+
 <script>
+  // Lightbox Logic
+  function openLightbox() {
+    document.getElementById('photo-lightbox').classList.add('is-active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('photo-lightbox').classList.remove('is-active');
+    document.body.style.overflow = '';
+  }
+
   // Dynamic mobile CTA tied to the offer anchor and contact section
   (function(){
    const cta=document.getElementById('mobileCta');
