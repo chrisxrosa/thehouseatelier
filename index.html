@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -37,18 +38,21 @@
   button,input,select,textarea{font:inherit}
   h1,h2,h3,.display,.quote p,.listing-title{font-family:'Lora',Georgia,serif;font-weight:400}
   .wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+  
   /* NAV */
   .site-header{background:var(--bone-2);position:relative;z-index:20}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
   .brand{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
   .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.28);transition:.2s ease}
   .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
+  
   /* HERO */
   .hero{padding:18px 0 76px;background:var(--bone-2)}
   .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
   .hero-copy{display:block;margin:8px 0 24px}
   .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:920px}
   .hero-sub{display:block;width:100%;max-width:780px;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
+  
   /* HERO GALLERY */
   .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);background:var(--bone-3)}
   .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
@@ -63,6 +67,7 @@
   .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
   .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer;text-decoration:none}
   .show-all-btn:hover{background:#fff}
+  
   /* HERO OFFER CHIP & BEACON */
   .hero-offer-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
   .hero-note{display:flex;align-items:center;gap:12px;color:var(--ink);font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.4}
@@ -137,7 +142,6 @@
     color: var(--muted);
   }
 
-  /* Edge-to-edge container */
   .proof-rail {
     display: flex;
     overflow-x: auto;
@@ -151,7 +155,6 @@
     display: none;
   }
 
-  /* The individual cards */
   .proof-card {
     flex: 0 0 min(85vw, 940px);
     scroll-snap-align: center;
@@ -177,7 +180,6 @@
   .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06); display: flex; flex-direction: column;}
   
-  /* Shared Footer Style for all cards */
   .sequence-card-footer, .copy-card-footer, .revenue-card-footer {
     padding: 14px 16px 16px; background: var(--bone-2); border-top: 1px solid var(--line); flex-grow: 1;
   }
@@ -188,7 +190,6 @@
     display: block; font-size: 12px; line-height: 1.5; color: var(--muted-dark);
   }
 
-  /* Airbnb-style 5-photo bento grid */
   .airbnb-grid{
     display:grid;
     grid-template-columns:2fr 1fr 1fr;
@@ -204,24 +205,18 @@
     background-position:center;
     min-height:0;
   }
-  .airbnb-grid .ag-main{
-    grid-column:1;
-    grid-row:1 / 3;
-    border-radius:12px 0 0 12px;
-  }
+  .airbnb-grid .ag-main{grid-column:1;grid-row:1 / 3;border-radius:12px 0 0 12px;}
   .airbnb-grid .ag-2{grid-column:2;grid-row:1;border-radius:0}
   .airbnb-grid .ag-3{grid-column:3;grid-row:1;border-radius:0 12px 0 0}
   .airbnb-grid .ag-4{grid-column:2;grid-row:2;border-radius:0}
   .airbnb-grid .ag-5{grid-column:3;grid-row:2;border-radius:0 0 12px 0}
 
-  /* Real image files and gradient overlays for Before Grid */
   .seq-before .ag-main{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.35) 100%), url('assets/seq-before-1.jpg'); background-color:#9a8b7a;}
   .seq-before .ag-2{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-2.jpg'); background-color:#a89b8c;}
   .seq-before .ag-3{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-3.jpg'); background-color:#8c7f72;}
   .seq-before .ag-4{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-4.jpg'); background-color:#b0a293;}
   .seq-before .ag-5{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-5.jpg'); background-color:#96897c;}
 
-  /* Real image files and gradient overlays for After Grid */
   .seq-after .ag-main{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.35) 100%), url('assets/seq-after-1.jpg'); background-color:#4e7972;}
   .seq-after .ag-2{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-2.jpg'); background-color:#e8d7c6;}
   .seq-after .ag-3{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-3.jpg'); background-color:#d4c4b0;}
@@ -266,6 +261,73 @@
   .revenue-after .lb-demand-row span:first-child{background:#e7f1ed;color:var(--sage)}
   .proof-note{margin-top:18px;font-size:11px;line-height:1.5;color:var(--muted);text-align:center}
 
+  /* V1 UI Refinements: Make scope + commercial impact explicit */
+  .v1 .scope-chip-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin:0 0 22px;
+  }
+  .v1 .scope-chip{
+    display:inline-flex;
+    align-items:center;
+    min-height:24px;
+    padding:4px 8px;
+    border-radius:999px;
+    background:var(--bone-3);
+    border:1px solid var(--line);
+    color:var(--muted-dark);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.03em;
+  }
+  .v1 .copy-ui-surfaces{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+    margin-top:10px;
+  }
+  .v1 .copy-ui-surface{
+    padding:7px 8px;
+    border-radius:8px;
+    background:#f6f4ee;
+    border:1px solid rgba(27,37,36,.08);
+    font-size:9px;
+    line-height:1.3;
+    color:var(--muted-dark);
+  }
+  .v1 .copy-ui-surface b{
+    display:block;
+    margin-bottom:2px;
+    color:var(--ink);
+    font-size:8px;
+    text-transform:uppercase;
+    letter-spacing:.08em;
+  }
+  .v1 .copy-after .copy-ui-surface{
+    background:#f4faf7;
+    border-color:rgba(49,91,87,.14);
+  }
+  .v1 .revenue-strategy-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    margin-top:10px;
+  }
+  .v1 .revenue-strategy-row span{
+    font-size:8px;
+    font-weight:700;
+    padding:4px 6px;
+    border-radius:999px;
+    background:#f3efe8;
+    color:var(--muted-dark);
+  }
+  .v1 .revenue-after .revenue-strategy-row span:first-child,
+  .v1 .revenue-after .revenue-strategy-row span:last-child{
+    background:#e7f1ed;
+    color:var(--sage);
+  }
+
   /* SECTIONS */
   main{background:var(--bone)}
   section{padding:88px 0}
@@ -276,6 +338,7 @@
   .section-heading h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
   .section-heading p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark)}
   .band-dark .section-heading p{color:#c5cdca}
+  
   /* OFFER */
   .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:start}
   .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
@@ -288,6 +351,7 @@
   .included li strong em { font-family: 'Lora', Georgia, serif; font-style: italic; font-weight: 500; color: var(--accent-soft); font-size: 15px; letter-spacing: 0.01em; }
   .included li strong .sep { color: rgba(255,255,255,0.3); font-weight: 400; margin: 0 6px; }
   .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
+  
   /* PRICING CARD */
   .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
   .pricing-card .eyebrow{color:var(--accent-dark)}
@@ -309,32 +373,18 @@
   .bio-text h3 { font-size: 28px; line-height: 1.1; margin: 0 0 6px; font-family: 'Lora', serif; font-weight: 400; color: var(--ink); }
   .bio-text span { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage); margin-bottom: 18px; }
   .bio-text p { font-size: 14px; line-height: 1.6; color: var(--muted-dark); margin: 0; max-width: 440px; }
-  
   .bio-photo{width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#d8d0c4;border:1px solid rgba(27,37,36,.06);display:flex;align-items:center;justify-content:center;color:#7a736a;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:center;grid-column:2;grid-row:1}
   .bio-photo span{padding:18px;line-height:1.45}
   .bio-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
   
-  /* THE RETURN */
-  .return-standard{display:inline-block;font-size:11px;color:var(--muted);margin-bottom:2px}
-  .return-standard strike{text-decoration-thickness:1px}
+  /* THE RETURN (V5) */
   .band-beige .section-heading{text-align:center;margin-left:auto;margin-right:auto}
   .return-cta{display:flex;justify-content:center;align-items:center;margin:34px auto 0;text-align:center}
-  .return-statement{max-width:760px;margin:10px auto 0;text-align:center;font-size:17px;line-height:1.55;letter-spacing:0;color:var(--muted-dark)}
-  .return-points{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:720px;margin:32px auto 0;text-align:left}
-  .return-point{background:rgba(255,255,255,.45);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
-  .return-point strong{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
-  .return-point span{font-size:13px;line-height:1.5;color:var(--muted-dark)}
-
-  /* THE RETURN — PAYBACK VISUAL */
-  .return-statement{max-width:760px;margin:10px auto 0;text-align:center;font-size:17px;line-height:1.55;letter-spacing:0;color:var(--muted-dark)}
-  .return-payback{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;max-width:940px;margin:34px auto 0}
-  .return-card{position:relative;background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:18px;padding:24px 22px 22px;text-align:center;overflow:hidden}
-  .return-card::after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:3px;background:var(--sage);border-radius:99px 99px 0 0;opacity:.9}
-  .return-card .return-tier{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
-  .return-card strong{display:block;font-family:'Lora',serif;font-size:32px;line-height:1;color:var(--ink);font-weight:400;letter-spacing:-.03em}
-  .return-card span{display:block;font-size:11px;line-height:1.45;color:var(--muted-dark);margin-top:8px}
-  .return-arrow{display:grid;place-items:center;align-self:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(184,95,71,.28);background:rgba(255,255,255,.52);color:var(--accent);font-size:20px;font-weight:400}
-  .return-close{max-width:840px;margin:26px auto 0;text-align:center;font-family:'Lora',Georgia,serif;font-size:25px;line-height:1.15;letter-spacing:-.02em;color:#403a33}
+  
+  .v5 .section-heading h2{font-size:clamp(28px,4vw,40px)}
+  .v5 .power-line{max-width:680px;margin:0 auto 36px;text-align:center;font-family:'Lora',serif;font-size:clamp(22px,3.2vw,28px);line-height:1.3;letter-spacing:-.02em;color:#403a33}
+  .v5 .subtle{max-width:520px;margin:0 auto 8px;text-align:center;font-size:14px;line-height:1.55;color:var(--muted-dark)}
+  .v5 .nights{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--sage);margin-top:18px;padding:6px 14px;border:1px solid rgba(49,91,87,.25);border-radius:999px;background:rgba(255,255,255,.4)}
 
   /* FAQ */
   .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
@@ -345,6 +395,7 @@
   summary::after{content:'+';font-weight:400;color:var(--muted)}
   details[open] summary::after{content:'–'}
   details p{font-size:13px;line-height:1.65;color:var(--muted-dark);max-width:700px;margin:10px 0 2px}
+  
   /* CONTACT */
   .contact-band{background:var(--charcoal);padding:92px 0 70px}
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
@@ -367,6 +418,7 @@
   .form-note{font-size:10px!important;color:#8a918d!important;text-align:center;margin:10px 0 0!important;max-width:none!important}
   footer{background:var(--charcoal);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
   .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  
   /* MOBILE CTA */
   .mobile-cta{display:none}
   .mobile-cta.is-hidden{display:none !important}
@@ -455,7 +507,6 @@
    .offer-shell,.contact-grid{grid-template-columns:1fr}
    .faq-grid{grid-template-columns:1fr;gap:28px}
    .pricing-card{max-width:540px}
-   .return-points{grid-template-columns:1fr}
    .sequence-pair,.copy-pair,.revenue-pair{grid-template-columns:1fr}
   }
   @media(max-width:720px){
@@ -488,7 +539,6 @@
    .section-heading h2{font-size:42px}
    .transform-intro h2{font-size:36px}
    
-   /* Fix mobile rail, card, and head padding/sizes */
    .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 20px) / 2)) 32px; }
    .proof-card { flex: 0 0 calc(92vw - 20px); padding: 24px 16px; scroll-snap-align: center; border-radius: 20px; }
    .proof-head { grid-template-columns: 48px 1fr; gap: 12px; margin-bottom: 20px; }
@@ -496,7 +546,6 @@
    .proof-head h3 { font-size: 22px; line-height: 1.15; }
    .proof-head p { font-size: 13.5px; margin-top: 6px; }
 
-   /* Prevent calendar bleed and adjust padding sizes for mobile */
    .copy-media, .revenue-media { padding: 10px; min-height: 0; }
    .copy-ui, .revenue-ui { padding: 10px; }
    .lb-calendar { gap: 2px; margin-top: 10px; }
@@ -523,7 +572,6 @@
    form{grid-template-columns:1fr}
    .field-full,.submit{grid-column:1}
    
-   /* Adjusted mobile sticky CTA */
    .mobile-cta{position:fixed;display:flex;transition:opacity .2s ease,transform .2s ease;left:12px;right:12px;bottom:12px;z-index:50;background:rgba(27,37,36,.96);backdrop-filter:blur(14px);padding:8px;border:1px solid rgba(255,255,255,.1);border-radius:15px;box-shadow:0 16px 45px rgba(0,0,0,.24);align-items:center;justify-content:space-between;gap:12px}
    .mobile-cta .mini-price{color:#fff;min-width:0}
    .mobile-cta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
@@ -532,14 +580,9 @@
    .mobile-cta .price-line strong { display: inline; font-family:'Lora',serif; font-size:17px; font-weight:400; line-height:1.05; margin-top: 0; }
    .mobile-cta .accent-btn{padding:10px 13px;border-radius:10px;font-size:11px}
    
-   /* Mobile lightbox fixes */
    .ba-row { grid-template-columns: 1fr; gap: 12px; }
    .lightbox-header { padding: 12px 16px; }
    .lightbox-content { padding: 32px 16px 64px; }
-   .return-payback{grid-template-columns:1fr;max-width:520px}
-   .return-arrow{margin:auto;transform:rotate(90deg)}
-   .return-card strong{font-size:31px}
-   .return-close{font-size:21px}
    .ba-row{grid-template-columns:1fr;gap:8px}
    .ba-row::after{content:"↓";left:50%;top:50%}
    .ba-context{display:block;padding:8px 2px 0}
@@ -615,7 +658,7 @@ See the transformation
       <span class="from">from</span>
       <strong>850 USD</strong>
     </div>
-    <em><span>Returns its value</span></em>
+    <em><span>Qick return on investment</span></em>
   </div>
 </div>
 <a class="accent-btn" href="#offer">See the Launch System →</a>
@@ -625,37 +668,30 @@ See the transformation
 </section>
 
 <!-- ========== TRANSFORMATION / PROOF SCROLL ========== -->
-<section class="transform-section band-beige" id="transformation">
+<section class="variation-block v1" id="transformation">
   <div class="wrap">
     <div class="transform-intro">
       <div class="eyebrow">The work, side by side</div>
       <h2>Three things decide whether a property gets skipped or chosen.</h2>
       <p>What guests see. What they understand. What they pay. We rebuild all three around the same property story so the listing feels more desirable, more discoverable, and more commercially deliberate.</p>
     </div>
-
-    <!-- The 01 / 02 / 03 Navigation -->
-    <nav class="chapter-nav" id="proof-nav">
-      <a href="#proof-visuals" class="is-active">01 The Visuals</a> <span>&middot;</span>
-      <a href="#proof-copy">02 The Promise</a> <span>&middot;</span>
-      <a href="#proof-revenue">03 The Numbers</a>
+    <nav class="chapter-nav">
+      <a href="#v1-visuals" class="is-active">01 The Visuals</a> <span>·</span>
+      <a href="#v1-copy">02 The Promise</a> <span>·</span>
+      <a href="#v1-revenue">03 The Numbers</a>
     </nav>
   </div>
-
-  <!-- The Horizontal Rail -->
-  <div class="proof-rail" id="proof-rail">
-    
-    <!-- BLOCK 01: THE VISUALS -->
-    <article class="proof-card" id="proof-visuals">
+  <div class="proof-rail">
+    <article class="proof-card" id="v1-visuals">
       <div class="proof-head">
         <div class="proof-num">01</div>
         <div>
           <div class="eyebrow">The Visuals</div>
           <h3>Photography &amp; Sequence</h3>
-          <p>Guests decide in under a second whether to click, judging your property by just 5 photos. We replace unplanned uploads with a deliberate, professionally shot grid that creates hierarchy, emotion, and desire.</p>
-        </div>
+          <p>Photography earns the most important clicks. Your primary photo must stand out among competing listings and earn the initial click. Then, your first five photos need to capture their interest and convince them to explore further. Better photos → more clicks → more bookings.</p>
+      </div>
       </div>
       <div class="sequence-pair">
-        <!-- BEFORE: Owner's Sequence -->
         <div class="sequence-card seq-before">
           <div class="airbnb-grid">
             <div class="ag-cell ag-main"></div>
@@ -666,12 +702,10 @@ See the transformation
           </div>
           <div class="sequence-card-footer">
             <strong>Before</strong>
-            <span>Typical host photos in random order. The main shot doesn’t sell the stay, and the supporting frames don’t build desire.</span>
+            <span>Typical host photos in random order. The main shot doesn’t sell the stay.</span>
           </div>
         </div>
-
-        <!-- AFTER: Atelier Sequence -->
-        <div class="sequence-card after seq-after">
+        <div class="sequence-card seq-after">
           <div class="airbnb-grid">
             <div class="ag-cell ag-main"></div>
             <div class="ag-cell ag-2"></div>
@@ -681,88 +715,81 @@ See the transformation
           </div>
           <div class="sequence-card-footer">
             <strong>After</strong>
-            <span>A purposeful sequence built on a hero shot that stops the scroll, lifestyle frames that sell the experience, and detail shots that confirm quality.</span>
+            <span>A purposeful sequence: hero shot, lifestyle frames, and detail shots that confirm quality.</span>
           </div>
         </div>
       </div>
-      <div style="margin-top: 24px; text-align: center;">
-        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
-          See before &amp; after photography <span aria-hidden="true">→</span>
-        </a>
-      </div>
     </article>
-
-    <!-- BLOCK 02: THE PROMISE -->
-    <article class="proof-card" id="proof-copy">
+    <article class="proof-card" id="v1-copy">
       <div class="proof-head">
         <div class="proof-num">02</div>
         <div>
           <div class="eyebrow">The Promise</div>
-          <h3>Brand-Driven Copy &amp; Search Optimization</h3>
-          <p>Strategic copy secures the booking. We rebuild your entire listing ecosystem from the property narrative to algorithmic amenity mapping ensuring you rank higher in search and persuade your ideal guest.</p>
+          <h3>Brand-Driven Copy &amp; Search</h3>
+          <p>The copy creates the promise guests use to evaluate the stay; when that promise is also structured for search, it can help the property get discovered inside the platform and through external search engines.</p>
         </div>
+      </div>
+      <div class="scope-chip-row">
+        <span class="scope-chip">Title</span>
+        <span class="scope-chip">Image captions</span>
+        <span class="scope-chip">Property narrative</span>
+        <span class="scope-chip">Amenities &amp; attributes</span>
+        <span class="scope-chip">Search-facing details</span>
       </div>
       <div class="copy-pair">
         <article class="copy-card">
           <div class="copy-media copy-before">
             <div class="copy-ui">
+
               <div class="copy-ui-top">
                 <span class="copy-ui-kicker">Before · Surface Level</span>
                 <span class="copy-ui-search">generic search</span>
               </div>
               <h4>Beautiful Villa in Curaçao</h4>
-              <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home with everything you need for a relaxing vacation.</p>
-              
+              <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home.</p>
+
+              <div class="copy-ui-surfaces">
+                <div class="copy-ui-surface"><b>Image captions</b>Missing / generic</div>
+                <div class="copy-ui-surface"><b>Search signals</b>Unstructured</div>
+              </div>
             </div>
           </div>
           <div class="copy-card-footer">
             <strong>Before</strong>
-            <span>Relies on a basic paragraph, leaving the algorithm guessing and forcing photos to do 100% of the selling.</span>
-            <!-- Ecosystem Breakdown (Before) -->
-            <div style="margin-top: 12px; font-size: 11px; color: var(--muted-dark); display: grid; gap: 6px;">
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="flex-shrink: 0;">✕</span> <span>Generic description only</span></div>
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="flex-shrink: 0;">✕</span> <span>Missing or useless photo captions</span></div>
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="flex-shrink: 0;">✕</span> <span>Default, unoptimized amenities</span></div>
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="flex-shrink: 0;">✕</span> <span>Unclear target audience</span></div>
-            </div>
+            <span>Basic paragraph; algorithm guessing; photos do 100% of the selling.</span>
           </div>
         </article>
-        
         <article class="copy-card">
           <div class="copy-media copy-after">
             <div class="copy-ui">
+
               <div class="copy-ui-top">
                 <span class="copy-ui-kicker">After · Full Ecosystem</span>
                 <span class="copy-ui-search">high-intent search</span>
               </div>
-              <h4>Private West Coast Villa · Pool · Sunset Views</h4>
-              <p>A hillside escape for slow mornings and easy access to Curaçao’s west coast. Designed for couples who want space, privacy, and an easy island rhythm.</p>
-              
+              <h4>Private West Coast Villa · Pool · Ocean Views</h4>
+              <p>Casa Solana is a oceanside escape for slow mornings and easy access to Curaçao’s west coast.</p>
+
+              <div class="copy-ui-surfaces">
+                <div class="copy-ui-surface"><b>Image captions</b>Context-rich &amp; intentional</div>
+                <div class="copy-ui-surface"><b>Search signals</b>Mapped to intent</div>
+              </div>
             </div>
           </div>
           <div class="copy-card-footer">
             <strong>After</strong>
-            <span>We structure the title, narrative, and backend details to capture high-intent searches and convert readers into guests.</span>
-            <!-- Ecosystem Breakdown (After) -->
-            <div style="margin-top: 12px; font-size: 11.5px; color: var(--ink); display: grid; gap: 6px; font-weight: 500;">
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="color:var(--sage); flex-shrink: 0;">✓</span> <span>Compelling property narrative</span></div>
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="color:var(--sage); flex-shrink: 0;">✓</span> <span>Strategic photo captions</span></div>
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="color:var(--sage); flex-shrink: 0;">✓</span> <span>Algorithm-mapped amenities</span></div>
-              <div style="display: flex; align-items: flex-start; gap: 5px;"><span style="color:var(--sage); flex-shrink: 0;">✓</span> <span>Brand-aligned host profile &amp; rules</span></div>
-            </div>
+            <span>Title, narrative, and backend mapped to high-intent searches.</span>
           </div>
         </article>
       </div>
     </article>
-
-    <!-- BLOCK 03: THE NUMBERS -->
-    <article class="proof-card" id="proof-revenue">
+    <article class="proof-card" id="v1-revenue">
       <div class="proof-head">
         <div class="proof-num">03</div>
         <div>
           <div class="eyebrow">The Numbers</div>
           <h3>Calendar &amp; Pricing Strategy</h3>
-          <p>A flat nightly rate ignores market dynamics, leaving revenue on the table when demand is high and losing bookings when it softens. We implement a dynamic pricing rhythm that automatically responds to seasonality, day-of-week behavior, and local competition.</p>
+          <p>Flexible pricing and stay requirements let us respond to demand. Like hotels and airlines, we use market data to adjust prices and minimum stays across dates. This helps us achieve higher yield than flat pricing.</p>
         </div>
       </div>
       <div class="revenue-pair">
@@ -770,10 +797,7 @@ See the transformation
           <div class="revenue-media revenue-before">
             <div class="revenue-ui">
               <div class="revenue-ui-head">
-                <div>
-                  <small>Calendar pricing</small>
-                  <strong>$650 / night</strong>
-                </div>
+                <div><small>Calendar pricing</small><strong>$650 / night</strong></div>
                 <span class="copy-ui-search">flat rate</span>
               </div>
               <div class="lb-calendar">
@@ -785,25 +809,20 @@ See the transformation
                 <div class="lb-day"><b>Sat</b><span>$650</span></div>
                 <div class="lb-day"><b>Sun</b><span>$650</span></div>
               </div>
-              <div class="lb-demand-row">
-                <span>No demand signal</span>
-                <span>No day-of-week adjustment</span>
-              </div>
+              <div class="lb-demand-row"><span>No demand signal</span><span>No day-of-week adjustment</span></div>
+              <div class="revenue-strategy-row"><span>Fixed MLOS</span><span>No yield flexibility</span></div>
             </div>
           </div>
           <div class="revenue-card-footer">
             <strong>Before</strong>
-            <span>A flat rate ignores market dynamics, treating quiet weekdays and high-demand weekends exactly the same.</span>
+            <span>Flat rate treats quiet weekdays and high-demand weekends the same.</span>
           </div>
         </article>
         <article class="revenue-card">
           <div class="revenue-media revenue-after">
             <div class="revenue-ui">
               <div class="revenue-ui-head">
-                <div>
-                  <small>Calendar pricing</small>
-                  <strong>$550–$950</strong>
-                </div>
+                <div><small>Calendar pricing</small><strong>$550–$950</strong></div>
                 <span class="copy-ui-search">demand-aware</span>
               </div>
               <div class="lb-calendar">
@@ -815,22 +834,18 @@ See the transformation
                 <div class="lb-day hot"><b>Sat</b><span>$950</span></div>
                 <div class="lb-day"><b>Sun</b><span>$650</span></div>
               </div>
-              <div class="lb-demand-row">
-                <span>Weekend lift</span>
-                <span>Seasonality considered</span>
-                <span>Competitive context</span>
-              </div>
+              <div class="lb-demand-row"><span>Weekend lift</span><span>Seasonality considered</span><span>Competitive context</span></div>
+              <div class="revenue-strategy-row"><span>Data-led MLOS</span><span>Flexible rate moves</span><span>Yield protected</span></div>
             </div>
           </div>
           <div class="revenue-card-footer">
             <strong>After</strong>
-            <span>Rates adapt to the market, capturing premium yield when demand strengthens and staying competitive when it softens.</span>
+            <span>Rates adapt: premium yield when demand is high, competitive when soft.</span>
           </div>
         </article>
       </div>
-      <p class="proof-note" style="margin-top: 24px;">Illustrative example only. The actual pricing calendar is built around the property’s market, seasonality, demand patterns, and competitive set.</p>
+      <p class="proof-note">Illustrative example only.</p>
     </article>
-
   </div>
 </section>
 
@@ -886,17 +901,17 @@ See the transformation
 <div class="price">850 USD</div>
 <div class="price-note">
 <strike style="margin-right:6px;">1,650 USD</strike> Inaugural rate<br/>
-<strong style="color:var(--sage);">≈ 5-7 booked nights of revenue</strong>
+<strong style="color:var(--sage);">Returns the investment in 5-7 booked nights</strong>
 </div>
 <a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
 <div class="price-tiers">
 <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
 <strong>3–5 Bedrooms OR Luxury Villas</strong> 1,250 USD <strike>(2,500 USD)</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 3–4 booked nights of revenue</span>
+<span style="color:var(--sage); font-weight:600;">Returns the investment in 3–4 booked nights</span>
 </div>
 <div>
 <strong>6+ Bedrooms OR Estates</strong> 2,250 USD <strike>(4,500 USD)</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 2–3 booked nights of revenue</span>
+<span style="color:var(--sage); font-weight:600;">Returns the investment in 2–3 booked nights</span>
 </div>
 </div>
 <div class="micro">Five slots are available across all three tiers. No commitment until we review fit and availability.</div>
@@ -905,20 +920,20 @@ See the transformation
 </div>
 </section>
 
-<!-- THE RETURN -->
+<!-- THE RETURN (V5) -->
 <section class="band-beige v5">
   <div class="wrap">
     <div class="section-heading">
       <div class="eyebrow">The Return</div>
       <h2>A few better nights.</h2>
     </div>
-    <p class="power-line">That is all it takes for the inaugural investment to pay for itself—and leave you with a listing that keeps working long after the work is done.</p>
+    <p class="power-line">That is all it takes for the inaugural investment to pay for itself and leave you with a listing that keeps working long after the work is done.</p>
     <p class="subtle">No perfect year required. Just a stronger foundation, built once.</p>
     <div style="text-align:center">
-      <span class="nights">Typical break-even · 2–7 nights</span>
+      <span class="nights">Typical break-even in 2–7 booked nights</span>
     </div>
     <div class="return-cta">
-      <a class="accent-btn" href="#">Request an inaugural launch slot →</a>
+      <a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
     </div>
   </div>
 </section>
@@ -1171,7 +1186,6 @@ See the transformation
     const cards = document.querySelectorAll('.proof-card');
 
     if (rail && navLinks.length && cards.length) {
-      // 1. Intercept anchor clicks for horizontal smooth scroll
       navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
           e.preventDefault();
@@ -1183,11 +1197,10 @@ See the transformation
         });
       });
 
-      // 2. Observer to auto-update active tab when scrolling
       const observerOptions = {
         root: rail,
         rootMargin: '0px',
-        threshold: 0.6 // Trigger when card is 60% visible
+        threshold: 0.6 
       };
 
       const observer = new IntersectionObserver((entries) => {
