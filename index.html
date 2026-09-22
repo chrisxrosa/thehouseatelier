@@ -106,6 +106,14 @@
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
   /* ========== TRANSFORMATION / PROOF SECTION ========== */
+  /* Added 100vh height and flexbox properties so it fully fits and centers vertically in the screen */
+  #transformation {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px 0;
+  }
   .transform-section{padding:60px 0 20px}
   .transform-intro{max-width:880px;margin-bottom:32px}
   .transform-intro h2{font-size:clamp(38px,5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
@@ -534,6 +542,7 @@
    .offer-chip{justify-content:center;text-align:center;width:100%}
    .hero-offer-row .accent-btn{width:100%}
    section{padding:66px 0}
+   #transformation { padding: 0;}
    .transform-section{padding:66px 0 24px}
    .section-heading{margin-bottom:30px}
    .section-heading h2{font-size:42px}
@@ -933,7 +942,6 @@ See the transformation
       <h2>A few better nights.</h2>
     </div>
     <p class="power-line">That is all it takes for the investment to pay for itself and leave you with a listing that keeps working long after the work is done.</p>
-    <p class="subtle">No perfect year required. Just a stronger foundation, built once.</p>
     <div style="text-align:center">
       <span class="nights">Typical break-even · 2–7 nights</span>
     </div>
@@ -1186,8 +1194,11 @@ See the transformation
 <script>
   // Chapter Nav & Rail Logic
   document.addEventListener('DOMContentLoaded', () => {
-    const rail = document.getElementById('proof-rail');
-    const navLinks = document.querySelectorAll('#proof-nav a');
+    // FIXED: Corrected selector from getElementById('proof-rail') to querySelector('.proof-rail')
+    const rail = document.querySelector('.proof-rail');
+    
+    // FIXED: Corrected selector from '#proof-nav a' to '.chapter-nav a'
+    const navLinks = document.querySelectorAll('.chapter-nav a');
     const cards = document.querySelectorAll('.proof-card');
 
     if (rail && navLinks.length && cards.length) {
