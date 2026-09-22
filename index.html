@@ -120,37 +120,46 @@
     margin-bottom: 32px;
   }
   .chapter-nav a {
-    color: var(--ink);
+    color: var(--muted);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
   }
   .chapter-nav a:hover {
+    color: var(--ink);
+  }
+  .chapter-nav a.is-active {
     color: var(--accent);
+    border-color: var(--accent);
   }
   .chapter-nav span {
     color: var(--muted);
   }
 
-  /* The scrollable edge-to-edge container */
+  /* Edge-to-edge container with faded mask and perfect centering */
   .proof-rail {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 24px;
-    /* Math to perfectly align the left edge of the first card with your .wrap container */
-    padding: 10px max(24px, calc((100vw - var(--max)) / 2)) 48px;
-    scrollbar-width: none; /* Hides scrollbar in Firefox */
-    -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+    /* Math to perfectly center the first and last cards: 50vw - (half the card width) */
+    padding: 10px calc(50vw - min(42.5vw, 470px)) 48px;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
   .proof-rail::-webkit-scrollbar {
-    display: none; /* Hides scrollbar in Chrome/Safari */
+    display: none;
   }
 
   /* The individual cards */
   .proof-card {
-    /* 85vw width ensures the next card peeks into view, capping at 940px */
+    /* Capping width at 940px so it's readable, 85vw ensures peek */
     flex: 0 0 min(85vw, 940px);
-    scroll-snap-align: start;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
     background: var(--bone-2);
     border: 1px solid var(--line);
     border-radius: 28px;
@@ -158,7 +167,6 @@
     box-shadow: var(--shadow-lg);
   }
   
-  /* Reset the inner head so it fits the card cleanly */
   .proof-card .proof-head {
     max-width: none;
     margin-bottom: 36px;
@@ -444,6 +452,7 @@
   }
   .lightbox-cta h3{font-family:'Lora',serif;font-weight:400;margin:0;color:#fff;font-size:30px;line-height:1.1}
   .lightbox-cta p{margin:0;max-width:600px;color:#b8c2be;font-size:14px;line-height:1.6}
+  
   /* RESPONSIVE */
   @media(max-width:960px){
    .offer-shell,.contact-grid{grid-template-columns:1fr}
@@ -522,7 +531,8 @@
    .lightbox-count{display:none}
    .lightbox-cta h3 { font-size: 24px; }
 
-   .proof-rail { gap: 16px; padding: 10px 14px 32px; }
+   /* Math for center snapping on mobile: 50vw - (half the mobile card width) */
+   .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 28px) / 2)) 32px; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
    .proof-card { flex: 0 0 calc(92vw - 28px); padding: 24px; scroll-snap-align: center; }
   }
   @media(max-width:420px){
@@ -609,15 +619,15 @@ See the transformation
     </div>
 
     <!-- The 01 / 02 / 03 Navigation -->
-    <nav class="chapter-nav">
-      <a href="#proof-visuals">01 The Visuals</a> <span>&middot;</span>
+    <nav class="chapter-nav" id="proof-nav">
+      <a href="#proof-visuals" class="is-active">01 The Visuals</a> <span>&middot;</span>
       <a href="#proof-copy">02 The Promise</a> <span>&middot;</span>
       <a href="#proof-revenue">03 The Yield</a>
     </nav>
   </div>
 
   <!-- The Horizontal Rail -->
-  <div class="proof-rail">
+  <div class="proof-rail" id="proof-rail">
     
     <!-- BLOCK 01: THE VISUALS -->
     <article class="proof-card" id="proof-visuals">
@@ -1143,6 +1153,51 @@ See the transformation
 <!-- ======================================================== -->
 
 <script>
+  // Chapter Nav & Rail Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const rail = document.getElementById('proof-rail');
+    const navLinks = document.querySelectorAll('#proof-nav a');
+    const cards = document.querySelectorAll('.proof-card');
+
+    if (rail && navLinks.length && cards.length) {
+      // 1. Intercept anchor clicks for horizontal smooth scroll
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetCard = document.getElementById(targetId);
+          if (targetCard) {
+            targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+          }
+        });
+      });
+
+      // 2. Observer to auto-update active tab when scrolling
+      const observerOptions = {
+        root: rail,
+        rootMargin: '0px',
+        threshold: 0.6 // Trigger when card is 60% visible
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const activeId = entry.target.id;
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${activeId}`) {
+                link.classList.add('is-active');
+              } else {
+                link.classList.remove('is-active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      cards.forEach(card => observer.observe(card));
+    }
+  });
+
   // Lightbox Logic
   function openLightbox() {
     const box = document.getElementById('photo-lightbox');
@@ -1209,6 +1264,7 @@ See the transformation
    mobileQuery.addEventListener('change',updateCta);
    updateCta();
   })();
+
   async function submitLead(e){
    e.preventDefault();
    const form=e.target;
