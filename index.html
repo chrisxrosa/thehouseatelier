@@ -101,10 +101,10 @@
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
   /* ========== TRANSFORMATION / PROOF SECTION ========== */
-  .transform-section{padding:88px 0 40px}
-  .transform-intro{max-width:760px;margin-bottom:56px}
+  .transform-section{padding:60px 0 20px}
+  .transform-intro{max-width:760px;margin-bottom:32px}
   .transform-intro h2{font-size:clamp(38px,5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
-  .transform-intro p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark);max-width:640px}
+  .transform-intro p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark);max-width:860px}
 
   /* ========== HORIZONTAL CHAPTER RAIL ========== */
   .chapter-nav {
@@ -117,7 +117,7 @@
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--muted-dark);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
   }
   .chapter-nav a {
     color: var(--muted);
@@ -137,18 +137,15 @@
     color: var(--muted);
   }
 
-  /* Edge-to-edge container with faded mask and perfect centering */
+  /* Edge-to-edge container */
   .proof-rail {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     gap: 24px;
-    /* Math to perfectly center the first and last cards: 50vw - (half the card width) */
     padding: 10px calc(50vw - min(42.5vw, 470px)) 48px;
     scrollbar-width: none; 
     -ms-overflow-style: none;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
   .proof-rail::-webkit-scrollbar {
     display: none;
@@ -156,20 +153,19 @@
 
   /* The individual cards */
   .proof-card {
-    /* Capping width at 940px so it's readable, 85vw ensures peek */
     flex: 0 0 min(85vw, 940px);
     scroll-snap-align: center;
     scroll-snap-stop: always;
     background: var(--bone-2);
     border: 1px solid var(--line);
     border-radius: 28px;
-    padding: 48px;
+    padding: 32px;
     box-shadow: var(--shadow-lg);
   }
   
   .proof-card .proof-head {
     max-width: none;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
   }
 
   .proof-head{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;align-items:start;margin-bottom:28px;max-width:780px}
@@ -179,17 +175,24 @@
 
   /* --- Block 01: 5-Photo Sequence Grids --- */
   .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06)}
-  .sequence-card-label{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 12px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.5)}
-  .sequence-card-label strong{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
-  .sequence-card-label span{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  .sequence-card.after .sequence-card-label span{color:var(--sage)}
+  .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06); display: flex; flex-direction: column;}
+  
+  /* Shared Footer Style for all cards */
+  .sequence-card-footer, .copy-card-footer, .revenue-card-footer {
+    padding: 14px 16px 16px; background: var(--bone-2); border-top: 1px solid var(--line); flex-grow: 1;
+  }
+  .sequence-card-footer strong, .copy-card-footer strong, .revenue-card-footer strong {
+    display: block; font-size: 13px; margin-bottom: 3px; color: var(--ink);
+  }
+  .sequence-card-footer span, .copy-card-footer span, .revenue-card-footer span {
+    display: block; font-size: 12px; line-height: 1.5; color: var(--muted-dark);
+  }
 
   /* Airbnb-style 5-photo bento grid */
   .airbnb-grid{
     display:grid;
     grid-template-columns:2fr 1fr 1fr;
-    grid-template-rows:140px 140px;
+    grid-template-rows:120px 120px;
     gap:4px;
     background:#fff;
     padding:4px;
@@ -210,12 +213,6 @@
   .airbnb-grid .ag-3{grid-column:3;grid-row:1;border-radius:0 12px 0 0}
   .airbnb-grid .ag-4{grid-column:2;grid-row:2;border-radius:0}
   .airbnb-grid .ag-5{grid-column:3;grid-row:2;border-radius:0 0 12px 0}
-  
-  .ag-tag{
-    position:absolute;left:10px;bottom:9px;z-index:2;
-    font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6);
-  }
 
   /* Real image files and gradient overlays for Before Grid */
   .seq-before .ag-main{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.35) 100%), url('assets/seq-before-1.jpg'); background-color:#9a8b7a;}
@@ -231,13 +228,10 @@
   .seq-after .ag-4{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-4.jpg'); background-color:#c9b8a4;}
   .seq-after .ag-5{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-5.jpg'); background-color:#f0e6d8;}
 
-  .sequence-caption{padding:14px 16px 16px;font-size:12.5px;line-height:1.55;color:var(--muted-dark)}
-  .sequence-caption strong{display:block;font-size:13px;color:var(--ink);margin-bottom:3px}
-
   /* --- Block 02: Copy / Search Optimization cards --- */
   .copy-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .copy-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05)}
-  .copy-media{min-height:280px;padding:18px;display:flex;align-items:stretch}
+  .copy-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
+  .copy-media{min-height:240px;padding:18px;display:flex;align-items:stretch}
   .copy-before{background:#f4efe5}
   .copy-after{background:#e5eee9}
   .copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
@@ -247,17 +241,11 @@
   .copy-ui-search{font-size:8px;color:var(--muted-dark);border:1px solid var(--line);padding:5px 7px;border-radius:999px;background:var(--bone-2);white-space:nowrap}
   .copy-ui h4{font-family:'Lora',serif;font-size:22px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin:14px 0 8px;color:var(--ink)}
   .copy-ui p{font-size:11px;line-height:1.55;color:var(--muted-dark);margin:0}
-  .copy-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-  .copy-tags span{font-size:8px;font-weight:700;letter-spacing:.04em;color:var(--sage);background:#edf4f1;padding:5px 7px;border-radius:999px}
-  .copy-before .copy-tags span{color:#78726a;background:#f0ece4}
-  .copy-card-footer{padding:14px 16px 16px;background:var(--bone-2);border-top:1px solid var(--line)}
-  .copy-card-footer strong{display:block;font-size:13px;margin-bottom:3px;color:var(--ink)}
-  .copy-card-footer span{display:block;font-size:12px;line-height:1.5;color:var(--muted-dark)}
-
+  
   /* --- Block 03: Revenue calendars --- */
   .revenue-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .revenue-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05)}
-  .revenue-media{min-height:260px;padding:18px;display:flex;align-items:stretch}
+  .revenue-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
+  .revenue-media{min-height:240px;padding:18px;display:flex;align-items:stretch}
   .revenue-before{background:#eee9df}
   .revenue-after{background:#dfe9e5}
   .revenue-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:15px;box-shadow:0 8px 24px rgba(27,37,36,.06)}
@@ -276,9 +264,6 @@
   .lb-demand-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
   .lb-demand-row span{font-size:8px;font-weight:700;padding:5px 7px;border-radius:999px;background:#f3efe8;color:var(--muted-dark)}
   .revenue-after .lb-demand-row span:first-child{background:#e7f1ed;color:var(--sage)}
-  .revenue-card-footer{padding:14px 16px 16px;background:var(--bone-2);border-top:1px solid var(--line)}
-  .revenue-card-footer strong{display:block;font-size:13px;margin-bottom:3px;color:var(--ink)}
-  .revenue-card-footer span{display:block;font-size:12px;line-height:1.5;color:var(--muted-dark)}
   .proof-note{margin-top:18px;font-size:11px;line-height:1.5;color:var(--muted);text-align:center}
 
   /* SECTIONS */
@@ -532,7 +517,7 @@
    .lightbox-cta h3 { font-size: 24px; }
 
    /* Math for center snapping on mobile: 50vw - (half the mobile card width) */
-   .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 28px) / 2)) 32px; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%); }
+   .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 28px) / 2)) 32px; }
    .proof-card { flex: 0 0 calc(92vw - 28px); padding: 24px; scroll-snap-align: center; }
   }
   @media(max-width:420px){
@@ -612,10 +597,10 @@ See the transformation
 <!-- ========== TRANSFORMATION / PROOF SCROLL ========== -->
 <section class="transform-section band-beige" id="transformation">
   <div class="wrap">
-    <div class="transform-intro" style="margin-bottom: 24px;">
+    <div class="transform-intro">
       <div class="eyebrow">The work, side by side</div>
       <h2>Three things decide whether a property gets overlooked or chosen.</h2>
-      <p>What guests see. What they understand. What they pay. We rebuild all three around the same property story—so the listing feels more desirable, more discoverable, and more commercially deliberate.</p>
+      <p>What guests see. What they understand. What they pay. We rebuild all three around the same property story so the listing feels more desirable, more discoverable, and more commercially deliberate.</p>
     </div>
 
     <!-- The 01 / 02 / 03 Navigation -->
@@ -636,63 +621,55 @@ See the transformation
         <div>
           <div class="eyebrow">The Visuals</div>
           <h3>Photography &amp; Sequence</h3>
-          <p>Your primary photo is the most important. Guests decide in under a second whether to open the listing, and then they judge it by 4 additional photos. We replace an unplanned sequence with a deliberate and professionally-taken grid that creates hierarchy, emotion, and a reason to click.</p>
+          <p>Guests decide in under a second whether to click, judging your property by just 5 photos. We replace unplanned uploads with a deliberate, professionally shot grid that creates hierarchy, emotion, and desire.</p>
         </div>
       </div>
       <div class="sequence-pair">
         <!-- BEFORE: Owner's Sequence -->
         <div class="sequence-card seq-before">
-          <div class="sequence-card-label">
-            <strong>Before</strong>
-            <span>The Owner’s Sequence</span>
-          </div>
           <div class="airbnb-grid">
-            <div class="ag-cell ag-main"><span class="ag-tag">Main</span></div>
-            <div class="ag-cell ag-2"><span class="ag-tag">2</span></div>
-            <div class="ag-cell ag-3"><span class="ag-tag">3</span></div>
-            <div class="ag-cell ag-4"><span class="ag-tag">4</span></div>
-            <div class="ag-cell ag-5"><span class="ag-tag">5</span></div>
+            <div class="ag-cell ag-main"></div>
+            <div class="ag-cell ag-2"></div>
+            <div class="ag-cell ag-3"></div>
+            <div class="ag-cell ag-4"></div>
+            <div class="ag-cell ag-5"></div>
           </div>
-          <div class="sequence-caption">
-            <strong>No visual hierarchy</strong>
-            Typical host photos in random order. The main shot doesn’t sell the stay, and the supporting frames don’t guide the eye or build desire.
+          <div class="sequence-card-footer">
+            <strong>Before</strong>
+            <span>Typical host photos in random order. The main shot doesn’t sell the stay, and the supporting frames don’t build desire.</span>
           </div>
         </div>
 
         <!-- AFTER: Atelier Sequence -->
-        <div class="sequence-card sequence-card after seq-after">
-          <div class="sequence-card-label">
-            <strong>After</strong>
-            <span>The Atelier Sequence</span>
-          </div>
+        <div class="sequence-card after seq-after">
           <div class="airbnb-grid">
-            <div class="ag-cell ag-main"><span class="ag-tag">Hero</span></div>
-            <div class="ag-cell ag-2"><span class="ag-tag">Lifestyle</span></div>
-            <div class="ag-cell ag-3"><span class="ag-tag">Detail</span></div>
-            <div class="ag-cell ag-4"><span class="ag-tag">Space</span></div>
-            <div class="ag-cell ag-5"><span class="ag-tag">Amenity</span></div>
+            <div class="ag-cell ag-main"></div>
+            <div class="ag-cell ag-2"></div>
+            <div class="ag-cell ag-3"></div>
+            <div class="ag-cell ag-4"></div>
+            <div class="ag-cell ag-5"></div>
           </div>
-          <div class="sequence-caption">
-            <strong>Designed to convert</strong>
-            A purposeful sequence built on a hero shot that stops the scroll, lifestyle frames that sell the experience, and detail shots that confirm quality and uniqueness.
+          <div class="sequence-card-footer">
+            <strong>After</strong>
+            <span>A purposeful sequence built on a hero shot that stops the scroll, lifestyle frames that sell the experience, and detail shots that confirm quality.</span>
           </div>
         </div>
       </div>
-      <div style="margin-top: 32px; text-align: center;">
+      <div style="margin-top: 24px; text-align: center;">
         <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
           See before &amp; after photography <span aria-hidden="true">→</span>
         </a>
       </div>
     </article>
 
-    <!-- BLOCK 02: THE BRAND + THE SEARCH -->
+    <!-- BLOCK 02: THE PROMISE -->
     <article class="proof-card" id="proof-copy">
       <div class="proof-head">
         <div class="proof-num">02</div>
         <div>
           <div class="eyebrow">The Promise</div>
-          <h3>Build a brand guests can find—and remember.</h3>
-          <p>The listing has to do two jobs at once: make the property feel distinctive to a person, and make its value legible to search. We define what the property is, who it is for, and what makes it worth choosing—then express that in natural, search-aware language.</p>
+          <h3>Brand-Driven Copy &amp; Search Optimization</h3>
+          <p>Strategic copy secures the booking. We rebuild your entire listing ecosystem from the property narrative to algorithmic amenity mapping ensuring you rank higher in search and persuade your ideal guest.</p>
         </div>
       </div>
       <div class="copy-pair">
@@ -700,38 +677,51 @@ See the transformation
           <div class="copy-media copy-before">
             <div class="copy-ui">
               <div class="copy-ui-top">
-                <span class="copy-ui-kicker">Before · generic listing</span>
-                <span class="copy-ui-search">generic villa</span>
+                <span class="copy-ui-kicker">Before · Surface Level</span>
+                <span class="copy-ui-search">generic search</span>
               </div>
               <h4>Beautiful Villa in Curaçao</h4>
               <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home with everything you need for a relaxing vacation.</p>
-              <div class="copy-tags">
-                <span>villa</span><span>pool</span><span>Curaçao</span><span>vacation</span>
+              
+              <!-- Ecosystem Breakdown (Before) -->
+              <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); font-size: 10px; color: var(--muted-dark); display: grid; gap: 6px;">
+                <div>✕ Generic description only</div>
+                <div>✕ Missing or useless photo captions</div>
+                <div>✕ Default, unoptimized amenities</div>
+                <div>✕ Unclear target audience</div>
               </div>
+
             </div>
           </div>
           <div class="copy-card-footer">
             <strong>Before</strong>
-            <span>Describes the property, but gives the guest little reason to remember it or understand its specific appeal.</span>
+            <span>Relies on a basic paragraph, leaving the algorithm guessing and forcing photos to do 100% of the selling.</span>
           </div>
         </article>
+        
         <article class="copy-card">
           <div class="copy-media copy-after">
             <div class="copy-ui">
               <div class="copy-ui-top">
-                <span class="copy-ui-kicker">After · brand + discovery</span>
-                <span class="copy-ui-search">west coast villa</span>
+                <span class="copy-ui-kicker">After · Full Ecosystem</span>
+                <span class="copy-ui-search">high-intent search</span>
               </div>
               <h4>Private West Coast Villa · Pool · Sunset Views</h4>
-              <p>A private hillside escape for slow mornings, poolside afternoons, and easy access to Curaçao’s west coast. Designed for couples and small groups who want space, privacy, and an easy island rhythm.</p>
-              <div class="copy-tags">
-                <span>west coast</span><span>private pool</span><span>sunset</span><span>couples</span>
+              <p>A hillside escape for slow mornings and easy access to Curaçao’s west coast. Designed for couples who want space, privacy, and an easy island rhythm.</p>
+              
+              <!-- Ecosystem Breakdown (After) -->
+              <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed rgba(49,91,87,.2); font-size: 10.5px; color: var(--ink); display: grid; gap: 6px; font-weight: 500;">
+                <div><span style="color:var(--sage); margin-right:4px;">✓</span> Compelling property narrative</div>
+                <div><span style="color:var(--sage); margin-right:4px;">✓</span> Strategic photo captions</div>
+                <div><span style="color:var(--sage); margin-right:4px;">✓</span> Algorithm-mapped amenities</div>
+                <div><span style="color:var(--sage); margin-right:4px;">✓</span> Brand-aligned host profile &amp; rules</div>
               </div>
+
             </div>
           </div>
           <div class="copy-card-footer">
             <strong>After</strong>
-            <span>Brand positioning gives the property a point of view; search-aware language helps the right guest understand what it is and why it fits.</span>
+            <span>We structure the title, narrative, and backend details to capture high-intent searches and convert readers into guests.</span>
           </div>
         </article>
       </div>
@@ -744,7 +734,7 @@ See the transformation
         <div>
           <div class="eyebrow">The Yield</div>
           <h3>Revenue Optimization</h3>
-          <p>We replace “one price fits every night” with a visual pricing rhythm that responds to demand, seasonality, day-of-week behavior, and local competition.</p>
+          <p>We replace flat rates with a dynamic pricing rhythm that responds to demand, seasonality, day-of-week behavior, and local competition.</p>
         </div>
       </div>
       <div class="revenue-pair">
@@ -775,7 +765,7 @@ See the transformation
           </div>
           <div class="revenue-card-footer">
             <strong>Before</strong>
-            <span>One nightly rate treats quiet weekdays, strong weekends, and high-demand periods as though they are the same market.</span>
+            <span>A flat rate ignores market dynamics, treating quiet weekdays and high-demand weekends exactly the same.</span>
           </div>
         </article>
         <article class="revenue-card">
@@ -806,7 +796,7 @@ See the transformation
           </div>
           <div class="revenue-card-footer">
             <strong>After</strong>
-            <span>The rate changes with the market instead of fighting it, giving the property room to capture more when demand strengthens and stay competitive when it softens.</span>
+            <span>Rates adapt to the market, capturing premium yield when demand strengthens and staying competitive when it softens.</span>
           </div>
         </article>
       </div>
