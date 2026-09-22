@@ -106,7 +106,6 @@
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
   /* ========== TRANSFORMATION / PROOF SECTION ========== */
-  /* Added 100vh height and flexbox properties so it fully fits and centers vertically in the screen */
   #transformation {
     min-height: 100vh;
     display: flex;
@@ -911,7 +910,7 @@ See the transformation
 </div>
 <aside class="pricing-card">
 <div class="eyebrow">Inaugural launch offer · only 5 properties</div>
-<div class="pricing-tier-label">1–2 Bedrooms OR Condos / Suites</div>
+<div class="pricing-tier-label">Condos &amp; Intimate Stays (≈1–2 Bedrooms)</div>
 <div class="price">850 USD</div>
 <div class="price-note">
 <strike style="margin-right:6px;">1,650 USD</strike> Inaugural rate<br/>
@@ -920,11 +919,11 @@ See the transformation
 <a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
 <div class="price-tiers">
 <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
-<strong>3–5 Bedrooms OR Luxury Villas</strong> 1,250 USD <strike>(2,500 USD)</strike><br/>
+<strong>Villas &amp; Family Homes (≈3–5 Bedrooms)</strong> 1,250 USD <strike>(2,500 USD)</strike><br/>
 <span style="color:var(--sage); font-weight:600;">≈ 3–4 booked nights of revenue</span>
 </div>
 <div>
-<strong>6+ Bedrooms OR Estates</strong> 2,250 USD <strike>(4,500 USD)</strike><br/>
+<strong>Large Villas &amp; Estates (≈6+ Bedrooms)</strong> 2,250 USD <strike>(4,500 USD)</strike><br/>
 <span style="color:var(--sage); font-weight:600;">≈ 2–3 booked nights of revenue</span>
 </div>
 </div>
@@ -1049,12 +1048,20 @@ See the transformation
 <input id="whatsapp" name="whatsapp" placeholder="Your WhatsApp number" type="tel" required=""/>
 </div>
 <div>
+<label for="outreach">Preferred outreach</label>
+<select id="outreach" name="outreach" required="">
+<option disabled="" selected="" value="">Select method</option>
+<option value="Email">Email</option>
+<option value="WhatsApp">WhatsApp</option>
+</select>
+</div>
+<div class="field-full">
 <label for="beds">Property size</label>
 <select id="beds" name="beds" required="">
 <option disabled="" selected="" value="">Select size</option>
-<option>1–2 Bedrooms OR Condos / Suites</option>
-<option>3–5 Bedrooms OR Luxury Villas</option>
-<option>6+ Bedrooms OR Estates</option>
+<option>Condos &amp; Intimate Stays (≈1–2 Bedrooms)</option>
+<option>Villas &amp; Family Homes (≈3–5 Bedrooms)</option>
+<option>Large Villas &amp; Estates (≈6+ Bedrooms)</option>
 </select>
 </div>
 <div class="field-full">
@@ -1068,6 +1075,16 @@ See the transformation
 <button class="submit" type="submit">Request my inaugural launch slot →</button>
 </form>
 <p class="form-note">No commitment. We’ll review the property and confirm fit + availability first.</p>
+
+<!-- Added WhatsApp Contact Link here -->
+<div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); text-align: center;">
+  <p style="font-size: 12px; color: var(--muted-dark); margin: 0;">
+    Have questions before applying?<br>
+    <a href="https://wa.me/59996640824?text=Hi%20Chris!%20I%20have%20a%20question%20about%20The%20House%20Atelier%20launch%20services." target="_blank" rel="noopener noreferrer" style="color: var(--sage); font-weight: 700; display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; text-decoration: underline;">
+      Message Chris on WhatsApp ↗
+    </a>
+  </p>
+</div>
 </div>
 </div>
 </div>
@@ -1194,10 +1211,7 @@ See the transformation
 <script>
   // Chapter Nav & Rail Logic
   document.addEventListener('DOMContentLoaded', () => {
-    // FIXED: Corrected selector from getElementById('proof-rail') to querySelector('.proof-rail')
     const rail = document.querySelector('.proof-rail');
-    
-    // FIXED: Corrected selector from '#proof-nav a' to '.chapter-nav a'
     const navLinks = document.querySelectorAll('.chapter-nav a');
     const cards = document.querySelectorAll('.proof-card');
 
