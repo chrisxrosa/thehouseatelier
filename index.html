@@ -106,8 +106,64 @@
   .transform-intro h2{font-size:clamp(38px,5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
   .transform-intro p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark);max-width:640px}
 
-  .proof-block{padding:48px 0 64px;border-top:1px solid var(--line)}
-  .proof-block:last-child{border-bottom:1px solid var(--line)}
+  /* ========== HORIZONTAL CHAPTER RAIL ========== */
+  .chapter-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted-dark);
+    margin-bottom: 32px;
+  }
+  .chapter-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .chapter-nav a:hover {
+    color: var(--accent);
+  }
+  .chapter-nav span {
+    color: var(--muted);
+  }
+
+  /* The scrollable edge-to-edge container */
+  .proof-rail {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 24px;
+    /* Math to perfectly align the left edge of the first card with your .wrap container */
+    padding: 10px max(24px, calc((100vw - var(--max)) / 2)) 48px;
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
+  }
+  .proof-rail::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari */
+  }
+
+  /* The individual cards */
+  .proof-card {
+    /* 85vw width ensures the next card peeks into view, capping at 940px */
+    flex: 0 0 min(85vw, 940px);
+    scroll-snap-align: start;
+    background: var(--bone-2);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  /* Reset the inner head so it fits the card cleanly */
+  .proof-card .proof-head {
+    max-width: none;
+    margin-bottom: 36px;
+  }
+
   .proof-head{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;align-items:start;margin-bottom:28px;max-width:780px}
   .proof-num{font-family:'Lora',serif;font-size:42px;line-height:1;color:var(--accent);letter-spacing:-.04em}
   .proof-head h3{font-size:clamp(28px,3.5vw,36px);line-height:1.08;letter-spacing:-.03em;margin:4px 0 8px}
@@ -275,6 +331,18 @@
   .return-point{background:rgba(255,255,255,.45);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
   .return-point strong{display:block;font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
   .return-point span{font-size:13px;line-height:1.5;color:var(--muted-dark)}
+
+  /* THE RETURN — PAYBACK VISUAL */
+  .return-statement{max-width:760px;margin:10px auto 0;text-align:center;font-size:17px;line-height:1.55;letter-spacing:0;color:var(--muted-dark)}
+  .return-payback{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:stretch;max-width:940px;margin:34px auto 0}
+  .return-card{position:relative;background:rgba(255,255,255,.58);border:1px solid var(--line);border-radius:18px;padding:24px 22px 22px;text-align:center;overflow:hidden}
+  .return-card::after{content:"";position:absolute;left:12%;right:12%;bottom:0;height:3px;background:var(--sage);border-radius:99px 99px 0 0;opacity:.9}
+  .return-card .return-tier{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .return-card strong{display:block;font-family:'Lora',serif;font-size:32px;line-height:1;color:var(--ink);font-weight:400;letter-spacing:-.03em}
+  .return-card span{display:block;font-size:11px;line-height:1.45;color:var(--muted-dark);margin-top:8px}
+  .return-arrow{display:grid;place-items:center;align-self:center;width:44px;height:44px;border-radius:50%;border:1px solid rgba(184,95,71,.28);background:rgba(255,255,255,.52);color:var(--accent);font-size:20px;font-weight:400}
+  .return-close{max-width:640px;margin:26px auto 0;text-align:center;font-family:'Lora',Georgia,serif;font-size:25px;line-height:1.15;letter-spacing:-.02em;color:#403a33}
+
   /* FAQ */
   .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
   details{border-top:1px solid var(--line);padding:18px 0}
@@ -310,75 +378,72 @@
   .mobile-cta{display:none}
   .mobile-cta.is-hidden{display:none !important}
 
-  /* ========== LIGHTBOX STYLES ========== */
-  .lightbox-overlay {
-    position: fixed; inset: 0; background: var(--bone); z-index: 1000;
-    overflow-y: auto; display: flex; flex-direction: column;
-    opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  /* ========== LIGHTBOX — EDITORIAL BEFORE / AFTER ========== */
+  .lightbox-overlay{
+    position:fixed;inset:0;background:var(--charcoal);z-index:1000;
+    overflow-y:auto;display:flex;flex-direction:column;
+    opacity:0;pointer-events:none;transition:opacity .28s ease;
   }
-  .lightbox-overlay.is-active {
-    opacity: 1; pointer-events: auto;
+  .lightbox-overlay.is-active{opacity:1;pointer-events:auto}
+  .lightbox-header{
+    position:sticky;top:0;z-index:1001;background:rgba(27,37,36,.92);
+    backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);
+    padding:14px 24px;display:flex;align-items:center;justify-content:space-between;
   }
-  .lightbox-header {
-    position: sticky; top: 0; z-index: 1001; background: rgba(253,251,247,0.95);
-    backdrop-filter: blur(10px); border-bottom: 1px solid var(--line);
-    padding: 16px 24px; display: flex; align-items: center; justify-content: space-between;
+  .lightbox-back{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    color:#fff;font-size:12px;font-weight:700;cursor:pointer;display:flex;
+    align-items:center;gap:7px;padding:8px 11px;border-radius:999px;transition:.2s ease;
   }
-  .lightbox-back {
-    background: none; border: none; font-size: 13px; font-weight: 700;
-    color: var(--ink); cursor: pointer; display: flex; align-items: center; gap: 6px;
-    padding: 8px 12px; border-radius: 99px; border: 1px solid var(--line); transition: .2s ease;
+  .lightbox-back:hover{background:rgba(255,255,255,.1)}
+  .lightbox-title{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#b9c3bf}
+  .lightbox-count{font-size:10px;font-weight:700;letter-spacing:.08em;color:#b9c3bf}
+  .lightbox-content{padding:56px 24px 84px;max-width:1040px;margin:0 auto;width:100%}
+  .lightbox-intro{text-align:center;margin-bottom:52px}
+  .lightbox-intro .eyebrow{color:#d7a08e}
+  .lightbox-intro h2{
+    color:#fff;font-size:clamp(42px,6vw,70px);line-height:.98;
+    margin:8px 0 16px;letter-spacing:-.04em;
   }
-  .lightbox-back:hover { background: var(--white); }
-  .lightbox-title { font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
-  .lightbox-content {
-    padding: 48px 24px 80px; max-width: 800px; margin: 0 auto; width: 100%;
+  .lightbox-intro p{
+    color:#c5cfcb;font-size:16px;line-height:1.65;max-width:680px;margin:0 auto;
   }
-  .lightbox-intro {
-    text-align: center; margin-bottom: 48px;
+  .ba-grid{display:grid;gap:56px}
+  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
+  .ba-card{
+    position:relative;border-radius:18px;overflow:hidden;background:#24302e;
+    border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 55px rgba(0,0,0,.2);
   }
-  .lightbox-intro h2 {
-    font-size: clamp(28px, 4vw, 36px); margin: 0 0 12px;
+  .ba-card.after{box-shadow:0 22px 70px rgba(0,0,0,.28)}
+  .ba-label{
+    position:absolute;z-index:2;left:14px;top:14px;padding:7px 9px;border-radius:999px;
+    font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    background:rgba(27,37,36,.72);backdrop-filter:blur(7px);color:#fff;
+    border:1px solid rgba(255,255,255,.12);
   }
-  .lightbox-intro p {
-    font-size: 15px; color: var(--muted-dark); line-height: 1.6;
-    max-width: 600px; margin: 0 auto;
+  .ba-card.after .ba-label{background:rgba(49,91,87,.92);color:#fff}
+  .ba-img{
+    width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;
   }
-  .ba-grid { display: grid; gap: 48px; }
-  .ba-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .ba-card {
-    border-radius: 16px; overflow: hidden; background: var(--bone-2);
-    border: 1px solid rgba(27,37,36,.08); box-shadow: 0 10px 30px rgba(0,0,0,.04);
+  .ba-card.before .ba-img{filter:saturate(.9)}
+  .ba-row::after{
+    content:"→";position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
+    background:#fffefa;color:var(--ink);font-weight:700;font-size:15px;
+    box-shadow:0 8px 24px rgba(0,0,0,.2);
   }
-  .ba-label {
-    padding: 12px 16px; font-size: 11px; font-weight: 700;
-    letter-spacing: .06em; text-transform: uppercase;
-    border-bottom: 1px solid var(--line); background: rgba(255,255,255,.5);
+  .ba-context{
+    grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:2px 4px 0;color:#d7dfdc;
   }
-  .ba-card.before .ba-label { color: var(--muted); }
-  .ba-card.after .ba-label { color: var(--sage); }
-  .ba-img {
-    width: 100%; aspect-ratio: 4/3; background-size: cover; background-position: center;
+  .ba-context strong{font-family:'Lora',serif;font-size:21px;font-weight:400;color:#fff}
+  .ba-context span{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9eaaa5}
+  .lightbox-cta{
+    margin-top:70px;padding-top:46px;border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;
   }
-  
-  /* Final explicit image files for the Lightbox */
-  .ba-img.b1 { background-image: url('assets/property-1-before.jpg'); background-color: var(--bone-3); }
-  .ba-img.a1 { background-image: url('assets/property-1-after.jpg'); background-color: var(--bone-3); }
-  .ba-img.b2 { background-image: url('assets/lightbox-2-before.jpg'); background-color: var(--bone-3); }
-  .ba-img.a2 { background-image: url('assets/lightbox-2-after.jpg'); background-color: var(--bone-3); }
-  .ba-img.b3 { background-image: url('assets/lightbox-3-before.jpg'); background-color: var(--bone-3); }
-  .ba-img.a3 { background-image: url('assets/lightbox-3-after.jpg'); background-color: var(--bone-3); }
-  .ba-img.b4 { background-image: url('assets/lightbox-4-before.jpg'); background-color: var(--bone-3); }
-  .ba-img.a4 { background-image: url('assets/lightbox-4-after.jpg'); background-color: var(--bone-3); }
-  .ba-img.b5 { background-image: url('assets/lightbox-5-before.jpg'); background-color: var(--bone-3); }
-  .ba-img.a5 { background-image: url('assets/lightbox-5-after.jpg'); background-color: var(--bone-3); }
-
-  .lightbox-cta {
-    margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--line);
-    text-align: center; display: flex; flex-direction: column; align-items: center; gap: 16px;
-  }
-  .lightbox-cta h3 { font-family: 'Lora', serif; font-weight: 400; margin: 0; font-size: 28px; }
-
+  .lightbox-cta h3{font-family:'Lora',serif;font-weight:400;margin:0;color:#fff;font-size:30px;line-height:1.1}
+  .lightbox-cta p{margin:0;max-width:600px;color:#b8c2be;font-size:14px;line-height:1.6}
   /* RESPONSIVE */
   @media(max-width:960px){
    .offer-shell,.contact-grid{grid-template-columns:1fr}
@@ -416,9 +481,6 @@
    .section-heading{margin-bottom:30px}
    .section-heading h2{font-size:42px}
    .transform-intro h2{font-size:36px}
-   .proof-head{grid-template-columns:48px 1fr;gap:12px}
-   .proof-num{font-size:32px}
-   .proof-head h3{font-size:26px}
    .airbnb-grid{grid-template-rows:110px 110px}
    .copy-ui h4{font-size:18px}
    .copy-ui p{font-size:10px}
@@ -446,7 +508,22 @@
    .ba-row { grid-template-columns: 1fr; gap: 12px; }
    .lightbox-header { padding: 12px 16px; }
    .lightbox-content { padding: 32px 16px 64px; }
+   .return-payback{grid-template-columns:1fr;max-width:520px}
+   .return-arrow{margin:auto;transform:rotate(90deg)}
+   .return-card strong{font-size:31px}
+   .return-close{font-size:21px}
+   .ba-row{grid-template-columns:1fr;gap:8px}
+   .ba-row::after{content:"↓";left:50%;top:50%}
+   .ba-context{display:block;padding:8px 2px 0}
+   .ba-context span{display:block;margin-top:4px}
+   .lightbox-intro h2{font-size:42px}
+   .lightbox-content{padding:42px 16px 64px}
+   .lightbox-header{padding:12px 16px}
+   .lightbox-count{display:none}
    .lightbox-cta h3 { font-size: 24px; }
+
+   .proof-rail { gap: 16px; padding: 10px 14px 32px; }
+   .proof-card { flex: 0 0 calc(92vw - 28px); padding: 24px; scroll-snap-align: center; }
   }
   @media(max-width:420px){
    .hero h1{font-size:43px}
@@ -473,7 +550,7 @@
 <div>
 <div class="eyebrow">For owners launching or repositioning an STR in Curaçao</div>
 <h1>Get clicked, booked, <br/> and five-starred.</h1>
-<p class="hero-sub">New listings lose the first 90 days to weak photos, generic copy, and flat pricing. We fix that in one focused engagement, bringing you high-impact photography, clear brand identity, search-optimized writing, and a data-backed pricing foundation so your property stands out in an increasingly competitive market and starts earning faster.</p>
+<p class="hero-sub">First impressions decide whether a property gets noticed. In one focused engagement, we build the photography, property story, search-aware listing copy, pricing foundation, and guest experience around one goal: make the right guests notice, want, and book your property.</p>
 </div>
 </div>
 <div class="photo-grid" aria-label="Property before-and-after preview">
@@ -481,7 +558,7 @@
 <video class="grid-video" autoplay muted loop playsinline poster="assets/hero-properties-poster.jpg">
 <source src="assets/hero-properties-reel.mp4" type="video/mp4"/>
 </video>
-<div class="grid-label">The House Atelier · SXM</div>
+<div class="grid-label">The House Atelier · Curaçao</div>
 </div>
 <div class="grid-img grid-img-2" aria-label="Property 1 before">
 <div class="grid-label">Before</div>
@@ -524,203 +601,209 @@ See the transformation
 
 <!-- ========== TRANSFORMATION / PROOF SCROLL ========== -->
 <section class="transform-section band-beige" id="transformation">
-<div class="wrap">
-<div class="transform-intro">
-<div class="eyebrow">The work, side by side</div>
-<h2>See what changes when the listing gets the full treatment.</h2>
-<p>Three levers decide whether a listing earns or loses. These are the visuals, the words, and the numbers. Here’s what each one looks like before and after with The House Atelier.</p>
-</div>
-
-<!-- BLOCK 01: THE VISUALS -->
-<article class="proof-block" id="proof-visuals">
-  <div class="proof-head">
-    <div class="proof-num">01</div>
-    <div>
-      <div class="eyebrow">The Visuals</div>
-      <h3> Photography &amp; Sequence</h3>
-      <p>Your primary photo is the most important. Guests decide in under a second whether to open the listing, and then they judge it by 4 additional photos. We replace an unplanned sequence with a deliberate and professionally-taken grid that creates hierarchy, emotion, and a reason to click.</p>
-    </div>
-  </div>
-
-  <div class="sequence-pair">
-    <!-- BEFORE: Owner's Sequence -->
-    <div class="sequence-card seq-before">
-      <div class="sequence-card-label">
-        <strong>Before</strong>
-        <span>The Owner’s Sequence</span>
-      </div>
-      <div class="airbnb-grid">
-        <div class="ag-cell ag-main"><span class="ag-tag">Main</span></div>
-        <div class="ag-cell ag-2"><span class="ag-tag">2</span></div>
-        <div class="ag-cell ag-3"><span class="ag-tag">3</span></div>
-        <div class="ag-cell ag-4"><span class="ag-tag">4</span></div>
-        <div class="ag-cell ag-5"><span class="ag-tag">5</span></div>
-      </div>
-      <div class="sequence-caption">
-        <strong>No visual hierarchy</strong>
-        Typical host photos in random order. The main shot doesn’t sell the stay, and the supporting frames don’t guide the eye or build desire.
-      </div>
+  <div class="wrap">
+    <div class="transform-intro" style="margin-bottom: 24px;">
+      <div class="eyebrow">The work, side by side</div>
+      <h2>Three things decide whether a property gets overlooked or chosen.</h2>
+      <p>What guests see. What they understand. What they pay. We rebuild all three around the same property story—so the listing feels more desirable, more discoverable, and more commercially deliberate.</p>
     </div>
 
-    <!-- AFTER: Atelier Sequence -->
-    <div class="sequence-card sequence-card after seq-after">
-      <div class="sequence-card-label">
-        <strong>After</strong>
-        <span>The Atelier Sequence</span>
-      </div>
-      <div class="airbnb-grid">
-        <div class="ag-cell ag-main"><span class="ag-tag">Hero</span></div>
-        <div class="ag-cell ag-2"><span class="ag-tag">Lifestyle</span></div>
-        <div class="ag-cell ag-3"><span class="ag-tag">Detail</span></div>
-        <div class="ag-cell ag-4"><span class="ag-tag">Space</span></div>
-        <div class="ag-cell ag-5"><span class="ag-tag">Amenity</span></div>
-      </div>
-      <div class="sequence-caption">
-        <strong>Designed to convert</strong>
-        A purposeful sequence built on a hero shot that stops the scroll, lifestyle frames that sell the experience, and detail shots that confirm quality and uniqueness.
-      </div>
-    </div>
-  </div>
-  
-  <!-- OPEN LIGHTBOX LINK -->
-  <div style="margin-top: 32px; text-align: center;">
-    <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
-      See before &amp; after photography <span aria-hidden="true">→</span>
-    </a>
-  </div>
-</article>
-
-<!-- BLOCK 02: THE PROMISE -->
-<article class="proof-block" id="proof-copy">
-  <div class="proof-head">
-    <div class="proof-num">02</div>
-    <div>
-      <div class="eyebrow">The Promise</div>
-      <h3>Listing Copy + Search Optimization</h3>
-      <p>Instead of asking the guest to decode a generic description, we turn the listing into a clear promise identifying what makes the place special, who it is for, and why it deserves the click.</p>
-    </div>
+    <!-- The 01 / 02 / 03 Navigation -->
+    <nav class="chapter-nav">
+      <a href="#proof-visuals">01 The Visuals</a> <span>&middot;</span>
+      <a href="#proof-copy">02 The Promise</a> <span>&middot;</span>
+      <a href="#proof-revenue">03 The Yield</a>
+    </nav>
   </div>
 
-  <div class="copy-pair">
-    <article class="copy-card">
-      <div class="copy-media copy-before">
-        <div class="copy-ui">
-          <div class="copy-ui-top">
-            <span class="copy-ui-kicker">Search result</span>
-            <span class="copy-ui-search">generic villa</span>
+  <!-- The Horizontal Rail -->
+  <div class="proof-rail">
+    
+    <!-- BLOCK 01: THE VISUALS -->
+    <article class="proof-card" id="proof-visuals">
+      <div class="proof-head">
+        <div class="proof-num">01</div>
+        <div>
+          <div class="eyebrow">The Visuals</div>
+          <h3>Photography &amp; Sequence</h3>
+          <p>Your primary photo is the most important. Guests decide in under a second whether to open the listing, and then they judge it by 4 additional photos. We replace an unplanned sequence with a deliberate and professionally-taken grid that creates hierarchy, emotion, and a reason to click.</p>
+        </div>
+      </div>
+      <div class="sequence-pair">
+        <!-- BEFORE: Owner's Sequence -->
+        <div class="sequence-card seq-before">
+          <div class="sequence-card-label">
+            <strong>Before</strong>
+            <span>The Owner’s Sequence</span>
           </div>
-          <h4>Beautiful Villa in Curaçao</h4>
-          <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home with everything you need for a relaxing vacation.</p>
-          <div class="copy-tags">
-            <span>villa</span><span>pool</span><span>Curaçao</span><span>vacation</span>
+          <div class="airbnb-grid">
+            <div class="ag-cell ag-main"><span class="ag-tag">Main</span></div>
+            <div class="ag-cell ag-2"><span class="ag-tag">2</span></div>
+            <div class="ag-cell ag-3"><span class="ag-tag">3</span></div>
+            <div class="ag-cell ag-4"><span class="ag-tag">4</span></div>
+            <div class="ag-cell ag-5"><span class="ag-tag">5</span></div>
+          </div>
+          <div class="sequence-caption">
+            <strong>No visual hierarchy</strong>
+            Typical host photos in random order. The main shot doesn’t sell the stay, and the supporting frames don’t guide the eye or build desire.
+          </div>
+        </div>
+
+        <!-- AFTER: Atelier Sequence -->
+        <div class="sequence-card sequence-card after seq-after">
+          <div class="sequence-card-label">
+            <strong>After</strong>
+            <span>The Atelier Sequence</span>
+          </div>
+          <div class="airbnb-grid">
+            <div class="ag-cell ag-main"><span class="ag-tag">Hero</span></div>
+            <div class="ag-cell ag-2"><span class="ag-tag">Lifestyle</span></div>
+            <div class="ag-cell ag-3"><span class="ag-tag">Detail</span></div>
+            <div class="ag-cell ag-4"><span class="ag-tag">Space</span></div>
+            <div class="ag-cell ag-5"><span class="ag-tag">Amenity</span></div>
+          </div>
+          <div class="sequence-caption">
+            <strong>Designed to convert</strong>
+            A purposeful sequence built on a hero shot that stops the scroll, lifestyle frames that sell the experience, and detail shots that confirm quality and uniqueness.
           </div>
         </div>
       </div>
-      <div class="copy-card-footer">
-        <strong>Before</strong>
-        <span>Describes the property, but gives the guest little reason to remember it or understand its specific appeal.</span>
+      <div style="margin-top: 32px; text-align: center;">
+        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
+          See before &amp; after photography <span aria-hidden="true">→</span>
+        </a>
       </div>
     </article>
-    <article class="copy-card">
-      <div class="copy-media copy-after">
-        <div class="copy-ui">
-          <div class="copy-ui-top">
-            <span class="copy-ui-kicker">Search result</span>
-            <span class="copy-ui-search">west coast villa</span>
-          </div>
-          <h4>Private West Coast Villa · Pool · Sunset Views</h4>
-          <p>A private hillside escape for slow mornings, poolside afternoons, and easy access to Curaçao’s west coast. Designed for couples and small groups who want space, privacy, and an easy island rhythm.</p>
-          <div class="copy-tags">
-            <span>west coast</span><span>private pool</span><span>sunset</span><span>couples</span>
-          </div>
+
+    <!-- BLOCK 02: THE BRAND + THE SEARCH -->
+    <article class="proof-card" id="proof-copy">
+      <div class="proof-head">
+        <div class="proof-num">02</div>
+        <div>
+          <div class="eyebrow">The Promise</div>
+          <h3>Build a brand guests can find—and remember.</h3>
+          <p>The listing has to do two jobs at once: make the property feel distinctive to a person, and make its value legible to search. We define what the property is, who it is for, and what makes it worth choosing—then express that in natural, search-aware language.</p>
         </div>
       </div>
-      <div class="copy-card-footer">
-        <strong>After</strong>
-        <span>Positioning, benefit-led language, and natural search phrases work together to make the property easier to understand and easier to choose.</span>
-      </div>
-    </article>
-  </div>
-</article>
-
-<!-- BLOCK 03: THE YIELD -->
-<article class="proof-block" id="proof-revenue">
-  <div class="proof-head">
-    <div class="proof-num">03</div>
-    <div>
-      <div class="eyebrow">The Yield</div>
-      <h3>Revenue Optimization</h3>
-      <p>We replace “one price fits every night” with a visual pricing rhythm that responds to demand, seasonality, day-of-week behavior, and local competition.</p>
-    </div>
-  </div>
-
-  <div class="revenue-pair">
-    <article class="revenue-card">
-      <div class="revenue-media revenue-before">
-        <div class="revenue-ui">
-          <div class="revenue-ui-head">
-            <div>
-              <small>Calendar pricing</small>
-              <strong>$250 / night</strong>
+      <div class="copy-pair">
+        <article class="copy-card">
+          <div class="copy-media copy-before">
+            <div class="copy-ui">
+              <div class="copy-ui-top">
+                <span class="copy-ui-kicker">Before · generic listing</span>
+                <span class="copy-ui-search">generic villa</span>
+              </div>
+              <h4>Beautiful Villa in Curaçao</h4>
+              <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home with everything you need for a relaxing vacation.</p>
+              <div class="copy-tags">
+                <span>villa</span><span>pool</span><span>Curaçao</span><span>vacation</span>
+              </div>
             </div>
-            <span class="copy-ui-search">flat rate</span>
           </div>
-          <div class="lb-calendar">
-            <div class="lb-day"><b>Mon</b><span>$250</span></div>
-            <div class="lb-day"><b>Tue</b><span>$250</span></div>
-            <div class="lb-day"><b>Wed</b><span>$250</span></div>
-            <div class="lb-day"><b>Thu</b><span>$250</span></div>
-            <div class="lb-day"><b>Fri</b><span>$250</span></div>
-            <div class="lb-day"><b>Sat</b><span>$250</span></div>
-            <div class="lb-day"><b>Sun</b><span>$250</span></div>
+          <div class="copy-card-footer">
+            <strong>Before</strong>
+            <span>Describes the property, but gives the guest little reason to remember it or understand its specific appeal.</span>
           </div>
-          <div class="lb-demand-row">
-            <span>No demand signal</span>
-            <span>No day-of-week adjustment</span>
-          </div>
-        </div>
-      </div>
-      <div class="revenue-card-footer">
-        <strong>Before</strong>
-        <span>One nightly rate treats quiet weekdays, strong weekends, and high-demand periods as though they are the same market.</span>
-      </div>
-    </article>
-    <article class="revenue-card">
-      <div class="revenue-media revenue-after">
-        <div class="revenue-ui">
-          <div class="revenue-ui-head">
-            <div>
-              <small>Calendar pricing</small>
-              <strong>$205–$380</strong>
+        </article>
+        <article class="copy-card">
+          <div class="copy-media copy-after">
+            <div class="copy-ui">
+              <div class="copy-ui-top">
+                <span class="copy-ui-kicker">After · brand + discovery</span>
+                <span class="copy-ui-search">west coast villa</span>
+              </div>
+              <h4>Private West Coast Villa · Pool · Sunset Views</h4>
+              <p>A private hillside escape for slow mornings, poolside afternoons, and easy access to Curaçao’s west coast. Designed for couples and small groups who want space, privacy, and an easy island rhythm.</p>
+              <div class="copy-tags">
+                <span>west coast</span><span>private pool</span><span>sunset</span><span>couples</span>
+              </div>
             </div>
-            <span class="copy-ui-search">demand-aware</span>
           </div>
-          <div class="lb-calendar">
-            <div class="lb-day soft"><b>Mon</b><span>$205</span></div>
-            <div class="lb-day"><b>Tue</b><span>$225</span></div>
-            <div class="lb-day"><b>Wed</b><span>$235</span></div>
-            <div class="lb-day"><b>Thu</b><span>$245</span></div>
-            <div class="lb-day hot"><b>Fri</b><span>$310</span></div>
-            <div class="lb-day hot"><b>Sat</b><span>$380</span></div>
-            <div class="lb-day"><b>Sun</b><span>$250</span></div>
+          <div class="copy-card-footer">
+            <strong>After</strong>
+            <span>Brand positioning gives the property a point of view; search-aware language helps the right guest understand what it is and why it fits.</span>
           </div>
-          <div class="lb-demand-row">
-            <span>Weekend lift</span>
-            <span>Seasonality considered</span>
-            <span>Competitive context</span>
-          </div>
-        </div>
-      </div>
-      <div class="revenue-card-footer">
-        <strong>After</strong>
-        <span>The rate changes with the market instead of fighting it, giving the property room to capture more when demand strengthens and stay competitive when it softens.</span>
+        </article>
       </div>
     </article>
-  </div>
-  <p class="proof-note">Illustrative example only. The actual pricing calendar is built around the property’s market, seasonality, demand patterns, and competitive set.</p>
-</article>
 
-</div>
+    <!-- BLOCK 03: THE YIELD -->
+    <article class="proof-card" id="proof-revenue">
+      <div class="proof-head">
+        <div class="proof-num">03</div>
+        <div>
+          <div class="eyebrow">The Yield</div>
+          <h3>Revenue Optimization</h3>
+          <p>We replace “one price fits every night” with a visual pricing rhythm that responds to demand, seasonality, day-of-week behavior, and local competition.</p>
+        </div>
+      </div>
+      <div class="revenue-pair">
+        <article class="revenue-card">
+          <div class="revenue-media revenue-before">
+            <div class="revenue-ui">
+              <div class="revenue-ui-head">
+                <div>
+                  <small>Calendar pricing</small>
+                  <strong>$250 / night</strong>
+                </div>
+                <span class="copy-ui-search">flat rate</span>
+              </div>
+              <div class="lb-calendar">
+                <div class="lb-day"><b>Mon</b><span>$250</span></div>
+                <div class="lb-day"><b>Tue</b><span>$250</span></div>
+                <div class="lb-day"><b>Wed</b><span>$250</span></div>
+                <div class="lb-day"><b>Thu</b><span>$250</span></div>
+                <div class="lb-day"><b>Fri</b><span>$250</span></div>
+                <div class="lb-day"><b>Sat</b><span>$250</span></div>
+                <div class="lb-day"><b>Sun</b><span>$250</span></div>
+              </div>
+              <div class="lb-demand-row">
+                <span>No demand signal</span>
+                <span>No day-of-week adjustment</span>
+              </div>
+            </div>
+          </div>
+          <div class="revenue-card-footer">
+            <strong>Before</strong>
+            <span>One nightly rate treats quiet weekdays, strong weekends, and high-demand periods as though they are the same market.</span>
+          </div>
+        </article>
+        <article class="revenue-card">
+          <div class="revenue-media revenue-after">
+            <div class="revenue-ui">
+              <div class="revenue-ui-head">
+                <div>
+                  <small>Calendar pricing</small>
+                  <strong>$205–$380</strong>
+                </div>
+                <span class="copy-ui-search">demand-aware</span>
+              </div>
+              <div class="lb-calendar">
+                <div class="lb-day soft"><b>Mon</b><span>$205</span></div>
+                <div class="lb-day"><b>Tue</b><span>$225</span></div>
+                <div class="lb-day"><b>Wed</b><span>$235</span></div>
+                <div class="lb-day"><b>Thu</b><span>$245</span></div>
+                <div class="lb-day hot"><b>Fri</b><span>$310</span></div>
+                <div class="lb-day hot"><b>Sat</b><span>$380</span></div>
+                <div class="lb-day"><b>Sun</b><span>$250</span></div>
+              </div>
+              <div class="lb-demand-row">
+                <span>Weekend lift</span>
+                <span>Seasonality considered</span>
+                <span>Competitive context</span>
+              </div>
+            </div>
+          </div>
+          <div class="revenue-card-footer">
+            <strong>After</strong>
+            <span>The rate changes with the market instead of fighting it, giving the property room to capture more when demand strengthens and stay competitive when it softens.</span>
+          </div>
+        </article>
+      </div>
+      <p class="proof-note" style="margin-top: 24px;">Illustrative example only. The actual pricing calendar is built around the property’s market, seasonality, demand patterns, and competitive set.</p>
+    </article>
+
+  </div>
 </section>
 
 <!-- OFFER -->
@@ -729,7 +812,7 @@ See the transformation
 <div class="offer-shell">
 <div>
 <div class="eyebrow" style="color:#d7a08e">Inaugural Launch System</div>
-<div class="display">One focused engagement.<br/>Five levers that compound.</div>
+<div class="display">One focused engagement.</div>
 <p class="offer-copy">We’re opening The House Atelier with a special offer to help 5 properties in Curaçao accelerate the cold-start phase that new listings typically face, while also revitalizing older, underperforming listings.</p>
 <ul class="included offer-items">
 <li>
@@ -799,22 +882,29 @@ See the transformation
 <div class="wrap">
 <div class="section-heading" style="text-align:center">
 <div class="eyebrow">The Return</div>
-<h2>Easily worth it.</h2>
+<h2>A few better nights can cover the whole thing.</h2>
 </div>
-<div class="return-statement">Under a week of additional booked nights covers the full investment. Most new listings take 3 months to build the review velocity that unlocks stronger placement. Our system is designed to compress that curve.</div>
-<div class="return-points">
-<div class="return-point">
-<strong>Photography + positioning</strong>
-<span>Lift click-through so the right guests actually open the listing.</span>
+<div class="return-statement">The break-even point is measured in a handful of booked nights—not a perfect year. The work makes the property stronger once, then keeps working every night it is live.</div>
+
+<div class="return-payback">
+  <div class="return-card">
+    <div class="return-tier">One focused engagement</div>
+    <strong>Invest once</strong>
+    <span>Build the stronger foundation your listing has been missing.</span>
+  </div>
+  <div class="return-arrow" aria-hidden="true">→</div>
+  <div class="return-card">
+    <div class="return-tier">Break-even range*</div>
+    <strong>≈ 2–7 nights</strong>
+    <span>A handful of additional booked nights can cover the inaugural investment.</span>
+  </div>
 </div>
-<div class="return-point">
-<strong>Pricing foundation</strong>
-<span>Protect and grow ADR once the traffic arrives, instead of leaving money on the table.</span>
-</div>
-</div>
+
+<div class="return-close">Then keep the stronger listing working for you night after night.</div>
 <div class="return-cta">
 <a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
 </div>
+<p class="proof-note">*Illustrative break-even framing based on the nightly-revenue ranges used in the inaugural offer. Actual payback depends on the property’s rate, occupancy, and market response.</p>
 </div>
 </section>
 
@@ -908,8 +998,12 @@ See the transformation
 <input id="name" name="name" placeholder="Your name" required=""/>
 </div>
 <div>
-<label for="contact_method">Email or WhatsApp</label>
-<input id="contact_method" name="contact" placeholder="Best way to reach you" required=""/>
+<label for="email">Email</label>
+<input id="email" name="email" placeholder="you@example.com" type="email" required=""/>
+</div>
+<div>
+<label for="whatsapp">WhatsApp</label>
+<input id="whatsapp" name="whatsapp" placeholder="Your WhatsApp number" type="tel" required=""/>
 </div>
 <div>
 <label for="beds">Property size</label>
@@ -920,19 +1014,13 @@ See the transformation
 <option>6+ Bedrooms OR Estates</option>
 </select>
 </div>
-<div>
-<label for="launch">Launch timing</label>
-<select id="launch" name="launch">
-<option disabled="" selected="" value="">When are you launching?</option>
-<option>Within 30 days</option>
-<option>1–3 months</option>
-<option>3–6 months</option>
-<option>Already live</option>
-</select>
-</div>
 <div class="field-full">
 <label for="url">Listing URL</label>
-<input id="url" name="url" placeholder="https://airbnb.com/..." required="" type="url"/>
+<input id="url" name="url" placeholder="https://airbnb.com/... or launching soon" required="" type="text"/>
+</div>
+<div class="field-full">
+<label for="message">Anything we should know?</label>
+<textarea id="message" name="message" placeholder="Tell us anything useful about the property, launch, or what you feel needs attention."></textarea>
 </div>
 <button class="submit" type="submit">Request my inaugural launch slot →</button>
 </form>
@@ -954,20 +1042,21 @@ See the transformation
 </div>
 
 <!-- ================== LIGHTBOX COMPONENT ================== -->
-<div id="photo-lightbox" class="lightbox-overlay">
+<div id="photo-lightbox" class="lightbox-overlay" aria-hidden="true">
   <div class="lightbox-header">
-    <button class="lightbox-back" onclick="closeLightbox()">&lt; Back</button>
+    <button class="lightbox-back" onclick="closeLightbox()" aria-label="Back to the work">&larr; Back to the work</button>
     <div class="lightbox-title">Photography Before &amp; After</div>
-    <div style="width: 70px;"></div><!-- Spacer for visual balance -->
+    <div class="lightbox-count">5 transformations</div>
   </div>
+
   <div class="lightbox-content">
     <div class="lightbox-intro">
-      <h2>Beyond Sequencing</h2>
-      <p>Professionally photographed and edited images do more than organize a grid. They dictate the mood, convey value, and create a standard of quality that amateur photos simply can’t achieve.</p>
+      <div class="eyebrow">The visual difference</div>
+      <h2>The camera doesn’t change the property. It changes what guests see.</h2>
+      <p>Better photography is not decoration. It changes the perceived quality, mood, and value of the stay before a guest reads a single word.</p>
     </div>
-    
+
     <div class="ba-grid">
-      <!-- PAIR 1 -->
       <div class="ba-row">
         <div class="ba-card before">
           <div class="ba-label">Before</div>
@@ -977,8 +1066,12 @@ See the transformation
           <div class="ba-label">After</div>
           <div class="ba-img a1"></div>
         </div>
+        <div class="ba-context">
+          <strong>First impression</strong>
+          <span>Make the strongest frame do the selling.</span>
+        </div>
       </div>
-      <!-- PAIR 2 -->
+
       <div class="ba-row">
         <div class="ba-card before">
           <div class="ba-label">Before</div>
@@ -988,8 +1081,12 @@ See the transformation
           <div class="ba-label">After</div>
           <div class="ba-img a2"></div>
         </div>
+        <div class="ba-context">
+          <strong>Sense of place</strong>
+          <span>Show the feeling, not just the room.</span>
+        </div>
       </div>
-      <!-- PAIR 3 -->
+
       <div class="ba-row">
         <div class="ba-card before">
           <div class="ba-label">Before</div>
@@ -999,8 +1096,12 @@ See the transformation
           <div class="ba-label">After</div>
           <div class="ba-img a3"></div>
         </div>
+        <div class="ba-context">
+          <strong>Perceived value</strong>
+          <span>Give the property a visual standard that matches the price you want it to command.</span>
+        </div>
       </div>
-      <!-- PAIR 4 -->
+
       <div class="ba-row">
         <div class="ba-card before">
           <div class="ba-label">Before</div>
@@ -1010,8 +1111,12 @@ See the transformation
           <div class="ba-label">After</div>
           <div class="ba-img a4"></div>
         </div>
+        <div class="ba-context">
+          <strong>Details that matter</strong>
+          <span>Turn the small things into reasons to remember the stay.</span>
+        </div>
       </div>
-      <!-- PAIR 5 -->
+
       <div class="ba-row">
         <div class="ba-card before">
           <div class="ba-label">Before</div>
@@ -1021,13 +1126,17 @@ See the transformation
           <div class="ba-label">After</div>
           <div class="ba-img a5"></div>
         </div>
+        <div class="ba-context">
+          <strong>A property worth being proud of</strong>
+          <span>When the presentation feels elevated, the owner feels it too.</span>
+        </div>
       </div>
     </div>
-    
-    <!-- LIGHTBOX CTA -->
+
     <div class="lightbox-cta">
-      <h3>Ready to elevate your visual presence?</h3>
-      <a href="#offer" class="accent-btn" onclick="closeLightbox()" style="font-size: 14px; padding: 14px 22px;">Learn more about the offer →</a>
+      <h3>The goal is not to make your property look different.</h3>
+      <p>It is to make the value you already own impossible to miss.</p>
+      <a href="#offer" class="accent-btn" onclick="closeLightbox()" style="font-size:14px;padding:14px 22px;">See the launch system →</a>
     </div>
   </div>
 </div>
@@ -1036,13 +1145,20 @@ See the transformation
 <script>
   // Lightbox Logic
   function openLightbox() {
-    document.getElementById('photo-lightbox').classList.add('is-active');
+    const box = document.getElementById('photo-lightbox');
+    box.classList.add('is-active');
+    box.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden';
   }
   function closeLightbox() {
-    document.getElementById('photo-lightbox').classList.remove('is-active');
+    const box = document.getElementById('photo-lightbox');
+    box.classList.remove('is-active');
+    box.setAttribute('aria-hidden','true');
     document.body.style.overflow = '';
   }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
 
   // Dynamic mobile CTA tied to the offer anchor and contact section
   (function(){
