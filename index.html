@@ -231,7 +231,7 @@
   /* --- Block 02: Copy / Search Optimization cards --- */
   .copy-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .copy-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
-  .copy-media{min-height:180px;padding:18px;display:flex;align-items:stretch}
+  .copy-media{min-height:240px;padding:18px;display:flex;align-items:stretch}
   .copy-before{background:#f4efe5}
   .copy-after{background:#e5eee9}
   .copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
@@ -415,9 +415,21 @@
     border:1px solid rgba(255,255,255,.12);
   }
   .ba-card.after .ba-label{background:rgba(49,91,87,.92);color:#fff}
+  
   .ba-img{
     width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;
   }
+  .ba-img.b1 { background-image: url('assets/lightbox-1-before.jpg'); background-color: #333; }
+  .ba-img.a1 { background-image: url('assets/lightbox-1-after.jpg'); background-color: #444; }
+  .ba-img.b2 { background-image: url('assets/lightbox-2-before.jpg'); background-color: #333; }
+  .ba-img.a2 { background-image: url('assets/lightbox-2-after.jpg'); background-color: #444; }
+  .ba-img.b3 { background-image: url('assets/lightbox-3-before.jpg'); background-color: #333; }
+  .ba-img.a3 { background-image: url('assets/lightbox-3-after.jpg'); background-color: #444; }
+  .ba-img.b4 { background-image: url('assets/lightbox-4-before.jpg'); background-color: #333; }
+  .ba-img.a4 { background-image: url('assets/lightbox-4-after.jpg'); background-color: #444; }
+  .ba-img.b5 { background-image: url('assets/lightbox-5-before.jpg'); background-color: #333; }
+  .ba-img.a5 { background-image: url('assets/lightbox-5-after.jpg'); background-color: #444; }
+  
   .ba-card.before .ba-img{filter:saturate(.9)}
   .ba-row::after{
     content:"→";position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);
