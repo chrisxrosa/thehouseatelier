@@ -155,12 +155,7 @@
   .proof-rail {
     display: flex;
     overflow-x: auto;
-    overflow-y: hidden;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    overscroll-behavior-x: contain;
-    -webkit-overflow-scrolling: touch;
-    touch-action: pan-x pan-y;
     gap: 24px;
     padding: 10px calc(50vw - min(42.5vw, 470px)) 48px;
     scrollbar-width: none; 
@@ -168,11 +163,6 @@
   }
   .proof-rail::-webkit-scrollbar {
     display: none;
-  }
-  @media (pointer:fine){
-    .proof-rail{cursor:grab}
-    .proof-rail.is-dragging{cursor:grabbing;scroll-snap-type:none}
-    .proof-rail.is-dragging .proof-card{user-select:none}
   }
 
   .proof-card {
@@ -800,9 +790,9 @@ See the proof
         </div>
       </div>
       <div style="margin-top: 24px; text-align: center;">
-        <button type="button" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font:inherit; font-size:14px; font-weight:700; color:var(--sage); background:none; border:0; border-bottom:1px solid var(--sage); padding:0 0 2px; cursor:pointer;">
+        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
           See the before &amp; after <span aria-hidden="true">→</span>
-        </button>
+        </a>
       </div>
     </article>
     <article class="proof-card" id="v1-copy">
@@ -1315,38 +1305,6 @@ See the proof
       }, observerOptions);
 
       cards.forEach(card => observer.observe(card));
-
-      // Desktop pointer-drag support; touch devices keep native swipe scrolling.
-      if (window.matchMedia('(pointer:fine)').matches) {
-        let isDown = false;
-        let startX = 0;
-        let startScroll = 0;
-
-        rail.addEventListener('pointerdown', (e) => {
-          if (e.button !== 0) return;
-          isDown = true;
-          startX = e.clientX;
-          startScroll = rail.scrollLeft;
-          rail.classList.add('is-dragging');
-          rail.setPointerCapture?.(e.pointerId);
-        });
-
-        rail.addEventListener('pointermove', (e) => {
-          if (!isDown) return;
-          rail.scrollLeft = startScroll - (e.clientX - startX);
-        });
-
-        const stopDrag = (e) => {
-          if (!isDown) return;
-          isDown = false;
-          rail.classList.remove('is-dragging');
-          try { rail.releasePointerCapture?.(e.pointerId); } catch (_) {}
-        };
-
-        rail.addEventListener('pointerup', stopDrag);
-        rail.addEventListener('pointercancel', stopDrag);
-        rail.addEventListener('pointerleave', stopDrag);
-      }
     }
   });
 
