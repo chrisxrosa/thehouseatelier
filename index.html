@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="The House Atelier | High-impact photography, STR branding, search-friendly writing, and a dynamic pricing foundation for vacation rental owners in Curaçao." name="description"/>
+<meta content="Photography, listing copy, search, pricing, and guest experience for vacation rentals in Curaçao." name="description"/>
 <meta content="#1b2524" name="theme-color"/>
-<title>The House Atelier | Make your vacation rental impossible to overlook.</title>
+<title>The House Atelier | Get noticed. Get booked.</title>
 <link rel="icon" type="image/png" href="assets/tha-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -43,8 +43,9 @@
   /* NAV */
   .site-header{background:var(--bone-2);position:relative;z-index:20}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-  .brand{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
-  .brand-logo{height:26px;width:auto;display:block;object-fit:contain}
+  .brand{display:inline-flex;align-items:center;gap:11px;font-size:16px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);line-height:1}
+  .brand-logo{height:28px;width:auto;display:block;object-fit:contain}
+  .brand span{display:inline-flex;align-items:center;height:28px;line-height:28px;white-space:nowrap}
   .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.28);transition:.2s ease}
   .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
   
@@ -154,7 +155,12 @@
   .proof-rail {
     display: flex;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x pan-y;
     gap: 24px;
     padding: 10px calc(50vw - min(42.5vw, 470px)) 48px;
     scrollbar-width: none; 
@@ -162,6 +168,11 @@
   }
   .proof-rail::-webkit-scrollbar {
     display: none;
+  }
+  @media (pointer:fine){
+    .proof-rail{cursor:grab}
+    .proof-rail.is-dragging{cursor:grabbing;scroll-snap-type:none}
+    .proof-rail.is-dragging .proof-card{user-select:none}
   }
 
   .proof-card {
@@ -522,6 +533,38 @@
   .lightbox-cta h3{font-family:'Lora',serif;font-weight:400;margin:0;color:#fff;font-size:30px;line-height:1.1}
   .lightbox-cta p{margin:0;max-width:600px;color:#b8c2be;font-size:14px;line-height:1.6}
   
+  /* SIMPLICITY PASS — immersive section rhythm */
+  :root{--section-min:100svh}
+  body{background:var(--bone);}
+  .site-header{position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(27,37,36,.06);backdrop-filter:blur(12px)}
+  .hero{min-height:calc(100svh - 71px);display:flex;align-items:center;padding:34px 0 54px}
+  .hero>.wrap{width:min(calc(100% - 48px),var(--max));}
+  .hero h1{max-width:860px;font-size:clamp(52px,6.5vw,86px);}
+  .hero-sub{max-width:680px;font-size:16px;line-height:1.55}
+  .photo-grid{grid-template-rows:270px 270px;}
+  section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
+  #transformation{min-height:100svh;padding:0;justify-content:center}
+  #transformation>.wrap{padding-top:56px}
+  .transform-intro{max-width:760px;margin-bottom:26px}
+  .transform-intro h2{font-size:clamp(42px,5.5vw,70px);}
+  .proof-rail{padding-bottom:56px}
+  .proof-card{min-height:clamp(520px,68svh,720px);display:flex;flex-direction:column;justify-content:center}
+  .proof-card .proof-head{margin-bottom:22px}
+  .proof-head p{max-width:520px}
+  .proof-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:2px}
+  .band-dark,.band-beige,.band-light,.contact-band{min-height:100svh;display:flex;align-items:center}
+  .band-dark .wrap,.band-beige .wrap,.band-light .wrap,.contact-band .wrap{width:min(calc(100% - 48px),var(--max));}
+  .offer-shell{align-items:center}
+  .offer-copy{max-width:560px}
+  .included{gap:11px;margin-top:22px}
+  .included li span{max-width:560px}
+  .return-cta{margin-top:28px}
+  .philosophy-card{min-height:52svh}
+  .bio-card{min-height:44svh}
+  .contact-grid{align-items:center}
+  .contact-band h2{font-size:clamp(50px,6vw,82px)}
+  .lightbox-intro h2{font-size:clamp(46px,6.5vw,82px)}
+
   /* RESPONSIVE */
   @media(max-width:960px){
    .offer-shell,.contact-grid{grid-template-columns:1fr}
@@ -531,10 +574,23 @@
   }
   @media(max-width:720px){
    body{padding-bottom:72px}
+   section{min-height:100svh;padding:58px 0}
+   .hero{min-height:calc(100svh - 61px);padding:24px 0 46px}
+   .hero h1{font-size:clamp(46px,13vw,66px);line-height:0.99}
+   .hero-sub{font-size:14.5px;line-height:1.5}
+   .photo-grid{grid-template-rows:200px 132px 132px}
+   #transformation{min-height:100svh}
+   #transformation>.wrap{padding-top:42px}
+   .transform-intro{margin-bottom:22px}
+   .transform-intro h2{font-size:38px}
+   .proof-card{min-height:0;justify-content:flex-start}
+   .band-dark,.band-beige,.band-light,.contact-band{min-height:100svh}
+   .philosophy-card,.bio-card{min-height:0}
    .wrap{width:min(calc(100% - 28px),var(--max))}
    .nav{padding:16px 0}
-   .brand{font-size:11px;letter-spacing:.2em}
-   .brand-logo{height:22px}
+   .brand{font-size:13px;letter-spacing:.16em}
+   .brand-logo{height:24px}
+   .brand span{height:24px;line-height:24px}
    .nav-link{padding:8px 12px;font-size:11px}
    .hero{padding:10px 0 58px}
    .hero h1{font-size:clamp(42px,12vw,62px);margin-bottom:15px}
@@ -632,7 +688,7 @@
   <img src="assets/tha-icon.png" alt="The House Atelier Mark" class="brand-logo"/>
   <span>The House Atelier</span>
 </a>
-<a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
+<a class="nav-link" href="#contact">Request a launch slot <span aria-hidden="true">↗</span></a>
 </div>
 </header>
 <div id="top"></div>
@@ -642,9 +698,9 @@
 <div class="wrap">
 <div class="hero-copy">
 <div>
-<div class="eyebrow">For owners launching or repositioning an STR in Curaçao</div>
-<h1>Get clicked, booked, <br/> and five-starred.</h1>
-<p class="hero-sub">First impressions decide whether a property gets noticed. In one focused engagement, we build the photography, property story, search-aware listing copy, pricing foundation, and guest experience around one goal: make the right guests notice, want, and book your property.</p>
+<div class="eyebrow">For Curaçao vacation-rental owners</div>
+<h1>Get noticed.<br/>Get booked.<br/>Earn five stars.</h1>
+<p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience — so the right guests notice, want, and book.</p>
 </div>
 </div>
 <div class="photo-grid" aria-label="Property before-and-after preview">
@@ -668,26 +724,26 @@
 </div>
 <a class="show-all-btn" href="#transformation">
 <svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewBox="0 0 24 24" width="12"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-See the transformation
+See the proof
 </a>
 </div>
 <div class="hero-offer-row">
 <div class="hero-note">
 <span class="hero-note-dot"></span>
-<div>Now accepting <strong>5 inaugural launch properties</strong> in Curaçao.</div>
+<div><strong>5 launch properties</strong> available in Curaçao.</div>
 </div>
 <div class="hero-offer-actions">
 <div class="offer-chip">
   <div>
-    <small>Inaugural launch rate</small>
+    <small>Launch rate</small>
     <div class="price-line">
       <span class="from">from</span>
       <strong>850 USD</strong>
     </div>
-    <em><span>Returns its value</span></em>
+    <em><span>Built to pay back</span></em>
   </div>
 </div>
-<a class="accent-btn" href="#offer">See the Launch System →</a>
+<a class="accent-btn" href="#offer">See the system →</a>
 </div>
 </div>
 </div>
@@ -698,8 +754,8 @@ See the transformation
   <div class="wrap">
     <div class="transform-intro">
       <div class="eyebrow">The work, side by side</div>
-      <h2>Three things decide whether a property gets skipped or chosen.</h2>
-      <p>What guests see. What they understand. What they pay. We rebuild all three around the same property story so the listing feels more desirable, more discoverable, and more commercially deliberate.</p>
+      <h2>Three things decide a booking.</h2>
+      <p>What guests see. What they understand. What they pay. We align all three around one property story.</p>
     </div>
     <nav class="chapter-nav">
       <a href="#v1-visuals" class="is-active">01 The Visuals</a> <span>·</span>
@@ -714,7 +770,7 @@ See the transformation
         <div>
           <div class="eyebrow">The Visuals</div>
           <h3>Photography &amp; Sequence</h3>
-          <p>Photography earns the most important clicks. Your primary photo must stand out among competing listings and earn the initial click. Then, your first five photos need to capture their interest and convince them to explore further. Better photos → more clicks → more bookings.</p>
+          <p>Your first five photos have one job: earn the click, build desire, and make the stay feel worth the price.</p>
       </div>
       </div>
       <div class="sequence-pair">
@@ -744,9 +800,9 @@ See the transformation
         </div>
       </div>
       <div style="margin-top: 24px; text-align: center;">
-        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
-          See before &amp; after photography <span aria-hidden="true">→</span>
-        </a>
+        <button type="button" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font:inherit; font-size:14px; font-weight:700; color:var(--sage); background:none; border:0; border-bottom:1px solid var(--sage); padding:0 0 2px; cursor:pointer;">
+          See the before &amp; after <span aria-hidden="true">→</span>
+        </button>
       </div>
     </article>
     <article class="proof-card" id="v1-copy">
@@ -754,8 +810,8 @@ See the transformation
         <div class="proof-num">02</div>
         <div>
           <div class="eyebrow">The Promise</div>
-          <h3>Brand-Driven Copy &amp; Search</h3>
-          <p>The copy creates the promise guests use to evaluate the stay; when that promise is also structured for search, it can help the property get discovered inside the platform and through external search engines.</p>
+          <h3>Copy &amp; Search</h3>
+          <p>Make the stay easy to understand, easy to want, and easier to find.</p>
         </div>
       </div>
       <div class="scope-chip-row">
@@ -815,8 +871,8 @@ See the transformation
         <div class="proof-num">03</div>
         <div>
           <div class="eyebrow">The Numbers</div>
-          <h3>Calendar &amp; Pricing Strategy</h3>
-          <p>Flexible pricing and stay requirements let us respond to demand. Like hotels and airlines, we use market data to adjust prices and minimum stays across dates. This helps us achieve higher yield than flat pricing.</p>
+          <h3>Pricing &amp; Calendar</h3>
+          <p>Price for demand, not averages. We use seasonality, day-of-week patterns, and local competition to build a stronger rate strategy.</p>
         </div>
       </div>
       <div class="revenue-pair">
@@ -879,67 +935,64 @@ See the transformation
 <div class="wrap">
 <div class="offer-shell">
 <div>
-<div class="eyebrow" style="color:#d7a08e">Inaugural Launch System</div>
+<div class="eyebrow" style="color:#d7a08e">The launch system</div>
 <div class="display">One focused engagement.</div>
-<p class="offer-copy">We’re opening The House Atelier with a special offer to help 5 properties in Curaçao accelerate the cold-start phase that new listings typically face, while also revitalizing older, underperforming listings.</p>
+<p class="offer-copy">We sharpen the listing before you spend months learning by trial and error — whether you’re launching new or repositioning an existing stay.</p>
 <ul class="included offer-items">
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>1. The Diagnostic</em> <span class="sep">·</span> Full Listing Audit</strong>
-<span>We review your presentation, positioning, competitive set, and revenue opportunities to identify exactly what is helping or quietly costing you.</span>
+<strong><em>1. The Diagnostic</em> <span class="sep">·</span> Listing Audit</strong>
+<span>See what is helping the listing — and what is quietly costing you.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
 <strong><em>2. The Visuals</em> <span class="sep">·</span> Photography</strong>
-<span>Professional photography designed to create the strongest first impression, showcase the property at its best, and give the listing a distinctive visual identity in the search grid.</span>
+<span>Make the first impression stronger and the property easier to choose.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>3. The Promise</em> <span class="sep">·</span> Listing Copy &amp; Search Optimization</strong>
-<span>We create a clear property identity and express it through searchable, benefit-driven language that converts the click into a booking decision.</span>
+<strong><em>3. The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
+<span>Give guests a clear reason to want the stay — and help them find it.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>4. The Numbers</em> <span class="sep">·</span> Calendar &amp; Pricing Strategy</strong>
-<span>We perform a local competitive analysis and program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends so you capture more yield.</span>
+<strong><em>4. The Numbers</em> <span class="sep">·</span> Pricing &amp; Calendar</strong>
+<span>Build rates around seasonality, demand, day-of-week patterns, and local competition.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>5. The Hospitality</em> <span class="sep">·</span> 5-Star Guest Experience Playbook</strong>
-<span>We refine guest-facing details, physical presentation, and communication touchpoints so the stay delivers on the brand promise and builds the review velocity that compounds ranking.</span>
+<strong><em>5. The Hospitality</em> <span class="sep">·</span> Guest Experience</strong>
+<span>Make the stay match the promise — from arrival to review.</span>
 </div>
 </li>
 </ul>
 </div>
 <aside class="pricing-card">
-<div class="eyebrow">Inaugural launch offer · only 5 properties</div>
-<div class="pricing-tier-label">Condos &amp; Intimate Stays (≈1–2 Bedrooms)</div>
+<div class="eyebrow">Only 5 launch properties</div>
+<div class="pricing-tier-label">Condos &amp; Intimate Stays · 1–2 Bedrooms</div>
 <div class="price">850 USD</div>
-<div class="price-note">
-<strike style="margin-right:6px;">1,650 USD</strike> Inaugural rate<br/>
-<strong style="color:var(--sage);">≈ 5-7 booked nights of revenue</strong>
-</div>
-<a class="accent-btn price-card-btn" href="#contact">Request an inaugural launch slot →</a>
+<div class="price-note">Was <strike>1,650 USD</strike><br/>Typically <strong style="color:var(--sage);">2–7 nights to break even</strong></div>
+<a class="accent-btn price-card-btn" href="#contact">Request a launch slot →</a>
 <div class="price-tiers">
 <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
-<strong>Villas &amp; Family Homes (≈3–5 Bedrooms)</strong> 1,250 USD <strike>(2,500 USD)</strike><br/>
+<strong>Villas &amp; Family Homes · 3–5 Bedrooms</strong> 1,250 USD <strike>2,500 USD</strike><br/>
 <span style="color:var(--sage); font-weight:600;">≈ 3–4 booked nights of revenue</span>
 </div>
 <div>
-<strong>Large Villas &amp; Estates (≈6+ Bedrooms)</strong> 2,250 USD <strike>(4,500 USD)</strike><br/>
+<strong>Large Villas &amp; Estates · 6+ Bedrooms</strong> 2,250 USD <strike>4,500 USD</strike><br/>
 <span style="color:var(--sage); font-weight:600;">≈ 2–3 booked nights of revenue</span>
 </div>
 </div>
-<div class="micro">Five slots are available across all three tiers. No commitment until we review fit and availability.</div>
+<div class="micro">5 slots. No commitment until we review fit and availability.</div>
 </aside>
 </div>
 </div>
@@ -949,15 +1002,15 @@ See the transformation
 <section class="band-beige v5">
   <div class="wrap">
     <div class="section-heading">
-      <div class="eyebrow">The Return</div>
-      <h2>A few better nights.</h2>
+      <div class="eyebrow">The payback</div>
+      <h2>A few nights can cover it.</h2>
     </div>
-    <p class="power-line">That’s all it takes to make the investment pay for itself and leave you with a listing that keeps delivering long after the work is done.</p>
+    <p class="power-line">Typical break-even is 2–7 nights, with a stronger listing left behind for the long run.</p>
     <div style="text-align:center">
       <span class="nights">Typical break-even · 2–7 nights</span>
     </div>
     <div class="return-cta">
-      <a class="accent-btn" href="#contact">Request an inaugural launch slot →</a>
+      <a class="accent-btn" href="#contact">Request a launch slot →</a>
     </div>
   </div>
 </section>
@@ -968,14 +1021,14 @@ See the transformation
 <div class="section-heading">
 <div class="eyebrow">Our philosophy</div>
 <h2>You stay in control.</h2>
-<p>We make the important decisions easier, the presentation stronger, and the business easier to build on without taking over your property. You keep the brand, the positioning, and the keys.</p>
+<p>We strengthen the listing without taking over the business. You keep the property, the brand, and the keys.</p>
 </div>
 <div class="philosophy-grid">
 <div class="bio-card">
 <div class="bio-text">
 <h3>Chris &amp; The House Atelier</h3>
-<span>Airbnb Luxe inspector · STR &amp; hospitality specialist</span>
-<p>Chris brings direct experience as an <strong>Airbnb Luxe inspector</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team. The same standards used to evaluate top-tier properties are applied to the foundation of yours.</p>
+<span>Airbnb Luxe inspector · STR specialist</span>
+<p>Chris brings experience as an <strong>Airbnb Luxe inspector</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
 </div>
 <div class="bio-photo" aria-label="Photo of Chris seated on a vintage leather sofa">
 <img src="assets/chris-bio.jpg" alt="Chris - The House Atelier" />
@@ -991,32 +1044,32 @@ See the transformation
 <div class="faq-grid">
 <div class="section-heading" style="margin-bottom:0">
 <div class="eyebrow">Before you apply</div>
-<h2>Frequently asked.</h2>
+<h2>Before you apply.</h2>
 </div>
 <div>
 <details open="">
 <summary>Is this only for brand-new listings?</summary>
-<p>The inaugural launch offer is designed primarily for new listings, particularly properties with little or no review history. Existing listings can also be a strong fit when the property has outgrown its current presentation or needs a visual and positioning reset.</p>
+<p>New listings are the main fit, especially with little or no review history. Existing listings can fit when the presentation or positioning needs a reset.</p>
 </details>
 <details>
 <summary>What happens after I submit the form?</summary>
-<p>We review the property, confirm fit and availability, and then schedule the work. A deposit is collected for the work to be rendered, with the remaining balance due on delivery. There is no commitment until we confirm the property is a match.</p>
+<p>We review the property, confirm fit and availability, then schedule the work. A deposit starts the project; the balance is due on delivery.</p>
 </details>
 <details>
 <summary>How long does the work take on site?</summary>
-<p>It depends on the size and complexity of the property. Most projects take between 1 and 4 hours on site, with larger or more detailed properties requiring more time.</p>
+<p>Most projects take 1–4 hours on site. Larger or more detailed properties may take longer.</p>
 </details>
 <details>
 <summary>Do I have to hand over management of my property?</summary>
-<p>No. We build the foundation while you remain in the driver’s seat. You keep control of the property, the brand, the positioning, and the business. Implementation and ongoing STR optimization are available only if and when you want additional support.</p>
+<p>No. You keep the property, brand, positioning, and business. Ongoing optimization is optional.</p>
 </details>
 <details>
 <summary>Can you support the property beyond the initial work?</summary>
-<p>Yes. We can continue supporting the property with implementation and ongoing STR optimization. Services can include listing updates, direct booking marketing, a dedicated website, video walkthroughs for asynchronous guest communication, ongoing pricing support, and other property-specific needs.</p>
+<p>Yes. Optional support can include listing updates, direct-booking marketing, a website, video walkthroughs, and ongoing pricing.</p>
 </details>
 <details>
 <summary>Does this set up dynamic pricing?</summary>
-<p>The inaugural package establishes the pricing structure and competitive logic needed to move toward dynamic rate management. Ongoing revenue management and platform setup can be added separately when you are ready.</p>
+<p>It builds the pricing structure and competitive logic needed to move toward dynamic pricing. Ongoing revenue management can be added later.</p>
 </details>
 </div>
 </div>
@@ -1028,27 +1081,27 @@ See the transformation
 <div class="wrap">
 <div class="contact-grid">
 <div>
-<div class="eyebrow" style="color:#d7a08e">5 inaugural properties</div>
-<h2>Request your launch slot.</h2>
+<div class="eyebrow" style="color:#d7a08e">5 launch properties</div>
+<h2>Ready to launch?</h2>
 <div class="contact-steps">
 <div class="contact-step">
 <span class="step-dot">1</span>
-<div><strong>Send the listing</strong><br/>Takes about a minute.</div>
+<div><strong>Send the listing</strong><br/>About a minute.</div>
 </div>
 <div class="contact-step">
 <span class="step-dot">2</span>
-<div><strong>We review it</strong><br/>We look at the property, positioning, and opportunity.</div>
+<div><strong>We review it</strong><br/>Property, positioning, opportunity.</div>
 </div>
 <div class="contact-step">
 <span class="step-dot">3</span>
-<div><strong>We confirm availability</strong><br/>No commitment until your property is reviewed.</div>
+<div><strong>We confirm fit</strong><br/>No commitment before review.</div>
 </div>
 </div>
 
 <!-- WhatsApp Contact Link -->
 <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1);">
   <p style="font-size: 14px; color: #c6cfcc; margin: 0; line-height: 1.6;">
-    Have questions before applying?<br>
+    Questions before applying?<br>
     <a href="https://wa.me/59996640824?text=Hi%20Chris!%20I%20have%20a%20question%20about%20The%20House%20Atelier%20launch%20services." target="_blank" rel="noopener noreferrer" style="color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; text-decoration: underline; text-underline-offset: 3px;">
       Message Chris on WhatsApp ↗
     </a>
@@ -1092,12 +1145,12 @@ See the transformation
 <input id="url" name="url" placeholder="https://airbnb.com/... or launching soon" required="" type="text"/>
 </div>
 <div class="field-full">
-<label for="message">Anything we should know?</label>
-<textarea id="message" name="message" placeholder="Tell us anything useful about the property, launch, or what you feel needs attention."></textarea>
+<label for="message">Anything else?</label>
+<textarea id="message" name="message" placeholder="Anything useful about the property or launch."></textarea>
 </div>
-<button class="submit" type="submit">Request my inaugural launch slot →</button>
+<button class="submit" type="submit">Request my launch slot →</button>
 </form>
-<p class="form-note">No commitment. We’ll review the property and confirm fit + availability first.</p>
+<p class="form-note">No commitment. We review fit first.</p>
 </div>
 </div>
 </div>
@@ -1106,12 +1159,12 @@ See the transformation
 <footer>
 <div class="wrap footer-inner">
 <span>© 2026 The House Atelier</span>
-<span>Luxury STR Launch Services | Curaçao</span>
+<span>Vacation-rental launch services · Curaçao</span>
 </div>
 </footer>
 <div aria-label="Mobile call to action" class="mobile-cta" id="mobileCta">
 <div class="mini-price">
-  <small>Inaugural launch rate</small>
+  <small>Launch rate</small>
   <div class="price-line">
     <span class="from">from</span>
     <strong>850 USD</strong>
@@ -1131,8 +1184,8 @@ See the transformation
   <div class="lightbox-content">
     <div class="lightbox-intro">
       <div class="eyebrow">The visual difference</div>
-      <h2>Same place, different worth.</h2>
-      <p>Better photography is not decoration. It changes the perceived quality, mood, and value of the stay before a guest reads a single word.</p>
+      <h2>Same place. Higher perceived value.</h2>
+      <p>Better photography makes quality visible before a guest reads a word.</p>
     </div>
 
     <div class="ba-grid">
@@ -1147,7 +1200,7 @@ See the transformation
         </div>
         <div class="ba-context">
           <strong>First impression</strong>
-          <span>Make the strongest frame do the selling.</span>
+          <span>Let the first frame sell.</span>
         </div>
       </div>
 
@@ -1162,7 +1215,7 @@ See the transformation
         </div>
         <div class="ba-context">
           <strong>Details that matter</strong>
-          <span>Turn the small things into reasons to remember the stay.</span>
+          <span>Make the small things memorable.</span>
         </div>
       </div>
 
@@ -1177,7 +1230,7 @@ See the transformation
         </div>
         <div class="ba-context">
           <strong>Perceived value</strong>
-          <span>Give the property a visual standard that matches the price you want it to command.</span>
+          <span>Make the presentation match the price.</span>
         </div>
       </div>
 
@@ -1206,16 +1259,16 @@ See the transformation
           <div class="ba-img a5"></div>
         </div>
         <div class="ba-context">
-          <strong>A property worth being proud of</strong>
-          <span>When the presentation feels elevated, the owner feels it too.</span>
+          <strong>Worth coming back to</strong>
+          <span>Make the stay feel considered from the start.</span>
         </div>
       </div>
     </div>
 
     <div class="lightbox-cta">
-      <h3>The goal is not to make your property look different.</h3>
-      <p>It is to make the value you already own impossible to miss.</p>
-      <a href="#offer" class="accent-btn" onclick="closeLightbox()" style="font-size:14px;padding:14px 22px;">See the launch system →</a>
+      <h3>Make the value you already own visible.</h3>
+      <p>That is the goal.</p>
+      <a href="#offer" class="accent-btn" onclick="closeLightbox()" style="font-size:14px;padding:14px 22px;">See the system →</a>
     </div>
   </div>
 </div>
@@ -1262,6 +1315,38 @@ See the transformation
       }, observerOptions);
 
       cards.forEach(card => observer.observe(card));
+
+      // Desktop pointer-drag support; touch devices keep native swipe scrolling.
+      if (window.matchMedia('(pointer:fine)').matches) {
+        let isDown = false;
+        let startX = 0;
+        let startScroll = 0;
+
+        rail.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          isDown = true;
+          startX = e.clientX;
+          startScroll = rail.scrollLeft;
+          rail.classList.add('is-dragging');
+          rail.setPointerCapture?.(e.pointerId);
+        });
+
+        rail.addEventListener('pointermove', (e) => {
+          if (!isDown) return;
+          rail.scrollLeft = startScroll - (e.clientX - startX);
+        });
+
+        const stopDrag = (e) => {
+          if (!isDown) return;
+          isDown = false;
+          rail.classList.remove('is-dragging');
+          try { rail.releasePointerCapture?.(e.pointerId); } catch (_) {}
+        };
+
+        rail.addEventListener('pointerup', stopDrag);
+        rail.addEventListener('pointercancel', stopDrag);
+        rail.addEventListener('pointerleave', stopDrag);
+      }
     }
   });
 
