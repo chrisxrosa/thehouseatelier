@@ -216,7 +216,7 @@
   .copy-media{padding:18px;display:flex;align-items:stretch}
   .copy-before{background:#f4efe5}
   .copy-after{background:#e5eee9}
-  .copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
+  .copy-ui{width:100%;display:flex;flex-direction:column;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
   .copy-after .copy-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.10)}
   .copy-ui-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line)}
   .copy-ui-kicker{font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
@@ -272,7 +272,8 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:6px;
-    margin-top:10px;
+    margin-top:auto;
+    padding-top:14px;
   }
   .v1 .copy-ui-surface{
     padding:7px 8px;
@@ -358,6 +359,7 @@
   .bio-card{background:#e6dfd3;border:1px solid rgba(27,37,36,.06);border-radius:24px;padding:26px;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(220px,.78fr);gap:28px;align-items:center}
   .bio-text { text-align: center; display: flex; flex-direction: column; align-items: center; padding: 10px 0; }
   .bio-text h3 { font-size: 28px; line-height: 1.1; margin: 0 0 6px; font-family: 'Lora', serif; font-weight: 400; color: var(--ink); }
+  .m-br{display:none}
   .bio-text span { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage); margin-bottom: 18px; }
   .bio-text p { font-size: 14px; line-height: 1.6; color: var(--muted-dark); margin: 0; max-width: 440px; }
   .bio-photo{width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#d8d0c4;border:1px solid rgba(27,37,36,.06);display:flex;align-items:center;justify-content:center;color:#7a736a;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:center;grid-column:2;grid-row:1}
@@ -599,6 +601,7 @@
    .philosophy-card{padding:28px}
    .philosophy-card p{font-size:25px}
    .bio-card{padding:22px;grid-template-columns:1fr;gap:22px}
+   .bio-text h3 .m-br{display:inline}
    .bio-photo{max-width:360px;margin:0 auto;grid-column:1;grid-row:auto}
    .contact-band{padding:68px 0 50px}
    .contact-band h2{font-size:48px}
@@ -652,7 +655,7 @@
 <div class="hero-copy">
 <div>
 <h1>Get noticed.<br/>Get booked.<br/>Earn five stars.</h1>
-<p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience so the right guests notice, want, and book.</p>
+<p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience so the right guests notice, desire, and book.</p>
 </div>
 </div>
 <div class="photo-grid" aria-label="Property before-and-after preview">
@@ -687,7 +690,7 @@ See the proof
 <section class="variation-block v1" id="transformation">
   <div class="wrap">
     <div class="transform-intro">
-      <div class="eyebrow">The work, side by side</div>
+      <div class="eyebrow">Your opportunity</div>
       <h2>Three things decide a booking.</h2>
       <p>What guests see. What they're promised. What they pay. We align all three around one property story.</p>
     </div>
@@ -876,36 +879,36 @@ See the proof
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>1. The Diagnostic</em> <span class="sep">·</span> Listing Audit</strong>
+<strong><em>The Diagnostic</em> <span class="sep">·</span> Listing Audit</strong>
 <span>See what is helping the listing, and what is quietly costing you.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>2. The Visuals</em> <span class="sep">·</span> Photography</strong>
+<strong><em>The Visuals</em> <span class="sep">·</span> Photography</strong>
 <span>Make the first impression stronger and the property easier to choose.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>3. The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
+<strong><em>The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
 <span>Give guests a clear reason to want the stay, and help them find it.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>4. The Numbers</em> <span class="sep">·</span> Pricing &amp; Calendar</strong>
+<strong><em>The Numbers</em> <span class="sep">·</span> Pricing &amp; Calendar</strong>
 <span>Build rates around seasonality, demand, day-of-week patterns, and local competition.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>5. The Hospitality</em> <span class="sep">·</span> Guest Experience</strong>
-<span>Make the stay match the promise, from arrival to review.</span>
+<strong><em>Bonus</em> <span class="sep">·</span>Guest Experience Consultation</strong>
+<span>Practical guidance on details that make the stay look, feel, and function better for guests, grounded in Airbnb Luxe standards.</span>
 </div>
 </li>
 </ul>
@@ -914,16 +917,16 @@ See the proof
 <div class="eyebrow">Only 5 launch properties</div>
 <div class="pricing-tier-label">Condos &amp; Intimate Stays · 1–2 Bedrooms</div>
 <div class="price">850 USD</div>
-<div class="price-note">Was <strike>1,650 USD</strike><br/>Typically <strong style="color:var(--sage);">5–7 nights to break even</strong></div>
+<div class="price-note">Was <strike>1,650 USD</strike><br/><strong style="color:var(--sage);">≈ 5–7 nights to break even</strong></div>
 <a class="accent-btn price-card-btn" href="#contact">Request a launch slot →</a>
 <div class="price-tiers">
 <div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
 <strong>Villas &amp; Family Homes · 3–5 Bedrooms</strong> 1,250 USD <strike>2,500 USD</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 3–4 booked nights to break even</span>
+<span style="color:var(--sage); font-weight:600;">≈ 3–4 nights to break even</span>
 </div>
 <div>
 <strong>Large Villas &amp; Estates · 6+ Bedrooms</strong> 2,250 USD <strike>4,500 USD</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 2–3 booked nights to break even</span>
+<span style="color:var(--sage); font-weight:600;">≈ 2–3 nights to break even</span>
 </div>
 </div>
 <div class="micro">5 slots. No commitment until we review fit and availability.</div>
@@ -939,7 +942,7 @@ See the proof
       <div class="eyebrow">The payback</div>
       <h2>A few nights covers it.</h2>
     </div>
-    <p class="power-line">Pays for itself in under a week of additional booked nights and leaves you with a stronger listing that keeps working for you long after.</p>
+    <p class="power-line">Pays for itself in under a week of additional booked nights and leaves you with a stronger asset that keeps working for you long after.</p>
     <div style="text-align:center">
       <span class="nights">Break-even · 2–7 nights</span>
     </div>
@@ -960,9 +963,9 @@ See the proof
 <div class="philosophy-grid">
 <div class="bio-card">
 <div class="bio-text">
-<h3>Chris &amp; The House Atelier</h3>
-<span>Airbnb Luxe inspector · STR specialist</span>
-<p>Chris brings experience as an <strong>Airbnb Luxe inspector</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
+<h3>Chris &amp; <br class="m-br"/>The House Atelier</h3>
+<span>Consultant for Airbnb Luxe · STR specialist</span>
+<p>Chris brings experience as a <strong>Consultant for Airbnb Luxe</strong> and former marketing manager at <strong>CoveCasa</strong> in Sint Maarten, supported by a dedicated STR optimization team.</p>
 </div>
 <div class="bio-photo" aria-label="Photo of Chris seated on a vintage leather sofa">
 <img src="assets/chris-bio.jpg" alt="Chris - The House Atelier" />
@@ -987,7 +990,7 @@ See the proof
 </details>
 <details>
 <summary>What happens after I submit the form?</summary>
-<p>We review the property, confirm fit and availability, then schedule the work. A deposit starts the project; the balance is due on delivery.</p>
+<p>We review the property, confirm fit and availability, then call you to arrange the work. A deposit starts the project, and the balance is due on delivery.</p>
 </details>
 <details>
 <summary>How long does the work take on site?</summary>
@@ -1000,10 +1003,6 @@ See the proof
 <details>
 <summary>Can you support the property beyond the initial work?</summary>
 <p>Yes. Optional support can include listing updates, direct-booking marketing, a website, video walkthroughs, and ongoing pricing.</p>
-</details>
-<details>
-<summary>Does this set up dynamic pricing?</summary>
-<p>It builds the pricing structure and competitive logic needed to move toward dynamic pricing. Ongoing revenue management can be added later.</p>
 </details>
 </div>
 </div>
@@ -1320,7 +1319,7 @@ See the proof
     const scrollY=window.scrollY || window.pageYOffset;
     const offerY=offer.getBoundingClientRect().top + scrollY;
     const contactTitleRect=contactTitle.getBoundingClientRect();
-    const titleIsVisible=contactTitleRect.top <= window.innerHeight && contactTitleRect.bottom >= 0;
+    const titleIsVisible=contactTitleRect.top <= window.innerHeight;
     if(titleIsVisible){
      cta.classList.add('is-hidden');
      return;
