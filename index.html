@@ -6,6 +6,7 @@
 <meta content="The House Atelier | High-impact photography, STR branding, search-friendly writing, and a dynamic pricing foundation for vacation rental owners in Curaçao." name="description"/>
 <meta content="#1b2524" name="theme-color"/>
 <title>The House Atelier | Make your vacation rental impossible to overlook.</title>
+<link rel="icon" type="image/png" href="assets/tha-icon.png"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
@@ -42,7 +43,8 @@
   /* NAV */
   .site-header{background:var(--bone-2);position:relative;z-index:20}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-  .brand{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--sage)}
+  .brand-logo{height:26px;width:auto;display:block;object-fit:contain}
   .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.28);transition:.2s ease}
   .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
   
@@ -187,8 +189,6 @@
   .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06); display: flex; flex-direction: column;}
   
-  /* By putting flex-grow on the media elements, the mockups stretch 
-     and the footers remain perfectly uniform in size at the bottom */
   .airbnb-grid, .copy-media, .revenue-media { flex-grow: 1; }
 
   .sequence-card-footer, .copy-card-footer, .revenue-card-footer {
@@ -198,7 +198,7 @@
     display: flex; 
     align-items: center; 
     justify-content: center;
-    flex: none; /* Keep the footer size fixed */
+    flex: none; 
   }
   .sequence-card-footer strong, .copy-card-footer strong, .revenue-card-footer strong {
     display: block; 
@@ -533,7 +533,8 @@
    body{padding-bottom:72px}
    .wrap{width:min(calc(100% - 28px),var(--max))}
    .nav{padding:16px 0}
-   .brand{font-size:10px;letter-spacing:.2em}
+   .brand{font-size:11px;letter-spacing:.2em}
+   .brand-logo{height:22px}
    .nav-link{padding:8px 12px;font-size:11px}
    .hero{padding:10px 0 58px}
    .hero h1{font-size:clamp(42px,12vw,62px);margin-bottom:15px}
@@ -563,7 +564,6 @@
    .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 20px) / 2)) 32px; }
    .proof-card { flex: 0 0 calc(92vw - 20px); padding: 24px 16px; scroll-snap-align: center; border-radius: 20px; }
    
-   /* Changed to flex column to give text full width and solve alignment issue */
    .proof-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
    .proof-num { font-size: 36px; line-height: 1; margin-bottom: 4px; }
    .proof-head h3 { font-size: 22px; line-height: 1.15; margin: 4px 0 6px; }
@@ -628,7 +628,10 @@
 <body>
 <header class="site-header">
 <div class="wrap nav">
-<a class="brand" href="#top">The House Atelier</a>
+<a class="brand" href="#top">
+  <img src="assets/tha-icon.png" alt="The House Atelier Mark" class="brand-logo"/>
+  <span>The House Atelier</span>
+</a>
 <a class="nav-link" href="#contact">Request an inaugural launch slot <span aria-hidden="true">↗</span></a>
 </div>
 </header>
@@ -949,7 +952,7 @@ See the transformation
       <div class="eyebrow">The Return</div>
       <h2>A few better nights.</h2>
     </div>
-    <p class="power-line">That is all it takes for the investment to pay for itself and leave you with a listing that keeps working long after the work is done.</p>
+    <p class="power-line">That’s all it takes to make the investment pay for itself and leave you with a listing that keeps delivering long after the work is done.</p>
     <div style="text-align:center">
       <span class="nights">Typical break-even · 2–7 nights</span>
     </div>
@@ -1042,7 +1045,7 @@ See the transformation
 </div>
 </div>
 
-<!-- MOVED WhatsApp Contact Link -->
+<!-- WhatsApp Contact Link -->
 <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1);">
   <p style="font-size: 14px; color: #c6cfcc; margin: 0; line-height: 1.6;">
     Have questions before applying?<br>
