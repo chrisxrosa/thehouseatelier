@@ -187,14 +187,18 @@
   .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06); display: flex; flex-direction: column;}
   
+  /* By putting flex-grow on the media elements, the mockups stretch 
+     and the footers remain perfectly uniform in size at the bottom */
+  .airbnb-grid, .copy-media, .revenue-media { flex-grow: 1; }
+
   .sequence-card-footer, .copy-card-footer, .revenue-card-footer {
     padding: 12px 16px; 
     background: var(--bone-2); 
     border-top: 1px solid var(--line); 
-    flex-grow: 1;
     display: flex; 
     align-items: center; 
     justify-content: center;
+    flex: none; /* Keep the footer size fixed */
   }
   .sequence-card-footer strong, .copy-card-footer strong, .revenue-card-footer strong {
     display: block; 
@@ -242,7 +246,7 @@
   /* --- Block 02: Copy / Search Optimization cards --- */
   .copy-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .copy-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
-  .copy-media{min-height:180px;padding:18px;display:flex;align-items:stretch}
+  .copy-media{padding:18px;display:flex;align-items:stretch}
   .copy-before{background:#f4efe5}
   .copy-after{background:#e5eee9}
   .copy-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
@@ -256,7 +260,7 @@
   /* --- Block 03: Revenue calendars --- */
   .revenue-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
   .revenue-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
-  .revenue-media{min-height:240px;padding:18px;display:flex;align-items:stretch}
+  .revenue-media{padding:18px;display:flex;align-items:stretch}
   .revenue-before{background:#eee9df}
   .revenue-after{background:#dfe9e5}
   .revenue-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:15px;box-shadow:0 8px 24px rgba(27,37,36,.06)}
@@ -900,7 +904,7 @@ See the transformation
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>4. The Numbers</em> <span class="sep">·</span> Revenue Optimization &amp; Pricing Foundation</strong>
+<strong><em>4. The Numbers</em> <span class="sep">·</span> Calendar &amp; Pricing Strategy</strong>
 <span>We perform a local competitive analysis and program the optimal rate structure for your property, factoring in seasonality, demand periods, and day-of-week trends so you capture more yield.</span>
 </div>
 </li>
@@ -1037,6 +1041,17 @@ See the transformation
 <div><strong>We confirm availability</strong><br/>No commitment until your property is reviewed.</div>
 </div>
 </div>
+
+<!-- MOVED WhatsApp Contact Link -->
+<div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1);">
+  <p style="font-size: 14px; color: #c6cfcc; margin: 0; line-height: 1.6;">
+    Have questions before applying?<br>
+    <a href="https://wa.me/59996640824?text=Hi%20Chris!%20I%20have%20a%20question%20about%20The%20House%20Atelier%20launch%20services." target="_blank" rel="noopener noreferrer" style="color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; text-decoration: underline; text-underline-offset: 3px;">
+      Message Chris on WhatsApp ↗
+    </a>
+  </p>
+</div>
+
 </div>
 <div class="form-card">
 <form onsubmit="submitLead(event)">
@@ -1080,16 +1095,6 @@ See the transformation
 <button class="submit" type="submit">Request my inaugural launch slot →</button>
 </form>
 <p class="form-note">No commitment. We’ll review the property and confirm fit + availability first.</p>
-
-<!-- Added WhatsApp Contact Link here -->
-<div style="margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); text-align: center;">
-  <p style="font-size: 12px; color: var(--muted-dark); margin: 0;">
-    Have questions before applying?<br>
-    <a href="https://wa.me/59996640824?text=Hi%20Chris!%20I%20have%20a%20question%20about%20The%20House%20Atelier%20launch%20services." target="_blank" rel="noopener noreferrer" style="color: var(--sage); font-weight: 700; display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; text-decoration: underline;">
-      Message Chris on WhatsApp ↗
-    </a>
-  </p>
-</div>
 </div>
 </div>
 </div>
