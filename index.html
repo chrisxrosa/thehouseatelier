@@ -50,11 +50,11 @@
   .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
   
   /* HERO */
-  .hero{padding:18px 0 76px;background:var(--bone-2)}
+  .hero{padding:18px 0 40px;background:var(--bone-2)}
   .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
-  .hero-copy{display:block;margin:8px 0 24px}
-  .hero h1{font-size:clamp(56px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 18px;max-width:920px}
-  .hero-sub{display:block;width:100%;max-width:780px;font-size:17px;color:var(--muted-dark);line-height:1.65;margin:0}
+  .hero-copy{display:block;margin:8px 0 20px}
+  .hero h1{font-size:clamp(48px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 14px;max-width:920px}
+  .hero-sub{display:block;width:100%;max-width:680px;font-size:16px;color:var(--muted-dark);line-height:1.55;margin:0}
   
   /* HERO GALLERY */
   .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);background:var(--bone-3)}
@@ -71,55 +71,21 @@
   .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer;text-decoration:none}
   .show-all-btn:hover{background:#fff}
   
-  /* HERO OFFER CHIP & BEACON */
-  .hero-offer-row{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
-  .hero-note{display:flex;align-items:center;gap:12px;color:var(--ink);font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.4}
-  .hero-note strong{font-weight:700;color:var(--sage)}
-  .hero-note-dot{width:8px;height:8px;border-radius:50%;background:var(--sage);flex:none;animation:pulse 2s infinite}
-  .hero-offer-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-  @keyframes pulse {
-   0% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0.4); }
-   70% { box-shadow: 0 0 0 8px rgba(49, 91, 87, 0); }
-   100% { box-shadow: 0 0 0 0 rgba(49, 91, 87, 0); }
-  }
-  .desktop-break{display:block}
-  .offer-chip{display:flex;align-items:center;gap:16px;padding:11px 13px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.35)}
-  .offer-chip small{display:block;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--muted)}
-  .offer-chip strong{display:block;font-family:'Lora',serif;font-size:24px;font-weight:400;line-height:1.05;margin-top:2px}
-  .offer-chip em{font-style:normal;font-size:11px;color:var(--muted-dark);display:block;margin-top:2px}
-  .offer-chip span{color:var(--sage);font-weight:600;}
-  .offer-chip .price-line{
-    display:flex;
-    align-items:baseline;
-    gap:6px;
-    margin-top:2px;
-  }
-  .offer-chip .from{
-    font-size:11px;
-    font-weight:600;
-    color:var(--muted-dark);
-    font-family:'DM Sans',system-ui,sans-serif;
-    letter-spacing:.02em;
-  }
-  .offer-chip .price-line strong{
-    display:inline;
-    margin-top:0;
-  }
   .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
 
   /* ========== TRANSFORMATION / PROOF SECTION ========== */
   #transformation {
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 60px 0;
+    padding: 0;
   }
-  .transform-section{padding:60px 0 20px}
-  .transform-intro{max-width:880px;margin-bottom:32px}
-  .transform-intro h2{font-size:clamp(38px,5vw,58px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
-  .transform-intro p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark)}
+  .transform-section{padding:40px 0 16px}
+  .transform-intro{max-width:880px;margin-bottom:18px}
+  .transform-intro h2{font-size:clamp(36px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:6px 0 10px}
+  .transform-intro p{margin:0;font-size:15px;line-height:1.55;color:var(--muted-dark)}
 
   /* ========== HORIZONTAL CHAPTER RAIL ========== */
   .chapter-nav {
@@ -171,20 +137,20 @@
     scroll-snap-stop: always;
     background: var(--bone-2);
     border: 1px solid var(--line);
-    border-radius: 28px;
-    padding: 32px;
+    border-radius: 24px;
+    padding: 22px 28px;
     box-shadow: var(--shadow-lg);
   }
   
   .proof-card .proof-head {
     max-width: none;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
 
-  .proof-head{display:grid;grid-template-columns:72px minmax(0,1fr);gap:18px;align-items:start;margin-bottom:28px;max-width:780px}
-  .proof-num{font-family:'Lora',serif;font-size:42px;line-height:1;color:var(--accent);letter-spacing:-.04em}
-  .proof-head h3{font-size:clamp(28px,3.5vw,36px);line-height:1.08;letter-spacing:-.03em;margin:4px 0 8px}
-  .proof-head p{font-size:14px;line-height:1.65;color:var(--muted-dark);margin:0;max-width:620px}
+  .proof-head{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;align-items:start;margin-bottom:14px;max-width:780px}
+  .proof-num{font-family:'Lora',serif;font-size:34px;line-height:1;color:var(--accent);letter-spacing:-.04em}
+  .proof-head h3{font-size:clamp(24px,3vw,32px);line-height:1.08;letter-spacing:-.03em;margin:2px 0 6px}
+  .proof-head p{font-size:13.5px;line-height:1.55;color:var(--muted-dark);margin:0;max-width:520px}
 
   /* --- Block Grids & Footers --- */
   .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -280,7 +246,7 @@
   .lb-demand-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
   .lb-demand-row span{font-size:8px;font-weight:700;padding:5px 7px;border-radius:999px;background:#f3efe8;color:var(--muted-dark)}
   .revenue-after .lb-demand-row span:first-child{background:#e7f1ed;color:var(--sage)}
-  .proof-note{margin-top:18px;font-size:11px;line-height:1.5;color:var(--muted);text-align:center}
+  .proof-note{margin-top:12px;font-size:11px;line-height:1.5;color:var(--muted);text-align:center}
 
   /* V1 UI Refinements: Make scope + commercial impact explicit */
   .v1 .scope-chip-row{
@@ -351,7 +317,7 @@
 
   /* SECTIONS */
   main{background:var(--bone)}
-  section{padding:88px 0}
+  section{padding:64px 0}
   .band-light{background:var(--bone-2)}
   .band-beige{background:var(--bone-3)}
   .band-dark{background:var(--charcoal);color:var(--white)}
@@ -444,7 +410,7 @@
   .mobile-cta{display:none}
   .mobile-cta.is-hidden{display:none !important}
 
-  /* ========== LIGHTBOX — EDITORIAL BEFORE / AFTER ========== */
+  /* ========== LIGHTBOX: EDITORIAL BEFORE / AFTER ========== */
   .lightbox-overlay{
     position:fixed;inset:0;background:var(--charcoal);z-index:1000;
     overflow-y:auto;display:flex;flex-direction:column;
@@ -523,24 +489,29 @@
   .lightbox-cta h3{font-family:'Lora',serif;font-weight:400;margin:0;color:#fff;font-size:30px;line-height:1.1}
   .lightbox-cta p{margin:0;max-width:600px;color:#b8c2be;font-size:14px;line-height:1.6}
   
-  /* SIMPLICITY PASS — immersive section rhythm */
+  /* SIMPLICITY PASS: immersive section rhythm */
   :root{--section-min:100svh}
   body{background:var(--bone);}
   .site-header{position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(27,37,36,.06);backdrop-filter:blur(12px)}
-  .hero{min-height:calc(100svh - 71px);display:flex;align-items:center;padding:34px 0 54px}
+  .hero{min-height:calc(100svh - 71px);display:flex;align-items:center;padding:28px 0 40px}
   .hero>.wrap{width:min(calc(100% - 48px),var(--max));}
-  .hero h1{max-width:860px;font-size:clamp(52px,6.5vw,86px);}
-  .hero-sub{max-width:680px;font-size:16px;line-height:1.55}
-  .photo-grid{grid-template-rows:270px 270px;}
-  section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
-  #transformation{min-height:100svh;padding:0;justify-content:center}
-  #transformation>.wrap{padding-top:56px}
-  .transform-intro{max-width:760px;margin-bottom:26px}
-  .transform-intro h2{font-size:clamp(42px,5.5vw,70px);}
-  .proof-rail{padding-bottom:56px}
-  .proof-card{min-height:clamp(520px,68svh,720px);display:flex;flex-direction:column;justify-content:center}
-  .proof-card .proof-head{margin-bottom:22px}
-  .proof-head p{max-width:520px}
+  .hero-copy{margin:0 0 20px}
+  .hero h1{max-width:860px;font-size:clamp(48px,5.8vw,78px);margin:6px 0 14px}
+  .hero-sub{max-width:640px;font-size:15.5px;line-height:1.55}
+  .photo-grid{grid-template-rows:minmax(220px,28vh) minmax(220px,28vh);}
+  section{min-height:100svh;display:flex;align-items:center;padding:64px 0}
+  #transformation{min-height:100svh;padding:0;justify-content:center;align-items:stretch}
+  #transformation>.wrap{padding-top:40px}
+  .transform-intro{max-width:760px;margin-bottom:18px}
+  .transform-intro h2{font-size:clamp(36px,4.8vw,58px);margin:6px 0 10px}
+  .chapter-nav{margin-bottom:16px}
+  .proof-rail{padding:6px calc(50vw - min(42.5vw, 470px)) 36px;width:100%}
+  .proof-card{min-height:0;padding:22px 28px;display:flex;flex-direction:column;justify-content:center}
+  .proof-card .proof-head{margin-bottom:14px}
+  .proof-head{margin-bottom:14px;gap:14px}
+  .proof-num{font-size:34px}
+  .proof-head h3{font-size:clamp(24px,3vw,32px);margin:2px 0 6px}
+  .proof-head p{max-width:520px;font-size:13.5px}
   .proof-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:2px}
   .band-dark,.band-beige,.band-light,.contact-band{min-height:100svh;display:flex;align-items:center}
   .band-dark .wrap,.band-beige .wrap,.band-light .wrap,.contact-band .wrap{width:min(calc(100% - 48px),var(--max));}
@@ -548,12 +519,17 @@
   .offer-copy{max-width:560px}
   .included{gap:11px;margin-top:22px}
   .included li span{max-width:560px}
-  .return-cta{margin-top:28px}
-  .philosophy-card{min-height:52svh}
-  .bio-card{min-height:44svh}
+  .v5 .section-heading{margin-bottom:18px}
+  .v5 .power-line{margin:0 auto 20px}
+  .v5 .nights{margin-top:8px}
+  .return-cta{margin-top:22px}
+  .philosophy-card{min-height:auto}
+  .bio-card{min-height:auto}
   .contact-grid{align-items:center}
   .contact-band h2{font-size:clamp(50px,6vw,82px)}
   .lightbox-intro h2{font-size:clamp(46px,6.5vw,82px)}
+  .scope-chip-row{margin:0 0 14px !important}
+  .airbnb-grid{grid-template-rows:100px 100px}
 
   /* RESPONSIVE */
   @media(max-width:960px){
@@ -564,29 +540,25 @@
   }
   @media(max-width:720px){
    body{padding-bottom:72px}
-   section{min-height:100svh;padding:58px 0}
-   .hero{min-height:calc(100svh - 61px);padding:24px 0 46px}
-   .hero h1{font-size:clamp(46px,13vw,66px);line-height:0.99}
+   section{min-height:100svh;padding:48px 0}
+   .hero{min-height:calc(100svh - 56px);padding:16px 0 28px}
+   .hero-copy{margin:0 0 14px}
+   .hero h1{font-size:clamp(40px,11vw,58px);line-height:0.99;margin-bottom:12px}
    .hero-sub{font-size:14.5px;line-height:1.5}
-   .photo-grid{grid-template-rows:200px 132px 132px}
-   #transformation{min-height:100svh}
-   #transformation>.wrap{padding-top:42px}
-   .transform-intro{margin-bottom:22px}
-   .transform-intro h2{font-size:38px}
+   .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 120px 120px;gap:6px;border-radius:20px}
+   #transformation{min-height:100svh;padding:0}
+   #transformation>.wrap{padding-top:28px}
+   .transform-intro{margin-bottom:14px}
+   .transform-intro h2{font-size:32px}
    .proof-card{min-height:0;justify-content:flex-start}
    .band-dark,.band-beige,.band-light,.contact-band{min-height:100svh}
    .philosophy-card,.bio-card{min-height:0}
    .wrap{width:min(calc(100% - 28px),var(--max))}
-   .nav{padding:16px 0}
+   .nav{padding:14px 0}
    .brand{font-size:13px;letter-spacing:.16em}
    .brand-logo{height:24px}
    .brand span{height:24px;line-height:24px}
-   .nav-link{padding:8px 12px;font-size:11px}
-   .hero{padding:10px 0 58px}
-   .hero h1{font-size:clamp(42px,12vw,62px);margin-bottom:15px}
-   .desktop-break{display:none}
-   .hero-sub{font-size:15px;line-height:1.58}
-   .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:205px 145px 145px;gap:6px;border-radius:20px}
+   .nav-link{display:none}
    .grid-img-1{grid-column:1 / -1;grid-row:1}
    .grid-img-2{grid-column:1;grid-row:2}
    .grid-img-3{grid-column:2;grid-row:2}
@@ -595,25 +567,16 @@
    .grid-label{right:12px;top:12px;font-size:8px;max-width:72%}
    .grid-label span{font-size:8px}
    .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
-   .hero-offer-row{grid-template-columns:1fr;gap:16px;margin-top:22px;padding-top:20px;text-align:center}
-   .hero-note{font-size:15px;justify-content:center;text-align:center}
-   .hero-offer-actions{justify-content:center;flex-direction:column;width:100%}
-   .offer-chip{justify-content:center;text-align:center;width:100%}
-   .hero-offer-row .accent-btn{width:100%}
-   section{padding:66px 0}
-   #transformation { padding: 0;}
-   .transform-section{padding:66px 0 24px}
-   .section-heading{margin-bottom:30px}
-   .section-heading h2{font-size:42px}
-   .transform-intro h2{font-size:36px}
+   .section-heading{margin-bottom:24px}
+   .section-heading h2{font-size:38px}
    
-   .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 20px) / 2)) 32px; }
-   .proof-card { flex: 0 0 calc(92vw - 20px); padding: 24px 16px; scroll-snap-align: center; border-radius: 20px; }
+   .proof-rail { gap: 16px; padding: 6px calc(50vw - calc((92vw - 20px) / 2)) 28px; }
+   .proof-card { flex: 0 0 calc(92vw - 20px); padding: 18px 14px; scroll-snap-align: center; border-radius: 20px; }
    
-   .proof-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-   .proof-num { font-size: 36px; line-height: 1; margin-bottom: 4px; }
-   .proof-head h3 { font-size: 22px; line-height: 1.15; margin: 4px 0 6px; }
-   .proof-head p { font-size: 13.5px; margin: 0; }
+   .proof-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
+   .proof-num { font-size: 28px; line-height: 1; margin-bottom: 2px; }
+   .proof-head h3 { font-size: 20px; line-height: 1.15; margin: 2px 0 4px; }
+   .proof-head p { font-size: 13px; margin: 0; }
 
    .copy-media, .revenue-media { padding: 10px; min-height: 0; }
    .copy-ui, .revenue-ui { padding: 10px; }
@@ -624,8 +587,9 @@
    .revenue-ui-head strong { font-size: 18px; }
    .copy-ui h4 { font-size: 18px; }
    .copy-ui p { font-size: 11px; }
-   .sequence-card-footer, .copy-card-footer, .revenue-card-footer { padding: 12px; }
-   .airbnb-grid{grid-template-rows:110px 110px}
+   .sequence-card-footer, .copy-card-footer, .revenue-card-footer { padding: 10px; }
+   .airbnb-grid{grid-template-rows:90px 90px}
+   .scope-chip-row{margin:0 0 10px !important}
    
    .offer-shell{gap:34px}
    .display{font-size:46px}
@@ -663,11 +627,10 @@
    .lightbox-cta h3 { font-size: 24px; }
   }
   @media(max-width:420px){
-   .hero h1{font-size:43px}
+   .hero h1{font-size:40px}
    .grid-img-1{background-position:center}
-   .offer-chip strong{font-size:21px}
    .price{font-size:43px}
-   .airbnb-grid{grid-template-rows:90px 90px}
+   .airbnb-grid{grid-template-rows:80px 80px}
   }
  </style>
 </head>
@@ -690,7 +653,7 @@
 <div>
 <div class="eyebrow">For Curaçao vacation-rental owners</div>
 <h1>Get noticed.<br/>Get booked.<br/>Earn five stars.</h1>
-<p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience — so the right guests notice, want, and book.</p>
+<p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience so the right guests notice, want, and book.</p>
 </div>
 </div>
 <div class="photo-grid" aria-label="Property before-and-after preview">
@@ -717,25 +680,7 @@
 See the proof
 </a>
 </div>
-<div class="hero-offer-row">
-<div class="hero-note">
-<span class="hero-note-dot"></span>
-<div><strong>5 launch properties</strong> available in Curaçao.</div>
-</div>
-<div class="hero-offer-actions">
-<div class="offer-chip">
-  <div>
-    <small>Launch rate</small>
-    <div class="price-line">
-      <span class="from">from</span>
-      <strong>850 USD</strong>
-    </div>
-    <em><span>Built to pay back</span></em>
-  </div>
-</div>
-<a class="accent-btn" href="#offer">See the system →</a>
-</div>
-</div>
+
 </div>
 </section>
 
@@ -789,8 +734,8 @@ See the proof
           </div>
         </div>
       </div>
-      <div style="margin-top: 24px; text-align: center;">
-        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:14px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
+      <div style="margin-top: 14px; text-align: center;">
+        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
           See the before &amp; after <span aria-hidden="true">→</span>
         </a>
       </div>
@@ -842,7 +787,7 @@ See the proof
                 <span class="copy-ui-search">high-intent search</span>
               </div>
               <h4>Private West Coast Villa · Pool · Sunset Views</h4>
-              <p>A hillside escape for slow mornings and easy access to Curaçao’s west coast.</p>
+              <p>A hillside escape for slow mornings and easy access to Curaçao's west coast.</p>
 
               <div class="copy-ui-surfaces">
                 <div class="copy-ui-surface"><b>Image captions</b>Context-rich &amp; intentional</div>
@@ -927,13 +872,13 @@ See the proof
 <div>
 <div class="eyebrow" style="color:#d7a08e">The launch system</div>
 <div class="display">One focused engagement.</div>
-<p class="offer-copy">We sharpen the listing before you spend months learning by trial and error — whether you’re launching new or repositioning an existing stay.</p>
+<p class="offer-copy">We sharpen the listing before you spend months learning by trial and error, whether you're launching new or repositioning an existing stay.</p>
 <ul class="included offer-items">
 <li>
 <span class="check">✓</span>
 <div>
 <strong><em>1. The Diagnostic</em> <span class="sep">·</span> Listing Audit</strong>
-<span>See what is helping the listing — and what is quietly costing you.</span>
+<span>See what is helping the listing, and what is quietly costing you.</span>
 </div>
 </li>
 <li>
@@ -947,7 +892,7 @@ See the proof
 <span class="check">✓</span>
 <div>
 <strong><em>3. The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
-<span>Give guests a clear reason to want the stay — and help them find it.</span>
+<span>Give guests a clear reason to want the stay, and help them find it.</span>
 </div>
 </li>
 <li>
@@ -961,7 +906,7 @@ See the proof
 <span class="check">✓</span>
 <div>
 <strong><em>5. The Hospitality</em> <span class="sep">·</span> Guest Experience</strong>
-<span>Make the stay match the promise — from arrival to review.</span>
+<span>Make the stay match the promise, from arrival to review.</span>
 </div>
 </li>
 </ul>
@@ -1265,47 +1210,79 @@ See the proof
 <!-- ======================================================== -->
 
 <script>
-  // Chapter Nav & Rail Logic
+  // Chapter Nav & Rail Logic: position-based (no IntersectionObserver ambiguity)
   document.addEventListener('DOMContentLoaded', () => {
     const rail = document.querySelector('.proof-rail');
     const navLinks = document.querySelectorAll('.chapter-nav a');
     const cards = document.querySelectorAll('.proof-card');
 
-    if (rail && navLinks.length && cards.length) {
+    if (!rail || !navLinks.length || !cards.length) return;
+
+    function setActiveLink(cardId) {
       navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const targetId = link.getAttribute('href').substring(1);
-          const targetCard = document.getElementById(targetId);
-          if (targetCard) {
-            targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-          }
-        });
+        link.classList.toggle('is-active', link.getAttribute('href') === `#${cardId}`);
       });
-
-      const observerOptions = {
-        root: rail,
-        rootMargin: '0px',
-        threshold: 0.6 
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const activeId = entry.target.id;
-            navLinks.forEach(link => {
-              if (link.getAttribute('href') === `#${activeId}`) {
-                link.classList.add('is-active');
-              } else {
-                link.classList.remove('is-active');
-              }
-            });
-          }
-        });
-      }, observerOptions);
-
-      cards.forEach(card => observer.observe(card));
     }
+
+    function getCenteredCard() {
+      const railRect = rail.getBoundingClientRect();
+      const railCenter = railRect.left + railRect.width / 2;
+      let closest = null;
+      let closestDistance = Infinity;
+      cards.forEach(card => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(cardCenter - railCenter);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closest = card;
+        }
+      });
+      return closest;
+    }
+
+    let ticking = false;
+    function onRailScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const centered = getCenteredCard();
+        if (centered) setActiveLink(centered.id);
+        ticking = false;
+      });
+    }
+
+    rail.addEventListener('scroll', onRailScroll, { passive: true });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetCard = document.getElementById(targetId);
+        if (!targetCard) return;
+
+        // Compute the scroll offset purely within the rail; never touches
+        // the page's vertical scroll, so the full-screen section never shifts.
+        const railRect = rail.getBoundingClientRect();
+        const cardRect = targetCard.getBoundingClientRect();
+        const cardOffsetWithinRail = (cardRect.left - railRect.left) + rail.scrollLeft;
+        const targetLeft = cardOffsetWithinRail + (cardRect.width / 2) - (rail.clientWidth / 2);
+
+        rail.scrollTo({ left: targetLeft, behavior: 'smooth' });
+        setActiveLink(targetId); // immediate feedback; scroll handler will confirm
+      });
+    });
+
+    // Confirm the correct initial state once layout has fully settled
+    // (fonts/images can shift layout after DOMContentLoaded).
+    window.addEventListener('load', () => {
+      const centered = getCenteredCard();
+      if (centered) setActiveLink(centered.id);
+    });
+    requestAnimationFrame(() => {
+      const centered = getCenteredCard();
+      if (centered) setActiveLink(centered.id);
+    });
   });
 
   // Lightbox Logic
