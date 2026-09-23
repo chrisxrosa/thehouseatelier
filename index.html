@@ -183,18 +183,27 @@
   .proof-head h3{font-size:clamp(28px,3.5vw,36px);line-height:1.08;letter-spacing:-.03em;margin:4px 0 8px}
   .proof-head p{font-size:14px;line-height:1.65;color:var(--muted-dark);margin:0;max-width:620px}
 
-  /* --- Block 01: 5-Photo Sequence Grids --- */
+  /* --- Block Grids & Footers --- */
   .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06); display: flex; flex-direction: column;}
   
   .sequence-card-footer, .copy-card-footer, .revenue-card-footer {
-    padding: 14px 16px 16px; background: var(--bone-2); border-top: 1px solid var(--line); flex-grow: 1;
+    padding: 12px 16px; 
+    background: var(--bone-2); 
+    border-top: 1px solid var(--line); 
+    flex-grow: 1;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
   }
   .sequence-card-footer strong, .copy-card-footer strong, .revenue-card-footer strong {
-    display: block; font-size: 13px; margin-bottom: 3px; color: var(--ink);
-  }
-  .sequence-card-footer span, .copy-card-footer span, .revenue-card-footer span {
-    display: block; font-size: 12px; line-height: 1.5; color: var(--muted-dark);
+    display: block; 
+    font-size: 11px; 
+    font-weight: 700; 
+    letter-spacing: .08em; 
+    text-transform: uppercase; 
+    color: var(--ink); 
+    margin: 0;
   }
 
   .airbnb-grid{
@@ -549,10 +558,12 @@
    
    .proof-rail { gap: 16px; padding: 10px calc(50vw - calc((92vw - 20px) / 2)) 32px; }
    .proof-card { flex: 0 0 calc(92vw - 20px); padding: 24px 16px; scroll-snap-align: center; border-radius: 20px; }
-   .proof-head { grid-template-columns: 48px 1fr; gap: 12px; margin-bottom: 20px; }
-   .proof-num { font-size: 32px; }
-   .proof-head h3 { font-size: 22px; line-height: 1.15; }
-   .proof-head p { font-size: 13.5px; margin-top: 6px; }
+   
+   /* Changed to flex column to give text full width and solve alignment issue */
+   .proof-head { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+   .proof-num { font-size: 36px; line-height: 1; margin-bottom: 4px; }
+   .proof-head h3 { font-size: 22px; line-height: 1.15; margin: 4px 0 6px; }
+   .proof-head p { font-size: 13.5px; margin: 0; }
 
    .copy-media, .revenue-media { padding: 10px; min-height: 0; }
    .copy-ui, .revenue-ui { padding: 10px; }
@@ -563,7 +574,7 @@
    .revenue-ui-head strong { font-size: 18px; }
    .copy-ui h4 { font-size: 18px; }
    .copy-ui p { font-size: 11px; }
-   .sequence-card-footer, .copy-card-footer, .revenue-card-footer { padding: 14px; }
+   .sequence-card-footer, .copy-card-footer, .revenue-card-footer { padding: 12px; }
    .airbnb-grid{grid-template-rows:110px 110px}
    
    .offer-shell{gap:34px}
@@ -710,7 +721,6 @@ See the transformation
           </div>
           <div class="sequence-card-footer">
             <strong>Before</strong>
-            <span>Typical host photos in random order. The main shot doesn’t sell the stay.</span>
           </div>
         </div>
         <div class="sequence-card seq-after">
@@ -723,7 +733,6 @@ See the transformation
           </div>
           <div class="sequence-card-footer">
             <strong>After</strong>
-            <span>A purposeful sequence: hero shot, lifestyle frames, and detail shots that confirm quality.</span>
           </div>
         </div>
       </div>
@@ -769,7 +778,6 @@ See the transformation
           </div>
           <div class="copy-card-footer">
             <strong>Before</strong>
-            <span>Basic paragraph; algorithm guessing; photos do 100% of the selling.</span>
           </div>
         </article>
         <article class="copy-card">
@@ -791,7 +799,6 @@ See the transformation
           </div>
           <div class="copy-card-footer">
             <strong>After</strong>
-            <span>Title, narrative, and backend mapped to high-intent searches.</span>
           </div>
         </article>
       </div>
@@ -828,7 +835,6 @@ See the transformation
           </div>
           <div class="revenue-card-footer">
             <strong>Before</strong>
-            <span>Flat rate treats quiet weekdays and high-demand weekends the same.</span>
           </div>
         </article>
         <article class="revenue-card">
@@ -853,7 +859,6 @@ See the transformation
           </div>
           <div class="revenue-card-footer">
             <strong>After</strong>
-            <span>Rates adapt: premium yield when demand is high, competitive when soft.</span>
           </div>
         </article>
       </div>
