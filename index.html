@@ -508,6 +508,12 @@
   .transform-intro h2{font-size:clamp(36px,4.8vw,58px);margin:6px 0 10px}
   .chapter-nav{margin-bottom:12px}
   .proof-rail{padding:8px calc(50vw - min(42.5vw, 470px)) 8px;width:100%;flex:0 0 auto}
+  /* Shadow fix: extra vertical padding lets shadows render inside the scroller's clip box.
+     Equal negative margins cancel it out, so layout is unchanged. */
+  .proof-rail{padding-top:72px;padding-bottom:72px;margin-top:-64px;margin-bottom:-64px}
+  .chapter-nav{position:relative;z-index:2}
+  #transformation{position:relative;z-index:1}
+  .proof-card{box-shadow:0 22px 60px -18px rgba(27,37,36,.20),0 6px 20px rgba(27,37,36,.05)}
   .proof-card{min-height:0;padding:20px 26px;display:flex;flex-direction:column;justify-content:center}
   .proof-card .proof-head{margin-bottom:12px}
   .proof-head{margin-bottom:12px;gap:14px}
@@ -573,6 +579,7 @@
    .section-heading h2{font-size:38px}
    
    .proof-rail { gap: 16px; padding: 6px calc(50vw - calc((92vw - 20px) / 2)); }
+   .proof-rail { padding-top: 72px; padding-bottom: 72px; margin-top: -66px; margin-bottom: -66px; }
    .proof-card { flex: 0 0 calc(92vw - 20px); padding: 18px 14px; scroll-snap-align: center; border-radius: 20px; }
    
    .proof-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
@@ -879,36 +886,37 @@ See the proof
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>The Diagnostic</em> <span class="sep">·</span> Listing Audit</strong>
+<strong><em>1. The Diagnostic</em> <span class="sep">·</span> Listing Audit</strong>
 <span>See what is helping the listing, and what is quietly costing you.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>The Visuals</em> <span class="sep">·</span> Photography</strong>
+<strong><em>2. The Visuals</em> <span class="sep">·</span> Photography</strong>
 <span>Make the first impression stronger and the property easier to choose.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
+<strong><em>3. The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
 <span>Give guests a clear reason to want the stay, and help them find it.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>The Numbers</em> <span class="sep">·</span> Pricing &amp; Calendar</strong>
+<strong><em>4. The Numbers</em> <span class="sep">·</span> Pricing &amp; Calendar</strong>
 <span>Build rates around seasonality, demand, day-of-week patterns, and local competition.</span>
 </div>
 </li>
 <li>
 <span class="check">✓</span>
 <div>
-<strong><em>Bonus</em> <span class="sep">·</span>Guest Experience Consultation</strong>
-<span>Practical guidance on details that make the stay look, feel, and function better for guests, grounded in Airbnb Luxe standards.</span>
+<strong><em>BONUS</em> <span class="sep">·</span> <em>The Hospitality</em></strong>
+<strong>Expert Eye Consultation</strong>
+<span>Practical, experience-based guidance on details that make the stay look, feel, and function better for guests.</span>
 </div>
 </li>
 </ul>
