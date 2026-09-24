@@ -68,8 +68,6 @@
   .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/property-2-after.jpg');background-color:#8a6d5e}
   .grid-label{position:absolute;z-index:2;right:18px;top:17px;text-align:right;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
   .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
-  .show-all-btn{position:absolute;z-index:3;right:18px;bottom:18px;display:flex;align-items:center;gap:7px;border:1px solid rgba(27,37,36,.12);background:rgba(255,254,250,.95);color:var(--ink);padding:9px 13px;border-radius:11px;box-shadow:0 8px 22px rgba(0,0,0,.12);font-size:11px;font-weight:700;cursor:pointer;text-decoration:none}
-  .show-all-btn:hover{background:#fff}
   
   .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
   .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
@@ -574,7 +572,6 @@
    .grid-img-5{grid-column:2;grid-row:3}
    .grid-label{right:12px;top:12px;font-size:8px;max-width:72%}
    .grid-label span{font-size:8px}
-   .show-all-btn{right:12px;bottom:12px;font-size:10px;padding:8px 10px}
    .section-heading{margin-bottom:24px}
    .section-heading h2{font-size:38px}
    
@@ -642,6 +639,48 @@
    .price{font-size:43px}
    .airbnb-grid{grid-template-rows:80px 80px}
   }
+
+  /* ========== HERO: centered, strictly one screen ==========
+     Header + hero always equal exactly 100svh. The header gets a fixed height,
+     the hero takes the remainder, and the photo grid flexes to fill whatever
+     space the copy and CTA leave. Nothing can push the hero taller or shorter. */
+  :root{--header-h:72px}
+  .site-header{height:var(--header-h)}
+  .nav{height:100%;padding:0}
+  .hero{
+    height:calc(100svh - var(--header-h));
+    min-height:0;
+    max-height:calc(100svh - var(--header-h));
+    padding:clamp(14px,3svh,32px) 0 clamp(18px,4svh,36px);
+    align-items:stretch;
+    overflow:hidden;
+  }
+  .hero>.wrap{height:100%;min-height:0;display:flex;flex-direction:column}
+  .hero-copy{flex:none;text-align:center;margin:0 0 clamp(14px,2.6svh,26px)}
+  .hero h1{
+    max-width:none;
+    margin:0 auto clamp(8px,1.6svh,16px);
+    font-size:clamp(36px,min(5.8vw,8svh),78px);
+  }
+  .hero-sub{max-width:600px;margin:0 auto}
+  .hero-actions{display:flex;justify-content:center;margin-top:clamp(14px,2.6svh,24px)}
+  .hero-cta{
+    padding:clamp(14px,2.2svh,19px) clamp(26px,3vw,38px);
+    font-size:clamp(13px,1.6svh,15px);
+    border-radius:14px;
+    box-shadow:0 16px 36px -12px rgba(184,95,71,.6);
+  }
+  .hero-cta:hover{box-shadow:0 20px 40px -12px rgba(158,78,58,.65)}
+  .photo-grid{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1fr) minmax(0,1fr)}
+  .grid-img{min-height:0}
+
+  @media(max-width:720px){
+   :root{--header-h:56px}
+   .hero h1{font-size:clamp(34px,min(11vw,7.5svh),58px);line-height:.99}
+   .hero-sub{font-size:14px;line-height:1.5}
+   .photo-grid{grid-template-rows:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr)}
+   .hero-cta{width:100%;max-width:360px}
+  }
  </style>
 </head>
 <body>
@@ -662,6 +701,9 @@
 <div>
 <h1>Get noticed.<br/>Get booked.<br/><span style="color:var(--accent);">Get 5-starred.</span></h1>
 <p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience so the right guests notice, desire, and book.</p>
+<div class="hero-actions">
+<a class="accent-btn hero-cta" href="#contact">Request a launch slot <span aria-hidden="true">→</span></a>
+</div>
 </div>
 </div>
 <div class="photo-grid" aria-label="Property before-and-after preview">
@@ -683,10 +725,6 @@
 <div class="grid-img grid-img-5" aria-label="Property 2 after">
 <div class="grid-label">After</div>
 </div>
-<a class="show-all-btn" href="#transformation">
-<svg aria-hidden="true" fill="none" height="12" stroke="currentColor" stroke-linecap="round" stroke-width="2.2" viewBox="0 0 24 24" width="12"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-See the transformation
-</a>
 </div>
 
 </div>
