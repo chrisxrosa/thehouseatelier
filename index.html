@@ -654,7 +654,6 @@
 <a class="nav-link" href="#contact">Request a launch slot <span aria-hidden="true">↗</span></a>
 </div>
 </header>
-<div id="top"></div>
 <main>
 <!-- HERO -->
 <section class="hero">
@@ -1215,6 +1214,12 @@ See the transformation
 <!-- ======================================================== -->
 
 <script>
+  // Logo link: always scroll to the true top of the page
+  document.querySelector('.brand').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // Chapter Nav & Rail Logic: position-based (no IntersectionObserver ambiguity)
   document.addEventListener('DOMContentLoaded', () => {
     const rail = document.querySelector('.proof-rail');
