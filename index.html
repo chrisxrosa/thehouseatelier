@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>The House Atelier | Price right. Get booked. Earn what it's worth.</title>
+<title>The House Atelier | Well priced. Well shown. Well booked.</title>
 <meta name="description" content="Revenue strategy for Curaçao vacation rentals. Pricing first, then photography, listing copy and presence across Airbnb, Booking.com, Vrbo, Micazu, Google and your own booking site."/>
 <meta name="theme-color" content="#1b2524"/>
 <link rel="icon" type="image/png" href="assets/tha-icon.png"/>
@@ -36,8 +36,9 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 /* HEADER */
 .site-header{position:sticky;top:0;z-index:40;height:var(--header-h);background:rgba(253,251,247,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,37,36,.06)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:100%;gap:14px}
-.brand{display:inline-flex;align-items:center;gap:11px;font-size:15px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);white-space:nowrap}
-.brand img{height:28px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-size:16px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);line-height:1}
+.brand-logo{height:28px;width:auto;display:block;object-fit:contain}
+.brand span{display:inline-flex;align-items:center;height:28px;line-height:28px;white-space:nowrap}
 .navr{display:flex;align-items:center;gap:10px}
 .pill{font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.3);cursor:pointer;color:var(--ink);transition:.2s}
 .pill:hover{background:#fff}
@@ -48,7 +49,7 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 .hero-copy{flex:none;text-align:center;margin-bottom:clamp(14px,2.6svh,26px)}
 .hero h1{font-size:clamp(36px,min(5.8vw,8svh),78px);line-height:1.02;letter-spacing:-.04em;margin:0 auto clamp(8px,1.6svh,16px)}
 .hero h1 span{color:var(--acc)}
-.hero-sub{max-width:560px;margin:0 auto;font-size:15.5px;line-height:1.55;color:var(--md)}
+.hero-sub{max-width:640px;margin:0 auto;font-size:15.5px;line-height:1.55;color:var(--md)}
 .hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:clamp(14px,2.6svh,24px)}
 .photo-grid{flex:1 1 0;min-height:0;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:8px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--bone3)}
 .gi{position:relative;min-height:0;background-size:cover;background-position:center;overflow:hidden}
@@ -240,7 +241,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   body{padding-bottom:72px}
   .wrap{width:calc(100% - 28px)}
   section{padding:52px 0}
-  .brand{font-size:12px;letter-spacing:.14em}.brand img{height:24px}
+  .brand{font-size:13px;letter-spacing:.16em}.brand-logo{height:24px}.brand span{height:24px;line-height:24px}
   .nav .btn{display:none}
   .hero h1{font-size:clamp(34px,min(11vw,7.5svh),58px);line-height:.99}
   .hero-sub{font-size:14px}
@@ -271,10 +272,13 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="#top"><img src="assets/tha-icon.png" alt=""/><span>The House Atelier</span></a>
+    <a class="brand" href="#top" aria-label="The House Atelier, back to top">
+      <img src="assets/tha-icon.png" alt="The House Atelier Mark" class="brand-logo"/>
+      <span>The House Atelier</span>
+    </a>
     <div class="navr">
       <button class="pill" id="lang" type="button" aria-label="Switch language">NL</button>
-      <a class="btn book" href="#contact" data-nl="Plan je strategie ↗">Book a strategy ↗</a>
+      <a class="btn check" href="#contact" data-nl="Gratis Revenue Check ↗">Free Revenue Check ↗</a>
     </div>
   </div>
 </header>
@@ -285,11 +289,11 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <h1 data-nl="Juist geprijsd.<br/>Vaker geboekt.<br/><span>Meer verdiend.</span>">Price it right.<br/>Get booked.<br/><span>Earn what it's worth.</span></h1>
-      <p class="hero-sub" data-nl="Omzetstrategie voor vakantieverhuur op Curaçao. We beginnen bij je prijzen en versterken daarna wat je tegenhoudt. Jij houdt de sleutels.">Revenue strategy for Curaçao vacation rentals. We start with your pricing, then fix what holds you back. You keep the keys.</p>
+      <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
+      <p class="hero-sub" data-nl="Marktgedreven prijzen bepalen wat je woning op Curaçao waard is.<br/>Foto's, tekst en kanalen zorgen dat gasten dat ook betalen.">Market-driven pricing sets what your Curaçao rental is worth.<br/>Photos, copy and channels get guests to pay it.</p>
       <div class="hero-actions">
-        <a class="btn book" href="#contact" data-nl="Plan een Prijsstrategie · $249 →">Book a Pricing Strategy · $249 →</a>
-        <a class="btn btn-ghost" href="#levers" data-nl="Zie hoe het werkt">See how it works</a>
+        <a class="btn book" href="#contact" data-nl="Strategie + instelling · $349 →">Strategy &amp; Setup · $349 →</a>
+        <a class="btn btn-ghost check" href="#contact" data-nl="Gratis Revenue Check">Free Revenue Check</a>
       </div>
     </div>
     <div class="photo-grid" aria-label="Property before-and-after preview">
@@ -302,17 +306,20 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   </div>
 </section>
 
-<!-- MARKET -->
+<!-- PROBLEM -->
 <section class="market">
   <div class="wrap">
-    <div class="eyebrow" data-nl="De markt is veranderd">The market changed</div>
-    <h2 data-nl="Stilzitten kost nu geld.">Standing still now costs money.</h2>
+    <div class="eyebrow" data-nl="Het probleem">The problem</div>
+    <h2 data-nl="Meer woningen. Lagere prijzen.<br/>Lege nachten.">More homes. Lower rates.<br/>Empty nights.</h2>
     <div class="nums">
-      <div class="num"><b data-nl="15,5%">15.5%</b><p data-nl="Wat Airbnb sinds september op elke boeking inhoudt.">What Airbnb now takes from every booking, since September.</p></div>
-      <div class="num"><b>2x</b><p data-nl="Wat de beste 25% in Willemstad verdient tegenover een gemiddelde woning.">What the top 25% in Willemstad earn versus a typical listing.</p></div>
-      <div class="num"><b>12x</b><p data-nl="Hoeveel sneller het aanbod groeit dan de vraag.">How much faster supply is growing than demand.</p></div>
+      <div class="num"><b>12x</b><p data-nl="Zo veel sneller groeit het aanbod dan de vraag op Curaçao.">How much faster supply is growing than demand in Curaçao.</p></div>
+      <div class="num"><b>&minus;11%</b><p data-nl="De daling van de gemiddelde nachtprijs in het afgelopen jaar.">The drop in the average nightly rate over the past year.</p></div>
+      <div class="num"><b>~80</b><p data-nl="Lege nachten per jaar: het verschil tussen een gemiddelde woning en de beste 25% in Willemstad.">Empty nights a year: the gap between a typical listing and the top 25% in Willemstad.</p></div>
     </div>
-    <p class="src"><span data-nl="Bronnen:">Sources:</span> <a href="https://www.hostfully.com/blog/airbnb-host-fees/" target="_blank" rel="noopener">Hostfully</a> · <a href="https://www.airroi.com/airbnb-data/cura%C3%A7ao/cura%C3%A7ao/willemstad" target="_blank" rel="noopener">AirROI</a> · <a href="https://www.curacao.nu/nieuws/toerisme/93854/rapport-vakantieverhuur-rukt-op-naar-gewone-woonwijken-op-curacao" target="_blank" rel="noopener">Curaçao.nu</a></p>
+    <div class="hero-actions" style="margin-top:44px">
+      <a class="btn check" href="#contact" data-nl="Waar sta jij? Gratis Revenue Check →">Where do you stand? Free Revenue Check →</a>
+    </div>
+    <p class="src"><span data-nl="Bronnen:">Sources:</span> <a href="https://www.curacao.nu/nieuws/toerisme/93854/rapport-vakantieverhuur-rukt-op-naar-gewone-woonwijken-op-curacao" target="_blank" rel="noopener">Curaçao.nu</a> · <a href="https://www.airdna.co/vacation-rental-data/app/cw/curacao/curacao/overview" target="_blank" rel="noopener">AirDNA</a> · <a href="https://www.airroi.com/airbnb-data/cura%C3%A7ao/cura%C3%A7ao/willemstad" target="_blank" rel="noopener">AirROI</a></p>
   </div>
 </section>
 
@@ -320,7 +327,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <section id="levers">
   <div class="wrap">
     <div class="intro">
-      <div class="eyebrow" data-nl="Jouw kans">Your opportunity</div>
+      <div class="eyebrow" data-nl="De oplossing">The solution</div>
       <h2 data-nl="Vier dingen bepalen wat je verdient.">Four things decide what you earn.</h2>
       <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent. Wij beginnen bij het eerste.">What you charge. What guests see. What you promise. Where you show up. We start with the first.</p>
     </div>
@@ -422,25 +429,25 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <div class="eyebrow" style="color:#d7a08e" data-nl="Zo werkt het">How it works</div>
       <div class="display"><span data-nl="Begin bij de cijfers.">Start with the numbers.</span><small data-nl="Elke stap laat zien wat de volgende oplevert.">Each step shows you what the next one is worth.</small></div>
       <ul class="spine">
-        <li><span class="k">01</span><div><strong data-nl="Prijsstrategie · $249">Pricing Strategy · $249</strong><span data-nl="Je woning tegenover vergelijkbare woningen, twee scenario's en een gesprek van 30 minuten.">Your listing against similar homes, two scenarios, and a 30-minute call.</span></div></li>
-        <li><span class="k">02</span><div><strong data-nl="Prijsinstelling · $349">Pricing Setup · $349</strong><span data-nl="Onze revenue specialist zet je prijzen goed neer. De $249 wordt volledig verrekend.">Our revenue specialist puts your pricing in place. Your $249 is fully credited.</span></div></li>
+        <li><span class="k">01</span><div><strong data-nl="Gratis Revenue Check">Free Revenue Check</strong><span data-nl="Je belangrijkste cijfers tegenover vergelijkbare woningen. Binnen 2 werkdagen.">Your headline numbers against similar homes. Within 2 business days.</span></div></li>
+        <li><span class="k">02</span><div><strong data-nl="Strategie + instelling · $349">Strategy &amp; Setup · $349</strong><span data-nl="We analyseren je woning, bespreken de bevindingen en zetten je prijzen in één keer goed neer.">We analyze your listing, walk you through the findings, and put your new pricing in place in one go.</span></div></li>
         <li><span class="k">03</span><div><strong data-nl="Revenue Partner · vanaf $99/mnd">Revenue Partner · from $99/mo</strong><span data-nl="Doorlopende reviews zodat je prijzen scherp blijven. Maandelijks opzegbaar.">Ongoing reviews so your pricing stays sharp. Cancel anytime.</span></div></li>
       </ul>
     </div>
     <aside class="price-card">
       <div class="eyebrow" data-nl="Begin hier">Start here</div>
-      <div style="font-weight:700;font-size:14px;margin-top:10px" data-nl="Prijsstrategie">Pricing Strategy</div>
-      <div class="big">$249</div>
-      <div class="pnote" data-nl="Volledig verrekend met je Prijsinstelling">Fully credited toward your Pricing Setup</div>
+      <div style="font-weight:700;font-size:14px;margin-top:10px" data-nl="Prijsstrategie + instelling">Pricing Strategy &amp; Setup</div>
+      <div class="big">$349</div>
+      <div class="pnote" data-nl="Advies en uitvoering in één keer">Consultation and implementation in one go</div>
       <ul class="inc">
-        <li data-nl="Omzet, bezetting en nachtprijs tegenover vergelijkbare woningen">Revenue, occupancy and nightly rate vs. similar homes</li>
-        <li data-nl="Scenario A: alleen prijs">Scenario A: pricing only</li>
-        <li data-nl="Scenario B: prijs plus presentatie">Scenario B: pricing plus presence</li>
+        <li data-nl="Je woning tegenover vergelijkbare woningen">Your listing against similar homes</li>
         <li data-nl="Wat de 15,5% van Airbnb je kost">What Airbnb's 15.5% is costing you</li>
-        <li data-nl="Gesprek van 30 minuten met een actieplan">30-minute call with an action plan</li>
+        <li data-nl="Gesprek van 30 minuten over de bevindingen">30-minute call on the findings</li>
+        <li data-nl="Nieuwe prijzen, seizoenskalender en verblijfsregels ingesteld">New rates, seasonal calendar and stay rules set up</li>
+        <li data-nl="Eerste maand Revenue Partner inbegrepen">First month of Revenue Partner included</li>
       </ul>
-      <a class="btn book" href="#contact" data-nl="Plan je Prijsstrategie →">Book your Pricing Strategy →</a>
-      <div class="micro" data-nl="Eén vaste prijs voor elke woning. Rapport binnen 5 werkdagen.">One flat price for any property. Report within 5 business days.</div>
+      <a class="btn book" href="#contact" data-nl="Plan je Strategie + instelling →">Book Strategy &amp; Setup →</a>
+      <div class="micro" data-nl="Eén vaste prijs voor elke woning. Nog niet zeker? Begin met de gratis Revenue Check.">One flat price for any property. Not sure yet? Start with the free Revenue Check.</div>
     </aside>
   </div>
 </section>
@@ -467,8 +474,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <thead><tr><th></th><th data-nl="1–2 slpk">1–2 bed</th><th data-nl="3–4 slpk">3–4 bed</th><th data-nl="5+ slpk">5+ bed</th></tr></thead>
         <tbody>
           <tr class="grp"><td colspan="4" data-nl="Prijs">Pricing</td></tr>
-          <tr><td data-nl="Prijsstrategie<small>Verrekend met de Prijsinstelling</small>">Pricing Strategy<small>Credited toward Pricing Setup</small></td><td colspan="3">$249</td></tr>
-          <tr><td data-nl="Prijsinstelling<small>Eerste maand Revenue Partner inbegrepen</small>">Pricing Setup<small>First month of Revenue Partner included</small></td><td colspan="3">$349</td></tr>
+          <tr><td>Revenue Check<small data-nl="Je belangrijkste cijfers">Your headline numbers</small></td><td colspan="3" data-nl="Gratis">Free</td></tr>
+          <tr><td data-nl="Strategie + instelling<small>Eerste maand Revenue Partner inbegrepen</small>">Strategy &amp; Setup<small>First month of Revenue Partner included</small></td><td colspan="3">$349</td></tr>
           <tr><td data-nl="Revenue Partner<small>Per maand</small>">Revenue Partner<small>Per month</small></td><td>$99<small data-nl="maandelijkse review">monthly review</small></td><td>$199<small data-nl="tweewekelijkse review">biweekly review</small></td><td>$399<small data-nl="wekelijkse review">weekly review</small></td></tr>
           <tr class="grp"><td colspan="4" data-nl="Zichtbaarheid (eenmalig)">Presence (one-time)</td></tr>
           <tr><td data-nl="Het beeld<small>20 · 30 · 40 foto's · drone +$100</small>">The Visuals<small>20 · 30 · 40 photos · drone +$100</small></td><td>$329</td><td>$449</td><td>$649</td></tr>
@@ -520,6 +527,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <details open><summary data-nl="Zijn jullie een beheerder?">Are you a property manager?</summary><p data-nl="Nee. We doen de commerciële kant: prijzen, presentatie en kanalen. Schoonmaak, sleutels en gasten blijven bij jou of bij wie je nu helpt.">No. We handle the commercial side: pricing, presentation and channels. Cleaning, keys and guests stay with you or whoever helps you now.</p></details>
       <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Airbnb, Booking.com, PriceLabs en OwnerRez staan op jouw naam. Wij werken er als teamlid in.">You do. Airbnb, Booking.com, PriceLabs and OwnerRez stay in your name. We work inside them as team members.</p></details>
       <details><summary data-nl="Welke softwarekosten betaal ik zelf?">What software do I pay for?</summary><p data-nl="PriceLabs voor dynamische prijzen, ongeveer $10 tot $20 per maand. Met extra kanalen of een eigen site ook OwnerRez. De exacte kosten staan in je strategie.">PriceLabs for dynamic pricing, roughly $10 to $20 a month. With extra channels or a direct site, OwnerRez too. Exact costs are in your strategy.</p></details>
+      <details><summary data-nl="Wat zit er in de gratis Revenue Check?">What's in the free Revenue Check?</summary><p data-nl="Je omzet, bezetting en nachtprijs tegenover vergelijkbare woningen in je buurt, en waar het grootste verschil zit. Geen verplichting.">Your revenue, occupancy and nightly rate against similar homes nearby, and where the biggest gap is. No obligation.</p></details>
       <details><summary data-nl="Wat als mijn woning al goed presteert?">What if my listing already performs well?</summary><p data-nl="Dan laat de strategie dat zien, en meestal ook waar nog ruimte zit. Daarna beslis je zelf.">Then the strategy will show it, and usually where there's still room. You decide from there.</p></details>
       <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Een fotoshoot' in het formulier. We doen er op de dag van de shoot een korte omzetsnapshot bij.">Yes. Choose "A photo shoot" in the form. We include a quick revenue snapshot on shoot day.</p></details>
       <details><summary data-nl="Hoe zit het met de voorgestelde toeristenheffing in 2027?">What about the proposed 2027 tourist tax?</summary><p data-nl="De conceptbegroting stelt voor de 7% belasting op verblijf te vervangen door een heffing per bezoeker. Het is nog geen wet. Als het doorgaat, passen we je prijzen erop aan.">The draft budget proposes replacing the 7% accommodation tax with a per-visitor entry fee. It isn't law yet. If it passes, we'll adjust your pricing for it.</p></details>
@@ -547,8 +555,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <input type="hidden" name="source" id="fSource" value="website"/>
         <div class="full"><label for="interest" data-nl="Ik wil graag">I'd like</label>
           <select id="interest" name="interest">
-            <option value="strategy" data-nl="Een Prijsstrategie ($249)">A Pricing Strategy ($249)</option>
-            <option value="snapshot" data-nl="Eerst een gratis snapshot">A free snapshot first</option>
+            <option value="check" data-nl="Een gratis Revenue Check">A free Revenue Check</option>
+            <option value="strategy" data-nl="Strategie + instelling ($349)">Strategy &amp; Setup ($349)</option>
             <option value="photos" data-nl="Een fotoshoot">A photo shoot</option>
           </select></div>
         <div class="full"><label for="url" data-nl="Link naar je advertentie">Listing link</label><input id="url" name="url" placeholder="https://airbnb.com/rooms/..."/></div>
@@ -575,7 +583,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 </footer>
 
 <div class="mcta" id="mcta">
-  <div><small data-nl="Prijsstrategie">Pricing Strategy</small><strong>$249</strong></div>
+  <div><small data-nl="Strategie + instelling">Strategy &amp; Setup</small><strong>$349</strong></div>
   <a class="btn book" href="#contact" data-nl="Plannen →">Book →</a>
 </div>
 
@@ -595,7 +603,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <script>
 /* ===== CONFIG: fill in before launch ===== */
 const CONFIG = {
-  strategyBookingUrl: '',  // Stripe Payment Link or paid Calendly event for the $249 Strategy. Empty = buttons open the form.
+  strategyBookingUrl: '',  // Stripe Payment Link or paid Calendly event for the $349 Strategy & Setup. Empty = buttons open the form.
   webhookUrl: 'https://hook.us2.make.com/ufmwxu3fiphmu69rlnmx1bmb7colv9ey',
   whatsappNumber: '59996640824'
 };
@@ -607,6 +615,7 @@ $$('.book').forEach(a => {
   if (CONFIG.strategyBookingUrl) { a.href = CONFIG.strategyBookingUrl; a.target = '_blank'; a.rel = 'noopener'; }
   else a.addEventListener('click', () => { interest.value = 'strategy'; });
 });
+$$('.check').forEach(a => a.addEventListener('click', () => { interest.value = 'check'; }));
 
 /* Photo grids in card 02 + lightbox rows */
 $$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.createElement('i'); i.style.backgroundImage = `url(assets/seq-${g.dataset.s}-${n}.jpg)`; g.appendChild(i); } });
@@ -647,7 +656,7 @@ $('#lang').addEventListener('click', () => setLang(document.documentElement.lang
   if (!l && (navigator.language || '').toLowerCase().startsWith('nl')) l = 'nl';
   setLang(l === 'nl' ? 'nl' : 'en');
   if (p.get('utm_source')) $('#fSource').value = p.get('utm_source') + (p.get('utm_campaign') ? '/' + p.get('utm_campaign') : '');
-  const i = p.get('interest'); if (['strategy', 'snapshot', 'photos'].includes(i)) interest.value = i;
+  const i = p.get('interest'); if (['check', 'strategy', 'photos'].includes(i)) interest.value = i;
 })();
 
 /* Mobile CTA: hidden on the hero and near the contact form */
