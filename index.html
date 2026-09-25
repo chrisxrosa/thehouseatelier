@@ -2,1433 +2,687 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Photography, listing copy, search, pricing, and guest experience for vacation rentals across Airbnb, Booking.com, VRBO, and Google Vacation Rentals in Curaçao." name="description"/>
-<meta content="#1b2524" name="theme-color"/>
-<title>The House Atelier | Get noticed. Get booked.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>The House Atelier | Price right. Get booked. Earn what it's worth.</title>
+<meta name="description" content="Revenue strategy for Curaçao vacation rentals. Pricing first, then photography, listing copy and presence across Airbnb, Booking.com, Vrbo, Micazu, Google and your own booking site."/>
+<meta name="theme-color" content="#1b2524"/>
 <link rel="icon" type="image/png" href="assets/tha-icon.png"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;display=swap" rel="stylesheet"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet"/>
 <style>
-  :root{
-   --bone:#faf7f0;
-   --bone-2:#fdfbf7;
-   --bone-3:#f4efe5;
-   --charcoal:#1b2524;
-   --charcoal-2:#23312f;
-   --ink:#202927;
-   --muted:#737a76;
-   --muted-dark:#56615d;
-   --line:rgba(27,37,36,.12);
-   --line-dark:rgba(255,255,255,.14);
-   --white:#fffefa;
-   --accent:#b85f47;
-   --accent-dark:#9e4e3a;
-   --accent-soft:#edd8cf;
-   --sage:#315b57;
-   --shadow:0 18px 55px rgba(27,37,36,.08);
-   --shadow-lg:0 28px 90px rgba(27,37,36,.14);
-   --radius:24px;
-   --max:1180px;
-  }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bone);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
-  a{color:inherit;text-decoration:none}
-  button,input,select,textarea{font:inherit}
-  h1,h2,h3,.display,.quote p,.listing-title{font-family:'Lora',Georgia,serif;font-weight:400}
-  .wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}
-  
-  /* NAV */
-  .site-header{background:var(--bone-2);position:relative;z-index:20}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
-  .brand{display:inline-flex;align-items:center;gap:11px;font-size:16px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);line-height:1}
-  .brand-logo{height:28px;width:auto;display:block;object-fit:contain}
-  .brand span{display:inline-flex;align-items:center;height:28px;line-height:28px;white-space:nowrap}
-  .nav-link{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 15px;border-radius:999px;background:rgba(255,255,255,.28);transition:.2s ease}
-  .nav-link:hover{background:var(--white);border-color:rgba(27,37,36,.2);transform:translateY(-1px)}
-  
-  /* HERO */
-  .hero{padding:18px 0 40px;background:var(--bone-2)}
-  .eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
-  .hero-copy{display:block;margin:8px 0 20px}
-  .hero h1{font-size:clamp(48px,5.6vw,72px);line-height:1.02;letter-spacing:-.04em;margin:8px 0 14px;max-width:920px}
-  .hero-sub{display:block;width:100%;max-width:680px;font-size:16px;color:var(--muted-dark);line-height:1.55;margin:0}
-  
-  /* HERO GALLERY */
-  .photo-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px;gap:8px;border-radius:28px;overflow:hidden;position:relative;box-shadow:var(--shadow-lg);background:var(--bone-3)}
-  .grid-img{position:relative;min-width:0;background-size:cover;background-position:center;overflow:hidden}
-  .grid-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.46) 0%,rgba(0,0,0,0) 58%);pointer-events:none}
-  .grid-video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
-  .grid-img-1{grid-column:1;grid-row:1 / 3;background:linear-gradient(135deg,#4e7972 0%,#203937 58%,#172524 100%)}
-  .grid-img-2{grid-column:2;grid-row:1;background-image:linear-gradient(135deg,rgba(212,154,123,.18) 0%,rgba(140,95,82,.26) 100%),url('assets/property-1-before.jpg');background-color:#8c5f52}
-  .grid-img-3{grid-column:3;grid-row:1;background-image:linear-gradient(135deg,rgba(217,216,203,.18) 0%,rgba(117,128,120,.26) 100%),url('assets/property-1-after.jpg');background-color:#758078}
-  .grid-img-4{grid-column:2;grid-row:2;background-image:linear-gradient(135deg,rgba(167,183,174,.18) 0%,rgba(67,91,87,.26) 100%),url('assets/property-2-before.jpg');background-color:#435b57}
-  .grid-img-5{grid-column:3;grid-row:2;background-image:linear-gradient(135deg,rgba(234,219,201,.18) 0%,rgba(138,109,94,.26) 100%),url('assets/property-2-after.jpg');background-color:#8a6d5e}
-  .grid-label{position:absolute;z-index:2;right:18px;top:17px;text-align:right;color:#fff;max-width:72%;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
-  .grid-label span{display:block;color:rgba(255,255,255,.72);font-size:9px;font-weight:500;letter-spacing:.08em;margin-top:3px}
-  
-  .accent-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;border:0;border-radius:12px;padding:13px 18px;font-weight:700;font-size:12px;white-space:nowrap;transition:.2s ease}
-  .accent-btn:hover{background:var(--accent-dark);transform:translateY(-1px)}
+:root{
+  --bone:#faf7f0;--bone2:#fdfbf7;--bone3:#f4efe5;
+  --char:#1b2524;--ink:#202927;--muted:#737a76;--md:#56615d;
+  --line:rgba(27,37,36,.12);--white:#fffefa;
+  --acc:#b85f47;--accd:#9e4e3a;--accs:#edd8cf;--sage:#315b57;
+  --shadow-lg:0 28px 90px rgba(27,37,36,.14);
+  --max:1180px;--header-h:72px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+h1,h2,h3,.display{font-family:'Lora',Georgia,serif;font-weight:400}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:0 auto}
+.eyebrow{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--acc);color:#fff;border:0;border-radius:12px;padding:14px 20px;font-weight:700;font-size:13px;white-space:nowrap;cursor:pointer;transition:.2s ease}
+.btn:hover{background:var(--accd);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid rgba(27,37,36,.22)}
+.btn-ghost:hover{background:#fff}
+section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 
-  /* ========== TRANSFORMATION / PROOF SECTION ========== */
-  #transformation {
-    min-height: 100svh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-  }
-  .transform-section{padding:0}
-  .transform-intro{max-width:880px;margin-bottom:14px}
-  .transform-intro h2{font-size:clamp(36px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:6px 0 10px}
-  .transform-intro p{margin:0;font-size:15px;line-height:1.55;color:var(--muted-dark)}
+/* HEADER */
+.site-header{position:sticky;top:0;z-index:40;height:var(--header-h);background:rgba(253,251,247,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,37,36,.06)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:100%;gap:14px}
+.brand{display:inline-flex;align-items:center;gap:11px;font-size:15px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);white-space:nowrap}
+.brand img{height:28px}
+.navr{display:flex;align-items:center;gap:10px}
+.pill{font-size:12px;font-weight:600;border:1px solid var(--line);padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.3);cursor:pointer;color:var(--ink);transition:.2s}
+.pill:hover{background:#fff}
 
-  /* ========== HORIZONTAL CHAPTER RAIL ========== */
-  .chapter-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    align-items: center;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted-dark);
-    margin-bottom: 12px;
-  }
-  .chapter-nav a {
-    color: var(--muted);
-    text-decoration: none;
-    transition: all 0.2s ease;
-    padding-bottom: 2px;
-    border-bottom: 2px solid transparent;
-  }
-  .chapter-nav a:hover {
-    color: var(--ink);
-  }
-  .chapter-nav a.is-active {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-  .chapter-nav span {
-    color: var(--muted);
-  }
+/* HERO: header + hero = exactly one screen */
+.hero{height:calc(100svh - var(--header-h));min-height:0;padding:clamp(14px,3svh,32px) 0 clamp(18px,4svh,36px);background:var(--bone2);align-items:stretch;overflow:hidden}
+.hero>.wrap{height:100%;display:flex;flex-direction:column}
+.hero-copy{flex:none;text-align:center;margin-bottom:clamp(14px,2.6svh,26px)}
+.hero h1{font-size:clamp(36px,min(5.8vw,8svh),78px);line-height:1.02;letter-spacing:-.04em;margin:0 auto clamp(8px,1.6svh,16px)}
+.hero h1 span{color:var(--acc)}
+.hero-sub{max-width:560px;margin:0 auto;font-size:15.5px;line-height:1.55;color:var(--md)}
+.hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:clamp(14px,2.6svh,24px)}
+.photo-grid{flex:1 1 0;min-height:0;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:8px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--bone3)}
+.gi{position:relative;min-height:0;background-size:cover;background-position:center;overflow:hidden}
+.gi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 55%);pointer-events:none}
+.gi video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gi-1{grid-row:1/3;background:linear-gradient(135deg,#4e7972,#172524)}
+.gi-2{background-image:url('assets/property-1-before.jpg');background-color:#8c5f52}
+.gi-3{background-image:url('assets/property-1-after.jpg');background-color:#758078}
+.gi-4{background-image:url('assets/property-2-before.jpg');background-color:#435b57}
+.gi-5{background-image:url('assets/property-2-after.jpg');background-color:#8a6d5e}
+.gl{position:absolute;z-index:2;right:18px;top:16px;color:#fff;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.35)}
 
-  .proof-rail {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 24px;
-    padding: 8px calc(50vw - min(42.5vw, 470px));
-    scrollbar-width: none; 
-    -ms-overflow-style: none;
-  }
-  .proof-rail::-webkit-scrollbar {
-    display: none;
-  }
+/* MARKET */
+.market{background:var(--bone);text-align:center}
+.market h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 48px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.num b{display:block;font-family:'Lora',serif;font-weight:400;font-size:clamp(64px,9vw,120px);line-height:1;letter-spacing:-.04em;color:var(--acc)}
+.num p{margin:14px auto 0;max-width:260px;font-size:15px;color:var(--md)}
+.src{margin-top:40px;font-size:11px;color:var(--muted)}
+.src a{text-decoration:underline}
 
-  .proof-card {
-    flex: 0 0 min(85vw, 940px);
-    scroll-snap-align: center;
-    scroll-snap-stop: always;
-    background: var(--bone-2);
-    border: 1px solid var(--line);
-    border-radius: 24px;
-    padding: 22px 28px;
-    box-shadow: var(--shadow-lg);
-  }
-  
-  .proof-card .proof-head {
-    max-width: none;
-    margin-bottom: 14px;
-  }
+/* CAROUSEL */
+#levers{flex-direction:column;justify-content:center;align-items:stretch;padding:40px 0;background:var(--bone2)}
+.intro{max-width:760px;margin-bottom:14px}
+.intro h2{font-size:clamp(36px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:6px 0 10px}
+.intro p{margin:0;font-size:15px;color:var(--md)}
+.cnav{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.cnav button{background:none;border:0;border-bottom:2px solid transparent;color:var(--muted);cursor:pointer;font:inherit;letter-spacing:inherit;text-transform:inherit;padding:0 0 2px}
+.cnav button.on{color:var(--acc);border-color:var(--acc)}
+.cnav .ar{border:1px solid var(--line);border-radius:50%;width:32px;height:32px;padding:0;display:grid;place-items:center;color:var(--ink);font-size:14px}
+.cnav .sp{flex:1}
+.rail{--cw:min(85vw,940px);display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px calc(50% - var(--cw)/2) 48px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.card{flex:0 0 var(--cw);scroll-snap-align:center;scroll-snap-stop:always;background:var(--bone2);border:1px solid var(--line);border-radius:24px;padding:22px 26px;box-shadow:0 22px 60px -18px rgba(27,37,36,.20),0 6px 20px rgba(27,37,36,.05)}
+.ch{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;margin-bottom:14px}
+.ch .n{font-family:'Lora',serif;font-size:34px;line-height:1;color:var(--acc)}
+.ch h3{font-size:clamp(24px,3vw,32px);line-height:1.08;letter-spacing:-.03em;margin:2px 0 6px}
+.ch p{font-size:13.5px;line-height:1.55;color:var(--md);margin:0;max-width:540px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.pc{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05);display:flex;flex-direction:column}
+.pm{flex-grow:1;padding:16px;display:flex}
+.pm.b{background:#eee9df}.pm.a{background:#dfe9e5}
+.pf{padding:11px;background:var(--bone2);border-top:1px solid var(--line);text-align:center;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:15px}
+.a .ui{background:#fff;border-color:rgba(49,91,87,.18)}
+.uh{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line)}
+.uh small{display:block;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.uh strong{font-family:'Lora',serif;font-size:22px;font-weight:400}
+.a .uh strong{color:var(--sage)}
+.chip{font-size:8px;color:var(--md);border:1px solid var(--line);padding:5px 7px;border-radius:999px;background:var(--bone2);white-space:nowrap}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:13px}
+.d{border:1px solid var(--line);border-radius:8px;padding:7px 3px;text-align:center;background:#fbfaf6}
+.d b{display:block;font-size:7px;color:var(--muted);text-transform:uppercase}
+.d span{display:block;font-size:10px;font-weight:700;margin-top:4px}
+.a .d.hot{background:#315b57;border-color:#315b57}.a .d.hot b,.a .d.hot span{color:#fff}
+.a .d.soft{background:#f0e7df}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin-top:11px}
+.tags span{font-size:8px;font-weight:700;padding:5px 7px;border-radius:999px;background:#f3efe8;color:var(--md)}
+.a .tags span{background:#e7f1ed;color:var(--sage)}
+.ag{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:100px 100px;gap:4px;background:#fff;padding:4px;flex-grow:1}
+.ag i{background:center/cover #a89b8c}
+.ag i:first-child{grid-row:1/3;border-radius:12px 0 0 12px}
+.ag i:nth-child(3){border-radius:0 12px 0 0}.ag i:nth-child(5){border-radius:0 0 12px 0}
+.ui h4{font-family:'Lora',serif;font-size:20px;line-height:1.1;font-weight:400;margin:13px 0 7px}
+.ui p{font-size:11px;line-height:1.55;color:var(--md);margin:0}
+.chans{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.chans span{font-size:10px;font-weight:700;padding:7px 10px;border-radius:9px;border:1px solid var(--line);background:#fbfaf6}
+.a .chans span{background:#e7f1ed;border-color:rgba(49,91,87,.2);color:var(--sage)}
+.chans span.off{opacity:.35;text-decoration:line-through}
+.more{margin-top:14px;text-align:center}
+.more a{display:inline-flex;gap:6px;font-size:13px;font-weight:700;color:var(--sage);border-bottom:1px solid var(--sage);padding-bottom:2px;cursor:pointer}
+.note{margin:12px 0 0;font-size:11px;color:var(--muted);text-align:center}
 
-  .proof-head{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;align-items:start;margin-bottom:14px;max-width:780px}
-  .proof-num{font-family:'Lora',serif;font-size:34px;line-height:1;color:var(--accent);letter-spacing:-.04em}
-  .proof-head h3{font-size:clamp(24px,3vw,32px);line-height:1.08;letter-spacing:-.03em;margin:2px 0 6px}
-  .proof-head p{font-size:13.5px;line-height:1.55;color:var(--muted-dark);margin:0;max-width:520px}
+/* OFFER (dark) */
+.dark{background:var(--char);color:var(--white)}
+.offer{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:center}
+.display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
+.display small{display:block;font-family:'DM Sans',sans-serif;font-size:clamp(15px,1.7vw,19px);letter-spacing:0;font-weight:500;color:#c7cfcc;margin-top:14px}
+.spine{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:18px}
+.spine li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.spine .k{font-family:'Lora',serif;font-size:26px;color:#d7a08e;line-height:1}
+.spine strong{display:block;font-size:15px;color:#fff}
+.spine span{font-size:13px;color:#c7cfcc}
+.price-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg)}
+.price-card .eyebrow{color:var(--accd)}
+.big{font-family:'Lora',serif;font-size:60px;line-height:1;letter-spacing:-.03em;margin:12px 0 4px}
+.pnote{font-size:12px;color:var(--sage);font-weight:700;margin-bottom:18px}
+.inc{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:8px;font-size:13px;color:var(--md)}
+.inc li::before{content:'✓';color:var(--sage);font-weight:700;margin-right:8px}
+.price-card .btn{width:100%}
+.micro{font-size:11px;color:#848a86;margin-top:14px;line-height:1.5}
 
-  /* --- Block Grids & Footers --- */
-  .sequence-pair{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .sequence-card{border-radius:20px;overflow:hidden;background:var(--bone-2);border:1px solid rgba(27,37,36,.08);box-shadow:0 12px 36px rgba(27,37,36,.06); display: flex; flex-direction: column;}
-  
-  .airbnb-grid, .copy-media, .revenue-media { flex-grow: 1; }
+/* MODULES */
+.beige{background:var(--bone3)}
+.center{text-align:center}
+.shead{max-width:760px;margin:0 auto 44px}
+.shead h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 12px}
+.shead p{margin:0;color:var(--md);font-size:16px}
+.mods{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.mod{background:var(--bone2);border:1px solid var(--line);border-radius:22px;padding:26px 22px;text-align:left}
+.mod .k{font-family:'Lora',serif;font-size:28px;color:var(--acc);line-height:1}
+.mod h3{font-size:24px;margin:14px 0 6px;letter-spacing:-.02em}
+.mod p{margin:0 0 16px;font-size:13.5px;color:var(--md)}
+.mod .from{font-size:13px;font-weight:700;color:var(--sage)}
+.bund{margin-top:22px;font-size:14px;color:var(--md)}
+.bund b{color:var(--ink)}
+details.prices{margin:30px auto 0;max-width:900px;text-align:left}
+details.prices summary{cursor:pointer;list-style:none;text-align:center;font-size:13px;font-weight:700;color:var(--sage)}
+details.prices summary::-webkit-details-marker{display:none}
+.tw{overflow-x:auto;margin-top:18px}
+table{width:100%;min-width:540px;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;font-size:14px}
+th,td{padding:13px 16px;text-align:left;border-bottom:1px solid var(--line)}
+thead th{background:var(--bone3);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--md)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:600}
+td small{display:block;font-weight:400;color:var(--muted);font-size:11px}
+.grp td{background:var(--bone2);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);padding:9px 16px}
 
-  .sequence-card-footer, .copy-card-footer, .revenue-card-footer {
-    padding: 12px 16px; 
-    background: var(--bone-2); 
-    border-top: 1px solid var(--line); 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    flex: none; 
-  }
-  .sequence-card-footer strong, .copy-card-footer strong, .revenue-card-footer strong {
-    display: block; 
-    font-size: 11px; 
-    font-weight: 700; 
-    letter-spacing: .08em; 
-    text-transform: uppercase; 
-    color: var(--ink); 
-    margin: 0;
-  }
+/* BIO */
+.light{background:var(--bone2)}
+.bio{background:#e6dfd3;border-radius:24px;padding:26px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.bio-text{text-align:center;padding:10px 0}
+.bio-text h3{font-size:30px;margin:0 0 6px}
+.bio-text .role{display:block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--sage);margin-bottom:18px}
+.bio-text p{font-size:14.5px;line-height:1.6;color:var(--md);margin:0 auto;max-width:440px}
+.bio img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:#d8d0c4}
+.ctrl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.ctrl span{font-size:12px;font-weight:600;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line)}
 
-  .airbnb-grid{
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    grid-template-rows:120px 120px;
-    gap:4px;
-    background:#fff;
-    padding:4px;
-  }
-  .airbnb-grid .ag-cell{
-    position:relative;
-    overflow:hidden;
-    background-size:cover;
-    background-position:center;
-    min-height:0;
-  }
-  .airbnb-grid .ag-main{grid-column:1;grid-row:1 / 3;border-radius:12px 0 0 12px;}
-  .airbnb-grid .ag-2{grid-column:2;grid-row:1;border-radius:0}
-  .airbnb-grid .ag-3{grid-column:3;grid-row:1;border-radius:0 12px 0 0}
-  .airbnb-grid .ag-4{grid-column:2;grid-row:2;border-radius:0}
-  .airbnb-grid .ag-5{grid-column:3;grid-row:2;border-radius:0 0 12px 0}
+/* FAQ */
+.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
+.faq h2{font-size:clamp(34px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:8px 0}
+.faq details{border-top:1px solid var(--line);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:15px;font-weight:600;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-weight:400;color:var(--muted)}
+.faq details[open] summary::after{content:'–'}
+.faq details p{font-size:14px;line-height:1.65;color:var(--md);margin:10px 0 2px;max-width:680px}
 
-  .seq-before .ag-main{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.35) 100%), url('assets/seq-before-1.jpg'); background-color:#9a8b7a;}
-  .seq-before .ag-2{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-2.jpg'); background-color:#a89b8c;}
-  .seq-before .ag-3{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-3.jpg'); background-color:#8c7f72;}
-  .seq-before .ag-4{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-4.jpg'); background-color:#b0a293;}
-  .seq-before .ag-5{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-before-5.jpg'); background-color:#96897c;}
+/* CONTACT */
+.contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
+.contact h2{font-size:clamp(46px,6vw,82px);line-height:.98;letter-spacing:-.04em;margin:8px 0 16px;color:#fff}
+.contact>div>p{color:#c6cfcc;font-size:15px;max-width:460px;margin:0}
+.steps{margin-top:26px;display:grid;gap:12px}
+.st{display:flex;gap:12px;color:#c6cfcc;font-size:13px}
+.st strong{color:#fff}
+.dot{width:20px;height:20px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px}
+.wa{display:inline-flex;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.form-card{background:var(--bone2);border-radius:24px;padding:25px}
+form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.full{grid-column:1/-1}
+label{display:block;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--md);margin-bottom:5px}
+input,select,textarea{width:100%;border:1px solid var(--line);background:#fffefb;color:var(--ink);padding:12px 13px;border-radius:11px;outline:none;font-size:13px}
+input:focus,select:focus,textarea:focus{border-color:rgba(184,95,71,.65);box-shadow:0 0 0 3px rgba(184,95,71,.08)}
+textarea{min-height:72px;resize:vertical}
+.err{grid-column:1/-1;color:#a32d2d;font-size:12px;margin:0;display:none}
+.fnote{font-size:10px;color:#8a918d;text-align:center;margin:10px 0 0}
+footer{background:var(--char);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
+footer .fi{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 
-  .seq-after .ag-main{background-image:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,0,0,.35) 100%), url('assets/seq-after-1.jpg'); background-color:#4e7972;}
-  .seq-after .ag-2{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-2.jpg'); background-color:#e8d7c6;}
-  .seq-after .ag-3{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-3.jpg'); background-color:#d4c4b0;}
-  .seq-after .ag-4{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-4.jpg'); background-color:#c9b8a4;}
-  .seq-after .ag-5{background-image:linear-gradient(180deg,rgba(0,0,0,0) 50%,rgba(0,0,0,.35) 100%), url('assets/seq-after-5.jpg'); background-color:#f0e6d8;}
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;background:var(--char);z-index:1000;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s}
+.lb.on{opacity:1;pointer-events:auto}
+.lb-head{position:sticky;top:0;z-index:2;background:rgba(27,37,36,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);padding:14px 24px;display:flex;justify-content:space-between;align-items:center}
+.lb-back{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:12px;font-weight:700;cursor:pointer;padding:8px 12px;border-radius:999px}
+.lb-title{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#b9c3bf}
+.lb-body{padding:56px 24px 84px;max-width:1040px;margin:0 auto}
+.lb-intro{text-align:center;margin-bottom:48px}
+.lb-intro h2{color:#fff;font-size:clamp(42px,6.5vw,76px);line-height:.98;letter-spacing:-.04em;margin:8px 0 14px}
+.lb-intro p{color:#c5cfcb;font-size:16px;margin:0}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;margin-bottom:52px}
+.ba div{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#2a3634 center/cover}
+.ba div span{position:absolute;left:14px;top:14px;padding:7px 9px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(27,37,36,.72);color:#fff}
+.ba div.af span{background:rgba(49,91,87,.92)}
+.ba::after{content:"→";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fffefa;color:var(--ink);font-weight:700}
 
-  /* --- Block 02: Copy / Search Optimization cards --- */
-  .copy-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .copy-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
-  .copy-media{padding:18px;display:flex;align-items:stretch}
-  .copy-before{background:#f4efe5}
-  .copy-after{background:#e5eee9}
-  .copy-ui{width:100%;display:flex;flex-direction:column;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:17px;box-shadow:0 8px 24px rgba(27,37,36,.07)}
-  .copy-after .copy-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.10)}
-  .copy-ui-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:11px;border-bottom:1px solid var(--line)}
-  .copy-ui-kicker{font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-  .copy-ui-search{font-size:8px;color:var(--muted-dark);border:1px solid var(--line);padding:5px 7px;border-radius:999px;background:var(--bone-2);white-space:nowrap}
-  .copy-ui h4{font-family:'Lora',serif;font-size:22px;line-height:1.08;font-weight:400;letter-spacing:-.025em;margin:14px 0 8px;color:var(--ink)}
-  .copy-ui p{font-size:11px;line-height:1.55;color:var(--muted-dark);margin:0}
-  
-  /* --- Block 03: Revenue calendars --- */
-  .revenue-pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .revenue-card{border-radius:18px;overflow:hidden;border:1px solid rgba(27,37,36,.08);box-shadow:0 10px 30px rgba(0,0,0,.05); display: flex; flex-direction: column;}
-  .revenue-media{padding:18px;display:flex;align-items:stretch}
-  .revenue-before{background:#eee9df}
-  .revenue-after{background:#dfe9e5}
-  .revenue-ui{width:100%;border-radius:12px;background:#fffefa;border:1px solid rgba(27,37,36,.12);padding:15px;box-shadow:0 8px 24px rgba(27,37,36,.06)}
-  .revenue-after .revenue-ui{background:#fff;border-color:rgba(49,91,87,.18);box-shadow:0 12px 28px rgba(49,91,87,.09)}
-  .revenue-ui-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-bottom:12px;border-bottom:1px solid var(--line)}
-  .revenue-ui-head small{display:block;font-size:8px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
-  .revenue-ui-head strong{font-family:'Lora',serif;font-size:24px;line-height:1;color:var(--ink);font-weight:400}
-  .revenue-after .revenue-ui-head strong{color:var(--sage)}
-  .lb-calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:14px}
-  .lb-day{border:1px solid var(--line);border-radius:8px;padding:7px 4px;text-align:center;background:#fbfaf6}
-  .lb-day b{display:block;font-size:7px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
-  .lb-day span{display:block;font-size:10px;font-weight:700;color:var(--ink);margin-top:4px}
-  .revenue-after .lb-day.hot{background:#315b57;border-color:#315b57}
-  .revenue-after .lb-day.hot b,.revenue-after .lb-day.hot span{color:#fff}
-  .revenue-after .lb-day.soft{background:#f0e7df;border-color:#ead9cc}
-  .lb-demand-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
-  .lb-demand-row span{font-size:8px;font-weight:700;padding:5px 7px;border-radius:999px;background:#f3efe8;color:var(--muted-dark)}
-  .revenue-after .lb-demand-row span:first-child{background:#e7f1ed;color:var(--sage)}
-  .proof-note{margin-top:12px;font-size:11px;line-height:1.5;color:var(--muted);text-align:center}
+/* MOBILE CTA */
+.mcta{display:none}
 
-  /* V1 UI Refinements: Make scope + commercial impact explicit */
-  .v1 .scope-chip-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin:0 0 22px;
-  }
-  .v1 .scope-chip{
-    display:inline-flex;
-    align-items:center;
-    min-height:24px;
-    padding:4px 8px;
-    border-radius:999px;
-    background:var(--bone-3);
-    border:1px solid var(--line);
-    color:var(--muted-dark);
-    font-size:9px;
-    font-weight:700;
-    letter-spacing:.03em;
-  }
-  .v1 .copy-ui-surfaces{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:6px;
-    margin-top:auto;
-    padding-top:14px;
-  }
-  .v1 .copy-ui-surface{
-    padding:7px 8px;
-    border-radius:8px;
-    background:#f6f4ee;
-    border:1px solid rgba(27,37,36,.08);
-    font-size:9px;
-    line-height:1.3;
-    color:var(--muted-dark);
-  }
-  .v1 .copy-ui-surface b{
-    display:block;
-    margin-bottom:2px;
-    color:var(--ink);
-    font-size:8px;
-    text-transform:uppercase;
-    letter-spacing:.08em;
-  }
-  .v1 .copy-after .copy-ui-surface{
-    background:#f4faf7;
-    border-color:rgba(49,91,87,.14);
-  }
-  .v1 .revenue-strategy-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:5px;
-    margin-top:10px;
-  }
-  .v1 .revenue-strategy-row span{
-    font-size:8px;
-    font-weight:700;
-    padding:4px 6px;
-    border-radius:999px;
-    background:#f3efe8;
-    color:var(--muted-dark);
-  }
-  .v1 .revenue-after .revenue-strategy-row span:first-child,
-  .v1 .revenue-after .revenue-strategy-row span:last-child{
-    background:#e7f1ed;
-    color:var(--sage);
-  }
-
-  /* SECTIONS */
-  main{background:var(--bone)}
-  section{padding:64px 0}
-  .band-light{background:var(--bone-2)}
-  .band-beige{background:var(--bone-3)}
-  .band-dark{background:var(--charcoal);color:var(--white)}
-  .section-heading{max-width:840px;margin-bottom:42px}
-  .section-heading h2{font-size:clamp(38px,5vw,62px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 14px}
-  .section-heading p{margin:0;font-size:16px;line-height:1.65;color:var(--muted-dark)}
-  .band-dark .section-heading p{color:#c5cdca}
-  
-  /* OFFER */
-  .offer-shell{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(280px,.9fr);gap:64px;align-items:start}
-  .display{font-size:clamp(42px,5.5vw,70px);line-height:1;letter-spacing:-.04em;margin:8px 0 18px}
-  .offer-copy{max-width:620px;color:#c7cfcc;font-size:15px;line-height:1.7}
-  .platform-logos{display:flex;flex-wrap:nowrap;align-items:center;justify-content:space-between;width:100%;margin:18px 0 4px;opacity:.78;gap:10px}
-  .platform-logos img{height:15px;width:auto;max-width:22%;display:block;filter:brightness(0) invert(1);opacity:.9;flex:1 1 0;object-fit:contain}
-  .included{margin:26px 0 0;padding:0;list-style:none;display:grid;gap:14px}
-  .included li{display:flex;gap:12px;align-items:flex-start;font-size:13px}
-  .included li div{display:flex;flex-direction:column;gap:2px}
-  .included li strong{color:#fff;font-weight:700;font-size:13.5px;}
-  .included li span{color:#c7cfcc;line-height:1.45;font-size:12.5px;}
-  .included li strong em { font-family: 'Lora', Georgia, serif; font-style: italic; font-weight: 500; color: var(--accent-soft); font-size: 15px; letter-spacing: 0.01em; }
-  .included li strong .sep { color: rgba(255,255,255,0.3); font-weight: 400; margin: 0 6px; }
-  .check{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
-  
-  /* PRICING CARD */
-  .pricing-card{background:var(--bone-2);color:var(--ink);border-radius:24px;padding:30px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,.06)}
-  .pricing-card .eyebrow{color:var(--accent-dark)}
-  .pricing-tier-label{font-family:'DM Sans',system-ui,sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-top:10px}
-  .price{font-family:'Lora',serif;font-size:56px;line-height:1;letter-spacing:-.03em;margin:12px 0 4px}
-  .price-note{font-size:11.5px;color:var(--muted-dark);margin-bottom:19px;line-height:1.5}
-  .price-card-btn{width:100%}
-  .price-tiers{border-top:1px solid var(--line);margin-top:20px;padding-top:16px;display:grid;gap:14px;font-size:12.5px;color:var(--muted-dark)}
-  .price-tiers strong{color:var(--ink)}
-  .price-tiers strike{color:var(--muted);font-weight:400;margin-left:4px}
-  .micro{font-size:10.5px;color:#848a86;line-height:1.5;margin-top:18px}
-  
-  /* CREDIBILITY BIO TEXT BLOCK */
-  .philosophy-grid{display:block}
-  .philosophy-card{background:#eee9df;border:1px solid rgba(27,37,36,.05);border-radius:24px;padding:38px;display:flex;align-items:center}
-  .philosophy-card p{font-size:31px;line-height:1.12;letter-spacing:-.03em;max-width:600px;margin:0;color:#403a33}
-  .bio-card{background:#e6dfd3;border:1px solid rgba(27,37,36,.06);border-radius:24px;padding:26px;display:grid;grid-template-columns:minmax(0,1.22fr) minmax(220px,.78fr);gap:28px;align-items:center}
-  .bio-text { text-align: center; display: flex; flex-direction: column; align-items: center; padding: 10px 0; }
-  .bio-text h3 { font-size: 28px; line-height: 1.1; margin: 0 0 6px; font-family: 'Lora', serif; font-weight: 400; color: var(--ink); }
-  .m-br{display:none}
-  .bio-text span { font-size: 11px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sage); margin-bottom: 18px; }
-  .bio-text p { font-size: 14px; line-height: 1.6; color: var(--muted-dark); margin: 0; max-width: 440px; }
-  .bio-photo{width:100%;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:#d8d0c4;border:1px solid rgba(27,37,36,.06);display:flex;align-items:center;justify-content:center;color:#7a736a;font-size:10px;letter-spacing:.08em;text-transform:uppercase;text-align:center;grid-column:2;grid-row:1}
-  .bio-photo span{padding:18px;line-height:1.45}
-  .bio-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
-  
-  /* THE RETURN (V5) */
-  .band-beige .section-heading{text-align:center;margin-left:auto;margin-right:auto}
-  .return-cta{display:flex;justify-content:center;align-items:center;margin:34px auto 0;text-align:center}
-  
-  .v5 .section-heading h2{font-size:clamp(28px,4vw,40px)}
-  .v5 .power-line{max-width:680px;margin:0 auto 36px;text-align:center;font-family:'Lora',serif;font-size:clamp(22px,3.2vw,28px);line-height:1.3;letter-spacing:-.02em;color:#403a33}
-  .v5 .subtle{max-width:520px;margin:0 auto 8px;text-align:center;font-size:14px;line-height:1.55;color:var(--muted-dark)}
-  .v5 .nights{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.04em;color:var(--sage);margin-top:18px;padding:6px 14px;border:1px solid rgba(49,91,87,.25);border-radius:999px;background:rgba(255,255,255,.4)}
-
-  /* FAQ */
-  .faq-grid{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
-  details{border-top:1px solid var(--line);padding:18px 0}
-  details:last-child{border-bottom:1px solid var(--line)}
-  summary{cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:14px;font-weight:600;list-style:none}
-  summary::-webkit-details-marker{display:none}
-  summary::after{content:'+';font-weight:400;color:var(--muted)}
-  details[open] summary::after{content:'–'}
-  details p{font-size:13px;line-height:1.65;color:var(--muted-dark);max-width:700px;margin:10px 0 2px}
-  
-  /* CONTACT */
-  .contact-band{background:var(--charcoal);padding:92px 0 70px}
-  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:start}
-  .contact-band h2{font-size:clamp(44px,5.5vw,70px);line-height:.98;letter-spacing:-.04em;margin:8px 0 16px;font-family:'Lora',serif;font-weight:400;color:#fff}
-  .contact-band p{color:#c6cfcc;font-size:15px;line-height:1.7;max-width:500px;margin:0}
-  .contact-steps{margin-top:26px;display:grid;gap:12px}
-  .contact-step{display:flex;gap:12px;align-items:flex-start}
-  .contact-step .step-dot{width:19px;height:19px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px;margin-top:1px}
-  .contact-step div{color:#c6cfcc;font-size:13px;line-height:1.45}
-  .contact-step strong{color:#fff;font-weight:700}
-  .form-card{background:var(--bone-2);border-radius:24px;padding:25px;border:1px solid rgba(255,255,255,.06)}
-  form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .field-full{grid-column:1 / -1}
-  label{display:block;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--muted-dark);margin-bottom:5px}
-  input,select,textarea{width:100%;border:1px solid var(--line);background:#fffefb;color:var(--ink);padding:12px 13px;border-radius:11px;outline:none;font-size:13px;transition:.2s ease}
-  input:focus,select:focus,textarea:focus{border-color:rgba(184,95,71,.65);box-shadow:0 0 0 3px rgba(184,95,71,.08)}
-  textarea{min-height:84px;resize:vertical}
-  .submit{grid-column:1 / -1;background:var(--accent);color:#fff;border:0;padding:14px;border-radius:11px;font-size:13px;font-weight:700;cursor:pointer;transition:.2s ease}
-  .submit:hover{background:var(--accent-dark);transform:translateY(-1px)}
-  .form-note{font-size:10px!important;color:#8a918d!important;text-align:center;margin:10px 0 0!important;max-width:none!important}
-  footer{background:var(--charcoal);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
-  .footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-  
-  /* MOBILE CTA */
-  .mobile-cta{display:none}
-  .mobile-cta.is-hidden{display:none !important}
-
-  /* ========== LIGHTBOX: EDITORIAL BEFORE / AFTER ========== */
-  .lightbox-overlay{
-    position:fixed;inset:0;background:var(--charcoal);z-index:1000;
-    overflow-y:auto;display:flex;flex-direction:column;
-    opacity:0;pointer-events:none;transition:opacity .28s ease;
-  }
-  .lightbox-overlay.is-active{opacity:1;pointer-events:auto}
-  .lightbox-header{
-    position:sticky;top:0;z-index:1001;background:rgba(27,37,36,.92);
-    backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);
-    padding:14px 24px;display:flex;align-items:center;justify-content:space-between;
-  }
-  .lightbox-back{
-    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
-    color:#fff;font-size:12px;font-weight:700;cursor:pointer;display:flex;
-    align-items:center;gap:7px;padding:8px 11px;border-radius:999px;transition:.2s ease;
-  }
-  .lightbox-back:hover{background:rgba(255,255,255,.1)}
-  .lightbox-title{font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#b9c3bf}
-  .lightbox-count{font-size:10px;font-weight:700;letter-spacing:.08em;color:#b9c3bf}
-  .lightbox-content{padding:56px 24px 84px;max-width:1040px;margin:0 auto;width:100%}
-  .lightbox-intro{text-align:center;margin-bottom:52px}
-  .lightbox-intro .eyebrow{color:#d7a08e}
-  .lightbox-intro h2{
-    color:#fff;font-size:clamp(42px,6vw,70px);line-height:.98;
-    margin:8px 0 16px;letter-spacing:-.04em;
-  }
-  .lightbox-intro p{
-    color:#c5cfcb;font-size:16px;line-height:1.65;max-width:680px;margin:0 auto;
-  }
-  .ba-grid{display:grid;gap:56px}
-  .ba-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative}
-  .ba-card{
-    position:relative;border-radius:18px;overflow:hidden;background:#24302e;
-    border:1px solid rgba(255,255,255,.08);box-shadow:0 18px 55px rgba(0,0,0,.2);
-  }
-  .ba-card.after{box-shadow:0 22px 70px rgba(0,0,0,.28)}
-  .ba-label{
-    position:absolute;z-index:2;left:14px;top:14px;padding:7px 9px;border-radius:999px;
-    font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-    background:rgba(27,37,36,.72);backdrop-filter:blur(7px);color:#fff;
-    border:1px solid rgba(255,255,255,.12);
-  }
-  .ba-card.after .ba-label{background:rgba(49,91,87,.92);color:#fff}
-  
-  .ba-img{
-    width:100%;aspect-ratio:4/3;background-size:cover;background-position:center;
-  }
-  .ba-img.b1 { background-image: url('assets/lightbox-1-before.jpg'); background-color: #333; }
-  .ba-img.a1 { background-image: url('assets/lightbox-1-after.jpg'); background-color: #444; }
-  .ba-img.b2 { background-image: url('assets/lightbox-2-before.jpg'); background-color: #333; }
-  .ba-img.a2 { background-image: url('assets/lightbox-2-after.jpg'); background-color: #444; }
-  .ba-img.b3 { background-image: url('assets/lightbox-3-before.jpg'); background-color: #333; }
-  .ba-img.a3 { background-image: url('assets/lightbox-3-after.jpg'); background-color: #444; }
-  .ba-img.b4 { background-image: url('assets/lightbox-4-before.jpg'); background-color: #333; }
-  .ba-img.a4 { background-image: url('assets/lightbox-4-after.jpg'); background-color: #444; }
-  .ba-img.b5 { background-image: url('assets/lightbox-5-before.jpg'); background-color: #333; }
-  .ba-img.a5 { background-image: url('assets/lightbox-5-after.jpg'); background-color: #444; }
-  
-  .ba-card.before .ba-img{filter:saturate(.9)}
-  .ba-row::after{
-    content:"→";position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);
-    width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-    background:#fffefa;color:var(--ink);font-weight:700;font-size:15px;
-    box-shadow:0 8px 24px rgba(0,0,0,.2);
-  }
-  .ba-context{
-    grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between;
-    gap:16px;padding:2px 4px 0;color:#d7dfdc;
-  }
-  .ba-context strong{font-family:'Lora',serif;font-size:21px;font-weight:400;color:#fff}
-  .ba-context span{font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9eaaa5}
-  .lightbox-cta{
-    margin-top:70px;padding-top:46px;border-top:1px solid rgba(255,255,255,.1);
-    text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px;
-  }
-  .lightbox-cta h3{font-family:'Lora',serif;font-weight:400;margin:0;color:#fff;font-size:30px;line-height:1.1}
-  .lightbox-cta p{margin:0;max-width:600px;color:#b8c2be;font-size:14px;line-height:1.6}
-  
-  /* SIMPLICITY PASS: immersive section rhythm */
-  :root{--section-min:100svh}
-  body{background:var(--bone);}
-  .site-header{position:sticky;top:0;z-index:40;border-bottom:1px solid rgba(27,37,36,.06);backdrop-filter:blur(12px)}
-  .hero{min-height:calc(100svh - 71px);display:flex;align-items:center;padding:28px 0 40px}
-  .hero>.wrap{width:min(calc(100% - 48px),var(--max));}
-  .hero-copy{margin:0 0 20px}
-  .hero h1{max-width:860px;font-size:clamp(48px,5.8vw,78px);margin:6px 0 14px}
-  .hero-sub{max-width:640px;font-size:15.5px;line-height:1.55}
-  .photo-grid{grid-template-rows:minmax(220px,28vh) minmax(220px,28vh);}
-  section{min-height:100svh;display:flex;align-items:center;padding:64px 0}
-  #transformation{min-height:100svh;padding:0;justify-content:center;align-items:stretch}
-  #transformation>.wrap{padding-top:0;padding-bottom:0;flex:0 0 auto}
-  .transform-intro{max-width:760px;margin-bottom:14px}
-  .transform-intro h2{font-size:clamp(36px,4.8vw,58px);margin:6px 0 10px}
-  .chapter-nav{margin-bottom:12px}
-  .proof-rail{padding:8px calc(50vw - min(42.5vw, 470px)) 8px;width:100%;flex:0 0 auto}
-  /* Shadow fix: extra vertical padding lets shadows render inside the scroller's clip box.
-     Equal negative margins cancel it out, so layout is unchanged. */
-  .proof-rail{padding-top:72px;padding-bottom:72px;margin-top:-64px;margin-bottom:-64px}
-  .chapter-nav{position:relative;z-index:2}
-  #transformation{position:relative;z-index:1}
-  .proof-card{box-shadow:0 22px 60px -18px rgba(27,37,36,.20),0 6px 20px rgba(27,37,36,.05)}
-  .proof-card{min-height:0;padding:20px 26px;display:flex;flex-direction:column;justify-content:center}
-  .proof-card .proof-head{margin-bottom:12px}
-  .proof-head{margin-bottom:12px;gap:14px}
-  .proof-num{font-size:34px}
-  .proof-head h3{font-size:clamp(24px,3vw,32px);margin:2px 0 6px}
-  .proof-head p{max-width:520px;font-size:13.5px}
-  .proof-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--sage);text-decoration:none;border-bottom:1px solid var(--sage);padding-bottom:2px}
-  .band-dark,.band-beige,.band-light,.contact-band{min-height:100svh;display:flex;align-items:center}
-  .band-dark .wrap,.band-beige .wrap,.band-light .wrap,.contact-band .wrap{width:min(calc(100% - 48px),var(--max));}
-  .offer-shell{align-items:center}
-  .offer-copy{max-width:560px}
-  .included{gap:11px;margin-top:22px}
-  .included li span{max-width:560px}
-  .v5 .section-heading{margin-bottom:18px}
-  .v5 .power-line{margin:0 auto 20px}
-  .v5 .nights{margin-top:8px}
-  .return-cta{margin-top:22px}
-  .philosophy-card{min-height:auto}
-  .bio-card{min-height:auto}
-  .contact-grid{align-items:center}
-  .contact-band h2{font-size:clamp(50px,6vw,82px)}
-  .lightbox-intro h2{font-size:clamp(46px,6.5vw,82px)}
-  .scope-chip-row{margin:0 0 14px !important}
-  .airbnb-grid{grid-template-rows:100px 100px}
-
-  /* RESPONSIVE */
-  @media(max-width:960px){
-   .offer-shell,.contact-grid{grid-template-columns:1fr}
-   .faq-grid{grid-template-columns:1fr;gap:28px}
-   .pricing-card{max-width:540px}
-   .sequence-pair,.copy-pair,.revenue-pair{grid-template-columns:1fr}
-  }
-  @media(max-width:720px){
-   body{padding-bottom:72px}
-   section{min-height:100svh;padding:48px 0}
-   .hero{min-height:calc(100svh - 56px);padding:16px 0 28px}
-   .hero-copy{margin:0 0 14px}
-   .hero h1{font-size:clamp(40px,11vw,58px);line-height:0.99;margin-bottom:12px}
-   .hero-sub{font-size:14.5px;line-height:1.5}
-   .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:180px 120px 120px;gap:6px;border-radius:20px}
-   #transformation{min-height:100svh;padding:0;justify-content:center}
-   #transformation>.wrap{padding-top:0;padding-bottom:0}
-   .transform-intro{margin-bottom:12px}
-   .transform-intro h2{font-size:32px}
-   .proof-card{min-height:0;justify-content:flex-start}
-   .band-dark,.band-beige,.band-light,.contact-band{min-height:100svh}
-   .philosophy-card,.bio-card{min-height:0}
-   .wrap{width:min(calc(100% - 28px),var(--max))}
-   .nav{padding:14px 0}
-   .brand{font-size:13px;letter-spacing:.16em}
-   .brand-logo{height:24px}
-   .brand span{height:24px;line-height:24px}
-   .nav-link{display:none}
-   .grid-img-1{grid-column:1 / -1;grid-row:1}
-   .grid-img-2{grid-column:1;grid-row:2}
-   .grid-img-3{grid-column:2;grid-row:2}
-   .grid-img-4{grid-column:1;grid-row:3}
-   .grid-img-5{grid-column:2;grid-row:3}
-   .grid-label{right:12px;top:12px;font-size:8px;max-width:72%}
-   .grid-label span{font-size:8px}
-   .section-heading{margin-bottom:24px}
-   .section-heading h2{font-size:38px}
-   
-   .proof-rail { gap: 16px; padding: 6px calc(50vw - calc((92vw - 20px) / 2)); }
-   .proof-rail { padding-top: 72px; padding-bottom: 72px; margin-top: -66px; margin-bottom: -66px; }
-   .proof-card { flex: 0 0 calc(92vw - 20px); padding: 18px 14px; scroll-snap-align: center; border-radius: 20px; }
-   
-   .proof-head { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
-   .proof-num { font-size: 28px; line-height: 1; margin-bottom: 2px; }
-   .proof-head h3 { font-size: 20px; line-height: 1.15; margin: 2px 0 4px; }
-   .proof-head p { font-size: 13px; margin: 0; }
-
-   .copy-media, .revenue-media { padding: 10px; min-height: 0; }
-   .copy-ui, .revenue-ui { padding: 10px; }
-   .lb-calendar { gap: 2px; margin-top: 10px; }
-   .lb-day { padding: 5px 1px; border-radius: 6px; }
-   .lb-day b { font-size: 6.5px; }
-   .lb-day span { font-size: 8px; margin-top: 3px; letter-spacing: -0.05em; }
-   .revenue-ui-head strong { font-size: 18px; }
-   .copy-ui h4 { font-size: 18px; }
-   .copy-ui p { font-size: 11px; }
-   .sequence-card-footer, .copy-card-footer, .revenue-card-footer { padding: 10px; }
-   .airbnb-grid{grid-template-rows:90px 90px}
-   .scope-chip-row{margin:0 0 10px !important}
-   
-   .offer-shell{gap:34px}
-   .display{font-size:46px}
-   .pricing-card{padding:24px}
-   .price{font-size:48px}
-   .philosophy-grid{grid-template-columns:1fr}
-   .philosophy-card{padding:28px}
-   .philosophy-card p{font-size:25px}
-   .bio-card{padding:22px;grid-template-columns:1fr;gap:22px}
-   .bio-text h3 .m-br{display:inline}
-   .bio-photo{max-width:360px;margin:0 auto;grid-column:1;grid-row:auto}
-   .contact-band{padding:68px 0 50px}
-   .contact-band h2{font-size:48px}
-   form{grid-template-columns:1fr}
-   .field-full,.submit{grid-column:1}
-   
-   .mobile-cta{position:fixed;display:flex;transition:opacity .2s ease,transform .2s ease;left:12px;right:12px;bottom:12px;z-index:50;background:rgba(27,37,36,.96);backdrop-filter:blur(14px);padding:8px;border:1px solid rgba(255,255,255,.1);border-radius:15px;box-shadow:0 16px 45px rgba(0,0,0,.24);align-items:center;justify-content:space-between;gap:12px}
-   .mobile-cta .mini-price{color:#fff;min-width:0}
-   .mobile-cta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
-   .mobile-cta .price-line { display: flex; align-items: baseline; gap: 5px; margin-top: 2px; }
-   .mobile-cta .from { font-size: 11px; font-weight: 600; color: #b7c2be; text-transform: none; letter-spacing: 0.02em; font-family: 'DM Sans', sans-serif; }
-   .mobile-cta .price-line strong { display: inline; font-family:'Lora',serif; font-size:17px; font-weight:400; line-height:1.05; margin-top: 0; }
-   .mobile-cta .accent-btn{padding:10px 13px;border-radius:10px;font-size:11px}
-   
-   .ba-row { grid-template-columns: 1fr; gap: 12px; }
-   .lightbox-header { padding: 12px 16px; }
-   .lightbox-content { padding: 32px 16px 64px; }
-   .ba-row{grid-template-columns:1fr;gap:8px}
-   .ba-row::after{content:"↓";left:50%;top:50%}
-   .ba-context{display:block;padding:8px 2px 0}
-   .ba-context span{display:block;margin-top:4px}
-   .lightbox-intro h2{font-size:42px}
-   .lightbox-content{padding:42px 16px 64px}
-   .lightbox-header{padding:12px 16px}
-   .lightbox-count{display:none}
-   .lightbox-cta h3 { font-size: 24px; }
-  }
-  @media(max-width:420px){
-   .hero h1{font-size:40px}
-   .grid-img-1{background-position:center}
-   .price{font-size:43px}
-   .airbnb-grid{grid-template-rows:80px 80px}
-  }
-
-  /* ========== HERO: centered, strictly one screen ==========
-     Header + hero always equal exactly 100svh. The header gets a fixed height,
-     the hero takes the remainder, and the photo grid flexes to fill whatever
-     space the copy and CTA leave. Nothing can push the hero taller or shorter. */
-  :root{--header-h:72px}
-  .site-header{height:var(--header-h)}
-  .nav{height:100%;padding:0}
-  .hero{
-    height:calc(100svh - var(--header-h));
-    min-height:0;
-    max-height:calc(100svh - var(--header-h));
-    padding:clamp(14px,3svh,32px) 0 clamp(18px,4svh,36px);
-    align-items:stretch;
-    overflow:hidden;
-  }
-  .hero>.wrap{height:100%;min-height:0;display:flex;flex-direction:column}
-  .hero-copy{flex:none;text-align:center;margin:0 0 clamp(14px,2.6svh,26px)}
-  .hero h1{
-    max-width:none;
-    margin:0 auto clamp(8px,1.6svh,16px);
-    font-size:clamp(36px,min(5.8vw,8svh),78px);
-  }
-  .hero-sub{max-width:600px;margin:0 auto}
-  .hero-actions{display:flex;justify-content:center;margin-top:clamp(14px,2.6svh,24px)}
-  .photo-grid{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1fr) minmax(0,1fr)}
-  .grid-img{min-height:0}
-
-  @media(max-width:720px){
-   :root{--header-h:56px}
-   .hero h1{font-size:clamp(34px,min(11vw,7.5svh),58px);line-height:.99}
-   .hero-sub{font-size:14px;line-height:1.5}
-   .photo-grid{grid-template-rows:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr)}
-  }
- </style>
+@media(max-width:960px){
+  .offer,.contact,.faq{grid-template-columns:1fr;gap:34px}
+  .mods{grid-template-columns:1fr 1fr}
+  .pair{grid-template-columns:1fr}
+}
+@media(max-width:720px){
+  :root{--header-h:56px}
+  body{padding-bottom:72px}
+  .wrap{width:calc(100% - 28px)}
+  section{padding:52px 0}
+  .brand{font-size:12px;letter-spacing:.14em}.brand img{height:24px}
+  .nav .btn{display:none}
+  .hero h1{font-size:clamp(34px,min(11vw,7.5svh),58px);line-height:.99}
+  .hero-sub{font-size:14px}
+  .hero-actions .btn-ghost{display:none}
+  .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1.5fr) minmax(0,1fr) minmax(0,1fr);border-radius:20px;gap:6px}
+  .gi-1{grid-column:1/-1;grid-row:1}
+  .gl{right:12px;top:12px;font-size:8px}
+  .nums{grid-template-columns:1fr;gap:34px}
+  .rail{--cw:calc(92vw - 20px);gap:16px}
+  .card{padding:18px 14px;border-radius:20px}
+  .ch{display:block}.ch .n{font-size:28px;margin-bottom:6px}.ch h3{font-size:21px}
+  .ag{grid-template-rows:80px 80px}
+  .d{padding:5px 1px}.d span{font-size:8px}
+  .cnav .ar{display:none}
+  .mods{grid-template-columns:1fr}
+  .bio{grid-template-columns:1fr}.bio img{max-width:360px;margin:0 auto}
+  form{grid-template-columns:1fr}
+  .ba{grid-template-columns:1fr}.ba::after{content:"↓"}
+  .mcta{position:fixed;display:flex;left:12px;right:12px;bottom:12px;z-index:50;background:rgba(27,37,36,.96);backdrop-filter:blur(14px);padding:8px 8px 8px 14px;border-radius:15px;box-shadow:0 16px 45px rgba(0,0,0,.24);align-items:center;justify-content:space-between;gap:12px;color:#fff;transition:opacity .2s}
+  .mcta small{display:block;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#b7c2be}
+  .mcta strong{font-family:'Lora',serif;font-weight:400;font-size:17px}
+  .mcta .btn{padding:10px 13px;font-size:11px}
+  .mcta.off{opacity:0;pointer-events:none}
+}
+</style>
 </head>
 <body>
+
 <header class="site-header">
-<div class="wrap nav">
-<a class="brand" href="#top">
-  <img src="assets/tha-icon.png" alt="The House Atelier Mark" class="brand-logo"/>
-  <span>The House Atelier</span>
-</a>
-<a class="nav-link" href="#contact">Request a launch slot <span aria-hidden="true">↗</span></a>
-</div>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/tha-icon.png" alt=""/><span>The House Atelier</span></a>
+    <div class="navr">
+      <button class="pill" id="lang" type="button" aria-label="Switch language">NL</button>
+      <a class="btn book" href="#contact" data-nl="Plan je strategie ↗">Book a strategy ↗</a>
+    </div>
+  </div>
 </header>
-<main>
+
+<main id="top">
+
 <!-- HERO -->
 <section class="hero">
-<div class="wrap">
-<div class="hero-copy">
-<div>
-<h1>Get noticed.<br/>Get booked.<br/><span style="color:var(--accent);">Get 5-starred.</span></h1>
-<p class="hero-sub">One focused engagement to sharpen your photography, listing story, pricing foundation, and guest experience across OTA platforms, helping you get high-value bookings faster.</p>
-<div class="hero-actions">
-<a class="accent-btn hero-cta" href="#offer">See launch package <span aria-hidden="true">→</span></a>
-</div>
-</div>
-</div>
-<div class="photo-grid" aria-label="Property before-and-after preview">
-<div class="grid-img grid-img-1">
-<video class="grid-video" autoplay muted loop playsinline poster="assets/hero-properties-poster.jpg">
-<source src="assets/hero-properties-reel.mp4" type="video/mp4"/>
-</video>
-<div class="grid-label">The House Atelier · SXM</div>
-</div>
-<div class="grid-img grid-img-2" aria-label="Property 1 before">
-<div class="grid-label">Before</div>
-</div>
-<div class="grid-img grid-img-3" aria-label="Property 1 after">
-<div class="grid-label">After</div>
-</div>
-<div class="grid-img grid-img-4" aria-label="Property 2 before">
-<div class="grid-label">Before</div>
-</div>
-<div class="grid-img grid-img-5" aria-label="Property 2 after">
-<div class="grid-label">After</div>
-</div>
-</div>
-
-</div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <h1 data-nl="Juist geprijsd.<br/>Vaker geboekt.<br/><span>Meer verdiend.</span>">Price it right.<br/>Get booked.<br/><span>Earn what it's worth.</span></h1>
+      <p class="hero-sub" data-nl="Omzetstrategie voor vakantieverhuur op Curaçao. We beginnen bij je prijzen en versterken daarna wat je tegenhoudt. Jij houdt de sleutels.">Revenue strategy for Curaçao vacation rentals. We start with your pricing, then fix what holds you back. You keep the keys.</p>
+      <div class="hero-actions">
+        <a class="btn book" href="#contact" data-nl="Plan een Prijsstrategie · $249 →">Book a Pricing Strategy · $249 →</a>
+        <a class="btn btn-ghost" href="#levers" data-nl="Zie hoe het werkt">See how it works</a>
+      </div>
+    </div>
+    <div class="photo-grid" aria-label="Property before-and-after preview">
+      <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Geselecteerd Caribisch werk">Selected Caribbean Work</div></div>
+      <div class="gi gi-2"><div class="gl" data-nl="Voor">Before</div></div>
+      <div class="gi gi-3"><div class="gl" data-nl="Na">After</div></div>
+      <div class="gi gi-4"><div class="gl" data-nl="Voor">Before</div></div>
+      <div class="gi gi-5"><div class="gl" data-nl="Na">After</div></div>
+    </div>
+  </div>
 </section>
 
-<!-- ========== TRANSFORMATION / PROOF SCROLL ========== -->
-<section class="variation-block v1" id="transformation">
+<!-- MARKET -->
+<section class="market">
   <div class="wrap">
-    <div class="transform-intro">
-      <div class="eyebrow">Your opportunity</div>
-      <h2>Three things decide a booking.</h2>
-      <p>What guests see. What they're promised. What they pay. We align all three around one property story, across every major channel.</p>
+    <div class="eyebrow" data-nl="De markt is veranderd">The market changed</div>
+    <h2 data-nl="Stilzitten kost nu geld.">Standing still now costs money.</h2>
+    <div class="nums">
+      <div class="num"><b data-nl="15,5%">15.5%</b><p data-nl="Wat Airbnb sinds september op elke boeking inhoudt.">What Airbnb now takes from every booking, since September.</p></div>
+      <div class="num"><b>2x</b><p data-nl="Wat de beste 25% in Willemstad verdient tegenover een gemiddelde woning.">What the top 25% in Willemstad earn versus a typical listing.</p></div>
+      <div class="num"><b>12x</b><p data-nl="Hoeveel sneller het aanbod groeit dan de vraag.">How much faster supply is growing than demand.</p></div>
     </div>
-    <nav class="chapter-nav">
-      <a href="#v1-visuals" class="is-active">01 The Visuals</a> <span>·</span>
-      <a href="#v1-copy">02 The Promise</a> <span>·</span>
-      <a href="#v1-revenue">03 The Numbers</a>
+    <p class="src"><span data-nl="Bronnen:">Sources:</span> <a href="https://www.hostfully.com/blog/airbnb-host-fees/" target="_blank" rel="noopener">Hostfully</a> · <a href="https://www.airroi.com/airbnb-data/cura%C3%A7ao/cura%C3%A7ao/willemstad" target="_blank" rel="noopener">AirROI</a> · <a href="https://www.curacao.nu/nieuws/toerisme/93854/rapport-vakantieverhuur-rukt-op-naar-gewone-woonwijken-op-curacao" target="_blank" rel="noopener">Curaçao.nu</a></p>
+  </div>
+</section>
+
+<!-- LEVERS CAROUSEL -->
+<section id="levers">
+  <div class="wrap">
+    <div class="intro">
+      <div class="eyebrow" data-nl="Jouw kans">Your opportunity</div>
+      <h2 data-nl="Vier dingen bepalen wat je verdient.">Four things decide what you earn.</h2>
+      <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent. Wij beginnen bij het eerste.">What you charge. What guests see. What you promise. Where you show up. We start with the first.</p>
+    </div>
+    <nav class="cnav" aria-label="Chapters">
+      <button type="button" data-i="0" class="on" data-nl="01 De cijfers">01 The Numbers</button>
+      <button type="button" data-i="1" data-nl="02 Het beeld">02 The Visuals</button>
+      <button type="button" data-i="2" data-nl="03 De belofte">03 The Promise</button>
+      <button type="button" data-i="3" data-nl="04 De zichtbaarheid">04 The Presence</button>
+      <span class="sp"></span>
+      <button type="button" class="ar" id="prev" aria-label="Previous">←</button>
+      <button type="button" class="ar" id="next" aria-label="Next">→</button>
     </nav>
   </div>
-  <div class="proof-rail">
-    <article class="proof-card" id="v1-visuals">
-      <div class="proof-head">
-        <div class="proof-num">01</div>
-        <div>
-          <div class="eyebrow">The Visuals</div>
-          <h3>Photography &amp; Sequence</h3>
-          <p>Your first five photos have one job: earn the click, build desire, and make the stay feel worth the price.</p>
+  <div class="rail" id="rail">
+
+    <!-- 01 NUMBERS -->
+    <article class="card">
+      <div class="ch"><div class="n">01</div><div>
+        <div class="eyebrow" data-nl="De cijfers">The Numbers</div>
+        <h3 data-nl="Prijs en kalender">Pricing &amp; Calendar</h3>
+        <p data-nl="Prijs op vraag, niet op gemiddelden. Seizoen, weekdagen en de concurrentie in jouw buurt.">Price for demand, not averages. Seasons, weekdays and the competition on your street.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><div><small data-nl="Kalenderprijs">Calendar pricing</small><strong data-nl="$650 / nacht">$650 / night</strong></div><span class="chip" data-nl="vaste prijs">flat rate</span></div>
+          <div class="cal"><div class="d"><b>Mon</b><span>$650</span></div><div class="d"><b>Tue</b><span>$650</span></div><div class="d"><b>Wed</b><span>$650</span></div><div class="d"><b>Thu</b><span>$650</span></div><div class="d"><b>Fri</b><span>$650</span></div><div class="d"><b>Sat</b><span>$650</span></div><div class="d"><b>Sun</b><span>$650</span></div></div>
+          <div class="tags"><span data-nl="Geen vraagsignaal">No demand signal</span><span data-nl="Vaste minimale verblijfsduur">Fixed minimum stay</span></div>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><div><small data-nl="Kalenderprijs">Calendar pricing</small><strong>$550–$950</strong></div><span class="chip" data-nl="op vraag">demand-aware</span></div>
+          <div class="cal"><div class="d soft"><b>Mon</b><span>$550</span></div><div class="d"><b>Tue</b><span>$585</span></div><div class="d"><b>Wed</b><span>$615</span></div><div class="d"><b>Thu</b><span>$650</span></div><div class="d hot"><b>Fri</b><span>$850</span></div><div class="d hot"><b>Sat</b><span>$950</span></div><div class="d"><b>Sun</b><span>$650</span></div></div>
+          <div class="tags"><span data-nl="Weekendopslag">Weekend lift</span><span data-nl="Seizoenen">Seasonality</span><span data-nl="Lege nachten gevuld">Gap nights filled</span></div>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
+      <p class="note" data-nl="Alleen ter illustratie.">Illustrative example only.</p>
+    </article>
+
+    <!-- 02 VISUALS -->
+    <article class="card">
+      <div class="ch"><div class="n">02</div><div>
+        <div class="eyebrow" data-nl="Het beeld">The Visuals</div>
+        <h3 data-nl="Fotografie en volgorde">Photography &amp; Sequence</h3>
+        <p data-nl="Je eerste vijf foto's hebben één taak: de klik verdienen en de prijs waard laten voelen.">Your first five photos have one job: earn the click and make the stay feel worth the price.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="ag" data-s="before"></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="ag" data-s="after"></div><div class="pf" data-nl="Na">After</div></div>
       </div>
-      <div class="sequence-pair">
-        <div class="sequence-card seq-before">
-          <div class="airbnb-grid">
-            <div class="ag-cell ag-main"></div>
-            <div class="ag-cell ag-2"></div>
-            <div class="ag-cell ag-3"></div>
-            <div class="ag-cell ag-4"></div>
-            <div class="ag-cell ag-5"></div>
-          </div>
-          <div class="sequence-card-footer">
-            <strong>Before</strong>
-          </div>
-        </div>
-        <div class="sequence-card seq-after">
-          <div class="airbnb-grid">
-            <div class="ag-cell ag-main"></div>
-            <div class="ag-cell ag-2"></div>
-            <div class="ag-cell ag-3"></div>
-            <div class="ag-cell ag-4"></div>
-            <div class="ag-cell ag-5"></div>
-          </div>
-          <div class="sequence-card-footer">
-            <strong>After</strong>
-          </div>
-        </div>
-      </div>
-      <div style="margin-top: 14px; text-align: center;">
-        <a href="javascript:void(0)" onclick="openLightbox()" style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:700; color:var(--sage); text-decoration:none; border-bottom:1px solid var(--sage); padding-bottom:2px;">
-          See more <span aria-hidden="true">→</span>
-        </a>
+      <div class="more"><a id="openLb" data-nl="Bekijk meer →">See more →</a></div>
+    </article>
+
+    <!-- 03 PROMISE -->
+    <article class="card">
+      <div class="ch"><div class="n">03</div><div>
+        <div class="eyebrow" data-nl="De belofte">The Promise</div>
+        <h3 data-nl="Tekst en gastberichten">Copy &amp; Guest Messages</h3>
+        <p data-nl="Maak het verblijf makkelijk te begrijpen en makkelijk om te willen. In drie talen.">Make the stay easy to understand and easy to want. In three languages.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><small data-nl="Voor · algemeen">Before · generic</small><span class="chip">EN</span></div>
+          <h4>Beautiful Villa in Curaçao</h4>
+          <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home.</p>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><small data-nl="Na · gericht">After · high-intent</small><span class="chip">EN · NL · ES</span></div>
+          <h4>Private West Coast Villa · Pool · Sunset Views</h4>
+          <p>A hillside escape for slow mornings and easy access to Curaçao's west coast.</p>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
     </article>
-    <article class="proof-card" id="v1-copy">
-      <div class="proof-head">
-        <div class="proof-num">02</div>
-        <div>
-          <div class="eyebrow">The Promise</div>
-          <h3>Copy &amp; Search</h3>
-          <p>Make the stay easy to understand, easy to want, and easier to find on every platform that matters.</p>
-        </div>
-      </div>
-      <div class="scope-chip-row">
-        <span class="scope-chip">Title</span>
-        <span class="scope-chip">Image captions</span>
-        <span class="scope-chip">Property narrative</span>
-        <span class="scope-chip">Amenities &amp; attributes</span>
-        <span class="scope-chip">Search-facing details</span>
-      </div>
-      <div class="copy-pair">
-        <article class="copy-card">
-          <div class="copy-media copy-before">
-            <div class="copy-ui">
 
-              <div class="copy-ui-top">
-                <span class="copy-ui-kicker">Before · Surface Level</span>
-                <span class="copy-ui-search">generic search</span>
-              </div>
-              <h4>Beautiful Villa in Curaçao</h4>
-              <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home.</p>
-
-              <div class="copy-ui-surfaces">
-                <div class="copy-ui-surface"><b>Image captions</b>Missing / generic</div>
-                <div class="copy-ui-surface"><b>Search signals</b>Unstructured</div>
-              </div>
-            </div>
-          </div>
-          <div class="copy-card-footer">
-            <strong>Before</strong>
-          </div>
-        </article>
-        <article class="copy-card">
-          <div class="copy-media copy-after">
-            <div class="copy-ui">
-
-              <div class="copy-ui-top">
-                <span class="copy-ui-kicker">After · Full Ecosystem</span>
-                <span class="copy-ui-search">high-intent search</span>
-              </div>
-              <h4>Private West Coast Villa · Pool · Sunset Views</h4>
-              <p>A hillside escape for slow mornings and easy access to Curaçao's west coast.</p>
-
-              <div class="copy-ui-surfaces">
-                <div class="copy-ui-surface"><b>Image captions</b>Context-rich &amp; intentional</div>
-                <div class="copy-ui-surface"><b>Search signals</b>Mapped to intent</div>
-              </div>
-            </div>
-          </div>
-          <div class="copy-card-footer">
-            <strong>After</strong>
-          </div>
-        </article>
+    <!-- 04 PRESENCE -->
+    <article class="card">
+      <div class="ch"><div class="n">04</div><div>
+        <div class="eyebrow" data-nl="De zichtbaarheid">The Presence</div>
+        <h3 data-nl="Overal te boeken">Everywhere Guests Book</h3>
+        <p data-nl="Bereik de gasten die Airbnb je niet stuurt, en boek direct zonder platformkosten. Eén kalender, geen dubbele boekingen.">Reach the guests Airbnb doesn't send you, and take bookings direct with no platform fee. One calendar, no double bookings.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong>15.5%</strong></div><span class="chip" data-nl="één kanaal">one channel</span></div>
+          <div class="chans"><span>Airbnb</span><span class="off">Booking.com</span><span class="off">Vrbo</span><span class="off">Micazu</span><span class="off">Google</span><span class="off" data-nl="Eigen site">Direct site</span></div>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong data-nl="0–15,5%">0–15.5%</strong></div><span class="chip" data-nl="6 kanalen · 1 kalender">6 channels · 1 calendar</span></div>
+          <div class="chans"><span>Airbnb</span><span>Booking.com</span><span>Vrbo</span><span>Micazu</span><span>Google</span><span data-nl="Eigen site">Direct site</span></div>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
     </article>
-    <article class="proof-card" id="v1-revenue">
-      <div class="proof-head">
-        <div class="proof-num">03</div>
-        <div>
-          <div class="eyebrow">The Numbers</div>
-          <h3>Pricing &amp; Calendar</h3>
-          <p>Price for demand, not averages. We use seasonality, day-of-week patterns, and local competition to build a stronger rate strategy.</p>
-        </div>
-      </div>
-      <div class="revenue-pair">
-        <article class="revenue-card">
-          <div class="revenue-media revenue-before">
-            <div class="revenue-ui">
-              <div class="revenue-ui-head">
-                <div><small>Calendar pricing</small><strong>$650 / night</strong></div>
-                <span class="copy-ui-search">flat rate</span>
-              </div>
-              <div class="lb-calendar">
-                <div class="lb-day"><b>Mon</b><span>$650</span></div>
-                <div class="lb-day"><b>Tue</b><span>$650</span></div>
-                <div class="lb-day"><b>Wed</b><span>$650</span></div>
-                <div class="lb-day"><b>Thu</b><span>$650</span></div>
-                <div class="lb-day"><b>Fri</b><span>$650</span></div>
-                <div class="lb-day"><b>Sat</b><span>$650</span></div>
-                <div class="lb-day"><b>Sun</b><span>$650</span></div>
-              </div>
-              <div class="lb-demand-row"><span>No demand signal</span><span>No day-of-week adjustment</span></div>
-              <div class="revenue-strategy-row"><span>Fixed MLOS</span><span>No yield flexibility</span></div>
-            </div>
-          </div>
-          <div class="revenue-card-footer">
-            <strong>Before</strong>
-          </div>
-        </article>
-        <article class="revenue-card">
-          <div class="revenue-media revenue-after">
-            <div class="revenue-ui">
-              <div class="revenue-ui-head">
-                <div><small>Calendar pricing</small><strong>$550–$950</strong></div>
-                <span class="copy-ui-search">demand-aware</span>
-              </div>
-              <div class="lb-calendar">
-                <div class="lb-day soft"><b>Mon</b><span>$550</span></div>
-                <div class="lb-day"><b>Tue</b><span>$585</span></div>
-                <div class="lb-day"><b>Wed</b><span>$615</span></div>
-                <div class="lb-day"><b>Thu</b><span>$650</span></div>
-                <div class="lb-day hot"><b>Fri</b><span>$850</span></div>
-                <div class="lb-day hot"><b>Sat</b><span>$950</span></div>
-                <div class="lb-day"><b>Sun</b><span>$650</span></div>
-              </div>
-              <div class="lb-demand-row"><span>Weekend lift</span><span>Seasonality considered</span><span>Competitive context</span></div>
-              <div class="revenue-strategy-row"><span>Data-led MLOS</span><span>Flexible rate moves</span><span>Yield protected</span></div>
-            </div>
-          </div>
-          <div class="revenue-card-footer">
-            <strong>After</strong>
-          </div>
-        </article>
-      </div>
-      <p class="proof-note">Illustrative example only.</p>
-    </article>
+
   </div>
 </section>
 
 <!-- OFFER -->
-<section class="band-dark" id="offer">
-<div class="wrap">
-<div class="offer-shell">
-<div>
-<div class="eyebrow" style="color:#d7a08e">The launch system</div>
-<div class="display">One focused engagement.</div>
-<p class="offer-copy">We sharpen your listings before you spend months learning by trial and error, whether you're launching new or repositioning an existing stay.</p>
-<div class="platform-logos" aria-label="Platforms we optimize">
-  <img src="assets/logo-airbnb.png" alt="Airbnb" height="18"/>
-  <img src="assets/logo-booking.png" alt="Booking.com" height="18"/>
-  <img src="assets/logo-vrbo.png" alt="VRBO" height="18"/>
-  <img src="assets/logo-google-vr.png" alt="Google Vacation Rentals" height="18"/>
-</div>
-<ul class="included offer-items">
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>1. The Diagnostic</em> <span class="sep">·</span> Multi-Channel Audit</strong>
-<span>See what is helping your listings, and what is quietly costing you.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>2. The Visuals</em> <span class="sep">·</span> Photography</strong>
-<span>Make the first impression stronger and the property easier to choose.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>3. The Promise</em> <span class="sep">·</span> Copy &amp; Search</strong>
-<span>Give guests a clear reason to want the stay, and help them find it across every major channel.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>4. The Numbers</em> <span class="sep">·</span> Pricing &amp; Calendar</strong>
-<span>Build rates around seasonality, demand, day-of-week patterns, and local competition.</span>
-</div>
-</li>
-<li>
-<span class="check">✓</span>
-<div>
-<strong><em>Bonus</em> <span class="sep">·</span> Guest Experience Consultation</strong>
-<span>Practical guidance on details that make the stay look, feel, and function better for guests, grounded in Airbnb Luxe standards.</span>
-</div>
-</li>
-</ul>
-</div>
-<aside class="pricing-card">
-<div class="eyebrow">Only 5 launch properties</div>
-<div class="pricing-tier-label">Condos &amp; Intimate Stays · 1–2 Bedrooms</div>
-<div class="price">850 USD</div>
-<div class="price-note">Was <strike>1,650 USD</strike><br/><strong style="color:var(--sage);">≈ 5–7 nights to break even</strong></div>
-<a class="accent-btn price-card-btn" href="#contact">Request a launch slot →</a>
-<div class="price-tiers">
-<div style="border-bottom:1px solid var(--line); padding-bottom:10px; margin-bottom:2px;">
-<strong>Villas &amp; Family Homes · 3–5 Bedrooms</strong> 1,250 USD <strike>2,500 USD</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 3–4 nights to break even</span>
-</div>
-<div>
-<strong>Large Villas &amp; Estates · 6+ Bedrooms</strong> 2,250 USD <strike>4,500 USD</strike><br/>
-<span style="color:var(--sage); font-weight:600;">≈ 2–3 nights to break even</span>
-</div>
-</div>
-<div class="micro">5 slots. No commitment until we review fit and availability.</div>
-</aside>
-</div>
-</div>
-</section>
-
-<!-- THE RETURN (V5) -->
-<section class="band-beige v5">
-  <div class="wrap">
-    <div class="section-heading">
-      <div class="eyebrow">The payback</div>
-      <h2>A few nights covers it.</h2>
+<section class="dark" id="offer">
+  <div class="wrap offer">
+    <div>
+      <div class="eyebrow" style="color:#d7a08e" data-nl="Zo werkt het">How it works</div>
+      <div class="display"><span data-nl="Begin bij de cijfers.">Start with the numbers.</span><small data-nl="Elke stap laat zien wat de volgende oplevert.">Each step shows you what the next one is worth.</small></div>
+      <ul class="spine">
+        <li><span class="k">01</span><div><strong data-nl="Prijsstrategie · $249">Pricing Strategy · $249</strong><span data-nl="Je woning tegenover vergelijkbare woningen, twee scenario's en een gesprek van 30 minuten.">Your listing against similar homes, two scenarios, and a 30-minute call.</span></div></li>
+        <li><span class="k">02</span><div><strong data-nl="Prijsinstelling · $349">Pricing Setup · $349</strong><span data-nl="Onze revenue specialist zet je prijzen goed neer. De $249 wordt volledig verrekend.">Our revenue specialist puts your pricing in place. Your $249 is fully credited.</span></div></li>
+        <li><span class="k">03</span><div><strong data-nl="Revenue Partner · vanaf $99/mnd">Revenue Partner · from $99/mo</strong><span data-nl="Doorlopende reviews zodat je prijzen scherp blijven. Maandelijks opzegbaar.">Ongoing reviews so your pricing stays sharp. Cancel anytime.</span></div></li>
+      </ul>
     </div>
-    <p class="power-line">Pays for itself in under a week of additional booked nights and leaves you with a stronger asset that keeps working for you long after.</p>
-    <div style="text-align:center">
-      <span class="nights">Break-even · 2–7 nights</span>
-    </div>
-    <div class="return-cta">
-      <a class="accent-btn" href="#contact">Request a launch slot →</a>
-    </div>
+    <aside class="price-card">
+      <div class="eyebrow" data-nl="Begin hier">Start here</div>
+      <div style="font-weight:700;font-size:14px;margin-top:10px" data-nl="Prijsstrategie">Pricing Strategy</div>
+      <div class="big">$249</div>
+      <div class="pnote" data-nl="Volledig verrekend met je Prijsinstelling">Fully credited toward your Pricing Setup</div>
+      <ul class="inc">
+        <li data-nl="Omzet, bezetting en nachtprijs tegenover vergelijkbare woningen">Revenue, occupancy and nightly rate vs. similar homes</li>
+        <li data-nl="Scenario A: alleen prijs">Scenario A: pricing only</li>
+        <li data-nl="Scenario B: prijs plus presentatie">Scenario B: pricing plus presence</li>
+        <li data-nl="Wat de 15,5% van Airbnb je kost">What Airbnb's 15.5% is costing you</li>
+        <li data-nl="Gesprek van 30 minuten met een actieplan">30-minute call with an action plan</li>
+      </ul>
+      <a class="btn book" href="#contact" data-nl="Plan je Prijsstrategie →">Book your Pricing Strategy →</a>
+      <div class="micro" data-nl="Eén vaste prijs voor elke woning. Rapport binnen 5 werkdagen.">One flat price for any property. Report within 5 business days.</div>
+    </aside>
   </div>
 </section>
 
-<!-- PHILOSOPHY / CREDIBILITY -->
-<section class="band-light">
-<div class="wrap">
-<div class="section-heading">
-<div class="eyebrow">Our philosophy</div>
-<h2>You stay in control.</h2>
-<p>We strengthen your listings without taking over the business. You keep the property, the brand, and the keys.</p>
-</div>
-<div class="philosophy-grid">
-<div class="bio-card">
-<div class="bio-text">
-<h3>Chris &amp; <br class="m-br"/>The House Atelier</h3>
-<span>Consultant for Airbnb Luxe · STR specialist</span>
-<p>Chris brings experience as a Consultant for <strong>Airbnb Luxe</strong> and digital marketing for <strong>CoveCasa</strong>, a luxury vacation rental company in Sint Maarten.</p>
-</div>
-<div class="bio-photo" aria-label="Photo of Chris seated on a vintage leather sofa">
-<img src="assets/chris-bio.jpg" alt="Chris - The House Atelier" />
-</div>
-</div>
-</div>
-</div>
+<!-- MODULES -->
+<section class="beige" id="modules">
+  <div class="wrap center">
+    <div class="shead">
+      <div class="eyebrow" data-nl="Daarna">Then</div>
+      <h2 data-nl="Alleen wat je nodig hebt.">Only what you need.</h2>
+      <p data-nl="Je strategie laat zien welke hiervan het meeste oplevert.">Your strategy shows which of these moves the needle most.</p>
+    </div>
+    <div class="mods">
+      <div class="mod"><div class="k">02</div><h3 data-nl="Het beeld">The Visuals</h3><p data-nl="20 tot 40 foto's, in volgorde, met bijschriften.">20 to 40 photos, sequenced, with captions.</p><div class="from" data-nl="Vanaf $329">From $329</div></div>
+      <div class="mod"><div class="k">03</div><h3 data-nl="De belofte">The Promise</h3><p data-nl="Tekst in drie talen en automatische gastberichten.">Copy in three languages and automated guest messages.</p><div class="from" data-nl="Vanaf $349">From $349</div></div>
+      <div class="mod"><div class="k">04</div><h3 data-nl="Kanalen">Channels</h3><p data-nl="Booking.com, Vrbo en Micazu op één kalender.">Booking.com, Vrbo and Micazu on one calendar.</p><div class="from" data-nl="Vanaf $399">From $399</div></div>
+      <div class="mod"><div class="k">04</div><h3>Direct</h3><p data-nl="Je eigen boekingssite, zichtbaar in Google.">Your own booking site, visible on Google.</p><div class="from">$299</div></div>
+    </div>
+    <p class="bund" data-nl="Of combineer: <b>Listing Refresh</b> vanaf $599 · <b>Distribution</b> vanaf $599 · <b>Full Presence</b> vanaf $1.049">Or combine: <b>Listing Refresh</b> from $599 · <b>Distribution</b> from $599 · <b>Full Presence</b> from $1,049</p>
+    <details class="prices">
+      <summary data-nl="Bekijk alle prijzen ↓">See all prices ↓</summary>
+      <div class="tw">
+      <table>
+        <thead><tr><th></th><th data-nl="1–2 slpk">1–2 bed</th><th data-nl="3–4 slpk">3–4 bed</th><th data-nl="5+ slpk">5+ bed</th></tr></thead>
+        <tbody>
+          <tr class="grp"><td colspan="4" data-nl="Prijs">Pricing</td></tr>
+          <tr><td data-nl="Prijsstrategie<small>Verrekend met de Prijsinstelling</small>">Pricing Strategy<small>Credited toward Pricing Setup</small></td><td colspan="3">$249</td></tr>
+          <tr><td data-nl="Prijsinstelling<small>Eerste maand Revenue Partner inbegrepen</small>">Pricing Setup<small>First month of Revenue Partner included</small></td><td colspan="3">$349</td></tr>
+          <tr><td data-nl="Revenue Partner<small>Per maand</small>">Revenue Partner<small>Per month</small></td><td>$99<small data-nl="maandelijkse review">monthly review</small></td><td>$199<small data-nl="tweewekelijkse review">biweekly review</small></td><td>$399<small data-nl="wekelijkse review">weekly review</small></td></tr>
+          <tr class="grp"><td colspan="4" data-nl="Zichtbaarheid (eenmalig)">Presence (one-time)</td></tr>
+          <tr><td data-nl="Het beeld<small>20 · 30 · 40 foto's · drone +$100</small>">The Visuals<small>20 · 30 · 40 photos · drone +$100</small></td><td>$329</td><td>$449</td><td>$649</td></tr>
+          <tr><td data-nl="De belofte">The Promise</td><td>$349</td><td>$399</td><td>$449</td></tr>
+          <tr><td data-nl="Kanalen">Channels</td><td>$399</td><td>$449</td><td>$499</td></tr>
+          <tr><td>Direct<small data-nl="Vereist Kanalen">Requires Channels</small></td><td colspan="3">$299</td></tr>
+          <tr class="grp"><td colspan="4" data-nl="Bundels">Bundles</td></tr>
+          <tr><td>Listing Refresh</td><td>$599</td><td>$749</td><td>$949</td></tr>
+          <tr><td>Distribution</td><td>$599</td><td>$649</td><td>$699</td></tr>
+          <tr><td>Full Presence</td><td>$1,049</td><td>$1,249</td><td>$1,499</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <p class="note" data-nl="Prijzen in USD. Software zoals PriceLabs en OwnerRez betaal je rechtstreeks, zodat de accounts van jou blijven.">Prices in USD. Software like PriceLabs and OwnerRez is paid by you directly, so the accounts stay yours.</p>
+    </details>
+  </div>
+</section>
+
+<!-- PHILOSOPHY / BIO -->
+<section class="light">
+  <div class="wrap">
+    <div class="shead center">
+      <div class="eyebrow" data-nl="Onze filosofie">Our philosophy</div>
+      <h2 data-nl="Jij houdt de controle.">You stay in control.</h2>
+      <p data-nl="Jouw omzetteam, niet je beheerder. Jij houdt de woning, de accounts en de sleutels.">Your revenue team, not your property manager. You keep the property, the accounts and the keys.</p>
+    </div>
+    <div class="bio">
+      <div class="bio-text">
+        <h3>Chris &amp; The House Atelier</h3>
+        <span class="role" data-nl="Consultant voor Airbnb Luxe · Curaçao">Consultant for Airbnb Luxe · Curaçao</span>
+        <p data-nl="Chris werkt als Consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa, een luxe vakantieverhuurbedrijf op Sint Maarten. Samen met een revenue specialist met 15+ jaar ervaring in hotels en villa's.">Chris works as a Consultant for Airbnb Luxe and led digital marketing for CoveCasa, a luxury vacation rental company in Sint Maarten. Alongside a revenue specialist with 15+ years in hotels and villas.</p>
+      </div>
+      <img src="assets/chris-bio.jpg" alt="Chris, The House Atelier"/>
+    </div>
+    <div class="ctrl">
+      <span data-nl="Geen beheercontract">No management contract</span>
+      <span data-nl="Geen percentage van je omzet">No cut of your revenue</span>
+      <span data-nl="Accounts op jouw naam">Accounts in your name</span>
+      <span data-nl="Maandelijks opzegbaar">Cancel anytime</span>
+    </div>
+  </div>
 </section>
 
 <!-- FAQ -->
-<section class="band-beige">
-<div class="wrap">
-<div class="faq-grid">
-<div class="section-heading" style="margin-bottom:0">
-<div class="eyebrow">Frequently asked questions</div>
-<h2>Before you apply.</h2>
-</div>
-<div>
-<details open="">
-<summary>Is this only for brand-new listings?</summary>
-<p>New listings are the main fit, especially with little or no review history. Existing listings can fit when the presentation or positioning needs a reset, across Airbnb, Booking.com, VRBO, or Google Vacation Rentals.</p>
-</details>
-<details>
-<summary>What happens after I submit the form?</summary>
-<p>We review the property, confirm fit and availability, then call you to arrange the work. A deposit starts the project, and the balance is due on delivery.</p>
-</details>
-<details>
-<summary>How long does the work take on site?</summary>
-<p>Most projects take 1–4 hours on site. Larger or more detailed properties may take longer.</p>
-</details>
-<details>
-<summary>Do I have to hand over management of my property?</summary>
-<p>No. You keep the property, brand, positioning, and business. Ongoing optimization is optional.</p>
-</details>
-<details>
-<summary>Can you support the property beyond the initial work?</summary>
-<p>Yes. Optional support can include multi-channel listing updates, direct-booking marketing, a website, video walkthroughs, and ongoing pricing.</p>
-</details>
-</div>
-</div>
-</div>
+<section class="beige" id="faq">
+  <div class="wrap faq">
+    <div><div class="eyebrow" data-nl="Veelgestelde vragen">Frequently asked questions</div><h2 data-nl="Goed om te weten.">Good to know.</h2></div>
+    <div>
+      <details open><summary data-nl="Zijn jullie een beheerder?">Are you a property manager?</summary><p data-nl="Nee. We doen de commerciële kant: prijzen, presentatie en kanalen. Schoonmaak, sleutels en gasten blijven bij jou of bij wie je nu helpt.">No. We handle the commercial side: pricing, presentation and channels. Cleaning, keys and guests stay with you or whoever helps you now.</p></details>
+      <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Airbnb, Booking.com, PriceLabs en OwnerRez staan op jouw naam. Wij werken er als teamlid in.">You do. Airbnb, Booking.com, PriceLabs and OwnerRez stay in your name. We work inside them as team members.</p></details>
+      <details><summary data-nl="Welke softwarekosten betaal ik zelf?">What software do I pay for?</summary><p data-nl="PriceLabs voor dynamische prijzen, ongeveer $10 tot $20 per maand. Met extra kanalen of een eigen site ook OwnerRez. De exacte kosten staan in je strategie.">PriceLabs for dynamic pricing, roughly $10 to $20 a month. With extra channels or a direct site, OwnerRez too. Exact costs are in your strategy.</p></details>
+      <details><summary data-nl="Wat als mijn woning al goed presteert?">What if my listing already performs well?</summary><p data-nl="Dan laat de strategie dat zien, en meestal ook waar nog ruimte zit. Daarna beslis je zelf.">Then the strategy will show it, and usually where there's still room. You decide from there.</p></details>
+      <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Een fotoshoot' in het formulier. We doen er op de dag van de shoot een korte omzetsnapshot bij.">Yes. Choose "A photo shoot" in the form. We include a quick revenue snapshot on shoot day.</p></details>
+      <details><summary data-nl="Hoe zit het met de voorgestelde toeristenheffing in 2027?">What about the proposed 2027 tourist tax?</summary><p data-nl="De conceptbegroting stelt voor de 7% belasting op verblijf te vervangen door een heffing per bezoeker. Het is nog geen wet. Als het doorgaat, passen we je prijzen erop aan.">The draft budget proposes replacing the 7% accommodation tax with a per-visitor entry fee. It isn't law yet. If it passes, we'll adjust your pricing for it.</p></details>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact-band" id="contact">
-<div class="wrap">
-<div class="contact-grid">
-<div>
-<div class="eyebrow" style="color:#d7a08e">5 launch properties</div>
-<h2>Ready to launch?</h2>
-<div class="contact-steps">
-<div class="contact-step">
-<span class="step-dot">1</span>
-<div><strong>Send the listing</strong><br/>About a minute. Any major platform.</div>
-</div>
-<div class="contact-step">
-<span class="step-dot">2</span>
-<div><strong>We review it</strong><br/>Property, positioning, opportunity.</div>
-</div>
-<div class="contact-step">
-<span class="step-dot">3</span>
-<div><strong>We confirm fit</strong><br/>No commitment before review.</div>
-</div>
-</div>
-
-<!-- WhatsApp Contact Link -->
-<div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1);">
-  <p style="font-size: 14px; color: #c6cfcc; margin: 0; line-height: 1.6;">
-    Questions before applying?<br>
-    <a href="https://wa.me/59996640824?text=Hi%20Chris!%20I%20have%20a%20question%20about%20The%20House%20Atelier%20launch%20services." target="_blank" rel="noopener noreferrer" style="color: #fff; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; margin-top: 6px; text-decoration: underline; text-underline-offset: 3px;">
-      Message Chris on WhatsApp ↗
-    </a>
-  </p>
-</div>
-
-</div>
-<div class="form-card">
-<form onsubmit="submitLead(event)">
-<div>
-<label for="name">Your name</label>
-<input id="name" name="name" placeholder="Your name" required=""/>
-</div>
-<div>
-<label for="email">Email</label>
-<input id="email" name="email" placeholder="you@example.com" type="email" required=""/>
-</div>
-<div>
-<label for="whatsapp">WhatsApp</label>
-<input id="whatsapp" name="whatsapp" placeholder="Your WhatsApp number" type="tel" required=""/>
-</div>
-<div>
-<label for="outreach">Preferred outreach</label>
-<select id="outreach" name="outreach" required="">
-<option disabled="" selected="" value="">Select method</option>
-<option value="Email">Email</option>
-<option value="WhatsApp">WhatsApp</option>
-</select>
-</div>
-<div class="field-full">
-<label for="beds">Property size</label>
-<select id="beds" name="beds" required="">
-<option disabled="" selected="" value="">Select size</option>
-<option>Condos &amp; Intimate Stays (≈1–2 Bedrooms)</option>
-<option>Villas &amp; Family Homes (≈3–5 Bedrooms)</option>
-<option>Large Villas &amp; Estates (≈6+ Bedrooms)</option>
-</select>
-</div>
-<div class="field-full">
-<label for="url">Listing URL</label>
-<input id="url" name="url" placeholder="https://airbnb.com/... or launching soon" required="" type="text"/>
-</div>
-<div class="field-full">
-<label for="message">Anything else?</label>
-<textarea id="message" name="message" placeholder="Anything useful about the property or launch."></textarea>
-</div>
-<button class="submit" type="submit">Request my launch slot →</button>
-</form>
-<p class="form-note">No commitment. We review fit first.</p>
-</div>
-</div>
-</div>
+<section class="dark" id="contact">
+  <div class="wrap contact">
+    <div>
+      <div class="eyebrow" style="color:#d7a08e" data-nl="Begin hier">Start here</div>
+      <h2 data-nl="Waar sta jij?">Where do you stand?</h2>
+      <p data-nl="Stuur je advertentie. We laten je zien wat hij zou kunnen verdienen.">Send us your listing. We'll show you what it could be earning.</p>
+      <div class="steps">
+        <div class="st"><span class="dot">1</span><div><strong data-nl="Stuur je advertentie">Send your listing</strong><br/><span data-nl="Ongeveer een minuut.">About a minute.</span></div></div>
+        <div class="st"><span class="dot">2</span><div><strong data-nl="Wij bekijken de cijfers">We review the numbers</strong><br/><span data-nl="Binnen 2 werkdagen.">Within 2 business days.</span></div></div>
+        <div class="st"><span class="dot">3</span><div><strong data-nl="Jij beslist">You decide</strong><br/><span data-nl="Geen verplichting.">No obligation.</span></div></div>
+      </div>
+      <a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Vragen? Stuur Chris een WhatsApp ↗">Questions? Message Chris on WhatsApp ↗</a>
+    </div>
+    <div class="form-card">
+      <form id="leadForm" novalidate>
+        <input type="hidden" name="lang" id="fLang" value="en"/>
+        <input type="hidden" name="source" id="fSource" value="website"/>
+        <div class="full"><label for="interest" data-nl="Ik wil graag">I'd like</label>
+          <select id="interest" name="interest">
+            <option value="strategy" data-nl="Een Prijsstrategie ($249)">A Pricing Strategy ($249)</option>
+            <option value="snapshot" data-nl="Eerst een gratis snapshot">A free snapshot first</option>
+            <option value="photos" data-nl="Een fotoshoot">A photo shoot</option>
+          </select></div>
+        <div class="full"><label for="url" data-nl="Link naar je advertentie">Listing link</label><input id="url" name="url" placeholder="https://airbnb.com/rooms/..."/></div>
+        <div><label for="name" data-nl="Naam">Name</label><input id="name" name="name" autocomplete="name"/></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"/></div>
+        <div><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel"/></div>
+        <div><label for="beds" data-nl="Slaapkamers">Bedrooms</label>
+          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option>1–2</option><option>3–4</option><option>5+</option></select></div>
+        <div class="full"><label for="msg" data-nl="Nog iets? (optioneel)">Anything else? (optional)</label><textarea id="msg" name="message"></textarea></div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn full" type="submit" id="sub" data-nl="Versturen →">Send →</button>
+      </form>
+      <p class="fnote" data-nl="Geen verplichting. Een aanvraag start een gesprek, geen contract.">No commitment. A request starts a conversation, not a contract.</p>
+    </div>
+  </div>
 </section>
 </main>
+
 <footer>
-<div class="wrap footer-inner">
-<span>© 2026 The House Atelier</span>
-<span>Vacation-rental launch services · Curaçao</span>
-</div>
+  <div class="wrap">
+    <div class="fi"><span>© 2026 The House Atelier</span><span data-nl="Omzetstrategie voor vakantieverhuur · Curaçao">Revenue strategy for vacation rentals · Curaçao</span></div>
+    <p data-nl="The House Atelier is een onafhankelijk adviesbureau en is niet verbonden aan of goedgekeurd door Airbnb, Inc. Airbnb en Airbnb Luxe zijn handelsmerken van Airbnb, Inc. Marktcijfers zijn illustratief en geen garantie voor resultaat.">The House Atelier is an independent consultancy, not affiliated with or endorsed by Airbnb, Inc. Airbnb and Airbnb Luxe are trademarks of Airbnb, Inc. Market figures are illustrative and not a guarantee of results.</p>
+  </div>
 </footer>
-<div aria-label="Mobile call to action" class="mobile-cta" id="mobileCta">
-<div class="mini-price">
-  <small>Launch offer</small>
-  <div class="price-line">
-    <span class="from">from</span>
-    <strong>850 USD</strong>
-  </div>
-</div>
-<a class="accent-btn" href="#offer" id="mobileCtaLink">See offer →</a>
+
+<div class="mcta" id="mcta">
+  <div><small data-nl="Prijsstrategie">Pricing Strategy</small><strong>$249</strong></div>
+  <a class="btn book" href="#contact" data-nl="Plannen →">Book →</a>
 </div>
 
-<!-- ================== LIGHTBOX COMPONENT ================== -->
-<div id="photo-lightbox" class="lightbox-overlay" aria-hidden="true">
-  <div class="lightbox-header">
-    <button class="lightbox-back" onclick="closeLightbox()" aria-label="Back to the work">&larr; Back to the work</button>
-    <div class="lightbox-title">Photography Before &amp; After</div>
-    <div class="lightbox-count">5 transformations</div>
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" aria-hidden="true">
+  <div class="lb-head">
+    <button class="lb-back" id="closeLb" type="button" data-nl="← Terug">← Back</button>
+    <div class="lb-title" data-nl="Fotografie voor en na">Photography before &amp; after</div>
+    <span></span>
   </div>
-
-  <div class="lightbox-content">
-    <div class="lightbox-intro">
-      <div class="eyebrow">The visual difference</div>
-      <h2>Same place. Higher perceived value.</h2>
-      <p>Better photography makes quality visible before a guest reads a word.</p>
-    </div>
-
-    <div class="ba-grid">
-      <div class="ba-row">
-        <div class="ba-card before">
-          <div class="ba-label">Before</div>
-          <div class="ba-img b1"></div>
-        </div>
-        <div class="ba-card after">
-          <div class="ba-label">After</div>
-          <div class="ba-img a1"></div>
-        </div>
-        <div class="ba-context">
-          <strong>First impression</strong>
-          <span>Let the first frame sell.</span>
-        </div>
-      </div>
-
-      <div class="ba-row">
-        <div class="ba-card before">
-          <div class="ba-label">Before</div>
-          <div class="ba-img b2"></div>
-        </div>
-        <div class="ba-card after">
-          <div class="ba-label">After</div>
-          <div class="ba-img a2"></div>
-        </div>
-        <div class="ba-context">
-          <strong>Details that matter</strong>
-          <span>Make the small things memorable.</span>
-        </div>
-      </div>
-
-      <div class="ba-row">
-        <div class="ba-card before">
-          <div class="ba-label">Before</div>
-          <div class="ba-img b3"></div>
-        </div>
-        <div class="ba-card after">
-          <div class="ba-label">After</div>
-          <div class="ba-img a3"></div>
-        </div>
-        <div class="ba-context">
-          <strong>Perceived value</strong>
-          <span>Make the presentation match the price.</span>
-        </div>
-      </div>
-
-      <div class="ba-row">
-        <div class="ba-card before">
-          <div class="ba-label">Before</div>
-          <div class="ba-img b4"></div>
-        </div>
-        <div class="ba-card after">
-          <div class="ba-label">After</div>
-          <div class="ba-img a4"></div>
-        </div>
-        <div class="ba-context">
-          <strong>Sense of place</strong>
-          <span>Show the feeling, not just the room.</span>
-        </div>
-      </div>
-
-      <div class="ba-row">
-        <div class="ba-card before">
-          <div class="ba-label">Before</div>
-          <div class="ba-img b5"></div>
-        </div>
-        <div class="ba-card after">
-          <div class="ba-label">After</div>
-          <div class="ba-img a5"></div>
-        </div>
-        <div class="ba-context">
-          <strong>Worth coming back to</strong>
-          <span>Make the stay feel considered from the start.</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="lightbox-cta">
-      <h3>Make the value you already own visible.</h3>
-      <p>That is the goal.</p>
-      <a href="#offer" class="accent-btn" onclick="closeLightbox()" style="font-size:14px;padding:14px 22px;">See the system →</a>
-    </div>
+  <div class="lb-body">
+    <div class="lb-intro"><div class="eyebrow" style="color:#d7a08e" data-nl="Het verschil">The visual difference</div><h2 data-nl="Dezelfde plek. Meer waarde.">Same place. Higher perceived value.</h2><p data-nl="Goede foto's laten kwaliteit zien voordat een gast één woord leest.">Better photography shows quality before a guest reads a word.</p></div>
+    <div id="baList"></div>
   </div>
 </div>
-<!-- ======================================================== -->
 
 <script>
-  // Logo link: always scroll to the true top of the page
-  document.querySelector('.brand').addEventListener('click', function (e) {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+/* ===== CONFIG: fill in before launch ===== */
+const CONFIG = {
+  strategyBookingUrl: '',  // Stripe Payment Link or paid Calendly event for the $249 Strategy. Empty = buttons open the form.
+  webhookUrl: 'https://hook.us2.make.com/ufmwxu3fiphmu69rlnmx1bmb7colv9ey',
+  whatsappNumber: '59996640824'
+};
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const interest = $('#interest');
 
-  // Chapter Nav & Rail Logic: position-based (no IntersectionObserver ambiguity)
-  document.addEventListener('DOMContentLoaded', () => {
-    const rail = document.querySelector('.proof-rail');
-    const navLinks = document.querySelectorAll('.chapter-nav a');
-    const cards = document.querySelectorAll('.proof-card');
+/* Booking buttons */
+$$('.book').forEach(a => {
+  if (CONFIG.strategyBookingUrl) { a.href = CONFIG.strategyBookingUrl; a.target = '_blank'; a.rel = 'noopener'; }
+  else a.addEventListener('click', () => { interest.value = 'strategy'; });
+});
 
-    if (!rail || !navLinks.length || !cards.length) return;
+/* Photo grids in card 02 + lightbox rows */
+$$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.createElement('i'); i.style.backgroundImage = `url(assets/seq-${g.dataset.s}-${n}.jpg)`; g.appendChild(i); } });
+$('#baList').innerHTML = [1,2,3,4,5].map(n => `<div class="ba"><div style="background-image:url(assets/lightbox-${n}-before.jpg)"><span data-nl="Voor">Before</span></div><div class="af" style="background-image:url(assets/lightbox-${n}-after.jpg)"><span data-nl="Na">After</span></div></div>`).join('');
+const lb = $('#lb');
+$('#openLb').addEventListener('click', () => { lb.classList.add('on'); lb.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; });
+const closeLb = () => { lb.classList.remove('on'); lb.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
+$('#closeLb').addEventListener('click', closeLb);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 
-    function setActiveLink(cardId) {
-      navLinks.forEach(link => {
-        link.classList.toggle('is-active', link.getAttribute('href') === `#${cardId}`);
-      });
-    }
+/* Carousel: every card can center, chips and arrows jump to cards */
+const rail = $('#rail'), cards = [...rail.children], chips = $$('.cnav [data-i]');
+let cur = 0;
+const mid = c => c.offsetLeft + c.offsetWidth / 2;
+const go = i => { i = Math.max(0, Math.min(cards.length - 1, i)); rail.scrollTo({ left: mid(cards[i]) - rail.clientWidth / 2, behavior: 'smooth' }); };
+const update = () => { const m = rail.scrollLeft + rail.clientWidth / 2; cur = cards.reduce((b, c, i) => Math.abs(mid(c) - m) < Math.abs(mid(cards[b]) - m) ? i : b, 0); chips.forEach((c, i) => c.classList.toggle('on', i === cur)); };
+let tick = false;
+rail.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(() => { update(); tick = false; }); } }, { passive: true });
+addEventListener('resize', update); addEventListener('load', update);
+chips.forEach(c => c.addEventListener('click', () => go(+c.dataset.i)));
+$('#prev').addEventListener('click', () => go(cur - 1));
+$('#next').addEventListener('click', () => go(cur + 1));
 
-    function getCenteredCard() {
-      const railRect = rail.getBoundingClientRect();
-      const railCenter = railRect.left + railRect.width / 2;
-      let closest = null;
-      let closestDistance = Infinity;
-      cards.forEach(card => {
-        const cardRect = card.getBoundingClientRect();
-        const cardCenter = cardRect.left + cardRect.width / 2;
-        const distance = Math.abs(cardCenter - railCenter);
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closest = card;
-        }
-      });
-      return closest;
-    }
+/* Language toggle (EN/NL) */
+const wa = { en: "Hi Chris! I have a question about The House Atelier.", nl: "Hoi Chris! Ik heb een vraag over The House Atelier." };
+function setLang(l) {
+  document.documentElement.lang = l;
+  $$('[data-nl]').forEach(e => { if (e.dataset.en === undefined) e.dataset.en = e.innerHTML; e.innerHTML = l === 'nl' ? e.dataset.nl : e.dataset.en; });
+  $('#lang').textContent = l === 'nl' ? 'EN' : 'NL';
+  $('#fLang').value = l;
+  $('#waLink').href = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(wa[l]);
+  try { localStorage.setItem('tha-lang', l); } catch (e) {}
+}
+$('#lang').addEventListener('click', () => setLang(document.documentElement.lang === 'nl' ? 'en' : 'nl'));
+(function () {
+  const p = new URLSearchParams(location.search);
+  let l = p.get('lang'); try { l = l || localStorage.getItem('tha-lang'); } catch (e) {}
+  if (!l && (navigator.language || '').toLowerCase().startsWith('nl')) l = 'nl';
+  setLang(l === 'nl' ? 'nl' : 'en');
+  if (p.get('utm_source')) $('#fSource').value = p.get('utm_source') + (p.get('utm_campaign') ? '/' + p.get('utm_campaign') : '');
+  const i = p.get('interest'); if (['strategy', 'snapshot', 'photos'].includes(i)) interest.value = i;
+})();
 
-    let ticking = false;
-    function onRailScroll() {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(() => {
-        const centered = getCenteredCard();
-        if (centered) setActiveLink(centered.id);
-        ticking = false;
-      });
-    }
+/* Mobile CTA: hidden on the hero and near the contact form */
+(function () {
+  const m = $('#mcta'), hero = $('.hero'), contact = $('#contact');
+  const upd = () => {
+    const pastHero = hero.getBoundingClientRect().bottom < 40;
+    const nearForm = contact.getBoundingClientRect().top < innerHeight;
+    m.classList.toggle('off', !pastHero || nearForm);
+  };
+  addEventListener('scroll', upd, { passive: true }); upd();
+})();
 
-    rail.addEventListener('scroll', onRailScroll, { passive: true });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const targetId = link.getAttribute('href').substring(1);
-        const targetCard = document.getElementById(targetId);
-        if (!targetCard) return;
-
-        // Compute the scroll offset purely within the rail; never touches
-        // the page's vertical scroll, so the full-screen section never shifts.
-        const railRect = rail.getBoundingClientRect();
-        const cardRect = targetCard.getBoundingClientRect();
-        const cardOffsetWithinRail = (cardRect.left - railRect.left) + rail.scrollLeft;
-        const targetLeft = cardOffsetWithinRail + (cardRect.width / 2) - (rail.clientWidth / 2);
-
-        rail.scrollTo({ left: targetLeft, behavior: 'smooth' });
-        setActiveLink(targetId); // immediate feedback; scroll handler will confirm
-      });
-    });
-
-    // Confirm the correct initial state once layout has fully settled
-    // (fonts/images can shift layout after DOMContentLoaded).
-    window.addEventListener('load', () => {
-      const centered = getCenteredCard();
-      if (centered) setActiveLink(centered.id);
-    });
-    requestAnimationFrame(() => {
-      const centered = getCenteredCard();
-      if (centered) setActiveLink(centered.id);
-    });
-  });
-
-  // Lightbox Logic
-  function openLightbox() {
-    const box = document.getElementById('photo-lightbox');
-    box.classList.add('is-active');
-    box.setAttribute('aria-hidden','false');
-    document.body.style.overflow = 'hidden';
+/* Form */
+const form = $('#leadForm'), err = $('#err'), sub = $('#sub');
+const t = (en, nl) => document.documentElement.lang === 'nl' ? nl : en;
+const showErr = m => { err.textContent = m; err.style.display = 'block'; };
+form.querySelectorAll('input,select,textarea').forEach(el => el.addEventListener('input', () => { err.style.display = 'none'; }));
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = Object.fromEntries(new FormData(form).entries());
+  if (!f.url || !f.name || !f.email || !f.beds) return showErr(t('Please add your listing link, name, email and bedrooms.', 'Vul je advertentielink, naam, e-mail en slaapkamers in.'));
+  if (!/^\S+@\S+\.\S+$/.test(f.email)) return showErr(t('Please enter a valid email address.', 'Vul een geldig e-mailadres in.'));
+  sub.disabled = true; sub.textContent = t('Sending…', 'Versturen…');
+  try {
+    const r = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
+    if (!r.ok) throw new Error();
+    const paid = f.interest === 'strategy' && CONFIG.strategyBookingUrl;
+    form.innerHTML = '<div class="full" style="text-align:center;padding:26px 0"><div style="font-family:Lora,serif;font-size:30px;margin-bottom:8px">' + t('Thank you.', 'Bedankt.') + '</div><p style="color:var(--md);margin:0;font-size:14px">' + (paid ? t('Next, complete your booking on the payment page.', 'Rond je boeking af op de betaalpagina.') : t('We will be in touch within 2 business days.', 'We nemen binnen 2 werkdagen contact op.')) + '</p></div>';
+    if (paid) window.open(CONFIG.strategyBookingUrl, '_blank');
+  } catch (x) {
+    sub.disabled = false; sub.textContent = t('Send →', 'Versturen →');
+    showErr(t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.'));
   }
-  function closeLightbox() {
-    const box = document.getElementById('photo-lightbox');
-    box.classList.remove('is-active');
-    box.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
-  }
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') closeLightbox();
-  });
-
-  // Dynamic mobile CTA: only after hero, tied to offer/contact
-  (function(){
-   const cta=document.getElementById('mobileCta');
-   const link=document.getElementById('mobileCtaLink');
-   const hero=document.querySelector('.hero');
-   const offer=document.getElementById('offer');
-   const contact=document.getElementById('contact');
-   const contactTitle=contact ? contact.querySelector('h2') : null;
-   if(!cta || !link || !hero || !offer || !contact || !contactTitle) return;
-   const small=cta.querySelector('small');
-   const mobileQuery=window.matchMedia('(max-width:720px)');
-   const headerOffset=0;
-   function updateCta(){
-    if(!mobileQuery.matches){
-     cta.classList.add('is-hidden');
-     return;
-    }
-    const scrollY=window.scrollY || window.pageYOffset;
-    const heroBottom=hero.getBoundingClientRect().bottom + scrollY;
-    // Hide while still in (or at) the hero section
-    if(scrollY < heroBottom - 40){
-     cta.classList.add('is-hidden');
-     return;
-    }
-    const offerY=offer.getBoundingClientRect().top + scrollY;
-    const contactTitleRect=contactTitle.getBoundingClientRect();
-    const titleIsVisible=contactTitleRect.top <= window.innerHeight;
-    if(titleIsVisible){
-     cta.classList.add('is-hidden');
-     return;
-    }
-    cta.classList.remove('is-hidden');
-    if(scrollY >= offerY - headerOffset){
-     link.textContent='Request →';
-     link.setAttribute('href','#contact');
-     small.textContent='Launch offer';
-    }else{
-     link.textContent='See offer →';
-     link.setAttribute('href','#offer');
-     small.textContent='Launch offer';
-    }
-   }
-   let ticking=false;
-   function onScroll(){
-    if(ticking) return;
-    ticking=true;
-    requestAnimationFrame(function(){
-     updateCta();
-     ticking=false;
-    });
-   }
-   window.addEventListener('scroll',onScroll,{passive:true});
-   window.addEventListener('resize',updateCta);
-   mobileQuery.addEventListener('change',updateCta);
-   updateCta();
-  })();
-
-  async function submitLead(e){
-   e.preventDefault();
-   const form=e.target;
-   const payload=Object.fromEntries(new FormData(form).entries());
-   const webhookUrl='https://hook.us2.make.com/ufmwxu3fiphmu69rlnmx1bmb7colv9ey';
-   try{
-    const response=await fetch(webhookUrl,{
-     method:'POST',
-     headers:{'Content-Type':'application/json'},
-     body:JSON.stringify(payload)
-    });
-    if(response.ok){
-     alert('Thank you. Your launch-slot request has been submitted.');
-     form.reset();
-    }else{
-     alert('There was an issue sending the request. Please try again.');
-    }
-   }catch(err){
-    console.error(err);
-    alert('Could not submit the request. Please check your connection or contact us directly.');
-   }
-  }
- </script>
+});
+</script>
 </body>
 </html>
