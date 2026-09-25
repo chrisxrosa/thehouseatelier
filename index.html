@@ -68,10 +68,12 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 
 /* MARKET */
 .market{background:var(--bone);text-align:center}
-.market h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 48px}
+.market h2{font-size:clamp(30px,3.4vw,48px);line-height:1.08;letter-spacing:-.035em;margin:8px 0 44px}
+.market h2 span{color:var(--acc)}
+@media(min-width:961px){.market h2{white-space:nowrap}}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.num b{display:block;font-family:'Lora',serif;font-weight:400;font-size:clamp(64px,9vw,120px);line-height:1;letter-spacing:-.04em;color:var(--acc)}
-.num p{margin:14px auto 0;max-width:260px;font-size:15px;color:var(--md)}
+.num b{display:block;font-family:'Lora',serif;font-weight:400;font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;color:var(--acc)}
+.num p{margin:10px auto 0;max-width:260px;font-size:15px;color:var(--md)}
 .src{margin-top:40px;font-size:11px;color:var(--muted)}
 .src a{text-decoration:underline}
 
@@ -95,7 +97,6 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 .mseg.on::after{content:'';position:absolute;left:10px;right:10px;bottom:6px;height:3px;border-radius:3px;background:#fff}
 .mend{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);white-space:nowrap}
 .mnav .ar{border:1px solid var(--line);border-radius:50%;width:34px;height:34px;padding:0;display:grid;place-items:center;color:var(--ink);font-size:14px;background:none;cursor:pointer;flex:none}
-.mcap{font-size:12px;color:var(--md);margin:8px 0 0}
 .rail{--cw:min(85vw,940px);display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px calc(50% - var(--cw)/2) 48px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
 .card{flex:0 0 var(--cw);scroll-snap-align:center;scroll-snap-stop:always;background:var(--bone2);border:1px solid var(--line);border-radius:24px;padding:22px 26px;box-shadow:0 22px 60px -18px rgba(27,37,36,.20),0 6px 20px rgba(27,37,36,.05)}
@@ -230,7 +231,8 @@ td small{display:block;font-weight:400;color:var(--muted);font-size:11px}
 .st{display:flex;gap:12px;color:#c6cfcc;font-size:13px}
 .st strong{color:#fff}
 .dot{width:20px;height:20px;border:1px solid rgba(255,255,255,.24);border-radius:50%;display:grid;place-items:center;flex:none;color:#d9ece7;font-size:10px}
-.wa{display:inline-flex;margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);color:#fff;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:3px}
+.waline{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);color:#c7cfcc;font-size:14px}
+.wa{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .form-card{background:var(--bone2);border-radius:24px;padding:25px}
 form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .full{grid-column:1/-1}
@@ -239,7 +241,7 @@ input,select,textarea{width:100%;border:1px solid var(--line);background:#fffefb
 input:focus,select:focus,textarea:focus{border-color:rgba(184,95,71,.65);box-shadow:0 0 0 3px rgba(184,95,71,.08)}
 textarea{min-height:72px;resize:vertical}
 .err{grid-column:1/-1;color:#a32d2d;font-size:12px;margin:0;display:none}
-.fnote{font-size:10px;color:#8a918d;text-align:center;margin:10px 0 0}
+#contact .fnote,.fnote{margin-top:26px;font-size:14px;color:var(--md);text-align:center}
 footer{background:var(--char);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
 footer .fi{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
@@ -247,6 +249,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 /* REVENUE CHECK */
 .rc{background:var(--char);color:var(--white);flex-direction:column;align-items:stretch}
 .rc-head .eyebrow{color:#d7a08e}
+.dsk-br{display:none}
+@media(min-width:961px){.dsk-br{display:block}}
 .rc-head{text-align:center;margin:0 auto 40px}
 .rc-head h2{max-width:760px;margin-left:auto!important;margin-right:auto!important}
 .rc-head h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 12px;color:#fff}
@@ -269,13 +273,6 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .egap b{display:block;font-family:'Lora',serif;font-weight:400;font-size:34px;line-height:1.1;margin:4px 0}
 .egap span{font-size:13px}
 .egap.good{background:#dfe9e5;color:var(--sage)}
-.lockrow{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 16px}
-.lockrow label{display:flex;align-items:center;gap:6px}
-.lockrow .rcpill{font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accd);background:var(--accs);padding:3px 6px;border-radius:999px}
-.lockrow select{background:#fbfaf6;border-style:dashed}
-.teaser{display:none;margin:-8px 0 16px;padding:10px 12px;border-radius:12px;background:#f1ebe1;font-size:12.5px;color:var(--md)}
-.teaser.on{display:block}
-.teaser b{color:var(--ink)}
 @keyframes nudge{0%,100%{transform:translateY(0)}40%{transform:translateY(-3px)}70%{transform:translateY(1px)}}
 .btn.nudge{animation:nudge .6s ease 2}
 .eyou{margin-top:16px}
@@ -290,6 +287,14 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .srow b{font-weight:700}
 .srow.blur b,.srow.blur span{filter:blur(4px);user-select:none}
 .gets{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px;font-size:13.5px;color:var(--md)}
+.pfor{margin:0 0 6px;padding:12px 14px;border-radius:14px;background:var(--bone3);border-left:3px solid var(--acc)}
+.pfor small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accd)}
+.pfor b{display:block;font-family:'Lora',serif;font-weight:400;font-size:21px;letter-spacing:-.01em;margin:2px 0 1px}
+.pfor span{font-size:12.5px;color:var(--md)}
+.sig{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:18px}
+.sig .av{flex:none;width:38px;height:38px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font-family:'Lora',serif;font-size:18px}
+.sig p{margin:0;font-size:12.5px;line-height:1.45;color:var(--md)}
+.sig p b{display:block;color:var(--ink);font-size:13.5px}
 .gets li::before{content:'✓';color:var(--sage);font-weight:700;margin-right:8px}
 .rc-cta{text-align:center;margin-top:34px}
 .rc-cta p{margin:12px 0 0;font-size:12px;color:#9fb0ab}
@@ -440,10 +445,10 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <!-- PROBLEM -->
 <section class="market">
   <div class="wrap">
-    <div class="eyebrow" data-nl="Het probleem">The problem</div>
-    <h2 data-nl="Meer woningen. Lagere prijzen.<br/>Lege nachten.">More homes. Lower rates.<br/>Empty nights.</h2>
+    <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
+    <h2 data-nl="Meer woningen. Lagere prijzen. Lege nachten.">More homes. Lower rates. Empty nights.</h2>
     <div class="nums">
-      <div class="num"><b>12x</b><p data-nl="Zo veel sneller groeit het aanbod dan de vraag op Curaçao.">How much faster supply is growing than demand in Curaçao.</p></div>
+      <div class="num"><b>+58%</b><p data-nl="Meer hotelkamers in 2030: al meer dan 7.100 vergund.">More hotel rooms by 2030: 7,100+ already permitted.</p></div>
       <div class="num"><b>&minus;11%</b><p data-nl="De daling van de gemiddelde nachtprijs in het afgelopen jaar.">The drop in the average nightly rate over the past year.</p></div>
       <div class="num"><b>~80</b><p data-nl="Lege nachten per jaar: het verschil tussen een gemiddelde woning en de beste 25% in Willemstad.">Empty nights a year: the gap between a typical listing and the top 25% in Willemstad.</p></div>
     </div>
@@ -451,7 +456,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <p class="cta-lead" data-nl="Waar sta jij?">Where do you stand?</p>
       <a class="btn" href="#check" data-nl="Gratis Revenue Check ↓">Free Revenue Check ↓</a>
     </div>
-    <p class="src"><span data-nl="Bronnen:">Sources:</span> <a href="https://www.airdna.co/vacation-rental-data/app/cw/curacao/curacao/overview" target="_blank" rel="noopener">AirDNA</a> · <a href="https://www.airroi.com/airbnb-data/cura%C3%A7ao/cura%C3%A7ao/willemstad" target="_blank" rel="noopener">AirROI</a> · PriceLabs</p>
+    <p class="src"><span data-nl="Bronnen:">Sources:</span> AirDNA · AirROI · PriceLabs · <span data-nl="Curaçao Tourist Board">Curaçao Tourist Board</span></p>
   </div>
 </section>
 
@@ -460,16 +465,16 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   <div class="wrap">
     <div class="rc-head">
       <div class="eyebrow" data-nl="Gratis Revenue Check">Free Revenue Check</div>
-      <h2 data-nl="Ontdek wat je laat liggen.">Find out what you're leaving on the table.</h2>
-      <p data-nl="De eerste stap in onze analyse. Gratis, persoonlijk en binnen 24 uur in je inbox.">The first step in our analysis. Free, personal, and in your inbox within 24 hours.</p>
+      <h2 data-nl="Ontdek wat je laat liggen.">Find out what you're<br class="dsk-br"> leaving on the table.</h2>
+      <p data-nl="Gratis, persoonlijk en binnen 24 uur in je inbox.">Free, personal, and in your inbox within 24 hours.</p>
     </div>
     <div class="rc-grid">
 
       <div class="est" aria-live="polite">
         <div class="eyebrow" data-nl="Snelle schatting">Quick estimate</div>
         <div class="seg" id="estArea">
-          <button type="button" class="on" data-a="wil" data-nl="Willemstad &amp; centrum">Willemstad &amp; central</button>
-          <button type="button" data-a="jt" data-nl="Jan Thiel &amp; oost">Jan Thiel &amp; east</button>
+          <button type="button" class="on" data-a="wil" data-nl="Willemstad">Willemstad</button>
+          <button type="button" data-a="jt" data-nl="Jan Thiel">Jan Thiel</button>
         </div>
         <div class="ebar"><div class="ebar-l"><span data-nl="Gemiddelde woning">Typical listing</span><b id="eMed"></b></div><div class="etrack"><div class="efill m" id="eMedBar"></div></div></div>
         <div class="ebar"><div class="ebar-l"><span data-nl="Beste 25%">Top 25%</span><b id="eTop"></b></div><div class="etrack"><div class="efill" id="eTopBar"></div></div></div>
@@ -483,37 +488,34 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
           <label for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
           <div class="row"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="1800"/></div>
         </div>
-        <div class="lockrow">
-          <div><label for="eType"><span data-nl="Type woning">Home type</span> <span class="rcpill" data-nl="In je Check">In your Check</span></label>
-            <select id="eType"><option value="" selected data-nl="Alle typen">All types</option><option value="apt" data-nl="Appartement">Apartment or condo</option><option value="house" data-nl="Huis of villa">House or villa</option></select></div>
-          <div><label for="eBeds"><span data-nl="Slaapkamers">Bedrooms</span> <span class="rcpill" data-nl="In je Check">In your Check</span></label>
-            <select id="eBeds"><option value="" selected data-nl="Alle">All</option><option>1–2</option><option>3–4</option><option>5+</option></select></div>
-        </div>
-        <p class="teaser" id="eTeaser"></p>
-        <p class="enote" data-nl="Gemiddelde omzet per maand op Airbnb, aug 2025 tot jul 2026 (AirROI). Je Revenue Check vergelijkt je met woningen van jouw grootte en type.">Average monthly Airbnb revenue, Aug 2025 to Jul 2026 (AirROI). Your Revenue Check compares you with homes of your size and type.</p>
+        <p class="enote" data-nl="Gemiddelde omzet per maand op Airbnb, aug 2025 tot jul 2026 (AirROI).">Average monthly Airbnb revenue, Aug 2025 to Jul 2026 (AirROI).</p>
       </div>
 
       <div class="sample">
         <span class="stamp" data-nl="Voorbeeld">Sample</span>
-        <div class="eyebrow" data-nl="Wat je ontvangt">What you get</div>
+        <div class="eyebrow" data-nl="Persoonlijk rapport">Personal report</div>
         <h3 data-nl="Je Revenue Check">Your Revenue Check</h3>
-        <div class="srow"><span data-nl="Omzet tegenover vergelijkbare woningen">Revenue vs. similar homes</span><b data-nl="61% van de beste 25%">61% of top 25%</b></div>
-        <div class="srow"><span data-nl="Lege nachten tegenover de beste 25%">Empty nights vs. top 25%</span><b data-nl="74 per jaar">74 a year</b></div>
-        <div class="srow blur"><span data-nl="Airbnb-kosten dit jaar">Airbnb fees this year</span><b>$3,180</b></div>
-        <div class="srow blur"><span data-nl="Grootste verschil">Biggest gap</span><b data-nl="Minimale verblijfsduur">Minimum stay</b></div>
-        <div class="srow blur"><span data-nl="Snelle winst #1">Quick win #1</span><b data-nl="30 → 4 nachten">30 → 4 nights</b></div>
+        <div class="pfor">
+          <small data-nl="Gemaakt voor">Prepared for</small>
+          <b>Casa Coral</b>
+          <span data-nl="3 slaapkamers · Jan Thiel · vergeleken met 12 woningen zoals deze">3 bedrooms · Jan Thiel · compared with 12 homes like it</span>
+        </div>
         <ul class="gets">
-          <li data-nl="Omzet, bezetting en nachtprijs tegenover 10 tot 15 vergelijkbare woningen">Revenue, occupancy and nightly rate vs. 10 to 15 similar homes</li>
-          <li data-nl="Waar het grootste verschil zit: prijs, lege nachten, foto's of kanalen">Where your biggest gap is: price, empty nights, photos or channels</li>
-          <li data-nl="Wat de 15,5% van Airbnb je per jaar kost">What Airbnb's 15.5% fee costs you each year</li>
-          <li data-nl="Je top 3 snelle verbeteringen, persoonlijk toegelicht">Your top 3 quick fixes, explained personally</li>
+          <li data-nl="<b>Wat vergelijkbare villa's verdienen.</b> Echte cijfers van vergelijkbare woningen bij jou in de buurt."><b>What similar villas earn.</b> Real numbers from similar properties near you.</li>
+          <li data-nl="<b>Zit je te laag geprijsd?</b> Jouw tarieven tegenover de topverdieners, maand voor maand."><b>Are you underpriced?</b> Your rates vs. top earners, month by month.</li>
+          <li data-nl="<b>Je lege maanden.</b> Wanneer gasten boeken en wanneer je stilstaat."><b>Your empty months.</b> When guests book and when you sit idle.</li>
+          <li data-nl="<b>Je echte concurrentie.</b> Met wie gasten jou vergelijken."><b>Your real competition.</b> Who guests compare you to.</li>
+          <li data-nl="<b>Wat je tegenhoudt.</b> Verbeteringen voor je advertentie."><b>What's holding you back.</b> Fixes for your listing.</li>
         </ul>
+        <div class="sig">
+          <span class="av">C</span>
+          <p data-nl="<b>Persoonlijk gemaakt door Chris</b>Per e-mail en WhatsApp."><b>Prepared personally by Chris</b>Sent by email and WhatsApp.</p>
+        </div>
       </div>
     </div>
     <div class="rc-cta">
       <a class="btn check" href="#contact" id="estCta" data-nl="Vraag je echte cijfers aan →">Get your real numbers →</a>
       <div><span class="cap" data-nl="We doen 10 Revenue Checks per week">We run 10 Revenue Checks per week</span></div>
-      <p data-nl="Voor woningen op Curaçao die live zijn of binnen 90 dagen starten.">For Curaçao homes that are live or launching within 90 days.</p>
     </div>
   </div>
 </section>
@@ -523,8 +525,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   <div class="wrap">
     <div class="gap-head">
       <div class="eyebrow" data-nl="Het gat">The gap</div>
-      <h2 data-nl="Een gemiddelde woning verdient de helft van wat mogelijk is.">The typical listing earns half of what it could.</h2>
-      <p data-nl="Het verschil tussen een gemiddelde woning en de beste 25% komt uit vier plekken. Je Revenue Check laat zien welke jou het meeste kost.">The difference between a typical listing and the top 25% comes from four places. Your Revenue Check shows which one is costing you most.</p>
+      <h2 data-nl="Een gemiddelde woning verdient<br/>de helft van wat mogelijk is.">The typical listing earns<br/>half of what it could.</h2>
+      <p data-nl="We laten je zien welke gaten jou kosten.">We show you what gaps are costing you.</p>
     </div>
     <div class="gbar-wrap">
       <div class="gends">
@@ -547,9 +549,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <button type="button" class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="Niet gevonden">Never found</h3><p data-nl="Alleen op Airbnb, voor 15,5% per boeking. De rest van de gasten zoekt ergens anders.">On Airbnb only, at 15.5% a booking. Everyone else is searching somewhere else.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
     </div>
     <div class="gap-foot">
-      <p data-nl="Elk deel van het gat heeft een eigen oplossing, in dezelfde kleur en volgorde. Eerst de prijs, dan de rest.">Each part of the gap has its own fix, in the same color and order. Price first, then the rest.</p>
-      <a class="btn" href="#levers" data-nl="Zie hoe we het sluiten ↓">See how we close it ↓</a>
-      <small data-nl="Gemiddelde maandomzet op Airbnb in Willemstad, aug 2025 tot jul 2026 (AirROI). De verdeling van het gat verschilt per woning.">Average monthly Airbnb revenue in Willemstad, Aug 2025 to Jul 2026 (AirROI). How the gap splits differs for every listing.</small>
+      <a class="btn" href="#levers" data-nl="Zie hoe we het gat sluiten ↓">See how we close the gap ↓</a>
     </div>
   </div>
 </section>
@@ -560,7 +560,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
     <div class="intro">
       <div class="eyebrow" data-nl="De oplossing">The solution</div>
       <h2 data-nl="Diensten">Services</h2>
-      <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent. We beginnen altijd bij de prijs.">What you charge. What guests see. What you promise. Where you show up. We always start with price.</p>
+      <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent.">What you charge. What guests see. What you promise. Where you show up.</p>
     </div>
     <nav class="mnav" aria-label="Closing the gap">
       <div class="mbar">
@@ -574,7 +574,6 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <button type="button" class="ar" id="prev" aria-label="Previous">←</button>
       <button type="button" class="ar" id="next" aria-label="Next">→</button>
     </nav>
-    <p class="mcap" id="mcap"></p>
   </div>
   <div class="rail" id="rail">
 
@@ -671,7 +670,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <div class="qs"><small data-nl="Stap 3">Step 3</small><h3 data-nl="Wij voeren het uit">We implement</h3><p data-nl="Eerst de prijs, dan de foto's, tekst of kanalen die je kiest.">Pricing first, then the photos, copy or channels you choose.</p></div>
       <div class="qs tag" aria-hidden="false"><p class="tagline" data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></p></div>
     </div>
-    <p class="single" data-nl="Heb je maar één ding nodig, zoals foto's of een extra kanaal? <a href=&quot;#contact&quot; class=&quot;single-link&quot;>Vraag een losse dienst aan →</a>">Need just one thing, like photos or an extra channel? <a href="#contact" class="single-link">Ask for a single service →</a></p>
+    <p class="single" data-nl="Heb je maar één ding nodig, zoals foto's of een extra kanaal? Je krijgt het Revenue Check-rapport er altijd bij. <a href=&quot;#contact&quot; class=&quot;single-link&quot;>Vraag een losse dienst aan →</a>">Need just one thing, like photos or an extra channel? Every service still comes with your Revenue Check report. <a href="#contact" class="single-link">Ask for a single service →</a></p>
   </div>
 </section>
 
@@ -681,13 +680,13 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
     <div class="shead center">
       <div class="eyebrow" data-nl="Onze filosofie">Our philosophy</div>
       <h2 data-nl="Jij houdt de controle.">You stay in control.</h2>
-      <p data-nl="Jouw omzetteam, niet je beheerder. Jij houdt de woning, de accounts en de sleutels.">Your revenue team, not your property manager. You keep the property, the accounts and the keys.</p>
+      <p data-nl="Jij houdt de sleutels. Wij zijn puur je omzet-, marketing- en creatieve afdeling.">You keep the keys. We function purely as your revenue, marketing, and creative function.</p>
     </div>
     <div class="bio">
       <div class="bio-text">
         <h3>Chris &amp; The House Atelier</h3>
         <span class="role" data-nl="Consultant voor Airbnb Luxe · Curaçao">Consultant for Airbnb Luxe · Curaçao</span>
-        <p data-nl="Chris werkt als Consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa, een luxe vakantieverhuurbedrijf op Sint Maarten. Samen met een revenue specialist met 15+ jaar ervaring in hotels en villa's.">Chris works as a Consultant for Airbnb Luxe and led digital marketing for CoveCasa, a luxury vacation rental company in Sint Maarten. Alongside a revenue specialist with 15+ years in hotels and villas.</p>
+        <p data-nl="Chris werkt als consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa op Sint Maarten, een luxe vakantieverhuurbedrijf. Het team van Chris brengt 15 jaar revenue management in hotels en villa's mee.">Chris consults for Airbnb Luxe and led digital marketing for Sint Maarten's CoveCasa, a luxury vacation rental operator. Chris' team brings 15 years of hotel and villa revenue management.</p>
       </div>
       <img src="assets/chris-bio.jpg" alt="Chris, The House Atelier"/>
     </div>
@@ -700,12 +699,9 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
     <div><div class="eyebrow" data-nl="Veelgestelde vragen">Frequently asked questions</div><h2 data-nl="Goed om te weten.">Good to know.</h2></div>
     <div>
       <details open><summary data-nl="Zijn jullie een beheerder?">Are you a property manager?</summary><p data-nl="Nee. We doen de commerciële kant: prijzen, presentatie en kanalen. Schoonmaak, sleutels en gasten blijven bij jou of bij wie je nu helpt.">No. We handle the commercial side: pricing, presentation and channels. Cleaning, keys and guests stay with you or whoever helps you now.</p></details>
-      <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Airbnb, Booking.com, PriceLabs en OwnerRez staan op jouw naam. Wij werken er als teamlid in.">You do. Airbnb, Booking.com, PriceLabs and OwnerRez stay in your name. We work inside them as team members.</p></details>
-      <details><summary data-nl="Welke softwarekosten betaal ik zelf?">What software do I pay for?</summary><p data-nl="PriceLabs voor dynamische prijzen, ongeveer $10 tot $20 per maand. Met extra kanalen of een eigen site ook OwnerRez. De exacte kosten staan in je strategie.">PriceLabs for dynamic pricing, roughly $10 to $20 a month. With extra channels or a direct site, OwnerRez too. Exact costs are in your strategy.</p></details>
-      <details><summary data-nl="Wat zit er in de gratis Revenue Check?">What's in the free Revenue Check?</summary><p data-nl="Je omzet, bezetting en nachtprijs tegenover vergelijkbare woningen in je buurt, en waar het grootste verschil zit. Geen verplichting.">Your revenue, occupancy and nightly rate against similar homes nearby, and where the biggest gap is. No obligation.</p></details>
+      <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Je boekingskanalen, je pricing tool en je PMS staan op jouw naam. Wij werken er als teamlid in.">You do. Your booking channels, your pricing tool and your PMS stay in your name. We work inside them as team members.</p></details>
       <details><summary data-nl="Wat als mijn woning al goed presteert?">What if my listing already performs well?</summary><p data-nl="Dan laat de strategie dat zien, en meestal ook waar nog ruimte zit. Daarna beslis je zelf.">Then the strategy will show it, and usually where there's still room. You decide from there.</p></details>
       <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Een fotoshoot' in het formulier. We doen er op de dag van de shoot een korte omzetsnapshot bij.">Yes. Choose "A photo shoot" in the form. We include a quick revenue snapshot on shoot day.</p></details>
-      <details><summary data-nl="Hoe zit het met de voorgestelde toeristenheffing in 2027?">What about the proposed 2027 tourist tax?</summary><p data-nl="De conceptbegroting stelt voor de 7% belasting op verblijf te vervangen door een heffing per bezoeker. Het is nog geen wet. Als het doorgaat, passen we je prijzen erop aan.">The draft budget proposes replacing the 7% accommodation tax with a per-visitor entry fee. It isn't law yet. If it passes, we'll adjust your pricing for it.</p></details>
     </div>
   </div>
 </section>
@@ -722,7 +718,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <div class="st"><span class="dot">2</span><div><strong data-nl="Wij bekijken de cijfers">We review the numbers</strong><br/><span data-nl="Binnen 24 uur.">Within 24 hours.</span></div></div>
         <div class="st"><span class="dot">3</span><div><strong data-nl="Jij beslist">You decide</strong><br/><span data-nl="Geen verplichting.">No obligation.</span></div></div>
       </div>
-      <a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Vragen? Stuur Chris een WhatsApp ↗">Questions? Message Chris on WhatsApp ↗</a>
+      <p class="waline"><span data-nl="Vragen?">Questions?</span> <a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Stuur Chris een WhatsApp ↗">Message Chris on WhatsApp ↗</a></p>
     </div>
     <div class="form-card">
       <form id="leadForm" novalidate>
@@ -739,8 +735,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <div><label for="area" data-nl="Locatie">Location</label>
           <select id="area" name="area">
             <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="wil" data-nl="Willemstad &amp; centrum">Willemstad &amp; central</option>
-            <option value="jt" data-nl="Jan Thiel &amp; oost">Jan Thiel &amp; east</option>
+            <option value="wil" data-nl="Willemstad">Willemstad</option>
+            <option value="jt" data-nl="Jan Thiel">Jan Thiel</option>
             <option value="west" data-nl="West (Coral Estate, Westpunt)">West (Coral Estate, Westpunt)</option>
             <option value="other" data-nl="Elders op Curaçao">Elsewhere on Curaçao</option>
             <option value="outside" data-nl="Buiten Curaçao">Outside Curaçao</option>
@@ -784,7 +780,6 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <footer>
   <div class="wrap">
     <div class="fi"><span>© 2026 The House Atelier</span><span data-nl="Omzetstrategie voor vakantieverhuur · Curaçao">Revenue strategy for vacation rentals · Curaçao</span></div>
-    <p data-nl="The House Atelier is een onafhankelijk adviesbureau en is niet verbonden aan of goedgekeurd door Airbnb, Inc. Airbnb en Airbnb Luxe zijn handelsmerken van Airbnb, Inc. Marktcijfers zijn illustratief en geen garantie voor resultaat.">The House Atelier is an independent consultancy, not affiliated with or endorsed by Airbnb, Inc. Airbnb and Airbnb Luxe are trademarks of Airbnb, Inc. Market figures are illustrative and not a guarantee of results.</p>
   </div>
 </footer>
 
@@ -838,8 +833,7 @@ let cur = 0;
 const mid = c => c.offsetLeft + c.offsetWidth / 2;
 const go = i => { i = Math.max(0, Math.min(cards.length - 1, i)); rail.scrollTo({ left: mid(cards[i]) - rail.clientWidth / 2, behavior: 'smooth' }); };
 const update = () => { const m = rail.scrollLeft + rail.clientWidth / 2; cur = cards.reduce((b, c, i) => Math.abs(mid(c) - m) < Math.abs(mid(cards[b]) - m) ? i : b, 0); chips.forEach((c, i) => { c.classList.toggle('on', i === cur); c.classList.toggle('done', i < cur); }); renderCap(); };
-const CAPS = { en: ['Step 1 of 4: price it right. The rest of the gap stays open until the listing can hold the price.', 'Step 2 of 4: price is set. Now make guests stop scrolling.', 'Step 3 of 4: turn the click into a booking.', 'Step 4 of 4: be found everywhere guests book. That closes the gap.'], nl: ['Stap 1 van 4: de juiste prijs. De rest van het gat blijft open tot je woning die prijs waarmaakt.', 'Stap 2 van 4: de prijs staat. Zorg nu dat gasten stoppen met scrollen.', 'Stap 3 van 4: maak van de klik een boeking.', 'Stap 4 van 4: overal vindbaar waar gasten boeken. Het gat is dicht.'] };
-function renderCap() { $('#mcap').textContent = CAPS[document.documentElement.lang === 'nl' ? 'nl' : 'en'][cur]; }
+function renderCap() {}
 let tick = false;
 rail.addEventListener('scroll', () => { if (!tick) { tick = true; requestAnimationFrame(() => { update(); tick = false; }); } }, { passive: true });
 addEventListener('resize', update); addEventListener('load', update);
@@ -929,21 +923,7 @@ $('#eIn').addEventListener('input', renderEst);
 $('#lang').addEventListener('click', renderEst);
 $('#estCta').addEventListener('click', () => {
   $('#area').value = estArea; interest.value = 'check';
-  if ($('#eBeds').value) $('#beds').value = $('#eBeds').value;
 });
-/* Home type and bedrooms are teasers: they point to the real Check instead of changing the numbers */
-function renderTeaser() {
-  const ty = $('#eType'), bd = $('#eBeds'), box = $('#eTeaser');
-  if (!ty.value && !bd.value) { box.classList.remove('on'); return; }
-  const typeTxt = ty.value ? ty.options[ty.selectedIndex].text.toLowerCase() : t('homes', 'woningen');
-  const bedTxt = bd.value ? bd.value + ' ' + t('bedroom', 'slaapkamer') + ' ' : '';
-  box.innerHTML = t('Size and type change the picture. Your Revenue Check compares you with <b>', 'Grootte en type veranderen het beeld. Je Revenue Check vergelijkt je met <b>') + bedTxt + typeTxt + '</b>' + t(' near you, not just the area average.', ' bij jou in de buurt, niet alleen het gemiddelde.');
-  box.classList.add('on');
-  const c = $('#estCta'); c.classList.remove('nudge'); void c.offsetWidth; c.classList.add('nudge');
-}
-$('#eType').addEventListener('change', renderTeaser);
-$('#eBeds').addEventListener('change', renderTeaser);
-$('#lang').addEventListener('click', renderTeaser);
 
 document.addEventListener('click', e => { if (e.target.closest('.single-link')) { interest.value = 'single'; setTimeout(subLabel, 0); } });
 
