@@ -1158,6 +1158,14 @@ function syncQual() {
 $('#interest').addEventListener('change', syncQual);
 syncQual();
 
+/* Success panel. The colours are set explicitly because #contact is a dark
+   section (white text) while the form card itself is light. */
+const done = line =>
+  '<div class="full" style="text-align:center;padding:30px 0">' +
+    '<div style="font-family:Lora,serif;font-size:30px;line-height:1.1;color:var(--ink);margin-bottom:8px">' + t('Thank you.', 'Bedankt.') + '</div>' +
+    '<p style="margin:0;font-size:14px;line-height:1.6;color:var(--md)">' + line + '</p>' +
+  '</div>';
+
 form.addEventListener('submit', async e => {
   e.preventDefault();
   const rev = $('#eIn');
@@ -1168,6 +1176,9 @@ form.addEventListener('submit', async e => {
   Object.keys(f).forEach(k => { if (typeof f[k] === 'string') f[k] = f[k].trim(); });
   f.pool = f.pool ? 'yes' : 'no';
   f.seaView = f.seaView ? 'yes' : 'no';
+  /* Disabled selects don't submit, so photo / single-service requests would
+     otherwise send a smaller payload. Keep the shape constant for the webhook. */
+  ['status', 'rentalType', 'management', 'pricing'].forEach(k => { if (!(k in f)) f[k] = ''; });
   const light = ['photos', 'single'].includes(f.interest);
   if (!f.name || !f.email || !f.area || !f.beds || !f.propertyType) return showErr(t('Please fill in every field (WhatsApp and the message are optional).', 'Vul alle velden in (WhatsApp en het bericht zijn optioneel).'));
   if (!light && (!f.status || !f.rentalType || !f.management || !f.pricing)) return showErr(t('Please fill in every field (WhatsApp and the message are optional).', 'Vul alle velden in (WhatsApp en het bericht zijn optioneel).'));
@@ -1181,11 +1192,11 @@ form.addEventListener('submit', async e => {
     const r = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
     if (!r.ok) throw new Error();
     if (noFit) {
-      form.innerHTML = '<div class="full" style="text-align:center;padding:22px 0"><div style="font-family:Lora,serif;font-size:28px;margin-bottom:8px">' + t('Thank you.', 'Bedankt.') + '</div><p style="color:var(--md);margin:0;font-size:14px;line-height:1.6">' + t('Our Revenue Check is built for short-stay homes on Curaçao that are live or launching within 90 days. We\'ve saved your details and will reach out if that changes. Questions? Message Chris on WhatsApp.', 'Onze Revenue Check is gemaakt voor woningen op Curaçao met korte verblijven die live zijn of binnen 90 dagen starten. We bewaren je gegevens en nemen contact op als dat verandert. Vragen? Stuur Chris een WhatsApp.') + '</p></div>';
+      form.innerHTML = done(t('We have your details and will be in touch.', 'We hebben je gegevens en nemen contact op.'));
       return;
     }
     const paid = f.interest === 'strategy' && CONFIG.strategyBookingUrl;
-    form.innerHTML = '<div class="full" style="text-align:center;padding:26px 0"><div style="font-family:Lora,serif;font-size:30px;margin-bottom:8px">' + t('Thank you.', 'Bedankt.') + '</div><p style="color:var(--md);margin:0;font-size:14px">' + (paid ? t('Next, complete your booking on the payment page.', 'Rond je boeking af op de betaalpagina.') : t('We will be in touch within 24 hours.', 'We nemen binnen 24 uur contact op.')) + '</p></div>';
+    form.innerHTML = done(paid ? t('Complete your booking on the payment page.', 'Rond je boeking af op de betaalpagina.') : t('We will be in touch within 24 hours.', 'We nemen binnen 24 uur contact op.'));
     if (paid) window.open(CONFIG.strategyBookingUrl, '_blank');
   } catch (x) {
     sub.disabled = false; subLabel();
