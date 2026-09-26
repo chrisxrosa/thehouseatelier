@@ -398,7 +398,9 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .lb-why p{margin:0;font-size:15.5px;line-height:1.68;color:#dfe6e3}
 .lb-sec{margin:0 0 20px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8c9a95}
 .lb-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;border-top:1px solid rgba(255,255,255,.13);padding-top:28px}
-.lb-next{font-size:13px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.lb-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.lb-step{font-size:13px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap}
+.lb-step:hover{color:#d7a08e}
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;margin-bottom:52px}
 .ba div{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#2a3634 center/cover}
 .ba div span{position:absolute;left:14px;top:14px;padding:7px 9px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(27,37,36,.72);color:#fff}
@@ -643,7 +645,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
       <p class="note" data-nl="Alleen ter illustratie.">Illustrative example only.</p>
-      <div class="more"><a class="svc-more" data-svc="pricing" href="#service/pricing" data-nl="Bekijk meer →">See more →</a></div>
+      <div class="more"><a class="svc-more" data-svc="pricing" href="#service/pricing" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
     <!-- 02 VISUALS -->
@@ -679,7 +681,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
           <p>A hillside escape for slow mornings and easy access to Curaçao's west coast.</p>
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
-      <div class="more"><a class="svc-more" data-svc="copy" href="#service/copy" data-nl="Bekijk meer →">See more →</a></div>
+      <div class="more"><a class="svc-more" data-svc="copy" href="#service/copy" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
     <!-- 04 PRESENCE -->
@@ -699,7 +701,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
           <div class="chans"><span>Airbnb</span><span>Booking.com</span><span>Vrbo</span><span>Micazu</span><span>Google</span><span data-nl="Eigen site">Direct site</span></div>
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
-      <div class="more"><a class="svc-more" data-svc="channels" href="#service/channels" data-nl="Bekijk meer →">See more →</a></div>
+      <div class="more"><a class="svc-more" data-svc="channels" href="#service/channels" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
   </div>
@@ -922,14 +924,10 @@ const SERVICES = {
         p: { en: 'In search results your first image is a thumbnail next to a dozen competitors. Its only job is to win the tap. Everything else in your listing is irrelevant until it does.', nl: 'In de zoekresultaten is je eerste foto een miniatuur naast een stuk of tien concurrenten. De enige taak is de tik winnen. De rest van je advertentie doet niet mee tot dat lukt.' } },
       { h: { en: 'The first five tell a story, in order', nl: 'De eerste vijf vertellen een verhaal, op volgorde' },
         p: { en: 'On a phone, guests swipe. The sequence should read: the feeling, the space, where you sleep, where you wash, what is outside. Most listings bury the pool at photo fourteen.', nl: 'Op een telefoon swipen gasten. De volgorde moet lezen als: het gevoel, de ruimte, waar je slaapt, waar je wast, wat er buiten is. De meeste advertenties verstoppen het zwembad op foto veertien.' } },
-      { h: { en: 'Caribbean light is a schedule, not a setting', nl: 'Caribisch licht is een schema, geen instelling' },
-        p: { en: 'Midday sun flattens a view and blows out a pool. Golden hour and blue hour twilight are what make a terrace look worth the rate.', nl: 'De middagzon maakt een uitzicht vlak en brandt een zwembad uit. Het gouden uur en de blauwe schemering maken een terras de prijs waard.' } },
       { h: { en: 'Photograph what removes doubt', nl: 'Fotografeer wat twijfel wegneemt' },
         p: { en: 'Parking, the road in, the air conditioning, the kitchen that actually works. Guests paying premium rates are scanning for reasons to say no. Answer them visually.', nl: 'Parkeren, de weg ernaartoe, de airco, de keuken die echt werkt. Gasten die een hoge prijs betalen zoeken redenen om nee te zeggen. Beantwoord die in beeld.' } },
       { h: { en: 'Captions are free and almost always empty', nl: 'Bijschriften zijn gratis en bijna altijd leeg' },
-        p: { en: 'Airbnb lets you caption every image. A caption handles an objection without making the guest ask.', nl: 'Airbnb laat je elke foto voorzien van een bijschrift. Een bijschrift neemt een bezwaar weg zonder dat de gast het hoeft te vragen.' } },
-      { h: { en: 'One shoot, every channel', nl: 'Eén shoot, alle kanalen' },
-        p: { en: 'The same session produces verticals for the app, stills for Booking.com’s different crop, and clips for social. Shot once, used everywhere.', nl: 'Dezelfde sessie levert staande beelden voor de app, stills voor de andere uitsnede van Booking.com, en clips voor social. Eén keer geschoten, overal gebruikt.' } }
+        p: { en: 'Airbnb lets you caption every image. A caption handles an objection without making the guest ask.', nl: 'Airbnb laat je elke foto voorzien van een bijschrift. Een bijschrift neemt een bezwaar weg zonder dat de gast het hoeft te vragen.' } }
     ],
     why: { en: 'Photography is the only lever that raises what people will pay without changing anything about the property. It also compounds. A better first photo lifts click-through, click-through feeds ranking, and ranking brings impressions you did not pay for. A rate increase without new photos is a gamble. With them it is a repositioning.', nl: 'Fotografie is de enige knop die verhoogt wat mensen willen betalen zonder iets aan de woning te veranderen. En het stapelt op. Een betere eerste foto verhoogt het doorklikken, doorklikken voedt je positie, en je positie levert vertoningen op waar je niet voor betaalt. Een prijsverhoging zonder nieuwe foto’s is gokken. Mét foto’s is het herpositioneren.' },
     gallery: true
@@ -947,11 +945,7 @@ const SERVICES = {
       { h: { en: 'Objections, answered before they are asked', nl: 'Bezwaren, beantwoord voordat ze gesteld worden' },
         p: { en: 'Stairs, road access, which rooms have air conditioning, water pressure, wifi speed. Every unanswered question is a message you have to reply to, or a booking that quietly goes elsewhere.', nl: 'Trappen, de weg ernaartoe, welke kamers airco hebben, waterdruk, wifisnelheid. Elke onbeantwoorde vraag is een bericht dat je moet beantwoorden, of een boeking die stilletjes ergens anders heen gaat.' } },
       { h: { en: 'Amenities are search filters, not a checklist', nl: 'Voorzieningen zijn zoekfilters, geen afvinklijst' },
-        p: { en: 'If private pool is not ticked, you do not exist for anyone filtering on it. Incomplete amenities do not lower your ranking, they remove you from the search entirely.', nl: 'Staat privézwembad niet aangevinkt, dan besta je niet voor wie daarop filtert. Onvolledige voorzieningen verlagen je positie niet, ze halen je helemaal uit de zoekopdracht.' } },
-      { h: { en: 'Three languages, deliberately', nl: 'Drie talen, met opzet' },
-        p: { en: 'English, Dutch and Spanish. Dutch matters more here than in almost any market this size, and guests book with more confidence, and less negotiation, in their own language.', nl: 'Engels, Nederlands en Spaans. Nederlands telt hier zwaarder dan in bijna elke markt van deze omvang, en gasten boeken met meer vertrouwen, en minder onderhandeling, in hun eigen taal.' } },
-      { h: { en: 'The fields everyone leaves blank', nl: 'De velden die iedereen leeg laat' },
-        p: { en: 'Neighbourhood, getting around, house rules tone. These feed local search, and rules written defensively repel exactly the guests you want.', nl: 'Buurt, vervoer, en de toon van je huisregels. Deze voeden lokale zoekresultaten, en defensief geschreven regels jagen precies de gasten weg die je wilt.' } }
+        p: { en: 'If private pool is not ticked, you do not exist for anyone filtering on it. Incomplete amenities do not lower your ranking, they remove you from the search entirely.', nl: 'Staat privézwembad niet aangevinkt, dan besta je niet voor wie daarop filtert. Onvolledige voorzieningen verlagen je positie niet, ze halen je helemaal uit de zoekopdracht.' } }
     ],
     why: { en: 'Copy does two jobs. It converts the traffic your photos already earned, and it decides which searches you appear in at all. It also protects revenue you have already booked. Accurate expectations mean fewer cancellations, fewer refund requests and better reviews, and reviews feed straight back into ranking.', nl: 'Tekst doet twee dingen. Het zet het bezoek om dat je foto’s al verdienden, en het bepaalt in welke zoekopdrachten je überhaupt verschijnt. Het beschermt ook omzet die je al geboekt hebt. Kloppende verwachtingen betekenen minder annuleringen, minder verzoeken om geld terug en betere reviews, en reviews voeden je positie weer.' }
   },
@@ -990,7 +984,8 @@ let curSvc = null;
 function renderSvc(slug) {
   const l = document.documentElement.lang === 'nl' ? 'nl' : 'en';
   const s = SERVICES[slug]; if (!s) return;
-  const i = SVC_ORDER.indexOf(slug), nx = SVC_ORDER[(i + 1) % SVC_ORDER.length];
+  const i = SVC_ORDER.indexOf(slug), N = SVC_ORDER.length;
+  const nx = SVC_ORDER[(i + 1) % N], pv = SVC_ORDER[(i - 1 + N) % N];
   $('#lbTitle').textContent = s.title[l];
   let html = `<div class="lb-intro"><div class="eyebrow" style="color:#d7a08e">${s.eyebrow[l]}</div><h2 id="lbH2">${s.h2[l]}</h2><p>${s.sub[l]}</p></div>`;
   html += `<p class="lb-sec">${T.covers[l]}</p><div class="lb-points">`;
@@ -1003,7 +998,11 @@ function renderSvc(slug) {
     html += [1,2,3,4,5].map(n => `<div class="ba"><div style="background-image:url(assets/lightbox-${n}-before.jpg)"><span>${l === 'nl' ? 'Voor' : 'Before'}</span></div><div class="af" style="background-image:url(assets/lightbox-${n}-after.jpg)"><span>${l === 'nl' ? 'Na' : 'After'}</span></div></div>`).join('');
   }
   html += `<div class="lb-why"><h5>${T.why[l]}</h5><p>${s.why[l]}</p></div>`;
-  html += `<div class="lb-foot"><a class="btn check" href="#contact" data-close="1">${T.cta[l]}</a><a class="lb-next" href="#service/${nx}">${T.next[l]}: ${SERVICES[nx].title[l]} →</a></div>`;
+  html += `<div class="lb-foot"><a class="btn check" href="#contact" data-close="1">${T.cta[l]}</a>` +
+    `<span class="lb-nav">` +
+      `<a class="lb-step" href="#service/${pv}">← ${SERVICES[pv].title[l]}</a>` +
+      `<a class="lb-step" href="#service/${nx}">${SERVICES[nx].title[l]} →</a>` +
+    `</span></div>`;
   $('#lbBody').innerHTML = html;
   $('#lbBody').scrollTop = 0; lb.scrollTop = 0;
 }
