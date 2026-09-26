@@ -837,8 +837,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
           <label class="ck"><input type="checkbox" id="pool" name="pool" value="yes"/><span data-nl="Privézwembad">Private pool</span></label>
           <label class="ck"><input type="checkbox" id="seaview" name="seaView" value="yes"/><span data-nl="Zeezicht of aan zee">Sea view or beachfront</span></label>
         </div>
-        <div><label for="name" data-nl="Naam">Name</label><input id="name" name="name" autocomplete="name"/></div>
-        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"/></div>
+        <div><label for="name" data-nl="Naam">Name</label><input id="name" name="name" autocomplete="name" required aria-required="true"/></div>
+        <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-required="true" inputmode="email"/></div>
         <div class="full"><label for="whatsapp">WhatsApp <span class="opt" data-nl="(optioneel)">(optional)</span></label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel"/></div>
         <div class="full"><label for="msg" data-nl="Nog iets? (optioneel)">Anything else? (optional)</label><textarea id="msg" name="message"></textarea></div>
         <p class="err" id="err" role="alert"></p>
@@ -1164,6 +1164,8 @@ form.addEventListener('submit', async e => {
   $('#fEstRev').value = rev && rev.value ? rev.value : '';
   $('#fEstArea').value = estArea || '';
   const f = Object.fromEntries(new FormData(form).entries());
+  /* Trim first, so a field containing only spaces cannot pass the required checks */
+  Object.keys(f).forEach(k => { if (typeof f[k] === 'string') f[k] = f[k].trim(); });
   f.pool = f.pool ? 'yes' : 'no';
   f.seaView = f.seaView ? 'yes' : 'no';
   const light = ['photos', 'single'].includes(f.interest);
