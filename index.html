@@ -34,7 +34,8 @@ h1,h2,h3,.display{font-family:'Lora',Georgia,serif;font-weight:400}
 .btn-outline{background:transparent;color:var(--ink);border:1px solid rgba(27,37,36,.35)}
 .btn-outline:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .cta-lead{margin:0 0 12px;font-family:'Lora',serif;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;color:var(--ink)}
-section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
+section{min-height:100svh;display:flex;align-items:center;padding:calc(var(--header-h) + 34px) 0 34px;scroll-margin-top:0}
+html{scroll-padding-top:0}
 
 /* HEADER */
 .site-header{position:sticky;top:0;z-index:40;height:var(--header-h);background:rgba(253,251,247,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,37,36,.06)}
@@ -68,18 +69,19 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 
 /* MARKET */
 .market{background:var(--bone);text-align:center}
-.market h2{font-size:clamp(30px,3.4vw,48px);line-height:1.08;letter-spacing:-.035em;margin:8px 0 44px}
+.market h2{font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-.035em;margin:8px 0 52px}
 .market h2 span{color:var(--acc)}
-@media(min-width:961px){.market h2{white-space:nowrap}}
+.vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.num h3{font-family:'Lora',serif;font-weight:400;font-size:clamp(24px,2.3vw,30px);line-height:1.1;letter-spacing:-.02em;color:var(--char);margin:0 0 6px}
 .num b{display:block;font-family:'Lora',serif;font-weight:400;font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;color:var(--acc)}
 .num p{margin:10px auto 0;max-width:260px;font-size:15px;color:var(--md)}
 .src{margin-top:40px;font-size:11px;color:var(--muted)}
 .src a{text-decoration:underline}
 
 /* CAROUSEL */
-#levers{flex-direction:column;justify-content:center;align-items:stretch;padding:40px 0;background:var(--bone2)}
-.intro{max-width:760px;margin-bottom:14px}
+#levers{flex-direction:column;justify-content:center;align-items:stretch;padding:calc(var(--header-h) + 22px) 0 22px;background:var(--bone2)}
+.intro{max-width:760px;margin:0 auto 14px;text-align:center}
 .intro h2{font-size:clamp(36px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:6px 0 10px}
 .intro p{margin:0;font-size:15px;color:var(--md)}
 .cnav{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
@@ -97,7 +99,7 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 .mseg.on::after{content:'';position:absolute;left:10px;right:10px;bottom:6px;height:3px;border-radius:3px;background:#fff}
 .mend{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);white-space:nowrap}
 .mnav .ar{border:1px solid var(--line);border-radius:50%;width:34px;height:34px;padding:0;display:grid;place-items:center;color:var(--ink);font-size:14px;background:none;cursor:pointer;flex:none}
-.rail{--cw:min(85vw,940px);display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:36px calc(50% - var(--cw)/2) 48px;scrollbar-width:none}
+.rail{--cw:min(85vw,940px);display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:68px calc(50% - var(--cw)/2) 68px;scrollbar-width:none}
 .rail::-webkit-scrollbar{display:none}
 .card{flex:0 0 var(--cw);scroll-snap-align:center;scroll-snap-stop:always;background:var(--bone2);border:1px solid var(--line);border-radius:24px;padding:22px 26px;box-shadow:0 22px 60px -18px rgba(27,37,36,.20),0 6px 20px rgba(27,37,36,.05)}
 .ch{display:grid;grid-template-columns:56px minmax(0,1fr);gap:14px;margin-bottom:14px}
@@ -162,6 +164,7 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 .beige{background:var(--bone3)}
 .center{text-align:center}
 .shead{max-width:760px;margin:0 auto 44px}
+#modules{padding-bottom:calc(34px + 26px)}
 .shead h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 12px}
 .shead p{margin:0;color:var(--md);font-size:16px}
 .mods{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -174,7 +177,7 @@ section{min-height:100svh;display:flex;align-items:center;padding:72px 0}
 .mod{border-top:6px solid var(--seg)}
 .mod .k{color:var(--seg)}
 .quote{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:8px auto 0;max-width:1080px;background:var(--bone2);border:1px solid var(--line);border-radius:22px;overflow:hidden;text-align:left}
-.qs{padding:22px 22px 24px;border-left:1px solid var(--line)}
+.qs{padding:34px 24px 36px;border-left:1px solid var(--line)}
 .qs:first-child{border-left:0}
 .qs small{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--sage)}
 .qs h3{font-size:20px;letter-spacing:-.02em;margin:8px 0 6px}
@@ -213,9 +216,9 @@ td small{display:block;font-weight:400;color:var(--muted);font-size:11px}
 .ctrl span{font-size:12px;font-weight:600;padding:8px 14px;border-radius:999px;background:#fff;border:1px solid var(--line)}
 
 /* FAQ */
-.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px}
+.faq{display:grid;grid-template-columns:.7fr 1.3fr;gap:70px;align-items:center}
 .faq h2{font-size:clamp(34px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:8px 0}
-.faq details{border-top:1px solid var(--line);padding:18px 0}
+.faq details{border-top:1px solid var(--line);padding:24px 0}
 .faq details:last-child{border-bottom:1px solid var(--line)}
 .faq summary{cursor:pointer;display:flex;justify-content:space-between;gap:20px;font-size:15px;font-weight:600;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
@@ -240,7 +243,32 @@ label{display:block;font-size:9px;font-weight:700;letter-spacing:.11em;text-tran
 input,select,textarea{width:100%;border:1px solid var(--line);background:#fffefb;color:var(--ink);padding:12px 13px;border-radius:11px;outline:none;font-size:13px}
 input:focus,select:focus,textarea:focus{border-color:rgba(184,95,71,.65);box-shadow:0 0 0 3px rgba(184,95,71,.08)}
 textarea{min-height:72px;resize:vertical}
+.opt{font-weight:600;letter-spacing:.04em;text-transform:none;color:#9ea29d}
+.feat{display:flex;flex-wrap:wrap;align-items:center;gap:7px 16px;padding:8px 13px 9px;border:1px solid var(--line);border-radius:11px;background:#fffefb;align-self:end}
+.feat .flab{flex:1 0 100%}
+.flab{font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--md);margin-right:2px}
+.ck{display:inline-flex;align-items:center;gap:7px;margin:0;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--ink);cursor:pointer}
+.ck input{width:16px;height:16px;padding:0;margin:0;accent-color:var(--acc);cursor:pointer}
 .err{grid-column:1/-1;color:#a32d2d;font-size:12px;margin:0;display:none}
+/* Desktop: compact the form so the contact section fits one screen exactly.
+   Mobile keeps the roomier metrics for touch targets. */
+@media(min-width:961px){
+  .form-card{padding:20px}
+  #leadForm{gap:9px}
+  #leadForm label{margin-bottom:3px}
+  #leadForm input,#leadForm select,#leadForm textarea{padding:9px 12px}
+  #leadForm textarea{min-height:52px}
+  #leadForm .feat{padding:8px 12px;gap:6px 16px}
+  #leadForm .btn{padding:12px 20px}
+}
+@media(min-width:961px) and (max-height:860px){
+  .form-card{padding:16px}
+  #leadForm{gap:7px}
+  #leadForm label{margin-bottom:2px}
+  #leadForm input,#leadForm select,#leadForm textarea{padding:7px 12px}
+  #leadForm textarea{min-height:44px}
+  #leadForm .btn{padding:11px 20px}
+}
 #contact .fnote,.fnote{margin-top:26px;font-size:14px;color:var(--md);text-align:center}
 footer{background:var(--char);color:#85908c;padding:24px 0 34px;border-top:1px solid rgba(255,255,255,.08);font-size:10px}
 footer .fi{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
@@ -251,13 +279,13 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .rc-head .eyebrow{color:#d7a08e}
 .dsk-br{display:none}
 @media(min-width:961px){.dsk-br{display:block}}
-.rc-head{text-align:center;margin:0 auto 40px}
+.rc-head{text-align:center;margin:0 auto 28px}
 .rc-head h2{max-width:760px;margin-left:auto!important;margin-right:auto!important}
 .rc-head h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 12px;color:#fff}
 .rc-head p{margin:0;color:#c7cfcc;font-size:16px}
 @media(min-width:961px){.rc-head p{white-space:nowrap}}
 .rc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
-.est,.sample{background:var(--bone2);color:var(--ink);border:0;border-radius:24px;padding:26px;box-shadow:0 28px 90px rgba(0,0,0,.30)}
+.est,.sample{background:var(--bone2);color:var(--ink);border:0;border-radius:24px;padding:24px 26px;box-shadow:0 28px 90px rgba(0,0,0,.30)}
 .est h3,.sample h3{font-size:24px;letter-spacing:-.02em;margin:6px 0 16px}
 .seg{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
 .seg button{border:1px solid var(--line);background:var(--bone2);border-radius:999px;padding:9px 14px;font-size:12px;font-weight:700;cursor:pointer;color:var(--md)}
@@ -296,7 +324,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .sig p{margin:0;font-size:12.5px;line-height:1.45;color:var(--md)}
 .sig p b{display:block;color:var(--ink);font-size:13.5px}
 .gets li::before{content:'✓';color:var(--sage);font-weight:700;margin-right:8px}
-.rc-cta{text-align:center;margin-top:34px}
+.rc-cta{text-align:center;margin-top:24px}
 .rc-cta p{margin:12px 0 0;font-size:12px;color:#9fb0ab}
 .cap{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#d9ece7;margin-top:14px}
 .cap::before{content:'';width:8px;height:8px;border-radius:50%;background:#3fae7a;box-shadow:0 0 0 4px rgba(63,174,122,.15)}
@@ -372,7 +400,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   :root{--header-h:56px}
   body{padding-bottom:72px}
   .wrap{width:calc(100% - 28px)}
-  section{padding:52px 0}
+  section{padding:calc(var(--header-h) + 30px) 0 30px}
   .brand{font-size:13px;letter-spacing:.16em}.brand-logo{height:24px}.brand span{height:24px;line-height:24px}
   .nav .btn{display:none}
   .hero h1{font-size:clamp(34px,min(11vw,7.5svh),58px);line-height:.99}
@@ -409,12 +437,12 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <header class="site-header">
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="The House Atelier, back to top">
-      <img src="assets/tha-icon.png" alt="" class="brand-logo"/>
+      <img src="assets/tha-icon-medium.png" alt="" class="brand-logo" width="28" height="28" decoding="async"/>
       <span>The House Atelier</span>
     </a>
     <div class="navr">
       <button class="pill" id="lang" type="button" aria-label="Switch language">NL</button>
-      <a class="btn check" href="#contact" data-nl="Gratis Revenue Check ↗">Free Revenue Check ↗</a>
+      <a class="btn btn-outline check" href="#contact" data-nl="Gratis Revenue Check ↗">Free Revenue Check ↗</a>
     </div>
   </div>
 </header>
@@ -426,7 +454,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   <div class="wrap">
     <div class="hero-copy">
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
-      <p class="hero-sub" data-nl="Marktgedreven prijzen bepalen wat je woning op Curaçao waard is.<br/>Foto's, tekst en kanalen zorgen dat gasten dat ook betalen.">Market-driven pricing sets what your Curaçao rental is worth.<br/>Photos, copy, and channels get guests to pay it.</p>
+      <p class="hero-sub" data-nl="Marktgedreven prijzen bepalen wat je woning op Curaçao waard is.<br/>Foto's, tekst en kanalen zorgen dat gasten dat ook betalen.">Market-driven pricing sets what your Curaçao rental is worth.<br/>Photos, copy and channels get guests to pay it.</p>
       <div class="hero-actions">
         <a class="btn btn-outline check" href="#contact" data-nl="Vraag je gratis Revenue Check aan →">Get your free Revenue Check →</a>
       </div>
@@ -446,11 +474,11 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <section class="market">
   <div class="wrap">
     <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
-    <h2 data-nl="Meer woningen. Lagere prijzen. Lege nachten.">More homes. Lower rates. Empty nights.</h2>
+    <h2 data-nl="De markt is verschoven.<br/>De meeste woningen niet.">The market moved.<br/>Most listings didn't.</h2>
     <div class="nums">
-      <div class="num"><b>+58%</b><p data-nl="Meer hotelkamers in 2030: al meer dan 7.100 vergund.">More hotel rooms by 2030: 7,100+ already permitted.</p></div>
-      <div class="num"><b>&minus;11%</b><p data-nl="De daling van de gemiddelde nachtprijs in het afgelopen jaar.">The drop in the average nightly rate over the past year.</p></div>
-      <div class="num"><b>~80</b><p data-nl="Lege nachten per jaar: het verschil tussen een gemiddelde woning en de beste 25% in Willemstad.">Empty nights a year: the gap between a typical listing and the top 25% in Willemstad.</p></div>
+      <div class="num"><h3 data-nl="Meer woningen">More homes</h3><b>+58%</b><p data-nl="Meer hotelkamers in 2030:<br/>al meer dan 7.100 vergund.">More hotel rooms by 2030:<br/>7,100+ already permitted.</p></div>
+      <div class="num"><h3 data-nl="Lagere prijzen">Lower rates</h3><b>&minus;11%</b><p data-nl="De daling van de gemiddelde nachtprijs in het afgelopen jaar.">The drop in the average nightly rate over the past year.</p></div>
+      <div class="num"><h3 data-nl="Lege nachten">Empty nights</h3><b>~80</b><p data-nl="Lege nachten per jaar: het verschil tussen een gemiddelde woning en de beste 25% in Willemstad.">Empty nights a year: the gap between a typical listing and the top 25% in Willemstad.</p></div>
     </div>
     <div style="margin-top:48px">
       <p class="cta-lead" data-nl="Waar sta jij?">Where do you stand?</p>
@@ -503,7 +531,6 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <ul class="gets">
           <li data-nl="<b>Wat vergelijkbare villa's verdienen.</b> Echte cijfers van vergelijkbare woningen bij jou in de buurt."><b>What similar villas earn.</b> Real numbers from similar properties near you.</li>
           <li data-nl="<b>Zit je te laag geprijsd?</b> Jouw tarieven tegenover de topverdieners, maand voor maand."><b>Are you underpriced?</b> Your rates vs. top earners, month by month.</li>
-          <li data-nl="<b>Je lege maanden.</b> Wanneer gasten boeken en wanneer je stilstaat."><b>Your empty months.</b> When guests book and when you sit idle.</li>
           <li data-nl="<b>Je echte concurrentie.</b> Met wie gasten jou vergelijken."><b>Your real competition.</b> Who guests compare you to.</li>
           <li data-nl="<b>Wat je tegenhoudt.</b> Verbeteringen voor je advertentie."><b>What's holding you back.</b> Fixes for your listing.</li>
         </ul>
@@ -661,7 +688,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   <div class="wrap center">
     <div class="shead">
       <div class="eyebrow" data-nl="Prijzen">Pricing</div>
-      <h2 data-nl="Afgestemd op wat je nodig hebt.<br/>Onderbouwd met cijfers.">Quoted to your needs.<br/>Backed by the numbers.</h2>
+      <h2 data-nl="Eén gerichte opdracht,<br/>afgestemd op wat je nodig hebt.">One focused engagement,<br/>quoted to your needs.</h2>
       <p data-nl="Geen pakketten die je niet nodig hebt. Je Revenue Check bepaalt wat we voorstellen.">No packages you don't need. Your Revenue Check decides what we propose.</p>
     </div>
     <div class="quote">
@@ -724,6 +751,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <form id="leadForm" novalidate>
         <input type="hidden" name="lang" id="fLang" value="en"/>
         <input type="hidden" name="source" id="fSource" value="website"/>
+        <input type="hidden" name="estimatorRevenue" id="fEstRev" value=""/>
+        <input type="hidden" name="estimatorArea" id="fEstArea" value=""/>
         <div class="full"><label for="interest" data-nl="Ik wil graag">I'd like</label>
           <select id="interest" name="interest">
             <option value="check" data-nl="Een gratis Revenue Check">A free Revenue Check</option>
@@ -741,37 +770,56 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
             <option value="other" data-nl="Elders op Curaçao">Elsewhere on Curaçao</option>
             <option value="outside" data-nl="Buiten Curaçao">Outside Curaçao</option>
           </select></div>
-        <div><label for="status" data-nl="Status">Status</label>
+        <div class="q"><label for="status" data-nl="Status">Status</label>
           <select id="status" name="status">
             <option value="" disabled selected data-nl="Kies">Select</option>
             <option value="live" data-nl="Live en boekbaar">Live and bookable</option>
             <option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option>
             <option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option>
           </select></div>
-        <div><label for="rtype" data-nl="Type verhuur">Rental type</label>
+        <div><label for="ptype" data-nl="Type woning">Property type</label>
+          <select id="ptype" name="propertyType">
+            <option value="" disabled selected data-nl="Kies">Select</option>
+            <option value="villa" data-nl="Villa of vrijstaand huis">Villa or standalone home</option>
+            <option value="apartment" data-nl="Appartement of condo">Apartment or condo</option>
+            <option value="townhouse" data-nl="Geschakelde woning of bungalow">Townhouse or bungalow</option>
+            <option value="guesthouse" data-nl="Guesthouse of studio">Guesthouse or studio</option>
+          </select></div>
+        <div><label for="beds" data-nl="Slaapkamers">Bedrooms</label>
+          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6+">6+</option></select></div>
+        <div class="q"><label for="rtype" data-nl="Type verhuur">Rental type</label>
           <select id="rtype" name="rentalType">
             <option value="" disabled selected data-nl="Kies">Select</option>
             <option value="short" data-nl="Hele woning, korte verblijven">Whole home, short stays</option>
             <option value="monthly" data-nl="Vooral maandelijks of langer">Mostly monthly or longer</option>
             <option value="rooms" data-nl="Kamers in mijn huis">Rooms in my home</option>
           </select></div>
-        <div><label for="mgmt" data-nl="Wie regelt het nu?">Who runs it today?</label>
+        <div class="q"><label for="mgmt" data-nl="Wie regelt het nu?">Who runs it today?</label>
           <select id="mgmt" name="management">
             <option value="" disabled selected data-nl="Kies">Select</option>
             <option value="self" data-nl="Ikzelf">I do</option>
             <option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option>
             <option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option>
           </select></div>
+        <div class="q"><label for="pricing" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label>
+          <select id="pricing" name="pricing">
+            <option value="" disabled selected data-nl="Kies">Select</option>
+            <option value="flat" data-nl="Eén vast tarief">One flat rate</option>
+            <option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option>
+            <option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option>
+            <option value="platform" data-nl="Airbnb's eigen suggesties">Airbnb's own suggestions</option>
+          </select></div>
+        <div class="feat"><span class="flab" data-nl="Heeft de woning">Does it have</span>
+          <label class="ck"><input type="checkbox" id="pool" name="pool" value="yes"/><span data-nl="Privézwembad">Private pool</span></label>
+          <label class="ck"><input type="checkbox" id="seaview" name="seaView" value="yes"/><span data-nl="Zeezicht of aan zee">Sea view or beachfront</span></label>
+        </div>
         <div><label for="name" data-nl="Naam">Name</label><input id="name" name="name" autocomplete="name"/></div>
         <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"/></div>
-        <div><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel"/></div>
-        <div><label for="beds" data-nl="Slaapkamers">Bedrooms</label>
-          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option>1–2</option><option>3–4</option><option>5+</option></select></div>
+        <div class="full"><label for="whatsapp">WhatsApp <span class="opt" data-nl="(optioneel)">(optional)</span></label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel"/></div>
         <div class="full"><label for="msg" data-nl="Nog iets? (optioneel)">Anything else? (optional)</label><textarea id="msg" name="message"></textarea></div>
         <p class="err" id="err" role="alert"></p>
         <button class="btn full" type="submit" id="sub" data-nl="Versturen →">Send →</button>
       </form>
-      <p class="fnote" data-nl="Geen verplichting. We doen 10 Revenue Checks per week, in volgorde van aanvraag.">No commitment. We run 10 Revenue Checks per week, first come, first served.</p>
     </div>
   </div>
 </section>
@@ -938,12 +986,28 @@ $$('.check,.book').forEach(a => a.addEventListener('click', () => setTimeout(sub
 $('#lang').addEventListener('click', subLabel);
 subLabel();
 renderEst();
+/* Photo shoots and single services skip the Revenue Check qualification questions */
+const QUAL = [...document.querySelectorAll('#leadForm .q')];
+function syncQual() {
+  const light = ['photos', 'single'].includes($('#interest').value);
+  QUAL.forEach(d => { d.style.display = light ? 'none' : ''; const c = d.querySelector('select'); if (c) c.disabled = light; });
+}
+$('#interest').addEventListener('change', syncQual);
+syncQual();
+
 form.addEventListener('submit', async e => {
   e.preventDefault();
+  const rev = $('#eIn');
+  $('#fEstRev').value = rev && rev.value ? rev.value : '';
+  $('#fEstArea').value = estArea || '';
   const f = Object.fromEntries(new FormData(form).entries());
-  if (!f.name || !f.email || !f.beds || !f.area || !f.status || !f.rentalType || !f.management) return showErr(t('Please fill in every field (only the message is optional).', 'Vul alle velden in (alleen het bericht is optioneel).'));
+  f.pool = f.pool ? 'yes' : 'no';
+  f.seaView = f.seaView ? 'yes' : 'no';
+  const light = ['photos', 'single'].includes(f.interest);
+  if (!f.name || !f.email || !f.area || !f.beds || !f.propertyType) return showErr(t('Please fill in every field (WhatsApp and the message are optional).', 'Vul alle velden in (WhatsApp en het bericht zijn optioneel).'));
+  if (!light && (!f.status || !f.rentalType || !f.management || !f.pricing)) return showErr(t('Please fill in every field (WhatsApp and the message are optional).', 'Vul alle velden in (WhatsApp en het bericht zijn optioneel).'));
   if (!f.url && f.status === 'live') return showErr(t('Please add your listing link.', 'Voeg de link naar je advertentie toe.'));
-  if (!f.url) f.url = t('launching soon', 'start binnenkort');
+  if (!f.url) f.url = light ? t('not provided', 'niet opgegeven') : t('launching soon', 'start binnenkort');
   if (!/^\S+@\S+\.\S+$/.test(f.email)) return showErr(t('Please enter a valid email address.', 'Vul een geldig e-mailadres in.'));
   const noFit = f.area === 'outside' || (!['photos', 'single'].includes(f.interest) && (f.status === 'later' || f.rentalType !== 'short'));
   f.fit = noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
