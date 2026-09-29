@@ -514,14 +514,14 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
     <h2 data-nl="De markt is verschoven.<br/>De meeste woningen niet.">The market moved.<br/>Most listings didn't.</h2>
     <div class="nums">
       <div class="num"><h3 data-nl="Meer woningen">More homes</h3><b>+58%</b><p data-nl="Meer hotelkamers in 2030:<br/>al meer dan 7.100 vergund.">More hotel rooms by 2030:<br/>7,100+ already permitted.</p></div>
-      <div class="num"><h3 data-nl="Lagere prijzen">Lower rates</h3><b>&minus;11%</b><p data-nl="De daling van de gemiddelde nachtprijs in het afgelopen jaar.">The drop in the average nightly rate over the past year.</p></div>
-      <div class="num"><h3 data-nl="Lege nachten">Empty nights</h3><b>~80</b><p data-nl="Lege nachten per jaar: het verschil tussen een gemiddelde woning en de beste 25% in Willemstad.">Empty nights a year: the gap between a typical listing and the top 25% in Willemstad.</p></div>
+      <div class="num"><h3 data-nl="Seizoensschommeling">Seasonal swing</h3><b>+53%</b><p data-nl="Wat een gemiddelde woning in het hoogseizoen (dec&ndash;mrt) verdient t.o.v. het laagseizoen (mei&ndash;sep).">What a typical listing earns in high season (Dec&ndash;Mar) over low season (May&ndash;Sep).</p></div>
+      <div class="num"><h3 data-nl="Prijzen blijven achter">Rates lag</h3><b>+7%</b><p data-nl="Hoeveel de gemiddelde nachtprijs beweegt tussen die seizoenen, terwijl boekingen 44% schommelen.">How far the average nightly rate moves between those seasons, while bookings swing 44%.</p></div>
     </div>
     <div style="margin-top:48px">
       <p class="cta-lead" data-nl="Waar sta jij?">Where do you stand?</p>
       <a class="btn" href="#check" data-nl="Gratis Revenue Check ↓">Free Revenue Check ↓</a>
     </div>
-    <p class="src"><span data-nl="Bronnen:">Sources:</span> AirDNA · AirROI · PriceLabs · <span data-nl="Curaçao Tourist Board">Curaçao Tourist Board</span></p>
+    <p class="src"><span data-nl="Bronnen:">Sources:</span> AirDNA · PriceLabs · <span data-nl="Curaçao Tourist Board">Curaçao Tourist Board</span></p>
   </div>
 </section>
 
@@ -537,12 +537,14 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 
       <div class="est" aria-live="polite">
         <div class="eyebrow" data-nl="Snelle schatting">Quick estimate</div>
-        <div class="seg" id="estArea">
-          <button type="button" class="on" data-a="wil" data-nl="Willemstad">Willemstad</button>
-          <button type="button" data-a="jt" data-nl="Jan Thiel">Jan Thiel</button>
+        <div class="seg" id="estSize">
+          <button type="button" class="on" data-a="br1" data-nl="1 slaapkamer">1BR</button>
+          <button type="button" data-a="br2" data-nl="2 slaapkamers">2BR</button>
+          <button type="button" data-a="br34" data-nl="3&ndash;4 slaapkamers">3&ndash;4BR</button>
+          <button type="button" data-a="br5" data-nl="5+ slaapkamers">5+BR</button>
         </div>
-        <div class="ebar"><div class="ebar-l"><span data-nl="Gemiddelde woning">Typical listing</span><b id="eMed"></b></div><div class="etrack"><div class="efill m" id="eMedBar"></div></div></div>
-        <div class="ebar"><div class="ebar-l"><span data-nl="Beste 25%">Top 25%</span><b id="eTop"></b></div><div class="etrack"><div class="efill" id="eTopBar"></div></div></div>
+        <div class="ebar"><div class="ebar-l"><span data-nl="Gemiddelde maand">Typical month</span><b id="eMed"></b></div><div class="etrack"><div class="efill m" id="eMedBar"></div></div></div>
+        <div class="ebar"><div class="ebar-l"><span data-nl="Hoogseizoen">High season</span><b id="eTop"></b></div><div class="etrack"><div class="efill" id="eTopBar"></div></div></div>
         <div class="ebar" id="eYouWrap" hidden><div class="ebar-l"><span data-nl="Jouw woning">Your listing</span><b id="eYou"></b></div><div class="etrack"><div class="efill you" id="eYouBar"></div></div></div>
         <div class="egap">
           <small id="eGapLabel"></small>
@@ -553,7 +555,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
           <label for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
           <div class="row"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="1800"/></div>
         </div>
-        <p class="enote" data-nl="Gemiddelde omzet per maand op Airbnb, aug 2025 tot jul 2026 (AirROI).">Average monthly Airbnb revenue, Aug 2025 to Jul 2026 (AirROI).</p>
+        <p class="enote" data-nl="Gemiddelde omzet per maand per aantal slaapkamers: afgelopen 12 maanden t.o.v. hoogseizoen dec&ndash;mrt (PriceLabs, Curaçao).">Average monthly revenue by bedroom count: trailing 12 months vs. Dec&ndash;Mar high season (PriceLabs, Curaçao).</p>
       </div>
 
       <div class="sample">
@@ -896,6 +898,16 @@ const CONFIG = {
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const interest = $('#interest');
 
+/* Brand mark: true back-to-top. The native #top anchor lands on <main>'s
+   document position, which sits header-h below the real page top because the
+   sticky header still occupies that space in flow, so the browser's own
+   anchor scroll stops short of y=0. Scroll the window directly instead. */
+$('.brand').addEventListener('click', e => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+});
+
 /* Booking buttons */
 $$('.book').forEach(a => {
   if (CONFIG.strategyBookingUrl) { a.href = CONFIG.strategyBookingUrl; a.target = '_blank'; a.rel = 'noopener'; }
@@ -1112,15 +1124,21 @@ $('#lang').addEventListener('click', () => setLang(document.documentElement.lang
   addEventListener('scroll', upd, { passive: true }); upd();
 })();
 
-/* Revenue Check estimator (AirROI, Airbnb only, Aug 2025 to Jul 2026) */
+/* Revenue Check estimator (PriceLabs Market Dashboard, Curaçao, Sep 2024-Sep 2026).
+   med = average monthly revenue, trailing 12 months (Oct 2025-Sep 2026).
+   top = average monthly revenue in high season (Dec-Mar) over the same window.
+   oMed/oTop = matching average occupancy. Grouped by bedroom count, since the
+   underlying export has no neighborhood or percentile split. */
 const EST = {
-  wil: { med: 1718, top: 3416, oMed: 51, oTop: 73 },
-  jt:  { med: 3357, top: 6099, oMed: 53, oTop: 74 }
+  br1:  { med: 1225, top: 1496, oMed: 59, oTop: 72 },
+  br2:  { med: 2212, top: 2630, oMed: 67, oTop: 79 },
+  br34: { med: 4248, top: 4975, oMed: 72, oTop: 81 },
+  br5:  { med: 8982, top: 10804, oMed: 70, oTop: 78 }
 };
-let estArea = 'wil';
+let estSize = 'br1';
 const money = n => '$' + Math.round(n).toLocaleString(document.documentElement.lang === 'nl' ? 'nl-NL' : 'en-US');
 function renderEst() {
-  const d = EST[estArea], you = parseFloat($('#eIn').value) || 0;
+  const d = EST[estSize], you = parseFloat($('#eIn').value) || 0;
   const max = Math.max(d.top, you) * 1.02;
   $('#eMed').textContent = money(d.med) + t('/mo', '/mnd');
   $('#eTop').textContent = money(d.top) + t('/mo', '/mnd');
@@ -1133,24 +1151,24 @@ function renderEst() {
     const gap = Math.max(0, d.top - you) * 12;
     $('.egap').classList.toggle('good', !gap);
     $('#eGapLabel').textContent = t('Your potential gap', 'Jouw mogelijke verschil');
-    $('#eGap').textContent = gap ? money(gap) + t(' a year', ' per jaar') : t('You\'re in the top 25%', 'Je hoort bij de beste 25%');
-    $('#eGapNote').textContent = gap ? t('Between your listing and the top 25% nearby.', 'Tussen jouw woning en de beste 25% in de buurt.') : t('A Revenue Check shows where there\'s still room.', 'Een Revenue Check laat zien waar nog ruimte zit.');
+    $('#eGap').textContent = gap ? money(gap) + t(' a year', ' per jaar') : t('You\'re already at high-season pricing', 'Je zit al op hoogseizoenniveau');
+    $('#eGapNote').textContent = gap ? t('Between your average month and high-season pricing for this size.', 'Tussen jouw gemiddelde maand en hoogseizoenprijzen voor dit formaat.') : t('A Revenue Check shows where there\'s still room.', 'Een Revenue Check laat zien waar nog ruimte zit.');
   } else {
     $('.egap').classList.remove('good');
     $('#eGapLabel').textContent = t('Typical gap', 'Gemiddeld verschil');
     $('#eGap').textContent = money((d.top - d.med) * 12) + t(' a year', ' per jaar');
-    $('#eGapNote').textContent = t('Between a typical listing and the top 25%, with occupancy of ', 'Tussen een gemiddelde woning en de beste 25%, bij een bezetting van ') + d.oMed + '% vs ' + d.oTop + '%.';
+    $('#eGapNote').textContent = t('Between a typical month and high season, with occupancy of ', 'Tussen een gemiddelde maand en het hoogseizoen, bij een bezetting van ') + d.oMed + '% vs ' + d.oTop + '%.';
   }
 }
-$$('#estArea button').forEach(b => b.addEventListener('click', () => {
-  estArea = b.dataset.a;
-  $$('#estArea button').forEach(x => x.classList.toggle('on', x === b));
+$$('#estSize button').forEach(b => b.addEventListener('click', () => {
+  estSize = b.dataset.a;
+  $$('#estSize button').forEach(x => x.classList.toggle('on', x === b));
   renderEst();
 }));
 $('#eIn').addEventListener('input', renderEst);
 $('#lang').addEventListener('click', renderEst);
 $('#estCta').addEventListener('click', () => {
-  $('#area').value = estArea; interest.value = 'check';
+  interest.value = 'check';
 });
 
 
@@ -1204,7 +1222,7 @@ form.addEventListener('submit', async e => {
   e.preventDefault();
   const rev = $('#eIn');
   $('#fEstRev').value = rev && rev.value ? rev.value : '';
-  $('#fEstArea').value = estArea || '';
+  $('#fEstArea').value = estSize || '';
   const f = Object.fromEntries(new FormData(form).entries());
   /* Trim first, so a field containing only spaces cannot pass the required checks */
   Object.keys(f).forEach(k => { if (typeof f[k] === 'string') f[k] = f[k].trim(); });
