@@ -853,7 +853,7 @@ form.fpanel{transition:background .3s,border-color .3s}
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="#top" aria-label="The House Atelier, back to top">
+    <a class="brand" href="https://thehouseatelier.com" aria-label="The House Atelier, main website">
       <img src="assets/tha-icon-medium.png" alt="" class="brand-logo" width="28" height="28" decoding="async"/>
       <span>The House Atelier</span>
     </a>
@@ -1045,16 +1045,6 @@ const fillDial = (selId, inpId) => {
 };
 fillDial('cCc', 'cWa');
 
-
-/* Brand mark: true back-to-top. The native #top anchor lands on <main>'s
-   document position, which sits header-h below the real page top because the
-   sticky header still occupies that space in flow, so the browser's own
-   anchor scroll stops short of y=0. Scroll the window directly instead. */
-$('.brand').addEventListener('click', e => {
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-});
 
 const t = (en, nl) => document.documentElement.lang === 'nl' ? nl : en;
 const REQ_LABEL = { check: 'Free Revenue Check' };
