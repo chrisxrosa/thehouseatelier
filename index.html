@@ -115,7 +115,7 @@ html{scroll-padding-top:0}
 /* CAROUSEL */
 /* The rail's bottom shadow-padding (68px) falls below the last card, while its top
    padding sits between the nav and the cards. Offset the top to balance the ink. */
-#levers{flex-direction:column;justify-content:center;align-items:stretch;padding:66px 0 0;background:var(--bone2)}
+#levers{flex-direction:column;justify-content:center;align-items:stretch;padding:calc(var(--header-h) + 68px) 0 0;background:var(--bone2)}
 .intro{max-width:760px;margin:0 auto 38px;text-align:center}
 .intro h2{font-size:clamp(36px,4.8vw,58px);line-height:1.02;letter-spacing:-.035em;margin:6px 0 10px}
 .intro p{margin:0;font-size:15px;color:var(--md)}
@@ -427,7 +427,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .rc-cta p{margin:12px 0 0;font-size:12px;color:#9fb0ab}
 .cap{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#d9ece7;margin-top:14px}
 .cap::before{content:'';width:8px;height:8px;border-radius:50%;background:#3fae7a;box-shadow:0 0 0 4px rgba(63,174,122,.15)}
-/* Revenue Potential Report section: big number, bar, two-step form */
+/* Revenue Check section: big number, bar, two-step form */
 #check{min-height:100svh;padding-top:calc(var(--header-h) + 20px);padding-bottom:20px;justify-content:center}
 .rcf{display:flex;flex-direction:column;align-items:center;text-align:center}
 .rcf .eyebrow{color:#d7a08e}
@@ -485,6 +485,19 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .rcf .finp::placeholder{color:#7f8f89}
 .rcf .miss{border-color:#e8927a!important;background:rgba(232,146,122,.12)!important;box-shadow:0 0 0 3px rgba(232,146,122,.25)!important}
 .fwa{display:flex;gap:8px}.rcf select.fcc{flex:0 0 auto;width:auto;min-width:96px}
+/* Step 2 reads as a form: a clear prompt and light, fillable fields */
+.fprompt{display:flex;align-items:center;gap:12px;background:rgba(232,146,122,.13);border:1px solid rgba(232,146,122,.4);border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:14px;color:#c9d3cf;line-height:1.4}
+.fprompt b{color:#fffefa;font-size:15px}
+.fpi{flex:none;width:30px;height:30px;border-radius:50%;background:#e8927a;color:#1b2524;display:grid;place-items:center}
+#fStep2:not([hidden]) .fprompt{animation:fGlow 1.6s ease .2s 1}
+@keyframes fGlow{0%,100%{box-shadow:0 0 0 0 rgba(232,146,122,0)}40%{box-shadow:0 0 0 6px rgba(232,146,122,.28)}}
+.rcf input.finp,.rcf select.fsel,.rcf textarea.finp,.rcf select.fsel.fcc,.fin{background:#fdfbf7;border:1px solid #fdfbf7;color:#202927}
+.rcf select.fsel{background:#fdfbf7}
+.rcf .finp::placeholder{color:#8d9591}
+.rcf .fin input,.rcf .fin input:focus{color:#202927}
+.fin span{color:#737a76}
+.rcf .finp:focus,.rcf .fsel:focus,.fin:focus-within{border-color:#e8927a;box-shadow:0 0 0 3px rgba(232,146,122,.45)}
+.fin input::placeholder{color:#8d9591}
 #check.s2 #fHead,#check.s2 .ftrust{display:none}
 #check.s2{padding-top:calc(var(--header-h) + 14px);padding-bottom:14px}
 #check.s2 .fbig{margin-top:0;font-size:clamp(56px,6.5vw,76px)}
@@ -502,7 +515,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 #fCard[hidden]{display:none}
 #fStep2:not([hidden]){animation:fOpen .35s ease both}
 @keyframes fOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-#check.s2 #fStep2{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+#check.s2 #fStep2{margin-top:14px}
 @media(min-width:721px) and (max-height:860px){
   #check{padding-top:calc(var(--header-h) + 12px);padding-bottom:12px}
   .fbig{font-size:clamp(60px,8vw,84px)}
@@ -515,7 +528,9 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   #check.s2 .fcks,#check.s2 .fchips{min-height:40px}
   #check.s2 .fgroup+.fgroup{margin-top:8px;padding-top:8px}
   #check.s2 .factions{margin-top:6px;padding-top:6px}
-  #check.s2 #fStep2{margin-top:8px;padding-top:8px}
+  #check.s2 #fStep2{margin-top:8px;padding-top:0}
+  #check.s2 .fprompt{padding:7px 12px;margin-bottom:8px}
+  #check.s2 .fpi{width:26px;height:26px}
   #check.s2{padding-top:calc(var(--header-h) + 13px);padding-bottom:13px}
   #check.s2 form.fpanel{padding:12px 20px;margin-top:12px}
   #check.s2 .fbig{font-size:clamp(50px,5.2vw,60px)}
@@ -537,13 +552,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 #check.s2 .rcf textarea.fta{height:42px;padding-top:10px}
 #check.s2 .fcks,#check.s2 .fchips{min-height:42px}
 #check.s2 .factions{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)}
-.fmini{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0;padding:0 8px}
-.fmini .fitems{gap:14px}
-.fmini .fitem b{font-size:13px}
-.fmini .fitem b+span{font-size:12px;line-height:1.35}
 #check.s2 .fsend{padding-left:18px;padding-right:18px;font-size:13px}
-@media(min-width:721px) and (max-height:860px){.fmini .fitems{gap:10px}.fmini .fitem b+span{font-size:11.5px;line-height:1.3}.fmini{padding:0 4px}}
-.fmini .fok{width:20px;height:20px}
 #check.s2 .fback,#check.s2 .fsend{min-height:44px}
 .fgroup+.fgroup{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
 .fgh{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d7a08e;margin-bottom:12px}
@@ -580,8 +589,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .fnext,.fsend{width:100%}
   .fgrid{grid-template-columns:1fr}.fgrid .w2,.fgrid .w3{grid-column:auto}
   .factions{flex-direction:column-reverse;align-items:stretch}
-  .fmini{padding:0;order:3}
-  form.fpanel{padding:16px}
+    form.fpanel{padding:16px}
   .fbignote{font-size:15px}
   .fmark span{white-space:normal;text-align:center;max-width:84px;line-height:1.25}
 }
@@ -637,6 +645,80 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .gends b{font-size:20px}
 }
 
+.gc{display:flex;flex-direction:column;justify-content:flex-start}
+.gc .fix{margin-top:auto}
+.gap-head h2{text-wrap:balance}
+@media(max-width:720px){#gHead br{display:none}}
+/* Gap + Services: one screen on laptop heights */
+@media(min-width:721px) and (max-height:1000px){
+  .gap{padding-top:calc(var(--header-h) + 24px);padding-bottom:24px}
+  .gap-head{margin-bottom:22px}
+  .gap-head h2{font-size:clamp(34px,3.6vw,48px);margin:6px 0 8px}
+  .gpills{margin-top:12px}.gpills button{min-height:34px}
+  .gends{margin-bottom:6px}.gends b{font-size:24px}
+  .gbar{height:60px}
+  .glabel{margin-top:6px}.glabel span{padding-top:5px}
+  #gSrc{margin-top:10px!important}
+  .gcards{margin-top:20px;gap:12px}
+  .gc{padding:16px 16px 14px}.gc h3{font-size:18px;margin:8px 0 4px}.gc p{margin-bottom:8px}
+  .gap-foot{margin-top:20px}
+  #levers{padding-top:calc(var(--header-h) + 44px);padding-bottom:0}
+  .intro{margin-bottom:22px}
+  .rail{padding-top:36px;padding-bottom:44px}
+}
+@media(min-width:721px) and (max-height:820px){
+  .gap-head h2{font-size:clamp(32px,3.2vw,42px)}
+  .gap-head p{font-size:15px}
+  .gc p{font-size:12.5px}
+  .intro h2{font-size:clamp(34px,3.6vw,46px)}
+  .ag{grid-template-rows:88px 88px}
+  #levers{padding-top:calc(var(--header-h) + 30px)}
+  .intro{margin-bottom:16px}
+  .rail{padding-top:26px;padding-bottom:36px}
+  .card{padding:18px 24px}.ch{margin-bottom:10px}
+}
+@media(min-width:721px) and (max-height:780px){
+  .gap{padding-top:calc(var(--header-h) + 14px);padding-bottom:14px}
+  .gbar{height:54px}
+  .gcards{margin-top:14px}
+  .gap-foot{margin-top:14px}
+  #levers{padding-top:calc(var(--header-h) + 16px)}
+  .rail{padding-bottom:30px}
+}
+/* Step 2: the panel turns into a light, traditional form card */
+form.fpanel{transition:background .3s,border-color .3s}
+#check.s2 form.fpanel{background:var(--bone2);border-color:var(--bone2);color:var(--ink);box-shadow:0 30px 70px -30px rgba(0,0,0,.6)}
+#check.s2 .rcf label.fl,#check.s2 .rcf .fl{color:var(--md)}
+#check.s2 .rcf .fl em{color:var(--muted)}
+#check.s2 .fgh{color:var(--accd)}
+#check.s2 .fpills button{border-color:rgba(27,37,36,.22);color:var(--ink)}
+#check.s2 .fpills button:hover{border-color:var(--ink)}
+#check.s2 .fpills button.on{background:var(--char);color:#fff;border-color:var(--char)}
+#check.s2 .rcf input.finp,#check.s2 .rcf select.fsel,#check.s2 .rcf textarea.finp,#check.s2 .fin{background:#fffefb;border:1px solid rgba(27,37,36,.18);color:var(--ink)}
+#check.s2 .rcf .finp:focus,#check.s2 .rcf .fsel:focus,#check.s2 .fin:focus-within{border-color:rgba(184,95,71,.65);box-shadow:0 0 0 3px rgba(184,95,71,.12)}
+#check.s2 .fchip{border-color:rgba(27,37,36,.2);background:#fffefb;color:var(--ink)}
+#check.s2 .fchip:hover{border-color:var(--ink)}
+#check.s2 .fchip[aria-pressed="true"]{background:var(--char);color:#fff;border-color:var(--char)}
+#check.s2 .fchips.miss{outline-color:#c2544a}
+#check.s2 .rcf label.fck{color:var(--ink)}
+#check.s2 .fro{border-color:rgba(27,37,36,.18);background:#f4efe5;color:var(--ink)}
+#check.s2 .fgroup+.fgroup,#check.s2 .factions{border-top-color:var(--line)}
+#check.s2 .fprompt{background:#f6e6de;border-color:#edd8cf;color:var(--md)}
+#check.s2 .fprompt b{color:var(--char)}
+#check.s2 .fpi{background:var(--acc);color:#fff}
+#check.s2 .ferr{color:#c2544a}
+#check.s2 .factions{justify-content:flex-end}
+@media(min-width:721px) and (max-height:860px){
+  #check.s2 .fgrid{gap:6px 14px}
+  #check.s2 .ff{gap:4px}
+  #check.s2 .fgh{margin-bottom:4px}
+  #check.s2 .fgroup+.fgroup{margin-top:8px;padding-top:8px}
+  #check.s2 .rcf input.finp,#check.s2 .rcf select.fsel,#check.s2 .rcf textarea.finp,#check.s2 .fchip,#check.s2 .fin{min-height:38px}
+  #check.s2 .rcf textarea.fta{height:38px;padding-top:8px}
+  #check.s2 .fcks,#check.s2 .fchips{min-height:38px}
+  #check.s2 .factions{margin-top:8px;padding-top:8px}
+  #check.s2 .fsend{min-height:42px}
+}
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;background:var(--char);z-index:1000;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s}
 .lb.on{opacity:1;pointer-events:auto}
@@ -666,6 +748,8 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .ba div.af span{background:rgba(49,91,87,.92)}
 .ba::after{content:"→";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#fffefa;color:var(--ink);font-weight:700}
 
+.lang{display:inline-flex;align-items:center;gap:7px}
+.lang .flag{width:20px;height:14px;border-radius:3px;box-shadow:0 0 0 1px rgba(27,37,36,.15);flex:none;display:block}
 /* MOBILE CTA */
 .mcta{display:none}
 
@@ -728,8 +812,8 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
       <span>The House Atelier</span>
     </a>
     <div class="navr">
-      <button class="pill" id="lang" type="button" aria-label="Switch language">NL</button>
-      <a class="btn btn-outline check" href="#check" data-nl="Gratis Concurrentierapport ↗">Free Revenue Potential Report ↗</a>
+      <button class="pill lang" id="lang" type="button" aria-label="Nederlands"><svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg><span>NL</span></button>
+      <a class="btn btn-outline check" href="#check" data-nl="Gratis Concurrentierapport ↗">Free Revenue Check ↗</a>
     </div>
   </div>
 </header>
@@ -744,7 +828,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
       <p class="hero-sub" data-nl="We gebruiken echte marktdata om het volledige potentieel van je woning op Curaçao bloot te leggen.<br/>Daarna helpen we je het te bereiken, van prijs en foto's tot tekst en je eigen boekingssite.">We use real market data to uncover your Curaçao rental's full potential.<br/>Then we help you reach it, from pricing and photos to copy and your own booking site.</p>
       <div class="hero-actions">
-        <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Concurrentierapport aan →">Get your free Revenue Potential Report →</a>
+        <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Concurrentierapport aan →">Get your free Revenue Check →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 24 uur · geen verplichting">Free · within 24 hours · no obligation</p>
     </div>
@@ -792,7 +876,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
     </div>
     <div class="lk-foot">
       <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
-      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-nl="Gratis Concurrentierapport ↓">Free Revenue Potential Report ↓</a></div>
+      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-nl="Gratis Concurrentierapport ↓">Free Revenue Check ↓</a></div>
     </div>
   </div>
 </section>
@@ -800,7 +884,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 <!-- REVENUE CHECK -->
 <section class="rc" id="check">
   <div class="wrap rcf">
-    <div class="eyebrow" data-nl="Gratis Concurrentierapport">Free Revenue Potential Report</div>
+    <div class="eyebrow" data-nl="Gratis Concurrentierapport">Free Revenue Check</div>
     <h2 id="fHead"></h2>
     <div class="fbig" id="fBig"></div>
     <p class="fbignote" id="fBigNote"></p>
@@ -836,20 +920,24 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
         </div>
         <div class="fcard" id="fCard">
           <div class="fcardtxt">
-            <div class="fcardeye" data-nl="Ook in je gratis rapport">Also in your free report</div>
+            <div class="fcardeye" data-nl="Ook in je gratis rapport">Also in your free Revenue Check</div>
             <div class="fitems">
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
             </div>
           </div>
-          <button type="button" class="btn fnext" id="fNext" data-nl="Vraag mijn rapport aan →">Get my full report →</button>
+          <button type="button" class="btn fnext" id="fNext" data-nl="Vraag mijn rapport aan →">Get my full Revenue Check →</button>
         </div>
       </div>
 
       <div id="fStep2" hidden>
+        <div class="fprompt" id="fPrompt">
+          <span class="fpi" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+          <div><b data-nl="Laatste stap: vul het formulier hieronder in.">Last step: fill in the form below.</b> <span data-nl="Je gratis rapport staat binnen 24 uur in je inbox.">Your free Revenue Check lands in your inbox within 24 hours.</span></div>
+        </div>
         <div class="fgroup">
-          <div class="fgh" data-nl="Over de woning">Property details</div>
+          <div class="fgh" data-nl="1 · Je woning">1 · Your property</div>
           <div class="fgrid">
           <div class="ff"><label class="fl" for="cStatus" data-nl="Status">Status</label><select class="fsel" id="cStatus" name="status"><option value="" disabled selected data-nl="Kies">Select</option><option value="live" data-nl="Live en boekbaar">Live and bookable</option><option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option><option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option></select></div>
           <div class="ff w3 flive" hidden><span class="fl" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span><div class="fchips" id="cPlat" role="group" aria-label="Where is it listed?"><button type="button" class="fchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="fchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="fchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="fchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="fchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="fchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
@@ -863,7 +951,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
           </div>
         </div>
         <div class="fgroup">
-          <div class="fgh" data-nl="Over jou">Owner details</div>
+          <div class="fgh" data-nl="2 · Waar we het naartoe sturen">2 · Where we send it</div>
           <div class="fgrid">
           <div class="ff"><label class="fl" for="cName" data-nl="Naam">Name</label><input class="finp" id="cName" name="name" autocomplete="name"/></div>
           <div class="ff"><label class="fl" for="cEmail">Email</label><input class="finp" id="cEmail" name="email" type="email" autocomplete="email" inputmode="email"/></div>
@@ -872,15 +960,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
           </div>
         </div>
         <div class="factions">
-          <div class="fmini">
-            <div class="fcardeye" data-nl="Ook in je gratis rapport">Also in your free report</div>
-              <div class="fitems">
-              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
-              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
-              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
-            </div>
-          </div>
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn Concurrentierapport aan →">Get my Revenue Potential Report →</button>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn Concurrentierapport aan →">Get my free Revenue Check →</button>
         </div>
       </div>
 
@@ -1064,14 +1144,14 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
     <div class="pq-copy">
       <div class="eyebrow" data-nl="Prijzen">Pricing</div>
       <h2 data-nl="Eerst de data.<br/>Dan een offerte.">Data first.<br/>Then a quote.</h2>
-      <p data-nl="We beginnen met een gratis Concurrentierapport. Zit er ruimte in, dan offreren we het werk dat volgens de marktdata het meest oplevert.">We start with a free Revenue Potential Report. Where there’s room to grow, we quote the work the market data says is most likely to pay off.</p>
+      <p data-nl="We beginnen met een gratis Concurrentierapport. Zit er ruimte in, dan offreren we het werk dat volgens de marktdata het meest oplevert.">We start with a free Revenue Check. Where there’s room to grow, we quote the work the market data says is most likely to pay off.</p>
       <div class="pq-steps">
-        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Concurrentierapport">Revenue Potential Report</span></div>
+        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Concurrentierapport">Revenue Check</span></div>
         <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span></div>
         <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span></div>
       </div>
       <div class="pq-cta">
-        <a class="btn check" href="#check" data-nl="Vraag je gratis rapport aan →">Get your free report →</a>
+        <a class="btn check" href="#check" data-nl="Vraag je gratis rapport aan →">Get your free Revenue Check →</a>
         <span><span data-nl="Vragen?">Questions?</span> <a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
       </div>
     </div>
@@ -1120,7 +1200,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
       <details open><summary data-nl="Zijn jullie een beheerder?">Are you a property manager?</summary><p data-nl="Nee. We doen de commerciële kant: prijzen, presentatie en kanalen. Schoonmaak, sleutels en gasten blijven bij jou of bij wie je nu helpt.">No. We handle the commercial side: pricing, presentation and channels. Cleaning, keys and guests stay with you or whoever helps you now.</p></details>
       <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Je boekingskanalen, je pricing tool en je PMS staan op jouw naam. Wij werken er als teamlid in.">You do. Your booking channels, your pricing tool and your PMS stay in your name. We work inside them as team members.</p></details>
       <details><summary data-nl="Wat als mijn woning al goed presteert?">What if my listing already performs well?</summary><p data-nl="Dan laat de strategie dat zien, en meestal ook waar nog ruimte zit. Daarna beslis je zelf.">Then the strategy will show it, and usually where there's still room. You decide from there.</p></details>
-      <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Fotografie' bij 'Ik wil graag' in het formulier. Wil je ook zien wat je woning zou kunnen verdienen? Kies er dan het gratis Concurrentierapport bij.">Yes. In the form, pick "Photography" under "I'd like". Curious what your listing could earn too? Add the free Revenue Potential Report.</p></details>
+      <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Fotografie' bij 'Ik wil graag' in het formulier. Wil je ook zien wat je woning zou kunnen verdienen? Kies er dan het gratis Concurrentierapport bij.">Yes. In the form, pick "Photography" under "I'd like". Curious what your listing could earn too? Add the free Revenue Check.</p></details>
     </div>
   </div>
 </section>
@@ -1142,7 +1222,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 
         <div class="full lgh" data-nl="Je aanvraag">Request</div>
         <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
-          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Concurrentierapport">Free Revenue Potential Report</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijs- en kalenderoptimalisatie">Pricing &amp; Calendar Optimization</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct Booking Site</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
+          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Concurrentierapport">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijs- en kalenderoptimalisatie">Pricing &amp; Calendar Optimization</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct Booking Site</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
 
         <div class="full lgh lprop" data-nl="Over de woning">Property details</div>
         <div class="lprop"><label for="status" data-nl="Status">Status</label>
@@ -1184,7 +1264,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 </footer>
 
 <div class="mcta" id="mcta">
-  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Concurrentierapport">Free Revenue Potential Report</strong></div>
+  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Concurrentierapport">Free Revenue Check</strong></div>
   <a class="btn check" href="#check" data-nl="Start →">Start →</a>
 </div>
 
@@ -1333,7 +1413,7 @@ const T = { covers: { en: 'What this covers', nl: 'Wat dit inhoudt' },
             why: { en: 'Why it matters', nl: 'Waarom het uitmaakt' },
             before: { en: 'Before and after', nl: 'Voor en na' },
             next: { en: 'Next', nl: 'Volgende' },
-            cta: { en: 'Get your free Revenue Potential Report →', nl: 'Vraag je gratis Concurrentierapport aan →' } };
+            cta: { en: 'Get your free Revenue Check →', nl: 'Vraag je gratis Concurrentierapport aan →' } };
 
 const lb = $('#lb');
 let curSvc = null;
@@ -1355,7 +1435,7 @@ function renderSvc(slug) {
     html += [1,2,3,4,5].map(n => `<div class="ba"><div style="background-image:url(assets/lightbox-${n}-before.jpg)"><span>${l === 'nl' ? 'Voor' : 'Before'}</span></div><div class="af" style="background-image:url(assets/lightbox-${n}-after.jpg)"><span>${l === 'nl' ? 'Na' : 'After'}</span></div></div>`).join('');
   }
   html += `<div class="lb-why"><h5>${T.why[l]}</h5><p>${s.why[l]}</p></div>`;
-  html += `<div class="lb-foot"><a class="btn check" href="#contact" data-close="1">${T.cta[l]}</a>` +
+  html += `<div class="lb-foot"><a class="btn check" href="#check" data-close="1">${T.cta[l]}</a>` +
     `<span class="lb-nav">` +
       `<a class="lb-step" href="#service/${pv}">← ${SERVICES[pv].title[l]}</a>` +
       `<a class="lb-step" href="#service/${nx}">${SERVICES[nx].title[l]} →</a>` +
@@ -1420,12 +1500,15 @@ $('#next').addEventListener('click', () => go(cur + 1));
 
 /* Language toggle (EN/NL) */
 const wa = { en: "Hi! I have a question about The House Atelier.", nl: "Hoi! Ik heb een vraag over The House Atelier." };
+const FLAG_NL = '<svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg>';
+const FLAG_US = '<svg class="flag" viewBox="0 0 19 10" preserveAspectRatio="none" aria-hidden="true"><rect width="19" height="10" fill="#B22234"/><rect y="0.7692" width="19" height="0.7692" fill="#fff"/><rect y="2.3077" width="19" height="0.7692" fill="#fff"/><rect y="3.8462" width="19" height="0.7692" fill="#fff"/><rect y="5.3846" width="19" height="0.7692" fill="#fff"/><rect y="6.9231" width="19" height="0.7692" fill="#fff"/><rect y="8.4615" width="19" height="0.7692" fill="#fff"/><rect width="7.6" height="5.385" fill="#3C3B6E"/></svg>';
 function setLang(l) {
   document.documentElement.lang = l;
   $$('[data-nl]').forEach(e => { if (e.dataset.en === undefined) e.dataset.en = e.innerHTML; e.innerHTML = l === 'nl' ? e.dataset.nl : e.dataset.en; });
   $$('[data-nl-title]').forEach(e => { if (e.dataset.enTitle === undefined) e.dataset.enTitle = e.title; e.title = l === 'nl' ? e.dataset.nlTitle : e.dataset.enTitle; });
   $$('[data-nl-ph]').forEach(e => { if (e.dataset.enPh === undefined) e.dataset.enPh = e.placeholder; e.placeholder = l === 'nl' ? e.dataset.nlPh : e.dataset.enPh; });
-  $('#lang').textContent = l === 'nl' ? 'EN' : 'NL';
+  $('#lang').innerHTML = (l === 'nl' ? FLAG_US + '<span>EN</span>' : FLAG_NL + '<span>NL</span>');
+  $('#lang').setAttribute('aria-label', l === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands');
   $('#fLang').value = l;
   const waHref = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(wa[l]);
   $$('#waLink, #waLink2').forEach(a => { a.href = waHref; });
@@ -1443,11 +1526,12 @@ $('#lang').addEventListener('click', () => setLang(document.documentElement.lang
   routeSvc();
 })();
 
-/* Mobile CTA: hidden on the hero and near the contact form */
+/* Mobile CTA: appears as the second section scrolls in, hidden on the Revenue Check and near the contact form */
 (function () {
   const m = $('#mcta'), hero = $('.hero'), contact = $('#contact'), calc = $('#check');
   const upd = () => {
-    const pastHero = hero.getBoundingClientRect().bottom < 40;
+    /* Show as soon as the second section comes into view */
+    const pastHero = hero.getBoundingClientRect().bottom < innerHeight - 8;
     const cr = calc.getBoundingClientRect();
     const nearForm = contact.getBoundingClientRect().top < innerHeight || (cr.top < innerHeight && cr.bottom > 0);
     m.classList.toggle('off', !pastHero || nearForm);
@@ -1455,7 +1539,7 @@ $('#lang').addEventListener('click', () => setLang(document.documentElement.lang
   addEventListener('scroll', upd, { passive: true }); upd();
 })();
 
-/* Revenue Potential Report estimator. Source: PriceLabs Revenue Estimator Pro, one run per
+/* Revenue Check estimator. Source: PriceLabs Revenue Estimator Pro, one run per
    bedroom size against comparable Curaçao listings, past 12 months.
    med = median monthly revenue (50th percentile), averaged over the 12 months.
    top = 75th percentile monthly revenue, same basis.
@@ -1491,7 +1575,7 @@ function renderEst() {
     $('#fBigNote').textContent = t('a year between you and the top 25% of ' + w + ' homes.', 'per jaar tussen jou en de beste 25% van de ' + w + 'woningen.');
   } else {
     $('#fBig').textContent = t('Top 25%', 'Beste 25%');
-    $('#fBigNote').textContent = t('You\'re already there. Your report shows what\'s still left.', 'Daar zit je al. Je rapport laat zien wat er nog ligt.');
+    $('#fBigNote').textContent = t('You\'re already there. Your Revenue Check shows what\'s still left.', 'Daar zit je al. Je rapport laat zien wat er nog ligt.');
   }
   $('#fMed').style.left = pos(d.med); $('#fTop').style.left = pos(d.top);
   $('#fMedV').textContent = money(d.med) + t('/mo', '/mnd');
@@ -1501,12 +1585,13 @@ function renderEst() {
   if (you) { $('#fYou').style.left = 'clamp(52px,' + pos(you) + ',calc(100% - 52px))'; $('#fYouV').textContent = t('You · ', 'Jij · ') + money(you); }
   $('#eNote').innerHTML = t('Based on <b>' + d.n + ' real ' + w + ' listings</b> on Curaçao · past 12 months · PriceLabs', 'Gebaseerd op <b>' + d.n + ' echte ' + w + 'woningen</b> op Curaçao · afgelopen 12 maanden · PriceLabs');
   $('#fMethod').textContent = t(
-    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your full report narrows it to the homes guests actually compare you to, so the numbers get sharper.',
+    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your full Revenue Check narrows it to the homes guests actually compare you to, so the numbers get sharper.',
     'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je volledige rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
   /* The Gap section follows the bedroom size picked in the calculator */
   const pctMore = Math.round((d.top / d.med - 1) * 100);
-  $('#gHead').innerHTML = t('In Curaçao, the top 25%<br/>earn ' + pctMore + '% more.', 'Op Curaçao verdient de beste 25%<br/>' + pctMore + '% meer.');
-  $('#gMedL').textContent = t('Typical ' + w + ' home', 'Gemiddelde ' + w + 'woning');
+  $('#gHead').innerHTML = t('In Curaçao, the top&nbsp;25% <br/>earn ' + pctMore + '%&nbsp;more.', 'De beste&nbsp;25% op&nbsp;Curaçao <br/>verdient ' + pctMore + '%&nbsp;meer.');
+  const nBr = estSize === 'st' ? null : (estSize === 'br6' ? '6+' : estSize.slice(2));
+  $('#gMedL').textContent = t('Typical ' + w, nBr ? 'Gemiddeld · ' + nBr + (nBr === '1' ? ' slaapkamer' : ' slaapkamers') : 'Gemiddelde studio');
   $('#gMedV').textContent = money(d.med) + t('/mo', '/mnd');
   $('#gTopV').textContent = money(d.top) + t('/mo', '/mnd');
   $('#gGap').textContent = t('The gap · ~' + money(Math.round((d.top - d.med) * 12 / 500) * 500) + ' a year', 'Het gat · ~' + money(Math.round((d.top - d.med) * 12 / 500) * 500) + ' per jaar');
@@ -1541,7 +1626,7 @@ $('#fNext').addEventListener('click', () => goStep(2));
 $('#fHow').addEventListener('click', () => { const m = $('#fMethod'); m.hidden = !m.hidden; $('#fHow').setAttribute('aria-expanded', String(!m.hidden)); renderEst(); });
 $('#lang').addEventListener('click', renderEst);
 
-/* Revenue Potential Report form. Live listings: we read address, type and amenities
+/* Revenue Check form. Live listings: we read address, type and amenities
    from the listing itself, so we only ask where it is listed and for the links.
    Not live yet: we ask for address, type and amenities instead. */
 const cForm = $('#checkForm');
@@ -1605,9 +1690,9 @@ cForm.addEventListener('submit', async e => {
     $('#fDone').hidden = false;
     $('#fDone').textContent = noFit
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
-      : t('Got it. Your Revenue Potential Report arrives within 24 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 24 uur.');
+      : t('Got it. Your Revenue Check arrives within 24 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 24 uur.');
   } catch (x) {
-    btn.disabled = false; btn.textContent = t('Get my Revenue Potential Report →', 'Vraag mijn Concurrentierapport aan →');
+    btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn Concurrentierapport aan →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
     $('#fErr').style.display = 'block';
   }
@@ -1642,7 +1727,7 @@ form.querySelectorAll('select').forEach(el => el.addEventListener('change', () =
    - Photography and/or direct booking site only: no pricing or management questions.
    - General inquiry (exclusive) or Other only: no property questions; the message is required. */
 const PL = { airbnb: 'Airbnb', booking: 'Booking.com', vrbo: 'Vrbo', google: 'Google Vacation Rentals', micazu: 'Micazu', direct: 'Direct booking site' };
-const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Potential Report', strategy: 'Pricing & Calendar Optimization', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Site', other: 'Other' };
+const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Check', strategy: 'Pricing & Calendar Optimization', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Site', other: 'Other' };
 const picked = sel => $$(sel + ' .lchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.r || c.dataset.p);
 const reqMode = r => !r.length ? 'none' : r.some(x => ['check', 'strategy', 'listing'].includes(x)) ? 'full' : r.some(x => ['photos', 'direct'].includes(x)) ? 'photo' : 'none';
 function syncForm() {
@@ -1660,7 +1745,7 @@ function syncForm() {
   const needMsg = inq || mode === 'none';
   $('#msgLab').innerHTML = needMsg ? t('Your message', 'Je bericht') : t('Anything else? <span class="opt">(optional)</span>', 'Nog iets? <span class="opt">(optioneel)</span>');
   sub.textContent = (inq && r.length === 1) ? t('Send message →', 'Bericht versturen →')
-    : (r.length === 1 && r[0] === 'check') ? t('Get my free Revenue Potential Report →', 'Vraag mijn gratis Concurrentierapport aan →')
+    : (r.length === 1 && r[0] === 'check') ? t('Get my free Revenue Check →', 'Vraag mijn gratis Concurrentierapport aan →')
     : t('Send my request →', 'Verstuur mijn aanvraag →');
 }
 function setRequests(list) {
