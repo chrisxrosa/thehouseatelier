@@ -1299,7 +1299,7 @@ window.slotMiss = function (img) {
         <input type="hidden" name="lang" id="fLang" value="en"/>
         <input type="hidden" name="source" id="fSource" value="website"/>
         <input type="hidden" name="estimatorRevenue" id="fEstRev" value=""/>
-        <input type="hidden" name="estimatorArea" id="fEstArea" value=""/>
+        <input type="hidden" name="estimatorBedrooms" id="fEstBeds" value=""/>
 
         <div class="full lgh" data-nl="Je aanvraag">Request</div>
         <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
@@ -1780,9 +1780,9 @@ cForm.addEventListener('submit', async e => {
   const live = v('cStatus') === 'live';
   const picked = live ? $$('#cPlat .fchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.p) : [];
   const f = {
-    form: 'main-page', lang: document.documentElement.lang, source: 'website-check', utm: utm(), interest: 'check',
+    form: 'main-page', lang: document.documentElement.lang, source: 'website-check', utm: utm(),
     requests: REQ_LABEL.check,
-    estimatorRevenue: $('#eIn').value || '', estimatorArea: estSize,
+    estimatorRevenue: $('#eIn').value || '', estimatorBedrooms: BEDS[estSize],
     status: v('cStatus'),
     platforms: picked.map(k => PLAT[k]).join(', '),
     url: live ? v('cListing') : 'launching soon',
@@ -1804,7 +1804,6 @@ cForm.addEventListener('submit', async e => {
     $('#fErr').style.display = 'block'; (miss[0].id === 'cPlat' ? miss[0].querySelector('button') : miss[0]).focus(); return;
   }
   const noFit = f.status === 'later';
-  f.fit = noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
   const btn = $('#fSend'); btn.disabled = true; btn.textContent = t('Sending…', 'Versturen…');
   try {
     const r = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
@@ -1905,15 +1904,15 @@ form.addEventListener('submit', async e => {
   const v = id => ($('#' + id) ? $('#' + id).value.trim() : '');
   const r = picked('#rq'), mode = reqMode(r), live = v('status') === 'live';
   const plats = mode !== 'none' && live ? picked('#lPlat') : [];
-  /* Keep the old single interest code for the email routing (check / strategy / photos / single),
-     and send every choice in `requests`. */
+  /* Primary request, used only to decide whether to open the payment link (not sent),
+     every choice is sent in `requests`. */
   const primary = ['check', 'strategy', 'listing', 'photos', 'direct', 'other', 'inquiry'].find(x => r.includes(x)) || '';
   const legacy = { check: 'check', strategy: 'strategy', listing: 'single', photos: 'photos', direct: 'single', other: 'single', inquiry: 'inquiry' }[primary] || '';
   const f = {
-    form: 'contact', lang: document.documentElement.lang, source: $('#fSource').value, utm: utm(), interest: legacy,
+    form: 'contact', lang: document.documentElement.lang, source: $('#fSource').value, utm: utm(),
     requests: r.map(x => REQ_LABEL[x]).join(', '),
     /* Only pass the calculator numbers on when the visitor actually used it */
-    estimatorRevenue: $('#eIn').value || '', estimatorArea: $('#eIn').value ? estSize : '',
+    estimatorRevenue: $('#eIn').value || '', estimatorBedrooms: $('#eIn').value ? BEDS[estSize] : '',
     status: mode === 'none' ? '' : v('status'),
     platforms: plats.map(k => PL[k]).join(', '),
     url: mode === 'none' ? 'not provided' : live ? v('listing') : 'launching soon',
@@ -1951,7 +1950,6 @@ form.addEventListener('submit', async e => {
     return;
   }
   const noFit = mode === 'full' && f.status === 'later';
-  f.fit = mode !== 'full' ? '' : noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
   sub.disabled = true; sub.textContent = t('Sending…', 'Versturen…');
   try {
     const res = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
