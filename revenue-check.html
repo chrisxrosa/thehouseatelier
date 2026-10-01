@@ -1261,9 +1261,9 @@ cForm.addEventListener('submit', async e => {
   const live = v('cStatus') === 'live';
   const picked = live ? $$('#cPlat .fchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.p) : [];
   const f = {
-    form: 'revenue-check-page', lang: document.documentElement.lang, source: 'website-check', utm: utm(), interest: 'check',
+    form: 'revenue-check-page', lang: document.documentElement.lang, source: 'website-check', utm: utm(),
     requests: REQ_LABEL.check,
-    estimatorRevenue: $('#eIn').value || '', estimatorArea: estSize,
+    estimatorRevenue: $('#eIn').value || '', estimatorBedrooms: BEDS[estSize],
     status: v('cStatus'),
     platforms: picked.map(k => PLAT[k]).join(', '),
     url: live ? v('cListing') : 'launching soon',
@@ -1285,7 +1285,6 @@ cForm.addEventListener('submit', async e => {
     $('#fErr').style.display = 'block'; (miss[0].id === 'cPlat' ? miss[0].querySelector('button') : miss[0]).focus(); return;
   }
   const noFit = f.status === 'later';
-  f.fit = noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
   const btn = $('#fSend'); btn.disabled = true; btn.textContent = t('Sending…', 'Versturen…');
   try {
     const r = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
