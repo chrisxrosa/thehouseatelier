@@ -461,7 +461,10 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .fstephead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
 .fsteplabel{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9fb0aa}
 .fdots{display:flex;gap:6px}.fdots i{width:28px;height:4px;border-radius:2px;background:rgba(255,255,255,.2)}.fdots i.on{background:#e8927a}
-.fstep{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:end}
+.fstep{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}
+.finrow{display:flex;gap:10px;align-items:stretch}
+.finrow .fin{flex:1;min-width:0}
+#fNext[hidden]{display:none}
 .ff{display:flex;flex-direction:column;gap:7px;min-width:0}
 .rcf label.fl,.rcf .fl{display:block;margin:0;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;color:#b6c1bd}
 .rcf .fl em{font-style:normal;color:#7f8f89}
@@ -484,7 +487,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .fitem b{font-size:14.5px;color:#fffefa}
 .fitem b+span{font-size:12.5px;line-height:1.4;color:#b6c1bd}
 .fok{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:1px}
-.fnext{flex-shrink:0;min-height:48px}
+.fnext{flex-shrink:0;min-height:46px;white-space:nowrap}
 .fgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 16px;align-items:end}
 .fgrid .w2{grid-column:span 2}
 .rcf input.finp,.rcf select.fsel,.rcf textarea.finp{width:100%;min-height:46px;box-sizing:border-box;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fffefa;padding:0 14px;font:500 15px 'DM Sans',sans-serif;border-radius:12px;box-shadow:none}
@@ -597,6 +600,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .fstep{grid-template-columns:1fr}
   .fcard{flex-direction:column;align-items:stretch;padding:16px}
   .fnext,.fsend{width:100%}
+  .finrow{flex-direction:column}
   .fgrid{grid-template-columns:1fr}.fgrid .w2,.fgrid .w3{grid-column:auto}
   .factions{flex-direction:column-reverse;align-items:stretch}
     form.fpanel{padding:16px}
@@ -991,19 +995,18 @@ window.slotMiss = function (img) {
           </div>
           <div class="ff">
             <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
-            <div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div>
+            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext" data-nl="Vraag mijn volledige Omzetcheck aan →">Get my full Revenue Check →</button></div>
           </div>
         </div>
         <div class="fcard" id="fCard">
           <div class="fcardtxt">
-            <div class="fcardeye" data-nl="Ook in je gratis rapport">Also in your free Revenue Check</div>
+            <div class="fcardeye" data-nl="Inbegrepen in je Gratis Omzetcheck">Included in your Free Revenue Check</div>
             <div class="fitems">
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
             </div>
           </div>
-          <button type="button" class="btn fnext" id="fNext" data-nl="Vraag mijn rapport aan →">Get my full Revenue Check →</button>
         </div>
       </div>
 
@@ -1723,7 +1726,7 @@ const goStep = n => {
   if (n === 1) ignoreRev = false;
   $('#check').classList.toggle('s2', n === 2);
   /* One form: the bedroom and revenue fields stay put, the details open up underneath */
-  $('#fCard').hidden = n === 2; $('#fStep2').hidden = n !== 2;
+  $('#fCard').hidden = n === 2; $('#fNext').hidden = n === 2; $('#fStep2').hidden = n !== 2;
   $('#fErr').style.display = 'none';
   renderEst();
   /* Both steps: bring the whole section into view so it sits centred on screen */
