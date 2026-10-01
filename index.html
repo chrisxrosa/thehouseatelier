@@ -1374,6 +1374,10 @@ const CONFIG = {
 };
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 /* Campaign tag from the page URL (utm_source/utm_campaign), shared by both forms */
+/* Listing links: always a full https:// URL, or empty. Never placeholder text,
+   so URL fields in Make and the CRM always receive something valid. */
+const normUrl = v => { v = (v || '').trim().replace(/\s+/g, ''); if (!v) return ''; if (!/^https?:\/\//i.test(v)) v = 'https://' + v.replace(/^\/+/, ''); return v; };
+const okUrl = v => { try { const u = new URL(v); return /\./.test(u.hostname); } catch (e) { return false; } };
 const utm = () => { const q = new URLSearchParams(location.search); return q.get('utm_source') ? q.get('utm_source') + (q.get('utm_campaign') ? '/' + q.get('utm_campaign') : '') : ''; };
 
 /* WhatsApp country codes: every country, the islands and our main markets first.
@@ -1788,7 +1792,7 @@ cForm.addEventListener('submit', async e => {
     estimatorRevenue: $('#eIn').value || '', estimatorBedrooms: BEDS[estSize],
     status: v('cStatus'),
     platforms: picked.map(k => PLAT[k]).join(', '),
-    url: live ? v('cListing') : 'launching soon',
+    url: live ? normUrl(v('cListing')) : '',
     area: v('cArea'), propertyType: live ? '' : v('cType'), beds: BEDS[estSize],
     rentalType: '', management: v('cStatus') && !live ? '' : v('cMgmt'), pricing: v('cPrice'),
     pool: live ? '' : ($('#cPool').checked ? 'yes' : 'no'), seaView: live ? '' : ($('#cSea').checked ? 'yes' : 'no'),
@@ -1798,7 +1802,7 @@ cForm.addEventListener('submit', async e => {
   if (f.status && !live) { req.splice(2, 0, ['propertyType', 'cType']); req.splice(req.findIndex(([k]) => k === 'management'), 1); }
   const miss = req.filter(([k]) => !f[k]).map(([, id]) => $('#' + id));
   if (live && !picked.length) miss.splice(1, 0, $('#cPlat'));
-  if (live && !v('cListing')) miss.splice(1, 0, $('#cListing'));
+  if (live && !okUrl(f.url)) miss.splice(1, 0, $('#cListing'));
   if (f.email && !/^\S+@\S+\.\S+$/.test(f.email)) miss.push($('#cEmail'));
   cForm.querySelectorAll('.miss').forEach(el => el.classList.remove('miss'));
   if (miss.length) {
@@ -1918,7 +1922,7 @@ form.addEventListener('submit', async e => {
     estimatorRevenue: $('#eIn').value || '', estimatorBedrooms: $('#eIn').value ? BEDS[estSize] : '',
     status: mode === 'none' ? '' : v('status'),
     platforms: plats.map(k => PL[k]).join(', '),
-    url: mode === 'none' ? 'not provided' : live ? v('listing') : 'launching soon',
+    url: mode !== 'none' && live ? normUrl(v('listing')) : '',
     area: mode === 'none' ? '' : v('area'),
     propertyType: mode !== 'none' && !live ? v('ptype') : '',
     beds: mode === 'none' ? '' : v('beds'),
@@ -1938,7 +1942,7 @@ form.addEventListener('submit', async e => {
     if (!f.status) miss.push($('#status'));
     if (!f.area) miss.push($('#area'));
     if (live && !plats.length) { $('#lPlat').classList.add('miss'); miss.push($('#lPlat').querySelector('button')); }
-    if (live && !v('listing')) miss.push($('#listing'));
+    if (live && !okUrl(f.url)) miss.push($('#listing'));
     if (f.status && !live && !f.propertyType) miss.push($('#ptype'));
     if (!f.beds) miss.push($('#beds'));
     if (mode === 'full') { if (!f.management && !(f.status && !live)) miss.push($('#mgmt')); if (!f.pricing) miss.push($('#pricing')); }
