@@ -52,7 +52,7 @@ html{scroll-padding-top:0}
 .pill:hover{background:#fff}
 
 /* HERO: header + hero = exactly one screen */
-.hero{height:calc(100svh - var(--header-h));min-height:0;padding:clamp(14px,3svh,32px) 0 clamp(18px,4svh,36px);background:var(--bone2);align-items:stretch;overflow:hidden}
+.hero{height:calc(100svh - var(--header-h));min-height:0;padding:clamp(16px,3.5svh,34px) 0;background:var(--bone2);align-items:stretch;overflow:hidden}
 .hero>.wrap{height:100%;display:flex;flex-direction:column}
 .hero-copy{flex:none;text-align:center;margin-bottom:clamp(14px,2.6svh,26px)}
 .hero h1{font-size:clamp(36px,min(5.8vw,8svh),78px);line-height:1.02;letter-spacing:-.04em;margin:0 auto clamp(8px,1.6svh,16px)}
@@ -217,7 +217,7 @@ html{scroll-padding-top:0}
 .pq-steps small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b6c1bd}
 .pq-steps .on small{color:#e8927a}
 .pq-steps span{display:block;font-size:15px;color:#fffefa;margin-top:6px}
-.pq-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:14px;color:#b6c1bd}
+.pq-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:30px;font-size:14px;color:#b6c1bd}
 .pq-cta .wa2{color:#fff}
 .pq-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:30px 32px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg)}
 .pq-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
@@ -681,7 +681,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .gc p{font-size:12.5px}
   .intro h2{font-size:clamp(34px,3.6vw,46px)}
   .ag{grid-template-rows:88px 88px}
-  #levers{padding-top:calc(var(--header-h) + 30px)}
+  #levers{padding-top:calc(var(--header-h) + 36px)}
   .intro{margin-bottom:16px}
   .rail{padding-top:26px;padding-bottom:36px}
   .card{padding:18px 24px}.ch{margin-bottom:10px}
@@ -691,8 +691,8 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .gbar{height:54px}
   .gcards{margin-top:14px}
   .gap-foot{margin-top:14px}
-  #levers{padding-top:calc(var(--header-h) + 16px)}
-  .rail{padding-bottom:30px}
+  #levers{padding-top:calc(var(--header-h) + 22px)}
+  .rail{padding-bottom:22px}
 }
 /* Step 2: the panel turns into a light, traditional form card */
 form.fpanel{transition:background .3s,border-color .3s}
@@ -728,6 +728,34 @@ form.fpanel{transition:background .3s,border-color .3s}
   #check.s2 .factions{margin-top:8px;padding-top:8px}
   #check.s2 .fsend{min-height:42px}
 }
+/* Balance pass: every section centred in the space below the sticky header */
+#faq{padding-top:calc(var(--header-h) + 3px)}
+@media(min-width:721px) and (max-height:780px){
+  #check{padding-top:calc(var(--header-h) + 6px);padding-bottom:6px}
+  .fbig{font-size:clamp(54px,7vw,72px)}
+  #contact{padding-top:calc(var(--header-h) + 14px);padding-bottom:14px}
+  .contact h2{font-size:clamp(42px,5.2vw,70px)}
+}
+/* Optical centring: sections that open with a small eyebrow look bottom-heavy when
+   centred by the box alone, because the eye reads from the headline. Lift the
+   content by up to 14px, only where there is room to spare. */
+@media(min-width:721px) and (min-height:861px){#check:not(.s2)>.wrap{transform:translateY(-12px)}}
+/* Short laptop screens: no room for the eyebrow above the headline, which already says what this is */
+@media(min-width:721px) and (max-height:860px){#check .rcf>.eyebrow{display:none}#check:not(.s2)>.wrap{transform:translateY(-4px)}}
+@media(min-width:721px){
+  .market>.wrap,#gap>.wrap,#levers>.wrap,#levers>.rail{transform:translateY(calc(-1 * clamp(0px, (100vh - 780px) * .3, 14px)))}
+}
+/* IMAGE SLOTS: hidden until the matching file exists in /assets */
+.slot{display:none}
+.slot.on{display:block}
+#check,#modules{position:relative;isolation:isolate}
+#check>.wrap,#modules>.wrap{position:relative;z-index:1}
+.slot-bg.on{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;z-index:0;pointer-events:none}
+.slot-photo.on{width:100%;max-width:440px;aspect-ratio:3/2;object-fit:cover;border-radius:20px;margin-top:28px}
+.slot-contact.on{margin-top:26px;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
+.slot-svc.on{width:100%;height:clamp(180px,32vh,320px);object-fit:cover;border-radius:22px;margin:0 0 40px}
+@media(min-width:721px) and (max-height:860px){.slot-photo.on{max-width:380px;margin-top:20px}}
+@media(max-width:720px){.slot-photo.on{max-width:none;aspect-ratio:16/10;margin-top:20px}}
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;background:var(--char);z-index:1000;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s}
 .lb.on{opacity:1;pointer-events:auto}
@@ -892,6 +920,8 @@ form.fpanel{transition:background .3s,border-color .3s}
 
 <!-- REVENUE CHECK -->
 <section class="rc" id="check">
+  <!-- IMAGE SLOT: assets/bg-revenue-check.jpg (texture, shown faintly) -->
+  <img class="slot slot-bg" src="assets/bg-revenue-check.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="this.remove()"/>
   <div class="wrap rcf">
     <div class="eyebrow" data-nl="Gratis Concurrentierapport">Free Revenue Check</div>
     <h2 id="fHead"></h2>
@@ -997,13 +1027,13 @@ form.fpanel{transition:background .3s,border-color .3s}
         <div><span id="gMedL"></span><b id="gMedV"></b></div>
         <div class="r"><span data-nl="Beste 25%">Top 25%</span><b id="gTopV"></b></div>
       </div>
-      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, direct bookings and amenities.">
+      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, channels and amenities.">
         <div class="gbase" data-nl="Wat je nu verdient">What you earn today</div>
         <div class="gzero" title="Where your home is. The one part you can't change." data-nl-title="Waar je woning staat. Het enige deel dat je niet kunt veranderen."><b>00</b><span data-nl="Ligging">Location</span></div>
         <button type="button" class="gseg g1" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
         <button type="button" class="gseg g2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="gseg g3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
-        <button type="button" class="gseg g4" data-i="3" aria-label="04 Direct bookings"><b>04</b><span data-nl="Direct">Direct</span></button>
+        <button type="button" class="gseg g4" data-i="3" aria-label="04 Channels"><b>04</b><span data-nl="Kanalen">Channels</span></button>
         <button type="button" class="gseg g5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
       <div class="glabel"><span id="gGap"></span></div>
@@ -1035,7 +1065,7 @@ form.fpanel{transition:background .3s,border-color .3s}
         <button type="button" class="mseg s1 on" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
         <button type="button" class="mseg s2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="mseg s3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
-        <button type="button" class="mseg s4" data-i="3" aria-label="04 Direct bookings"><b>04</b><span data-nl="Direct">Direct</span></button>
+        <button type="button" class="mseg s4" data-i="3" aria-label="04 Channels"><b>04</b><span data-nl="Kanalen">Channels</span></button>
         <button type="button" class="mseg s5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
       <span class="mend" data-nl="→ Geoptimaliseerd">→ Optimized</span>
@@ -1148,6 +1178,8 @@ form.fpanel{transition:background .3s,border-color .3s}
 
 <!-- PRICING -->
 <section class="dark" id="modules">
+  <!-- IMAGE SLOT: assets/bg-pricing.jpg (texture, shown faintly) -->
+  <img class="slot slot-bg" src="assets/bg-pricing.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="this.remove()"/>
   <div class="wrap pq">
     <div class="pq-copy">
       <div class="eyebrow" data-nl="Prijzen">Pricing</div>
@@ -1203,7 +1235,9 @@ form.fpanel{transition:background .3s,border-color .3s}
 <!-- FAQ -->
 <section class="beige" id="faq">
   <div class="wrap faq">
-    <div><div class="eyebrow" data-nl="Veelgestelde vragen">Frequently asked questions</div><h2 data-nl="Goed om te weten.">Good to know.</h2></div>
+    <div><div class="eyebrow" data-nl="Veelgestelde vragen">Frequently asked questions</div><h2 data-nl="Goed om te weten.">Good to know.</h2>
+      <!-- IMAGE SLOT: assets/photo-faq.jpg (landscape) -->
+      <img class="slot slot-photo" src="assets/photo-faq.jpg" alt="" decoding="async" onload="this.classList.add('on')" onerror="this.remove()"/></div>
     <div>
       <details open><summary data-nl="Zijn jullie een beheerder?">Are you a property manager?</summary><p data-nl="Nee. We doen de commerciële kant: prijzen, presentatie en kanalen. Schoonmaak, sleutels en gasten blijven bij jou of bij wie je nu helpt.">No. We handle the commercial side: pricing, presentation and channels. Cleaning, keys and guests stay with you or whoever helps you now.</p></details>
       <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Je boekingskanalen, je pricing tool en je PMS staan op jouw naam. Wij werken er als teamlid in.">You do. Your booking channels, your pricing tool and your PMS stay in your name. We work inside them as team members.</p></details>
@@ -1220,6 +1254,8 @@ form.fpanel{transition:background .3s,border-color .3s}
       <div class="eyebrow" style="color:#d7a08e" data-nl="Contact">Get in touch</div>
       <h2 data-nl="Laten we praten.">Let's talk.</h2>
       <p class="waline"><span data-nl="Liever even chatten?">Rather chat?</span><a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></p>
+      <!-- IMAGE SLOT: assets/photo-contact.jpg (landscape) -->
+      <img class="slot slot-photo slot-contact" src="assets/photo-contact.jpg" alt="" decoding="async" onload="this.classList.add('on')" onerror="this.remove()"/>
     </div>
     <div class="form-card">
       <form id="leadForm" novalidate>
@@ -1450,7 +1486,9 @@ function renderSvc(slug) {
   const i = SVC_ORDER.indexOf(slug), N = SVC_ORDER.length;
   const nx = SVC_ORDER[(i + 1) % N], pv = SVC_ORDER[(i - 1 + N) % N];
   $('#lbTitle').textContent = s.title[l];
-  let html = `<div class="lb-intro"><div class="eyebrow" style="color:#d7a08e">${s.eyebrow[l]}</div><h2 id="lbH2">${s.h2[l]}</h2><p>${s.sub[l]}</p></div>`;
+  /* IMAGE SLOT: assets/svc-<slug>.jpg (pricing, photos, copy, channels, amenities) */
+  let html = `<img class="slot slot-svc" src="assets/svc-${slug}.jpg" alt="" decoding="async" onload="this.classList.add('on')" onerror="this.remove()"/>`;
+  html += `<div class="lb-intro"><div class="eyebrow" style="color:#d7a08e">${s.eyebrow[l]}</div><h2 id="lbH2">${s.h2[l]}</h2><p>${s.sub[l]}</p></div>`;
   html += `<p class="lb-sec">${T.covers[l]}</p><div class="lb-points">`;
   s.points.forEach((pt, n) => {
     html += `<div class="lb-pt"><span class="lb-n">${String(n + 1).padStart(2, '0')}</span><h4>${pt.h[l]}</h4><p>${pt.p[l]}</p></div>`;
