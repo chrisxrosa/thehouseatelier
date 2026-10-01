@@ -57,7 +57,8 @@ html{scroll-padding-top:0}
 .hero-copy{flex:none;text-align:center;margin-bottom:clamp(14px,2.6svh,26px)}
 .hero h1{font-size:clamp(36px,min(5.8vw,8svh),78px);line-height:1.02;letter-spacing:-.04em;margin:0 auto clamp(8px,1.6svh,16px)}
 .hero h1 span{color:var(--acc)}
-.hero-sub{max-width:640px;margin:0 auto;font-size:15.5px;line-height:1.55;color:var(--md)}
+.hero-loc{margin:0 0 14px}
+.hero-sub{max-width:720px;text-wrap:balance;margin:0 auto;font-size:15.5px;line-height:1.55;color:var(--md)}
 .hero-note{margin:10px 0 0;font-size:12px;color:var(--muted)}
 .hero-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:clamp(14px,2.6svh,24px)}
 .photo-grid{flex:1 1 0;min-height:0;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:8px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--bone3)}
@@ -81,6 +82,29 @@ html{scroll-padding-top:0}
 .market h2{font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:-.035em;margin:8px 0 52px}
 .market h2 span{color:var(--acc)}
 .vh{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+/* The challenge: three leaks, editorial layout */
+.market{text-align:left;padding-top:calc(var(--header-h) + 34px)}
+.lk-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;margin-bottom:clamp(32px,5vh,52px)}
+.market .lk-head h2{margin:12px 0 0;font-size:clamp(36px,4.6vw,58px);line-height:1.02;letter-spacing:-.035em}
+.market .lk-head h2 span{color:var(--acc);font-style:italic}
+.lk-head>p{margin:0;max-width:300px;font-size:17px;line-height:1.5;color:var(--md)}
+.lks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px}
+.lk{display:flex;flex-direction:column;gap:12px;border-top:2px solid var(--char);padding-top:18px}
+.lk-top{display:flex;justify-content:space-between;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--md)}
+.lk b{font-family:'Lora',serif;font-weight:400;font-size:clamp(56px,6.6vw,84px);line-height:.95;letter-spacing:-.04em;color:var(--acc)}
+.lk-jump{display:flex;align-items:baseline;gap:.12em;white-space:nowrap}.lk-jump small{font-size:.5em;color:#a07866;letter-spacing:-.02em}.lk-jump i{font-style:normal;font-size:.42em;color:var(--md);margin:0 .08em}
+.lk h3{margin:0;font-size:clamp(22px,2vw,26px);line-height:1.15;letter-spacing:-.01em;color:var(--char)}
+.lk p{margin:0;font-size:16px;line-height:1.5;color:var(--md)}
+.lk-foot{display:flex;justify-content:space-between;align-items:center;gap:32px;margin-top:clamp(32px,5vh,52px)}
+.lk-foot .src{margin:0}
+.lk-cta{display:flex;align-items:center;gap:18px;flex-shrink:0}
+.lk-cta span{font-family:'Lora',serif;font-size:22px;color:var(--char)}
+@media(max-width:860px){
+  .lk-head{grid-template-columns:1fr;gap:14px}
+  .lks{grid-template-columns:1fr;gap:28px}
+  .lk-foot{flex-direction:column-reverse;align-items:flex-start;gap:16px}
+  .lk-cta{flex-direction:column;align-items:flex-start;gap:10px}
+}
 .nums{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .num h3{font-family:'Lora',serif;font-weight:400;font-size:clamp(24px,2.3vw,30px);line-height:1.1;letter-spacing:-.02em;color:var(--char);margin:0 0 6px}
 .num b{display:block;font-family:'Lora',serif;font-weight:400;font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;color:var(--acc)}
@@ -101,7 +125,7 @@ html{scroll-padding-top:0}
 .cnav .ar{border:1px solid var(--line);border-radius:50%;width:32px;height:32px;padding:0;display:grid;place-items:center;color:var(--ink);font-size:14px}
 .cnav .sp{flex:1}
 .mnav{display:flex;align-items:center;gap:12px;margin-bottom:6px}
-.mbar{flex:1;min-width:0;display:grid;grid-template-columns:1fr repeat(4,1fr);height:52px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px -14px rgba(27,37,36,.35)}
+.mbar{flex:1;min-width:0;display:grid;grid-template-columns:1fr repeat(5,1fr);height:52px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px -14px rgba(27,37,36,.35)}
 .mbase{background:var(--sage);color:#fff;display:flex;align-items:center;padding:0 14px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
 .mseg{border:0;border-left:2px dashed rgba(255,254,250,.55);background:var(--seg);color:#fff;cursor:pointer;font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:background .4s ease;position:relative}
 .mseg b{font-family:'Lora',serif;font-weight:400;font-size:17px;line-height:1}
@@ -171,6 +195,54 @@ html{scroll-padding-top:0}
 .price-card .btn{width:100%}
 .micro{font-size:11px;color:#848a86;margin-top:14px;line-height:1.5}
 
+/* PRICING: the quote */
+#modules{padding-top:calc(var(--header-h) + 34px)}
+.pq{display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center}
+.pq-copy .eyebrow{color:#d7a08e}
+.pq-copy h2{font-size:clamp(36px,4.3vw,54px);line-height:1.04;letter-spacing:-.035em;margin:14px 0 0;color:#fffefa}
+.pq-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:#b6c1bd;max-width:520px}
+.pq-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
+.pq-steps div{border-top:2px solid rgba(255,255,255,.3);padding-top:12px}
+.pq-steps div.on{border-top-color:#e8927a}
+.pq-steps small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b6c1bd}
+.pq-steps .on small{color:#e8927a}
+.pq-steps span{display:block;font-size:15px;color:#fffefa;margin-top:6px}
+.pq-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:14px;color:#b6c1bd}
+.pq-cta .wa2{color:#fff}
+.pq-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:30px 32px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg)}
+.pq-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
+.pq-card-top small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accd)}
+.pq-card-top b{display:block;font-family:'Lora',serif;font-weight:400;font-size:26px;margin-top:4px}
+.pq-card-top span{font-size:13px;color:var(--muted)}
+.pq-card-top em{font-style:normal;font-size:11px;font-weight:700;padding:6px 10px;border-radius:999px;background:#e6dfd3;color:var(--md)}
+.qline{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px dashed rgba(27,37,36,.18);font-size:15px;color:var(--md)}
+.qline span:last-child{color:var(--ink)}
+.qline.strong span:last-child{font-weight:700}
+.pq-return{margin-top:18px;background:#edf3f0;border-radius:14px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.pq-return small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.pq-return span{font-size:13px;color:var(--md)}
+.pq-return b{font-family:'Lora',serif;font-weight:400;font-size:26px;color:var(--sage);white-space:nowrap}
+/* PHILOSOPHY: the letter */
+#about{padding-top:calc(var(--header-h) + 34px)}
+.ph-top{display:grid;grid-template-columns:1.35fr 1fr;gap:72px;align-items:center}
+.ph-quote{margin:18px 0 0;font-family:'Lora',serif;font-style:italic;font-size:clamp(36px,4.3vw,54px);line-height:1.08;letter-spacing:-.03em;color:var(--char)}
+.ph-bio{margin:20px 0 0;font-size:18px;line-height:1.6;color:var(--md);max-width:560px}
+.ph-sign{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:20px}
+.ph-sign i{width:36px;height:2px;background:var(--acc)}
+.ph-sign b{font-family:'Lora',serif;font-weight:400;font-size:20px;color:var(--char)}
+.ph-sign span{font-size:13px;color:var(--muted)}
+.ph-top img{width:100%;height:clamp(300px,52vh,440px);object-fit:cover;border-radius:22px;background:#d8d0c4}
+.ph-points{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:clamp(28px,5vh,40px)}
+.ph-points div{border-top:1px solid rgba(27,37,36,.2);padding-top:14px}
+.ph-points small{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--acc)}
+.ph-points h3{font-size:22px;margin:6px 0 0;color:var(--char)}
+.ph-points p{margin:6px 0 0;font-size:15px;line-height:1.5;color:var(--md)}
+@media(max-width:900px){
+  .pq,.ph-top{grid-template-columns:1fr;gap:36px}
+  .pq-card{transform:none}
+  .ph-points{grid-template-columns:1fr;gap:20px}
+  .ph-top img{height:360px}
+}
 /* MODULES */
 .beige{background:var(--bone3)}
 .center{text-align:center}
@@ -248,6 +320,17 @@ td small{display:block;font-weight:400;color:var(--muted);font-size:11px}
 .waline{margin-top:28px;padding-top:22px;border-top:1px solid rgba(255,255,255,.1);color:#c7cfcc;font-size:14px}
 .wa{display:block;margin-top:6px;color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .form-card{background:var(--bone2);border-radius:24px;padding:25px}
+/* Contact form: Request / Property details / Your details */
+#leadForm [hidden]{display:none!important}
+.lgh{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accd);padding-top:10px;border-top:1px solid var(--line);margin-top:4px}
+#leadForm .lgh:first-of-type{border-top:0;padding-top:0;margin-top:0}
+.lflab{display:block;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--md);margin-bottom:7px}
+.lchips{display:flex;flex-wrap:wrap;gap:6px}
+.lchip{min-height:36px;padding:0 12px;border-radius:999px;border:1px solid rgba(27,37,36,.2);background:#fffefb;color:var(--ink);font:600 12.5px 'DM Sans',sans-serif;cursor:pointer;transition:.15s}
+.lchip:hover{border-color:var(--ink)}
+.lchip[aria-pressed="true"]{background:var(--char);color:#fff;border-color:var(--char)}
+.lchips.miss{outline:2px solid #c2544a;outline-offset:4px;border-radius:12px}
+.lwa{display:flex;gap:8px}.lwa select{flex:0 0 auto;width:auto}
 form{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .full{grid-column:1/-1}
 label{display:block;font-size:9px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--md);margin-bottom:5px}
@@ -320,7 +403,10 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .eyou label{margin-bottom:6px}
 .eyou .row{display:flex;gap:8px;align-items:center}
 .eyou .row span{font-size:14px;color:var(--muted)}
-.enote{font-size:10.5px;color:var(--muted);margin:14px 0 0;line-height:1.5}
+.enote{font-size:10.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
+.est{position:relative}
+.est .stamp{color:var(--md);background:var(--bone3)}
+.ewarn{font-size:13px;font-weight:600;color:var(--ink);margin:16px 0 0;padding-top:14px;border-top:1px solid var(--line);line-height:1.4;text-wrap:balance}
 .sample{position:relative;display:flex;flex-direction:column}
 .stamp{position:absolute;right:20px;top:20px;font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accd);background:var(--accs);padding:6px 9px;border-radius:999px}
 .srow{display:flex;justify-content:space-between;gap:14px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
@@ -341,34 +427,198 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .rc-cta p{margin:12px 0 0;font-size:12px;color:#9fb0ab}
 .cap{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:#d9ece7;margin-top:14px}
 .cap::before{content:'';width:8px;height:8px;border-radius:50%;background:#3fae7a;box-shadow:0 0 0 4px rgba(63,174,122,.15)}
+/* Revenue Potential Report section: big number, bar, two-step form */
+#check{min-height:100svh;padding-top:calc(var(--header-h) + 20px);padding-bottom:20px;justify-content:center}
+.rcf{display:flex;flex-direction:column;align-items:center;text-align:center}
+.rcf .eyebrow{color:#d7a08e}
+.rcf h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-.025em;margin:8px 0 0;color:#fff;max-width:820px;text-wrap:balance}
+.fbig{font-family:'Lora',serif;font-size:clamp(60px,8.5vw,92px);line-height:1;letter-spacing:-.04em;color:#e8927a;margin-top:12px}
+.fbignote{margin:8px 0 0;font-size:16px;color:#c5cfcb;max-width:620px;text-wrap:balance}
+.fbar{position:relative;width:100%;height:112px;margin-top:4px}
+.ftrack,.ffill{position:absolute;left:0;top:42px;height:14px;border-radius:999px}
+.ftrack{right:0;background:rgba(255,255,255,.12)}
+.ffill{background:#fffefa;width:0;transition:width .35s ease}
+.fmark{position:absolute;top:34px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;transition:left .35s ease}
+.fmark i{width:2px;height:30px;background:#9fb0aa}
+.fmark span{margin-top:6px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#b6c1bd;white-space:nowrap}
+.fmark b{font-size:13px;font-weight:600;color:#dfe6e3;white-space:nowrap}
+.fmark.top i{background:#e8927a}.fmark.top span,.fmark.top b{color:#e8927a}
+.fyou{position:absolute;top:-6px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;transition:left .35s ease}
+.fyou[hidden]{display:none}
+.fyou span{background:#fffefa;color:var(--char);font-size:13px;font-weight:700;padding:5px 11px;border-radius:8px;white-space:nowrap}
+.fyou i{width:16px;height:16px;border-radius:50%;background:var(--char);border:4px solid #fffefa;margin-top:9px;box-sizing:border-box}
+form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:18px 22px;text-align:left;box-sizing:border-box}
+.fstephead{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.fsteplabel{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9fb0aa}
+.fdots{display:flex;gap:6px}.fdots i{width:28px;height:4px;border-radius:2px;background:rgba(255,255,255,.2)}.fdots i.on{background:#e8927a}
+.fstep{display:grid;grid-template-columns:1.3fr 1fr;gap:20px;align-items:end}
+.ff{display:flex;flex-direction:column;gap:7px;min-width:0}
+.rcf label.fl,.rcf .fl{display:block;margin:0;font-size:13px;font-weight:400;letter-spacing:0;text-transform:none;color:#b6c1bd}
+.rcf .fl em{font-style:normal;color:#7f8f89}
+.fpills{display:flex;gap:6px;flex-wrap:wrap}
+.fpills button{min-height:46px;min-width:50px;padding:0 12px;border-radius:12px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fffefa;font:700 14px 'DM Sans',sans-serif;cursor:pointer;transition:.15s}
+.fpills button:hover{border-color:#fff}
+.fpills button.on{background:#fffefa;color:var(--char);border-color:#fffefa}
+.fin{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:0 16px;min-height:46px}
+.fin span{font-size:18px;color:#9fb0aa}
+.rcf .fin input,.rcf .fin input:focus{flex:1;width:auto;min-width:0;border:0;background:transparent;padding:0;box-shadow:none;border-radius:0;outline:none;font:500 18px 'DM Sans',sans-serif;color:#fffefa}
+.fin input::-webkit-outer-spin-button,.fin input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.fin input[type=number]{-moz-appearance:textfield}
+.fin:focus-within{border-color:#fff}
+.fcard{display:flex;align-items:center;gap:20px;margin-top:14px;border:1.5px dashed rgba(255,255,255,.28);background:rgba(255,255,255,.03);border-radius:16px;padding:16px 16px 16px 20px}
+.fcardtxt{flex:1;display:flex;flex-direction:column;gap:10px;min-width:0}
+.fcardeye{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d7a08e}
+.fitems{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.fitem{display:flex;gap:10px;align-items:flex-start}
+.fitem>span:last-child{display:flex;flex-direction:column;gap:2px}
+.fitem b{font-size:14.5px;color:#fffefa}
+.fitem b+span{font-size:12.5px;line-height:1.4;color:#b6c1bd}
+.fok{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.fnext{flex-shrink:0;min-height:48px}
+.fgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 16px;align-items:end}
+.fgrid .w2{grid-column:span 2}
+.rcf input.finp,.rcf select.fsel,.rcf textarea.finp{width:100%;min-height:46px;box-sizing:border-box;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fffefa;padding:0 14px;font:500 15px 'DM Sans',sans-serif;border-radius:12px;box-shadow:none}
+.rcf select.fsel{background:#26312f;padding:0 10px}
+.rcf select.fsel option{color:#202927;background:#fff}
+.rcf textarea.fta{height:46px;padding:12px 14px;resize:vertical}
+.rcf .finp:focus,.rcf .fsel:focus{border-color:#fff;outline:none;box-shadow:none}
+.rcf .finp::placeholder{color:#7f8f89}
+.rcf .miss{border-color:#e8927a!important;background:rgba(232,146,122,.12)!important;box-shadow:0 0 0 3px rgba(232,146,122,.25)!important}
+.fwa{display:flex;gap:8px}.rcf select.fcc{flex:0 0 auto;width:auto;min-width:96px}
+#check.s2 #fHead,#check.s2 .ftrust{display:none}
+#check.s2{padding-top:calc(var(--header-h) + 14px);padding-bottom:14px}
+#check.s2 .fbig{margin-top:0;font-size:clamp(56px,6.5vw,76px)}
+#check.s2 .fbignote{font-size:14px;margin-top:4px}
+#check.s2 form.fpanel{padding:14px 20px}
+#check.s2 form.fpanel{position:relative}
+@media(min-width:1001px){
+  #check.s2 .fgrid{grid-template-columns:repeat(5,minmax(0,1fr))}
+  #check.s2 .fgrid .w3{grid-column:span 4}
+  #check.s2 .fgrid .flink1{grid-column:span 1}
+  #check.s2 .fgrid .fwa2{grid-column:span 2}
+}
+#check.s2 .fstephead{position:absolute;top:16px;right:20px;margin:0}
+#check.s2 .fsteplabel{display:none}
+#fCard[hidden]{display:none}
+#fStep2:not([hidden]){animation:fOpen .35s ease both}
+@keyframes fOpen{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+#check.s2 #fStep2{margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.1)}
+@media(min-width:721px) and (max-height:860px){
+  #check{padding-top:calc(var(--header-h) + 12px);padding-bottom:12px}
+  .fbig{font-size:clamp(60px,8vw,84px)}
+  .fbar{height:106px}
+  #check.s2 .fbig{font-size:clamp(52px,5.5vw,64px)}
+  #check.s2 .fbar{height:104px}
+  #check.s2 .fgrid{gap:8px 14px}
+  #check.s2 .rcf input.finp,#check.s2 .rcf select.fsel,#check.s2 .rcf textarea.finp,#check.s2 .fchip{min-height:40px}
+  #check.s2 .rcf textarea.fta{height:40px}
+  #check.s2 .fcks,#check.s2 .fchips{min-height:40px}
+  #check.s2 .fgroup+.fgroup{margin-top:8px;padding-top:8px}
+  #check.s2 .factions{margin-top:6px;padding-top:6px}
+  #check.s2 #fStep2{margin-top:8px;padding-top:8px}
+  #check.s2{padding-top:calc(var(--header-h) + 13px);padding-bottom:13px}
+  #check.s2 form.fpanel{padding:12px 20px;margin-top:12px}
+  #check.s2 .fbig{font-size:clamp(50px,5.2vw,60px)}
+  #check.s2 .fbar{height:108px}
+  #check.s2 .rcf>.eyebrow{display:none}
+  #check.s2 .fgh{margin-bottom:4px}
+  #check.s2 .fgrid{gap:6px 14px}
+  #check.s2 .rcf input.finp,#check.s2 .rcf select.fsel,#check.s2 .rcf textarea.finp,#check.s2 .fchip,#check.s2 .fpills button,#check.s2 .fin{min-height:38px}
+  #check.s2 .rcf textarea.fta{height:38px;padding-top:8px}
+  #check.s2 .fcks,#check.s2 .fchips{min-height:38px}
+  #check.s2 .fsend{min-height:42px}
+  #check.s2 .fstep{gap:14px}
+}
+#check.s2 .fgrid{gap:10px 14px}
+#check.s2 .ff{gap:5px}
+#check.s2 .fgh{margin-bottom:8px}
+#check.s2 .fgroup+.fgroup{margin-top:12px;padding-top:12px}
+#check.s2 .rcf input.finp,#check.s2 .rcf select.fsel,#check.s2 .rcf textarea.finp,#check.s2 .fchip{min-height:42px}
+#check.s2 .rcf textarea.fta{height:42px;padding-top:10px}
+#check.s2 .fcks,#check.s2 .fchips{min-height:42px}
+#check.s2 .factions{margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1)}
+.fmini{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0;padding:0 8px}
+.fmini .fitems{gap:14px}
+.fmini .fitem b{font-size:13px}
+.fmini .fitem b+span{font-size:12px;line-height:1.35}
+#check.s2 .fsend{padding-left:18px;padding-right:18px;font-size:13px}
+@media(min-width:721px) and (max-height:860px){.fmini .fitems{gap:10px}.fmini .fitem b+span{font-size:11.5px;line-height:1.3}.fmini{padding:0 4px}}
+.fmini .fok{width:20px;height:20px}
+#check.s2 .fback,#check.s2 .fsend{min-height:44px}
+.fgroup+.fgroup{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1)}
+.fgh{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#d7a08e;margin-bottom:12px}
+.fgrid .w3{grid-column:span 3}
+.fgrid [hidden]{display:none!important}
+.fchips{display:flex;gap:8px;flex-wrap:wrap;min-height:46px;align-items:center}
+.fchip{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fffefa;font:600 14px 'DM Sans',sans-serif;cursor:pointer;transition:.15s}
+.fchip:hover{border-color:#fff}
+.fchip[aria-pressed="true"]{background:#fffefa;color:var(--char);border-color:#fffefa}
+.fchips.miss{border-radius:12px;outline:2px solid #e8927a;outline-offset:4px}
+.fro{min-height:46px;box-sizing:border-box;border-radius:12px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);padding:0 14px;display:flex;align-items:center;gap:6px;font-size:15px;color:#fffefa}
+.fro span{color:#7f8f89;font-size:13px}
+.fcks{display:flex;gap:16px;min-height:46px;align-items:center;flex-wrap:wrap}
+.rcf label.fck{display:flex;gap:8px;align-items:center;margin:0;font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;color:#fffefa;cursor:pointer}
+.rcf .fck input{width:18px;height:18px;min-height:0;padding:0;margin:0;accent-color:#b85f47}
+.factions{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:16px}
+.fback{min-height:46px;padding:0 18px;border-radius:12px;border:1px solid rgba(255,255,255,.22);background:transparent;color:#fffefa;font:700 14px 'DM Sans',sans-serif;cursor:pointer}
+.fsend{min-height:50px}
+.ferr{display:none;margin:12px 0 0;font-size:13px;color:#f0b3a3}
+.fdone{font-size:15px;line-height:1.5;color:#fff;background:var(--sage);border-radius:12px;padding:14px 16px}
+.ftrust{margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:6px}
+.ftrustline{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:13.5px;color:#dfe6e3}
+.fbadge{width:22px;height:22px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;color:#fff}
+.fhow{background:none;border:0;color:#d7a08e;font:700 13px 'DM Sans',sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:32px;padding:0 4px}
+.fmethod{max-width:760px;margin:0;font-size:13.5px;line-height:1.6;color:#c5cfcb;text-wrap:balance}
+@media(max-width:1000px){
+  .fitems{grid-template-columns:1fr;gap:10px}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .fgrid .w3{grid-column:1 / -1}
+}
+@media(max-width:720px){
+  .fstep{grid-template-columns:1fr}
+  .fcard{flex-direction:column;align-items:stretch;padding:16px}
+  .fnext,.fsend{width:100%}
+  .fgrid{grid-template-columns:1fr}.fgrid .w2,.fgrid .w3{grid-column:auto}
+  .factions{flex-direction:column-reverse;align-items:stretch}
+  .fmini{padding:0;order:3}
+  form.fpanel{padding:16px}
+  .fbignote{font-size:15px}
+}
 @media(max-width:960px){.rc-grid{grid-template-columns:1fr}}
 
 /* THE GAP */
-.gap{background:var(--bone3);flex-direction:column;justify-content:center;align-items:stretch}
+.gap{background:var(--bone3);flex-direction:column;justify-content:center;align-items:stretch;padding-top:calc(var(--header-h) + 34px)}
 .gap-head{text-align:center;max-width:780px;margin:0 auto 46px}
 .gap-head h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 12px}
 .gap-head p{margin:0;color:var(--md);font-size:16px}
 .gbar-wrap{max-width:1040px;margin:0 auto}
+.gpills{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:18px}
+.gpills button{min-height:40px;min-width:48px;padding:0 12px;border-radius:999px;border:1px solid rgba(27,37,36,.22);background:transparent;color:var(--ink);font:700 13px 'DM Sans',sans-serif;cursor:pointer;transition:.15s}
+.gpills button:hover{border-color:var(--ink)}
+.gpills button.on{background:var(--char);color:#fff;border-color:var(--char)}
 .gends{display:flex;justify-content:space-between;gap:16px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--md);margin-bottom:10px}
 .gends b{display:block;font-family:'Lora',serif;font-weight:400;font-size:clamp(22px,2.6vw,30px);letter-spacing:-.02em;text-transform:none;color:var(--ink);margin-top:2px}
 .gends .r{text-align:right}.gends .r b{color:var(--acc)}
-.gbar{display:grid;grid-template-columns:2fr repeat(4,.5fr);height:74px;border-radius:18px;overflow:hidden;box-shadow:0 22px 60px -18px rgba(27,37,36,.25)}
+.gbar{display:grid;grid-template-columns:45fr repeat(6,9.17fr);height:74px;border-radius:18px;overflow:hidden;box-shadow:0 22px 60px -18px rgba(27,37,36,.25)}
 .gbase{background:var(--sage);color:#fff;display:flex;align-items:center;padding:0 22px;font-size:13px;font-weight:600}
 .gseg{border:0;border-left:2px dashed rgba(255,254,250,.55);color:#fff;cursor:pointer;transition:filter .2s,transform .2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:inherit}
 .gseg b{font-family:'Lora',serif;font-weight:400;font-size:24px;line-height:1}
 .gseg span{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.92}
 .gseg:hover,.gseg.hl{filter:brightness(1.08) saturate(1.1)}
-.g1{background:#9e4e3a}.g2{background:#b85f47}.g3{background:#c9795f}.g4{background:#d8957e}
+.gzero{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;color:#fff;background:#7d8a84;cursor:default}
+.gzero b{font-family:'Lora',serif;font-weight:400;font-size:24px;line-height:1}
+.gzero span{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.92}
+.g1{background:#9e4e3a}.g5{background:#e2a590}.g2{background:#b85f47}.g3{background:#c9795f}.g4{background:#d8957e}
 .glabel{display:flex;justify-content:flex-end;margin-top:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accd)}
-.glabel span{width:50%;text-align:center;border-top:2px solid var(--accd);padding-top:8px}
-.gcards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1040px;margin:34px auto 0}
+.glabel span{width:55%;text-align:center;border-top:2px solid var(--accd);padding-top:8px}
+.gcards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:none;margin:34px auto 0}
 .gc{background:var(--bone2);border:1px solid var(--line);border-radius:20px;padding:20px;text-align:left;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s;font:inherit;color:inherit}
 .gc:hover,.gc.hl{transform:translateY(-3px);box-shadow:0 18px 40px -18px rgba(27,37,36,.3);border-color:rgba(184,95,71,.45)}
 .gc .n{font-family:'Lora',serif;font-size:26px;color:var(--acc);line-height:1}
 .gc{border-top:6px solid var(--seg)}
 .gc .n{color:var(--seg)}
-.s1{--seg:#9e4e3a}.s2{--seg:#b85f47}.s3{--seg:#c9795f}.s4{--seg:#d8957e}
-.card.s1,.card.s2,.card.s3,.card.s4{border-top:6px solid var(--seg)}
+.s1{--seg:#9e4e3a}.s2{--seg:#b85f47}.s3{--seg:#c9795f}.s4{--seg:#d8957e}.s5{--seg:#e2a590}
+.card.s1,.card.s2,.card.s3,.card.s4,.card.s5{border-top:6px solid var(--seg)}
 .card .ch .n{color:var(--seg,var(--acc))}
 .gc h3{font-size:19px;letter-spacing:-.02em;margin:10px 0 6px}
 .gc p{margin:0 0 12px;font-size:13px;color:var(--md);line-height:1.5}
@@ -376,12 +626,13 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 .gap-foot{text-align:center;margin-top:36px}
 .gap-foot p{margin:0 0 14px;font-size:14px;color:var(--md)}
 .gap-foot small{display:block;margin-top:14px;font-size:10.5px;color:var(--muted)}
-@media(max-width:960px){.gcards{grid-template-columns:1fr 1fr}}
+@media(max-width:960px){.gcards{grid-template-columns:1fr 1fr}.gc.s5{grid-column:span 2}}
 @media(max-width:720px){
-  .gbar{grid-template-columns:1.4fr repeat(4,.4fr);height:60px}
+  .gbar{grid-template-columns:45fr repeat(6,9.17fr);height:60px}
   .gbase{padding:0 12px;font-size:11px}
-  .gseg b{font-size:17px}.gseg span{display:none}
-  .gcards{grid-template-columns:1fr}
+  .gseg b,.gzero b{font-size:14px}.gseg span,.gzero span{display:none}
+  .glabel span{width:auto;min-width:55%;white-space:nowrap;font-size:10px}
+  .gcards{grid-template-columns:1fr}.gc.s5{grid-column:auto}
   .gends b{font-size:20px}
 }
 
@@ -477,7 +728,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
     </a>
     <div class="navr">
       <button class="pill" id="lang" type="button" aria-label="Switch language">NL</button>
-      <a class="btn btn-outline check" href="#contact" data-nl="Gratis Revenue Check ↗">Free Revenue Check ↗</a>
+      <a class="btn btn-outline check" href="#check" data-nl="Gratis Concurrentierapport ↗">Free Revenue Potential Report ↗</a>
     </div>
   </div>
 </header>
@@ -488,10 +739,11 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
+      <div class="eyebrow hero-loc" data-nl="Gevestigd op Curaçao">Based in Curaçao</div>
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
-      <p class="hero-sub" data-nl="Marktgedreven prijzen bepalen wat je woning op Curaçao waard is.<br/>Foto's, tekst en kanalen zorgen dat gasten dat ook betalen.">Market-driven pricing sets what your Curaçao rental is worth.<br/>Photos, copy and channels get guests to pay it.</p>
+      <p class="hero-sub" data-nl="We gebruiken echte marktdata om het volledige potentieel van je woning op Curaçao bloot te leggen.<br/>Daarna helpen we je het te bereiken, van prijs en foto's tot tekst en je eigen boekingssite.">We use real market data to uncover your Curaçao rental's full potential.<br/>Then we help you reach it, from pricing and photos to copy and your own booking site.</p>
       <div class="hero-actions">
-        <a class="btn btn-outline check" href="#contact" data-nl="Vraag je gratis Revenue Check aan →">Get your free Revenue Check →</a>
+        <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Concurrentierapport aan →">Get your free Revenue Potential Report →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 24 uur · geen verplichting">Free · within 24 hours · no obligation</p>
     </div>
@@ -510,78 +762,134 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <!-- PROBLEM -->
 <section class="market">
   <div class="wrap">
-    <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
-    <h2 data-nl="De markt is verschoven.<br/>De meeste woningen niet.">The market moved.<br/>Most listings didn't.</h2>
-    <div class="nums">
-      <div class="num"><h3 data-nl="Meer woningen">More homes</h3><b>+58%</b><p data-nl="Meer hotelkamers in 2030:<br/>al meer dan 7.100 vergund.">More hotel rooms by 2030:<br/>7,100+ already permitted.</p></div>
-      <div class="num"><h3 data-nl="Seizoensschommeling">Seasonal swing</h3><b>+53%</b><p data-nl="Wat een gemiddelde woning in het hoogseizoen (dec&ndash;mrt) verdient t.o.v. het laagseizoen (mei&ndash;sep).">What a typical listing earns in high season (Dec&ndash;Mar) over low season (May&ndash;Sep).</p></div>
-      <div class="num"><h3 data-nl="Prijzen blijven achter">Rates lag</h3><b>+7%</b><p data-nl="Hoeveel de gemiddelde nachtprijs beweegt tussen die seizoenen, terwijl boekingen 44% schommelen.">How far the average nightly rate moves between those seasons, while bookings swing 44%.</p></div>
+    <div class="lk-head">
+      <div>
+        <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
+        <h2 data-nl="De meeste woningen op Curaçao<br/>verliezen <span>stilletjes</span> geld.">Most Curaçao rentals<br/>lose money <span>quietly.</span></h2>
+      </div>
+      <p data-nl="Er gaat geen alarm af. Het geld komt gewoon nooit binnen. Hier lekt het weg.">No alarm goes off. The money just never arrives. Here's where it slips.</p>
     </div>
-    <div style="margin-top:48px">
-      <p class="cta-lead" data-nl="Waar sta jij?">Where do you stand?</p>
-      <a class="btn" href="#check" data-nl="Gratis Revenue Check ↓">Free Revenue Check ↓</a>
+    <div class="lks">
+      <div class="lk">
+        <div class="lk-top"><span data-nl="Timing">Timing</span><span data-nl="Lek 01">Leak 01</span></div>
+        <b data-nl="96 dagen">96 days</b>
+        <h3 data-nl="Het hoogseizoen is vroeg uitverkocht.">High season sells early.</h3>
+        <p data-nl="Zo ver vooruit worden villa’s geboekt. Optimaliseer je je kalender te laat, dan zijn de beste nachten al weg.">That’s how far ahead villas book. Optimize your calendar late and the best nights are gone.</p>
+      </div>
+      <div class="lk">
+        <div class="lk-top"><span data-nl="Lege nachten">Empty nights</span><span data-nl="Lek 02">Leak 02</span></div>
+        <b class="lk-jump"><small>48%</small><i aria-hidden="true">→</i>63%</b>
+        <h3 data-nl="Als het rustig is, groeit het gat.">When it's quiet, the gap grows.</h3>
+        <p data-nl="De beste 25% verdient 48% meer in het hoogseizoen. In het laagseizoen loopt dat op tot 63%.">The top 25% out-earn the rest by 48% in high season. In low season, that jumps to 63%.</p>
+      </div>
+      <div class="lk">
+        <div class="lk-top"><span data-nl="Zwakke advertenties">Weak listings</span><span data-nl="Lek 03">Leak 03</span></div>
+        <b data-nl="88%">88%</b>
+        <h3 data-nl="De meeste advertenties verkopen zichzelf tekort.">Most listings undersell.</h3>
+        <p data-nl="88% heeft zwakke foto’s, tekst of details. De andere 12% presteert vaker beter dan hun markt.">88% have weak photos, copy or details. The other 12% are likelier to beat their market.</p>
+      </div>
     </div>
-    <p class="src"><span data-nl="Bronnen:">Sources:</span> AirDNA · PriceLabs · <span data-nl="Curaçao Tourist Board">Curaçao Tourist Board</span></p>
+    <div class="lk-foot">
+      <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
+      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-nl="Gratis Concurrentierapport ↓">Free Revenue Potential Report ↓</a></div>
+    </div>
   </div>
 </section>
 
 <!-- REVENUE CHECK -->
 <section class="rc" id="check">
-  <div class="wrap">
-    <div class="rc-head">
-      <div class="eyebrow" data-nl="Gratis Revenue Check">Free Revenue Check</div>
-      <h2 data-nl="Ontdek wat je laat liggen.">Find out what you're<br class="dsk-br"> leaving on the table.</h2>
-      <p data-nl="Gratis, persoonlijk en binnen 24 uur in je inbox.">Free, personal, and in your inbox within 24 hours.</p>
-    </div>
-    <div class="rc-grid">
+  <div class="wrap rcf">
+    <div class="eyebrow" data-nl="Gratis Concurrentierapport">Free Revenue Potential Report</div>
+    <h2 id="fHead"></h2>
+    <div class="fbig" id="fBig"></div>
+    <p class="fbignote" id="fBigNote"></p>
 
-      <div class="est" aria-live="polite">
-        <div class="eyebrow" data-nl="Snelle schatting">Quick estimate</div>
-        <div class="seg" id="estSize">
-          <button type="button" class="on" data-a="br1" data-nl="1 slaapkamer">1BR</button>
-          <button type="button" data-a="br2" data-nl="2 slaapkamers">2BR</button>
-          <button type="button" data-a="br34" data-nl="3&ndash;4 slaapkamers">3&ndash;4BR</button>
-          <button type="button" data-a="br5" data-nl="5+ slaapkamers">5+BR</button>
+    <div class="fbar" aria-hidden="true">
+      <div class="ftrack"></div>
+      <div class="ffill" id="fFill"></div>
+      <div class="fmark med" id="fMed"><i></i><span data-nl="Gemiddeld">Typical</span><b id="fMedV"></b></div>
+      <div class="fmark top" id="fTop"><i></i><span data-nl="Beste 25%">Top 25%</span><b id="fTopV"></b></div>
+      <div class="fyou" id="fYou" hidden><span id="fYouV"></span><i></i></div>
+    </div>
+
+    <form class="fpanel" id="checkForm" novalidate>
+
+      <div id="fStep1">
+        <div class="fstep">
+          <div class="ff">
+            <span class="fl" data-nl="Slaapkamers">Bedrooms</span>
+            <div class="fpills" id="estSize" role="group" aria-label="Bedrooms">
+              <button type="button" data-a="st" data-nl="Studio">Studio</button>
+              <button type="button" data-a="br1" data-nl="1 slk">1BR</button>
+              <button type="button" data-a="br2" data-nl="2 slk">2BR</button>
+              <button type="button" class="on" data-a="br3" data-nl="3 slk">3BR</button>
+              <button type="button" data-a="br4" data-nl="4 slk">4BR</button>
+              <button type="button" data-a="br5" data-nl="5 slk">5BR</button>
+              <button type="button" data-a="br6" data-nl="6+ slk">6+BR</button>
+            </div>
+          </div>
+          <div class="ff">
+            <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
+            <div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div>
+          </div>
         </div>
-        <div class="ebar"><div class="ebar-l"><span data-nl="Gemiddelde maand">Typical month</span><b id="eMed"></b></div><div class="etrack"><div class="efill m" id="eMedBar"></div></div></div>
-        <div class="ebar"><div class="ebar-l"><span data-nl="Hoogseizoen">High season</span><b id="eTop"></b></div><div class="etrack"><div class="efill" id="eTopBar"></div></div></div>
-        <div class="ebar" id="eYouWrap" hidden><div class="ebar-l"><span data-nl="Jouw woning">Your listing</span><b id="eYou"></b></div><div class="etrack"><div class="efill you" id="eYouBar"></div></div></div>
-        <div class="egap">
-          <small id="eGapLabel"></small>
-          <b id="eGap"></b>
-          <span id="eGapNote"></span>
+        <div class="fcard" id="fCard">
+          <div class="fcardtxt">
+            <div class="fcardeye" data-nl="Ook in je gratis rapport">Also in your free report</div>
+            <div class="fitems">
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
+            </div>
+          </div>
+          <button type="button" class="btn fnext" id="fNext" data-nl="Vraag mijn rapport aan →">Get my full report →</button>
         </div>
-        <div class="eyou">
-          <label for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
-          <div class="row"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="1800"/></div>
-        </div>
-        <p class="enote" data-nl="Gemiddelde omzet per maand per aantal slaapkamers: afgelopen 12 maanden t.o.v. hoogseizoen dec&ndash;mrt (PriceLabs, Curaçao).">Average monthly revenue by bedroom count: trailing 12 months vs. Dec&ndash;Mar high season (PriceLabs, Curaçao).</p>
       </div>
 
-      <div class="sample">
-        <span class="stamp" data-nl="Voorbeeld">Sample</span>
-        <div class="eyebrow" data-nl="Persoonlijk rapport">Personal report</div>
-        <h3 data-nl="Je Revenue Check">Your Revenue Check</h3>
-        <div class="pfor">
-          <small data-nl="Gemaakt voor">Prepared for</small>
-          <b>Casa Coral</b>
-          <span data-nl="3 slaapkamers · Jan Thiel · vergeleken met 12 woningen zoals deze">3 bedrooms · Jan Thiel · compared with 12 homes like it</span>
+      <div id="fStep2" hidden>
+        <div class="fgroup">
+          <div class="fgh" data-nl="Over de woning">Property details</div>
+          <div class="fgrid">
+          <div class="ff"><label class="fl" for="cStatus" data-nl="Status">Status</label><select class="fsel" id="cStatus" name="status"><option value="" disabled selected data-nl="Kies">Select</option><option value="live" data-nl="Live en boekbaar">Live and bookable</option><option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option><option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option></select></div>
+          <div class="ff w3 flive" hidden><span class="fl" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span><div class="fchips" id="cPlat" role="group" aria-label="Where is it listed?"><button type="button" class="fchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="fchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="fchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="fchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="fchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="fchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
+          <div class="ff w2 flive flink1" hidden><label class="fl" for="cListing" id="cListLab"></label><input class="finp" id="cListing" type="url" placeholder="https://airbnb.com/rooms/..."/></div>
+          <div class="ff"><label class="fl" for="cArea" data-nl="Straat en wijk">Street and neighbourhood</label><input class="finp" id="cArea" name="area" autocomplete="off" placeholder="e.g. Kaya Karibe, Jan Thiel" data-nl-ph="bijv. Kaya Karibe, Jan Thiel"/></div>
+          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="st" data-nl="Studio">Studio</option><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
+          <div class="ff fsoon" hidden><label class="fl" for="cType" data-nl="Type woning">Property type</label><select class="fsel" id="cType" name="propertyType"><option value="" disabled selected data-nl="Kies">Select</option><option value="guesthouse" data-nl="Guesthouse">Guesthouse</option><option value="villa" data-nl="Vrijstaand huis">Standalone house</option><option value="apartment" data-nl="Appartement of condo">Condo</option><option value="other" data-nl="Anders">Other</option></select></div>
+          <div class="ff"><label class="fl" for="cMgmt" data-nl="Wie regelt het nu?">Who runs it today?</label><select class="fsel" id="cMgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
+          <div class="ff"><label class="fl" for="cPrice" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label><select class="fsel" id="cPrice" name="pricing"><option value="" disabled selected data-nl="Kies">Select</option><option value="flat" data-nl="Eén vast tarief">One flat rate</option><option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option><option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option><option value="platform" data-nl="De suggesties van het boekingsplatform">The booking platform's suggestions</option></select></div>
+          <div class="ff fsoon" hidden><span class="fl" data-nl="Heeft de woning">Does it have</span><div class="fcks"><label class="fck"><input type="checkbox" id="cPool"/><span data-nl="Privézwembad">Private pool</span></label><label class="fck"><input type="checkbox" id="cSea"/><span data-nl="Zeezicht">Sea view</span></label></div></div>
+          </div>
         </div>
-        <ul class="gets">
-          <li data-nl="<b>Wat vergelijkbare villa's verdienen.</b> Echte cijfers van vergelijkbare woningen bij jou in de buurt."><b>What similar villas earn.</b> Real numbers from similar properties near you.</li>
-          <li data-nl="<b>Zit je te laag geprijsd?</b> Jouw tarieven tegenover de topverdieners, maand voor maand."><b>Are you underpriced?</b> Your rates vs. top earners, month by month.</li>
-          <li data-nl="<b>Je echte concurrentie.</b> Met wie gasten jou vergelijken."><b>Your real competition.</b> Who guests compare you to.</li>
-          <li data-nl="<b>Wat je tegenhoudt.</b> Verbeteringen voor je advertentie."><b>What's holding you back.</b> Fixes for your listing.</li>
-        </ul>
-        <div class="sig">
-          <span class="av">C</span>
-          <p data-nl="<b>Gemaakt door The House Atelier</b>Per e-mail en WhatsApp."><b>Prepared by The House Atelier</b>Sent by email and WhatsApp.</p>
+        <div class="fgroup">
+          <div class="fgh" data-nl="Over jou">Owner details</div>
+          <div class="fgrid">
+          <div class="ff"><label class="fl" for="cName" data-nl="Naam">Name</label><input class="finp" id="cName" name="name" autocomplete="name"/></div>
+          <div class="ff"><label class="fl" for="cEmail">Email</label><input class="finp" id="cEmail" name="email" type="email" autocomplete="email" inputmode="email"/></div>
+          <div class="ff fwa2"><label class="fl" for="cWa">WhatsApp <em data-nl="(optioneel)">(optional)</em></label><div class="fwa"><select class="fsel fcc" id="cCc" aria-label="Country code"></select><input class="finp" id="cWa" name="whatsapp" type="tel" autocomplete="tel-national" placeholder="9 123 4567"/></div></div>
+          <div class="ff"><label class="fl" for="cMsg"><span data-nl="Nog iets?">Anything else?</span> <em data-nl="(optioneel)">(optional)</em></label><textarea class="finp fta" id="cMsg" name="message"></textarea></div>
+          </div>
+        </div>
+        <div class="factions">
+          <div class="fmini">
+            <div class="fcardeye" data-nl="Ook in je gratis rapport">Also in your free report</div>
+              <div class="fitems">
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
+            </div>
+          </div>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn Concurrentierapport aan →">Get my Revenue Potential Report →</button>
         </div>
       </div>
-    </div>
-    <div class="rc-cta">
-      <a class="btn check" href="#contact" id="estCta" data-nl="Vraag je echte cijfers aan →">Get your real numbers →</a>
-      <div><span class="cap" data-nl="We doen 10 Revenue Checks per week">We run 10 Revenue Checks per week</span></div>
+
+      <p class="ferr" id="fErr" role="alert"></p>
+      <div class="fdone" id="fDone" hidden></div>
+    </form>
+
+    <div class="ftrust">
+      <div class="ftrustline"><span class="fbadge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
+      <p class="fmethod" id="fMethod" hidden></p>
     </div>
   </div>
 </section>
@@ -591,28 +899,33 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
   <div class="wrap">
     <div class="gap-head">
       <div class="eyebrow" data-nl="Het gat">The gap</div>
-      <h2 data-nl="Een gemiddelde woning verdient<br/>de helft van wat mogelijk is.">The typical listing earns<br/>half of what it could.</h2>
-      <p data-nl="We laten je zien welke gaten jou kosten.">We show you what gaps are costing you.</p>
+      <h2 id="gHead"></h2>
+      <p data-nl="Eén deel kun je niet veranderen. Vijf wel.">One part you can't change. Five you can.</p>
+      <div class="gpills" id="gSize" role="group" aria-label="Bedrooms"><button type="button" data-a="st" data-nl="Studio">Studio</button><button type="button" data-a="br1" data-nl="1 slk">1BR</button><button type="button" data-a="br2" data-nl="2 slk">2BR</button><button type="button" data-a="br3" class="on" data-nl="3 slk">3BR</button><button type="button" data-a="br4" data-nl="4 slk">4BR</button><button type="button" data-a="br5" data-nl="5 slk">5BR</button><button type="button" data-a="br6" data-nl="6+ slk">6+BR</button></div>
     </div>
     <div class="gbar-wrap">
       <div class="gends">
-        <div data-nl="Gemiddelde woning<b>$1.718/mnd</b>">Typical listing<b>$1,718/mo</b></div>
-        <div class="r" data-nl="Beste 25%<b>$3.416/mnd</b>">Top 25%<b>$3,416/mo</b></div>
+        <div><span id="gMedL"></span><b id="gMedV"></b></div>
+        <div class="r"><span data-nl="Beste 25%">Top 25%</span><b id="gTopV"></b></div>
       </div>
-      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing reaches about half of the top 25%, and the missing half splits into four parts">
+      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, channels and amenities.">
         <div class="gbase" data-nl="Wat je nu verdient">What you earn today</div>
+        <div class="gzero" title="Where your home is. The one part you can't change." data-nl-title="Waar je woning staat. Het enige deel dat je niet kunt veranderen."><b>00</b><span data-nl="Ligging">Location</span></div>
         <button type="button" class="gseg g1" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
         <button type="button" class="gseg g2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="gseg g3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
         <button type="button" class="gseg g4" data-i="3" aria-label="04 The Presence"><b>04</b><span data-nl="Kanalen">Channels</span></button>
+        <button type="button" class="gseg g5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
-      <div class="glabel"><span data-nl="Het gat · ~$20.000 per jaar">The gap · ~$20,000 a year</span></div>
+      <div class="glabel"><span id="gGap"></span></div>
+      <p class="src" id="gSrc" style="margin-top:22px;text-align:center"></p>
     </div>
     <div class="gcards">
       <button type="button" class="gc s1" data-i="0"><div class="n">01</div><h3 data-nl="Verkeerd geprijsd">Priced by guesswork</h3><p data-nl="Eén vaste prijs, het hele jaar. Te laag in het hoogseizoen, te hoog als het rustig is.">One flat rate all year. Too low in high season, too high when it's quiet.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
       <button type="button" class="gc s2" data-i="1"><div class="n">02</div><h3 data-nl="Niet gezien">Scrolled past</h3><p data-nl="Foto's die de klik niet verdienen. Gasten zien je woning, maar klikken niet.">Photos that don't earn the click. Guests see your home and keep scrolling.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
       <button type="button" class="gc s3" data-i="2"><div class="n">03</div><h3 data-nl="Niet overtuigd">Clicked, not booked</h3><p data-nl="Tekst die het verblijf niet verkoopt, in één taal, voor een internationale gast.">Copy that doesn't sell the stay, in one language, for an international guest.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
-      <button type="button" class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="Niet gevonden">Never found</h3><p data-nl="Alleen op Airbnb, voor 15,5% per boeking. De rest van de gasten zoekt ergens anders.">On Airbnb only, at 15.5% a booking. Everyone else is searching somewhere else.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
+      <button type="button" class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="Niet gevonden">Never found</h3><p data-nl="Alleen op Airbnb, voor 15,5% per boeking. De rest zoekt ergens anders of wil direct boeken.">On Airbnb only, at 15.5% a booking. Everyone else is searching somewhere else or wants to book direct.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
+      <button type="button" class="gc s5" data-i="4"><div class="n">05</div><h3 data-nl="Voorbijgestreefd">Passed over</h3><p data-nl="Geen koffiezetapparaat haalt je net zo snel uit de zoekresultaten als geen zwembad. Het huis verderop krijgt de boeking.">No coffee maker can drop you from a search as fast as no pool. The home down the road gets the booking.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
     </div>
     <div class="gap-foot">
       <a class="btn" href="#levers" data-nl="Zie hoe we het gat sluiten ↓">See how we close the gap ↓</a>
@@ -626,7 +939,7 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
     <div class="intro">
       <div class="eyebrow" data-nl="De oplossing">The solution</div>
       <h2 data-nl="Diensten">Services</h2>
-      <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent.">What you charge. What guests see. What you promise. Where you show up.</p>
+      <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent. Wat je biedt.">What you charge. What guests see. What you promise. Where you show up. What you offer.</p>
     </div>
     <nav class="mnav" aria-label="Closing the gap">
       <div class="mbar">
@@ -635,8 +948,9 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <button type="button" class="mseg s2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="mseg s3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
         <button type="button" class="mseg s4" data-i="3" aria-label="04 The Presence"><b>04</b><span data-nl="Kanalen">Channels</span></button>
+        <button type="button" class="mseg s5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
-      <span class="mend" data-nl="→ Beste 25%">→ Top 25%</span>
+      <span class="mend" data-nl="→ Geoptimaliseerd">→ Optimized</span>
       <button type="button" class="ar" id="prev" aria-label="Previous">←</button>
       <button type="button" class="ar" id="next" aria-label="Next">→</button>
     </nav>
@@ -662,7 +976,6 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
           <div class="tags"><span data-nl="Weekendopslag">Weekend lift</span><span data-nl="Seizoenen">Seasonality</span><span data-nl="Lege nachten gevuld">Gap nights filled</span></div>
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
-      <p class="note" data-nl="Alleen ter illustratie.">Illustrative example only.</p>
       <div class="more"><a class="svc-more" data-svc="pricing" href="#service/pricing" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
@@ -722,42 +1035,78 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
       <div class="more"><a class="svc-more" data-svc="channels" href="#service/channels" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
+    <!-- 05 HOME -->
+    <article class="card s5">
+      <div class="ch"><div class="n">05</div><div>
+        <div class="eyebrow" data-nl="De woning">The Home</div>
+        <h3 data-nl="Voorzieningen">Amenities</h3>
+        <p data-nl="De voorzieningen waar gasten op filteren en meer voor betalen. Van een koffiezetapparaat tot een zwembad, met lokale leveranciers die we kennen.">The amenities guests filter for and pay more for. From a coffee maker to a pool, with local suppliers we know.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="2 van 6">2 of 6</strong></div><span class="chip" data-nl="gemist">missed</span></div>
+          <div class="chans"><span>Wifi</span><span>AC</span><span class="off" data-nl="Zwembad">Pool</span><span class="off" data-nl="Werkplek">Workspace</span><span class="off" data-nl="Koffiezetapparaat">Coffee maker</span><span class="off" data-nl="Nieuwe inrichting">New interiors</span></div>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="6 van 6">6 of 6</strong></div><span class="chip" data-nl="gevonden">matched</span></div>
+          <div class="chans"><span>Wifi</span><span>AC</span><span data-nl="Zwembad">Pool</span><span data-nl="Werkplek">Workspace</span><span data-nl="Koffiezetapparaat">Coffee maker</span><span data-nl="Nieuwe inrichting">New interiors</span></div>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
+      </div>
+    </article>
+
   </div>
 </section>
 
 <!-- PRICING -->
-<section class="beige" id="modules">
-  <div class="wrap center">
-    <div class="shead">
+<section class="dark" id="modules">
+  <div class="wrap pq">
+    <div class="pq-copy">
       <div class="eyebrow" data-nl="Prijzen">Pricing</div>
-      <h2 data-nl="Eén gerichte opdracht,<br/>afgestemd op wat je nodig hebt.">One focused engagement,<br/>quoted to your needs.</h2>
-      <p data-nl="Geen pakketten die je niet nodig hebt. Je Revenue Check bepaalt wat we voorstellen.">No packages you don't need. Your Revenue Check decides what we propose.</p>
+      <h2 data-nl="Elke offerte komt met een verwacht rendement.">Every quote comes with a projected return.</h2>
+      <p data-nl="Je ziet wat het werk zou moeten opleveren voordat je iets uitgeeft. Als het zichzelf niet terugverdient, stellen we het niet voor.">You see what the work should earn before you spend a cent. If it doesn’t pay for itself, we don’t propose it.</p>
+      <div class="pq-steps">
+        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Concurrentierapport">Revenue Potential Report</span></div>
+        <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span></div>
+        <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span></div>
+      </div>
+      <div class="pq-cta">
+        <a class="btn check" href="#check" data-nl="Vraag je gratis rapport aan →">Get your free report →</a>
+        <span><span data-nl="Vragen?">Questions?</span> <a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
+      </div>
     </div>
-    <div class="quote">
-      <div class="qs"><small data-nl="Stap 1">Step 1</small><h3 data-nl="Gratis Revenue Check">Free Revenue Check</h3><p data-nl="We meten je gat en waar het vandaan komt. Binnen 24 uur.">We measure your gap and where it comes from. Within 24 hours.</p></div>
-      <div class="qs"><small data-nl="Stap 2">Step 2</small><h3 data-nl="Je offerte">Your quote</h3><p data-nl="Alleen voor wat jouw gat sluit, met een verwacht rendement op basis van marktdata.">Only for what closes your gap, with a projected return based on market data.</p></div>
-      <div class="qs"><small data-nl="Stap 3">Step 3</small><h3 data-nl="Wij voeren het uit">We implement</h3><p data-nl="Eerst de prijs, dan de foto's, tekst of kanalen die je kiest.">Pricing first, then the photos, copy or channels you choose.</p></div>
-      <div class="qs tag" aria-hidden="false"><p class="tagline" data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></p></div>
+    <div class="pq-card" aria-label="Sample quote">
+      <div class="pq-card-top">
+        <div><small data-nl="Je offerte">Your quote</small><b>Casa Coral</b><span data-nl="3 slk · Jan Thiel">3 bed · Jan Thiel</span></div>
+        <em data-nl="Voorbeeld">Sample</em>
+      </div>
+      <div class="qline"><span data-nl="Prijs en kalender">Pricing &amp; Calendar</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Fotografie">Photography</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Advertentietekst (EN · NL · ES)">Listing copy (EN · NL · ES)</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline strong"><span data-nl="Je investering">Your investment</span><span data-nl="Eén helder totaal">One clear total</span></div>
+      <div class="pq-return">
+        <div><small data-nl="Verwachte extra omzet">Projected extra revenue</small><span data-nl="Op basis van je echte concurrenten">Based on your real competitors</span></div>
+        <b data-nl="+ $ per jaar">+ $ / year</b>
+      </div>
     </div>
-    <p class="single"><span data-nl="Vragen?">Questions?</span> <a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></p>
   </div>
 </section>
 
 <!-- PHILOSOPHY / BIO -->
-<section class="light">
-  <div class="wrap">
-    <div class="shead center">
-      <div class="eyebrow" data-nl="Onze filosofie">Our philosophy</div>
-      <h2 data-nl="Jij houdt de controle.">You stay in control.</h2>
-      <p data-nl="Jij houdt de sleutels. Wij zijn puur je omzet-, marketing- en creatieve afdeling.">You keep the keys. We function purely as your revenue, marketing, and creative function.</p>
-    </div>
-    <div class="bio">
-      <div class="bio-text">
-        <h3>Chris &amp; The House Atelier</h3>
-        <span class="role" data-nl="Consultant voor Airbnb Luxe · Curaçao">Consultant for Airbnb Luxe · Curaçao</span>
-        <p data-nl="Chris werkt als consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa op Sint Maarten, een luxe vakantieverhuurbedrijf. Het team van Chris brengt 15 jaar revenue management in hotels en villa's mee.">Chris consults for Airbnb Luxe and led digital marketing for Sint Maarten's CoveCasa, a luxury vacation rental operator. Chris' team brings 15 years of hotel and villa revenue management.</p>
+<section class="light" id="about">
+  <div class="wrap ph">
+    <div class="ph-top">
+      <div class="ph-copy">
+        <div class="eyebrow" data-nl="Onze filosofie">Our philosophy</div>
+        <p class="ph-quote" data-nl="“Jij houdt de sleutels.<br/>Wij vullen de gaten.”">“You keep the keys.<br/>We fill the gaps.”</p>
+        <p class="ph-bio" data-nl="Chris werkt als consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa op Sint Maarten, een luxe vakantieverhuurbedrijf. Het team van Chris brengt 15 jaar revenue management in hotels en villa's mee.">Chris consults for Airbnb Luxe and led digital marketing for Sint Maarten’s CoveCasa, a luxury vacation rental operator. Chris’ team brings 15 years of hotel and villa revenue management.</p>
+        <div class="ph-sign"><i></i><b>Chris, The House Atelier</b><span data-nl="Consultant voor Airbnb Luxe · Curaçao">Consultant for Airbnb Luxe · Curaçao</span></div>
       </div>
       <img src="assets/chris-bio.jpg" alt="Chris, The House Atelier"/>
+    </div>
+    <div class="ph-points">
+      <div><small>01</small><h3 data-nl="Jouw woning, jouw beslissing.">Your home, your call.</h3><p data-nl="Jij keurt elke wijziging goed. Niets gaat live zonder jou.">You approve every change. Nothing goes live without you.</p></div>
+      <div><small>02</small><h3 data-nl="Data in plaats van gokken.">Data over guesswork.</h3><p data-nl="Elk advies komt uit echte boekingsdata van Curaçao.">Every recommendation comes from real Curaçao booking data.</p></div>
+      <div><small>03</small><h3 data-nl="Op het eiland.">On the island.</h3><p data-nl="Gevestigd op Curaçao. We kennen de straten die je gasten vergelijken.">Based in Curaçao. We know the streets your guests compare.</p></div>
     </div>
   </div>
 </section>
@@ -779,15 +1128,9 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 <section class="dark" id="contact">
   <div class="wrap contact">
     <div>
-      <div class="eyebrow" style="color:#d7a08e" data-nl="Begin hier">Start here</div>
-      <h2 data-nl="Waar sta jij?">Where do you stand?</h2>
-      <p data-nl="Vraag je gratis Revenue Check aan. We laten je zien wat je woning zou kunnen verdienen.">Request your free Revenue Check. We'll show you what your listing could be earning.</p>
-      <div class="steps">
-        <div class="st"><span class="dot">1</span><div><strong data-nl="Stuur je advertentie">Send your listing</strong><br/><span data-nl="Ongeveer een minuut.">About a minute.</span></div></div>
-        <div class="st"><span class="dot">2</span><div><strong data-nl="Wij bekijken de cijfers">We review the numbers</strong><br/><span data-nl="Binnen 24 uur.">Within 24 hours.</span></div></div>
-        <div class="st"><span class="dot">3</span><div><strong data-nl="Jij beslist">You decide</strong><br/><span data-nl="Geen verplichting.">No obligation.</span></div></div>
-      </div>
-      <p class="waline"><span data-nl="Vragen?">Questions?</span><a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></p>
+      <div class="eyebrow" style="color:#d7a08e" data-nl="Contact">Get in touch</div>
+      <h2 data-nl="Laten we praten.">Let's talk.</h2>
+      <p class="waline"><span data-nl="Liever even chatten?">Rather chat?</span><a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></p>
     </div>
     <div class="form-card">
       <form id="leadForm" novalidate>
@@ -795,72 +1138,38 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
         <input type="hidden" name="source" id="fSource" value="website"/>
         <input type="hidden" name="estimatorRevenue" id="fEstRev" value=""/>
         <input type="hidden" name="estimatorArea" id="fEstArea" value=""/>
-        <div class="full"><label for="interest" data-nl="Ik wil graag">I'd like</label>
-          <select id="interest" name="interest">
-            <option value="check" data-nl="Een gratis Revenue Check">A free Revenue Check</option>
-            <option value="strategy" data-nl="Prijsstrategie + instelling">Pricing Strategy &amp; Setup</option>
-            <option value="photos" data-nl="Een fotoshoot">A photo shoot</option>
-            <option value="single" data-nl="Een losse dienst (tekst, kanalen of eigen site)">A single service (copy, channels or direct site)</option>
-          </select></div>
-        <div class="full"><label for="url" data-nl="Link naar je advertentie">Listing link</label><input id="url" name="url" placeholder="https://airbnb.com/rooms/..." data-nl-ph="https://airbnb.com/rooms/... of 'start binnenkort'"/></div>
-        <div><label for="area" data-nl="Locatie">Location</label>
-          <select id="area" name="area">
-            <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="wil" data-nl="Willemstad">Willemstad</option>
-            <option value="jt" data-nl="Jan Thiel">Jan Thiel</option>
-            <option value="west" data-nl="West (Coral Estate, Westpunt)">West (Coral Estate, Westpunt)</option>
-            <option value="other" data-nl="Elders op Curaçao">Elsewhere on Curaçao</option>
-            <option value="outside" data-nl="Buiten Curaçao">Outside Curaçao</option>
-          </select></div>
-        <div class="q"><label for="status" data-nl="Status">Status</label>
-          <select id="status" name="status">
-            <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="live" data-nl="Live en boekbaar">Live and bookable</option>
-            <option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option>
-            <option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option>
-          </select></div>
-        <div><label for="ptype" data-nl="Type woning">Property type</label>
-          <select id="ptype" name="propertyType">
-            <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="villa" data-nl="Villa of vrijstaand huis">Villa or standalone home</option>
-            <option value="apartment" data-nl="Appartement of condo">Apartment or condo</option>
-            <option value="townhouse" data-nl="Geschakelde woning of bungalow">Townhouse or bungalow</option>
-            <option value="guesthouse" data-nl="Guesthouse of studio">Guesthouse or studio</option>
-          </select></div>
-        <div><label for="beds" data-nl="Slaapkamers">Bedrooms</label>
-          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6+">6+</option></select></div>
-        <div class="q"><label for="rtype" data-nl="Type verhuur">Rental type</label>
-          <select id="rtype" name="rentalType">
-            <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="short" data-nl="Hele woning, korte verblijven">Whole home, short stays</option>
-            <option value="monthly" data-nl="Vooral maandelijks of langer">Mostly monthly or longer</option>
-            <option value="rooms" data-nl="Kamers in mijn huis">Rooms in my home</option>
-          </select></div>
-        <div class="q"><label for="mgmt" data-nl="Wie regelt het nu?">Who runs it today?</label>
-          <select id="mgmt" name="management">
-            <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="self" data-nl="Ikzelf">I do</option>
-            <option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option>
-            <option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option>
-          </select></div>
-        <div class="q"><label for="pricing" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label>
-          <select id="pricing" name="pricing">
-            <option value="" disabled selected data-nl="Kies">Select</option>
-            <option value="flat" data-nl="Eén vast tarief">One flat rate</option>
-            <option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option>
-            <option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option>
-            <option value="platform" data-nl="Airbnb's eigen suggesties">Airbnb's own suggestions</option>
-          </select></div>
-        <div class="feat"><span class="flab" data-nl="Heeft de woning">Does it have</span>
+
+        <div class="full lgh" data-nl="Je aanvraag">Request</div>
+        <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
+          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Concurrentierapport">Free Revenue Potential Report</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijs- en kalenderoptimalisatie">Pricing &amp; Calendar Optimization</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct Booking Site</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
+
+        <div class="full lgh lprop" data-nl="Over de woning">Property details</div>
+        <div class="lprop"><label for="status" data-nl="Status">Status</label>
+          <select id="status" name="status"><option value="" disabled selected data-nl="Kies">Select</option><option value="live" data-nl="Live en boekbaar">Live and bookable</option><option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option><option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option></select></div>
+        <div class="lprop"><label for="area" data-nl="Straat en wijk">Street and neighbourhood</label><input id="area" name="area" autocomplete="off" placeholder="e.g. Kaya Karibe, Jan Thiel" data-nl-ph="bijv. Kaya Karibe, Jan Thiel"/></div>
+        <div class="full lprop llive" hidden><span class="lflab" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span>
+          <div class="lchips" id="lPlat" role="group" aria-label="Where is it listed?"><button type="button" class="lchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="lchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="lchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="lchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="lchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="lchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
+        <div class="full llive" hidden><label for="listing" id="listLab"></label><input id="listing" type="url" placeholder="https://airbnb.com/rooms/..."/></div>
+        <div class="lprop lsoon" hidden><label for="ptype" data-nl="Type woning">Property type</label>
+          <select id="ptype" name="propertyType"><option value="" disabled selected data-nl="Kies">Select</option><option value="guesthouse" data-nl="Guesthouse">Guesthouse</option><option value="villa" data-nl="Vrijstaand huis">Standalone house</option><option value="apartment" data-nl="Appartement of condo">Condo</option><option value="other" data-nl="Anders">Other</option></select></div>
+        <div class="feat lprop lsoon" hidden><span class="flab" data-nl="Heeft de woning">Does it have</span>
           <label class="ck"><input type="checkbox" id="pool" name="pool" value="yes"/><span data-nl="Privézwembad">Private pool</span></label>
-          <label class="ck"><input type="checkbox" id="seaview" name="seaView" value="yes"/><span data-nl="Zeezicht of aan zee">Sea view or beachfront</span></label>
+          <label class="ck"><input type="checkbox" id="seaview" name="seaView" value="yes"/><span data-nl="Zeezicht">Sea view</span></label>
         </div>
+        <div class="lprop"><label for="beds" data-nl="Slaapkamers">Bedrooms</label>
+          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option value="studio" data-nl="Studio">Studio</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6+">6+</option></select></div>
+        <div class="lprop lfull"><label for="mgmt" data-nl="Wie regelt het nu?">Who runs it today?</label>
+          <select id="mgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
+        <div class="lprop lfull"><label for="pricing" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label>
+          <select id="pricing" name="pricing"><option value="" disabled selected data-nl="Kies">Select</option><option value="flat" data-nl="Eén vast tarief">One flat rate</option><option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option><option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option><option value="platform" data-nl="De suggesties van het boekingsplatform">The booking platform's suggestions</option></select></div>
+
+        <div class="full lgh" data-nl="Jouw gegevens">Your details</div>
         <div><label for="name" data-nl="Naam">Name</label><input id="name" name="name" autocomplete="name" required aria-required="true"/></div>
         <div><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required aria-required="true" inputmode="email"/></div>
-        <div class="full"><label for="whatsapp">WhatsApp <span class="opt" data-nl="(optioneel)">(optional)</span></label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel"/></div>
-        <div class="full"><label for="msg" data-nl="Nog iets? (optioneel)">Anything else? (optional)</label><textarea id="msg" name="message"></textarea></div>
+        <div class="full"><label for="whatsapp">WhatsApp <span class="opt" data-nl="(optioneel)">(optional)</span></label><div class="lwa"><select id="waCc" aria-label="Country code"></select><input id="whatsapp" type="tel" autocomplete="tel-national" placeholder="9 123 4567"/></div></div>
+        <div class="full"><label for="msg" id="msgLab"></label><textarea id="msg" name="message"></textarea></div>
         <p class="err" id="err" role="alert"></p>
-        <button class="btn full" type="submit" id="sub" data-nl="Versturen →">Send →</button>
+        <button class="btn full" type="submit" id="sub">Send →</button>
       </form>
     </div>
   </div>
@@ -874,8 +1183,8 @@ footer p{margin:8px 0 0;max-width:760px;line-height:1.5}
 </footer>
 
 <div class="mcta" id="mcta">
-  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Revenue Check">Free Revenue Check</strong></div>
-  <a class="btn check" href="#contact" data-nl="Start →">Start →</a>
+  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Concurrentierapport">Free Revenue Potential Report</strong></div>
+  <a class="btn check" href="#check" data-nl="Start →">Start →</a>
 </div>
 
 <!-- LIGHTBOX -->
@@ -896,7 +1205,26 @@ const CONFIG = {
   whatsappNumber: '59996715561'
 };
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
-const interest = $('#interest');
+
+/* WhatsApp country codes: every country, the islands and our main markets first.
+   Each entry is ISO code, dialling code, length of a national number; the
+   placeholder shows that many digits so owners can see what to type. */
+const DIAL = 'AF 93 9,AL 355 9,DZ 213 9,AS 1 10,AD 376 6,AO 244 9,AI 1 10,AG 1 10,AR 54 10,AM 374 8,AW 297 7,AU 61 9,AT 43 10,AZ 994 9,BS 1 10,BH 973 8,BD 880 10,BB 1 10,BY 375 9,BE 32 9,BZ 501 7,BJ 229 10,BM 1 10,BT 975 8,BO 591 8,BQ 599 7,BA 387 8,BW 267 8,BR 55 11,VG 1 10,BN 673 7,BG 359 9,BF 226 8,BI 257 8,KH 855 9,CM 237 9,CA 1 10,CV 238 7,KY 1 10,CF 236 8,TD 235 8,CL 56 9,CN 86 11,CO 57 10,KM 269 7,CG 242 9,CD 243 9,CK 682 5,CR 506 8,CI 225 10,HR 385 9,CU 53 8,CW 599 8,CY 357 8,CZ 420 9,DK 45 8,DJ 253 8,DM 1 10,DO 1 10,EC 593 9,EG 20 10,SV 503 8,GQ 240 9,ER 291 7,EE 372 8,SZ 268 8,ET 251 9,FK 500 5,FO 298 6,FJ 679 7,FI 358 9,FR 33 9,GF 594 9,PF 689 8,GA 241 8,GM 220 7,GE 995 9,DE 49 11,GH 233 9,GI 350 8,GR 30 10,GL 299 6,GD 1 10,GP 590 9,GU 1 10,GT 502 8,GG 44 10,GN 224 9,GW 245 9,GY 592 7,HT 509 8,HN 504 8,HK 852 8,HU 36 9,IS 354 7,IN 91 10,ID 62 11,IR 98 10,IQ 964 10,IE 353 9,IM 44 10,IL 972 9,IT 39 10,JM 1 10,JP 81 10,JE 44 10,JO 962 9,KZ 7 10,KE 254 9,KI 686 8,XK 383 8,KW 965 8,KG 996 9,LA 856 10,LV 371 8,LB 961 8,LS 266 8,LR 231 9,LY 218 9,LI 423 9,LT 370 8,LU 352 9,MO 853 8,MG 261 9,MW 265 9,MY 60 10,MV 960 7,ML 223 8,MT 356 8,MH 692 7,MQ 596 9,MR 222 8,MU 230 8,YT 262 9,MX 52 10,FM 691 7,MD 373 8,MC 377 8,MN 976 8,ME 382 8,MS 1 10,MA 212 9,MZ 258 9,MM 95 9,NA 264 9,NR 674 7,NP 977 10,NL 31 9,NC 687 6,NZ 64 9,NI 505 8,NE 227 8,NG 234 10,NU 683 4,KP 850 10,MK 389 8,MP 1 10,NO 47 8,OM 968 8,PK 92 10,PW 680 7,PS 970 9,PA 507 8,PG 675 8,PY 595 9,PE 51 9,PH 63 10,PL 48 9,PT 351 9,PR 1 10,QA 974 8,RE 262 9,RO 40 9,RU 7 10,RW 250 9,BL 590 9,SH 290 5,KN 1 10,LC 1 10,MF 590 9,PM 508 6,VC 1 10,WS 685 7,SM 378 10,ST 239 7,SA 966 9,SN 221 9,RS 381 9,SC 248 7,SL 232 8,SG 65 8,SX 1 10,SK 421 9,SI 386 8,SB 677 7,SO 252 9,ZA 27 9,KR 82 10,SS 211 9,ES 34 9,LK 94 9,SD 249 9,SR 597 7,SE 46 9,CH 41 9,SY 963 9,TW 886 9,TJ 992 9,TZ 255 9,TH 66 9,TL 670 8,TG 228 8,TK 690 4,TO 676 7,TT 1 10,TN 216 8,TR 90 10,TM 993 8,TC 1 10,TV 688 6,UG 256 9,UA 380 9,AE 971 9,GB 44 10,US 1 10,UY 598 8,UZ 998 9,VU 678 7,VA 39 10,VE 58 10,VN 84 9,VI 1 10,WF 681 6,YE 967 9,ZM 260 9,ZW 263 9'.split(',').map(x => { const [iso, code, len] = x.split(' '); return { iso, code, len: +len }; });
+const DIAL_TOP = ['CW', 'AW', 'BQ', 'SX', 'NL', 'BE', 'US', 'CA', 'GB', 'DE', 'CO', 'VE'];
+const DIAL_EX = { CW: '9 123 4567', BQ: '717 1234', AW: '560 1234', NL: '6 1234 5678', US: '201 555 0123', CA: '416 555 0123', SX: '721 555 0123' };
+const dialPh = d => DIAL_EX[d.iso] || ({ 4: '1234', 5: '12345', 6: '123 456', 7: '123 4567', 8: '1234 5678', 9: '123 456 789', 10: '123 456 7890', 11: '123 4567 8901' }[d.len] || '123 456 789');
+const dialOf = id => { const d = DIAL.find(x => x.iso === $('#' + id).value); return d ? '+' + d.code : ''; };
+const fillDial = (selId, inpId) => {
+  const sel = $('#' + selId), inp = $('#' + inpId), byIso = Object.fromEntries(DIAL.map(d => [d.iso, d]));
+  const opt = d => '<option value="' + d.iso + '">' + d.iso + ' +' + d.code + '</option>';
+  const rest = DIAL.filter(d => !DIAL_TOP.includes(d.iso)).sort((a, b) => a.iso.localeCompare(b.iso));
+  sel.innerHTML = DIAL_TOP.map(i => opt(byIso[i])).join('') + '<option disabled>──────</option>' + rest.map(opt).join('');
+  sel.value = 'CW';
+  const sync = () => { const d = byIso[sel.value]; if (d) { inp.placeholder = dialPh(d); inp.maxLength = d.len + 4; } };
+  sel.addEventListener('change', sync); sync();
+};
+fillDial('cCc', 'cWa');
+fillDial('waCc', 'whatsapp');
 
 /* Brand mark: true back-to-top. The native #top anchor lands on <main>'s
    document position, which sits header-h below the real page top because the
@@ -911,9 +1239,9 @@ $('.brand').addEventListener('click', e => {
 /* Booking buttons */
 $$('.book').forEach(a => {
   if (CONFIG.strategyBookingUrl) { a.href = CONFIG.strategyBookingUrl; a.target = '_blank'; a.rel = 'noopener'; }
-  else a.addEventListener('click', () => { interest.value = 'strategy'; });
+  else a.addEventListener('click', () => setRequests(['strategy']));
 });
-$$('.check').forEach(a => a.addEventListener('click', () => { interest.value = 'check'; }));
+$$('.check').forEach(a => a.addEventListener('click', () => setRequests(['check'])));
 
 /* Photo grids in card 02 */
 $$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.createElement('i'); i.style.backgroundImage = `url(assets/seq-${g.dataset.s}-${n}.jpg)`; g.appendChild(i); } });
@@ -1004,7 +1332,7 @@ const T = { covers: { en: 'What this covers', nl: 'Wat dit inhoudt' },
             why: { en: 'Why it matters', nl: 'Waarom het uitmaakt' },
             before: { en: 'Before and after', nl: 'Voor en na' },
             next: { en: 'Next', nl: 'Volgende' },
-            cta: { en: 'Get your free Revenue Check →', nl: 'Vraag je gratis Revenue Check aan →' } };
+            cta: { en: 'Get your free Revenue Potential Report →', nl: 'Vraag je gratis Concurrentierapport aan →' } };
 
 const lb = $('#lb');
 let curSvc = null;
@@ -1094,6 +1422,7 @@ const wa = { en: "Hi! I have a question about The House Atelier.", nl: "Hoi! Ik 
 function setLang(l) {
   document.documentElement.lang = l;
   $$('[data-nl]').forEach(e => { if (e.dataset.en === undefined) e.dataset.en = e.innerHTML; e.innerHTML = l === 'nl' ? e.dataset.nl : e.dataset.en; });
+  $$('[data-nl-title]').forEach(e => { if (e.dataset.enTitle === undefined) e.dataset.enTitle = e.title; e.title = l === 'nl' ? e.dataset.nlTitle : e.dataset.enTitle; });
   $$('[data-nl-ph]').forEach(e => { if (e.dataset.enPh === undefined) e.dataset.enPh = e.placeholder; e.placeholder = l === 'nl' ? e.dataset.nlPh : e.dataset.enPh; });
   $('#lang').textContent = l === 'nl' ? 'EN' : 'NL';
   $('#fLang').value = l;
@@ -1109,66 +1438,178 @@ $('#lang').addEventListener('click', () => setLang(document.documentElement.lang
   if (!l && (navigator.language || '').toLowerCase().startsWith('nl')) l = 'nl';
   setLang(l === 'nl' ? 'nl' : 'en');
   if (p.get('utm_source')) $('#fSource').value = p.get('utm_source') + (p.get('utm_campaign') ? '/' + p.get('utm_campaign') : '');
-  const i = p.get('interest'); if (['check', 'strategy', 'photos', 'single'].includes(i)) interest.value = i;
+  const i = p.get('interest'); if (['inquiry', 'check', 'strategy', 'listing', 'photos', 'direct', 'other', 'single'].includes(i)) setTimeout(() => setRequests([i === 'single' ? 'listing' : i]), 0);
   routeSvc();
 })();
 
 /* Mobile CTA: hidden on the hero and near the contact form */
 (function () {
-  const m = $('#mcta'), hero = $('.hero'), contact = $('#contact');
+  const m = $('#mcta'), hero = $('.hero'), contact = $('#contact'), calc = $('#check');
   const upd = () => {
     const pastHero = hero.getBoundingClientRect().bottom < 40;
-    const nearForm = contact.getBoundingClientRect().top < innerHeight;
+    const cr = calc.getBoundingClientRect();
+    const nearForm = contact.getBoundingClientRect().top < innerHeight || (cr.top < innerHeight && cr.bottom > 0);
     m.classList.toggle('off', !pastHero || nearForm);
   };
   addEventListener('scroll', upd, { passive: true }); upd();
 })();
 
-/* Revenue Check estimator (PriceLabs Market Dashboard, Curaçao, Sep 2024-Sep 2026).
-   med = average monthly revenue, trailing 12 months (Oct 2025-Sep 2026).
-   top = average monthly revenue in high season (Dec-Mar) over the same window.
-   oMed/oTop = matching average occupancy. Grouped by bedroom count, since the
-   underlying export has no neighborhood or percentile split. */
+/* Revenue Potential Report estimator. Source: PriceLabs Revenue Estimator Pro, one run per
+   bedroom size against comparable Curaçao listings, past 12 months.
+   med = median monthly revenue (50th percentile), averaged over the 12 months.
+   top = 75th percentile monthly revenue, same basis.
+   oMed = market average occupancy, oTop = 75th percentile occupancy.
+   n    = average number of comparable listings behind each size.
+   br6 combines 6 to 10 bedrooms, weighted by listing count: above 6BR each
+   single size has too few listings to stand on its own (7 to 25). */
 const EST = {
-  br1:  { med: 1225, top: 1496, oMed: 59, oTop: 72 },
-  br2:  { med: 2212, top: 2630, oMed: 67, oTop: 79 },
-  br34: { med: 4248, top: 4975, oMed: 72, oTop: 81 },
-  br5:  { med: 8982, top: 10804, oMed: 70, oTop: 78 }
+  st:  { med: 883,  top: 1376,  oMed: 65, oTop: 88, n: 71 },
+  br1: { med: 1125, top: 1804,  oMed: 70, oTop: 88, n: 296 },
+  br2: { med: 1591, top: 2307,  oMed: 70, oTop: 88, n: 257 },
+  br3: { med: 3280, top: 4906,  oMed: 76, oTop: 91, n: 278 },
+  br4: { med: 4931, top: 7268,  oMed: 74, oTop: 92, n: 111 },
+  br5: { med: 5772, top: 8942,  oMed: 76, oTop: 93, n: 276 },
+  br6: { med: 8574, top: 12834, oMed: 76, oTop: 93, n: 256 }
 };
-let estSize = 'br1';
+let estSize = 'br3', fStep = 1, ignoreRev = false;
 const money = n => '$' + Math.round(n).toLocaleString(document.documentElement.lang === 'nl' ? 'nl-NL' : 'en-US');
+const SIZE_W = { st: ['studio', 'studio'], br1: ['1-bedroom', '1-slaapkamer'], br2: ['2-bedroom', '2-slaapkamer'], br3: ['3-bedroom', '3-slaapkamer'], br4: ['4-bedroom', '4-slaapkamer'], br5: ['5-bedroom', '5-slaapkamer'], br6: ['6+ bedroom', '6+ slaapkamer'] };
+const BEDS = { st: '1', br1: '1', br2: '2', br3: '3', br4: '4', br5: '5', br6: '6+' };
 function renderEst() {
-  const d = EST[estSize], you = parseFloat($('#eIn').value) || 0;
-  const max = Math.max(d.top, you) * 1.02;
-  $('#eMed').textContent = money(d.med) + t('/mo', '/mnd');
-  $('#eTop').textContent = money(d.top) + t('/mo', '/mnd');
-  $('#eMedBar').style.width = (d.med / max * 100) + '%';
-  $('#eTopBar').style.width = (d.top / max * 100) + '%';
-  $('#eYouWrap').hidden = !you;
-  if (you) {
-    $('#eYou').textContent = money(you) + t('/mo', '/mnd');
-    $('#eYouBar').style.width = (you / max * 100) + '%';
-    const gap = Math.max(0, d.top - you) * 12;
-    $('.egap').classList.toggle('good', !gap);
-    $('#eGapLabel').textContent = t('Your potential gap', 'Jouw mogelijke verschil');
-    $('#eGap').textContent = gap ? money(gap) + t(' a year', ' per jaar') : t('You\'re already at high-season pricing', 'Je zit al op hoogseizoenniveau');
-    $('#eGapNote').textContent = gap ? t('Between your average month and high-season pricing for this size.', 'Tussen jouw gemiddelde maand en hoogseizoenprijzen voor dit formaat.') : t('A Revenue Check shows where there\'s still room.', 'Een Revenue Check laat zien waar nog ruimte zit.');
+  const d = EST[estSize], you = (fStep === 2 && ignoreRev) ? 0 : (parseFloat($('#eIn').value) || 0);
+  const w = t(SIZE_W[estSize][0], SIZE_W[estSize][1]);
+  const max = d.top * 1.3, pos = v => Math.max(2, Math.min(98, v / max * 100)) + '%';
+  $('#fHead').innerHTML = t('How much is your ' + w + ' home<br/>on Curaçao leaving behind?', 'Hoeveel laat jouw ' + w + 'woning<br/>op Curaçao liggen?');
+  if (!you) {
+    $('#fBig').textContent = money((d.top - d.med) * 12);
+    $('#fBigNote').textContent = (fStep === 2 && ignoreRev)
+      ? t('a year between a typical ' + w + ' home and the top 25%.', 'per jaar tussen een gemiddelde ' + w + 'woning en de beste 25%.')
+      : t('a year between a typical ' + w + ' home and the top 25%. Add your revenue to see yours.', 'per jaar tussen een gemiddelde ' + w + 'woning en de beste 25%. Vul je omzet in voor jouw cijfer.');
+  } else if (you < d.top) {
+    $('#fBig').textContent = money((d.top - you) * 12);
+    $('#fBigNote').textContent = t('a year between you and the top 25% of ' + w + ' homes.', 'per jaar tussen jou en de beste 25% van de ' + w + 'woningen.');
   } else {
-    $('.egap').classList.remove('good');
-    $('#eGapLabel').textContent = t('Typical gap', 'Gemiddeld verschil');
-    $('#eGap').textContent = money((d.top - d.med) * 12) + t(' a year', ' per jaar');
-    $('#eGapNote').textContent = t('Between a typical month and high season, with occupancy of ', 'Tussen een gemiddelde maand en het hoogseizoen, bij een bezetting van ') + d.oMed + '% vs ' + d.oTop + '%.';
+    $('#fBig').textContent = t('Top 25%', 'Beste 25%');
+    $('#fBigNote').textContent = t('You\'re already there. Your report shows what\'s still left.', 'Daar zit je al. Je rapport laat zien wat er nog ligt.');
   }
+  $('#fMed').style.left = pos(d.med); $('#fTop').style.left = pos(d.top);
+  $('#fMedV').textContent = money(d.med) + t('/mo', '/mnd');
+  $('#fTopV').textContent = money(d.top) + t('/mo', '/mnd');
+  $('#fFill').style.width = you ? pos(you) : '0';
+  $('#fYou').hidden = !you;
+  if (you) { $('#fYou').style.left = 'clamp(52px,' + pos(you) + ',calc(100% - 52px))'; $('#fYouV').textContent = t('You · ', 'Jij · ') + money(you); }
+  $('#eNote').innerHTML = t('Based on <b>' + d.n + ' real ' + w + ' listings</b> on Curaçao · past 12 months · PriceLabs', 'Gebaseerd op <b>' + d.n + ' echte ' + w + 'woningen</b> op Curaçao · afgelopen 12 maanden · PriceLabs');
+  $('#fMethod').textContent = t(
+    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your full report narrows it to the homes guests actually compare you to, so the numbers get sharper.',
+    'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je volledige rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
+  /* The Gap section follows the bedroom size picked in the calculator */
+  const pctMore = Math.round((d.top / d.med - 1) * 100);
+  $('#gHead').innerHTML = t('In Curaçao, the top 25%<br/>earn ' + pctMore + '% more.', 'Op Curaçao verdient de beste 25%<br/>' + pctMore + '% meer.');
+  $('#gMedL').textContent = t('Typical ' + w + ' home', 'Gemiddelde ' + w + 'woning');
+  $('#gMedV').textContent = money(d.med) + t('/mo', '/mnd');
+  $('#gTopV').textContent = money(d.top) + t('/mo', '/mnd');
+  $('#gGap').textContent = t('The gap · ~' + money(Math.round((d.top - d.med) * 12 / 500) * 500) + ' a year', 'Het gat · ~' + money(Math.round((d.top - d.med) * 12 / 500) * 500) + ' per jaar');
+  $('#gSrc').textContent = t('Curaçao ' + w + ' homes, past 12 months (PriceLabs).', w.charAt(0).toUpperCase() + w.slice(1) + 'woningen op Curaçao, afgelopen 12 maanden (PriceLabs).');
+  $('#fHow').textContent = $('#fMethod').hidden ? t('How we calculate this', 'Hoe we dit berekenen') : t('Hide the method', 'Verberg de methode');
 }
-$$('#estSize button').forEach(b => b.addEventListener('click', () => {
-  estSize = b.dataset.a;
-  $$('#estSize button').forEach(x => x.classList.toggle('on', x === b));
+const goStep = n => {
+  fStep = n;
+  if (n === 1) ignoreRev = false;
+  $('#check').classList.toggle('s2', n === 2);
+  /* One form: the bedroom and revenue fields stay put, the details open up underneath */
+  $('#fCard').hidden = n === 2; $('#fStep2').hidden = n !== 2;
+  $('#fErr').style.display = 'none';
   renderEst();
-}));
-$('#eIn').addEventListener('input', renderEst);
+  /* Both steps: bring the whole section into view so it sits centred on screen */
+  setTimeout(() => {
+    scrollTo({ top: $('#check').getBoundingClientRect().top + scrollY, behavior: 'smooth' });
+    if (n === 2) $('#cStatus').focus({ preventScroll: true });
+  }, 30);
+};
+const setSize = k => {
+  estSize = k;
+  $('#cBeds').value = k;
+  $$('#estSize button, #gSize button').forEach(x => x.classList.toggle('on', x.dataset.a === k));
+  renderEst();
+};
+$$('#estSize button, #gSize button').forEach(b => b.addEventListener('click', () => { if (fStep === 2) ignoreRev = true; setSize(b.dataset.a); }));
+$('#cBeds').addEventListener('change', e => { ignoreRev = true; setSize(e.target.value); });
+$('#eIn').addEventListener('input', () => { ignoreRev = false; renderEst(); });
+$('#eIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); goStep(2); } });
+$('#fNext').addEventListener('click', () => goStep(2));
+$('#fHow').addEventListener('click', () => { const m = $('#fMethod'); m.hidden = !m.hidden; $('#fHow').setAttribute('aria-expanded', String(!m.hidden)); renderEst(); });
 $('#lang').addEventListener('click', renderEst);
-$('#estCta').addEventListener('click', () => {
-  interest.value = 'check';
+
+/* Revenue Potential Report form. Live listings: we read address, type and amenities
+   from the listing itself, so we only ask where it is listed and for the links.
+   Not live yet: we ask for address, type and amenities instead. */
+const cForm = $('#checkForm');
+const PLAT = { airbnb: 'Airbnb', booking: 'Booking.com', vrbo: 'Vrbo', google: 'Google Vacation Rentals', micazu: 'Micazu', direct: 'Direct booking site' };
+const syncStatus = () => {
+  const st = $('#cStatus').value, live = st === 'live', soon = !!st && !live;
+  $$('#checkForm .flive').forEach(el => el.hidden = !live);
+  $$('#checkForm .fsoon').forEach(el => el.hidden = !soon);
+  const n = $$('#cPlat .fchip').filter(c => c.getAttribute('aria-pressed') === 'true').length;
+  $('#cListLab').textContent = (n > 1 ? t('Your best listing', 'Je beste advertentie') : t('Your listing', 'Je advertentie'));
+};
+$('#cStatus').addEventListener('change', () => { syncStatus(); recentre(); });
+$('#lang').addEventListener('click', () => setTimeout(syncStatus, 0));
+/* When the form changes height, keep the section centred on screen if it fits */
+const recentre = () => requestAnimationFrame(() => {
+  const r = $('#check').getBoundingClientRect();
+  if (r.height <= innerHeight + 1 && Math.abs(r.top) > 2) scrollTo({ top: r.top + scrollY, behavior: 'smooth' });
+});
+$$('#cPlat .fchip').forEach(c => c.addEventListener('click', () => {
+  const on = c.getAttribute('aria-pressed') !== 'true';
+  c.setAttribute('aria-pressed', String(on));
+  $('#cPlat').classList.remove('miss'); $('#fErr').style.display = 'none';
+  syncStatus(); recentre();
+}));
+cForm.querySelectorAll('.finp,.fsel').forEach(el => ['input', 'change'].forEach(ev => el.addEventListener(ev, () => { el.classList.remove('miss'); $('#fErr').style.display = 'none'; })));
+cForm.addEventListener('submit', async e => {
+  e.preventDefault();
+  const v = id => $('#' + id).value.trim();
+  const live = v('cStatus') === 'live';
+  const picked = live ? $$('#cPlat .fchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.p) : [];
+  const f = {
+    lang: document.documentElement.lang, source: 'website-check', interest: 'check',
+    estimatorRevenue: $('#eIn').value || '', estimatorArea: estSize,
+    status: v('cStatus'),
+    platforms: picked.map(k => PLAT[k]).join(', '),
+    url: live ? v('cListing') : t('launching soon', 'start binnenkort'),
+    area: v('cArea'), propertyType: live ? '' : v('cType'), beds: BEDS[estSize],
+    rentalType: '', management: v('cMgmt'), pricing: v('cPrice'),
+    pool: live ? '' : ($('#cPool').checked ? 'yes' : 'no'), seaView: live ? '' : ($('#cSea').checked ? 'yes' : 'no'),
+    name: v('cName'), email: v('cEmail'), whatsapp: v('cWa') ? dialOf('cCc') + ' ' + v('cWa') : '', message: v('cMsg')
+  };
+  const req = [['status', 'cStatus'], ['area', 'cArea'], ['management', 'cMgmt'], ['pricing', 'cPrice'], ['name', 'cName'], ['email', 'cEmail']];
+  if (f.status && !live) req.splice(2, 0, ['propertyType', 'cType']);
+  const miss = req.filter(([k]) => !f[k]).map(([, id]) => $('#' + id));
+  if (live && !picked.length) miss.splice(1, 0, $('#cPlat'));
+  if (live && !v('cListing')) miss.splice(1, 0, $('#cListing'));
+  if (f.email && !/^\S+@\S+\.\S+$/.test(f.email)) miss.push($('#cEmail'));
+  cForm.querySelectorAll('.miss').forEach(el => el.classList.remove('miss'));
+  if (miss.length) {
+    miss.forEach(el => el.classList.add('miss'));
+    $('#fErr').textContent = miss.length === 1 ? t('Please complete the highlighted field.', 'Vul het gemarkeerde veld in.') : t('Please complete the highlighted fields.', 'Vul de gemarkeerde velden in.');
+    $('#fErr').style.display = 'block'; (miss[0].id === 'cPlat' ? miss[0].querySelector('button') : miss[0]).focus(); return;
+  }
+  const noFit = f.status === 'later';
+  f.fit = noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
+  const btn = $('#fSend'); btn.disabled = true; btn.textContent = t('Sending…', 'Versturen…');
+  try {
+    const r = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
+    if (!r.ok) throw new Error();
+    $('#fStep2').hidden = true;
+    $('#fDone').hidden = false;
+    $('#fDone').textContent = noFit
+      ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
+      : t('Got it. Your Revenue Potential Report arrives within 24 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 24 uur.');
+  } catch (x) {
+    btn.disabled = false; btn.textContent = t('Get my Revenue Potential Report →', 'Vraag mijn Concurrentierapport aan →');
+    $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
+    $('#fErr').style.display = 'block';
+  }
 });
 
 
@@ -1195,20 +1636,51 @@ form.querySelectorAll('input,select,textarea').forEach(el => el.addEventListener
 form.querySelectorAll('select').forEach(el => el.addEventListener('change', () => {
   el.classList.remove('miss'); el.removeAttribute('aria-invalid');
 }));
-const subLabel = () => { const v = interest.value; sub.textContent = v === 'check' ? t('Get my free Revenue Check →', 'Vraag mijn gratis Revenue Check aan →') : v === 'strategy' ? t('Request Strategy & Setup →', 'Vraag strategie + instelling aan →') : v === 'photos' ? t('Request a photo shoot →', 'Vraag een fotoshoot aan →') : t('Request a quote →', 'Vraag een offerte aan →'); };
-interest.addEventListener('change', subLabel);
-$$('.check,.book').forEach(a => a.addEventListener('click', () => setTimeout(subLabel, 0)));
-$('#lang').addEventListener('click', subLabel);
-subLabel();
-renderEst();
-/* Photo shoots and single services skip the Revenue Check qualification questions */
-const QUAL = [...document.querySelectorAll('#leadForm .q')];
-function syncQual() {
-  const light = ['photos', 'single'].includes($('#interest').value);
-  QUAL.forEach(d => { d.style.display = light ? 'none' : ''; const c = d.querySelector('select'); if (c) c.disabled = light; });
+/* Request chips decide which property questions appear.
+   - Revenue report, pricing or full listing: every property question.
+   - Photography and/or direct booking site only: no pricing or management questions.
+   - General inquiry (exclusive) or Other only: no property questions; the message is required. */
+const PL = { airbnb: 'Airbnb', booking: 'Booking.com', vrbo: 'Vrbo', google: 'Google Vacation Rentals', micazu: 'Micazu', direct: 'Direct booking site' };
+const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Potential Report', strategy: 'Pricing & Calendar Optimization', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Site', other: 'Other' };
+const picked = sel => $$(sel + ' .lchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.r || c.dataset.p);
+const reqMode = r => !r.length ? 'none' : r.some(x => ['check', 'strategy', 'listing'].includes(x)) ? 'full' : r.some(x => ['photos', 'direct'].includes(x)) ? 'photo' : 'none';
+function syncForm() {
+  const r = picked('#rq'), mode = reqMode(r), inq = r.includes('inquiry');
+  /* A direct booking site the owner is asking us to build can't already be a listing channel */
+  const wantsDirect = r.includes('direct'), dChip = $('#lPlat [data-p="direct"]');
+  dChip.hidden = wantsDirect; if (wantsDirect) dChip.setAttribute('aria-pressed', 'false');
+  const st = $('#status').value, live = st === 'live', soon = !!st && !live, plats = picked('#lPlat');
+  $$('#leadForm .lprop').forEach(el => el.hidden = mode === 'none');
+  $$('#leadForm .lfull').forEach(el => el.hidden = mode !== 'full');
+  $$('#leadForm .llive').forEach(el => el.hidden = mode === 'none' || !live);
+  $$('#leadForm .lsoon').forEach(el => el.hidden = mode === 'none' || !soon);
+  const n = plats.length;
+  $('#listLab').textContent = (n > 1 ? t('Your best listing', 'Je beste advertentie') : t('Your listing', 'Je advertentie'));
+  const needMsg = inq || mode === 'none';
+  $('#msgLab').innerHTML = needMsg ? t('Your message', 'Je bericht') : t('Anything else? <span class="opt">(optional)</span>', 'Nog iets? <span class="opt">(optioneel)</span>');
+  sub.textContent = (inq && r.length === 1) ? t('Send message →', 'Bericht versturen →')
+    : (r.length === 1 && r[0] === 'check') ? t('Get my free Revenue Potential Report →', 'Vraag mijn gratis Concurrentierapport aan →')
+    : t('Send my request →', 'Verstuur mijn aanvraag →');
 }
-$('#interest').addEventListener('change', syncQual);
-syncQual();
+function setRequests(list) {
+  $$('#rq .lchip').forEach(c => c.setAttribute('aria-pressed', String(list.includes(c.dataset.r))));
+  syncForm();
+}
+$$('#rq .lchip').forEach(c => c.addEventListener('click', () => {
+  const on = c.getAttribute('aria-pressed') !== 'true';
+  c.setAttribute('aria-pressed', String(on));
+  $('#rq').classList.remove('miss'); err.style.display = 'none';
+  syncForm();
+}));
+$$('#lPlat .lchip').forEach(c => c.addEventListener('click', () => {
+  c.setAttribute('aria-pressed', String(c.getAttribute('aria-pressed') !== 'true'));
+  $('#lPlat').classList.remove('miss'); err.style.display = 'none';
+  syncForm();
+}));
+$('#status').addEventListener('change', syncForm);
+$('#lang').addEventListener('click', syncForm);
+syncForm();
+renderEst();
 
 /* Success panel. The colours are set explicitly because #contact is a dark
    section (white text) while the form card itself is light. */
@@ -1220,40 +1692,65 @@ const done = line =>
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const rev = $('#eIn');
-  $('#fEstRev').value = rev && rev.value ? rev.value : '';
-  $('#fEstArea').value = estSize || '';
-  const f = Object.fromEntries(new FormData(form).entries());
-  /* Trim first, so a field containing only spaces cannot pass the required checks */
-  Object.keys(f).forEach(k => { if (typeof f[k] === 'string') f[k] = f[k].trim(); });
-  f.pool = f.pool ? 'yes' : 'no';
-  f.seaView = f.seaView ? 'yes' : 'no';
-  /* Disabled selects don't submit, so photo / single-service requests would
-     otherwise send a smaller payload. Keep the shape constant for the webhook. */
-  ['status', 'rentalType', 'management', 'pricing'].forEach(k => { if (!(k in f)) f[k] = ''; });
-  const light = ['photos', 'single'].includes(f.interest);
-  const need = ['area', 'propertyType', 'beds'].concat(light ? [] : ['status', 'rentalType', 'management', 'pricing']).concat(['name', 'email']);
-  const missing = need.filter(k => !f[k]);
-  if (!light && f.status === 'live' && !f.url) missing.unshift('url');
-  if (missing.length) return markMissing(missing);
-  if (!/^\S+@\S+\.\S+$/.test(f.email)) { markMissing(['email']); return showErr(t('Please enter a valid email address.', 'Vul een geldig e-mailadres in.')); }
-  clearMarks();
-  if (!f.url) f.url = light ? t('not provided', 'niet opgegeven') : t('launching soon', 'start binnenkort');
-  const noFit = f.area === 'outside' || (!['photos', 'single'].includes(f.interest) && (f.status === 'later' || f.rentalType !== 'short'));
-  f.fit = noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
+  const v = id => ($('#' + id) ? $('#' + id).value.trim() : '');
+  const r = picked('#rq'), mode = reqMode(r), live = v('status') === 'live';
+  const plats = mode !== 'none' && live ? picked('#lPlat') : [];
+  /* Keep the old single interest code for the email routing (check / strategy / photos / single),
+     and send every choice in `requests`. */
+  const primary = ['check', 'strategy', 'listing', 'photos', 'direct', 'other', 'inquiry'].find(x => r.includes(x)) || '';
+  const legacy = { check: 'check', strategy: 'strategy', listing: 'single', photos: 'photos', direct: 'single', other: 'single', inquiry: 'inquiry' }[primary] || '';
+  const f = {
+    lang: document.documentElement.lang, source: $('#fSource').value, interest: legacy,
+    requests: r.map(x => REQ_LABEL[x]).join(', '),
+    estimatorRevenue: $('#eIn').value || '', estimatorArea: estSize || '',
+    status: mode === 'none' ? '' : v('status'),
+    platforms: plats.map(k => PL[k]).join(', '),
+    url: mode === 'none' ? t('not provided', 'niet opgegeven') : live ? v('listing') : t('launching soon', 'start binnenkort'),
+    area: mode === 'none' ? '' : v('area'),
+    propertyType: mode !== 'none' && !live ? v('ptype') : '',
+    beds: mode === 'none' ? '' : v('beds'),
+    rentalType: '',
+    management: mode === 'full' ? v('mgmt') : '',
+    pricing: mode === 'full' ? v('pricing') : '',
+    pool: mode !== 'none' && !live ? ($('#pool').checked ? 'yes' : 'no') : '',
+    seaView: mode !== 'none' && !live ? ($('#seaview').checked ? 'yes' : 'no') : '',
+    name: v('name'), email: v('email'),
+    whatsapp: v('whatsapp') ? dialOf('waCc') + ' ' + v('whatsapp') : '',
+    message: v('msg')
+  };
+  clearMarks(); $('#rq').classList.remove('miss'); $('#lPlat').classList.remove('miss');
+  const miss = [];
+  if (!r.length) { $('#rq').classList.add('miss'); miss.push($('#rq').querySelector('button')); }
+  if (mode !== 'none') {
+    if (!f.status) miss.push($('#status'));
+    if (!f.area) miss.push($('#area'));
+    if (live && !plats.length) { $('#lPlat').classList.add('miss'); miss.push($('#lPlat').querySelector('button')); }
+    if (live && !v('listing')) miss.push($('#listing'));
+    if (f.status && !live && !f.propertyType) miss.push($('#ptype'));
+    if (!f.beds) miss.push($('#beds'));
+    if (mode === 'full') { if (!f.management) miss.push($('#mgmt')); if (!f.pricing) miss.push($('#pricing')); }
+  }
+  if (!f.name) miss.push($('#name'));
+  if (!f.email || !/^\S+@\S+\.\S+$/.test(f.email)) miss.push($('#email'));
+  if ((mode === 'none' || r.includes('inquiry')) && !f.message) miss.push($('#msg'));
+  if (miss.length) {
+    miss.forEach(el => { if (el.tagName !== 'BUTTON') { el.classList.add('miss'); el.setAttribute('aria-invalid', 'true'); } });
+    showErr(miss.length === 1 ? t('Please complete the highlighted field.', 'Vul het gemarkeerde veld in.') : t('Please complete the highlighted fields.', 'Vul de gemarkeerde velden in.'));
+    miss[0].scrollIntoView({ block: 'center', behavior: 'smooth' }); setTimeout(() => miss[0].focus({ preventScroll: true }), 300);
+    return;
+  }
+  const noFit = mode === 'full' && f.status === 'later';
+  f.fit = mode !== 'full' ? '' : noFit ? 'no' : (f.management === 'pm' ? 'flag' : 'yes');
   sub.disabled = true; sub.textContent = t('Sending…', 'Versturen…');
   try {
-    const r = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
-    if (!r.ok) throw new Error();
-    if (noFit) {
-      form.innerHTML = done(t('We have your details and will be in touch.', 'We hebben je gegevens en nemen contact op.'));
-      return;
-    }
-    const paid = f.interest === 'strategy' && CONFIG.strategyBookingUrl;
+    const res = await fetch(CONFIG.webhookUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...f, submittedAt: new Date().toISOString() }) });
+    if (!res.ok) throw new Error();
+    if (noFit) { form.innerHTML = done(t('We have your details and will be in touch.', 'We hebben je gegevens en nemen contact op.')); return; }
+    const paid = legacy === 'strategy' && CONFIG.strategyBookingUrl;
     form.innerHTML = done(paid ? t('Complete your booking on the payment page.', 'Rond je boeking af op de betaalpagina.') : t('We will be in touch within 24 hours.', 'We nemen binnen 24 uur contact op.'));
     if (paid) window.open(CONFIG.strategyBookingUrl, '_blank');
   } catch (x) {
-    sub.disabled = false; subLabel();
+    sub.disabled = false; syncForm();
     showErr(t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.'));
   }
 });
