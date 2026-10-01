@@ -172,6 +172,16 @@ html{scroll-padding-top:0}
 .chans span{font-size:10px;font-weight:700;padding:7px 10px;border-radius:9px;border:1px solid var(--line);background:#fbfaf6}
 .a .chans span{background:#e7f1ed;border-color:rgba(49,91,87,.2);color:var(--sage)}
 .chans span.off{opacity:.35;text-decoration:line-through}
+.dsite{margin-top:13px;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fbfaf6}
+.dbar{display:flex;align-items:center;gap:4px;padding:6px 8px;border-bottom:1px solid var(--line);background:#f3efe8}
+.dbar i{width:6px;height:6px;border-radius:50%;background:#d6cfc4}
+.dbar span{margin-left:6px;font-size:9px;font-weight:700;color:var(--md)}
+.dbody{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:7px 10px;min-height:22px}
+.dbody b{font-family:'Lora',serif;font-weight:400;font-size:13px;color:var(--char)}
+.dbody>span{font-size:10px;color:var(--muted)}
+.dbtn{font-size:9px!important;font-weight:700;color:#fff!important;background:var(--sage);padding:6px 9px;border-radius:7px;white-space:nowrap}
+.dsite.off{opacity:.55}.dsite.off .dbar span{text-decoration:line-through}
+.a .dsite{border-color:rgba(49,91,87,.25)}
 .more{margin-top:14px;text-align:center}
 .more a{display:inline-flex;gap:6px;font-size:13px;font-weight:700;color:var(--sage);border-bottom:1px solid var(--sage);padding-bottom:2px;cursor:pointer}
 .note{margin:12px 0 0;font-size:11px;color:var(--muted);text-align:center}
@@ -654,11 +664,10 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .gap{padding-top:calc(var(--header-h) + 24px);padding-bottom:24px}
   .gap-head{margin-bottom:22px}
   .gap-head h2{font-size:clamp(34px,3.6vw,48px);margin:6px 0 8px}
-  .gpills{margin-top:12px}.gpills button{min-height:34px}
+  .gpills{margin-top:18px}.gpills button{min-height:34px}
   .gends{margin-bottom:6px}.gends b{font-size:24px}
   .gbar{height:60px}
   .glabel{margin-top:6px}.glabel span{padding-top:5px}
-  #gSrc{margin-top:10px!important}
   .gcards{margin-top:20px;gap:12px}
   .gc{padding:16px 16px 14px}.gc h3{font-size:18px;margin:8px 0 4px}.gc p{margin-bottom:8px}
   .gap-foot{margin-top:20px}
@@ -830,7 +839,7 @@ form.fpanel{transition:background .3s,border-color .3s}
       <div class="hero-actions">
         <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Concurrentierapport aan →">Get your free Revenue Check →</a>
       </div>
-      <p class="hero-note" data-nl="Gratis · binnen 24 uur · geen verplichting">Free · within 24 hours · no obligation</p>
+      <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
     </div>
     <div class="photo-grid" aria-label="Property before-and-after preview">
       <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Geselecteerd Caribisch werk">Selected Caribbean Work</div></div>
@@ -934,7 +943,7 @@ form.fpanel{transition:background .3s,border-color .3s}
       <div id="fStep2" hidden>
         <div class="fprompt" id="fPrompt">
           <span class="fpi" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
-          <div><b data-nl="Laatste stap: vul het formulier hieronder in.">Last step: fill in the form below.</b> <span data-nl="Je gratis rapport staat binnen 24 uur in je inbox.">Your free Revenue Check lands in your inbox within 24 hours.</span></div>
+          <div><b data-nl="Laatste stap: vul het formulier hieronder in.">Last step: fill in the form below.</b> <span data-nl="Je gratis rapport staat binnen 48 uur in je inbox.">Your free Revenue Check lands in your inbox within 48 hours.</span></div>
         </div>
         <div class="fgroup">
           <div class="fgh" data-nl="1 · Je woning">1 · Your property</div>
@@ -981,7 +990,6 @@ form.fpanel{transition:background .3s,border-color .3s}
     <div class="gap-head">
       <div class="eyebrow" data-nl="Het gat">The gap</div>
       <h2 id="gHead"></h2>
-      <p data-nl="Eén deel kun je niet veranderen. Vijf wel.">One part you can't change. Five you can.</p>
       <div class="gpills" id="gSize" role="group" aria-label="Bedrooms"><button type="button" data-a="st" data-nl="Studio">Studio</button><button type="button" data-a="br1" data-nl="1 slk">1BR</button><button type="button" data-a="br2" data-nl="2 slk">2BR</button><button type="button" data-a="br3" class="on" data-nl="3 slk">3BR</button><button type="button" data-a="br4" data-nl="4 slk">4BR</button><button type="button" data-a="br5" data-nl="5 slk">5BR</button><button type="button" data-a="br6" data-nl="6+ slk">6+BR</button></div>
     </div>
     <div class="gbar-wrap">
@@ -989,23 +997,22 @@ form.fpanel{transition:background .3s,border-color .3s}
         <div><span id="gMedL"></span><b id="gMedV"></b></div>
         <div class="r"><span data-nl="Beste 25%">Top 25%</span><b id="gTopV"></b></div>
       </div>
-      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, channels and amenities.">
+      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, direct bookings and amenities.">
         <div class="gbase" data-nl="Wat je nu verdient">What you earn today</div>
         <div class="gzero" title="Where your home is. The one part you can't change." data-nl-title="Waar je woning staat. Het enige deel dat je niet kunt veranderen."><b>00</b><span data-nl="Ligging">Location</span></div>
         <button type="button" class="gseg g1" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
         <button type="button" class="gseg g2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="gseg g3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
-        <button type="button" class="gseg g4" data-i="3" aria-label="04 The Presence"><b>04</b><span data-nl="Kanalen">Channels</span></button>
+        <button type="button" class="gseg g4" data-i="3" aria-label="04 Direct bookings"><b>04</b><span data-nl="Direct">Direct</span></button>
         <button type="button" class="gseg g5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
       <div class="glabel"><span id="gGap"></span></div>
-      <p class="src" id="gSrc" style="margin-top:22px;text-align:center"></p>
     </div>
     <div class="gcards">
       <button type="button" class="gc s1" data-i="0"><div class="n">01</div><h3 data-nl="Verkeerd geprijsd">Priced by guesswork</h3><p data-nl="Eén vaste prijs, het hele jaar. Te laag in het hoogseizoen, te hoog als het rustig is.">One flat rate all year. Too low in high season, too high when it's quiet.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
       <button type="button" class="gc s2" data-i="1"><div class="n">02</div><h3 data-nl="Niet gezien">Scrolled past</h3><p data-nl="Foto's die de klik niet verdienen. Gasten zien je woning, maar klikken niet.">Photos that don't earn the click. Guests see your home and keep scrolling.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
       <button type="button" class="gc s3" data-i="2"><div class="n">03</div><h3 data-nl="Niet overtuigd">Clicked, not booked</h3><p data-nl="Tekst die het verblijf niet verkoopt, in één taal, voor een internationale gast.">Copy that doesn't sell the stay, in one language, for an international guest.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
-      <button type="button" class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="Niet gevonden">Never found</h3><p data-nl="Alleen op Airbnb, voor 15,5% per boeking. De rest zoekt ergens anders of wil direct boeken.">On Airbnb only, at 15.5% a booking. Everyone else is searching somewhere else or wants to book direct.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
+      <button type="button" class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="15,5% op elke boeking">15.5% on every stay</h3><p data-nl="Elke boeking loopt via Airbnb, dat hosts nu 15,5% rekent. Zelfs gasten die terugkomen kunnen je niet direct boeken.">Every booking runs through Airbnb, which now charges hosts 15.5%. Even returning guests can't book you direct.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
       <button type="button" class="gc s5" data-i="4"><div class="n">05</div><h3 data-nl="Voorbijgestreefd">Passed over</h3><p data-nl="Geen koffiezetapparaat haalt je net zo snel uit de zoekresultaten als geen zwembad. Het huis verderop krijgt de boeking.">No coffee maker can drop you from a search as fast as no pool. The home down the road gets the booking.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
     </div>
     <div class="gap-foot">
@@ -1020,7 +1027,7 @@ form.fpanel{transition:background .3s,border-color .3s}
     <div class="intro">
       <div class="eyebrow" data-nl="De oplossing">The solution</div>
       <h2 data-nl="Diensten">Services</h2>
-      <p data-nl="Wat je vraagt. Wat gasten zien. Wat je belooft. Waar je te vinden bent. Wat je biedt.">What you charge. What guests see. What you promise. Where you show up. What you offer.</p>
+      <p data-nl="Wat je vraagt en hoe je je laat zien.">What you charge and how you show up.</p>
     </div>
     <nav class="mnav" aria-label="Closing the gap">
       <div class="mbar">
@@ -1028,7 +1035,7 @@ form.fpanel{transition:background .3s,border-color .3s}
         <button type="button" class="mseg s1 on" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
         <button type="button" class="mseg s2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="mseg s3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
-        <button type="button" class="mseg s4" data-i="3" aria-label="04 The Presence"><b>04</b><span data-nl="Kanalen">Channels</span></button>
+        <button type="button" class="mseg s4" data-i="3" aria-label="04 Direct bookings"><b>04</b><span data-nl="Direct">Direct</span></button>
         <button type="button" class="mseg s5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
       <span class="mend" data-nl="→ Geoptimaliseerd">→ Optimized</span>
@@ -1096,21 +1103,21 @@ form.fpanel{transition:background .3s,border-color .3s}
       <div class="more"><a class="svc-more" data-svc="copy" href="#service/copy" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
-    <!-- 04 PRESENCE -->
+    <!-- 04 DIRECT -->
     <article class="card s4">
       <div class="ch"><div class="n">04</div><div>
-        <div class="eyebrow" data-nl="De zichtbaarheid">The Presence</div>
-        <h3 data-nl="Overal te boeken">Everywhere Guests Book</h3>
-        <p data-nl="Bereik de gasten die Airbnb je niet stuurt, en boek direct zonder platformkosten. Eén kalender, geen dubbele boekingen.">Reach the guests Airbnb doesn't send you, and take bookings direct with no platform fee. One calendar, no double bookings.</p>
+        <div class="eyebrow" data-nl="Direct boeken">Direct Bookings</div>
+        <h3 data-nl="Je eigen boekingssite">Your Own Booking Site</h3>
+        <p data-nl="Airbnb rekent hosts nu 15,5% per boeking. Met je eigen site boeken terugkerende gasten direct, zonder kosten. Andere kanalen komen op de tweede plaats.">Airbnb now charges hosts 15.5% a booking. Your own site lets repeat guests book direct, fee-free. Other channels come second.</p>
       </div></div>
       <div class="pair">
         <div class="pc"><div class="pm b"><div class="ui">
-          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong>15.5%</strong></div><span class="chip" data-nl="één kanaal">one channel</span></div>
-          <div class="chans"><span>Airbnb</span><span class="off">Booking.com</span><span class="off">Vrbo</span><span class="off">Micazu</span><span class="off">Google</span><span class="off" data-nl="Eigen site">Direct site</span></div>
+          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong>15.5%</strong></div><span class="chip" data-nl="alleen Airbnb">Airbnb only</span></div>
+          <div class="dsite off"><div class="dbar"><i></i><i></i><i></i><span data-nl="Geen eigen website">No website of your own</span></div><div class="dbody"><span data-nl="Terugkerende gasten moeten via Airbnb boeken">Repeat guests have to book through Airbnb</span></div></div>
         </div></div><div class="pf" data-nl="Voor">Before</div></div>
         <div class="pc"><div class="pm a"><div class="ui">
-          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong data-nl="0–15,5%">0–15.5%</strong></div><span class="chip" data-nl="6 kanalen · 1 kalender">6 channels · 1 calendar</span></div>
-          <div class="chans"><span>Airbnb</span><span>Booking.com</span><span>Vrbo</span><span>Micazu</span><span>Google</span><span data-nl="Eigen site">Direct site</span></div>
+          <div class="uh"><div><small data-nl="Kosten bij direct boeken">Fee on direct bookings</small><strong>0%</strong></div><span class="chip" data-nl="+ Airbnb, Booking.com, Vrbo · 1 kalender">+ Airbnb, Booking.com, Vrbo · 1 calendar</span></div>
+          <div class="dsite"><div class="dbar"><i></i><i></i><i></i><span>casacoral.com</span></div><div class="dbody"><b>Casa Coral · Jan Thiel</b><span class="dbtn" data-nl="Boek direct">Book direct</span></div></div>
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
       <div class="more"><a class="svc-more" data-svc="channels" href="#service/channels" data-nl="Lees meer →">Learn more →</a></div>
@@ -1121,7 +1128,7 @@ form.fpanel{transition:background .3s,border-color .3s}
       <div class="ch"><div class="n">05</div><div>
         <div class="eyebrow" data-nl="De woning">The Home</div>
         <h3 data-nl="Voorzieningen">Amenities</h3>
-        <p data-nl="De voorzieningen waar gasten op filteren en meer voor betalen. Van een koffiezetapparaat tot een zwembad, met lokale leveranciers die we kennen.">The amenities guests filter for and pay more for. From a coffee maker to a pool, with local suppliers we know.</p>
+        <p data-nl="Advies over wat je aan de woning toevoegt, zodat je verschijnt in de filters waar gasten op zoeken en er op elke foto beter uitziet. Van een koffiezetapparaat tot een zwembad.">Advice on what to add to your home, so it shows up in the filters guests search by and looks better in every photo. From a coffee maker to a pool.</p>
       </div></div>
       <div class="pair">
         <div class="pc"><div class="pm b"><div class="ui">
@@ -1133,6 +1140,7 @@ form.fpanel{transition:background .3s,border-color .3s}
           <div class="chans"><span>Wifi</span><span>AC</span><span data-nl="Zwembad">Pool</span><span data-nl="Werkplek">Workspace</span><span data-nl="Koffiezetapparaat">Coffee maker</span><span data-nl="Nieuwe inrichting">New interiors</span></div>
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
+      <div class="more"><a class="svc-more" data-svc="amenities" href="#service/amenities" data-nl="Lees meer →">Learn more →</a></div>
     </article>
 
   </div>
@@ -1144,7 +1152,7 @@ form.fpanel{transition:background .3s,border-color .3s}
     <div class="pq-copy">
       <div class="eyebrow" data-nl="Prijzen">Pricing</div>
       <h2 data-nl="Eerst de data.<br/>Dan een offerte.">Data first.<br/>Then a quote.</h2>
-      <p data-nl="We beginnen met een gratis Concurrentierapport. Zit er ruimte in, dan offreren we het werk dat volgens de marktdata het meest oplevert.">We start with a free Revenue Check. Where there’s room to grow, we quote the work the market data says is most likely to pay off.</p>
+      <p data-nl="We offreren het werk dat volgens de marktdata het meest oplevert.">We quote the work the market data says is most likely to pay off.</p>
       <div class="pq-steps">
         <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Concurrentierapport">Revenue Check</span></div>
         <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span></div>
@@ -1286,6 +1294,8 @@ const CONFIG = {
   whatsappNumber: '59996715561'
 };
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+/* Campaign tag from the page URL (utm_source/utm_campaign), shared by both forms */
+const utm = () => { const q = new URLSearchParams(location.search); return q.get('utm_source') ? q.get('utm_source') + (q.get('utm_campaign') ? '/' + q.get('utm_campaign') : '') : ''; };
 
 /* WhatsApp country codes: every country, the islands and our main markets first.
    Each entry is ISO code, dialling code, length of a national number; the
@@ -1330,7 +1340,6 @@ $$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.creat
 /* ===== SERVICE DETAIL PAGES ===== */
 const SERVICES = {
   pricing: {
-    order: ['pricing','photos','copy','channels'],
     title: { en: 'Pricing & Calendar', nl: 'Prijs en kalender' },
     eyebrow: { en: 'The Numbers', nl: 'De cijfers' },
     h2: { en: 'Your calendar is a pricing<br/>decision, 365 times a year.', nl: 'Je kalender is 365 keer<br/>per jaar een prijsbeslissing.' },
@@ -1387,28 +1396,45 @@ const SERVICES = {
     why: { en: 'Copy does two jobs. It converts the traffic your photos already earned, and it decides which searches you appear in at all. It also protects revenue you have already booked. Accurate expectations mean fewer cancellations, fewer refund requests and better reviews, and reviews feed straight back into ranking.', nl: 'Tekst doet twee dingen. Het zet het bezoek om dat je foto’s al verdienden, en het bepaalt in welke zoekopdrachten je überhaupt verschijnt. Het beschermt ook omzet die je al geboekt hebt. Kloppende verwachtingen betekenen minder annuleringen, minder verzoeken om geld terug en betere reviews, en reviews voeden je positie weer.' }
   },
   channels: {
-    title: { en: 'Everywhere Guests Book', nl: 'Overal waar gasten boeken' },
-    eyebrow: { en: 'The Presence', nl: 'De aanwezigheid' },
-    h2: { en: 'One home.<br/>Every place guests look.', nl: 'Eén woning.<br/>Overal waar gasten kijken.' },
-    sub: { en: 'Reach the guests Airbnb does not send you, and keep more of what you earn.', nl: 'Bereik de gasten die Airbnb je niet stuurt, en houd meer over van wat je verdient.' },
+    title: { en: 'Your Own Booking Site', nl: 'Je eigen boekingssite' },
+    eyebrow: { en: 'Direct Bookings', nl: 'Direct boeken' },
+    h2: { en: 'Your guests.<br/>Your site. No 15.5%.', nl: 'Jouw gasten.<br/>Jouw site. Geen 15,5%.' },
+    sub: { en: 'Airbnb now charges hosts 15.5% on every booking. A direct booking site lets the guests who already know you book without it.', nl: 'Airbnb rekent hosts nu 15,5% op elke boeking. Met een eigen boekingssite boeken gasten die je al kennen zonder die kosten.' },
     points: [
-      { h: { en: 'Different platforms, different guests', nl: 'Andere platforms, andere gasten' },
-        p: { en: 'Booking.com skews European and books later and shorter. Vrbo skews families and longer stays. These are separate demand pools, not the same people seeing you twice.', nl: 'Booking.com is Europeser en boekt later en korter. Vrbo trekt gezinnen en langere verblijven. Dit zijn aparte vraagbronnen, niet dezelfde mensen die je twee keer zien.' } },
-      { h: { en: 'What each booking actually costs you', nl: 'Wat elke boeking je echt kost' },
-        p: { en: 'Roughly fifteen percent on the big platforms, versus card processing on a direct booking. Same guest, same week, very different margin.', nl: 'Ruwweg vijftien procent op de grote platforms, tegenover alleen transactiekosten bij een directe boeking. Dezelfde gast, dezelfde week, een heel andere marge.' } },
-      { h: { en: 'Direct booking is the long game', nl: 'Direct boeken is het lange spel' },
-        p: { en: 'Your own booking page turns repeat guests and referrals into full margin revenue, and gives you a guest list you own rather than rent.', nl: 'Je eigen boekingspagina maakt van terugkerende gasten en aanbevelingen omzet met volle marge, en geeft je een gastenlijst die van jou is in plaats van gehuurd.' } },
+      { h: { en: 'A site that books', nl: 'Een site die boekt' },
+        p: { en: 'Your own domain with live availability, secure payments and instant confirmation. Built to turn a visit into a booking, not just to look good.', nl: 'Je eigen domein met live beschikbaarheid, veilige betalingen en directe bevestiging. Gemaakt om een bezoek in een boeking om te zetten, niet alleen om mooi te zijn.' } },
+      { h: { en: 'Keep the 15.5%', nl: 'Houd de 15,5% zelf' },
+        p: { en: 'On a direct booking you pay card processing, not a platform fee. Same guest, same week, a very different margin.', nl: 'Bij een directe boeking betaal je transactiekosten, geen platformkosten. Dezelfde gast, dezelfde week, een heel andere marge.' } },
+      { h: { en: 'Repeat guests and referrals', nl: 'Terugkerende gasten en aanbevelingen' },
+        p: { en: 'The guests most likely to book direct are the ones who already stayed or heard about you. Your site gives them a reason and a place to do it.', nl: 'De gasten die het snelst direct boeken, hebben al bij je gelogeerd of over je gehoord. Je site geeft ze een reden en een plek om dat te doen.' } },
+      { h: { en: 'A guest list you own', nl: 'Een gastenlijst die van jou is' },
+        p: { en: 'Direct bookings come with the guest’s own contact details, so you can welcome them back without a platform in between.', nl: 'Directe boekingen komen met de eigen contactgegevens van de gast, zodat je ze zonder platform ertussen opnieuw kunt verwelkomen.' } },
+      { h: { en: 'Other channels, where they pay off', nl: 'Andere kanalen, waar ze lonen' },
+        p: { en: 'Booking.com, Vrbo and Google Vacation Rentals reach different guests. We add them only where the market data says it’s worth it.', nl: 'Booking.com, Vrbo en Google Vacation Rentals bereiken andere gasten. We voegen ze alleen toe waar de marktdata zegt dat het loont.' } },
       { h: { en: 'One calendar, no double bookings', nl: 'Eén kalender, geen dubbele boekingen' },
-        p: { en: 'The reason most owners stay on one platform. A channel manager syncs availability in near real time, which is what makes multi-listing safe instead of frightening.', nl: 'De reden dat de meeste eigenaren op één platform blijven. Een channel manager synchroniseert beschikbaarheid vrijwel direct, en dat maakt meerdere kanalen veilig in plaats van eng.' } },
-      { h: { en: 'Rate strategy across channels', nl: 'Prijsstrategie over kanalen heen' },
-        p: { en: 'Not identical pricing everywhere. Pricing that accounts for each platform’s fee structure and guest expectations, so you are never undercutting yourself.', nl: 'Niet overal dezelfde prijs. Prijzen die rekening houden met de kostenstructuur en verwachtingen per platform, zodat je jezelf nooit onderbiedt.' } },
-      { h: { en: 'Findable outside the platforms', nl: 'Vindbaar buiten de platforms' },
-        p: { en: 'Google Vacation Rentals, metasearch, and the niche channels that matter here specifically, including dive and long stay audiences.', nl: 'Google Vacation Rentals, metasearch, en de nichekanalen die hier echt tellen, waaronder duik- en langverblijfpubliek.' } }
+        p: { en: 'Your site and every channel share one synced calendar, so selling in more places stays safe.', nl: 'Je site en elk kanaal delen één gesynchroniseerde kalender, zodat verkopen op meer plekken veilig blijft.' } }
     ],
-    why: { en: 'Two reasons, and the second one is underrated. More channels means more demand pools, which is what fills the weeks Airbnb alone leaves empty. It also removes single platform risk. A ranking change or an account problem can take your revenue to zero overnight when one platform is your entire business.', nl: 'Twee redenen, en de tweede wordt onderschat. Meer kanalen betekent meer vraagbronnen, en dat vult de weken die Airbnb alleen leeg laat. Het haalt ook het risico van één platform weg. Een verandering in de ranking of een probleem met je account kan je omzet van de ene op de andere dag op nul zetten als één platform je hele bedrijf is.' }
+    why: { en: 'Two reasons. Every direct booking keeps the 15.5% Airbnb would have charged you. And it lowers your risk: when one platform is your whole business, a ranking change or an account problem can empty your calendar overnight.', nl: 'Twee redenen. Elke directe boeking bespaart je de 15,5% die Airbnb je anders rekent. En het verlaagt je risico: als één platform je hele bedrijf is, kan een verandering in de ranking of een probleem met je account je kalender van de ene op de andere dag leegmaken.' }
+  },
+  amenities: {
+    title: { en: 'Amenities', nl: 'Voorzieningen' },
+    eyebrow: { en: 'The Home', nl: 'De woning' },
+    h2: { en: 'Guests filter first.<br/>Then they compare.', nl: 'Gasten filteren eerst.<br/>Daarna vergelijken ze.' },
+    sub: { en: 'Clear advice on what to add to your home, so it shows up in more searches and looks better in every photo.', nl: 'Helder advies over wat je aan je woning toevoegt, zodat je in meer zoekopdrachten verschijnt en er op elke foto beter uitziet.' },
+    points: [
+      { h: { en: 'Match the filters', nl: 'Pas bij de filters' },
+        p: { en: 'We check which amenities guests in your area filter for, like a pool, a workspace or fast wifi, and which ones your competitors already list.', nl: 'We kijken op welke voorzieningen gasten in jouw omgeving filteren, zoals een zwembad, een werkplek of snelle wifi, en welke je concurrenten al aanbieden.' } },
+      { h: { en: 'Upgrade what the camera sees', nl: 'Verbeter wat de camera ziet' },
+        p: { en: 'Furniture, linens and finishes show up in every photo. We point out the changes that make the biggest difference on screen.', nl: 'Meubels, linnengoed en afwerking zie je op elke foto. We wijzen de veranderingen aan die op het scherm het meeste verschil maken.' } },
+      { h: { en: 'Ranked by payoff', nl: 'Gerangschikt op rendement' },
+        p: { en: 'Quick, low-cost fixes first. Bigger investments only where the market data supports them.', nl: 'Snelle, goedkope verbeteringen eerst. Grotere investeringen alleen waar de marktdata ze ondersteunt.' } },
+      { h: { en: 'You choose who does the work', nl: 'Jij kiest wie het werk doet' },
+        p: { en: 'We advise, you decide. Later on, we hope to introduce trusted local suppliers for things like pools and furniture.', nl: 'Wij adviseren, jij beslist. Later hopen we je te kunnen voorstellen aan betrouwbare lokale leveranciers voor bijvoorbeeld zwembaden en meubels.' } }
+    ],
+    why: { en: 'Guests narrow their search with filters before they look at a single photo. A missing amenity can hide your home from the guests most likely to book it, and a dated room can make a fair price feel too high. Small changes often fix both.', nl: 'Gasten verkleinen hun zoekopdracht met filters voordat ze één foto bekijken. Een ontbrekende voorziening kan je woning verbergen voor de gasten die het snelst zouden boeken, en een gedateerde kamer kan een eerlijke prijs te hoog laten voelen. Kleine veranderingen lossen vaak allebei op.' }
   }
 };
-const SVC_ORDER = ['pricing','photos','copy','channels'];
+const SVC_ORDER = ['pricing','photos','copy','channels','amenities'];
 const T = { covers: { en: 'What this covers', nl: 'Wat dit inhoudt' },
             why: { en: 'Why it matters', nl: 'Waarom het uitmaakt' },
             before: { en: 'Before and after', nl: 'Voor en na' },
@@ -1559,7 +1585,7 @@ const EST = {
 let estSize = 'br3', fStep = 1, ignoreRev = false;
 const money = n => '$' + Math.round(n).toLocaleString(document.documentElement.lang === 'nl' ? 'nl-NL' : 'en-US');
 const SIZE_W = { st: ['studio', 'studio'], br1: ['1-bedroom', '1-slaapkamer'], br2: ['2-bedroom', '2-slaapkamer'], br3: ['3-bedroom', '3-slaapkamer'], br4: ['4-bedroom', '4-slaapkamer'], br5: ['5-bedroom', '5-slaapkamer'], br6: ['6+ bedroom', '6+ slaapkamer'] };
-const BEDS = { st: '1', br1: '1', br2: '2', br3: '3', br4: '4', br5: '5', br6: '6+' };
+const BEDS = { st: 'studio', br1: '1', br2: '2', br3: '3', br4: '4', br5: '5', br6: '6+' };
 function renderEst() {
   const d = EST[estSize], you = (fStep === 2 && ignoreRev) ? 0 : (parseFloat($('#eIn').value) || 0);
   const w = t(SIZE_W[estSize][0], SIZE_W[estSize][1]);
@@ -1595,7 +1621,6 @@ function renderEst() {
   $('#gMedV').textContent = money(d.med) + t('/mo', '/mnd');
   $('#gTopV').textContent = money(d.top) + t('/mo', '/mnd');
   $('#gGap').textContent = t('The gap · ~' + money(Math.round((d.top - d.med) * 12 / 500) * 500) + ' a year', 'Het gat · ~' + money(Math.round((d.top - d.med) * 12 / 500) * 500) + ' per jaar');
-  $('#gSrc').textContent = t('Curaçao ' + w + ' homes, past 12 months (PriceLabs).', w.charAt(0).toUpperCase() + w.slice(1) + 'woningen op Curaçao, afgelopen 12 maanden (PriceLabs).');
   $('#fHow').textContent = $('#fMethod').hidden ? t('How we calculate this', 'Hoe we dit berekenen') : t('Hide the method', 'Verberg de methode');
 }
 const goStep = n => {
@@ -1658,11 +1683,12 @@ cForm.addEventListener('submit', async e => {
   const live = v('cStatus') === 'live';
   const picked = live ? $$('#cPlat .fchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.p) : [];
   const f = {
-    lang: document.documentElement.lang, source: 'website-check', interest: 'check',
+    form: 'main-page', lang: document.documentElement.lang, source: 'website-check', utm: utm(), interest: 'check',
+    requests: REQ_LABEL.check,
     estimatorRevenue: $('#eIn').value || '', estimatorArea: estSize,
     status: v('cStatus'),
     platforms: picked.map(k => PLAT[k]).join(', '),
-    url: live ? v('cListing') : t('launching soon', 'start binnenkort'),
+    url: live ? v('cListing') : 'launching soon',
     area: v('cArea'), propertyType: live ? '' : v('cType'), beds: BEDS[estSize],
     rentalType: '', management: v('cMgmt'), pricing: v('cPrice'),
     pool: live ? '' : ($('#cPool').checked ? 'yes' : 'no'), seaView: live ? '' : ($('#cSea').checked ? 'yes' : 'no'),
@@ -1690,7 +1716,7 @@ cForm.addEventListener('submit', async e => {
     $('#fDone').hidden = false;
     $('#fDone').textContent = noFit
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
-      : t('Got it. Your Revenue Check arrives within 24 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 24 uur.');
+      : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 48 uur.');
   } catch (x) {
     btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn Concurrentierapport aan →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
@@ -1786,12 +1812,13 @@ form.addEventListener('submit', async e => {
   const primary = ['check', 'strategy', 'listing', 'photos', 'direct', 'other', 'inquiry'].find(x => r.includes(x)) || '';
   const legacy = { check: 'check', strategy: 'strategy', listing: 'single', photos: 'photos', direct: 'single', other: 'single', inquiry: 'inquiry' }[primary] || '';
   const f = {
-    lang: document.documentElement.lang, source: $('#fSource').value, interest: legacy,
+    form: 'contact', lang: document.documentElement.lang, source: $('#fSource').value, utm: utm(), interest: legacy,
     requests: r.map(x => REQ_LABEL[x]).join(', '),
-    estimatorRevenue: $('#eIn').value || '', estimatorArea: estSize || '',
+    /* Only pass the calculator numbers on when the visitor actually used it */
+    estimatorRevenue: $('#eIn').value || '', estimatorArea: $('#eIn').value ? estSize : '',
     status: mode === 'none' ? '' : v('status'),
     platforms: plats.map(k => PL[k]).join(', '),
-    url: mode === 'none' ? t('not provided', 'niet opgegeven') : live ? v('listing') : t('launching soon', 'start binnenkort'),
+    url: mode === 'none' ? 'not provided' : live ? v('listing') : 'launching soon',
     area: mode === 'none' ? '' : v('area'),
     propertyType: mode !== 'none' && !live ? v('ptype') : '',
     beds: mode === 'none' ? '' : v('beds'),
@@ -1833,7 +1860,7 @@ form.addEventListener('submit', async e => {
     if (!res.ok) throw new Error();
     if (noFit) { form.innerHTML = done(t('We have your details and will be in touch.', 'We hebben je gegevens en nemen contact op.')); return; }
     const paid = legacy === 'strategy' && CONFIG.strategyBookingUrl;
-    form.innerHTML = done(paid ? t('Complete your booking on the payment page.', 'Rond je boeking af op de betaalpagina.') : t('We will be in touch within 24 hours.', 'We nemen binnen 24 uur contact op.'));
+    form.innerHTML = done(paid ? t('Complete your booking on the payment page.', 'Rond je boeking af op de betaalpagina.') : t('We will be in touch within 48 hours.', 'We nemen binnen 48 uur contact op.'));
     if (paid) window.open(CONFIG.strategyBookingUrl, '_blank');
   } catch (x) {
     sub.disabled = false; syncForm();
