@@ -765,6 +765,7 @@ form.fpanel{transition:background .3s,border-color .3s}
 .slot-ph.slot-svc{width:100%;height:clamp(180px,32vh,320px);border-radius:22px;margin:0 0 40px}
 @media(min-width:721px) and (max-height:860px){.slot-ph.slot-photo{max-width:380px;margin-top:20px}}
 @media(max-width:720px){.slot-ph.slot-photo{max-width:none;aspect-ratio:16/10;margin-top:20px}}
+.fdisc{margin:10px 0 0;font-size:11px;line-height:1.5;color:#8d9a96}
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;background:var(--char);z-index:1000;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s}
 .lb.on{opacity:1;pointer-events:auto}
@@ -788,6 +789,8 @@ form.fpanel{transition:background .3s,border-color .3s}
 .lb-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .lb-step{font-size:13px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap}
 .lb-step:hover{color:#d7a08e}
+.ba.ba-hero{margin:0 0 40px}.ba.ba-hero div{aspect-ratio:auto;height:clamp(200px,34vh,340px)}
+@media(max-width:720px){.ba.ba-hero div{height:clamp(150px,26vh,220px)}}
 .lb-side{position:fixed;top:50%;transform:translateY(-50%);z-index:3;display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .28s}
 .lb.on .lb-side{opacity:1;pointer-events:auto}
 .lb-prev{left:24px}.lb-next{right:24px}
@@ -884,7 +887,7 @@ window.slotMiss = function (img) {
     </a>
     <div class="navr">
       <button class="pill lang" id="lang" type="button" aria-label="Nederlands"><svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg><span>NL</span></button>
-      <a class="btn btn-outline check" href="#check" data-nl="Gratis Concurrentierapport ↗">Free Revenue Check ↗</a>
+      <a class="btn btn-outline check" href="#check" data-nl="Gratis Omzetcheck ↗">Free Revenue Check ↗</a>
     </div>
   </div>
 </header>
@@ -899,7 +902,7 @@ window.slotMiss = function (img) {
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
       <p class="hero-sub" data-nl="We gebruiken echte marktdata om het volledige potentieel van je woning op Curaçao bloot te leggen.<br/>Daarna helpen we je het te bereiken, van prijs en foto's tot tekst en je eigen boekingssite.">We use real market data to uncover your Curaçao rental's full potential.<br/>Then we help you reach it, from pricing and photos to copy and your own booking site.</p>
       <div class="hero-actions">
-        <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Concurrentierapport aan →">Get your free Revenue Check →</a>
+        <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Omzetcheck aan →">Get your free Revenue Check →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
     </div>
@@ -947,7 +950,7 @@ window.slotMiss = function (img) {
     </div>
     <div class="lk-foot">
       <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
-      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-nl="Gratis Concurrentierapport ↓">Free Revenue Check ↓</a></div>
+      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-nl="Gratis Omzetcheck ↓">Free Revenue Check ↓</a></div>
     </div>
   </div>
 </section>
@@ -957,7 +960,7 @@ window.slotMiss = function (img) {
   <!-- IMAGE SLOT: assets/bg-revenue-check.jpg (texture, shown faintly) -->
   <img class="slot slot-bg" src="assets/bg-revenue-check.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
   <div class="wrap rcf">
-    <div class="eyebrow" data-nl="Gratis Concurrentierapport">Free Revenue Check</div>
+    <div class="eyebrow" data-nl="Gratis Omzetcheck">Free Revenue Check</div>
     <h2 id="fHead"></h2>
     <div class="fbig" id="fBig"></div>
     <p class="fbignote" id="fBigNote"></p>
@@ -1033,7 +1036,7 @@ window.slotMiss = function (img) {
           </div>
         </div>
         <div class="factions">
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn Concurrentierapport aan →">Get my free Revenue Check →</button>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn gratis Omzetcheck aan →">Get my free Revenue Check →</button>
         </div>
       </div>
 
@@ -1170,7 +1173,7 @@ window.slotMiss = function (img) {
     <!-- 04 DIRECT -->
     <article class="card s4">
       <div class="ch"><div class="n">04</div><div>
-        <div class="eyebrow" data-nl="Direct boeken">Direct Bookings</div>
+        <div class="eyebrow" data-nl="Kanalen">Channels</div>
         <h3 data-nl="Je eigen boekingssite">Your Own Booking Site</h3>
         <p data-nl="Airbnb rekent hosts nu 15,5% per boeking. Met je eigen site boeken terugkerende gasten direct, zonder kosten. Andere kanalen komen op de tweede plaats.">Airbnb now charges hosts 15.5% a booking. Your own site lets repeat guests book direct, fee-free. Other channels come second.</p>
       </div></div>
@@ -1220,7 +1223,7 @@ window.slotMiss = function (img) {
       <h2 data-nl="Eerst de data.<br/>Dan een offerte.">Data first.<br/>Then a quote.</h2>
       <p data-nl="We offreren het werk dat volgens de marktdata het meest oplevert.">We quote the work the market data says is most likely to pay off.</p>
       <div class="pq-steps">
-        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Concurrentierapport">Revenue Check</span></div>
+        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Omzetcheck">Revenue Check</span></div>
         <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span></div>
         <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span></div>
       </div>
@@ -1274,9 +1277,9 @@ window.slotMiss = function (img) {
       <img class="slot slot-photo" src="assets/photo-faq.jpg" alt="" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/></div>
     <div>
       <details open><summary data-nl="Zijn jullie een beheerder?">Are you a property manager?</summary><p data-nl="Nee. We doen de commerciële kant: prijzen, presentatie en kanalen. Schoonmaak, sleutels en gasten blijven bij jou of bij wie je nu helpt.">No. We handle the commercial side: pricing, presentation and channels. Cleaning, keys and guests stay with you or whoever helps you now.</p></details>
-      <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Je boekingskanalen, je pricing tool en je PMS staan op jouw naam. Wij werken er als teamlid in.">You do. Your booking channels, your pricing tool and your PMS stay in your name. We work inside them as team members.</p></details>
-      <details><summary data-nl="Wat als mijn woning al goed presteert?">What if my listing already performs well?</summary><p data-nl="Dan laat de strategie dat zien, en meestal ook waar nog ruimte zit. Daarna beslis je zelf.">Then the strategy will show it, and usually where there's still room. You decide from there.</p></details>
-      <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Fotografie' bij 'Ik wil graag' in het formulier. Wil je ook zien wat je woning zou kunnen verdienen? Kies er dan het gratis Concurrentierapport bij.">Yes. In the form, pick "Photography" under "I'd like". Curious what your listing could earn too? Add the free Revenue Check.</p></details>
+      <details><summary data-nl="Wie is eigenaar van mijn accounts?">Who owns my accounts?</summary><p data-nl="Jij. Je boekingskanalen en accounts staan op jouw naam. Soms koppelen we ze aan onze eigen tools om het werk te doen, maar ze blijven altijd van jou.">You do. Your booking channels and accounts stay in your name. In some cases we connect them to our own tools to do the work, but they always remain yours.</p></details>
+      <details><summary data-nl="Wat als mijn woning al goed presteert?">What if my listing already performs well?</summary><p data-nl="Dan bevestigt de Omzetcheck dat, en laat het meestal ook zien waar nog ruimte zit. Daarna beslis je zelf.">Then the Revenue Check will confirm it, and usually show where there's still room. You decide from there.</p></details>
+      <details><summary data-nl="Kan ik alleen foto's boeken?">Can I book just photos?</summary><p data-nl="Ja. Kies 'Fotografie' bij 'Ik wil graag' in het formulier. Wil je ook zien wat je woning zou kunnen verdienen? Kies er dan de gratis Omzetcheck bij.">Yes. In the form, pick "Photography" under "I'd like". Curious what your listing could earn too? Add the free Revenue Check.</p></details>
     </div>
   </div>
 </section>
@@ -1300,7 +1303,7 @@ window.slotMiss = function (img) {
 
         <div class="full lgh" data-nl="Je aanvraag">Request</div>
         <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
-          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Concurrentierapport">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijs- en kalenderoptimalisatie">Pricing &amp; Calendar Optimization</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct Booking Site</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
+          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetcheck">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijs- en kalenderoptimalisatie">Pricing &amp; Calendar Optimization</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct Booking Site</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
 
         <div class="full lgh lprop" data-nl="Over de woning">Property details</div>
         <div class="lprop"><label for="status" data-nl="Status">Status</label>
@@ -1338,11 +1341,12 @@ window.slotMiss = function (img) {
 <footer>
   <div class="wrap">
     <div class="fi"><span>© 2026 The House Atelier</span><span data-nl="Omzetstrategie voor vakantieverhuur · Curaçao">Revenue strategy for vacation rentals · Curaçao</span></div>
+    <p class="fdisc" data-nl="Onafhankelijk, niet verbonden aan Airbnb of enige OTA, PMS of pricing tool.">Independent, not affiliated with Airbnb or any OTA, PMS, or pricing tool.</p>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Concurrentierapport">Free Revenue Check</strong></div>
+  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Omzetcheck">Free Revenue Check</strong></div>
   <a class="btn check" href="#check" data-nl="Start →">Start →</a>
 </div>
 
@@ -1447,7 +1451,7 @@ const SERVICES = {
       { h: { en: 'Captions are free and almost always empty', nl: 'Bijschriften zijn gratis en bijna altijd leeg' },
         p: { en: 'Airbnb lets you caption every image. A caption handles an objection without making the guest ask.', nl: 'Airbnb laat je elke foto voorzien van een bijschrift. Een bijschrift neemt een bezwaar weg zonder dat de gast het hoeft te vragen.' } }
     ],
-    why: { en: 'Photography is the only lever that raises what people will pay without changing anything about the property. It also compounds. A better first photo lifts click-through, click-through feeds ranking, and ranking brings impressions you did not pay for. A rate increase without new photos is a gamble. With them it is a repositioning.', nl: 'Fotografie is de enige knop die verhoogt wat mensen willen betalen zonder iets aan de woning te veranderen. En het stapelt op. Een betere eerste foto verhoogt het doorklikken, doorklikken voedt je positie, en je positie levert vertoningen op waar je niet voor betaalt. Een prijsverhoging zonder nieuwe foto’s is gokken. Mét foto’s is het herpositioneren.' },
+    why: { en: 'Photography can raise what people will pay without changing anything about the property. It also compounds. A better first photo lifts click-through, click-through lifts bookings, and both feed your ranking, which brings impressions you did not pay for. A rate increase without new photos is a gamble. With them, it is a repositioning.', nl: 'Fotografie kan verhogen wat mensen willen betalen zonder iets aan de woning te veranderen. En het stapelt op. Een betere eerste foto verhoogt het doorklikken, doorklikken levert boekingen op, en allebei voeden ze je positie, die je vertoningen oplevert waar je niet voor betaalt. Een prijsverhoging zonder nieuwe foto’s is gokken. Mét foto’s is het herpositioneren.' },
     gallery: true
   },
   copy: {
@@ -1458,18 +1462,22 @@ const SERVICES = {
     points: [
       { h: { en: 'The title is the most read line you will ever write', nl: 'De titel is de meest gelezen regel die je ooit schrijft' },
         p: { en: '"Beautiful villa with pool" describes four hundred listings. Yours should carry the one thing a guest cannot get down the road.', nl: '"Mooie villa met zwembad" beschrijft vierhonderd advertenties. De jouwe moet het ene ding dragen dat een gast verderop niet krijgt.' } },
+      { h: { en: 'Found on Google, not just Airbnb', nl: 'Gevonden op Google, niet alleen op Airbnb' },
+        p: { en: 'Airbnb listings show up in Google search. A title, description and captions built around what guests actually type, like “villa with pool Jan Thiel”, put you in front of people before they ever open the app.', nl: 'Airbnb-advertenties verschijnen in Google. Een titel, beschrijving en bijschriften rond wat gasten echt intypen, zoals “villa met zwembad Jan Thiel”, zetten je voor mensen neer nog voordat ze de app openen.' } },
+      { h: { en: 'A name guests can come back to', nl: 'Een naam waar gasten naar terugkomen' },
+        p: { en: 'Guests find you on Airbnb. With a memorable property name, the next time they can look for you directly. Every guest who searches your name instead of the platform is a booking with no commission, and that matters more as platforms charge hosts more.', nl: 'Gasten vinden je via Airbnb. Met een naam die blijft hangen, kunnen ze je de volgende keer direct opzoeken. Elke gast die jouw naam zoekt in plaats van het platform, is een boeking zonder commissie, en dat telt zwaarder nu platforms hosts steeds meer rekenen.' } },
       { h: { en: 'The first hundred characters', nl: 'De eerste honderd tekens' },
         p: { en: 'That is all that shows before "read more". Most descriptions spend it on a greeting.', nl: 'Meer laat Airbnb niet zien vóór "lees meer". De meeste beschrijvingen besteden het aan een begroeting.' } },
       { h: { en: 'Objections, answered before they are asked', nl: 'Bezwaren, beantwoord voordat ze gesteld worden' },
         p: { en: 'Stairs, road access, which rooms have air conditioning, water pressure, wifi speed. Every unanswered question is a message you have to reply to, or a booking that quietly goes elsewhere.', nl: 'Trappen, de weg ernaartoe, welke kamers airco hebben, waterdruk, wifisnelheid. Elke onbeantwoorde vraag is een bericht dat je moet beantwoorden, of een boeking die stilletjes ergens anders heen gaat.' } },
       { h: { en: 'Amenities are search filters, not a checklist', nl: 'Voorzieningen zijn zoekfilters, geen afvinklijst' },
-        p: { en: 'If private pool is not ticked, you do not exist for anyone filtering on it. Incomplete amenities do not lower your ranking, they remove you from the search entirely.', nl: 'Staat privézwembad niet aangevinkt, dan besta je niet voor wie daarop filtert. Onvolledige voorzieningen verlagen je positie niet, ze halen je helemaal uit de zoekopdracht.' } }
+        p: { en: 'A filter is a yes or a no. Leave the coffee maker unticked and you vanish from that search just as completely as a home with no private pool. Missing amenities do not lower your ranking, they take you out of the results.', nl: 'Een filter is ja of nee. Vink je het koffiezetapparaat niet aan, dan verdwijn je net zo volledig uit die zoekopdracht als een woning zonder privézwembad. Ontbrekende voorzieningen verlagen je positie niet, ze halen je uit de resultaten.' } }
     ],
-    why: { en: 'Copy does two jobs. It converts the traffic your photos already earned, and it decides which searches you appear in at all. It also protects revenue you have already booked. Accurate expectations mean fewer cancellations, fewer refund requests and better reviews, and reviews feed straight back into ranking.', nl: 'Tekst doet twee dingen. Het zet het bezoek om dat je foto’s al verdienden, en het bepaalt in welke zoekopdrachten je überhaupt verschijnt. Het beschermt ook omzet die je al geboekt hebt. Kloppende verwachtingen betekenen minder annuleringen, minder verzoeken om geld terug en betere reviews, en reviews voeden je positie weer.' }
+    why: { en: 'Copy does three jobs. It turns the clicks your photos earned into bookings. It decides which searches you appear in, on Airbnb and on Google. And it builds a name guests can come back to directly, so each stay makes you a little less dependent on the platforms. Accurate copy also protects revenue you have already booked: fewer cancellations, fewer refund requests and better reviews, which feed straight back into ranking.', nl: 'Tekst doet drie dingen. Het maakt van de klikken die je foto’s verdienden boekingen. Het bepaalt in welke zoekopdrachten je verschijnt, op Airbnb en op Google. En het bouwt een naam op waar gasten direct naar terugkomen, zodat elk verblijf je iets minder afhankelijk maakt van de platforms. Kloppende tekst beschermt ook omzet die je al geboekt hebt: minder annuleringen, minder verzoeken om geld terug en betere reviews, en die voeden je positie weer.' }
   },
   channels: {
     title: { en: 'Your Own Booking Site', nl: 'Je eigen boekingssite' },
-    eyebrow: { en: 'Direct Bookings', nl: 'Direct boeken' },
+    eyebrow: { en: 'Channels', nl: 'Kanalen' },
     h2: { en: 'Your guests.<br/>Your site. No 15.5%.', nl: 'Jouw gasten.<br/>Jouw site. Geen 15,5%.' },
     sub: { en: 'Airbnb now charges hosts 15.5% on every booking. A direct booking site lets the guests who already know you book without it.', nl: 'Airbnb rekent hosts nu 15,5% op elke boeking. Met een eigen boekingssite boeken gasten die je al kennen zonder die kosten.' },
     points: [
@@ -1486,7 +1494,7 @@ const SERVICES = {
       { h: { en: 'One calendar, no double bookings', nl: 'Eén kalender, geen dubbele boekingen' },
         p: { en: 'Your site and every channel share one synced calendar, so selling in more places stays safe.', nl: 'Je site en elk kanaal delen één gesynchroniseerde kalender, zodat verkopen op meer plekken veilig blijft.' } }
     ],
-    why: { en: 'Two reasons. Every direct booking keeps the 15.5% Airbnb would have charged you. And it lowers your risk: when one platform is your whole business, a ranking change or an account problem can empty your calendar overnight.', nl: 'Twee redenen. Elke directe boeking bespaart je de 15,5% die Airbnb je anders rekent. En het verlaagt je risico: als één platform je hele bedrijf is, kan een verandering in de ranking of een probleem met je account je kalender van de ene op de andere dag leegmaken.' }
+    why: { en: 'Two reasons. Every direct booking keeps the 8 to 15.5% a booking platform would have charged you. And it lowers your risk: when one platform is your whole business, a ranking change or an account problem can empty your calendar overnight.', nl: 'Twee redenen. Elke directe boeking bespaart je de 8 tot 15,5% die een boekingsplatform je anders rekent. En het verlaagt je risico: als één platform je hele bedrijf is, kan een verandering in de ranking of een probleem met je account je kalender van de ene op de andere dag leegmaken.' }
   },
   amenities: {
     title: { en: 'Amenities', nl: 'Voorzieningen' },
@@ -1511,7 +1519,7 @@ const T = { covers: { en: 'What this covers', nl: 'Wat dit inhoudt' },
             why: { en: 'Why it matters', nl: 'Waarom het uitmaakt' },
             before: { en: 'Before and after', nl: 'Voor en na' },
             next: { en: 'Next', nl: 'Volgende' },
-            cta: { en: 'Get your free Revenue Check →', nl: 'Vraag je gratis Concurrentierapport aan →' } };
+            cta: { en: 'Get your free Revenue Check →', nl: 'Vraag je gratis Omzetcheck aan →' } };
 
 const lb = $('#lb');
 let curSvc = null;
@@ -1523,18 +1531,22 @@ function renderSvc(slug) {
   const nx = SVC_ORDER[(i + 1) % N], pv = SVC_ORDER[(i - 1 + N) % N];
   $('#lbTitle').textContent = s.title[l];
   /* IMAGE SLOT: assets/svc-<slug>.jpg (pricing, photos, copy, channels, amenities) */
-  let html = `<img class="slot slot-svc" src="assets/svc-${slug}.jpg" alt="" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>`;
+  /* Photography opens on its strongest before/after (pair 3) instead of a banner photo */
+  let html = slug === 'photos'
+    ? `<div class="ba ba-hero"><div style="background-image:url(assets/lightbox-3-before.jpg)"><span>${l === 'nl' ? 'Voor' : 'Before'}</span></div><div class="af" style="background-image:url(assets/lightbox-3-after.jpg)"><span>${l === 'nl' ? 'Na' : 'After'}</span></div></div>`
+    : `<img class="slot slot-svc" src="assets/svc-${slug}.jpg" alt="" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>`;
   html += `<div class="lb-intro"><div class="eyebrow" style="color:#d7a08e">${s.eyebrow[l]}</div><h2 id="lbH2">${s.h2[l]}</h2><p>${s.sub[l]}</p></div>`;
   html += `<p class="lb-sec">${T.covers[l]}</p><div class="lb-points">`;
   s.points.forEach((pt, n) => {
     html += `<div class="lb-pt"><span class="lb-n">${String(n + 1).padStart(2, '0')}</span><h4>${pt.h[l]}</h4><p>${pt.p[l]}</p></div>`;
   });
   html += `</div>`;
+  const pair = n => `<div class="ba"><div style="background-image:url(assets/lightbox-${n}-before.jpg)"><span>${l === 'nl' ? 'Voor' : 'Before'}</span></div><div class="af" style="background-image:url(assets/lightbox-${n}-after.jpg)"><span>${l === 'nl' ? 'Na' : 'After'}</span></div></div>`;
+  html += `<div class="lb-why"><h5>${T.why[l]}</h5><p>${s.why[l]}</p></div>`;
   if (s.gallery) {
     html += `<p class="lb-sec">${T.before[l]}</p>`;
-    html += [1,2,3,4,5].map(n => `<div class="ba"><div style="background-image:url(assets/lightbox-${n}-before.jpg)"><span>${l === 'nl' ? 'Voor' : 'Before'}</span></div><div class="af" style="background-image:url(assets/lightbox-${n}-after.jpg)"><span>${l === 'nl' ? 'Na' : 'After'}</span></div></div>`).join('');
+    html += [1,2,4,5].map(pair).join('');
   }
-  html += `<div class="lb-why"><h5>${T.why[l]}</h5><p>${s.why[l]}</p></div>`;
   html += `<div class="lb-foot"><a class="btn check" href="#check" data-close="1">${T.cta[l]}</a>` +
     `<span class="lb-nav">` +
       `<a class="lb-step" href="#service/${pv}">← ${SERVICES[pv].title[l]}</a>` +
@@ -1799,9 +1811,9 @@ cForm.addEventListener('submit', async e => {
     $('#fDone').hidden = false;
     $('#fDone').textContent = noFit
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
-      : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 48 uur.');
+      : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Omzetcheck komt binnen 48 uur.');
   } catch (x) {
-    btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn Concurrentierapport aan →');
+    btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn gratis Omzetcheck aan →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
     $('#fErr').style.display = 'block';
   }
@@ -1854,7 +1866,7 @@ function syncForm() {
   const needMsg = inq || mode === 'none';
   $('#msgLab').innerHTML = needMsg ? t('Your message', 'Je bericht') : t('Anything else? <span class="opt">(optional)</span>', 'Nog iets? <span class="opt">(optioneel)</span>');
   sub.textContent = (inq && r.length === 1) ? t('Send message →', 'Bericht versturen →')
-    : (r.length === 1 && r[0] === 'check') ? t('Get my free Revenue Check →', 'Vraag mijn gratis Concurrentierapport aan →')
+    : (r.length === 1 && r[0] === 'check') ? t('Get my free Revenue Check →', 'Vraag mijn gratis Omzetcheck aan →')
     : t('Send my request →', 'Verstuur mijn aanvraag →');
 }
 function setRequests(list) {
