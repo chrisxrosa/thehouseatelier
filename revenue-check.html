@@ -1236,6 +1236,8 @@ const syncStatus = () => {
   const st = $('#cStatus').value, live = st === 'live', soon = !!st && !live;
   $$('#checkForm .flive').forEach(el => el.hidden = !live);
   $$('#checkForm .fsoon').forEach(el => el.hidden = !soon);
+  /* Who runs it only applies to a home that is already live */
+  $('#cMgmt').closest('.ff').hidden = soon;
   const n = $$('#cPlat .fchip').filter(c => c.getAttribute('aria-pressed') === 'true').length;
   $('#cListLab').textContent = (n > 1 ? t('Your best listing', 'Je beste advertentie') : t('Your listing', 'Je advertentie'));
 };
@@ -1266,12 +1268,12 @@ cForm.addEventListener('submit', async e => {
     platforms: picked.map(k => PLAT[k]).join(', '),
     url: live ? v('cListing') : 'launching soon',
     area: v('cArea'), propertyType: live ? '' : v('cType'), beds: BEDS[estSize],
-    rentalType: '', management: v('cMgmt'), pricing: v('cPrice'),
+    rentalType: '', management: v('cStatus') && !live ? '' : v('cMgmt'), pricing: v('cPrice'),
     pool: live ? '' : ($('#cPool').checked ? 'yes' : 'no'), seaView: live ? '' : ($('#cSea').checked ? 'yes' : 'no'),
     name: v('cName'), email: v('cEmail'), whatsapp: v('cWa') ? dialOf('cCc') + ' ' + v('cWa') : '', message: v('cMsg')
   };
   const req = [['status', 'cStatus'], ['area', 'cArea'], ['management', 'cMgmt'], ['pricing', 'cPrice'], ['name', 'cName'], ['email', 'cEmail']];
-  if (f.status && !live) req.splice(2, 0, ['propertyType', 'cType']);
+  if (f.status && !live) { req.splice(2, 0, ['propertyType', 'cType']); req.splice(req.findIndex(([k]) => k === 'management'), 1); }
   const miss = req.filter(([k]) => !f[k]).map(([, id]) => $('#' + id));
   if (live && !picked.length) miss.splice(1, 0, $('#cPlat'));
   if (live && !v('cListing')) miss.splice(1, 0, $('#cListing'));
