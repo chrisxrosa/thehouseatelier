@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>The House Atelier | Well priced. Well shown. Well booked.</title>
-<meta name="description" content="Revenue strategy for Curaçao vacation rentals. Pricing first, then photography, listing copy and presence across Airbnb, Booking.com, Vrbo, Micazu, Google and your own booking site."/>
+<meta name="description" content="A vacation rental optimization studio on Curaçao. Dynamic pricing, listing photography, copy and SEO, and direct booking websites, built on real market data."/>
 <meta name="theme-color" content="#1b2524"/>
 <link rel="icon" type="image/png" href="assets/tha-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -770,6 +770,20 @@ form.fpanel{transition:background .3s,border-color .3s}
 @media(min-width:721px) and (max-height:860px){.slot-ph.slot-photo{max-width:380px;margin-top:20px}}
 @media(max-width:720px){.slot-ph.slot-photo{max-width:none;aspect-ratio:16/10;margin-top:20px}}
 .fdisc{margin:10px 0 0;font-size:11px;line-height:1.5;color:#8d9a96}
+/* FOOTER */
+footer.site-foot{padding:56px 0 30px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
+.fbrand-name{font-family:'Lora',serif;font-size:22px;color:#fffefa;letter-spacing:-.01em}
+.fbrand p{margin:10px 0 0;max-width:340px;font-size:13.5px;line-height:1.6;color:#9fb0aa}
+.fcol{display:flex;flex-direction:column;gap:10px}
+.fcol h4{margin:0 0 4px;font:700 11px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d7a08e}
+.fcol a{font-size:14px;color:#dfe6e3;width:fit-content}
+.fcol a:hover,.fbottom a:hover{color:#e8927a}
+.fbottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;font-size:12px;color:#85908c}
+.fbottom a{color:#b6c1bd;text-decoration:underline;text-underline-offset:3px}
+footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
+@media(max-width:860px){footer .ftnote{flex-basis:100%;order:3;text-align:left}}
+@media(max-width:860px){.fcols{grid-template-columns:1fr 1fr;gap:32px 24px}.fbrand{grid-column:1/-1}}
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;background:var(--char);z-index:1000;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s}
 .lb.on{opacity:1;pointer-events:auto}
@@ -1119,7 +1133,7 @@ window.slotMiss = function (img) {
     <article class="card s1">
       <div class="ch"><div class="n">01</div><div>
         <div class="eyebrow" data-nl="De cijfers">The Numbers</div>
-        <h3 data-nl="Prijs en kalender">Pricing &amp; Calendar</h3>
+        <h3 data-nl="Dynamische prijzen">Dynamic Pricing</h3>
         <p data-nl="Prijs op vraag, niet op gemiddelden. Seizoen, weekdagen en de concurrentie in jouw buurt.">Price for demand, not averages. Seasons, weekdays and the competition on your street.</p>
       </div></div>
       <div class="pair">
@@ -1141,7 +1155,7 @@ window.slotMiss = function (img) {
     <article class="card s2">
       <div class="ch"><div class="n">02</div><div>
         <div class="eyebrow" data-nl="Het beeld">The Visuals</div>
-        <h3 data-nl="Fotografie en volgorde">Photography &amp; Sequence</h3>
+        <h3 data-nl="Advertentiefotografie">Listing Photography</h3>
         <p data-nl="Je eerste vijf foto's hebben één taak: de klik verdienen en de prijs waard laten voelen.">Your first five photos have one job: earn the click and make the stay feel worth the price.</p>
       </div></div>
       <div class="pair">
@@ -1155,7 +1169,7 @@ window.slotMiss = function (img) {
     <article class="card s3">
       <div class="ch"><div class="n">03</div><div>
         <div class="eyebrow" data-nl="De belofte">The Promise</div>
-        <h3 data-nl="Advertentietekst en vindbaarheid">Listing Copy &amp; Search Optimization</h3>
+        <h3 data-nl="Advertentietekst en SEO">Listing Copy &amp; SEO</h3>
         <p data-nl="Maak het verblijf makkelijk te begrijpen en makkelijk om te willen. In drie talen.">Make the stay easy to understand and easy to want. In three languages.</p>
       </div></div>
       <div class="pair">
@@ -1177,7 +1191,7 @@ window.slotMiss = function (img) {
     <article class="card s4">
       <div class="ch"><div class="n">04</div><div>
         <div class="eyebrow" data-nl="Kanalen">Channels</div>
-        <h3 data-nl="Je eigen boekingssite">Your Own Booking Site</h3>
+        <h3 data-nl="Website voor direct boeken">Direct Booking Website</h3>
         <p data-nl="Airbnb rekent hosts nu 15,5% per boeking. Met je eigen site boeken terugkerende gasten direct, zonder kosten. Andere kanalen komen op de tweede plaats.">Airbnb now charges hosts 15.5% a booking. Your own site lets repeat guests book direct, fee-free. Other channels come second.</p>
       </div></div>
       <div class="pair">
@@ -1197,7 +1211,7 @@ window.slotMiss = function (img) {
     <article class="card s5">
       <div class="ch"><div class="n">05</div><div>
         <div class="eyebrow" data-nl="De woning">The Home</div>
-        <h3 data-nl="Voorzieningen">Amenities</h3>
+        <h3 data-nl="Advies over voorzieningen">Amenity Advice</h3>
         <p data-nl="Advies over wat je aan de woning toevoegt, zodat je verschijnt in de filters waar gasten op zoeken en er op elke foto beter uitziet. Van een koffiezetapparaat tot een zwembad.">Advice on what to add to your home, so it shows up in the filters guests search by and looks better in every photo. From a coffee maker to a pool.</p>
       </div></div>
       <div class="pair">
@@ -1240,7 +1254,7 @@ window.slotMiss = function (img) {
         <div><small data-nl="Je offerte">Your quote</small><b>Casa Coral</b><span data-nl="3 slk · Jan Thiel">3 bed · Jan Thiel</span></div>
         <em data-nl="Voorbeeld">Sample</em>
       </div>
-      <div class="qline"><span data-nl="Prijs en kalender">Pricing &amp; Calendar</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Dynamische prijzen">Dynamic Pricing</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline"><span data-nl="Fotografie">Photography</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline"><span data-nl="Advertentietekst (EN · NL · ES)">Listing copy (EN · NL · ES)</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline strong"><span data-nl="Je investering">Your investment</span><span data-nl="Eén helder totaal">One clear total</span></div>
@@ -1306,7 +1320,7 @@ window.slotMiss = function (img) {
 
         <div class="full lgh" data-nl="Je aanvraag">Request</div>
         <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
-          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetcheck">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijs- en kalenderoptimalisatie">Pricing &amp; Calendar Optimization</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct Booking Site</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
+          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetcheck">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Dynamische prijzen">Dynamic Pricing</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Website voor direct boeken">Direct Booking Website</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
 
         <div class="full lgh lprop" data-nl="Over de woning">Property details</div>
         <div class="lprop"><label for="status" data-nl="Status">Status</label>
@@ -1341,10 +1355,35 @@ window.slotMiss = function (img) {
 </section>
 </main>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
-    <div class="fi"><span>© 2026 The House Atelier</span><span data-nl="Omzetstrategie voor vakantieverhuur · Curaçao">Revenue strategy for vacation rentals · Curaçao</span></div>
-    <p class="fdisc" data-nl="Onafhankelijk, niet verbonden aan Airbnb of enige OTA, PMS of pricing tool.">Independent, not affiliated with Airbnb or any OTA, PMS, or pricing tool.</p>
+    <div class="fcols">
+      <div class="fbrand">
+        <a class="fbrand-name" href="#top">The House Atelier</a>
+        <p data-nl="Een optimalisatiestudio voor vakantieverhuur op Curaçao. Prijzen, presentatie en direct boeken, op basis van echte marktdata.">A vacation rental optimization studio on Curaçao. Pricing, presentation and direct bookings, built on real market data.</p>
+      </div>
+      <nav class="fcol" aria-label="Services">
+        <h4 data-nl="Diensten">Services</h4>
+        <a href="#service/pricing" data-nl="Dynamische prijzen">Dynamic Pricing</a>
+        <a href="#service/photos" data-nl="Advertentiefotografie">Listing Photography</a>
+        <a href="#service/copy" data-nl="Advertentietekst en SEO">Listing Copy &amp; SEO</a>
+        <a href="#service/channels" data-nl="Website voor direct boeken">Direct Booking Website</a>
+        <a href="#service/amenities" data-nl="Advies over voorzieningen">Amenity Advice</a>
+      </nav>
+      <nav class="fcol" aria-label="Get started">
+        <h4 data-nl="Aan de slag">Get started</h4>
+        <a class="check" href="#check" data-nl="Gratis Omzetcheck">Free Revenue Check</a>
+        <a href="#modules" data-nl="Prijzen">Pricing</a>
+        <a href="#faq" data-nl="Veelgestelde vragen">FAQ</a>
+        <a href="#contact" data-nl="Contact">Contact</a>
+        <a class="waFoot" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+      </nav>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 The House Atelier · <span data-nl="Curaçao">Curaçao</span></span>
+      <span class="ftnote" data-nl="Onafhankelijk, niet verbonden aan Airbnb of enige OTA, PMS of pricing tool.">Independent, not affiliated with Airbnb or any OTA, PMS, or pricing tool.</span>
+      <a href="privacy.html" data-nl="Privacy">Privacy</a>
+    </div>
   </div>
 </footer>
 
@@ -1423,7 +1462,7 @@ $$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.creat
 /* ===== SERVICE DETAIL PAGES ===== */
 const SERVICES = {
   pricing: {
-    title: { en: 'Pricing & Calendar', nl: 'Prijs en kalender' },
+    title: { en: 'Dynamic Pricing', nl: 'Dynamische prijzen' },
     eyebrow: { en: 'The Numbers', nl: 'De cijfers' },
     h2: { en: 'Your calendar is a pricing<br/>decision, 365 times a year.', nl: 'Je kalender is 365 keer<br/>per jaar een prijsbeslissing.' },
     sub: { en: 'Most owners set one rate and adjust when it hurts. That gap is the easiest money on the table.', nl: 'De meeste eigenaren zetten één tarief en passen aan als het pijn doet. Dat gat is het makkelijkste geld dat blijft liggen.' },
@@ -1444,7 +1483,7 @@ const SERVICES = {
     why: { en: 'This is the fastest lever you have. No trades, no shoot, no rewrite, and changes take effect the same day. It is also the only lever that loses money invisibly. You never see the bookings you did not get, so the loss never shows up as a problem. That is why we always start here.', nl: 'Dit is de snelste knop die je hebt. Geen vaklui, geen fotoshoot, geen herschrijving, en aanpassingen werken dezelfde dag. Het is ook de enige knop die onzichtbaar geld kost. Je ziet de boekingen die je niet kreeg nooit, dus het verlies valt nooit op. Daarom beginnen we hier altijd.' }
   },
   photos: {
-    title: { en: 'Photography & Sequence', nl: 'Fotografie en volgorde' },
+    title: { en: 'Listing Photography', nl: 'Advertentiefotografie' },
     eyebrow: { en: 'The Visuals', nl: 'Het beeld' },
     h2: { en: 'Same place.<br/>Higher perceived value.', nl: 'Dezelfde plek.<br/>Meer waarde.' },
     sub: { en: 'Better photography shows quality before a guest reads a word.', nl: 'Goede foto’s laten kwaliteit zien voordat een gast één woord leest.' },
@@ -1462,7 +1501,7 @@ const SERVICES = {
     gallery: true
   },
   copy: {
-    title: { en: 'Listing Copy & Search', nl: 'Advertentietekst en vindbaarheid' },
+    title: { en: 'Listing Copy & SEO', nl: 'Advertentietekst en SEO' },
     eyebrow: { en: 'The Promise', nl: 'De belofte' },
     h2: { en: 'Easy to understand.<br/>Easy to want.', nl: 'Makkelijk te begrijpen.<br/>Makkelijk om te willen.' },
     sub: { en: 'Photos earn the click. Copy turns it into a booking, in the guest’s own language.', nl: 'Foto’s verdienen de klik. Tekst maakt er een boeking van, in de taal van de gast.' },
@@ -1483,7 +1522,7 @@ const SERVICES = {
     why: { en: 'Copy does three jobs. It turns the clicks your photos earned into bookings. It decides which searches you appear in, on Airbnb and on Google. And it builds a name guests can come back to directly, so each stay makes you a little less dependent on the platforms. Accurate copy also protects revenue you have already booked: fewer cancellations, fewer refund requests and better reviews, which feed straight back into ranking.', nl: 'Tekst doet drie dingen. Het maakt van de klikken die je foto’s verdienden boekingen. Het bepaalt in welke zoekopdrachten je verschijnt, op Airbnb en op Google. En het bouwt een naam op waar gasten direct naar terugkomen, zodat elk verblijf je iets minder afhankelijk maakt van de platforms. Kloppende tekst beschermt ook omzet die je al geboekt hebt: minder annuleringen, minder verzoeken om geld terug en betere reviews, en die voeden je positie weer.' }
   },
   channels: {
-    title: { en: 'Your Own Booking Site', nl: 'Je eigen boekingssite' },
+    title: { en: 'Direct Booking Website', nl: 'Website voor direct boeken' },
     eyebrow: { en: 'Channels', nl: 'Kanalen' },
     h2: { en: 'Your guests.<br/>Your site. No 15.5%.', nl: 'Jouw gasten.<br/>Jouw site. Geen 15,5%.' },
     sub: { en: 'Airbnb now charges hosts 15.5% on every booking. A direct booking site lets the guests who already know you book without it.', nl: 'Airbnb rekent hosts nu 15,5% op elke boeking. Met een eigen boekingssite boeken gasten die je al kennen zonder die kosten.' },
@@ -1504,7 +1543,7 @@ const SERVICES = {
     why: { en: 'Two reasons. Every direct booking keeps the 8 to 15.5% a booking platform would have charged you. And it lowers your risk: when one platform is your whole business, a ranking change or an account problem can empty your calendar overnight.', nl: 'Twee redenen. Elke directe boeking bespaart je de 8 tot 15,5% die een boekingsplatform je anders rekent. En het verlaagt je risico: als één platform je hele bedrijf is, kan een verandering in de ranking of een probleem met je account je kalender van de ene op de andere dag leegmaken.' }
   },
   amenities: {
-    title: { en: 'Amenities', nl: 'Voorzieningen' },
+    title: { en: 'Amenity Advice', nl: 'Advies over voorzieningen' },
     eyebrow: { en: 'The Home', nl: 'De woning' },
     h2: { en: 'Guests filter first.<br/>Then they compare.', nl: 'Gasten filteren eerst.<br/>Daarna vergelijken ze.' },
     sub: { en: 'Clear advice on what to add to your home, so it shows up in more searches and looks better in every photo.', nl: 'Helder advies over wat je aan je woning toevoegt, zodat je in meer zoekopdrachten verschijnt en er op elke foto beter uitziet.' },
@@ -1639,7 +1678,7 @@ function setLang(l) {
   $('#lang').setAttribute('aria-label', l === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands');
   $('#fLang').value = l;
   const waHref = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(wa[l]);
-  $$('#waLink, #waLink2').forEach(a => { a.href = waHref; });
+  $$('#waLink, #waLink2, .waFoot').forEach(a => { a.href = waHref; });
   if (curSvc) renderSvc(curSvc);
   try { localStorage.setItem('tha-lang', l); } catch (e) {}
 }
@@ -1856,7 +1895,7 @@ form.querySelectorAll('select').forEach(el => el.addEventListener('change', () =
    - Photography and/or direct booking site only: no pricing or management questions.
    - General inquiry (exclusive) or Other only: no property questions; the message is required. */
 const PL = { airbnb: 'Airbnb', booking: 'Booking.com', vrbo: 'Vrbo', google: 'Google Vacation Rentals', micazu: 'Micazu', direct: 'Direct booking site' };
-const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Check', strategy: 'Pricing & Calendar Optimization', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Site', other: 'Other' };
+const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Check', strategy: 'Dynamic Pricing', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Website', other: 'Other' };
 const picked = sel => $$(sel + ' .lchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.r || c.dataset.p);
 const reqMode = r => !r.length ? 'none' : r.some(x => ['check', 'strategy', 'listing'].includes(x)) ? 'full' : r.some(x => ['photos', 'direct'].includes(x)) ? 'photo' : 'none';
 function syncForm() {
