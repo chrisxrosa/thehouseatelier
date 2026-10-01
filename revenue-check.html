@@ -53,7 +53,7 @@ html{scroll-padding-top:0}
 .pill:hover{background:#fff}
 
 /* HERO: header + hero = exactly one screen */
-.hero{height:calc(100svh - var(--header-h));min-height:0;padding:clamp(14px,3svh,32px) 0 clamp(18px,4svh,36px);background:var(--bone2);align-items:stretch;overflow:hidden}
+.hero{height:calc(100svh - var(--header-h));min-height:0;padding:clamp(16px,3.5svh,34px) 0;background:var(--bone2);align-items:stretch;overflow:hidden}
 .hero>.wrap{height:100%;display:flex;flex-direction:column}
 .hero-copy{flex:none;text-align:center;margin-bottom:clamp(14px,2.6svh,26px)}
 .hero h1{font-size:clamp(36px,min(5.8vw,8svh),78px);line-height:1.02;letter-spacing:-.04em;margin:0 auto clamp(8px,1.6svh,16px)}
@@ -218,7 +218,7 @@ html{scroll-padding-top:0}
 .pq-steps small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b6c1bd}
 .pq-steps .on small{color:#e8927a}
 .pq-steps span{display:block;font-size:15px;color:#fffefa;margin-top:6px}
-.pq-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:30px;font-size:14px;color:#b6c1bd}
+.pq-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:30px;font-size:14px;color:#b6c1bd}
 .pq-cta .wa2{color:#fff}
 .pq-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:30px 32px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg)}
 .pq-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px}
@@ -682,7 +682,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .gc p{font-size:12.5px}
   .intro h2{font-size:clamp(34px,3.6vw,46px)}
   .ag{grid-template-rows:88px 88px}
-  #levers{padding-top:calc(var(--header-h) + 30px)}
+  #levers{padding-top:calc(var(--header-h) + 36px)}
   .intro{margin-bottom:16px}
   .rail{padding-top:26px;padding-bottom:36px}
   .card{padding:18px 24px}.ch{margin-bottom:10px}
@@ -692,8 +692,8 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
   .gbar{height:54px}
   .gcards{margin-top:14px}
   .gap-foot{margin-top:14px}
-  #levers{padding-top:calc(var(--header-h) + 16px)}
-  .rail{padding-bottom:30px}
+  #levers{padding-top:calc(var(--header-h) + 22px)}
+  .rail{padding-bottom:22px}
 }
 /* Step 2: the panel turns into a light, traditional form card */
 form.fpanel{transition:background .3s,border-color .3s}
@@ -729,6 +729,44 @@ form.fpanel{transition:background .3s,border-color .3s}
   #check.s2 .factions{margin-top:8px;padding-top:8px}
   #check.s2 .fsend{min-height:42px}
 }
+/* Balance pass: every section centred in the space below the sticky header */
+#faq{padding-top:calc(var(--header-h) + 3px)}
+@media(min-width:721px) and (max-height:780px){
+  #check{padding-top:calc(var(--header-h) + 6px);padding-bottom:6px}
+  .fbig{font-size:clamp(54px,7vw,72px)}
+  #contact{padding-top:calc(var(--header-h) + 14px);padding-bottom:14px}
+  .contact h2{font-size:clamp(42px,5.2vw,70px)}
+}
+/* Optical centring: sections that open with a small eyebrow look bottom-heavy when
+   centred by the box alone, because the eye reads from the headline. Lift the
+   content by up to 14px, only where there is room to spare. */
+@media(min-width:721px) and (min-height:861px){#check:not(.s2)>.wrap{transform:translateY(-12px)}}
+/* Short laptop screens: no room for the eyebrow above the headline, which already says what this is */
+@media(min-width:721px) and (max-height:860px){#check .rcf>.eyebrow{display:none}#check:not(.s2)>.wrap{transform:translateY(-4px)}}
+@media(min-width:721px){
+  .market>.wrap,#gap>.wrap,#levers>.wrap,#levers>.rail{transform:translateY(calc(-1 * clamp(0px, (100vh - 780px) * .3, 14px)))}
+}
+/* IMAGE SLOTS: hidden until the matching file exists in /assets */
+.slot{display:none}
+.slot.on{display:block}
+#check,#modules{position:relative;isolation:isolate}
+#check>.wrap,#modules>.wrap{position:relative;z-index:1}
+.slot-bg.on{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;z-index:0;pointer-events:none}
+.slot-photo.on{width:100%;max-width:440px;aspect-ratio:3/2;object-fit:cover;border-radius:20px;margin-top:28px}
+.slot-contact.on{margin-top:26px;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
+.slot-svc.on{width:100%;height:clamp(180px,32vh,320px);object-fit:cover;border-radius:22px;margin:0 0 40px}
+@media(min-width:721px) and (max-height:860px){.slot-photo.on{max-width:380px;margin-top:20px}}
+@media(max-width:720px){.slot-photo.on{max-width:none;aspect-ratio:16/10;margin-top:20px}}
+/* Placeholders drawn only in ?slots preview mode */
+.slot-ph{box-sizing:border-box;border:2px dashed rgba(184,95,71,.7);background:repeating-linear-gradient(45deg,rgba(184,95,71,.07) 0 12px,transparent 12px 24px);display:grid;place-items:center;text-align:center}
+.slot-ph b{font:700 12px 'DM Sans',sans-serif;letter-spacing:.06em;color:#b85f47;background:#fdfbf7;padding:6px 10px;border-radius:999px}
+.slot-ph.slot-bg{position:absolute;inset:10px;z-index:0;pointer-events:none;place-items:end end;padding:14px;border-radius:18px}
+.slot-ph.slot-photo{width:100%;max-width:440px;aspect-ratio:3/2;border-radius:20px;margin-top:28px}
+.slot-ph.slot-contact{margin-top:26px}
+.slot-ph.slot-svc{width:100%;height:clamp(180px,32vh,320px);border-radius:22px;margin:0 0 40px}
+@media(min-width:721px) and (max-height:860px){.slot-ph.slot-photo{max-width:380px;margin-top:20px}}
+@media(max-width:720px){.slot-ph.slot-photo{max-width:none;aspect-ratio:16/10;margin-top:20px}}
+.fdisc{margin:10px 0 0;font-size:11px;line-height:1.5;color:#8d9a96}
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;background:var(--char);z-index:1000;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .28s}
 .lb.on{opacity:1;pointer-events:auto}
@@ -752,6 +790,21 @@ form.fpanel{transition:background .3s,border-color .3s}
 .lb-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .lb-step{font-size:13px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:4px;cursor:pointer;white-space:nowrap}
 .lb-step:hover{color:#d7a08e}
+.ba.ba-hero{margin:0 0 40px}.ba.ba-hero div{aspect-ratio:auto;height:clamp(200px,34vh,340px)}
+@media(max-width:720px){.ba.ba-hero div{height:clamp(150px,26vh,220px)}}
+.lb-side{position:fixed;top:50%;transform:translateY(-50%);z-index:3;display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;opacity:0;pointer-events:none;transition:opacity .28s}
+.lb.on .lb-side{opacity:1;pointer-events:auto}
+.lb-prev{left:24px}.lb-next{right:24px}
+.lb-side i{font-style:normal;flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:18px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(10px);transition:background .2s,border-color .2s}
+.lb-side span{max-width:0;overflow:hidden;white-space:nowrap;font-size:12px;font-weight:700;letter-spacing:.04em;color:#dfe6e3;transition:max-width .3s ease}
+.lb-side:hover i,.lb-side:focus-visible i{background:#e8927a;border-color:#e8927a;color:#1b2524}
+.lb-side:hover span,.lb-side:focus-visible span{max-width:260px;padding:8px 12px;background:rgba(27,37,36,.92);border-radius:999px}
+@media(max-width:1180px){.lb-side span{display:none}}
+@media(max-width:720px){
+  .lb-side{top:auto;bottom:16px;transform:none}
+  .lb-prev{left:14px}.lb-next{right:14px}
+  .lb-side i{width:46px;height:46px;background:rgba(27,37,36,.88)}
+}
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;margin-bottom:52px}
 .ba div{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:#2a3634 center/cover}
 .ba div span{position:absolute;left:14px;top:14px;padding:7px 9px;border-radius:999px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(27,37,36,.72);color:#fff}
@@ -848,6 +901,18 @@ form.fpanel{transition:background .3s,border-color .3s}
   .lp-me q{font-size:19px}
 }
 </style>
+<script>
+/* Image slots: an empty slot stays hidden. Add ?slots to the URL to see every
+   empty slot drawn as a labelled box at its real position and size. */
+window.slotMiss = function (img) {
+  img.classList.add('miss');
+  if (!/[?&]slots\b/.test(location.search)) return;
+  var d = document.createElement('div');
+  d.className = img.className.replace('slot ', 'slot-ph ').replace(' miss', '');
+  d.innerHTML = '<b>' + img.getAttribute('src').replace('assets/', '') + '</b>';
+  img.after(d);
+};
+</script>
 </head>
 <body>
 
@@ -859,7 +924,7 @@ form.fpanel{transition:background .3s,border-color .3s}
     </a>
     <div class="navr">
       <button class="pill lang" id="lang" type="button" aria-label="Nederlands"><svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg><span>NL</span></button>
-      <a class="btn btn-outline check" href="#check" data-nl="Gratis Concurrentierapport ↗">Free Revenue Check ↗</a>
+      <a class="btn btn-outline check" href="#check" data-nl="Gratis Omzetcheck ↗">Free Revenue Check ↗</a>
     </div>
   </div>
 </header>
@@ -868,8 +933,10 @@ form.fpanel{transition:background .3s,border-color .3s}
 
 <!-- REVENUE CHECK -->
 <section class="rc" id="check">
+  <!-- IMAGE SLOT: assets/bg-revenue-check.jpg (texture, shown faintly) -->
+  <img class="slot slot-bg" src="assets/bg-revenue-check.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
   <div class="wrap rcf">
-    <div class="eyebrow" data-nl="Gratis Concurrentierapport">Free Revenue Check</div>
+    <div class="eyebrow" data-nl="Gratis Omzetcheck">Free Revenue Check</div>
     <h2 id="fHead"></h2>
     <div class="fbig" id="fBig"></div>
     <p class="fbignote" id="fBigNote"></p>
@@ -945,7 +1012,7 @@ form.fpanel{transition:background .3s,border-color .3s}
           </div>
         </div>
         <div class="factions">
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn Concurrentierapport aan →">Get my free Revenue Check →</button>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn gratis Omzetcheck aan →">Get my free Revenue Check →</button>
         </div>
       </div>
 
@@ -985,10 +1052,10 @@ form.fpanel{transition:background .3s,border-color .3s}
     <div class="lp-faq">
       <div><h3 data-nl="Is het echt gratis?">Is it really free?</h3><p data-nl="Ja. Geen creditcard, geen verplichting. Zit er ruimte in, dan laten we zien hoeveel, en jij beslist.">Yes. No card, no obligation. If there’s room to grow, we show you how much, and you decide.</p></div>
       <div><h3 data-nl="Zijn jullie een beheerder?">Are you a property manager?</h3><p data-nl="Nee. Wij doen prijzen, presentatie en direct boeken. De sleutels en je gasten blijven bij jou.">No. We handle pricing, presentation and direct bookings. The keys and your guests stay with you.</p></div>
-      <div><h3 data-nl="Wat gebeurt er met mijn gegevens?">What happens to my details?</h3><p data-nl="We gebruiken ze alleen om je Concurrentierapport te maken en te sturen. We verkopen of delen niets.">We use them only to prepare and send your Revenue Check. Nothing is sold or shared.</p></div>
+      <div><h3 data-nl="Wat gebeurt er met mijn gegevens?">What happens to my details?</h3><p data-nl="We gebruiken ze alleen om je Omzetcheck te maken en te sturen. We verkopen of delen niets.">We use them only to prepare and send your Revenue Check. Nothing is sold or shared.</p></div>
     </div>
     <div class="lp-cta">
-      <a class="btn" href="#check" data-nl="Vraag je gratis Concurrentierapport aan ↑">Get my free Revenue Check ↑</a>
+      <a class="btn" href="#check" data-nl="Vraag je gratis Omzetcheck aan ↑">Get my free Revenue Check ↑</a>
       <span><span data-nl="Liever even chatten?">Rather chat?</span> <a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
     </div>
   </div>
@@ -998,11 +1065,12 @@ form.fpanel{transition:background .3s,border-color .3s}
 <footer>
   <div class="wrap">
     <div class="fi"><span>© 2026 The House Atelier</span><span data-nl="Omzetstrategie voor vakantieverhuur · Curaçao">Revenue strategy for vacation rentals · Curaçao</span></div>
+    <p class="fdisc" data-nl="Onafhankelijk, niet verbonden aan Airbnb of enige OTA, PMS of pricing tool.">Independent, not affiliated with Airbnb or any OTA, PMS, or pricing tool.</p>
   </div>
 </footer>
 
 <div class="mcta" id="mcta">
-  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Concurrentierapport">Free Revenue Check</strong></div>
+  <div><small data-nl="Waar sta jij?">Where do you stand?</small><strong data-nl="Gratis Omzetcheck">Free Revenue Check</strong></div>
   <a class="btn check" href="#check" data-nl="Start →">Start →</a>
 </div>
 
@@ -1013,6 +1081,8 @@ form.fpanel{transition:background .3s,border-color .3s}
     <div class="lb-title" id="lbTitle"></div>
     <span></span>
   </div>
+  <a class="lb-side lb-prev" id="lbPrev" href="#"><i aria-hidden="true">←</i><span></span></a>
+  <a class="lb-side lb-next" id="lbNext" href="#"><span></span><i aria-hidden="true">→</i></a>
   <div class="lb-body" id="lbBody"></div>
 </div>
 
@@ -1222,9 +1292,9 @@ cForm.addEventListener('submit', async e => {
     $('#fDone').hidden = false;
     $('#fDone').textContent = noFit
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
-      : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Concurrentierapport komt binnen 48 uur.');
+      : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Omzetcheck komt binnen 48 uur.');
   } catch (x) {
-    btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn Concurrentierapport aan →');
+    btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn gratis Omzetcheck aan →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
     $('#fErr').style.display = 'block';
   }
