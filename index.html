@@ -773,7 +773,8 @@ form.fpanel{transition:background .3s,border-color .3s}
 /* FOOTER */
 footer.site-foot{padding:56px 0 30px}
 .fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.1)}
-.fbrand-name{font-family:'Lora',serif;font-size:22px;color:#fffefa;letter-spacing:-.01em}
+.fbrand-name{font-family:'Lora',serif;font-size:22px;color:#fffefa;letter-spacing:-.01em;display:inline-flex;align-items:center;gap:12px;line-height:1}
+.fbrand-logo{height:30px;width:auto;display:block;object-fit:contain;flex:none}
 .fbrand p{margin:10px 0 0;max-width:340px;font-size:13.5px;line-height:1.6;color:#9fb0aa}
 .fcol{display:flex;flex-direction:column;gap:10px}
 .fcol h4{margin:0 0 4px;font:700 11px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d7a08e}
@@ -925,7 +926,7 @@ window.slotMiss = function (img) {
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
     </div>
     <div class="photo-grid" aria-label="Property before-and-after preview">
-      <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Geselecteerd Caribisch werk">Caribbean Work</div></div>
+      <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Caribisch werk">Caribbean work</div></div>
       <div class="gi gi-2"><div class="gl" data-nl="Voor">Before</div></div>
       <div class="gi gi-3"><div class="gl" data-nl="Na">After</div></div>
       <div class="gi gi-4"><div class="gl" data-nl="Voor">Before</div></div>
@@ -1359,7 +1360,7 @@ window.slotMiss = function (img) {
   <div class="wrap">
     <div class="fcols">
       <div class="fbrand">
-        <a class="fbrand-name" href="#top">The House Atelier</a>
+        <a class="fbrand-name" href="#top"><img src="assets/tha-icon-medium.png" alt="" class="fbrand-logo" width="30" height="30" decoding="async"/><span>The House Atelier</span></a>
         <p data-nl="Een optimalisatiestudio voor vakantieverhuur op Curaçao. Prijzen, presentatie en direct boeken, op basis van echte marktdata.">A vacation rental optimization studio on Curaçao. Pricing, presentation and direct bookings, built on real market data.</p>
       </div>
       <nav class="fcol" aria-label="Services">
@@ -1443,11 +1444,11 @@ fillDial('waCc', 'whatsapp');
    document position, which sits header-h below the real page top because the
    sticky header still occupies that space in flow, so the browser's own
    anchor scroll stops short of y=0. Scroll the window directly instead. */
-$('.brand').addEventListener('click', e => {
+$$('.brand, .fbrand-name').forEach(b => b.addEventListener('click', e => {
   e.preventDefault();
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-});
+}));
 
 /* Booking buttons */
 $$('.book').forEach(a => {
