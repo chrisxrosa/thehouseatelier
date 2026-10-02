@@ -651,7 +651,8 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .card .ch .n{color:var(--seg,var(--acc))}
 .gc h3{font-size:19px;letter-spacing:-.02em;margin:10px 0 6px}
 .gc p{margin:0 0 12px;font-size:13px;color:var(--md);line-height:1.5}
-.gc .fix{font-size:12px;font-weight:700;color:var(--sage)}
+.gc .fix{font-size:12px;font-weight:700;color:var(--sage);text-decoration:none;cursor:pointer;align-self:flex-start;padding:4px 0}
+.gc .fix:hover{text-decoration:underline;text-underline-offset:3px}
 .gap-foot{text-align:center;margin-top:36px}
 .gap-foot p{margin:0 0 14px;font-size:14px;color:var(--md)}
 .gap-foot small{display:block;margin-top:14px;font-size:10.5px;color:var(--muted)}
@@ -947,6 +948,9 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
 }
 </style>
 <script>
+/* URL updates can be blocked in sandboxed previews; never let that stop the page */
+function setURL(s, _t, url) { try { history.replaceState(s, _t, url); } catch (e) {} }
+
 /* Image slots: an empty slot stays hidden. Add ?slots to the URL to see every
    empty slot drawn as a labelled box at its real position and size. */
 window.slotMiss = function (img) {
@@ -969,7 +973,7 @@ window.slotMiss = function (img) {
     </a>
     <div class="navr">
       <button class="pill lang" id="lang" type="button" aria-label="Nederlands"><svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg><span>NL</span></button>
-      <a class="btn btn-outline check" href="#check" data-nl="Gratis Omzetcheck ↗">Free Revenue Check ↗</a>
+      <a class="btn btn-outline check" href="#check" data-cta="↗">Compare your revenue ↗</a>
       <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
     </div>
   </div>
@@ -979,10 +983,10 @@ window.slotMiss = function (img) {
 <nav class="mmenu" id="mmenu" aria-label="Menu" aria-hidden="true">
   <div class="mmenu-bar"><div class="wrap mmenu-bar-in"><span class="mmenu-brand">The House Atelier</span><button class="mmenu-x" id="mmenuX" type="button" aria-label="Close menu"><i></i><i></i></button></div></div>
   <div class="wrap mmenu-in">
-    <a class="btn check mmenu-cta" href="#check" data-nl="Vraag je gratis Omzetcheck aan →">Get your free Revenue Check →</a>
+    <a class="btn check mmenu-cta" href="#check" data-cta="→">Compare your revenue →</a>
     <div class="mmenu-grp">
       <h4 data-nl="Diensten">Services</h4>
-      <a href="#service/pricing" data-nl="Prijsstrategie">Pricing Strategy</a>
+      <a href="#service/pricing" data-nl="Prijsstrategie &amp; set-up">Pricing Strategy &amp; Setup</a>
       <a href="#service/photos" data-nl="Advertentiefotografie">Listing Photography</a>
       <a href="#service/copy" data-nl="Teksten en berichten">Copy &amp; Messaging</a>
       <a href="#service/channels" data-nl="Website voor direct boeken">Direct Booking Website</a>
@@ -1009,7 +1013,7 @@ window.slotMiss = function (img) {
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
       <p class="hero-sub" data-nl="Een optimalisatiestudio voor vakantieverhuur die met marktdata het volledige potentieel van je woning ontsluit.">A vacation rental optimization studio using market data to unlock your property's full potential.</p>
       <div class="hero-actions">
-        <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Omzetcheck aan →">Get your free Revenue Check →</a>
+        <a class="btn btn-outline check" href="#check" data-cta="→">Compare your revenue →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
     </div>
@@ -1043,10 +1047,10 @@ window.slotMiss = function (img) {
         <p data-nl="Zo ver vooruit worden villa’s geboekt. Optimaliseer je je kalender te laat, dan zijn de beste nachten al weg.">That’s how far ahead villas book. Optimize your calendar late and the best nights are gone.</p>
       </div>
       <div class="lk">
-        <div class="lk-top"><span data-nl="Lege nachten">Empty nights</span><span data-nl="Lek 02">Leak 02</span></div>
-        <b class="lk-jump">56%<i aria-hidden="true">←</i><small>49%</small></b>
+        <div class="lk-top"><span data-nl="Verdienkloof">Earning gap</span><span data-nl="Lek 02">Leak 02</span></div>
+        <b class="lk-jump">63%<i aria-hidden="true">←</i><small>46%</small></b>
         <h3 data-nl="Als het rustig is, groeit het gat.">When it's quiet, the gap grows.</h3>
-        <p data-nl="De beste 25% verdient 49% meer dan de gemiddelde woning in het hoogseizoen. In het laagseizoen groeit dat tot 56%.">The top 25% out-earn the typical listing by 49% in high season. In low season, that grows to 56%.</p>
+        <p data-nl="De beste 25% verdient 46% meer dan de gemiddelde woning in het hoogseizoen. In de rustigste maanden groeit dat tot 63%.">The top 25% out-earn the typical listing by 46% in high season. In the slowest months, that grows to 63%.</p>
       </div>
       <div class="lk">
         <div class="lk-top"><span data-nl="Zwakke advertenties">Weak listings</span><span data-nl="Lek 03">Leak 03</span></div>
@@ -1057,7 +1061,7 @@ window.slotMiss = function (img) {
     </div>
     <div class="lk-foot">
       <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
-      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-nl="Gratis Omzetcheck ↓">Free Revenue Check ↓</a></div>
+      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-cta="↓">Compare your revenue ↓</a></div>
     </div>
   </div>
 </section>
@@ -1098,12 +1102,12 @@ window.slotMiss = function (img) {
           </div>
           <div class="ff">
             <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
-            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Start Free Revenue Check →</button></div>
+            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Get free Revenue Potential Report →</button></div>
           </div>
         </div>
         <div class="fcard" id="fCard">
           <div class="fcardtxt">
-            <div class="fcardeye" data-nl="Inbegrepen in je Gratis Omzetcheck">Included in your Free Revenue Check</div>
+            <div class="fcardeye" data-nl="Inbegrepen in je gratis Omzetpotentie-rapport">Included in your Free Revenue Potential Report</div>
             <div class="fitems">
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
@@ -1142,7 +1146,7 @@ window.slotMiss = function (img) {
           </div>
         </div>
         <div class="factions">
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Ga verder met je gratis Omzetcheck →">Continue Free Revenue Check →</button>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</button>
         </div>
       </div>
 
@@ -1182,11 +1186,11 @@ window.slotMiss = function (img) {
       <div class="glabel"><span id="gGap"></span></div>
     </div>
     <div class="gcards">
-      <button type="button" class="gc s1" data-i="0"><div class="n">01</div><h3 data-nl="Verkeerd geprijsd">Priced by guesswork</h3><p data-nl="Eén vaste prijs, het hele jaar. Te laag in het hoogseizoen, te hoog als het rustig is.">One flat rate all year. Too low in high season, too high when it's quiet.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
-      <button type="button" class="gc s2" data-i="1"><div class="n">02</div><h3 data-nl="Niet gezien">Scrolled past</h3><p data-nl="Foto's die de klik niet verdienen. Gasten zien je woning, maar klikken niet.">Photos that don't earn the click. Guests see your home and keep scrolling.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
-      <button type="button" class="gc s3" data-i="2"><div class="n">03</div><h3 data-nl="Niet overtuigd">Clicked, not booked</h3><p data-nl="Tekst die het verblijf niet verkoopt, in één taal, voor een internationale gast.">Copy that doesn't sell the stay, in one language, for an international guest.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
-      <button type="button" class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="15,5% op elke boeking">15.5% on every stay</h3><p data-nl="Elke boeking loopt via Airbnb, dat hosts nu 15,5% rekent. Zelfs gasten die terugkomen kunnen je niet direct boeken.">Every booking runs through Airbnb, which now charges hosts 15.5%. Even returning guests can't book you direct.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
-      <button type="button" class="gc s5" data-i="4"><div class="n">05</div><h3 data-nl="Weggefilterd">Filtered out</h3><p data-nl="Geen koffiezetapparaat kan je net zo snel uit de zoekresultaten halen als geen zwembad. Het huis verderop krijgt de boeking.">Not having a coffee maker can drop you from the search results as fast as not having a pool. The home down the road gets the booking.</p><span class="fix" data-nl="Bekijk de oplossing →">See the fix →</span></button>
+      <div class="gc s1" data-i="0"><div class="n">01</div><h3 data-nl="Verkeerd geprijsd">Priced by guesswork</h3><p data-nl="Eén vaste prijs, het hele jaar. Te laag in het hoogseizoen, te hoog als het rustig is.">One flat rate all year. Too low in high season, too high when it's quiet.</p><a class="fix" href="#fix-1" data-fix="0" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s2" data-i="1"><div class="n">02</div><h3 data-nl="Niet gezien">Scrolled past</h3><p data-nl="Foto's die de klik niet verdienen. Gasten zien je woning, maar klikken niet.">Photos that don't earn the click. Guests see your home and keep scrolling.</p><a class="fix" href="#fix-2" data-fix="1" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s3" data-i="2"><div class="n">03</div><h3 data-nl="Niet overtuigd">Clicked, not booked</h3><p data-nl="Tekst die het verblijf niet verkoopt, in één taal, voor een internationale gast.">Copy that doesn't sell the stay, in one language, for an international guest.</p><a class="fix" href="#fix-3" data-fix="2" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="15,5% op elke boeking">15.5% on every stay</h3><p data-nl="Elke boeking loopt via Airbnb, dat hosts nu 15,5% rekent. Zelfs gasten die terugkomen kunnen je niet direct boeken.">Every booking runs through Airbnb, which now charges hosts 15.5%. Even returning guests can't book you direct.</p><a class="fix" href="#fix-4" data-fix="3" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s5" data-i="4"><div class="n">05</div><h3 data-nl="Weggefilterd">Filtered out</h3><p data-nl="Geen koffiezetapparaat kan je net zo snel uit de zoekresultaten halen als geen zwembad. Het huis verderop krijgt de boeking.">Not having a coffee maker can drop you from the search results as fast as not having a pool. The home down the road gets the booking.</p><a class="fix" href="#fix-5" data-fix="4" data-nl="Bekijk de oplossing →">See the fix →</a></div>
     </div>
     <div class="gap-foot">
       <a class="btn" href="#levers" data-nl="Zie hoe we het gat sluiten ↓">See how we close the gap ↓</a>
@@ -1219,10 +1223,10 @@ window.slotMiss = function (img) {
   <div class="rail" id="rail">
 
     <!-- 01 NUMBERS -->
-    <article class="card s1">
+    <article class="card s1" id="fix-1">
       <div class="ch"><div class="n">01</div><div>
         <div class="eyebrow" data-nl="De cijfers">The Numbers</div>
-        <h3 data-nl="Prijsstrategie">Pricing Strategy</h3>
+        <h3 data-nl="Prijsstrategie &amp; set-up">Pricing Strategy &amp; Setup</h3>
         <p data-nl="Prijs op vraag, niet op gemiddelden. Wij zetten de regels die je prijstool volgt, één keer en goed.">Price for demand, not averages. We set the rules your pricing tool follows, once and properly.</p>
       </div></div>
       <div class="pair">
@@ -1241,7 +1245,7 @@ window.slotMiss = function (img) {
     </article>
 
     <!-- 02 VISUALS -->
-    <article class="card s2">
+    <article class="card s2" id="fix-2">
       <div class="ch"><div class="n">02</div><div>
         <div class="eyebrow" data-nl="Het beeld">The Visuals</div>
         <h3 data-nl="Advertentiefotografie">Listing Photography</h3>
@@ -1255,7 +1259,7 @@ window.slotMiss = function (img) {
     </article>
 
     <!-- 03 PROMISE -->
-    <article class="card s3">
+    <article class="card s3" id="fix-3">
       <div class="ch"><div class="n">03</div><div>
         <div class="eyebrow" data-nl="De belofte">The Promise</div>
         <h3 data-nl="Teksten en berichten">Copy &amp; Messaging</h3>
@@ -1277,7 +1281,7 @@ window.slotMiss = function (img) {
     </article>
 
     <!-- 04 DIRECT -->
-    <article class="card s4">
+    <article class="card s4" id="fix-4">
       <div class="ch"><div class="n">04</div><div>
         <div class="eyebrow" data-nl="Kanalen">Channels</div>
         <h3 data-nl="Website voor direct boeken">Direct Booking Website</h3>
@@ -1297,7 +1301,7 @@ window.slotMiss = function (img) {
     </article>
 
     <!-- 05 HOME -->
-    <article class="card s5">
+    <article class="card s5" id="fix-5">
       <div class="ch"><div class="n">05</div><div>
         <div class="eyebrow" data-nl="De woning">The Home</div>
         <h3 data-nl="Woningupgrades">Property Upgrades</h3>
@@ -1306,11 +1310,11 @@ window.slotMiss = function (img) {
       <div class="pair">
         <div class="pc"><div class="pm b"><div class="ui">
           <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="2 van 6">2 of 6</strong></div><span class="chip" data-nl="gemist">missed</span></div>
-          <div class="chans"><span>Wifi</span><span>AC</span><span class="off" data-nl="Zwembad">Pool</span><span class="off" data-nl="Werkplek">Workspace</span><span class="off" data-nl="Koffiezetapparaat">Coffee maker</span><span class="off" data-nl="Nieuwe inrichting">New interiors</span></div>
+          <div class="chans"><span>Wifi</span><span>AC</span><span class="off" data-nl="Zwembad">Pool</span><span class="off" data-nl="Werkplek">Workspace</span><span class="off" data-nl="Koffiezetapparaat">Coffee maker</span><span class="off" data-nl="Oven">Oven</span></div>
         </div></div><div class="pf" data-nl="Voor">Before</div></div>
         <div class="pc"><div class="pm a"><div class="ui">
           <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="6 van 6">6 of 6</strong></div><span class="chip" data-nl="gevonden">matched</span></div>
-          <div class="chans"><span>Wifi</span><span>AC</span><span data-nl="Zwembad">Pool</span><span data-nl="Werkplek">Workspace</span><span data-nl="Koffiezetapparaat">Coffee maker</span><span data-nl="Nieuwe inrichting">New interiors</span></div>
+          <div class="chans"><span>Wifi</span><span>AC</span><span data-nl="Zwembad">Pool</span><span data-nl="Werkplek">Workspace</span><span data-nl="Koffiezetapparaat">Coffee maker</span><span data-nl="Oven">Oven</span></div>
         </div></div><div class="pf" data-nl="Na">After</div></div>
       </div>
       <div class="more"><a class="svc-more" data-svc="amenities" href="#service/amenities" data-nl="Lees meer →">Learn more →</a></div>
@@ -1334,7 +1338,7 @@ window.slotMiss = function (img) {
         <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span></div>
       </div>
       <div class="pq-cta">
-        <a class="btn check" href="#check" data-nl="Vraag je gratis rapport aan →">Get your free Revenue Check →</a>
+        <a class="btn check" href="#check" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</a>
         <span><a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
       </div>
     </div>
@@ -1409,7 +1413,7 @@ window.slotMiss = function (img) {
 
         <div class="full lgh" data-nl="Je aanvraag">Request</div>
         <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
-          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetcheck">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijsstrategie">Pricing Strategy</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Website voor direct boeken">Direct Booking Website</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
+          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetpotentie-rapport">Free Revenue Potential Report</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijsstrategie">Pricing Strategy</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Website voor direct boeken">Direct Booking Website</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
 
         <div class="full lgh lprop" data-nl="Over de woning">Property details</div>
         <div class="lprop"><label for="status" data-nl="Status">Status</label>
@@ -1453,7 +1457,7 @@ window.slotMiss = function (img) {
       </div>
       <nav class="fcol" aria-label="Services">
         <h4 data-nl="Diensten">Services</h4>
-        <a href="#service/pricing" data-nl="Prijsstrategie">Pricing Strategy</a>
+        <a href="#service/pricing" data-nl="Prijsstrategie &amp; set-up">Pricing Strategy &amp; Setup</a>
         <a href="#service/photos" data-nl="Advertentiefotografie">Listing Photography</a>
         <a href="#service/copy" data-nl="Teksten en berichten">Copy &amp; Messaging</a>
         <a href="#service/channels" data-nl="Website voor direct boeken">Direct Booking Website</a>
@@ -1536,7 +1540,7 @@ $$('.brand, .fbrand-name').forEach(b => b.addEventListener('click', e => {
   e.preventDefault();
   if (typeof setMenu === 'function') setMenu(false);
   window.scrollTo({ top: 0, behavior: 'smooth' });
-  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  if (location.hash) setURL(null, '', location.pathname + location.search);
 }));
 
 /* Booking buttons */
@@ -1552,7 +1556,7 @@ $$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.creat
 /* ===== SERVICE DETAIL PAGES ===== */
 const SERVICES = {
   pricing: {
-    title: { en: 'Pricing Strategy', nl: 'Prijsstrategie' },
+    title: { en: 'Pricing Strategy & Setup', nl: 'Prijsstrategie & set-up' },
     eyebrow: { en: 'The Numbers', nl: 'De cijfers' },
     h2: { en: 'Your calendar is a pricing<br/>decision, 365 times a year.', nl: 'Je kalender is 365 keer<br/>per jaar een prijsbeslissing.' },
     sub: { en: 'Smart Pricing and PriceLabs move your rates every day. They only follow the rules someone gives them. We set those rules with market data, once and properly.', nl: 'Smart Pricing en PriceLabs passen je prijzen elke dag aan. Ze volgen alleen de regels die iemand ze geeft. Wij zetten die regels met marktdata, één keer en goed.' },
@@ -1663,7 +1667,7 @@ const T = { covers: { en: 'What this covers', nl: 'Wat dit inhoudt' },
             why: { en: 'Why it matters', nl: 'Waarom het uitmaakt' },
             before: { en: 'Before and after', nl: 'Voor en na' },
             next: { en: 'Next', nl: 'Volgende' },
-            cta: { en: 'Get your free Revenue Check →', nl: 'Vraag je gratis Omzetcheck aan →' } };
+            cta: { en: 'Compare your revenue →', nl: 'Vergelijk je omzet →' } };
 
 const lb = $('#lb');
 let curSvc = null;
@@ -1691,7 +1695,7 @@ function renderSvc(slug) {
     html += `<p class="lb-sec">${T.before[l]}</p>`;
     html += [1,2,4,5].map(pair).join('');
   }
-  html += `<div class="lb-foot"><a class="btn check" href="#check" data-close="1">${T.cta[l]}</a>` +
+  html += `<div class="lb-foot"><a class="btn check" href="#check" data-close="1" data-cta="→">${ctaLabel('→')}</a>` +
     `<span class="lb-nav">` +
       `<a class="lb-step" href="#service/${pv}">← ${SERVICES[pv].title[l]}</a>` +
       `<a class="lb-step" href="#service/${nx}">${SERVICES[nx].title[l]} →</a>` +
@@ -1728,14 +1732,14 @@ const closeLb = () => {
   hideSvc();
   /* Strip the hash without adding a history entry, so Escape always closes
      rather than stepping back through previously opened services. */
-  if (/^#service\//.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
+  if (/^#service\//.test(location.hash)) setURL(null, '', location.pathname + location.search);
 };
 $('#closeLb').addEventListener('click', closeLb);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLb();
   if (curSvc && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
     const slug = ((e.key === 'ArrowLeft' ? $('#lbPrev') : $('#lbNext')).getAttribute('href') || '').slice(9);
-    if (SERVICES[slug]) { history.replaceState(null, '', '#service/' + slug); openSvc(slug); }
+    if (SERVICES[slug]) { setURL(null, '', '#service/' + slug); openSvc(slug); }
   }
 });
 window.addEventListener('hashchange', routeSvc);
@@ -1748,7 +1752,7 @@ document.addEventListener('click', e => {
   if (!SERVICES[slug]) return;
   e.preventDefault();
   if (typeof setMenu === 'function') setMenu(false);
-  history.replaceState(null, '', '#service/' + slug);
+  setURL(null, '', '#service/' + slug);
   openSvc(slug);
 });
 $('#lbBody').addEventListener('click', e => { if (e.target.closest('[data-close]')) hideSvc(); });
@@ -1771,6 +1775,12 @@ $$('.gseg, .gc').forEach(el => {
   el.addEventListener('mouseenter', () => pair.forEach(x => x.classList.add('hl')));
   el.addEventListener('mouseleave', () => pair.forEach(x => x.classList.remove('hl')));
 });
+/* The Gap: "See the fix" scrolls to the Solutions section and centers the matching card */
+$$('.gc .fix').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  $('#levers').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  go(+a.dataset.fix);
+}));
 $('#prev').addEventListener('click', () => go(cur - 1));
 $('#next').addEventListener('click', () => go(cur + 1));
 
@@ -1913,13 +1923,58 @@ const setSize = k => {
 };
 $$('#estSize button, #gSize button').forEach(b => b.addEventListener('click', () => { if (fStep === 2) ignoreRev = true; setSize(b.dataset.a); }));
 $('#cBeds').addEventListener('change', e => { ignoreRev = true; setSize(e.target.value); });
+var ctaSwitched = false; /* once a revenue is typed, CTAs stay switched even if the field is cleared */
+function ctaLabel(arrow) {
+  const nl = document.documentElement.lang === 'nl', el = document.getElementById('eIn');
+  if (el && (el.value || '').trim()) ctaSwitched = true;
+  return (ctaSwitched ? (nl ? 'Ontvang je gratis Omzetpotentie-rapport' : 'Get free Revenue Potential Report') : (nl ? 'Vergelijk je omzet' : 'Compare your revenue')) + ' ' + arrow;
+}
 function syncNext() {
   const nl = document.documentElement.lang === 'nl', has = !!($('#eIn').value || '').trim();
-  $('#fNext').textContent = has ? (nl ? 'Ga verder met je gratis Omzetcheck →' : 'Continue Free Revenue Check →') : (nl ? 'Start je gratis Omzetcheck →' : 'Start Free Revenue Check →');
+  document.querySelectorAll('[data-cta]').forEach(a => { a.textContent = ctaLabel(a.dataset.cta); });
+  $('#fNext').textContent = nl ? 'Ontvang je gratis Omzetpotentie-rapport →' : 'Get free Revenue Potential Report →';
 }
 $('#eIn').addEventListener('input', () => { ignoreRev = false; renderEst(); syncNext(); });
 syncNext();
-$('#eIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); goStep(2); } });
+$('#eIn').addEventListener('keydown', e => { if (e.key !== 'Enter') return; e.preventDefault(); if (matchMedia('(max-width: 720px)').matches) e.target.blur(); else goStep(2); });
+/* Mobile: when the keyboard closes (Done, or a tap elsewhere), bring the gap number into view so the change is seen */
+(() => {
+  const inp = $('#eIn'), big = $('#fBig'), mq = matchMedia('(max-width: 720px)');
+  let v0 = '';
+  inp.addEventListener('focus', () => { v0 = inp.value; });
+  inp.addEventListener('blur', () => {
+    if (!mq.matches || inp.value === v0 || !(inp.value || '').trim()) return;
+    setTimeout(() => {
+      if (fStep !== 1 || document.activeElement === inp) return; /* they moved on, or went back to typing */
+      const head = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 56;
+      const r = big.getBoundingClientRect();
+      if (r.top >= head + 8 && r.bottom <= innerHeight - 8) return; /* already visible */
+      scrollTo({ top: scrollY + r.top - head - 16, behavior: 'smooth' });
+    }, 380);
+  });
+})();
+
+/* Mobile: when the keyboard closes (Done / blur), bring the big number back into view so the change is seen */
+(() => {
+  const inp = $('#eIn'), mob = matchMedia('(max-width: 720px)');
+  let t = 0, lastH = window.visualViewport ? visualViewport.height : innerHeight;
+  const show = () => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      if (!mob.matches || fStep !== 1 || !(inp.value || '').trim() || document.activeElement === inp) return;
+      const r = $('#fBig').getBoundingClientRect();
+      if (r.top >= 0 && r.top < innerHeight * 0.5) return;
+      $('#check').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 350);
+  };
+  inp.addEventListener('blur', show);
+  if (window.visualViewport) visualViewport.addEventListener('resize', () => {
+    const h = visualViewport.height;
+    if (h - lastH > 120 && document.activeElement === inp) { inp.blur(); }
+    lastH = h;
+  });
+})();
+
 $('#fNext').addEventListener('click', () => goStep(2));
 $('#fHow').addEventListener('click', () => { const m = $('#fMethod'); m.hidden = !m.hidden; $('#fHow').setAttribute('aria-expanded', String(!m.hidden)); renderEst(); });
 $('#lang').addEventListener('click', renderEst);
@@ -1992,7 +2047,7 @@ cForm.addEventListener('submit', async e => {
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
       : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Omzetcheck komt binnen 48 uur.');
   } catch (x) {
-    btn.disabled = false; btn.textContent = t('Continue Free Revenue Check →', 'Ga verder met je gratis Omzetcheck →');
+    btn.disabled = false; btn.textContent = t('Get free Revenue Potential Report →', 'Ontvang je gratis Omzetpotentie-rapport →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
     $('#fErr').style.display = 'block';
   }
@@ -2027,7 +2082,7 @@ form.querySelectorAll('select').forEach(el => el.addEventListener('change', () =
    - Photography and/or direct booking site only: no pricing or management questions.
    - General inquiry (exclusive) or Other only: no property questions; the message is required. */
 const PL = { airbnb: 'Airbnb', booking: 'Booking.com', vrbo: 'Vrbo', google: 'Google Vacation Rentals', micazu: 'Micazu', direct: 'Direct booking site' };
-const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Check', strategy: 'Pricing Strategy', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Website', other: 'Other' };
+const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Potential Report', strategy: 'Pricing Strategy', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Website', other: 'Other' };
 const picked = sel => $$(sel + ' .lchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.r || c.dataset.p);
 const reqMode = r => !r.length ? 'none' : r.some(x => ['check', 'strategy', 'listing'].includes(x)) ? 'full' : r.some(x => ['photos', 'direct'].includes(x)) ? 'photo' : 'none';
 function syncForm() {
@@ -2046,7 +2101,7 @@ function syncForm() {
   const needMsg = inq || mode === 'none';
   $('#msgLab').innerHTML = needMsg ? t('Your message', 'Je bericht') : t('Anything else? <span class="opt">(optional)</span>', 'Nog iets? <span class="opt">(optioneel)</span>');
   sub.textContent = (inq && r.length === 1) ? t('Send message →', 'Bericht versturen →')
-    : (r.length === 1 && r[0] === 'check') ? t('Continue Free Revenue Check →', 'Ga verder met je gratis Omzetcheck →')
+    : (r.length === 1 && r[0] === 'check') ? t('Get free Revenue Potential Report →', 'Ontvang je gratis Omzetpotentie-rapport →')
     : t('Send my request →', 'Verstuur mijn aanvraag →');
 }
 function setRequests(list) {
