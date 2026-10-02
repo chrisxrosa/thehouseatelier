@@ -928,6 +928,15 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .lp-me img{width:96px;height:120px}
   .lp-me q{font-size:19px}
 }
+@media(max-width:720px){
+  /* Estimate bar sits a little higher so the revenue field clears the browser bar; the You tag still clears the line above */
+  .fbar{height:100px;margin-top:6px}
+  .fyou{top:0}.fyou i{margin-top:4px}
+  .ftrack,.ffill{top:35px}
+  .fmark{top:27px}.fmark i{height:24px}.fmark span{margin-top:4px}
+  form.fpanel{margin-top:10px}
+  #check.rc{padding-top:calc(var(--header-h) + 18px)}
+}
 </style>
 <script>
 /* Image slots: an empty slot stays hidden. Add ?slots to the URL to see every
@@ -1319,14 +1328,24 @@ $('#eIn').addEventListener('keydown', e => { if (e.key !== 'Enter') return; e.pr
 })();
 
 $('#fNext').addEventListener('click', () => goStep(2));
-/* "Included in your report" card lights up once, a moment after the first revenue is typed */
+/* "Included in your report" card lights up once: on mobile when it scrolls fully into view, on desktop a moment after the first revenue is typed */
 (() => {
   const card = $('#fCard'), inp = $('#eIn');
   if (!card || !inp) return;
+  const light = () => card.classList.add('lit');
+  if (matchMedia('(max-width: 720px)').matches && 'IntersectionObserver' in window) {
+    let scrolled = false;
+    addEventListener('scroll', () => { scrolled = true; }, { passive: true, once: true });
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting && scrolled) { light(); io.disconnect(); }
+    }), { threshold: 0.9 });
+    io.observe(card);
+    return;
+  }
   const once = () => {
     if (!(inp.value || '').trim()) return;
     inp.removeEventListener('input', once);
-    setTimeout(() => card.classList.add('lit'), 2500);
+    setTimeout(light, 2500);
   };
   inp.addEventListener('input', once);
 })();
