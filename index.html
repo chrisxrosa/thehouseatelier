@@ -857,8 +857,8 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
 @media(max-width:960px){
   .nav .btn{display:none}
   .navr .lang{display:none}
-  .burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-10px;padding:0 11px;background:none;border:0;cursor:pointer}
-  .burger i{display:block;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
+  .burger{-webkit-appearance:none;appearance:none;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;margin-right:-10px;padding:0 11px;background:none;border:0;cursor:pointer}
+  .burger i{display:block;flex:none;width:22px;min-width:22px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
   body.menu-open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
   body.menu-open .burger i:nth-child(2){opacity:0}
   body.menu-open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -881,8 +881,8 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .brand,.fbrand-name{font-size:13px;letter-spacing:.16em}.brand-logo,.fbrand-logo{height:24px}.brand span,.fbrand-name span{height:24px;line-height:24px}
   .nav .btn{display:none}
   .navr .lang{display:none}
-  .burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-10px;padding:0 11px;background:none;border:0;cursor:pointer}
-  .burger i{display:block;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
+  .burger{-webkit-appearance:none;appearance:none;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;margin-right:-10px;padding:0 11px;background:none;border:0;cursor:pointer}
+  .burger i{display:block;flex:none;width:22px;min-width:22px;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
   body.menu-open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
   body.menu-open .burger i:nth-child(2){opacity:0}
   body.menu-open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
