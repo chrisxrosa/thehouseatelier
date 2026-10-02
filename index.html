@@ -834,6 +834,8 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
 .lang .flag{width:20px;height:14px;border-radius:3px;box-shadow:0 0 0 1px rgba(27,37,36,.15);flex:none;display:block}
 /* MOBILE CTA */
 .mcta{display:none}
+/* Mobile menu: burger and panel only exist below 721px */
+.burger,.mmenu{display:none}
 
 @media(max-width:960px){
   .offer,.contact,.faq{grid-template-columns:1fr;gap:34px}
@@ -849,12 +851,30 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .rc,#contact{padding-top:calc(var(--header-h) + 30px)}
   .brand,.fbrand-name{font-size:13px;letter-spacing:.16em}.brand-logo,.fbrand-logo{height:24px}.brand span,.fbrand-name span{height:24px;line-height:24px}
   .nav .btn{display:none}
+  .navr .lang{display:none}
+  .burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;margin-right:-10px;padding:0 11px;background:none;border:0;cursor:pointer}
+  .burger i{display:block;height:2px;border-radius:2px;background:var(--ink);transition:transform .25s ease,opacity .2s ease}
+  body.menu-open .burger i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  body.menu-open .burger i:nth-child(2){opacity:0}
+  body.menu-open .burger i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .mmenu{display:block;position:fixed;left:0;right:0;top:var(--header-h);bottom:0;z-index:39;background:var(--char);color:#dfe6e3;overflow-y:auto;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .22s ease,transform .22s ease,visibility 0s linear .22s}
+  body.menu-open .mmenu{opacity:1;visibility:visible;transform:none;transition:opacity .22s ease,transform .22s ease}
+  .mmenu-in{display:flex;flex-direction:column;gap:30px;padding:26px 0 40px}
+  .mmenu-cta{width:100%;padding:16px 20px;font-size:14px}
+  .mmenu-grp{display:flex;flex-direction:column}
+  .mmenu-grp h4{margin:0 0 6px;font:700 11px 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#d7a08e}
+  .mmenu-grp a{padding:11px 0;font-size:18px;color:#fffefa;border-bottom:1px solid rgba(255,255,255,.08)}
+  .mmenu-grp a:active{color:#e8927a}
+  .mmenu-lang{align-self:flex-start;color:#fffefa;border-color:rgba(255,255,255,.22);background:rgba(255,255,255,.06)}
+  body.menu-open .mcta{opacity:0;pointer-events:none}
   .hero h1{font-size:clamp(34px,min(11vw,7.5svh),58px);line-height:.99}
   .hero-sub{font-size:14px}
   .hero-actions .btn-ghost{display:none}
   .hero-note{font-size:11px;margin-top:8px}
   /* Mobile: video plus one before/after pair only, so both get room to breathe */
-  .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1.5fr) minmax(0,1fr);border-radius:20px;gap:6px}
+  /* Mobile hero runs full screen: photos bleed to both edges and down to the bottom of the screen */
+  .hero{padding-bottom:0}
+  .photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:minmax(0,1.2fr) minmax(0,1fr);border-radius:0;gap:4px;margin:0 -14px;box-shadow:none}
   .gi-1{grid-column:1/-1;grid-row:1}
   .gi-2{grid-column:1;grid-row:2}
   .gi-3{grid-column:2;grid-row:2}
@@ -907,9 +927,33 @@ window.slotMiss = function (img) {
     <div class="navr">
       <button class="pill lang" id="lang" type="button" aria-label="Nederlands"><svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg><span>NL</span></button>
       <a class="btn btn-outline check" href="#check" data-nl="Gratis Omzetcheck ↗">Free Revenue Check ↗</a>
+      <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mmenu"><i></i><i></i><i></i></button>
     </div>
   </div>
 </header>
+
+<!-- MOBILE MENU: mirrors the footer links, mobile only -->
+<nav class="mmenu" id="mmenu" aria-label="Menu" aria-hidden="true">
+  <div class="wrap mmenu-in">
+    <a class="btn check mmenu-cta" href="#check" data-nl="Vraag je gratis Omzetcheck aan →">Get your free Revenue Check →</a>
+    <div class="mmenu-grp">
+      <h4 data-nl="Diensten">Services</h4>
+      <a href="#service/pricing" data-nl="Dynamische prijzen">Dynamic Pricing</a>
+      <a href="#service/photos" data-nl="Advertentiefotografie">Listing Photography</a>
+      <a href="#service/copy" data-nl="Advertentietekst en SEO">Listing Copy &amp; SEO</a>
+      <a href="#service/channels" data-nl="Website voor direct boeken">Direct Booking Website</a>
+      <a href="#service/amenities" data-nl="Advies over voorzieningen">Amenity Advice</a>
+    </div>
+    <div class="mmenu-grp">
+      <h4 data-nl="Meer">More</h4>
+      <a href="#modules" data-nl="Prijzen">Pricing</a>
+      <a href="#faq" data-nl="Veelgestelde vragen">FAQ</a>
+      <a href="#contact" data-nl="Contact">Contact</a>
+      <a class="waFoot" href="#" target="_blank" rel="noopener">WhatsApp ↗</a>
+    </div>
+    <button class="pill lang mmenu-lang" id="mLang" type="button"></button>
+  </div>
+</nav>
 
 <main id="top">
 
@@ -919,14 +963,14 @@ window.slotMiss = function (img) {
     <div class="hero-copy">
       <div class="eyebrow hero-loc" data-nl="Gevestigd op Curaçao">Based in Curaçao</div>
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
-      <p class="hero-sub" data-nl="We gebruiken echte marktdata om het volledige potentieel van je woning op Curaçao bloot te leggen.<br/>Daarna helpen we je het te bereiken, van prijs en foto's tot tekst en je eigen boekingssite.">We use real market data to uncover your Curaçao rental's full potential.<br/>Then we help you reach it, from pricing and photos to copy and your own booking site.</p>
+      <p class="hero-sub" data-nl="Een optimalisatiestudio voor vakantieverhuur die met marktdata het omzetpotentieel van je woning ontsluit.">A vacation rental optimization studio using market data to unlock your property's revenue potential.</p>
       <div class="hero-actions">
         <a class="btn btn-outline check" href="#check" data-nl="Vraag je gratis Omzetcheck aan →">Get your free Revenue Check →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
     </div>
     <div class="photo-grid" aria-label="Property before-and-after preview">
-      <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Caribisch werk">Caribbean work</div></div>
+      <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Caribisch werk">Caribbean-wide work</div></div>
       <div class="gi gi-2"><div class="gl" data-nl="Voor">Before</div></div>
       <div class="gi gi-3"><div class="gl" data-nl="Na">After</div></div>
       <div class="gi gi-4"><div class="gl" data-nl="Voor">Before</div></div>
@@ -1446,6 +1490,7 @@ fillDial('waCc', 'whatsapp');
    anchor scroll stops short of y=0. Scroll the window directly instead. */
 $$('.brand, .fbrand-name').forEach(b => b.addEventListener('click', e => {
   e.preventDefault();
+  if (typeof setMenu === 'function') setMenu(false);
   window.scrollTo({ top: 0, behavior: 'smooth' });
   if (location.hash) history.replaceState(null, '', location.pathname + location.search);
 }));
@@ -1684,11 +1729,26 @@ function setLang(l) {
   try { localStorage.setItem('tha-lang', l); } catch (e) {}
 }
 $('#lang').addEventListener('click', () => setLang(document.documentElement.lang === 'nl' ? 'en' : 'nl'));
+/* Mobile menu: open/close, close on any link, language switch mirrors the header pill */
+const syncMLang = () => { $('#mLang').innerHTML = $('#lang').innerHTML + '<b style="font-weight:600;margin-left:2px">' + (document.documentElement.lang === 'nl' ? 'English' : 'Nederlands') + '</b>'; $('#mLang span').remove(); };
+function setMenu(open) {
+  document.body.classList.toggle('menu-open', open);
+  $('#mmenu').setAttribute('aria-hidden', open ? 'false' : 'true');
+  $('#burger').setAttribute('aria-expanded', open ? 'true' : 'false');
+  $('#burger').setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  if (!curSvc) document.body.style.overflow = open ? 'hidden' : '';
+}
+$('#burger').addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+$$('#mmenu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+$('#mLang').addEventListener('click', () => { $('#lang').click(); syncMLang(); });
+$('#lang').addEventListener('click', () => setTimeout(syncMLang, 0));
+addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) setMenu(false); });
+matchMedia('(min-width:721px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
 (function () {
   const p = new URLSearchParams(location.search);
   let l = p.get('lang'); try { l = l || localStorage.getItem('tha-lang'); } catch (e) {}
   if (!l && (navigator.language || '').toLowerCase().startsWith('nl')) l = 'nl';
-  setLang(l === 'nl' ? 'nl' : 'en');
+  setLang(l === 'nl' ? 'nl' : 'en'); syncMLang();
   if (p.get('utm_source')) $('#fSource').value = p.get('utm_source') + (p.get('utm_campaign') ? '/' + p.get('utm_campaign') : '');
   const i = p.get('interest'); if (['inquiry', 'check', 'strategy', 'listing', 'photos', 'direct', 'other', 'single'].includes(i)) setTimeout(() => setRequests([i === 'single' ? 'listing' : i]), 0);
   routeSvc();
