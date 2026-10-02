@@ -135,6 +135,8 @@ html{scroll-padding-top:0}
 .mseg span{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:.92}
 .mseg.done{background:var(--sage);border-left-color:rgba(255,254,250,.28)}
 .mseg.on::after{content:'';position:absolute;left:10px;right:10px;bottom:6px;height:3px;border-radius:3px;background:#fff}
+.mb-svc{display:none}
+.mnav.stuck .mb-today{display:none}.mnav.stuck .mb-svc{display:inline}
 .mend{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);white-space:nowrap}
 .mnav .ar{border:1px solid var(--line);border-radius:50%;width:34px;height:34px;padding:0;display:grid;place-items:center;color:var(--ink);font-size:14px;background:none;cursor:pointer;flex:none}
 .rail{--cw:min(85vw,940px);display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:68px calc(50% - var(--cw)/2) 112px;margin-bottom:-44px;scrollbar-width:none}
@@ -934,6 +936,13 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .d{padding:5px 1px}.d span{font-size:8px}
   .cnav .ar{display:none}
   .mnav .ar,.mend{display:none}
+  /* Solutions bar rides along on mobile: it pushes the header up and takes its place */
+  #levers>.wrap{display:contents}
+  #levers .intro,#levers .mnav{width:calc(100% - 28px);margin-left:auto;margin-right:auto}
+  #levers .mnav{position:sticky;top:0;z-index:41;padding:8px 0;margin-bottom:-2px}
+  #levers .mnav::before{content:"";position:absolute;top:0;bottom:0;left:-14px;right:-14px;background:rgba(253,251,247,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(27,37,36,.08);opacity:0;transition:opacity .2s ease;z-index:-1}
+  #levers .mnav.stuck::before{opacity:1}
+  .site-header{will-change:transform}
   .mbase{padding:0 8px;font-size:8px}
   .mseg span{display:none}
   .mods{grid-template-columns:1fr}
@@ -945,6 +954,7 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .mcta strong{font-family:'Lora',serif;font-weight:400;font-size:17px}
   .mcta .btn{padding:10px 13px;font-size:11px}
   .mcta.off{opacity:0;pointer-events:none}
+  body.bar-ride .mcta{opacity:0;pointer-events:none}
 }
 </style>
 <script>
@@ -1208,7 +1218,7 @@ window.slotMiss = function (img) {
     </div>
     <nav class="mnav" aria-label="Closing the gap">
       <div class="mbar">
-        <div class="mbase" data-nl="Vandaag">Today</div>
+        <div class="mbase"><span class="mb-today" data-nl="Vandaag">Today</span><span class="mb-svc" data-nl="Diensten">Services</span></div>
         <button type="button" class="mseg s1 on" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
         <button type="button" class="mseg s2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
         <button type="button" class="mseg s3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
@@ -1829,6 +1839,27 @@ matchMedia('(min-width:721px)').addEventListener('change', e => { if (e.matches)
   routeSvc();
 })();
 
+/* Mobile: the Solutions bar sticks to the top, sliding the header out as it arrives and back in as it leaves */
+(() => {
+  const nav = $('#levers .mnav'), head = $('.site-header'), mq = matchMedia('(max-width: 720px)');
+  let tick = false;
+  const upd = () => {
+    tick = false;
+    if (!mq.matches) { head.style.transform = ''; nav.classList.remove('stuck'); document.body.classList.remove('bar-ride'); return; }
+    const hh = head.offsetHeight, r = nav.getBoundingClientRect();
+    const push = Math.max(0, Math.min(hh, hh - r.top, r.bottom));
+    head.style.transform = push ? `translate3d(0,${-push}px,0)` : '';
+    nav.classList.toggle('stuck', r.top <= 0.5 && r.bottom > 0);
+    /* Floating CTA stays away from the moment the bar reaches the header until Chris's photo has passed */
+    const photo = $('#about .ph-top img');
+    const barTop = innerHeight - 72;
+    const started = r.top < hh || $('#levers').getBoundingClientRect().bottom < 0;
+    const passed = photo && photo.getBoundingClientRect().bottom < barTop - 16;
+    document.body.classList.toggle('bar-ride', started && !passed);
+  };
+  const req = () => { if (!tick) { tick = true; requestAnimationFrame(upd); } };
+  addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); upd();
+})();
 /* Mobile CTA: appears once the hero's video and photos have fully cleared the bar's spot, hidden on the Revenue Check and near the contact form */
 (function () {
   const m = $('#mcta'), grid = $('.hero .photo-grid'), contact = $('#contact'), calc = $('#check');
@@ -1937,20 +1968,30 @@ function syncNext() {
 $('#eIn').addEventListener('input', () => { ignoreRev = false; renderEst(); syncNext(); });
 syncNext();
 $('#eIn').addEventListener('keydown', e => { if (e.key !== 'Enter') return; e.preventDefault(); if (matchMedia('(max-width: 720px)').matches) e.target.blur(); else goStep(2); });
-/* Mobile: when the keyboard closes (Done, or a tap elsewhere), bring the gap number into view so the change is seen */
+/* Mobile: when the keyboard closes (Done, or a tap elsewhere), bring the gap number into view so the change is seen.
+   iOS keeps moving the page while the keyboard slides away, so wait for the viewport to settle, then aim, then correct once. */
 (() => {
-  const inp = $('#eIn'), big = $('#fBig'), mq = matchMedia('(max-width: 720px)');
+  const inp = $('#eIn'), big = $('#fBig'), mq = matchMedia('(max-width: 720px)'), vv = window.visualViewport;
   let v0 = '';
+  const target = () => {
+    const head = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 56;
+    return Math.max(0, Math.round(scrollY + big.getBoundingClientRect().top - head - 16));
+  };
+  const settled = fn => {
+    let t, done = false; const start = Date.now();
+    const fire = () => { if (done) return; done = true; vv && vv.removeEventListener('resize', bump); fn(); };
+    const bump = () => { clearTimeout(t); t = setTimeout(fire, Date.now() - start > 900 ? 0 : 180); };
+    vv && vv.addEventListener('resize', bump);
+    bump(); setTimeout(fire, 1100);
+  };
   inp.addEventListener('focus', () => { v0 = inp.value; });
   inp.addEventListener('blur', () => {
     if (!mq.matches || inp.value === v0 || !(inp.value || '').trim()) return;
-    setTimeout(() => {
+    setTimeout(() => settled(() => {
       if (fStep !== 1 || document.activeElement === inp) return; /* they moved on, or went back to typing */
-      const head = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 56;
-      const r = big.getBoundingClientRect();
-      if (r.top >= head + 8 && r.bottom <= innerHeight - 8) return; /* already visible */
-      scrollTo({ top: scrollY + r.top - head - 16, behavior: 'smooth' });
-    }, 380);
+      scrollTo({ top: target(), behavior: 'smooth' });
+      setTimeout(() => { const y = target(); if (Math.abs(scrollY - y) > 2 && fStep === 1 && document.activeElement !== inp) scrollTo({ top: y, behavior: 'smooth' }); }, 650);
+    }), 120);
   });
 })();
 
