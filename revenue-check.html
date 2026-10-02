@@ -944,7 +944,7 @@ window.slotMiss = function (img) {
     </a>
     <div class="navr">
       <button class="pill lang" id="lang" type="button" aria-label="Nederlands"><svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg><span>NL</span></button>
-      <a class="btn btn-outline check" href="#check" data-nl="Gratis Omzetcheck ↗">Free Revenue Check ↗</a>
+      <a class="btn btn-outline check" href="#check" data-cta="↗">Compare your revenue ↗</a>
     </div>
   </div>
 </header>
@@ -987,12 +987,12 @@ window.slotMiss = function (img) {
           </div>
           <div class="ff">
             <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
-            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Start Free Revenue Check →</button></div>
+            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Get free Revenue Potential Report →</button></div>
           </div>
         </div>
         <div class="fcard" id="fCard">
           <div class="fcardtxt">
-            <div class="fcardeye" data-nl="Inbegrepen in je Gratis Omzetcheck">Included in your Free Revenue Check</div>
+            <div class="fcardeye" data-nl="Inbegrepen in je gratis Omzetpotentie-rapport">Included in your Free Revenue Potential Report</div>
             <div class="fitems">
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
               <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
@@ -1031,7 +1031,7 @@ window.slotMiss = function (img) {
           </div>
         </div>
         <div class="factions">
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Ga verder met je gratis Omzetcheck →">Continue Free Revenue Check →</button>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</button>
         </div>
       </div>
 
@@ -1074,7 +1074,7 @@ window.slotMiss = function (img) {
       <div><h3 data-nl="Wat gebeurt er met mijn gegevens?">What happens to my details?</h3><p data-nl="We gebruiken ze alleen om je Omzetcheck te maken en te sturen. We verkopen of delen niets.">We use them only to prepare and send your Revenue Check. Nothing is sold or shared.</p></div>
     </div>
     <div class="lp-cta">
-      <a class="btn" href="#check" data-nl="Vraag je gratis Omzetcheck aan ↑">Get my free Revenue Check ↑</a>
+      <a class="btn" href="#check" data-cta="↑">Compare your revenue ↑</a>
       <span><span data-nl="Liever even chatten?">Rather chat?</span> <a class="wa" id="waLink" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
     </div>
   </div>
@@ -1143,7 +1143,7 @@ fillDial('cCc', 'cWa');
 
 
 const t = (en, nl) => document.documentElement.lang === 'nl' ? nl : en;
-const REQ_LABEL = { check: 'Free Revenue Check' };
+const REQ_LABEL = { check: 'Free Revenue Potential Report' };
 /* Language toggle (EN/NL) */
 const wa = { en: "Hi! I have a question about The House Atelier.", nl: "Hoi! Ik heb een vraag over The House Atelier." };
 const FLAG_NL = '<svg class="flag" viewBox="0 0 9 6" aria-hidden="true"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#fff"/><rect width="9" height="2" fill="#AE1C28"/></svg>';
@@ -1248,13 +1248,68 @@ const setSize = k => {
 };
 $$('#estSize button, #gSize button').forEach(b => b.addEventListener('click', () => { if (fStep === 2) ignoreRev = true; setSize(b.dataset.a); }));
 $('#cBeds').addEventListener('change', e => { ignoreRev = true; setSize(e.target.value); });
+var ctaSwitched = false; /* once a revenue is typed, CTAs stay switched even if the field is cleared */
+function ctaLabel(arrow) {
+  const nl = document.documentElement.lang === 'nl', el = document.getElementById('eIn');
+  if (el && (el.value || '').trim()) ctaSwitched = true;
+  return (ctaSwitched ? (nl ? 'Ontvang je gratis Omzetpotentie-rapport' : 'Get free Revenue Potential Report') : (nl ? 'Vergelijk je omzet' : 'Compare your revenue')) + ' ' + arrow;
+}
 function syncNext() {
   const nl = document.documentElement.lang === 'nl', has = !!($('#eIn').value || '').trim();
-  $('#fNext').textContent = has ? (nl ? 'Ga verder met je gratis Omzetcheck →' : 'Continue Free Revenue Check →') : (nl ? 'Start je gratis Omzetcheck →' : 'Start Free Revenue Check →');
+  document.querySelectorAll('[data-cta]').forEach(a => { a.textContent = ctaLabel(a.dataset.cta); });
+  $('#fNext').textContent = nl ? 'Ontvang je gratis Omzetpotentie-rapport →' : 'Get free Revenue Potential Report →';
 }
 $('#eIn').addEventListener('input', () => { ignoreRev = false; renderEst(); syncNext(); });
 syncNext();
-$('#eIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); goStep(2); } });
+$('#eIn').addEventListener('keydown', e => { if (e.key !== 'Enter') return; e.preventDefault(); if (matchMedia('(max-width: 720px)').matches) e.target.blur(); else goStep(2); });
+/* Mobile: when the keyboard closes (Done, or a tap elsewhere), bring the gap number into view so the change is seen.
+   iOS keeps moving the page while the keyboard slides away, so wait for the viewport to settle, then aim, then correct once. */
+(() => {
+  const inp = $('#eIn'), big = $('#fBig'), mq = matchMedia('(max-width: 720px)'), vv = window.visualViewport;
+  let v0 = '';
+  const target = () => {
+    const head = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--header-h')) || 56;
+    return Math.max(0, Math.round(scrollY + big.getBoundingClientRect().top - head - 16));
+  };
+  const settled = fn => {
+    let t, done = false; const start = Date.now();
+    const fire = () => { if (done) return; done = true; vv && vv.removeEventListener('resize', bump); fn(); };
+    const bump = () => { clearTimeout(t); t = setTimeout(fire, Date.now() - start > 900 ? 0 : 180); };
+    vv && vv.addEventListener('resize', bump);
+    bump(); setTimeout(fire, 1100);
+  };
+  inp.addEventListener('focus', () => { v0 = inp.value; });
+  inp.addEventListener('blur', () => {
+    if (!mq.matches || inp.value === v0 || !(inp.value || '').trim()) return;
+    setTimeout(() => settled(() => {
+      if (fStep !== 1 || document.activeElement === inp) return; /* they moved on, or went back to typing */
+      scrollTo({ top: target(), behavior: 'smooth' });
+      setTimeout(() => { const y = target(); if (Math.abs(scrollY - y) > 2 && fStep === 1 && document.activeElement !== inp) scrollTo({ top: y, behavior: 'smooth' }); }, 650);
+    }), 120);
+  });
+})();
+
+/* Mobile: when the keyboard closes (Done / blur), bring the big number back into view so the change is seen */
+(() => {
+  const inp = $('#eIn'), mob = matchMedia('(max-width: 720px)');
+  let t = 0, lastH = window.visualViewport ? visualViewport.height : innerHeight;
+  const show = () => {
+    clearTimeout(t);
+    t = setTimeout(() => {
+      if (!mob.matches || fStep !== 1 || !(inp.value || '').trim() || document.activeElement === inp) return;
+      const r = $('#fBig').getBoundingClientRect();
+      if (r.top >= 0 && r.top < innerHeight * 0.5) return;
+      $('#check').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 350);
+  };
+  inp.addEventListener('blur', show);
+  if (window.visualViewport) visualViewport.addEventListener('resize', () => {
+    const h = visualViewport.height;
+    if (h - lastH > 120 && document.activeElement === inp) { inp.blur(); }
+    lastH = h;
+  });
+})();
+
 $('#fNext').addEventListener('click', () => goStep(2));
 $('#fHow').addEventListener('click', () => { const m = $('#fMethod'); m.hidden = !m.hidden; $('#fHow').setAttribute('aria-expanded', String(!m.hidden)); renderEst(); });
 $('#lang').addEventListener('click', renderEst);
@@ -1327,7 +1382,7 @@ cForm.addEventListener('submit', async e => {
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
       : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Omzetcheck komt binnen 48 uur.');
   } catch (x) {
-    btn.disabled = false; btn.textContent = t('Continue Free Revenue Check →', 'Ga verder met je gratis Omzetcheck →');
+    btn.disabled = false; btn.textContent = t('Get free Revenue Potential Report →', 'Ontvang je gratis Omzetpotentie-rapport →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
     $('#fErr').style.display = 'block';
   }
