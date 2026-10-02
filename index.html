@@ -1855,7 +1855,7 @@ matchMedia('(min-width:721px)').addEventListener('change', e => { if (e.matches)
     tick = false;
     if (!mq.matches) { head.style.transform = ''; nav.classList.remove('stuck'); document.body.classList.remove('bar-ride'); return; }
     const hh = head.offsetHeight, r = nav.getBoundingClientRect();
-    const push = Math.max(0, Math.min(hh, hh - r.top, r.bottom));
+    let push = Math.max(0, Math.min(hh, hh - r.top, r.bottom)); if (push < 1) push = 0; else if (push > hh - 1) push = hh;
     head.style.transform = push ? `translate3d(0,${-push}px,0)` : '';
     nav.classList.toggle('stuck', r.top <= 0.5 && r.bottom > 0);
     /* Floating CTA stays away from the moment the bar reaches the header until Chris's photo has passed */
@@ -1867,6 +1867,35 @@ matchMedia('(min-width:721px)').addEventListener('change', e => { if (e.matches)
   };
   const req = () => { if (!tick) { tick = true; requestAnimationFrame(upd); } };
   addEventListener('scroll', req, { passive: true }); addEventListener('resize', req); upd();
+
+  /* Magnet: when scrolling stops with the header half pushed, finish the move one way or the other */
+  let touching = false, idle;
+  addEventListener('touchstart', () => { touching = true; clearTimeout(idle); }, { passive: true });
+  addEventListener('touchend', () => { touching = false; settle(); }, { passive: true });
+  const snap = () => {
+    if (!mq.matches || touching || document.body.classList.contains('menu-open')) return;
+    const hh = head.offsetHeight, r = nav.getBoundingClientRect();
+    if (r.top > 0.5 && r.top < hh - 0.5) {            /* arriving: bar between header bottom and screen top */
+      scrollBy({ top: r.top < hh / 2 ? r.top : r.top - hh, behavior: 'smooth' });
+    } else if (r.top <= 0.5 && r.bottom > 0.5 && r.bottom < hh - 0.5) { /* leaving with the section's end */
+      scrollBy({ top: r.bottom > hh / 2 ? r.bottom - hh : r.bottom, behavior: 'smooth' });
+    }
+  };
+  function settle() { clearTimeout(idle); idle = setTimeout(snap, 140); }
+  addEventListener('scroll', settle, { passive: true });
+
+  /* Mobile: tapping 01 to 05 also brings the top of the cards back under the bar, never higher than where the bar sticks */
+  const rail = $('#rail');
+  $$('#levers .mseg').forEach(c => c.addEventListener('click', () => {
+    if (!mq.matches) return;
+    const nh = nav.offsetHeight, mb = parseFloat(getComputedStyle(nav).marginBottom) || 0;
+    const railTop = rail.getBoundingClientRect().top + scrollY;
+    const stickY = railTop - nh - mb;                      /* scroll position where the bar meets the top */
+    const card = rail.children[+c.dataset.i] || rail.firstElementChild;
+    const cardTop = card.getBoundingClientRect().top + scrollY;
+    const y = Math.max(Math.ceil(stickY), Math.round(cardTop - nh - 12));
+    if (Math.abs(scrollY - y) > 2) scrollTo({ top: y, behavior: 'smooth' });
+  }));
 })();
 /* Mobile CTA: appears once the hero's video and photos have fully cleared the bar's spot, hidden on the Revenue Check and near the contact form */
 (function () {
