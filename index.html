@@ -20,7 +20,7 @@
   --max:1180px;--header-h:72px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;background:var(--bone);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
@@ -757,7 +757,7 @@ form.fpanel{transition:background .3s,border-color .3s}
 /* IMAGE SLOTS: hidden until the matching file exists in /assets */
 .slot{display:none}
 .slot.on{display:block}
-#check,#modules{position:relative;isolation:isolate}
+#check,#modules{position:relative;isolation:isolate;overflow:hidden}
 #check>.wrap,#modules>.wrap{position:relative;z-index:1}
 /* Subtle parallax: faint background drift plus a small counter-drift on the content (Pricing, Revenue Check) */
 .plx-on .slot-bg.on{transform:translate3d(0,calc(var(--plx,0) * -26px),0) scale(1.12);will-change:transform}
@@ -1698,9 +1698,24 @@ const closeLb = () => {
 $('#closeLb').addEventListener('click', closeLb);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLb();
-  if (curSvc && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) location.hash = (e.key === 'ArrowLeft' ? $('#lbPrev') : $('#lbNext')).getAttribute('href');
+  if (curSvc && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) {
+    const slug = ((e.key === 'ArrowLeft' ? $('#lbPrev') : $('#lbNext')).getAttribute('href') || '').slice(9);
+    if (SERVICES[slug]) { history.replaceState(null, '', '#service/' + slug); openSvc(slug); }
+  }
 });
 window.addEventListener('hashchange', routeSvc);
+/* Service links open the lightbox without adding a history entry, so a back or
+   forward swipe can never land inside one. Direct #service/<slug> links still work. */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href^="#service/"]');
+  if (!a) return;
+  const slug = (a.getAttribute('href') || '').slice(9);
+  if (!SERVICES[slug]) return;
+  e.preventDefault();
+  if (typeof setMenu === 'function') setMenu(false);
+  history.replaceState(null, '', '#service/' + slug);
+  openSvc(slug);
+});
 $('#lbBody').addEventListener('click', e => { if (e.target.closest('[data-close]')) hideSvc(); });
 
 /* Carousel: every card can center, chips and arrows jump to cards */
