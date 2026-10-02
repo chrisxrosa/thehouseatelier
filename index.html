@@ -973,6 +973,7 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   form.fpanel{margin-top:10px}
   #check.rc{padding-top:calc(var(--header-h) + 18px)}
 }
+@media(max-width:720px){#check.plx-on>.wrap{transform:none!important}} /* no content drift on mobile: keeps the scroll-to-number target still */
 </style>
 <script>
 /* URL updates can be blocked in sandboxed previews; never let that stop the page */
@@ -2041,23 +2042,13 @@ $('#eIn').addEventListener('keydown', e => { if (e.key !== 'Enter') return; e.pr
   });
 })();
 
-/* Mobile: when the keyboard closes (Done / blur), bring the big number back into view so the change is seen */
+/* Mobile: some Android keyboards close without blurring the field; blur it so the scroll-to-number above runs once */
 (() => {
-  const inp = $('#eIn'), mob = matchMedia('(max-width: 720px)');
-  let t = 0, lastH = window.visualViewport ? visualViewport.height : innerHeight;
-  const show = () => {
-    clearTimeout(t);
-    t = setTimeout(() => {
-      if (!mob.matches || fStep !== 1 || !(inp.value || '').trim() || document.activeElement === inp) return;
-      const r = $('#fBig').getBoundingClientRect();
-      if (r.top >= 0 && r.top < innerHeight * 0.5) return;
-      $('#check').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 350);
-  };
-  inp.addEventListener('blur', show);
+  const inp = $('#eIn');
+  let lastH = window.visualViewport ? visualViewport.height : innerHeight;
   if (window.visualViewport) visualViewport.addEventListener('resize', () => {
     const h = visualViewport.height;
-    if (h - lastH > 120 && document.activeElement === inp) { inp.blur(); }
+    if (h - lastH > 120 && document.activeElement === inp) inp.blur();
     lastH = h;
   });
 })();
