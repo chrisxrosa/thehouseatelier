@@ -985,7 +985,7 @@ window.slotMiss = function (img) {
           </div>
           <div class="ff">
             <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
-            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext" data-nl="Vraag mijn volledige Omzetcheck aan →">Get my full Revenue Check →</button></div>
+            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Start Free Revenue Check →</button></div>
           </div>
         </div>
         <div class="fcard" id="fCard">
@@ -1029,7 +1029,7 @@ window.slotMiss = function (img) {
           </div>
         </div>
         <div class="factions">
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Vraag mijn gratis Omzetcheck aan →">Get my free Revenue Check →</button>
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Ga verder met je gratis Omzetcheck →">Continue Free Revenue Check →</button>
         </div>
       </div>
 
@@ -1155,6 +1155,7 @@ function setLang(l) {
   $('#lang').setAttribute('aria-label', l === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands');
   const waHref = 'https://wa.me/' + CONFIG.whatsappNumber + '?text=' + encodeURIComponent(wa[l]);
   $$('#waLink, #waLink2, .waFoot').forEach(a => { a.href = waHref; });
+  if (typeof syncNext === 'function') syncNext();
   try { localStorage.setItem('tha-lang', l); } catch (e) {}
 }
 $('#lang').addEventListener('click', () => setLang(document.documentElement.lang === 'nl' ? 'en' : 'nl'));
@@ -1245,7 +1246,12 @@ const setSize = k => {
 };
 $$('#estSize button, #gSize button').forEach(b => b.addEventListener('click', () => { if (fStep === 2) ignoreRev = true; setSize(b.dataset.a); }));
 $('#cBeds').addEventListener('change', e => { ignoreRev = true; setSize(e.target.value); });
-$('#eIn').addEventListener('input', () => { ignoreRev = false; renderEst(); });
+function syncNext() {
+  const nl = document.documentElement.lang === 'nl', has = !!($('#eIn').value || '').trim();
+  $('#fNext').textContent = has ? (nl ? 'Ga verder met je gratis Omzetcheck →' : 'Continue Free Revenue Check →') : (nl ? 'Start je gratis Omzetcheck →' : 'Start Free Revenue Check →');
+}
+$('#eIn').addEventListener('input', () => { ignoreRev = false; renderEst(); syncNext(); });
+syncNext();
 $('#eIn').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); goStep(2); } });
 $('#fNext').addEventListener('click', () => goStep(2));
 $('#fHow').addEventListener('click', () => { const m = $('#fMethod'); m.hidden = !m.hidden; $('#fHow').setAttribute('aria-expanded', String(!m.hidden)); renderEst(); });
@@ -1319,7 +1325,7 @@ cForm.addEventListener('submit', async e => {
       ? t('Thank you. We have your details and will be in touch.', 'Bedankt. We hebben je gegevens en nemen contact op.')
       : t('Got it. Your Revenue Check arrives within 48 hours.', 'Ontvangen. Je Omzetcheck komt binnen 48 uur.');
   } catch (x) {
-    btn.disabled = false; btn.textContent = t('Get my free Revenue Check →', 'Vraag mijn gratis Omzetcheck aan →');
+    btn.disabled = false; btn.textContent = t('Continue Free Revenue Check →', 'Ga verder met je gratis Omzetcheck →');
     $('#fErr').textContent = t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.');
     $('#fErr').style.display = 'block';
   }
