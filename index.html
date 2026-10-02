@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>The House Atelier | Well priced. Well shown. Well booked.</title>
-<meta name="description" content="A vacation rental optimization studio on Curaçao. Dynamic pricing, listing photography, copy and SEO, and direct booking websites, built on real market data."/>
+<meta name="description" content="A vacation rental optimization studio on Curaçao. Pricing strategy, listing photography, copy and guest messaging, direct booking websites and property upgrades, built on real market data."/>
 <meta name="theme-color" content="#1b2524"/>
 <link rel="icon" type="image/png" href="assets/tha-icon.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -64,7 +64,8 @@ html{scroll-padding-top:0}
 .photo-grid{flex:1 1 0;min-height:0;display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:minmax(0,1fr) minmax(0,1fr);gap:8px;border-radius:28px;overflow:hidden;box-shadow:var(--shadow-lg);background:var(--bone3)}
 .gi{position:relative;min-height:0;background-size:cover;background-position:center;overflow:hidden}
 .gi::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 55%);pointer-events:none}
-.gi video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gi video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.hero-reel::-webkit-media-controls,.hero-reel::-webkit-media-controls-panel,.hero-reel::-webkit-media-controls-play-button,.hero-reel::-webkit-media-controls-start-playback-button,.hero-reel::-webkit-media-controls-overlay-play-button{display:none!important;-webkit-appearance:none;opacity:0}
 .gi-1{grid-column:1;grid-row:1/3;background:linear-gradient(135deg,#4e7972,#172524)}
 .gi-2{grid-column:2;grid-row:1;background-image:url('assets/lightbox-4-before.jpg');background-color:#8c5f52}
 .gi-3{grid-column:3;grid-row:1;background-image:url('assets/lightbox-4-after.jpg');background-color:#758078}
@@ -938,11 +939,11 @@ window.slotMiss = function (img) {
     <a class="btn check mmenu-cta" href="#check" data-nl="Vraag je gratis Omzetcheck aan →">Get your free Revenue Check →</a>
     <div class="mmenu-grp">
       <h4 data-nl="Diensten">Services</h4>
-      <a href="#service/pricing" data-nl="Dynamische prijzen">Dynamic Pricing</a>
+      <a href="#service/pricing" data-nl="Prijsstrategie">Pricing Strategy</a>
       <a href="#service/photos" data-nl="Advertentiefotografie">Listing Photography</a>
-      <a href="#service/copy" data-nl="Advertentietekst en SEO">Listing Copy &amp; SEO</a>
+      <a href="#service/copy" data-nl="Teksten en berichten">Copy &amp; Messaging</a>
       <a href="#service/channels" data-nl="Website voor direct boeken">Direct Booking Website</a>
-      <a href="#service/amenities" data-nl="Advies over voorzieningen">Amenity Advice</a>
+      <a href="#service/amenities" data-nl="Woningupgrades">Property Upgrades</a>
     </div>
     <div class="mmenu-grp">
       <h4 data-nl="Meer">More</h4>
@@ -970,7 +971,7 @@ window.slotMiss = function (img) {
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
     </div>
     <div class="photo-grid" aria-label="Property before-and-after preview">
-      <div class="gi gi-1"><video autoplay muted loop playsinline preload="metadata" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Caribisch werk">Caribbean-wide work</div></div>
+      <div class="gi gi-1"><video class="hero-reel" autoplay muted loop playsinline webkit-playsinline preload="auto" disablepictureinpicture disableremoteplayback x-webkit-airplay="deny" tabindex="-1" aria-hidden="true" poster="assets/hero-properties-poster.jpg"><source src="assets/hero-properties-reel.mp4" type="video/mp4"/></video><div class="gl" data-nl="Caribisch werk">Caribbean-wide work</div></div>
       <div class="gi gi-2"><div class="gl" data-nl="Voor">Before</div></div>
       <div class="gi gi-3"><div class="gl" data-nl="Na">After</div></div>
       <div class="gi gi-4"><div class="gl" data-nl="Voor">Before</div></div>
@@ -1178,8 +1179,8 @@ window.slotMiss = function (img) {
     <article class="card s1">
       <div class="ch"><div class="n">01</div><div>
         <div class="eyebrow" data-nl="De cijfers">The Numbers</div>
-        <h3 data-nl="Dynamische prijzen">Dynamic Pricing</h3>
-        <p data-nl="Prijs op vraag, niet op gemiddelden. Seizoen, weekdagen en de concurrentie in jouw buurt.">Price for demand, not averages. Seasons, weekdays and the competition on your street.</p>
+        <h3 data-nl="Prijsstrategie">Pricing Strategy</h3>
+        <p data-nl="Prijs op vraag, niet op gemiddelden. Wij zetten de regels die je prijstool volgt, één keer en goed.">Price for demand, not averages. We set the rules your pricing tool follows, once and properly.</p>
       </div></div>
       <div class="pair">
         <div class="pc"><div class="pm b"><div class="ui">
@@ -1214,8 +1215,8 @@ window.slotMiss = function (img) {
     <article class="card s3">
       <div class="ch"><div class="n">03</div><div>
         <div class="eyebrow" data-nl="De belofte">The Promise</div>
-        <h3 data-nl="Advertentietekst en SEO">Listing Copy &amp; SEO</h3>
-        <p data-nl="Maak het verblijf makkelijk te begrijpen en makkelijk om te willen. In drie talen.">Make the stay easy to understand and easy to want. In three languages.</p>
+        <h3 data-nl="Teksten en berichten">Copy &amp; Messaging</h3>
+        <p data-nl="Elk woord dat een gast leest, van de titel tot het reviewverzoek. Eén keer geschreven, in drie talen, en daarna draait het vanzelf.">Every word a guest reads, from the title to the review request. Written once, in three languages, then left running.</p>
       </div></div>
       <div class="pair">
         <div class="pc"><div class="pm b"><div class="ui">
@@ -1256,8 +1257,8 @@ window.slotMiss = function (img) {
     <article class="card s5">
       <div class="ch"><div class="n">05</div><div>
         <div class="eyebrow" data-nl="De woning">The Home</div>
-        <h3 data-nl="Advies over voorzieningen">Amenity Advice</h3>
-        <p data-nl="Advies over wat je aan de woning toevoegt, zodat je verschijnt in de filters waar gasten op zoeken en er op elke foto beter uitziet. Van een koffiezetapparaat tot een zwembad.">Advice on what to add to your home, so it shows up in the filters guests search by and looks better in every photo. From a coffee maker to a pool.</p>
+        <h3 data-nl="Woningupgrades">Property Upgrades</h3>
+        <p data-nl="Wat je inslaat, wat je toevoegt en wat je opwaardeert, gerangschikt op marktdata en luxestandaarden. Van het koffiezetapparaat tot het zwembad.">What to stock, what to add and what to upgrade, ranked by market data and luxury standards. From the coffee maker to the pool.</p>
       </div></div>
       <div class="pair">
         <div class="pc"><div class="pm b"><div class="ui">
@@ -1299,9 +1300,9 @@ window.slotMiss = function (img) {
         <div><small data-nl="Je offerte">Your quote</small><b>Casa Coral</b><span data-nl="3 slk · Jan Thiel">3 bed · Jan Thiel</span></div>
         <em data-nl="Voorbeeld">Sample</em>
       </div>
-      <div class="qline"><span data-nl="Dynamische prijzen">Dynamic Pricing</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Prijsstrategie">Pricing Strategy</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline"><span data-nl="Fotografie">Photography</span><span data-nl="Vaste prijs">Fixed fee</span></div>
-      <div class="qline"><span data-nl="Advertentietekst (EN · NL · ES)">Listing copy (EN · NL · ES)</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Teksten en berichten (EN · NL · ES)">Copy &amp; messaging (EN · NL · ES)</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline strong"><span data-nl="Je investering">Your investment</span><span data-nl="Eén helder totaal">One clear total</span></div>
       <div class="pq-return">
         <div><small data-nl="Geschatte groei">Estimated upside</small><span data-nl="Op basis van marktdata">Based on market data</span></div>
@@ -1365,7 +1366,7 @@ window.slotMiss = function (img) {
 
         <div class="full lgh" data-nl="Je aanvraag">Request</div>
         <div class="full"><span class="lflab" data-nl="Ik wil graag (kies alles wat past)">I'd like (pick all that apply)</span>
-          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetcheck">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Dynamische prijzen">Dynamic Pricing</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Website voor direct boeken">Direct Booking Website</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
+          <div class="lchips" id="rq" role="group" aria-label="I'd like"><button type="button" class="lchip" data-r="inquiry" aria-pressed="false" data-nl="Algemene vraag">General inquiry</button><button type="button" class="lchip" data-r="check" aria-pressed="true" data-nl="Gratis Omzetcheck">Free Revenue Check</button><button type="button" class="lchip" data-r="strategy" aria-pressed="false" data-nl="Prijsstrategie">Pricing Strategy</button><button type="button" class="lchip" data-r="listing" aria-pressed="false" data-nl="Volledige advertentie-optimalisatie">Full Listing Optimization</button><button type="button" class="lchip" data-r="photos" aria-pressed="false" data-nl="Fotografie">Photography</button><button type="button" class="lchip" data-r="direct" aria-pressed="false" data-nl="Website voor direct boeken">Direct Booking Website</button><button type="button" class="lchip" data-r="other" aria-pressed="false" data-nl="Anders">Other</button></div></div>
 
         <div class="full lgh lprop" data-nl="Over de woning">Property details</div>
         <div class="lprop"><label for="status" data-nl="Status">Status</label>
@@ -1409,11 +1410,11 @@ window.slotMiss = function (img) {
       </div>
       <nav class="fcol" aria-label="Services">
         <h4 data-nl="Diensten">Services</h4>
-        <a href="#service/pricing" data-nl="Dynamische prijzen">Dynamic Pricing</a>
+        <a href="#service/pricing" data-nl="Prijsstrategie">Pricing Strategy</a>
         <a href="#service/photos" data-nl="Advertentiefotografie">Listing Photography</a>
-        <a href="#service/copy" data-nl="Advertentietekst en SEO">Listing Copy &amp; SEO</a>
+        <a href="#service/copy" data-nl="Teksten en berichten">Copy &amp; Messaging</a>
         <a href="#service/channels" data-nl="Website voor direct boeken">Direct Booking Website</a>
-        <a href="#service/amenities" data-nl="Advies over voorzieningen">Amenity Advice</a>
+        <a href="#service/amenities" data-nl="Woningupgrades">Property Upgrades</a>
       </nav>
       <nav class="fcol" aria-label="Get started">
         <h4 data-nl="Aan de slag">Get started</h4>
@@ -1508,23 +1509,25 @@ $$('.ag').forEach(g => { for (let n = 1; n <= 5; n++) { const i = document.creat
 /* ===== SERVICE DETAIL PAGES ===== */
 const SERVICES = {
   pricing: {
-    title: { en: 'Dynamic Pricing', nl: 'Dynamische prijzen' },
+    title: { en: 'Pricing Strategy', nl: 'Prijsstrategie' },
     eyebrow: { en: 'The Numbers', nl: 'De cijfers' },
     h2: { en: 'Your calendar is a pricing<br/>decision, 365 times a year.', nl: 'Je kalender is 365 keer<br/>per jaar een prijsbeslissing.' },
-    sub: { en: 'Most owners set one rate and adjust when it hurts. That gap is the easiest money on the table.', nl: 'De meeste eigenaren zetten één tarief en passen aan als het pijn doet. Dat gat is het makkelijkste geld dat blijft liggen.' },
+    sub: { en: 'Smart Pricing and PriceLabs move your rates every day. They only follow the rules someone gives them. We set those rules with market data, once and properly.', nl: 'Smart Pricing en PriceLabs passen je prijzen elke dag aan. Ze volgen alleen de regels die iemand ze geeft. Wij zetten die regels met marktdata, één keer en goed.' },
     points: [
+      { h: { en: 'Tools follow rules. We write them.', nl: 'Tools volgen regels. Wij schrijven ze.' },
+        p: { en: 'A pricing tool needs a base rate, a floor, a ceiling and discount rules. Set them by gut and the tool automates the guess. We set them from what comparable homes near you actually earn, then hand you a calendar that runs itself.', nl: 'Een prijstool heeft een basistarief, een bodem, een plafond en kortingsregels nodig. Zet je die op gevoel, dan automatiseert de tool een gok. Wij baseren ze op wat vergelijkbare woningen bij jou in de buurt echt verdienen, en geven je een kalender die vanzelf draait.' } },
       { h: { en: 'Your real high season, not the island’s', nl: 'Jouw echte hoogseizoen, niet dat van het eiland' },
         p: { en: 'Dutch school holidays, Carnival and the North American winter escape all move differently, and differently again by neighbourhood. We price to your booking pattern, not a generic template.', nl: 'Nederlandse schoolvakanties, Carnaval en de Noord-Amerikaanse wintertrek bewegen allemaal anders, en per buurt weer anders. We prijzen op jouw boekingspatroon, niet op een standaardsjabloon.' } },
-      { h: { en: 'Day of week and gap nights', nl: 'Weekdagen en gatnachten' },
-        p: { en: 'Weekends carry a premium that flat rates give away. The two nights stranded between bookings either get priced to fill or sit empty all season.', nl: 'Weekenden leveren een premie op die vaste tarieven weggeven. De twee nachten die tussen boekingen blijven hangen worden gevuld, of staan het hele seizoen leeg.' } },
+      { h: { en: 'Weekends, gap nights and last minute', nl: 'Weekenden, gatnachten en last minute' },
+        p: { en: 'Weekends carry a premium that flat rates give away. The two nights stranded between bookings get priced to fill. And discounts kick in when your guests’ booking window says so, not when panic does.', nl: 'Weekenden leveren een premie op die vaste tarieven weggeven. De twee nachten tussen boekingen krijgen een prijs die ze vult. En kortingen gaan in wanneer het boekingsgedrag van je gasten dat zegt, niet wanneer de paniek toeslaat.' } },
       { h: { en: 'Minimum stay, the quiet killer', nl: 'Minimale verblijfsduur, de stille moordenaar' },
         p: { en: 'A five night minimum in a market booking three and four nights removes you from the search before price is ever considered. Usually the biggest recoverable loss we find.', nl: 'Een minimum van vijf nachten in een markt die drie en vier nachten boekt haalt je uit de zoekresultaten voordat er naar de prijs wordt gekeken. Meestal het grootste verlies dat we terugvinden.' } },
       { h: { en: 'Total price, not nightly rate', nl: 'Totaalprijs, niet de nachtprijs' },
         p: { en: 'Airbnb shows guests the all-in total. A low nightly rate with a heavy cleaning fee reads as expensive on short stays. We tune the split, not just the headline number.', nl: 'Airbnb toont gasten het totaalbedrag. Een lage nachtprijs met hoge schoonmaakkosten oogt duur bij korte verblijven. We stemmen de verdeling af, niet alleen het cijfer vooraan.' } },
-      { h: { en: 'Lead time and the booking curve', nl: 'Boekingstermijn en de curve' },
-        p: { en: 'How far ahead your guests book decides when a discount is smart and when it is panic. We set the rules before the empty week arrives, not during it.', nl: 'Hoe ver vooruit je gasten boeken bepaalt wanneer korting slim is en wanneer het paniek is. We leggen de regels vast voordat de lege week er is, niet tijdens.' } },
-      { h: { en: 'Floors and ceilings', nl: 'Bodem en plafond' },
-        p: { en: 'A rate you never drop below, and a rate you never fail to charge on the dates people will pay almost anything for.', nl: 'Een tarief waar je nooit onder zakt, en een tarief dat je altijd vraagt op de dagen waarop mensen bijna alles betalen.' } }
+      { h: { en: 'Priced for the 15.5% fee', nl: 'Geprijsd op de 15,5%' },
+        p: { en: 'Airbnb now takes 15.5% from the host. Adding 15.5% to your rate still leaves you short. We build the fee into every rule, so it comes out of the guest’s price, not your margin.', nl: 'Airbnb houdt nu 15,5% in bij de host. Je tarief met 15,5% verhogen is nog steeds te weinig. Wij bouwen de kosten in elke regel in, zodat ze uit de prijs van de gast komen, niet uit jouw marge.' } },
+      { h: { en: 'A project, not a contract', nl: 'Een project, geen contract' },
+        p: { en: 'We set it up, explain it and hand it over. No monthly fee, no lock-in. If you want a check before high season, we are a message away.', nl: 'We zetten het op, leggen het uit en dragen het over. Geen maandbedrag, geen verplichting. Wil je een check vóór het hoogseizoen, dan zijn we één bericht van je verwijderd.' } }
     ],
     why: { en: 'This is the fastest lever you have. No trades, no shoot, no rewrite, and changes take effect the same day. It is also the only lever that loses money invisibly. You never see the bookings you did not get, so the loss never shows up as a problem. That is why we always start here.', nl: 'Dit is de snelste knop die je hebt. Geen vaklui, geen fotoshoot, geen herschrijving, en aanpassingen werken dezelfde dag. Het is ook de enige knop die onzichtbaar geld kost. Je ziet de boekingen die je niet kreeg nooit, dus het verlies valt nooit op. Daarom beginnen we hier altijd.' }
   },
@@ -1547,25 +1550,27 @@ const SERVICES = {
     gallery: true
   },
   copy: {
-    title: { en: 'Listing Copy & SEO', nl: 'Advertentietekst en SEO' },
+    title: { en: 'Copy & Messaging', nl: 'Teksten en berichten' },
     eyebrow: { en: 'The Promise', nl: 'De belofte' },
-    h2: { en: 'Easy to understand.<br/>Easy to want.', nl: 'Makkelijk te begrijpen.<br/>Makkelijk om te willen.' },
-    sub: { en: 'Photos earn the click. Copy turns it into a booking, in the guest’s own language.', nl: 'Foto’s verdienen de klik. Tekst maakt er een boeking van, in de taal van de gast.' },
+    h2: { en: 'Write it once.<br/>Let it work every stay.', nl: 'Eén keer geschreven.<br/>Werkt bij elk verblijf.' },
+    sub: { en: 'Your listing sells the stay. Your messages deliver it. We write both in English, Dutch and Spanish, then set them to run on their own.', nl: 'Je advertentie verkoopt het verblijf. Je berichten maken het waar. Wij schrijven allebei in het Engels, Nederlands en Spaans, en zetten ze zo klaar dat ze vanzelf lopen.' },
     points: [
       { h: { en: 'The title is the most read line you will ever write', nl: 'De titel is de meest gelezen regel die je ooit schrijft' },
         p: { en: '"Beautiful villa with pool" describes four hundred listings. Yours should carry the one thing a guest cannot get down the road.', nl: '"Mooie villa met zwembad" beschrijft vierhonderd advertenties. De jouwe moet het ene ding dragen dat een gast verderop niet krijgt.' } },
+      { h: { en: 'The first hundred characters', nl: 'De eerste honderd tekens' },
+        p: { en: 'That is all that shows before "read more". Most descriptions spend it on a greeting. Yours will spend it on the reason to book.', nl: 'Meer laat Airbnb niet zien vóór "lees meer". De meeste beschrijvingen besteden het aan een begroeting. De jouwe besteedt het aan de reden om te boeken.' } },
       { h: { en: 'Found on Google, not just Airbnb', nl: 'Gevonden op Google, niet alleen op Airbnb' },
         p: { en: 'Airbnb listings show up in Google search. A title, description and captions built around what guests actually type, like “villa with pool Jan Thiel”, put you in front of people before they ever open the app.', nl: 'Airbnb-advertenties verschijnen in Google. Een titel, beschrijving en bijschriften rond wat gasten echt intypen, zoals “villa met zwembad Jan Thiel”, zetten je voor mensen neer nog voordat ze de app openen.' } },
-      { h: { en: 'A name guests can come back to', nl: 'Een naam waar gasten naar terugkomen' },
-        p: { en: 'Guests find you on Airbnb. With a memorable property name, the next time they can look for you directly. Every guest who searches your name instead of the platform is a booking with no commission, and that matters more as platforms charge hosts more.', nl: 'Gasten vinden je via Airbnb. Met een naam die blijft hangen, kunnen ze je de volgende keer direct opzoeken. Elke gast die jouw naam zoekt in plaats van het platform, is een boeking zonder commissie, en dat telt zwaarder nu platforms hosts steeds meer rekenen.' } },
-      { h: { en: 'The first hundred characters', nl: 'De eerste honderd tekens' },
-        p: { en: 'That is all that shows before "read more". Most descriptions spend it on a greeting.', nl: 'Meer laat Airbnb niet zien vóór "lees meer". De meeste beschrijvingen besteden het aan een begroeting.' } },
       { h: { en: 'Objections, answered before they are asked', nl: 'Bezwaren, beantwoord voordat ze gesteld worden' },
-        p: { en: 'Stairs, road access, which rooms have air conditioning, water pressure, wifi speed. Every unanswered question is a message you have to reply to, or a booking that quietly goes elsewhere.', nl: 'Trappen, de weg ernaartoe, welke kamers airco hebben, waterdruk, wifisnelheid. Elke onbeantwoorde vraag is een bericht dat je moet beantwoorden, of een boeking die stilletjes ergens anders heen gaat.' } },
-      { h: { en: 'Amenities are search filters, not a checklist', nl: 'Voorzieningen zijn zoekfilters, geen afvinklijst' },
-        p: { en: 'A filter is a yes or a no. Leave the coffee maker unticked and you vanish from that search just as completely as a home with no private pool. Missing amenities do not lower your ranking, they take you out of the results.', nl: 'Een filter is ja of nee. Vink je het koffiezetapparaat niet aan, dan verdwijn je net zo volledig uit die zoekopdracht als een woning zonder privézwembad. Ontbrekende voorzieningen verlagen je positie niet, ze halen je uit de resultaten.' } }
+        p: { en: 'Stairs, road access, which rooms have air conditioning, wifi speed. We answer them in the description, the photo captions and the house rules. Every unanswered question is a message you have to reply to, or a booking that quietly goes elsewhere.', nl: 'Trappen, de weg ernaartoe, welke kamers airco hebben, wifisnelheid. Wij beantwoorden ze in de beschrijving, de bijschriften en de huisregels. Elke onbeantwoorde vraag is een bericht dat je moet beantwoorden, of een boeking die stilletjes ergens anders heen gaat.' } },
+      { h: { en: 'Messages that send themselves', nl: 'Berichten die zichzelf versturen' },
+        p: { en: 'Booking confirmation, pre-arrival, check-in day, mid-stay, pre-checkout. Written in your voice, timed and scheduled in Airbnb or your property manager software. Guests get the answer before they ask, and you stop typing the same reply at 11pm.', nl: 'Boekingsbevestiging, vóór aankomst, de incheckdag, halverwege, vóór vertrek. Geschreven in jouw stem, getimed en ingepland in Airbnb of je beheersoftware. Gasten krijgen het antwoord voordat ze het vragen, en jij typt niet meer om 23.00 uur hetzelfde antwoord.' } },
+      { h: { en: 'The review request that gets five stars', nl: 'Het reviewverzoek dat vijf sterren oplevert' },
+        p: { en: 'Sent at the right moment and worded to bring back the best part of the stay. Reviews feed your ranking, so this one message keeps paying long after checkout.', nl: 'Verstuurd op het juiste moment en zo geschreven dat het beste deel van het verblijf terugkomt. Reviews voeden je positie, dus dit ene bericht blijft opbrengen, lang na het uitchecken.' } },
+      { h: { en: 'A name guests can come back to', nl: 'Een naam waar gasten naar terugkomen' },
+        p: { en: 'Guests find you on Airbnb. With a memorable property name, the next time they can look for you directly. Every guest who searches your name instead of the platform is a booking with no commission.', nl: 'Gasten vinden je via Airbnb. Met een naam die blijft hangen, kunnen ze je de volgende keer direct opzoeken. Elke gast die jouw naam zoekt in plaats van het platform, is een boeking zonder commissie.' } }
     ],
-    why: { en: 'Copy does three jobs. It turns the clicks your photos earned into bookings. It decides which searches you appear in, on Airbnb and on Google. And it builds a name guests can come back to directly, so each stay makes you a little less dependent on the platforms. Accurate copy also protects revenue you have already booked: fewer cancellations, fewer refund requests and better reviews, which feed straight back into ranking.', nl: 'Tekst doet drie dingen. Het maakt van de klikken die je foto’s verdienden boekingen. Het bepaalt in welke zoekopdrachten je verschijnt, op Airbnb en op Google. En het bouwt een naam op waar gasten direct naar terugkomen, zodat elk verblijf je iets minder afhankelijk maakt van de platforms. Kloppende tekst beschermt ook omzet die je al geboekt hebt: minder annuleringen, minder verzoeken om geld terug en betere reviews, en die voeden je positie weer.' }
+    why: { en: 'Words do the selling before the stay and most of the hosting during it. The listing turns the clicks your photos earned into bookings and decides which searches you appear in, on Airbnb and on Google. The messages make every stay run smoothly, which means fewer questions, fewer cancellations and better reviews. And because it is all written once and automated, it keeps working on every booking without you lifting a finger.', nl: 'Woorden doen het verkopen vóór het verblijf en het meeste gastheerschap tijdens. De advertentie maakt van de klikken die je foto’s verdienden boekingen en bepaalt in welke zoekopdrachten je verschijnt, op Airbnb en op Google. De berichten laten elk verblijf soepel lopen: minder vragen, minder annuleringen en betere reviews. En omdat alles één keer geschreven en geautomatiseerd is, blijft het werken bij elke boeking zonder dat jij er iets voor hoeft te doen.' }
   },
   channels: {
     title: { en: 'Direct Booking Website', nl: 'Website voor direct boeken' },
@@ -1589,21 +1594,25 @@ const SERVICES = {
     why: { en: 'Two reasons. Every direct booking keeps the 8 to 15.5% a booking platform would have charged you. And it lowers your risk: when one platform is your whole business, a ranking change or an account problem can empty your calendar overnight.', nl: 'Twee redenen. Elke directe boeking bespaart je de 8 tot 15,5% die een boekingsplatform je anders rekent. En het verlaagt je risico: als één platform je hele bedrijf is, kan een verandering in de ranking of een probleem met je account je kalender van de ene op de andere dag leegmaken.' }
   },
   amenities: {
-    title: { en: 'Amenity Advice', nl: 'Advies over voorzieningen' },
+    title: { en: 'Property Upgrades', nl: 'Woningupgrades' },
     eyebrow: { en: 'The Home', nl: 'De woning' },
-    h2: { en: 'Guests filter first.<br/>Then they compare.', nl: 'Gasten filteren eerst.<br/>Daarna vergelijken ze.' },
-    sub: { en: 'Clear advice on what to add to your home, so it shows up in more searches and looks better in every photo.', nl: 'Helder advies over wat je aan je woning toevoegt, zodat je in meer zoekopdrachten verschijnt en er op elke foto beter uitziet.' },
+    h2: { en: 'Upgrade what pays.<br/>Skip what doesn’t.', nl: 'Upgrade wat loont.<br/>Sla over wat niet loont.' },
+    sub: { en: 'From what is in the kitchen drawer to whether a pool will pay for itself. Advice grounded in market data and luxury hospitality standards.', nl: 'Van wat er in de keukenla ligt tot de vraag of een zwembad zichzelf terugverdient. Advies op basis van marktdata en luxe hospitalitystandaarden.' },
     points: [
-      { h: { en: 'Match the filters', nl: 'Pas bij de filters' },
-        p: { en: 'We check which amenities guests in your area filter for, like a pool, a workspace or fast wifi, and which ones your competitors already list.', nl: 'We kijken op welke voorzieningen gasten in jouw omgeving filteren, zoals een zwembad, een werkplek of snelle wifi, en welke je concurrenten al aanbieden.' } },
+      { h: { en: 'Stocked like a great host', nl: 'Ingericht als een goede gastheer' },
+        p: { en: 'A complete stocking list for your home: kitchen, linens, bathroom, beach gear and the small touches guests notice. Everything a guest needs for a week is already there, never on their shopping list.', nl: 'Een complete inkooplijst voor je woning: keuken, linnengoed, badkamer, strandspullen en de kleine details die gasten opvallen. Alles wat een gast voor een week nodig heeft, is er al, nooit op hun boodschappenlijst.' } },
+      { h: { en: 'Big decisions, backed by data', nl: 'Grote beslissingen, onderbouwd met data' },
+        p: { en: 'A pool, an outdoor kitchen, an extra bedroom? We compare similar homes near you with and without it, so you see what it adds to your rate and occupancy before you spend a cent.', nl: 'Een zwembad, een buitenkeuken, een extra slaapkamer? We vergelijken vergelijkbare woningen bij jou in de buurt met en zonder, zodat je ziet wat het toevoegt aan je prijs en bezetting voordat je één cent uitgeeft.' } },
+      { h: { en: 'Measured against luxury standards', nl: 'Gemeten aan luxestandaarden' },
+        p: { en: 'We review your home against the standards behind collections like Airbnb Luxe: finishes, bedding, layout, outdoor space and the arrival experience. You get a clear list of what already meets the bar and what is holding the price down.', nl: 'We leggen je woning naast de standaarden achter collecties als Airbnb Luxe: afwerking, beddengoed, indeling, buitenruimte en de aankomstervaring. Je krijgt een helder overzicht van wat al aan de lat voldoet en wat de prijs omlaag houdt.' } },
+      { h: { en: 'Show up in the filters', nl: 'Verschijn in de filters' },
+        p: { en: 'Guests filter before they compare. A pool, a workspace, fast wifi, even a coffee maker is a yes or a no. We add what guests in your area filter for, and make sure everything you already have is ticked.', nl: 'Gasten filteren voordat ze vergelijken. Een zwembad, een werkplek, snelle wifi, zelfs een koffiezetapparaat is ja of nee. Wij voegen toe waar gasten in jouw omgeving op filteren, en zorgen dat alles wat je al hebt aangevinkt staat.' } },
       { h: { en: 'Upgrade what the camera sees', nl: 'Verbeter wat de camera ziet' },
         p: { en: 'Furniture, linens and finishes show up in every photo. We point out the changes that make the biggest difference on screen.', nl: 'Meubels, linnengoed en afwerking zie je op elke foto. We wijzen de veranderingen aan die op het scherm het meeste verschil maken.' } },
-      { h: { en: 'Ranked by payoff', nl: 'Gerangschikt op rendement' },
-        p: { en: 'Quick, low-cost fixes first. Bigger investments only where the market data supports them.', nl: 'Snelle, goedkope verbeteringen eerst. Grotere investeringen alleen waar de marktdata ze ondersteunt.' } },
-      { h: { en: 'You choose who does the work', nl: 'Jij kiest wie het werk doet' },
-        p: { en: 'We advise, you decide. Later on, we hope to introduce trusted local suppliers for things like pools and furniture.', nl: 'Wij adviseren, jij beslist. Later hopen we je te kunnen voorstellen aan betrouwbare lokale leveranciers voor bijvoorbeeld zwembaden en meubels.' } }
+      { h: { en: 'Ranked by payoff, your call on who does it', nl: 'Gerangschikt op rendement, jij kiest wie het doet' },
+        p: { en: 'Quick, low-cost fixes first. Bigger investments only where the data supports them. We advise, you decide and choose who does the work.', nl: 'Snelle, goedkope verbeteringen eerst. Grotere investeringen alleen waar de data ze ondersteunt. Wij adviseren, jij beslist en kiest wie het werk doet.' } }
     ],
-    why: { en: 'Guests narrow their search with filters before they look at a single photo. A missing amenity can hide your home from the guests most likely to book it, and a dated room can make a fair price feel too high. Small changes often fix both.', nl: 'Gasten verkleinen hun zoekopdracht met filters voordat ze één foto bekijken. Een ontbrekende voorziening kan je woning verbergen voor de gasten die het snelst zouden boeken, en een gedateerde kamer kan een eerlijke prijs te hoog laten voelen. Kleine veranderingen lossen vaak allebei op.' }
+    why: { en: 'Pricing, photos and copy get your home closer to what it can earn. Upgrades are the only lever that raises that ceiling. A well stocked home earns better reviews, a home that matches the filters shows up in more searches, and a home that meets luxury standards can charge luxury rates.', nl: 'Prijs, foto’s en tekst brengen je woning dichter bij wat ze kan verdienen. Upgrades zijn de enige knop die dat plafond verhoogt. Een goed ingerichte woning krijgt betere reviews, een woning die bij de filters past verschijnt in meer zoekopdrachten, en een woning die aan luxestandaarden voldoet kan luxeprijzen vragen.' }
   }
 };
 const SVC_ORDER = ['pricing','photos','copy','channels','amenities'];
@@ -1957,7 +1966,7 @@ form.querySelectorAll('select').forEach(el => el.addEventListener('change', () =
    - Photography and/or direct booking site only: no pricing or management questions.
    - General inquiry (exclusive) or Other only: no property questions; the message is required. */
 const PL = { airbnb: 'Airbnb', booking: 'Booking.com', vrbo: 'Vrbo', google: 'Google Vacation Rentals', micazu: 'Micazu', direct: 'Direct booking site' };
-const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Check', strategy: 'Dynamic Pricing', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Website', other: 'Other' };
+const REQ_LABEL = { inquiry: 'General inquiry', check: 'Free Revenue Check', strategy: 'Pricing Strategy', listing: 'Full Listing Optimization', photos: 'Photography', direct: 'Direct Booking Website', other: 'Other' };
 const picked = sel => $$(sel + ' .lchip').filter(c => c.getAttribute('aria-pressed') === 'true').map(c => c.dataset.r || c.dataset.p);
 const reqMode = r => !r.length ? 'none' : r.some(x => ['check', 'strategy', 'listing'].includes(x)) ? 'full' : r.some(x => ['photos', 'direct'].includes(x)) ? 'photo' : 'none';
 function syncForm() {
@@ -2071,6 +2080,23 @@ form.addEventListener('submit', async e => {
     showErr(t('Something went wrong. Please try again or message us on WhatsApp.', 'Er ging iets mis. Probeer het opnieuw of stuur ons een WhatsApp.'));
   }
 });
+
+/* Hero reel: always autoplay, never show native play controls */
+(() => {
+  const v = document.querySelector('.hero-reel');
+  if (!v) return;
+  v.muted = true; v.defaultMuted = true; v.playsInline = true; v.controls = false;
+  v.setAttribute('muted', '');
+  const play = () => { if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); } };
+  ['loadedmetadata', 'canplay', 'pause', 'suspend', 'stalled'].forEach(ev => v.addEventListener(ev, () => { if (!document.hidden) play(); }));
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) play(); });
+  window.addEventListener('pageshow', play);
+  /* iOS Low Power Mode blocks autoplay until the first touch or scroll */
+  const kick = () => play();
+  ['touchstart', 'pointerdown', 'scroll', 'keydown'].forEach(ev => window.addEventListener(ev, kick, { passive: true }));
+  if ('IntersectionObserver' in window) new IntersectionObserver(es => es.forEach(e => e.isIntersecting && play())).observe(v);
+  play();
+})();
 </script>
 </body>
 </html>
