@@ -222,6 +222,7 @@ html{scroll-padding-top:0}
 .pq-steps small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b6c1bd}
 .pq-steps .on small{color:#e8927a}
 .pq-steps span{display:block;font-size:15px;color:#fffefa;margin-top:6px}
+.pq-steps p{margin:6px 0 0;font-size:13.5px;line-height:1.5;color:#b6c1bd}
 .pq-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:30px;font-size:14px;color:#b6c1bd}
 .pq-cta .wa2{color:#fff}
 .pq-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:30px 32px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg)}
@@ -603,7 +604,7 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .fdone{font-size:15px;line-height:1.5;color:#fff;background:var(--sage);border-radius:12px;padding:14px 16px}
 .ftrust{margin-top:12px;display:flex;flex-direction:column;align-items:center;gap:6px}
 .ftrustline{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:13.5px;color:#dfe6e3}
-@media(max-width:720px){.ftrustline{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;justify-content:start;text-align:left;column-gap:10px;row-gap:6px}.ftrustline .fbadge{flex:none;margin-top:-1px}.ftrustline .fhow{grid-column:2;justify-self:start;padding-left:0}}
+@media(max-width:720px){.ftrustline{display:grid;grid-template-columns:minmax(0,1fr);align-items:start;justify-content:start;text-align:left;column-gap:10px;row-gap:6px}.ftrustline .fbadge{flex:none;margin-top:-1px}.ftrustline .fhow{grid-column:1;justify-self:start;padding-left:0}}
 .fbadge{width:22px;height:22px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;color:#fff}
 .fhow{background:none;border:0;color:#d7a08e;font:700 13px 'DM Sans',sans-serif;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:32px;padding:0 4px}
 .fmethod{max-width:760px;margin:0;font-size:13.5px;line-height:1.6;color:#c5cfcb;text-wrap:balance}
@@ -630,6 +631,8 @@ form.fpanel{display:block;width:100%;margin-top:16px;background:rgba(255,255,255
 .gap-head{text-align:center;max-width:780px;margin:0 auto 46px}
 .gap-head h2{font-size:clamp(34px,4.8vw,60px);line-height:1.02;letter-spacing:-.035em;margin:8px 0 12px}
 .gap-head p{margin:0;color:var(--md);font-size:16px}
+.gap-head h2 span{color:var(--acc);font-style:italic}
+.gap-head .gsub{margin:0 auto 18px;max-width:640px;font-size:17px;line-height:1.5;text-wrap:balance}
 .gbar-wrap{max-width:1040px;margin:0 auto}
 .gpills{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-top:18px}
 .gpills button{min-height:40px;min-width:48px;padding:0 12px;border-radius:999px;border:1px solid rgba(27,37,36,.22);background:transparent;color:var(--ink);font:700 13px 'DM Sans',sans-serif;cursor:pointer;transition:.15s}
@@ -1025,6 +1028,33 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .vE-scale span:nth-child(2){display:none}
   .vE-foot{flex-direction:column;align-items:flex-start}.vE-foot .src{text-align:left}
 }
+
+/* CHALLENGE (ledger card): copy left, a tilted card itemizing the three leaks, echoing the Pricing quote card */
+.chd{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.market .chd-copy h2{margin:12px 0 0;font-size:clamp(36px,4.3vw,54px);line-height:1.04;letter-spacing:-.035em}
+.market .chd-copy h2 span{color:var(--acc);font-style:italic}
+.chd-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:var(--md);max-width:420px}
+.chd-cta{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.chd-cta span{font-family:'Lora',serif;font-size:22px;color:var(--char)}
+.chd-card{background:var(--bone2);border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-lg);transform:rotate(-1deg);border:1px solid var(--line)}
+.chd-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;padding:16px 0;border-bottom:1px dashed rgba(27,37,36,.18)}
+.chd-row small,.chd-foot small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chd-row h3{margin:4px 0;font-size:19px;line-height:1.2;color:var(--char)}
+.chd-row p{margin:0;font-size:13px;line-height:1.5;color:var(--md)}
+.chd-row>b{font-family:'Lora',serif;font-weight:400;font-size:clamp(34px,3.4vw,46px);line-height:1;letter-spacing:-.03em;color:var(--acc);text-align:right;white-space:nowrap}
+.chd-row>b small{display:inline;font-size:.5em;font-weight:400;letter-spacing:-.02em;text-transform:none;color:#a07866}
+.chd-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:16px 18px;border-radius:14px;background:#e7f1ed;transition:background .2s}
+.chd-foot:hover{background:#dbeae4}
+.chd-foot small{color:var(--sage)}.chd-foot span{font-size:13px;color:var(--md)}
+.chd-foot>b{font-family:'Lora',serif;font-weight:400;font-size:26px;color:var(--sage)}
+@media(max-width:960px){.chd{grid-template-columns:1fr;gap:36px}}
+@media(max-width:720px){
+  .chd-card{transform:none;padding:22px 18px}
+  .chd-row{grid-template-columns:1fr;gap:8px}.chd-row>b{text-align:left;order:-1}
+}
+.pq-copy h2.pq-h{text-wrap:balance;max-width:600px}
+@media(max-width:720px){.pq-steps{grid-template-columns:1fr;gap:18px}} /* pricing steps stack on phones */
+@media(max-width:720px){#levers .mb-today{display:none}#levers .mb-svc{display:inline}} /* mobile bar always says Services */
 </style>
 <script>
 /* URL updates can be blocked in sandboxed previews; never let that stop the page */
@@ -1092,6 +1122,7 @@ window.slotMiss = function (img) {
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
       <p class="hero-sub" data-nl="Een optimalisatiestudio voor vakantieverhuur die met marktdata het volledige potentieel van je woning ontsluit.">A vacation rental optimization studio using market data to unlock your property's full potential.</p>
       <div class="hero-actions">
+        <a class="btn" href="#levers" data-nl="Bekijk onze diensten ↓">Explore our services ↓</a>
         <a class="btn btn-outline check" href="#check" data-cta="→">Compare your revenue →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
@@ -1108,47 +1139,218 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="market">
+<section class="gap" id="gap">
   <div class="wrap">
-    <div class="vE-head">
-      <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
+    <div class="gap-head">
+      <div class="eyebrow" data-nl="Het gat">The gap</div>
       <h2 data-nl="De meeste woningen op Curaçao verliezen <span>stilletjes</span> geld.">Most Curaçao rentals lose money <span>quietly.</span></h2>
-      <p data-nl="Er gaat geen alarm af. Het geld komt gewoon nooit binnen. Hier lekt het weg.">No alarm goes off. The money just never arrives. Here's where it slips.</p>
+      <div class="gpills" id="gSize" role="group" aria-label="Bedrooms"><button type="button" data-a="br1" data-nl="1 slk">1BR</button><button type="button" data-a="br2" data-nl="2 slk">2BR</button><button type="button" data-a="br3" class="on" data-nl="3 slk">3BR</button><button type="button" data-a="br4" data-nl="4 slk">4BR</button><button type="button" data-a="br5" data-nl="5 slk">5BR</button><button type="button" data-a="br6" data-nl="6+ slk">6+BR</button></div>
     </div>
-    <div class="vE-panel">
-      <div class="vE-row">
-        <div class="vE-num"><small data-nl="Lek 01 · Timing">Leak 01 · Timing</small><b data-nl="96 dagen">96 days</b></div>
-        <div class="vE-viz" aria-hidden="true">
-          <div class="vE-track"><i class="fill" style="--w:26%"></i></div>
-          <div class="vE-scale"><span data-nl="Vandaag">Today</span><span data-nl="Volgeboekt">Booked out</span><span data-nl="12 maanden">12 months</span></div>
-        </div>
-        <div class="vE-txt"><h3 data-nl="Het hoogseizoen is vroeg uitverkocht.">High season sells early.</h3><p data-nl="Zo ver vooruit worden villa’s geboekt. Optimaliseer je je kalender te laat, dan zijn de beste nachten al weg.">That’s how far ahead villas book. Optimize your calendar late and the best nights are gone.</p></div>
+    <div class="gbar-wrap">
+      <div class="gends">
+        <div><span id="gMedL"></span><b id="gMedV"></b></div>
+        <div class="r"><span data-nl="Beste 25%">Top 25%</span><b id="gTopV"></b></div>
       </div>
-      <div class="vE-row">
-        <div class="vE-num"><small data-nl="Lek 02 · Verdienkloof">Leak 02 · Earning gap</small><b class="lk-jump">63%<i aria-hidden="true">←</i><small>46%</small></b></div>
-        <div class="vE-viz" aria-hidden="true">
-          <div class="vE-pair"><span data-nl="Hoogseizoen">High season</span><div class="vE-track thin"><i class="fill s" style="--w:73%"></i></div><b>+46%</b></div>
-          <div class="vE-pair"><span data-nl="Rustigste maanden">Slow months</span><div class="vE-track thin"><i class="fill" style="--w:100%"></i></div><b>+63%</b></div>
-        </div>
-        <div class="vE-txt"><h3 data-nl="Als het rustig is, groeit het gat.">When it's quiet, the gap grows.</h3><p data-nl="De beste 25% verdient 46% meer dan de gemiddelde woning in het hoogseizoen. In de rustigste maanden groeit dat tot 63%.">The top 25% out-earn the typical listing by 46% in high season. In the slowest months, that grows to 63%.</p></div>
+      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, channels and amenities.">
+        <div class="gbase" data-nl="Wat je nu verdient">What you earn today</div>
+        <div class="gzero" title="Where your home is. The one part you can't change." data-nl-title="Waar je woning staat. Het enige deel dat je niet kunt veranderen."><b>00</b><span data-nl="Ligging">Location</span></div>
+        <button type="button" class="gseg g1" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
+        <button type="button" class="gseg g2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
+        <button type="button" class="gseg g3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
+        <button type="button" class="gseg g4" data-i="3" aria-label="04 Direct site"><b>04</b><span data-nl="Directe site">Direct site</span></button>
+        <button type="button" class="gseg g5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
       </div>
-      <div class="vE-row">
-        <div class="vE-num"><small data-nl="Lek 03 · Zwakke advertenties">Leak 03 · Weak listings</small><b>88%</b></div>
-        <div class="vE-viz" aria-hidden="true">
-          <div class="vE-split"><i style="--w:88%"><span data-nl="Zwak 88%">Weak 88%</span></i><i class="s"><span>12%</span></i></div>
-        </div>
-        <div class="vE-txt"><h3 data-nl="De meeste advertenties verkopen zichzelf tekort.">Most listings undersell.</h3><p data-nl="88% heeft zwakke foto’s, tekst of details. De andere 12% presteert vaker beter dan hun markt.">88% have weak photos, copy or details. The other 12% are likelier to beat their market.</p></div>
-      </div>
+      <div class="glabel"><span id="gGap"></span></div>
     </div>
-    <div class="vE-foot">
-      <span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-cta="↓">Compare your revenue ↓</a>
-      <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
+    <div class="gcards">
+      <div class="gc s1" data-i="0"><div class="n">01</div><h3 data-nl="Verkeerd geprijsd">Priced by guesswork</h3><p data-nl="Paniekkortingen, prijzen te laag in het hoogseizoen, te hoog in het laagseizoen, en minimum verblijven die niet bij de markt passen.">Panic discounts, pricing too low in the high season, too high in low season, and minimum stays out of step with the market.</p><a class="fix" href="#fix-1" data-fix="0" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s2" data-i="1"><div class="n">02</div><h3 data-nl="Niet gezien">Scrolled past</h3><p data-nl="Foto's die de klik niet verdienen. Gasten zien je woning, maar klikken niet.">Photos that don't earn the click. Guests see your home and keep scrolling.</p><a class="fix" href="#fix-2" data-fix="1" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s3" data-i="2"><div class="n">03</div><h3 data-nl="Niet overtuigd">Clicked, not booked</h3><p data-nl="Tekst die het verblijf niet verkoopt en gasten geen beeld geeft van de woning en de omgeving.">Copy that doesn't sell the stay or give guests a feel for the space and the area.</p><a class="fix" href="#fix-3" data-fix="2" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="Tot 15,5% per boeking">Up to 15.5% a stay</h3><p data-nl="Elke boeking loopt via platforms die hosts 8 tot 15,5% rekenen. Zelfs gasten die terugkomen kunnen je niet direct boeken.">Every booking runs through platforms that charge hosts 8 to 15.5%. Even returning guests can't book you direct.</p><a class="fix" href="#fix-4" data-fix="3" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+      <div class="gc s5" data-i="4"><div class="n">05</div><h3 data-nl="Weggefilterd">Filtered out</h3><p data-nl="Geen koffiezetapparaat kan je net zo snel uit de zoekresultaten halen als geen zwembad. Het huis verderop krijgt de boeking.">Not having a coffee maker can drop you from the search results as fast as not having a pool. The home down the road gets the booking.</p><a class="fix" href="#fix-5" data-fix="4" data-nl="Bekijk de oplossing →">See the fix →</a></div>
+    </div>
+    <div class="gap-foot">
+      <a class="btn" href="#levers" data-nl="Zie hoe we het gat sluiten ↓">See how we close the gap ↓</a>
     </div>
   </div>
 </section>
 
-<!-- REVENUE CHECK -->
+<section id="levers">
+  <div class="wrap">
+    <div class="intro">
+      <div class="eyebrow" data-nl="De oplossing">The solution</div>
+      <h2 data-nl="Diensten">Services</h2>
+    </div>
+    <nav class="mnav" aria-label="Closing the gap">
+      <div class="mbar">
+        <div class="mbase"><span class="mb-today" data-nl="Vandaag">Today</span><span class="mb-svc" data-nl="Diensten">Services</span></div>
+        <button type="button" class="mseg s1 on" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
+        <button type="button" class="mseg s2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
+        <button type="button" class="mseg s3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
+        <button type="button" class="mseg s4" data-i="3" aria-label="04 Direct site"><b>04</b><span data-nl="Directe site">Direct site</span></button>
+        <button type="button" class="mseg s5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
+      </div>
+      <span class="mend" data-nl="→ Geoptimaliseerd">→ Optimized</span>
+      <button type="button" class="ar" id="prev" aria-label="Previous">←</button>
+      <button type="button" class="ar" id="next" aria-label="Next">→</button>
+    </nav>
+  </div>
+  <div class="rail" id="rail">
+
+    <!-- 01 NUMBERS -->
+    <article class="card s1" id="fix-1">
+      <div class="ch"><div class="n">01</div><div>
+        <div class="eyebrow" data-nl="De cijfers">The Numbers</div>
+        <h3 data-nl="Prijsstrategie &amp; set-up">Pricing Strategy &amp; Setup</h3>
+        <p data-nl="Wij zetten de regels voor je dynamische prijzen en beheren, als dat nodig is, je omzet maand na maand.">We set the rules for your dynamic pricing and, if needed, manage your revenue month to month.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><div><small data-nl="Kalenderprijs">Calendar pricing</small><strong data-nl="$650 / nacht">$650 / night</strong></div><span class="chip" data-nl="vaste prijs">flat rate</span></div>
+          <div class="cal"><div class="d"><b>Mon</b><span>$650</span></div><div class="d"><b>Tue</b><span>$650</span></div><div class="d"><b>Wed</b><span>$650</span></div><div class="d"><b>Thu</b><span>$650</span></div><div class="d"><b>Fri</b><span>$650</span></div><div class="d"><b>Sat</b><span>$650</span></div><div class="d"><b>Sun</b><span>$650</span></div></div>
+          <div class="tags"><span data-nl="Geen vraagsignaal">No demand signal</span><span data-nl="Vaste minimale verblijfsduur">Fixed minimum stay</span></div>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><div><small data-nl="Kalenderprijs">Calendar pricing</small><strong>$550–$950</strong></div><span class="chip" data-nl="op vraag">demand-aware</span></div>
+          <div class="cal"><div class="d soft"><b>Mon</b><span>$550</span></div><div class="d"><b>Tue</b><span>$585</span></div><div class="d"><b>Wed</b><span>$615</span></div><div class="d"><b>Thu</b><span>$650</span></div><div class="d hot"><b>Fri</b><span>$850</span></div><div class="d hot"><b>Sat</b><span>$950</span></div><div class="d"><b>Sun</b><span>$650</span></div></div>
+          <div class="tags"><span data-nl="Weekendopslag">Weekend lift</span><span data-nl="Seizoenen">Seasonality</span><span data-nl="Lege nachten gevuld">Gap nights filled</span></div>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
+      </div>
+      <div class="more"><a class="svc-more" data-svc="pricing" href="#service/pricing" data-nl="Lees meer →">Learn more →</a></div>
+    </article>
+
+    <!-- 02 VISUALS -->
+    <article class="card s2" id="fix-2">
+      <div class="ch"><div class="n">02</div><div>
+        <div class="eyebrow" data-nl="Het beeld">The Visuals</div>
+        <h3 data-nl="Advertentiefotografie">Listing Photography</h3>
+        <p data-nl="Je eerste vijf foto's hebben één taak: de klik verdienen en de prijs waard laten voelen.">Your first five photos have one job: earn the click and make the stay feel worth the price.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="ag" data-s="before"></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="ag" data-s="after"></div><div class="pf" data-nl="Na">After</div></div>
+      </div>
+      <div class="more"><a class="svc-more" data-svc="photos" href="#service/photos" data-nl="Bekijk meer →">See more →</a></div>
+    </article>
+
+    <!-- 03 PROMISE -->
+    <article class="card s3" id="fix-3">
+      <div class="ch"><div class="n">03</div><div>
+        <div class="eyebrow" data-nl="De belofte">The Promise</div>
+        <h3 data-nl="Teksten en berichten">Copy &amp; Messaging</h3>
+        <p data-nl="Elk woord dat een gast leest, van de titel tot het reviewverzoek. Eén keer geschreven, in drie talen, en daarna draait het vanzelf.">Every word a guest reads, from the title to the review request. Written once, in three languages, then left running.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><small data-nl="Voor · algemeen">Before · generic</small><span class="chip">EN</span></div>
+          <h4>Beautiful Villa in Curaçao</h4>
+          <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home.</p>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><small data-nl="Na · gericht">After · high-intent</small><span class="chip">EN · NL · ES</span></div>
+          <h4>Private West Coast Villa · Pool · Sunset Views</h4>
+          <p>A hillside escape for slow mornings and easy access to Curaçao's west coast.</p>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
+      </div>
+      <div class="more"><a class="svc-more" data-svc="copy" href="#service/copy" data-nl="Lees meer →">Learn more →</a></div>
+    </article>
+
+    <!-- 04 DIRECT -->
+    <article class="card s4" id="fix-4">
+      <div class="ch"><div class="n">04</div><div>
+        <div class="eyebrow" data-nl="Directe site">Direct site</div>
+        <h3 data-nl="Website voor direct boeken">Direct Booking Website</h3>
+        <p data-nl="Boekingsplatforms rekenen hosts 8 tot 15,5% per boeking. Met je eigen site boeken terugkerende gasten direct, zonder kosten. Andere kanalen komen op de tweede plaats.">Booking platforms charge hosts 8 to 15.5% a booking. Your own site lets repeat guests book direct, fee-free. Other channels come second.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong>8–15.5%</strong></div><span class="chip" data-nl="alleen platforms">Platforms only</span></div>
+          <div class="dsite off"><div class="dbar"><i></i><i></i><i></i><span data-nl="Geen eigen website">No website of your own</span></div><div class="dbody"><span data-nl="Terugkerende gasten moeten via een platform boeken">Repeat guests have to book through a platform</span></div></div>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><div><small data-nl="Kosten bij direct boeken">Fee on direct bookings</small><strong>0%</strong></div><span class="chip" data-nl="+ Airbnb, Booking.com, Vrbo · 1 kalender">+ Airbnb, Booking.com, Vrbo · 1 calendar</span></div>
+          <div class="dsite"><div class="dbar"><i></i><i></i><i></i><span>casacoral.com</span></div><div class="dbody"><b>Casa Coral · Jan Thiel</b><span class="dbtn" data-nl="Boek direct">Book direct</span></div></div>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
+      </div>
+      <div class="more"><a class="svc-more" data-svc="channels" href="#service/channels" data-nl="Lees meer →">Learn more →</a></div>
+    </article>
+
+    <!-- 05 HOME -->
+    <article class="card s5" id="fix-5">
+      <div class="ch"><div class="n">05</div><div>
+        <div class="eyebrow" data-nl="De woning">The Home</div>
+        <h3 data-nl="Woningupgrades">Property Upgrades</h3>
+        <p data-nl="Wat je inslaat, wat je toevoegt en wat je opwaardeert, gerangschikt op marktdata en luxestandaarden.">What to stock, what to add and what to upgrade, ranked by market data and luxury standards.</p>
+      </div></div>
+      <div class="pair">
+        <div class="pc"><div class="pm b"><div class="ui">
+          <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="2 van 6">2 of 6</strong></div><span class="chip" data-nl="gemist">missed</span></div>
+          <div class="chans"><span>Wifi</span><span>AC</span><span class="off" data-nl="Zwembad">Pool</span><span class="off" data-nl="Werkplek">Workspace</span><span class="off" data-nl="Koffiezetapparaat">Coffee maker</span><span class="off" data-nl="Oven">Oven</span></div>
+        </div></div><div class="pf" data-nl="Voor">Before</div></div>
+        <div class="pc"><div class="pm a"><div class="ui">
+          <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="6 van 6">6 of 6</strong></div><span class="chip" data-nl="gevonden">matched</span></div>
+          <div class="chans"><span>Wifi</span><span>AC</span><span data-nl="Zwembad">Pool</span><span data-nl="Werkplek">Workspace</span><span data-nl="Koffiezetapparaat">Coffee maker</span><span data-nl="Oven">Oven</span></div>
+        </div></div><div class="pf" data-nl="Na">After</div></div>
+      </div>
+      <div class="more"><a class="svc-more" data-svc="amenities" href="#service/amenities" data-nl="Lees meer →">Learn more →</a></div>
+    </article>
+
+  </div>
+</section>
+
+<section class="dark" id="modules">
+  <!-- IMAGE SLOT: assets/bg-pricing.jpg (texture, shown faintly) -->
+  <img class="slot slot-bg" src="assets/bg-pricing.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
+  <div class="wrap pq">
+    <div class="pq-copy">
+      <div class="eyebrow" data-nl="Prijzen">Pricing</div>
+      <h2 class="pq-h" data-nl="Zie wat erin zit voordat je een dollar uitgeeft.">See the upside before you spend a dollar.</h2>
+      <div class="pq-steps">
+        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Omzetpotentie-rapport">Revenue Potential Report</span><p data-nl="Zie eerst waar je woning staat. Weet je al wat je nodig hebt? Sla deze stap over.">See where your home stands first. Already know what you need? Skip ahead.</p></div>
+        <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span><p data-nl="Eén vaste prijs voor het werk dat jij kiest, of het nu om één dienst gaat of een volledig plan.">One fixed price for the work you choose, whether that's a single service or a full plan.</p></div>
+        <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij gaan aan de slag">We get to work</span><p data-nl="Pas na jouw akkoord gaan we aan de slag. Daarna nemen wij het over.">Nothing starts until you say yes. Then we take it from there.</p></div>
+      </div>
+      <div class="pq-cta">
+        <a class="btn check" href="#check" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</a>
+        <span><span data-nl="Vragen?">Questions?</span> <a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
+      </div>
+    </div>
+    <div class="pq-card" aria-label="Sample quote">
+      <div class="pq-card-top">
+        <div><small data-nl="Je offerte">Your quote</small><b>Casa Coral</b><span data-nl="3 slk · Jan Thiel">3 bed · Jan Thiel</span></div>
+        <em data-nl="Voorbeeld">Sample</em>
+      </div>
+      <div class="qline"><span data-nl="Prijsstrategie">Pricing Strategy</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Fotografie">Photography</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Directe boekingssite">Direct Booking Site</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline strong"><span data-nl="Je investering">Your investment</span><span data-nl="Eén helder totaal">One clear total</span></div>
+      <div class="pq-return">
+        <div><small data-nl="Geschatte groei">Estimated upside</small><span data-nl="Op basis van marktdata">Based on market data</span></div>
+        <b data-nl="+ $ per jaar">+ $ / year</b>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="light" id="about">
+  <div class="wrap ph">
+    <div class="ph-top">
+      <div class="ph-copy">
+        <div class="eyebrow" data-nl="Onze filosofie">Our philosophy</div>
+        <p class="ph-quote" data-nl="“Jij houdt de sleutels.<br/>Wij vullen de gaten.”">“You hold the keys.<br/>We fill the gaps.”</p>
+        <p class="ph-bio" data-nl="Chris werkt als consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa op Sint Maarten, een luxe vakantieverhuurbedrijf. Het team van Chris brengt 15 jaar revenue management in hotels en villa's mee.">Chris consults for Airbnb Luxe and led digital marketing for Sint Maarten’s CoveCasa, a luxury vacation rental operator. Chris’ team brings 15 years of hotel and villa revenue management.</p>
+        <div class="ph-sign"><i></i><b>Chris, The House Atelier</b></div>
+      </div>
+      <img src="assets/chris-bio.jpg" alt="Chris, The House Atelier"/>
+    </div>
+    <div class="ph-points">
+      <div><small>01</small><h3 data-nl="Jouw woning, jouw beslissing.">Your home, your call.</h3><p data-nl="Jij keurt elke wijziging goed.">You approve every change.</p></div>
+      <div><small>02</small><h3 data-nl="Data in plaats van gokken.">Data over guesswork.</h3><p data-nl="Elk advies komt uit echte boekingsdata van Curaçao.">Every recommendation comes from real Curaçao booking data.</p></div>
+      <div><small>03</small><h3 data-nl="Op het eiland.">On the island.</h3><p data-nl="Gevestigd op Curaçao. We kennen de straten die je gasten vergelijken.">Based in Curaçao. We know the streets your guests compare.</p></div>
+    </div>
+  </div>
+</section>
+
 <section class="rc" id="check">
   <!-- IMAGE SLOT: assets/bg-revenue-check.jpg (texture, shown faintly) -->
   <img class="slot slot-bg" src="assets/bg-revenue-check.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
@@ -1237,231 +1439,12 @@ window.slotMiss = function (img) {
     </form>
 
     <div class="ftrust">
-      <div class="ftrustline"><span class="fbadge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
+      <div class="ftrustline"><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
       <p class="fmethod" id="fMethod" hidden></p>
     </div>
   </div>
 </section>
 
-<!-- THE GAP -->
-<section class="gap" id="gap">
-  <div class="wrap">
-    <div class="gap-head">
-      <div class="eyebrow" data-nl="Het gat">The gap</div>
-      <h2 id="gHead"></h2>
-      <div class="gpills" id="gSize" role="group" aria-label="Bedrooms"><button type="button" data-a="br1" data-nl="1 slk">1BR</button><button type="button" data-a="br2" data-nl="2 slk">2BR</button><button type="button" data-a="br3" class="on" data-nl="3 slk">3BR</button><button type="button" data-a="br4" data-nl="4 slk">4BR</button><button type="button" data-a="br5" data-nl="5 slk">5BR</button><button type="button" data-a="br6" data-nl="6+ slk">6+BR</button></div>
-    </div>
-    <div class="gbar-wrap">
-      <div class="gends">
-        <div><span id="gMedL"></span><b id="gMedV"></b></div>
-        <div class="r"><span data-nl="Beste 25%">Top 25%</span><b id="gTopV"></b></div>
-      </div>
-      <div class="gbar" role="img" aria-label="Revenue bar: a typical listing sits about a third below the top 25 percent. One part is location, which you can't change. The other five are price, photos, copy, channels and amenities.">
-        <div class="gbase" data-nl="Wat je nu verdient">What you earn today</div>
-        <div class="gzero" title="Where your home is. The one part you can't change." data-nl-title="Waar je woning staat. Het enige deel dat je niet kunt veranderen."><b>00</b><span data-nl="Ligging">Location</span></div>
-        <button type="button" class="gseg g1" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
-        <button type="button" class="gseg g2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
-        <button type="button" class="gseg g3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
-        <button type="button" class="gseg g4" data-i="3" aria-label="04 Channels"><b>04</b><span data-nl="Kanalen">Channels</span></button>
-        <button type="button" class="gseg g5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
-      </div>
-      <div class="glabel"><span id="gGap"></span></div>
-    </div>
-    <div class="gcards">
-      <div class="gc s1" data-i="0"><div class="n">01</div><h3 data-nl="Verkeerd geprijsd">Priced by guesswork</h3><p data-nl="Eén vaste prijs, het hele jaar. Te laag in het hoogseizoen, te hoog als het rustig is.">One flat rate all year. Too low in high season, too high when it's quiet.</p><a class="fix" href="#fix-1" data-fix="0" data-nl="Bekijk de oplossing →">See the fix →</a></div>
-      <div class="gc s2" data-i="1"><div class="n">02</div><h3 data-nl="Niet gezien">Scrolled past</h3><p data-nl="Foto's die de klik niet verdienen. Gasten zien je woning, maar klikken niet.">Photos that don't earn the click. Guests see your home and keep scrolling.</p><a class="fix" href="#fix-2" data-fix="1" data-nl="Bekijk de oplossing →">See the fix →</a></div>
-      <div class="gc s3" data-i="2"><div class="n">03</div><h3 data-nl="Niet overtuigd">Clicked, not booked</h3><p data-nl="Tekst die het verblijf niet verkoopt, in één taal, voor een internationale gast.">Copy that doesn't sell the stay, in one language, for an international guest.</p><a class="fix" href="#fix-3" data-fix="2" data-nl="Bekijk de oplossing →">See the fix →</a></div>
-      <div class="gc s4" data-i="3"><div class="n">04</div><h3 data-nl="15,5% op elke boeking">15.5% on every stay</h3><p data-nl="Elke boeking loopt via Airbnb, dat hosts nu 15,5% rekent. Zelfs gasten die terugkomen kunnen je niet direct boeken.">Every booking runs through Airbnb, which now charges hosts 15.5%. Even returning guests can't book you direct.</p><a class="fix" href="#fix-4" data-fix="3" data-nl="Bekijk de oplossing →">See the fix →</a></div>
-      <div class="gc s5" data-i="4"><div class="n">05</div><h3 data-nl="Weggefilterd">Filtered out</h3><p data-nl="Geen koffiezetapparaat kan je net zo snel uit de zoekresultaten halen als geen zwembad. Het huis verderop krijgt de boeking.">Not having a coffee maker can drop you from the search results as fast as not having a pool. The home down the road gets the booking.</p><a class="fix" href="#fix-5" data-fix="4" data-nl="Bekijk de oplossing →">See the fix →</a></div>
-    </div>
-    <div class="gap-foot">
-      <a class="btn" href="#levers" data-nl="Zie hoe we het gat sluiten ↓">See how we close the gap ↓</a>
-    </div>
-  </div>
-</section>
-
-<!-- LEVERS CAROUSEL -->
-<section id="levers">
-  <div class="wrap">
-    <div class="intro">
-      <div class="eyebrow" data-nl="De oplossing">The solution</div>
-      <h2 data-nl="Diensten">Services</h2>
-      <p data-nl="Wat je vraagt en hoe je je laat zien.">What you charge and how you show up.</p>
-    </div>
-    <nav class="mnav" aria-label="Closing the gap">
-      <div class="mbar">
-        <div class="mbase"><span class="mb-today" data-nl="Vandaag">Today</span><span class="mb-svc" data-nl="Diensten">Services</span></div>
-        <button type="button" class="mseg s1 on" data-i="0" aria-label="01 The Numbers"><b>01</b><span data-nl="Prijs">Price</span></button>
-        <button type="button" class="mseg s2" data-i="1" aria-label="02 The Visuals"><b>02</b><span data-nl="Foto's">Photos</span></button>
-        <button type="button" class="mseg s3" data-i="2" aria-label="03 The Promise"><b>03</b><span data-nl="Tekst">Copy</span></button>
-        <button type="button" class="mseg s4" data-i="3" aria-label="04 Channels"><b>04</b><span data-nl="Kanalen">Channels</span></button>
-        <button type="button" class="mseg s5" data-i="4" aria-label="05 Amenities"><b>05</b><span data-nl="Voorzieningen">Amenities</span></button>
-      </div>
-      <span class="mend" data-nl="→ Geoptimaliseerd">→ Optimized</span>
-      <button type="button" class="ar" id="prev" aria-label="Previous">←</button>
-      <button type="button" class="ar" id="next" aria-label="Next">→</button>
-    </nav>
-  </div>
-  <div class="rail" id="rail">
-
-    <!-- 01 NUMBERS -->
-    <article class="card s1" id="fix-1">
-      <div class="ch"><div class="n">01</div><div>
-        <div class="eyebrow" data-nl="De cijfers">The Numbers</div>
-        <h3 data-nl="Prijsstrategie &amp; set-up">Pricing Strategy &amp; Setup</h3>
-        <p data-nl="Prijs op vraag, niet op gemiddelden. Wij zetten de regels die je prijstool volgt, één keer en goed.">Price for demand, not averages. We set the rules your pricing tool follows, once and properly.</p>
-      </div></div>
-      <div class="pair">
-        <div class="pc"><div class="pm b"><div class="ui">
-          <div class="uh"><div><small data-nl="Kalenderprijs">Calendar pricing</small><strong data-nl="$650 / nacht">$650 / night</strong></div><span class="chip" data-nl="vaste prijs">flat rate</span></div>
-          <div class="cal"><div class="d"><b>Mon</b><span>$650</span></div><div class="d"><b>Tue</b><span>$650</span></div><div class="d"><b>Wed</b><span>$650</span></div><div class="d"><b>Thu</b><span>$650</span></div><div class="d"><b>Fri</b><span>$650</span></div><div class="d"><b>Sat</b><span>$650</span></div><div class="d"><b>Sun</b><span>$650</span></div></div>
-          <div class="tags"><span data-nl="Geen vraagsignaal">No demand signal</span><span data-nl="Vaste minimale verblijfsduur">Fixed minimum stay</span></div>
-        </div></div><div class="pf" data-nl="Voor">Before</div></div>
-        <div class="pc"><div class="pm a"><div class="ui">
-          <div class="uh"><div><small data-nl="Kalenderprijs">Calendar pricing</small><strong>$550–$950</strong></div><span class="chip" data-nl="op vraag">demand-aware</span></div>
-          <div class="cal"><div class="d soft"><b>Mon</b><span>$550</span></div><div class="d"><b>Tue</b><span>$585</span></div><div class="d"><b>Wed</b><span>$615</span></div><div class="d"><b>Thu</b><span>$650</span></div><div class="d hot"><b>Fri</b><span>$850</span></div><div class="d hot"><b>Sat</b><span>$950</span></div><div class="d"><b>Sun</b><span>$650</span></div></div>
-          <div class="tags"><span data-nl="Weekendopslag">Weekend lift</span><span data-nl="Seizoenen">Seasonality</span><span data-nl="Lege nachten gevuld">Gap nights filled</span></div>
-        </div></div><div class="pf" data-nl="Na">After</div></div>
-      </div>
-      <div class="more"><a class="svc-more" data-svc="pricing" href="#service/pricing" data-nl="Lees meer →">Learn more →</a></div>
-    </article>
-
-    <!-- 02 VISUALS -->
-    <article class="card s2" id="fix-2">
-      <div class="ch"><div class="n">02</div><div>
-        <div class="eyebrow" data-nl="Het beeld">The Visuals</div>
-        <h3 data-nl="Advertentiefotografie">Listing Photography</h3>
-        <p data-nl="Je eerste vijf foto's hebben één taak: de klik verdienen en de prijs waard laten voelen.">Your first five photos have one job: earn the click and make the stay feel worth the price.</p>
-      </div></div>
-      <div class="pair">
-        <div class="pc"><div class="ag" data-s="before"></div><div class="pf" data-nl="Voor">Before</div></div>
-        <div class="pc"><div class="ag" data-s="after"></div><div class="pf" data-nl="Na">After</div></div>
-      </div>
-      <div class="more"><a class="svc-more" data-svc="photos" href="#service/photos" data-nl="Bekijk meer →">See more →</a></div>
-    </article>
-
-    <!-- 03 PROMISE -->
-    <article class="card s3" id="fix-3">
-      <div class="ch"><div class="n">03</div><div>
-        <div class="eyebrow" data-nl="De belofte">The Promise</div>
-        <h3 data-nl="Teksten en berichten">Copy &amp; Messaging</h3>
-        <p data-nl="Elk woord dat een gast leest, van de titel tot het reviewverzoek. Eén keer geschreven, in drie talen, en daarna draait het vanzelf.">Every word a guest reads, from the title to the review request. Written once, in three languages, then left running.</p>
-      </div></div>
-      <div class="pair">
-        <div class="pc"><div class="pm b"><div class="ui">
-          <div class="uh"><small data-nl="Voor · algemeen">Before · generic</small><span class="chip">EN</span></div>
-          <h4>Beautiful Villa in Curaçao</h4>
-          <p>Beautiful villa with pool and great location. Enjoy your stay in this comfortable home.</p>
-        </div></div><div class="pf" data-nl="Voor">Before</div></div>
-        <div class="pc"><div class="pm a"><div class="ui">
-          <div class="uh"><small data-nl="Na · gericht">After · high-intent</small><span class="chip">EN · NL · ES</span></div>
-          <h4>Private West Coast Villa · Pool · Sunset Views</h4>
-          <p>A hillside escape for slow mornings and easy access to Curaçao's west coast.</p>
-        </div></div><div class="pf" data-nl="Na">After</div></div>
-      </div>
-      <div class="more"><a class="svc-more" data-svc="copy" href="#service/copy" data-nl="Lees meer →">Learn more →</a></div>
-    </article>
-
-    <!-- 04 DIRECT -->
-    <article class="card s4" id="fix-4">
-      <div class="ch"><div class="n">04</div><div>
-        <div class="eyebrow" data-nl="Kanalen">Channels</div>
-        <h3 data-nl="Website voor direct boeken">Direct Booking Website</h3>
-        <p data-nl="Airbnb rekent hosts nu 15,5% per boeking. Met je eigen site boeken terugkerende gasten direct, zonder kosten. Andere kanalen komen op de tweede plaats.">Airbnb now charges hosts 15.5% a booking. Your own site lets repeat guests book direct, fee-free. Other channels come second.</p>
-      </div></div>
-      <div class="pair">
-        <div class="pc"><div class="pm b"><div class="ui">
-          <div class="uh"><div><small data-nl="Kosten per boeking">Fee per booking</small><strong>15.5%</strong></div><span class="chip" data-nl="alleen Airbnb">Airbnb only</span></div>
-          <div class="dsite off"><div class="dbar"><i></i><i></i><i></i><span data-nl="Geen eigen website">No website of your own</span></div><div class="dbody"><span data-nl="Terugkerende gasten moeten via Airbnb boeken">Repeat guests have to book through Airbnb</span></div></div>
-        </div></div><div class="pf" data-nl="Voor">Before</div></div>
-        <div class="pc"><div class="pm a"><div class="ui">
-          <div class="uh"><div><small data-nl="Kosten bij direct boeken">Fee on direct bookings</small><strong>0%</strong></div><span class="chip" data-nl="+ Airbnb, Booking.com, Vrbo · 1 kalender">+ Airbnb, Booking.com, Vrbo · 1 calendar</span></div>
-          <div class="dsite"><div class="dbar"><i></i><i></i><i></i><span>casacoral.com</span></div><div class="dbody"><b>Casa Coral · Jan Thiel</b><span class="dbtn" data-nl="Boek direct">Book direct</span></div></div>
-        </div></div><div class="pf" data-nl="Na">After</div></div>
-      </div>
-      <div class="more"><a class="svc-more" data-svc="channels" href="#service/channels" data-nl="Lees meer →">Learn more →</a></div>
-    </article>
-
-    <!-- 05 HOME -->
-    <article class="card s5" id="fix-5">
-      <div class="ch"><div class="n">05</div><div>
-        <div class="eyebrow" data-nl="De woning">The Home</div>
-        <h3 data-nl="Woningupgrades">Property Upgrades</h3>
-        <p data-nl="Wat je inslaat, wat je toevoegt en wat je opwaardeert, gerangschikt op marktdata en luxestandaarden.">What to stock, what to add and what to upgrade, ranked by market data and luxury standards.</p>
-      </div></div>
-      <div class="pair">
-        <div class="pc"><div class="pm b"><div class="ui">
-          <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="2 van 6">2 of 6</strong></div><span class="chip" data-nl="gemist">missed</span></div>
-          <div class="chans"><span>Wifi</span><span>AC</span><span class="off" data-nl="Zwembad">Pool</span><span class="off" data-nl="Werkplek">Workspace</span><span class="off" data-nl="Koffiezetapparaat">Coffee maker</span><span class="off" data-nl="Oven">Oven</span></div>
-        </div></div><div class="pf" data-nl="Voor">Before</div></div>
-        <div class="pc"><div class="pm a"><div class="ui">
-          <div class="uh"><div><small data-nl="Zoekfilters">Search filters</small><strong data-nl="6 van 6">6 of 6</strong></div><span class="chip" data-nl="gevonden">matched</span></div>
-          <div class="chans"><span>Wifi</span><span>AC</span><span data-nl="Zwembad">Pool</span><span data-nl="Werkplek">Workspace</span><span data-nl="Koffiezetapparaat">Coffee maker</span><span data-nl="Oven">Oven</span></div>
-        </div></div><div class="pf" data-nl="Na">After</div></div>
-      </div>
-      <div class="more"><a class="svc-more" data-svc="amenities" href="#service/amenities" data-nl="Lees meer →">Learn more →</a></div>
-    </article>
-
-  </div>
-</section>
-
-<!-- PRICING -->
-<section class="dark" id="modules">
-  <!-- IMAGE SLOT: assets/bg-pricing.jpg (texture, shown faintly) -->
-  <img class="slot slot-bg" src="assets/bg-pricing.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
-  <div class="wrap pq">
-    <div class="pq-copy">
-      <div class="eyebrow" data-nl="Prijzen">Pricing</div>
-      <h2 data-nl="Eerst de data.<br/>Dan een offerte.">Data first.<br/>Then a quote.</h2>
-      <p data-nl="We offreren het werk dat volgens de marktdata het meest oplevert.">We quote the work the market data says is most likely to pay off.</p>
-      <div class="pq-steps">
-        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Omzetcheck">Revenue Check</span></div>
-        <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span></div>
-        <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span></div>
-      </div>
-      <div class="pq-cta">
-        <a class="btn check" href="#check" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</a>
-        <span><a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
-      </div>
-    </div>
-    <div class="pq-card" aria-label="Sample quote">
-      <div class="pq-card-top">
-        <div><small data-nl="Je offerte">Your quote</small><b>Casa Coral</b><span data-nl="3 slk · Jan Thiel">3 bed · Jan Thiel</span></div>
-        <em data-nl="Voorbeeld">Sample</em>
-      </div>
-      <div class="qline"><span data-nl="Prijsstrategie">Pricing Strategy</span><span data-nl="Vaste prijs">Fixed fee</span></div>
-      <div class="qline"><span data-nl="Fotografie">Photography</span><span data-nl="Vaste prijs">Fixed fee</span></div>
-      <div class="qline"><span data-nl="Teksten en berichten (EN · NL · ES)">Copy &amp; messaging (EN · NL · ES)</span><span data-nl="Vaste prijs">Fixed fee</span></div>
-      <div class="qline strong"><span data-nl="Je investering">Your investment</span><span data-nl="Eén helder totaal">One clear total</span></div>
-      <div class="pq-return">
-        <div><small data-nl="Geschatte groei">Estimated upside</small><span data-nl="Op basis van marktdata">Based on market data</span></div>
-        <b data-nl="+ $ per jaar">+ $ / year</b>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PHILOSOPHY / BIO -->
-<section class="light" id="about">
-  <div class="wrap ph">
-    <div class="ph-top">
-      <div class="ph-copy">
-        <div class="eyebrow" data-nl="Onze filosofie">Our philosophy</div>
-        <p class="ph-quote" data-nl="“Jij houdt de sleutels.<br/>Wij vullen de gaten.”">“You hold the keys.<br/>We fill the gaps.”</p>
-        <p class="ph-bio" data-nl="Chris werkt als consultant voor Airbnb Luxe en leidde de digitale marketing voor CoveCasa op Sint Maarten, een luxe vakantieverhuurbedrijf. Het team van Chris brengt 15 jaar revenue management in hotels en villa's mee.">Chris consults for Airbnb Luxe and led digital marketing for Sint Maarten’s CoveCasa, a luxury vacation rental operator. Chris’ team brings 15 years of hotel and villa revenue management.</p>
-        <div class="ph-sign"><i></i><b>Chris, The House Atelier</b></div>
-      </div>
-      <img src="assets/chris-bio.jpg" alt="Chris, The House Atelier"/>
-    </div>
-    <div class="ph-points">
-      <div><small>01</small><h3 data-nl="Jouw woning, jouw beslissing.">Your home, your call.</h3><p data-nl="Jij keurt elke wijziging goed.">You approve every change.</p></div>
-      <div><small>02</small><h3 data-nl="Data in plaats van gokken.">Data over guesswork.</h3><p data-nl="Elk advies komt uit echte boekingsdata van Curaçao.">Every recommendation comes from real Curaçao booking data.</p></div>
-      <div><small>03</small><h3 data-nl="Op het eiland.">On the island.</h3><p data-nl="Gevestigd op Curaçao. We kennen de straten die je gasten vergelijken.">Based in Curaçao. We know the streets your guests compare.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
 <section class="beige" id="faq">
   <div class="wrap faq">
     <div><div class="eyebrow" data-nl="Veelgestelde vragen">Frequently asked questions</div><h2 data-nl="Goed om te weten.">Good to know.</h2>
@@ -1476,7 +1459,6 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="dark" id="contact">
   <div class="wrap contact">
     <div>
@@ -1641,10 +1623,10 @@ const SERVICES = {
     title: { en: 'Pricing Strategy & Setup', nl: 'Prijsstrategie & set-up' },
     eyebrow: { en: 'The Numbers', nl: 'De cijfers' },
     h2: { en: 'Your calendar is a pricing<br/>decision, 365 times a year.', nl: 'Je kalender is 365 keer<br/>per jaar een prijsbeslissing.' },
-    sub: { en: 'Smart Pricing and PriceLabs move your rates every day. They only follow the rules someone gives them. We set those rules with market data, once and properly.', nl: 'Smart Pricing en PriceLabs passen je prijzen elke dag aan. Ze volgen alleen de regels die iemand ze geeft. Wij zetten die regels met marktdata, één keer en goed.' },
+    sub: { en: 'Dynamic pricing moves your rates every day, but only by the rules someone gives it. We set those rules with market data and, if you like, manage them month to month.', nl: 'Dynamische prijzen passen je tarieven elke dag aan, maar alleen volgens de regels die iemand ze geeft. Wij zetten die regels met marktdata en beheren ze, als je dat wilt, maand na maand.' },
     points: [
       { h: { en: 'Tools follow rules. We write them.', nl: 'Tools volgen regels. Wij schrijven ze.' },
-        p: { en: 'A pricing tool needs a base rate, a floor, a ceiling and discount rules. Set them by gut and the tool automates the guess. We set them from what comparable homes near you actually earn, then hand you a calendar that runs itself.', nl: 'Een prijstool heeft een basistarief, een bodem, een plafond en kortingsregels nodig. Zet je die op gevoel, dan automatiseert de tool een gok. Wij baseren ze op wat vergelijkbare woningen bij jou in de buurt echt verdienen, en geven je een kalender die vanzelf draait.' } },
+        p: { en: 'A pricing tool needs a base rate, a floor, a ceiling and discount rules. Set them by gut and the tool automates the guess. We anchor them in what comparable homes near you earn. And when we are repositioning your home, we price for where it is going, not where it has been.', nl: 'Een prijstool heeft een basistarief, een bodem, een plafond en kortingsregels nodig. Zet je die op gevoel, dan automatiseert de tool een gok. Wij verankeren ze in wat vergelijkbare woningen bij jou in de buurt verdienen. En als we je woning herpositioneren, prijzen we voor waar ze naartoe gaat, niet waar ze vandaan komt.' } },
       { h: { en: 'Your real high season, not the island’s', nl: 'Jouw echte hoogseizoen, niet dat van het eiland' },
         p: { en: 'Dutch school holidays, Carnival and the North American winter escape all move differently, and differently again by neighbourhood. We price to your booking pattern, not a generic template.', nl: 'Nederlandse schoolvakanties, Carnaval en de Noord-Amerikaanse wintertrek bewegen allemaal anders, en per buurt weer anders. We prijzen op jouw boekingspatroon, niet op een standaardsjabloon.' } },
       { h: { en: 'Weekends, gap nights and last minute', nl: 'Weekenden, gatnachten en last minute' },
@@ -1653,10 +1635,10 @@ const SERVICES = {
         p: { en: 'A five night minimum in a market booking three and four nights removes you from the search before price is ever considered. Usually the biggest recoverable loss we find.', nl: 'Een minimum van vijf nachten in een markt die drie en vier nachten boekt haalt je uit de zoekresultaten voordat er naar de prijs wordt gekeken. Meestal het grootste verlies dat we terugvinden.' } },
       { h: { en: 'Total price, not nightly rate', nl: 'Totaalprijs, niet de nachtprijs' },
         p: { en: 'Airbnb shows guests the all-in total. A low nightly rate with a heavy cleaning fee reads as expensive on short stays. We tune the split, not just the headline number.', nl: 'Airbnb toont gasten het totaalbedrag. Een lage nachtprijs met hoge schoonmaakkosten oogt duur bij korte verblijven. We stemmen de verdeling af, niet alleen het cijfer vooraan.' } },
-      { h: { en: 'Priced for the 15.5% fee', nl: 'Geprijsd op de 15,5%' },
-        p: { en: 'Airbnb now takes 15.5% from the host. Adding 15.5% to your rate still leaves you short. We build the fee into every rule, so it comes out of the guest’s price, not your margin.', nl: 'Airbnb houdt nu 15,5% in bij de host. Je tarief met 15,5% verhogen is nog steeds te weinig. Wij bouwen de kosten in elke regel in, zodat ze uit de prijs van de gast komen, niet uit jouw marge.' } },
+      { h: { en: 'Priced for platform fees', nl: 'Geprijsd op platformkosten' },
+        p: { en: 'Booking platforms take 8 to 15.5% from the host. Adding the same percentage to your rate still leaves you short. We build the fee into every rule, so it comes out of the guest’s price, not your margin.', nl: 'Boekingsplatforms houden 8 tot 15,5% in bij de host. Je tarief met hetzelfde percentage verhogen is nog steeds te weinig. Wij bouwen de kosten in elke regel in, zodat ze uit de prijs van de gast komen, niet uit jouw marge.' } },
       { h: { en: 'A project, not a contract', nl: 'Een project, geen contract' },
-        p: { en: 'We set it up, explain it and hand it over. No monthly fee, no lock-in. If you want a check before high season, we are a message away.', nl: 'We zetten het op, leggen het uit en dragen het over. Geen maandbedrag, geen verplichting. Wil je een check vóór het hoogseizoen, dan zijn we één bericht van je verwijderd.' } }
+        p: { en: 'We set it up, explain it and hand it over. No long-term contract. Want ongoing support? We schedule monthly or seasonal check-ins to keep your pricing on course.', nl: 'We zetten het op, leggen het uit en dragen het over. Geen langlopend contract. Liever doorlopende ondersteuning? Dan plannen we maandelijkse of seizoensgebonden check-ins om je prijzen op koers te houden.' } }
     ],
     why: { en: 'This is the fastest lever you have. No trades, no shoot, no rewrite, and changes take effect the same day. It is also the only lever that loses money invisibly. You never see the bookings you did not get, so the loss never shows up as a problem. That is why we always start here.', nl: 'Dit is de snelste knop die je hebt. Geen vaklui, geen fotoshoot, geen herschrijving, en aanpassingen werken dezelfde dag. Het is ook de enige knop die onzichtbaar geld kost. Je ziet de boekingen die je niet kreeg nooit, dus het verlies valt nooit op. Daarom beginnen we hier altijd.' }
   },
@@ -1703,13 +1685,13 @@ const SERVICES = {
   },
   channels: {
     title: { en: 'Direct Booking Website', nl: 'Website voor direct boeken' },
-    eyebrow: { en: 'Channels', nl: 'Kanalen' },
-    h2: { en: 'Your guests.<br/>Your site. No 15.5%.', nl: 'Jouw gasten.<br/>Jouw site. Geen 15,5%.' },
-    sub: { en: 'Airbnb now charges hosts 15.5% on every booking. A direct booking site lets the guests who already know you book without it.', nl: 'Airbnb rekent hosts nu 15,5% op elke boeking. Met een eigen boekingssite boeken gasten die je al kennen zonder die kosten.' },
+    eyebrow: { en: 'Direct site', nl: 'Directe site' },
+    h2: { en: 'Your guests.<br/>Your site. No platform fees.', nl: 'Jouw gasten.<br/>Jouw site. Geen platformkosten.' },
+    sub: { en: 'Airbnb, Booking.com and Vrbo charge hosts 8 to 15.5% on every booking. A direct booking site lets the guests who already know you book without it.', nl: 'Airbnb, Booking.com en Vrbo rekenen hosts 8 tot 15,5% op elke boeking. Met een eigen boekingssite boeken gasten die je al kennen zonder die kosten.' },
     points: [
       { h: { en: 'A site that books', nl: 'Een site die boekt' },
         p: { en: 'Your own domain with live availability, secure payments and instant confirmation. Built to turn a visit into a booking, not just to look good.', nl: 'Je eigen domein met live beschikbaarheid, veilige betalingen en directe bevestiging. Gemaakt om een bezoek in een boeking om te zetten, niet alleen om mooi te zijn.' } },
-      { h: { en: 'Keep the 15.5%', nl: 'Houd de 15,5% zelf' },
+      { h: { en: 'Keep the platform fee', nl: 'Houd de platformkosten zelf' },
         p: { en: 'On a direct booking you pay card processing, not a platform fee. Same guest, same week, a very different margin.', nl: 'Bij een directe boeking betaal je transactiekosten, geen platformkosten. Dezelfde gast, dezelfde week, een heel andere marge.' } },
       { h: { en: 'Repeat guests and referrals', nl: 'Terugkerende gasten en aanbevelingen' },
         p: { en: 'The guests most likely to book direct are the ones who already stayed or heard about you. Your site gives them a reason and a place to do it.', nl: 'De gasten die het snelst direct boeken, hebben al bij je gelogeerd of over je gehoord. Je site geeft ze een reden en een plek om dat te doen.' } },
@@ -2037,7 +2019,6 @@ function renderEst() {
     'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je gratis Omzetpotentie-rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
   /* The Gap section follows the bedroom size picked in the calculator */
   const pctMore = Math.round((d.top / d.med - 1) * 100);
-  $('#gHead').innerHTML = t('In Curaçao, the top&nbsp;25% <br/>earn ' + pctMore + '%&nbsp;more.', 'De beste&nbsp;25% op&nbsp;Curaçao <br/>verdient ' + pctMore + '%&nbsp;meer.');
   const nBr = estSize === 'st' ? null : (estSize === 'br6' ? '6+' : estSize.slice(2));
   $('#gMedL').textContent = t('Typical ' + w, nBr ? 'Gemiddeld · ' + nBr + (nBr === '1' ? ' slaapkamer' : ' slaapkamers') : 'Gemiddelde studio');
   $('#gMedV').textContent = money(d.med) + t('/mo', '/mnd');
@@ -2059,6 +2040,15 @@ const goStep = n => {
     if (n === 2) $('#cStatus').focus({ preventScroll: true });
   }, 30);
 };
+/* Every link to the Revenue Check: "Get free Revenue Potential Report" opens step 2 (form already open),
+   "Compare your revenue" (and anything else) lands on step 1 */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href="#check"]');
+  if (!a) return;
+  e.preventDefault();
+  goStep(/Potential Report|Omzetpotentie/i.test(a.textContent) ? 2 : 1);
+});
+
 const setSize = k => {
   estSize = k;
   $('#cBeds').value = k;
