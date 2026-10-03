@@ -974,6 +974,57 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   #check.rc{padding-top:calc(var(--header-h) + 18px)}
 }
 @media(max-width:720px){#check.plx-on>.wrap{transform:none!important}} /* no content drift on mobile: keeps the scroll-to-number target still */
+@media(max-width:720px){#fCard{display:none!important}} /* report-contents box is desktop only */
+@media(max-width:720px){
+  /* The Gap: one tile open at a time on mobile, tap a number to open it */
+  .gc:not(.open){flex-direction:row;align-items:center;gap:12px;cursor:pointer;padding-top:14px;padding-bottom:14px}
+  .gc:not(.open) h3{margin:0;font-size:17px}
+  .gc:not(.open) p,.gc:not(.open) .fix{display:none}
+  .gc:not(.open)::after{content:"+";margin-left:auto;font-size:22px;line-height:1;font-weight:300;color:var(--seg)}
+  .gc.open p,.gc.open .fix{animation:gcIn .28s ease both}
+}
+@keyframes gcIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+@media(max-width:720px){#estSize,#gSize{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}#estSize button,#gSize button{padding-left:0;padding-right:0;min-width:0;text-align:center}} /* six bedroom sizes fit one row */
+@media(max-width:720px){.contact{grid-template-columns:minmax(0,1fr)}.contact>*,.form-card{min-width:0}} /* contact column never wider than small phones */
+/* THE CHALLENGE: centered head, one panel, each leak drawn as a bar */
+.market{background:var(--bone3)}
+.vE-head{text-align:center;max-width:760px;margin:0 auto clamp(22px,3.6vh,34px)}
+.vE-head h2{margin:12px 0 0;font-size:clamp(34px,4.2vw,52px);line-height:1.05;letter-spacing:-.035em;text-wrap:balance}
+.vE-head h2 span{color:var(--acc);font-style:italic}
+.vE-head p{margin:14px auto 0;font-size:17px;line-height:1.5;color:var(--md);max-width:520px}
+.vE-panel{background:var(--bone2);border:1px solid var(--line);border-radius:24px;box-shadow:0 24px 64px -22px rgba(27,37,36,.17);padding:6px 30px}
+.vE-row{display:grid;grid-template-columns:220px minmax(0,1fr) minmax(0,.9fr);gap:36px;align-items:center;padding:clamp(16px,2.6vh,24px) 0;border-bottom:1px solid var(--line)}
+.vE-row:last-child{border-bottom:0}
+.vE-num>small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--md);margin-bottom:6px}
+.vE-num b{font-family:'Lora',serif;font-weight:400;font-size:clamp(40px,4vw,54px);line-height:1;letter-spacing:-.04em;color:var(--acc)}
+.vE-num b small{font-size:.5em;color:#a07866;letter-spacing:-.02em}
+.vE-track{position:relative;height:18px;border-radius:999px;background:#ece6db;overflow:hidden}
+.vE-track.thin{height:12px}
+.vE-track .fill{position:absolute;left:0;top:0;bottom:0;width:var(--w);border-radius:999px;background:var(--acc)}
+.vE-track .fill.s{background:var(--sage)}
+.vE-scale{position:relative;display:flex;justify-content:space-between;margin-top:8px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.vE-scale span:nth-child(2){position:absolute;left:26%;transform:translateX(-50%);color:var(--acc)}
+.vE-pair{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:10px;align-items:center;font-size:11px;font-weight:700;color:var(--md)}
+.vE-pair+.vE-pair{margin-top:10px}
+.vE-pair b{font-family:'Lora',serif;font-weight:400;font-size:16px;color:var(--char);text-align:right}
+.vE-split{display:flex;height:34px;border-radius:12px;overflow:hidden;font-size:11px;font-weight:700}
+.vE-split i{display:flex;align-items:center;padding:0 12px;flex:0 0 var(--w);background:var(--accs);color:var(--accd);font-style:normal}
+.vE-split i.s{flex:1;background:var(--sage);color:#fff;justify-content:center;padding:0}
+.vE-txt h3{margin:0 0 6px;font-size:21px;line-height:1.15;color:var(--char)}
+.vE-txt p{margin:0;font-size:14px;line-height:1.55;color:var(--md)}
+.vE-foot{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 18px;margin-top:clamp(18px,3vh,28px)}
+.vE-foot .src{flex-basis:100%;text-align:center}
+@media(min-width:721px) and (max-height:820px){.vE-head{margin-bottom:18px}.vE-head h2{font-size:clamp(30px,3.6vw,44px)}.vE-head p{margin-top:8px;font-size:16px}.vE-row{padding:12px 0}.vE-num b{font-size:clamp(34px,3.4vw,46px)}}
+.vE-foot>span{font-family:'Lora',serif;font-size:22px;color:var(--char)}
+.vE-foot .src{margin:4px 0 0}
+@media(max-width:960px){.vE-row{grid-template-columns:1fr;gap:14px}}
+@media(max-width:1100px){.vE-scale span:nth-child(2){display:none}}
+@media(max-width:720px){
+  .vE-head{text-align:left;margin-bottom:22px}.vE-head p{margin-left:0;font-size:16px}
+  .vE-panel{padding:4px 18px;border-radius:20px}
+  .vE-scale span:nth-child(2){display:none}
+  .vE-foot{flex-direction:column;align-items:flex-start}.vE-foot .src{text-align:left}
+}
 </style>
 <script>
 /* URL updates can be blocked in sandboxed previews; never let that stop the page */
@@ -1060,36 +1111,39 @@ window.slotMiss = function (img) {
 <!-- PROBLEM -->
 <section class="market">
   <div class="wrap">
-    <div class="lk-head">
-      <div>
-        <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
-        <h2 data-nl="De meeste woningen op Curaçao<br/>verliezen <span>stilletjes</span> geld.">Most Curaçao rentals<br/>lose money <span>quietly.</span></h2>
-      </div>
+    <div class="vE-head">
+      <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
+      <h2 data-nl="De meeste woningen op Curaçao verliezen <span>stilletjes</span> geld.">Most Curaçao rentals lose money <span>quietly.</span></h2>
       <p data-nl="Er gaat geen alarm af. Het geld komt gewoon nooit binnen. Hier lekt het weg.">No alarm goes off. The money just never arrives. Here's where it slips.</p>
     </div>
-    <div class="lks">
-      <div class="lk">
-        <div class="lk-top"><span data-nl="Timing">Timing</span><span data-nl="Lek 01">Leak 01</span></div>
-        <b data-nl="96 dagen">96 days</b>
-        <h3 data-nl="Het hoogseizoen is vroeg uitverkocht.">High season sells early.</h3>
-        <p data-nl="Zo ver vooruit worden villa’s geboekt. Optimaliseer je je kalender te laat, dan zijn de beste nachten al weg.">That’s how far ahead villas book. Optimize your calendar late and the best nights are gone.</p>
+    <div class="vE-panel">
+      <div class="vE-row">
+        <div class="vE-num"><small data-nl="Lek 01 · Timing">Leak 01 · Timing</small><b data-nl="96 dagen">96 days</b></div>
+        <div class="vE-viz" aria-hidden="true">
+          <div class="vE-track"><i class="fill" style="--w:26%"></i></div>
+          <div class="vE-scale"><span data-nl="Vandaag">Today</span><span data-nl="Volgeboekt">Booked out</span><span data-nl="12 maanden">12 months</span></div>
+        </div>
+        <div class="vE-txt"><h3 data-nl="Het hoogseizoen is vroeg uitverkocht.">High season sells early.</h3><p data-nl="Zo ver vooruit worden villa’s geboekt. Optimaliseer je je kalender te laat, dan zijn de beste nachten al weg.">That’s how far ahead villas book. Optimize your calendar late and the best nights are gone.</p></div>
       </div>
-      <div class="lk">
-        <div class="lk-top"><span data-nl="Verdienkloof">Earning gap</span><span data-nl="Lek 02">Leak 02</span></div>
-        <b class="lk-jump">63%<i aria-hidden="true">←</i><small>46%</small></b>
-        <h3 data-nl="Als het rustig is, groeit het gat.">When it's quiet, the gap grows.</h3>
-        <p data-nl="De beste 25% verdient 46% meer dan de gemiddelde woning in het hoogseizoen. In de rustigste maanden groeit dat tot 63%.">The top 25% out-earn the typical listing by 46% in high season. In the slowest months, that grows to 63%.</p>
+      <div class="vE-row">
+        <div class="vE-num"><small data-nl="Lek 02 · Verdienkloof">Leak 02 · Earning gap</small><b class="lk-jump">63%<i aria-hidden="true">←</i><small>46%</small></b></div>
+        <div class="vE-viz" aria-hidden="true">
+          <div class="vE-pair"><span data-nl="Hoogseizoen">High season</span><div class="vE-track thin"><i class="fill s" style="--w:73%"></i></div><b>+46%</b></div>
+          <div class="vE-pair"><span data-nl="Rustigste maanden">Slow months</span><div class="vE-track thin"><i class="fill" style="--w:100%"></i></div><b>+63%</b></div>
+        </div>
+        <div class="vE-txt"><h3 data-nl="Als het rustig is, groeit het gat.">When it's quiet, the gap grows.</h3><p data-nl="De beste 25% verdient 46% meer dan de gemiddelde woning in het hoogseizoen. In de rustigste maanden groeit dat tot 63%.">The top 25% out-earn the typical listing by 46% in high season. In the slowest months, that grows to 63%.</p></div>
       </div>
-      <div class="lk">
-        <div class="lk-top"><span data-nl="Zwakke advertenties">Weak listings</span><span data-nl="Lek 03">Leak 03</span></div>
-        <b data-nl="88%">88%</b>
-        <h3 data-nl="De meeste advertenties verkopen zichzelf tekort.">Most listings undersell.</h3>
-        <p data-nl="88% heeft zwakke foto’s, tekst of details. De andere 12% presteert vaker beter dan hun markt.">88% have weak photos, copy or details. The other 12% are likelier to beat their market.</p>
+      <div class="vE-row">
+        <div class="vE-num"><small data-nl="Lek 03 · Zwakke advertenties">Leak 03 · Weak listings</small><b>88%</b></div>
+        <div class="vE-viz" aria-hidden="true">
+          <div class="vE-split"><i style="--w:88%"><span data-nl="Zwak 88%">Weak 88%</span></i><i class="s"><span>12%</span></i></div>
+        </div>
+        <div class="vE-txt"><h3 data-nl="De meeste advertenties verkopen zichzelf tekort.">Most listings undersell.</h3><p data-nl="88% heeft zwakke foto’s, tekst of details. De andere 12% presteert vaker beter dan hun markt.">88% have weak photos, copy or details. The other 12% are likelier to beat their market.</p></div>
       </div>
     </div>
-    <div class="lk-foot">
+    <div class="vE-foot">
+      <span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-cta="↓">Compare your revenue ↓</a>
       <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
-      <div class="lk-cta"><span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-cta="↓">Compare your revenue ↓</a></div>
     </div>
   </div>
 </section>
@@ -1119,7 +1173,7 @@ window.slotMiss = function (img) {
           <div class="ff">
             <span class="fl" data-nl="Slaapkamers">Bedrooms</span>
             <div class="fpills" id="estSize" role="group" aria-label="Bedrooms">
-              <button type="button" data-a="st" data-nl="Studio">Studio</button>
+              
               <button type="button" data-a="br1" data-nl="1 slk">1BR</button>
               <button type="button" data-a="br2" data-nl="2 slk">2BR</button>
               <button type="button" class="on" data-a="br3" data-nl="3 slk">3BR</button>
@@ -1157,7 +1211,7 @@ window.slotMiss = function (img) {
           <div class="ff w3 flive" hidden><span class="fl" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span><div class="fchips" id="cPlat" role="group" aria-label="Where is it listed?"><button type="button" class="fchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="fchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="fchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="fchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="fchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="fchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
           <div class="ff w2 flive flink1" hidden><label class="fl" for="cListing" id="cListLab"></label><input class="finp" id="cListing" type="url" placeholder="https://airbnb.com/rooms/..."/></div>
           <div class="ff"><label class="fl" for="cArea" data-nl="Straat en wijk">Street and neighbourhood</label><input class="finp" id="cArea" name="area" autocomplete="off" placeholder="e.g. Kaya Karibe, Jan Thiel" data-nl-ph="bijv. Kaya Karibe, Jan Thiel"/></div>
-          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="st" data-nl="Studio">Studio</option><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
+          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
           <div class="ff fsoon" hidden><label class="fl" for="cType" data-nl="Type woning">Property type</label><select class="fsel" id="cType" name="propertyType"><option value="" disabled selected data-nl="Kies">Select</option><option value="guesthouse" data-nl="Guesthouse">Guesthouse</option><option value="villa" data-nl="Vrijstaand huis">Standalone house</option><option value="apartment" data-nl="Appartement of condo">Condo</option><option value="other" data-nl="Anders">Other</option></select></div>
           <div class="ff"><label class="fl" for="cMgmt" data-nl="Wie regelt het nu?">Who runs it today?</label><select class="fsel" id="cMgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
           <div class="ff"><label class="fl" for="cPrice" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label><select class="fsel" id="cPrice" name="pricing"><option value="" disabled selected data-nl="Kies">Select</option><option value="flat" data-nl="Eén vast tarief">One flat rate</option><option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option><option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option><option value="platform" data-nl="De suggesties van het boekingsplatform">The booking platform's suggestions</option></select></div>
@@ -1195,7 +1249,7 @@ window.slotMiss = function (img) {
     <div class="gap-head">
       <div class="eyebrow" data-nl="Het gat">The gap</div>
       <h2 id="gHead"></h2>
-      <div class="gpills" id="gSize" role="group" aria-label="Bedrooms"><button type="button" data-a="st" data-nl="Studio">Studio</button><button type="button" data-a="br1" data-nl="1 slk">1BR</button><button type="button" data-a="br2" data-nl="2 slk">2BR</button><button type="button" data-a="br3" class="on" data-nl="3 slk">3BR</button><button type="button" data-a="br4" data-nl="4 slk">4BR</button><button type="button" data-a="br5" data-nl="5 slk">5BR</button><button type="button" data-a="br6" data-nl="6+ slk">6+BR</button></div>
+      <div class="gpills" id="gSize" role="group" aria-label="Bedrooms"><button type="button" data-a="br1" data-nl="1 slk">1BR</button><button type="button" data-a="br2" data-nl="2 slk">2BR</button><button type="button" data-a="br3" class="on" data-nl="3 slk">3BR</button><button type="button" data-a="br4" data-nl="4 slk">4BR</button><button type="button" data-a="br5" data-nl="5 slk">5BR</button><button type="button" data-a="br6" data-nl="6+ slk">6+BR</button></div>
     </div>
     <div class="gbar-wrap">
       <div class="gends">
@@ -1457,7 +1511,7 @@ window.slotMiss = function (img) {
           <label class="ck"><input type="checkbox" id="seaview" name="seaView" value="yes"/><span data-nl="Zeezicht">Sea view</span></label>
         </div>
         <div class="lprop"><label for="beds" data-nl="Slaapkamers">Bedrooms</label>
-          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option value="studio" data-nl="Studio">Studio</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6+">6+</option></select></div>
+          <select id="beds" name="beds"><option value="" disabled selected data-nl="Kies">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option value="6+">6+</option></select></div>
         <div class="lprop lfull"><label for="mgmt" data-nl="Wie regelt het nu?">Who runs it today?</label>
           <select id="mgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
         <div class="lprop lfull"><label for="pricing" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label>
@@ -1804,6 +1858,18 @@ $$('.gseg, .gc').forEach(el => {
   el.addEventListener('mouseleave', () => pair.forEach(x => x.classList.remove('hl')));
 });
 /* The Gap: "See the fix" scrolls to the Solutions section and centers the matching card */
+/* The Gap on mobile: accordion, one tile open at a time (01 opens by default) */
+(() => {
+  const mq = matchMedia('(max-width: 720px)'), tiles = $$('.gc');
+  const open = i => tiles.forEach(g => { const on = +g.dataset.i === i; g.classList.toggle('open', on); g.setAttribute('aria-expanded', String(on)); });
+  tiles.forEach(g => {
+    g.setAttribute('role', 'button'); g.tabIndex = 0;
+    g.addEventListener('click', e => { if (!mq.matches || e.target.closest('.fix') || g.classList.contains('open')) return; open(+g.dataset.i); });
+    g.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && mq.matches && !e.target.closest('.fix')) { e.preventDefault(); open(+g.dataset.i); } });
+  });
+  $$('.gseg').forEach(s => s.addEventListener('click', () => { if (mq.matches) open(+s.dataset.i); }));
+  open(0);
+})();
 $$('.gc .fix').forEach(a => a.addEventListener('click', e => {
   e.preventDefault();
   $('#levers').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1967,8 +2033,8 @@ function renderEst() {
   if (you) { $('#fYou').style.left = 'clamp(52px,' + pos(you) + ',calc(100% - 52px))'; $('#fYouV').textContent = t('You · ', 'Jij · ') + money(you); }
   $('#eNote').innerHTML = t('Based on <b>' + d.n + ' real ' + w + ' listings</b> on Curaçao · past 12 months · PriceLabs', 'Gebaseerd op <b>' + d.n + ' echte ' + w + 'woningen</b> op Curaçao · afgelopen 12 maanden · PriceLabs');
   $('#fMethod').textContent = t(
-    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your full Revenue Check narrows it to the homes guests actually compare you to, so the numbers get sharper.',
-    'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je volledige rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
+    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your Free Revenue Potential Report narrows it to the homes guests actually compare you to, so the numbers get sharper.',
+    'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je gratis Omzetpotentie-rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
   /* The Gap section follows the bedroom size picked in the calculator */
   const pctMore = Math.round((d.top / d.med - 1) * 100);
   $('#gHead').innerHTML = t('In Curaçao, the top&nbsp;25% <br/>earn ' + pctMore + '%&nbsp;more.', 'De beste&nbsp;25% op&nbsp;Curaçao <br/>verdient ' + pctMore + '%&nbsp;meer.');
