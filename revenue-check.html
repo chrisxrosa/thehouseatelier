@@ -21,7 +21,7 @@
   --max:1180px;--header-h:72px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{margin:0;background:var(--bone);color:var(--ink);font-family:'DM Sans',system-ui,-apple-system,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit}
@@ -765,6 +765,11 @@ form.fpanel{transition:background .3s,border-color .3s}
 .slot.on{display:block}
 #check,#modules{position:relative;isolation:isolate}
 #check>.wrap,#modules>.wrap{position:relative;z-index:1}
+/* Subtle parallax: background drifts, content counter-drifts slightly */
+#check{position:relative;isolation:isolate;overflow:hidden}
+.plx-on .slot-bg.on{transform:translate3d(0,calc(var(--plx,0) * -42px),0) scale(1.16);will-change:transform}
+.plx-on>.wrap{transform:translate3d(0,calc(var(--plx,0) * 9px),0);will-change:transform}
+@media(prefers-reduced-motion:reduce){.plx-on .slot-bg.on,.plx-on>.wrap{transform:none!important}}
 .slot-bg.on{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;z-index:0;pointer-events:none}
 .slot-photo.on{width:100%;max-width:440px;aspect-ratio:3/2;object-fit:cover;border-radius:20px;margin-top:28px}
 .slot-contact.on{margin-top:26px;box-shadow:0 24px 60px -24px rgba(0,0,0,.55)}
@@ -938,6 +943,126 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   #check.rc{padding-top:calc(var(--header-h) + 18px)}
 }
 @media(max-width:720px){#check.plx-on>.wrap{transform:none!important}} /* no content drift on mobile: keeps the scroll-to-number target still */
+@media(max-width:720px){#fCard{display:none!important}} /* report-contents box is desktop only */
+@media(max-width:720px){#estSize,#gSize{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}#estSize button,#gSize button{padding-left:0;padding-right:0;min-width:0;text-align:center}} /* six bedroom sizes fit one row */
+/* CHALLENGE (ledger card): copy left, a tilted card itemizing the three leaks, echoing the Pricing quote card */
+.chd{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.market .chd-copy h2{margin:12px 0 0;font-size:clamp(36px,4.3vw,54px);line-height:1.04;letter-spacing:-.035em}
+.market .chd-copy h2 span{color:var(--acc);font-style:italic}
+.chd-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:var(--md);max-width:420px}
+.chd-cta{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.chd-cta span{font-family:'Lora',serif;font-size:22px;color:var(--char)}
+.chd-card{background:var(--bone2);border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-lg);transform:rotate(-1deg);border:1px solid var(--line)}
+.chd-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;padding:16px 0;border-bottom:1px dashed rgba(27,37,36,.18)}
+.chd-row small,.chd-foot small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chd-row h3{margin:4px 0;font-size:19px;line-height:1.2;color:var(--char)}
+.chd-row p{margin:0;font-size:13px;line-height:1.5;color:var(--md)}
+.chd-row>b{font-family:'Lora',serif;font-weight:400;font-size:clamp(34px,3.4vw,46px);line-height:1;letter-spacing:-.03em;color:var(--acc);text-align:right;white-space:nowrap}
+.chd-row>b small{display:inline;font-size:.5em;font-weight:400;letter-spacing:-.02em;text-transform:none;color:#a07866}
+.chd-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:16px 18px;border-radius:14px;background:#e7f1ed;transition:background .2s}
+.chd-foot:hover{background:#dbeae4}
+.chd-foot small{color:var(--sage)}.chd-foot span{font-size:13px;color:var(--md)}
+.chd-foot>b{font-family:'Lora',serif;font-weight:400;font-size:26px;color:var(--sage)}
+@media(max-width:960px){.chd{grid-template-columns:1fr;gap:36px}}
+@media(max-width:720px){
+  .chd-card{transform:none;padding:22px 18px}
+  .chd-row{grid-template-columns:1fr;gap:8px}.chd-row>b{text-align:left;order:-1}
+}
+.pq-copy h2.pq-h{text-wrap:balance;max-width:600px}
+@media(max-width:720px){.pq-steps{grid-template-columns:1fr;gap:18px}} /* pricing steps stack on phones */
+
+/* Sample Revenue Potential Report card (mirrors the quote card) */
+.rp-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:26px 28px;box-shadow:0 30px 80px rgba(0,0,0,.35);text-align:left}
+.rp-card .pq-card-top{margin-bottom:14px}
+.rp-kpis{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:10px;padding:14px 0;border-top:1px dashed rgba(27,37,36,.18);border-bottom:1px dashed rgba(27,37,36,.18)}
+.rp-kpis small,.rp-comps>small{display:block;font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.rp-kpis b{display:block;font-family:'Lora',serif;font-weight:400;font-size:26px;line-height:1.1;letter-spacing:-.02em;color:var(--char);margin-top:4px}
+.rp-kpis div:first-child b{color:var(--acc)}
+.rp-kpis span{font-size:11.5px;color:var(--muted)}
+.rp-chartwrap{padding:12px 0 6px}
+.rp-legend{display:flex;gap:14px;font-size:10.5px;color:var(--md);margin-bottom:4px}
+.rp-legend span{display:flex;align-items:center;gap:6px}.rp-legend b{font-weight:600}
+.rp-legend i{display:block;width:14px;height:8px;border-radius:3px}
+.rp-legend i.l{height:2px;background:var(--acc)}.rp-legend i.b{background:var(--accs)}
+.rp-chart{display:block;width:100%;height:auto}
+.rp-chart .g line{stroke:rgba(27,37,36,.08);stroke-width:1}
+.rp-chart .band{fill:var(--accs);opacity:.85}
+.rp-chart .ln{fill:none;stroke:var(--acc);stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.rp-chart .dt circle{fill:var(--bone2);stroke:var(--acc);stroke-width:1.5}
+.rp-chart .mo text{font:600 8px 'DM Sans',sans-serif;fill:var(--muted)}
+.rp-comps{padding:10px 0 2px;border-top:1px dashed rgba(27,37,36,.18)}
+.rp-comps>small{margin-bottom:4px}
+.rp-comp{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:baseline;padding:7px 0;border-bottom:1px dashed rgba(27,37,36,.12);font-size:13px;color:var(--md)}
+.rp-comp:last-child{border-bottom:0}
+.rp-comp span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rp-comp em{font-style:normal;font-size:11.5px;color:var(--muted)}
+.rp-comp b{font-weight:700;color:var(--char)}
+.rp-gap{margin-top:12px}
+@media(max-width:720px){.rp-gap b{font-size:24px}.rp-card{padding:20px 18px}.rp-kpis b{font-size:21px}.rp-kpis{grid-template-columns:1.25fr 1fr 1fr;gap:8px}}
+
+.rp-map{margin:0 0 4px;border-radius:14px;background:#e7efec;padding:6px 10px 8px;border:1px solid rgba(49,91,87,.12)}
+.rp-mapsvg{display:block;width:100%;height:auto}
+.rp-mapsvg .isl{fill:#f4efe5;stroke:rgba(27,37,36,.22);stroke-width:.8;stroke-linejoin:round}
+.rp-mapsvg .zone{fill:rgba(184,95,71,.14);stroke:var(--acc);stroke-width:1;stroke-dasharray:2.5 2}
+.rp-mapsvg .cp{fill:var(--sage)}
+.rp-mapsvg .home{fill:var(--acc);stroke:#fffefa;stroke-width:1.4}
+.rp-mapsvg .town{fill:var(--muted)}
+.rp-mapsvg .tl{font:600 6.5px 'DM Sans',sans-serif;fill:var(--muted)}
+.rp-mapsvg .zl{font:700 7px 'DM Sans',sans-serif;fill:var(--accd);letter-spacing:.06em;text-transform:uppercase}
+.rp-mapcap{display:flex;gap:14px;font-size:10.5px;color:var(--md);margin-top:2px}
+.rp-mapcap span{display:flex;align-items:center;gap:6px}.rp-mapcap b{font-weight:600}
+.rp-mapcap i{display:block;width:8px;height:8px;border-radius:50%}
+.rp-mapcap i.h{background:var(--acc);box-shadow:0 0 0 1.5px #fffefa,0 0 0 2.5px rgba(184,95,71,.4)}.rp-mapcap i.c{background:var(--sage)}
+.rp-recs{position:relative;padding:12px 0 4px;border-top:1px dashed rgba(27,37,36,.18)}
+.rp-recs-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.rp-recs-h small{font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.rp-recs-h em{font-style:normal;font-size:11px;color:var(--md)}
+.rp-rec{display:grid;grid-template-columns:22px minmax(0,1fr) 44px;gap:10px;align-items:center;padding:7px 0}
+.rp-rec b{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-family:'Lora',serif;font-weight:400;font-size:12px;color:var(--acc);border:1px solid rgba(184,95,71,.35)}
+.rp-rec i{display:block;height:9px;width:var(--w);border-radius:999px;background:linear-gradient(90deg,#e6dfd3,#efe9df);filter:blur(1.2px)}
+.rp-rec span{justify-self:end;font-size:11px;font-weight:700;color:var(--sage);background:#e7f1ed;padding:3px 7px;border-radius:999px}
+.rp-lock{position:absolute;right:62px;top:50%;margin-top:6px;display:flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--char);color:#fffefa;font-size:10.5px;font-weight:700;box-shadow:0 8px 20px -8px rgba(27,37,36,.5)}
+.rp-lock svg{width:12px;height:12px;fill:none;stroke:#fffefa;stroke-width:1.6}
+.rp-lock svg rect{fill:#fffefa;stroke:none}
+@media(max-width:720px){.rp-card .rp-gap b{font-size:22px}}
+
+.rp-map{padding:0;overflow:hidden}
+.rp-mapsvg .sea{fill:#d9e8e4}
+.rp-mapsvg .land{fill:#f4efe5;stroke:rgba(49,91,87,.35);stroke-width:1}
+.rp-mapsvg .road{fill:none;stroke:#e4dccd;stroke-width:2.2;stroke-linecap:round}
+.rp-mapsvg .zone{fill:rgba(184,95,71,.10);stroke:var(--acc);stroke-width:1.2;stroke-dasharray:3 2.5}
+.rp-mapsvg .cp circle{fill:var(--sage);stroke:#fffefa;stroke-width:1}
+.rp-mapsvg .cpo circle{fill:var(--sage);opacity:.28}
+.rp-mapsvg .home{fill:var(--acc);stroke:#fffefa;stroke-width:1.8}
+.rp-mapsvg .zl{font:700 7.5px 'DM Sans',sans-serif;fill:var(--accd);letter-spacing:.1em;text-transform:uppercase}
+.rp-mapsvg .wl{font:italic 400 7.5px 'Lora',serif;fill:#4f7c76}
+.rp-mapsvg .rl{font:700 6.5px 'DM Sans',sans-serif;fill:var(--acc)}
+.rp-mapcap{padding:8px 12px 9px;margin:0;background:var(--bone2);border-top:1px solid rgba(49,91,87,.12);flex-wrap:wrap;gap:6px 14px}
+.rp-mapcap i.r{width:10px;height:10px;border:1.2px dashed var(--acc);background:rgba(184,95,71,.1)}
+.rp-comps{padding:10px 0 4px}
+
+/* WHAT YOU GET: sample report with numbered promises */
+.wyg{background:var(--bone2)}
+.wyg-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,460px);gap:72px;align-items:center}
+.wyg-copy h2{margin:12px 0 0;font-size:clamp(36px,4.3vw,54px);line-height:1.04;letter-spacing:-.035em}
+.wyg-copy h2 span{color:var(--acc);font-style:italic}
+.wyg-lede{margin:16px 0 0;font-size:17px;line-height:1.5;color:var(--md);max-width:440px}
+.wyg-list{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:18px}
+.wyg-list li{display:grid;grid-template-columns:34px 1fr;gap:14px;align-items:start}
+.wyg-list li>b,.wyg-pin{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--acc);color:#fff;font-family:'Lora',serif;font-weight:400;font-size:15px;box-shadow:0 0 0 4px rgba(184,95,71,.15)}
+.wyg-list h3{margin:2px 0 4px;font-size:21px;line-height:1.2;color:var(--char)}
+.wyg-list p{margin:0;font-size:15px;line-height:1.5;color:var(--md)}
+.wyg-cta{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.wyg-cta small{font-size:12px;color:var(--muted)}
+.wyg-card .rp-card{box-shadow:var(--shadow-lg);transform:rotate(1deg)}
+.wyg-pinned{position:relative}
+.wyg-pin{position:absolute;left:-44px;top:6px;z-index:3;width:26px;height:26px;font-size:13px}
+.rp-map.wyg-pinned{overflow:visible}
+.rp-map.wyg-pinned .wyg-pin{top:10px}
+.rp-map.wyg-pinned .rp-mapsvg{border-radius:14px 14px 0 0}
+#fCard{display:none!important} /* the sample report section replaces the "Included in your report" box */
+@media(max-width:960px){.wyg-grid{grid-template-columns:1fr;gap:44px}.wyg-card{max-width:480px;margin-left:44px}}
+@media(max-width:720px){.wyg-card{margin-left:30px}.wyg-pin{left:-38px}.wyg-card .rp-card{transform:none}}
 </style>
 <script>
 /* Image slots: an empty slot stays hidden. Add ?slots to the URL to see every
@@ -994,7 +1119,7 @@ window.slotMiss = function (img) {
           <div class="ff">
             <span class="fl" data-nl="Slaapkamers">Bedrooms</span>
             <div class="fpills" id="estSize" role="group" aria-label="Bedrooms">
-              <button type="button" data-a="st" data-nl="Studio">Studio</button>
+              
               <button type="button" data-a="br1" data-nl="1 slk">1BR</button>
               <button type="button" data-a="br2" data-nl="2 slk">2BR</button>
               <button type="button" class="on" data-a="br3" data-nl="3 slk">3BR</button>
@@ -1032,7 +1157,7 @@ window.slotMiss = function (img) {
           <div class="ff w3 flive" hidden><span class="fl" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span><div class="fchips" id="cPlat" role="group" aria-label="Where is it listed?"><button type="button" class="fchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="fchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="fchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="fchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="fchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="fchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
           <div class="ff w2 flive flink1" hidden><label class="fl" for="cListing" id="cListLab"></label><input class="finp" id="cListing" type="url" placeholder="https://airbnb.com/rooms/..."/></div>
           <div class="ff"><label class="fl" for="cArea" data-nl="Straat en wijk">Street and neighbourhood</label><input class="finp" id="cArea" name="area" autocomplete="off" placeholder="e.g. Kaya Karibe, Jan Thiel" data-nl-ph="bijv. Kaya Karibe, Jan Thiel"/></div>
-          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="st" data-nl="Studio">Studio</option><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
+          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
           <div class="ff fsoon" hidden><label class="fl" for="cType" data-nl="Type woning">Property type</label><select class="fsel" id="cType" name="propertyType"><option value="" disabled selected data-nl="Kies">Select</option><option value="guesthouse" data-nl="Guesthouse">Guesthouse</option><option value="villa" data-nl="Vrijstaand huis">Standalone house</option><option value="apartment" data-nl="Appartement of condo">Condo</option><option value="other" data-nl="Anders">Other</option></select></div>
           <div class="ff"><label class="fl" for="cMgmt" data-nl="Wie regelt het nu?">Who runs it today?</label><select class="fsel" id="cMgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
           <div class="ff"><label class="fl" for="cPrice" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label><select class="fsel" id="cPrice" name="pricing"><option value="" disabled selected data-nl="Kies">Select</option><option value="flat" data-nl="Eén vast tarief">One flat rate</option><option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option><option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option><option value="platform" data-nl="De suggesties van het boekingsplatform">The booking platform's suggestions</option></select></div>
@@ -1058,11 +1183,76 @@ window.slotMiss = function (img) {
     </form>
 
     <div class="ftrust">
-      <div class="ftrustline"><span class="fbadge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
+      <div class="ftrustline"><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
       <p class="fmethod" id="fMethod" hidden></p>
     </div>
   </div>
 </section>
+<section class="wyg" id="report">
+  <div class="wrap wyg-grid">
+    <div class="wyg-copy">
+      <div class="eyebrow" data-nl="Je gratis rapport">Your free report</div>
+      <h2 data-nl="Zie precies <span>wat je krijgt.</span>">See exactly <span>what you get.</span></h2>
+      <p class="wyg-lede" data-nl="Eén pagina, gebouwd op echte boekingsdata van woningen zoals de jouwe. Binnen 48 uur in je inbox.">One page, built from real booking data for homes like yours. In your inbox within 48 hours.</p>
+      <ol class="wyg-list">
+        <li><b>1</b><div><h3 data-nl="Je echte concurrentie.">Your real competition.</h3><p data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</p></div></li>
+        <li><b>2</b><div><h3 data-nl="Wat zij verdienen.">What they earn.</h3><p data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</p></div></li>
+        <li><b>3</b><div><h3 data-nl="Hoe je het gat dicht.">How to close the gap.</h3><p data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</p></div></li>
+      </ol>
+      <div class="wyg-cta"><a class="btn check" href="#check" data-nl="Ontvang je gratis Omzetpotentie-rapport ↑">Get free Revenue Potential Report ↑</a><small data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</small></div>
+    </div>
+    <div class="wyg-card"><div class="rp-card" aria-label="Sample Revenue Potential Report">
+  <div class="pq-card-top">
+    <div><small data-nl="Omzetpotentie-rapport">Revenue Potential Report</small><b>Casa Coral</b><span data-nl="3 slk · Jan Thiel">3 bed · Jan Thiel</span></div>
+    <em data-nl="Voorbeeld">Sample</em>
+  </div>
+  <div class="rp-map wyg-pinned"><span class="wyg-pin">1</span>
+    <svg class="rp-mapsvg" viewBox="0 0 300 112" role="img" aria-label="Map of the Jan Thiel coast with a radius around Casa Coral and comparable homes inside it">
+<rect class="sea" x="0" y="0" width="300" height="112"/>
+<path class="land" d="M0,0 H300 V31 C288,33 276,29 262,31 C246,33 228,30 219,39 C211,47 213,62 204,72 C192,80 178,82 163,80 C149,78 137,71 120,71 C101,71 82,78 61,77 C41,76 21,69 0,72 Z"/>
+<path class="road" d="M0,38 C40,34 80,44 120,40 C150,37 175,26 205,22 C240,17 270,14 300,12"/>
+<path class="road" d="M150,40 C152,50 150,58 156,72"/>
+<circle class="zone" cx="150" cy="52" r="36"/>
+<g class="cp"><circle cx="126" cy="41" r="2.6"/><circle cx="139" cy="64" r="2.6"/><circle cx="166" cy="44" r="2.6"/><circle cx="174" cy="61" r="2.6"/><circle cx="131" cy="56" r="2.6"/><circle cx="157" cy="31" r="2.6"/><circle cx="180" cy="49" r="2.6"/><circle cx="143" cy="27" r="2.6"/><circle cx="162" cy="69" r="2.6"/><circle cx="120" cy="60" r="2.6"/></g>
+<g class="cpo"><circle cx="70" cy="46" r="2.2"/><circle cx="88" cy="60" r="2.2"/><circle cx="252" cy="20" r="2.2"/><circle cx="282" cy="16" r="2.2"/><circle cx="40" cy="55" r="2.2"/></g>
+<circle class="home" cx="150" cy="52" r="4.2"/>
+<text class="zl" x="150" y="12" text-anchor="middle" data-nl="Jan Thiel">Jan Thiel</text>
+<text class="wl" x="258" y="60" text-anchor="middle">Caracas Bay</text>
+<text class="wl" x="62" y="100" text-anchor="middle" data-nl="Caribische Zee">Caribbean Sea</text>
+<text class="rl" x="189" y="22">1.5 km</text>
+</svg>
+    <div class="rp-mapcap"><span><i class="h"></i><b data-nl="Jouw woning">Your home</b></span><span><i class="c"></i><b data-nl="38 vergelijkbare woningen">38 comparable homes</b></span><span><i class="r"></i><b data-nl="Straal van 1,5 km">1.5 km radius</b></span></div>
+  </div>
+  <div class="rp-kpis">
+    <div><small data-nl="Jaaromzet">Annual revenue</small><b>$39,400</b><span data-nl="$3.280 / mnd">$3,280 / mo</span></div>
+    <div><small data-nl="Dagprijs">Daily rate</small><b>$162</b><span data-nl="gemiddeld">average</span></div>
+    <div><small data-nl="Bezetting">Occupancy</small><b>76%</b><span data-nl="gemiddeld">average</span></div>
+  </div>
+  <div class="rp-chartwrap">
+    <div class="rp-legend"><span><i class="l"></i><b data-nl="Gemiddeld">Typical</b></span><span><i class="b"></i><b data-nl="Middelste 50%">Middle 50%</b></span></div>
+    <svg class="rp-chart" viewBox="0 0 300 98" role="img" aria-label="Monthly revenue, typical 3-bedroom on Curaçao, with the middle 50% range"><g class="g"><line x1="10" x2="290" y1="57.8" y2="57.8"/><line x1="10" x2="290" y1="35.7" y2="35.7"/><line x1="10" x2="290" y1="13.5" y2="13.5"/></g><path class="band" d="M10.0,10.6 L35.5,20.9 L60.9,20.2 L86.4,23.3 L111.8,34.4 L137.3,31.9 L162.7,19.7 L188.2,27.5 L213.6,39.6 L239.1,35.7 L264.5,31.1 L290.0,13.0 L290.0,58.6 L264.5,61.7 L239.1,65.4 L213.6,69.7 L188.2,61.1 L162.7,56.7 L137.3,65.0 L111.8,66.3 L86.4,58.4 L60.9,54.7 L35.5,51.8 L10.0,47.2 Z"/><path class="ln" d="M10.0,31.4 L35.5,37.8 L60.9,38.0 L86.4,41.0 L111.8,50.2 L137.3,48.9 L162.7,42.4 L188.2,46.9 L213.6,53.8 L239.1,51.5 L264.5,46.5 L290.0,35.5"/><g class="dt"><circle cx="10.0" cy="31.4" r="2.2"/><circle cx="35.5" cy="37.8" r="2.2"/><circle cx="60.9" cy="38.0" r="2.2"/><circle cx="86.4" cy="41.0" r="2.2"/><circle cx="111.8" cy="50.2" r="2.2"/><circle cx="137.3" cy="48.9" r="2.2"/><circle cx="162.7" cy="42.4" r="2.2"/><circle cx="188.2" cy="46.9" r="2.2"/><circle cx="213.6" cy="53.8" r="2.2"/><circle cx="239.1" cy="51.5" r="2.2"/><circle cx="264.5" cy="46.5" r="2.2"/><circle cx="290.0" cy="35.5" r="2.2"/></g><g class="mo"><text x="10.0" y="94" text-anchor="middle">J</text><text x="35.5" y="94" text-anchor="middle">F</text><text x="60.9" y="94" text-anchor="middle">M</text><text x="86.4" y="94" text-anchor="middle">A</text><text x="111.8" y="94" text-anchor="middle">M</text><text x="137.3" y="94" text-anchor="middle">J</text><text x="162.7" y="94" text-anchor="middle">J</text><text x="188.2" y="94" text-anchor="middle">A</text><text x="213.6" y="94" text-anchor="middle">S</text><text x="239.1" y="94" text-anchor="middle">O</text><text x="264.5" y="94" text-anchor="middle">N</text><text x="290.0" y="94" text-anchor="middle">D</text></g></svg>
+  </div>
+  <div class="rp-comps wyg-pinned"><span class="wyg-pin">2</span>
+    <small data-nl="Best verdienende vergelijkbare woningen">Top earners like yours</small>
+    <div class="rp-comp"><span data-nl="Villa met zeezicht · Jan Thiel">Ocean-view villa · Jan Thiel</span><em>★ 4.95</em><b data-nl="$5.900/mnd">$5,900/mo</b></div>
+    <div class="rp-comp"><span data-nl="Villa met zwembad · Jan Thiel">Pool villa · Jan Thiel</span><em>★ 4.91</em><b data-nl="$5.300/mnd">$5,300/mo</b></div>
+    <div class="rp-comp"><span data-nl="Resortwoning · Jan Thiel">Resort townhouse · Jan Thiel</span><em>★ 4.88</em><b data-nl="$4.900/mnd">$4,900/mo</b></div>
+  </div>
+  <div class="rp-recs wyg-pinned"><span class="wyg-pin">3</span>
+    <div class="rp-recs-h"><small data-nl="Jouw aanbevelingen">Your recommendations</small><em data-nl="5 · gerangschikt op impact">5 · ranked by impact</em></div>
+    <div class="rp-rec"><b>1</b><i style="--w:82%"></i><span>+$$$</span></div>
+    <div class="rp-rec"><b>2</b><i style="--w:64%"></i><span>+$$</span></div>
+    <div class="rp-rec"><b>3</b><i style="--w:73%"></i><span>+$$</span></div>
+    <div class="rp-lock"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="7" width="10" height="7" rx="2"/><path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2"/></svg><span data-nl="In je volledige rapport">In your full report</span></div>
+  </div>
+  <div class="pq-return rp-gap">
+    <div><small data-nl="Kloof met de beste 25%">Gap to the top 25%</small><span data-nl="Op basis van marktdata">Based on market data</span></div>
+    <b data-nl="+$19.500 / jaar">+$19,500 / yr</b>
+  </div>
+</div></div>
+  </div>
+</section>
+
 
 <!-- HOW IT WORKS -->
 <section id="how">
@@ -1073,7 +1263,7 @@ window.slotMiss = function (img) {
         <h2 data-nl="Echte concurrenten.<br/>Met de hand vergeleken.">Real competitors.<br/>Checked by hand.</h2>
         <div class="lp-steps">
           <div class="lp-step"><i>1</i><div><b data-nl="Vertel ons over je woning">Tell us about your home</b><span data-nl="Twee minuten. Status, ligging en hoe je het nu runt.">Two minutes. Status, area and how you run it today.</span></div></div>
-          <div class="lp-step"><i>2</i><div><b data-nl="Wij zoeken je echte concurrentie">We find your real competition</b><span data-nl="We kiezen de woningen waar gasten jou echt mee vergelijken en halen 12 maanden aan cijfers op.">We pick the homes guests actually compare you to and pull 12 months of their numbers.</span></div></div>
+          <div class="lp-step"><i>2</i><div><b data-nl="Wij doen het uitzoekwerk">We do the legwork</b><span data-nl="Geen spreadsheets voor jou. Wij bouwen je vergelijking en controleren elk cijfer voordat we hem sturen.">No spreadsheets on your end. We build your comparison and check every number before it’s sent.</span></div></div>
           <div class="lp-step"><i>3</i><div><b data-nl="Binnen 48 uur in je inbox">In your inbox within 48 hours</b><span data-nl="Wat zij verdienen, naast jouw cijfers, en wat het meeste oplevert. Jij beslist wat je ermee doet.">What they earn next to you, and what would move your numbers most. You decide what to do with it.</span></div></div>
         </div>
       </div>
@@ -1088,8 +1278,8 @@ window.slotMiss = function (img) {
     </div>
     <div class="lp-faq">
       <div><h3 data-nl="Is het echt gratis?">Is it really free?</h3><p data-nl="Ja. Geen creditcard, geen verplichting. Zit er ruimte in, dan laten we zien hoeveel, en jij beslist.">Yes. No card, no obligation. If there’s room to grow, we show you how much, and you decide.</p></div>
-      <div><h3 data-nl="Zijn jullie een beheerder?">Are you a property manager?</h3><p data-nl="Nee. Wij doen prijzen, presentatie en direct boeken. De sleutels en je gasten blijven bij jou.">No. We handle pricing, presentation and direct bookings. The keys and your guests stay with you.</p></div>
-      <div><h3 data-nl="Wat gebeurt er met mijn gegevens?">What happens to my details?</h3><p data-nl="We gebruiken ze alleen om je Omzetcheck te maken en te sturen. We verkopen of delen niets.">We use them only to prepare and send your Revenue Check. Nothing is sold or shared.</p></div>
+      <div><h3 data-nl="Zijn jullie een beheerder?">Are you a property manager?</h3><p data-nl="Nee. Jij houdt de sleutels, en wij helpen je op te vallen, slim te prijzen en directe boekingen te krijgen.">No. You hold the keys, and we help you stand out, price intelligently, and get you direct bookings.</p></div>
+      <div><h3 data-nl="Wat gebeurt er met mijn gegevens?">What happens to my details?</h3><p data-nl="We gebruiken ze alleen om je Omzetpotentie-rapport te maken en te sturen. We verkopen of delen niets.">We use them only to prepare and send your Revenue Potential Report. Nothing is sold or shared.</p></div>
     </div>
     <div class="lp-cta">
       <a class="btn" href="#check" data-cta="↑">Compare your revenue ↑</a>
@@ -1232,8 +1422,8 @@ function renderEst() {
   if (you) { $('#fYou').style.left = 'clamp(52px,' + pos(you) + ',calc(100% - 52px))'; $('#fYouV').textContent = t('You · ', 'Jij · ') + money(you); }
   $('#eNote').innerHTML = t('Based on <b>' + d.n + ' real ' + w + ' listings</b> on Curaçao · past 12 months · PriceLabs', 'Gebaseerd op <b>' + d.n + ' echte ' + w + 'woningen</b> op Curaçao · afgelopen 12 maanden · PriceLabs');
   $('#fMethod').textContent = t(
-    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your full Revenue Check narrows it to the homes guests actually compare you to, so the numbers get sharper.',
-    'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je volledige rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
+    'We pulled 12 months of booked revenue for every ' + w + ' listing on Curaçao. "Typical" is the middle home (median). "Top 25%" is the 75th percentile. That\'s every home your size, wherever it sits. Your Free Revenue Potential Report narrows it to the homes guests actually compare you to, so the numbers get sharper.',
+    'We haalden 12 maanden geboekte omzet op van elke ' + w + 'woning op Curaçao. "Gemiddeld" is de middelste woning (mediaan). "Beste 25%" is het 75e percentiel. Dat is elke woning van jouw formaat, waar die ook staat. Je gratis Omzetpotentie-rapport beperkt het tot de woningen waar gasten jou echt mee vergelijken, dus de cijfers worden scherper.');
   /* The Gap section follows the bedroom size picked in the calculator */
   const pctMore = Math.round((d.top / d.med - 1) * 100);
   ($('#gHead') || {}).innerHTML = t('In Curaçao, the top&nbsp;25% <br/>earn ' + pctMore + '%&nbsp;more.', 'De beste&nbsp;25% op&nbsp;Curaçao <br/>verdient ' + pctMore + '%&nbsp;meer.');
@@ -1258,6 +1448,15 @@ const goStep = n => {
     if (n === 2) $('#cStatus').focus({ preventScroll: true });
   }, 30);
 };
+/* Every link to the Revenue Check: "Get free Revenue Potential Report" opens step 2 (form already open),
+   "Compare your revenue" (and anything else) lands on step 1 */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href="#check"]');
+  if (!a) return;
+  e.preventDefault();
+  goStep(/Potential Report|Omzetpotentie/i.test(a.textContent) ? 2 : 1);
+});
+
 const setSize = k => {
   estSize = k;
   $('#cBeds').value = k;
@@ -1426,6 +1625,29 @@ cForm.addEventListener('submit', async e => {
   addEventListener('scroll', upd, { passive: true }); upd();
 })();
 renderEst();
+
+/* Parallax: --plx runs -1..1 as a section crosses the viewport */
+(() => {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const secs = [$('#check')].filter(Boolean);
+  let tick = false;
+  const upd = () => {
+    tick = false;
+    const vh = innerHeight;
+    secs.forEach(sec => {
+      const r = sec.getBoundingClientRect();
+      if (r.bottom < -vh * .2 || r.top > vh * 1.2) { sec.classList.remove('plx-on'); return; }
+      const p = Math.max(-1, Math.min(1, ((r.top + r.height / 2) - vh / 2) / vh));
+      sec.style.setProperty('--plx', p.toFixed(3));
+      sec.style.setProperty('--bl', ((1 - p) / 2).toFixed(3));
+      sec.classList.add('plx-on');
+    });
+  };
+  const req = () => { if (!tick) { tick = true; requestAnimationFrame(upd); } };
+  addEventListener('scroll', req, { passive: true });
+  addEventListener('resize', req);
+  upd();
+})();
 </script>
 </body>
 </html>
