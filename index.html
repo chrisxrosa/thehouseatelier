@@ -222,6 +222,7 @@ html{scroll-padding-top:0}
 .pq-steps small{display:block;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b6c1bd}
 .pq-steps .on small{color:#e8927a}
 .pq-steps span{display:block;font-size:15px;color:#fffefa;margin-top:6px}
+.pq-steps p{margin:6px 0 0;font-size:13.5px;line-height:1.5;color:#b6c1bd}
 .pq-cta{display:flex;flex-direction:column;align-items:flex-start;gap:12px;margin-top:30px;font-size:14px;color:#b6c1bd}
 .pq-cta .wa2{color:#fff}
 .pq-card{background:var(--bone2);color:var(--ink);border-radius:24px;padding:30px 32px;box-shadow:0 30px 80px rgba(0,0,0,.35);transform:rotate(1.2deg)}
@@ -1025,6 +1026,32 @@ footer .ftnote{flex:1;text-align:center;font-size:11px;color:#8d9a96}
   .vE-scale span:nth-child(2){display:none}
   .vE-foot{flex-direction:column;align-items:flex-start}.vE-foot .src{text-align:left}
 }
+
+/* CHALLENGE (ledger card): copy left, a tilted card itemizing the three leaks, echoing the Pricing quote card */
+.chd{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.market .chd-copy h2{margin:12px 0 0;font-size:clamp(36px,4.3vw,54px);line-height:1.04;letter-spacing:-.035em}
+.market .chd-copy h2 span{color:var(--acc);font-style:italic}
+.chd-copy>p{margin:18px 0 0;font-size:18px;line-height:1.5;color:var(--md);max-width:420px}
+.chd-cta{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.chd-cta span{font-family:'Lora',serif;font-size:22px;color:var(--char)}
+.chd-card{background:var(--bone2);border-radius:24px;padding:28px 30px;box-shadow:var(--shadow-lg);transform:rotate(-1deg);border:1px solid var(--line)}
+.chd-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;padding:16px 0;border-bottom:1px dashed rgba(27,37,36,.18)}
+.chd-row small,.chd-foot small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.chd-row h3{margin:4px 0;font-size:19px;line-height:1.2;color:var(--char)}
+.chd-row p{margin:0;font-size:13px;line-height:1.5;color:var(--md)}
+.chd-row>b{font-family:'Lora',serif;font-weight:400;font-size:clamp(34px,3.4vw,46px);line-height:1;letter-spacing:-.03em;color:var(--acc);text-align:right;white-space:nowrap}
+.chd-row>b small{display:inline;font-size:.5em;font-weight:400;letter-spacing:-.02em;text-transform:none;color:#a07866}
+.chd-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding:16px 18px;border-radius:14px;background:#e7f1ed;transition:background .2s}
+.chd-foot:hover{background:#dbeae4}
+.chd-foot small{color:var(--sage)}.chd-foot span{font-size:13px;color:var(--md)}
+.chd-foot>b{font-family:'Lora',serif;font-weight:400;font-size:26px;color:var(--sage)}
+@media(max-width:960px){.chd{grid-template-columns:1fr;gap:36px}}
+@media(max-width:720px){
+  .chd-card{transform:none;padding:22px 18px}
+  .chd-row{grid-template-columns:1fr;gap:8px}.chd-row>b{text-align:left;order:-1}
+}
+.pq-copy h2.pq-h{text-wrap:balance;max-width:600px}
+@media(max-width:720px){.pq-steps{grid-template-columns:1fr;gap:18px}} /* pricing steps stack on phones */
 </style>
 <script>
 /* URL updates can be blocked in sandboxed previews; never let that stop the page */
@@ -1092,6 +1119,7 @@ window.slotMiss = function (img) {
       <h1 data-nl="Goed geprijsd.<br/>Goed in beeld.<br/><span>Goed geboekt.</span>">Well priced.<br/>Well shown.<br/><span>Well booked.</span></h1>
       <p class="hero-sub" data-nl="Een optimalisatiestudio voor vakantieverhuur die met marktdata het volledige potentieel van je woning ontsluit.">A vacation rental optimization studio using market data to unlock your property's full potential.</p>
       <div class="hero-actions">
+        <a class="btn" href="#levers" data-nl="Bekijk onze diensten ↓">Explore our services ↓</a>
         <a class="btn btn-outline check" href="#check" data-cta="→">Compare your revenue →</a>
       </div>
       <p class="hero-note" data-nl="Gratis · binnen 48 uur · geen verplichting">Free · within 48 hours · no obligation</p>
@@ -1108,142 +1136,6 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- PROBLEM -->
-<section class="market">
-  <div class="wrap">
-    <div class="vE-head">
-      <div class="eyebrow" data-nl="De uitdaging">The challenge</div>
-      <h2 data-nl="De meeste woningen op Curaçao verliezen <span>stilletjes</span> geld.">Most Curaçao rentals lose money <span>quietly.</span></h2>
-      <p data-nl="Er gaat geen alarm af. Het geld komt gewoon nooit binnen. Hier lekt het weg.">No alarm goes off. The money just never arrives. Here's where it slips.</p>
-    </div>
-    <div class="vE-panel">
-      <div class="vE-row">
-        <div class="vE-num"><small data-nl="Lek 01 · Timing">Leak 01 · Timing</small><b data-nl="96 dagen">96 days</b></div>
-        <div class="vE-viz" aria-hidden="true">
-          <div class="vE-track"><i class="fill" style="--w:26%"></i></div>
-          <div class="vE-scale"><span data-nl="Vandaag">Today</span><span data-nl="Volgeboekt">Booked out</span><span data-nl="12 maanden">12 months</span></div>
-        </div>
-        <div class="vE-txt"><h3 data-nl="Het hoogseizoen is vroeg uitverkocht.">High season sells early.</h3><p data-nl="Zo ver vooruit worden villa’s geboekt. Optimaliseer je je kalender te laat, dan zijn de beste nachten al weg.">That’s how far ahead villas book. Optimize your calendar late and the best nights are gone.</p></div>
-      </div>
-      <div class="vE-row">
-        <div class="vE-num"><small data-nl="Lek 02 · Verdienkloof">Leak 02 · Earning gap</small><b class="lk-jump">63%<i aria-hidden="true">←</i><small>46%</small></b></div>
-        <div class="vE-viz" aria-hidden="true">
-          <div class="vE-pair"><span data-nl="Hoogseizoen">High season</span><div class="vE-track thin"><i class="fill s" style="--w:73%"></i></div><b>+46%</b></div>
-          <div class="vE-pair"><span data-nl="Rustigste maanden">Slow months</span><div class="vE-track thin"><i class="fill" style="--w:100%"></i></div><b>+63%</b></div>
-        </div>
-        <div class="vE-txt"><h3 data-nl="Als het rustig is, groeit het gat.">When it's quiet, the gap grows.</h3><p data-nl="De beste 25% verdient 46% meer dan de gemiddelde woning in het hoogseizoen. In de rustigste maanden groeit dat tot 63%.">The top 25% out-earn the typical listing by 46% in high season. In the slowest months, that grows to 63%.</p></div>
-      </div>
-      <div class="vE-row">
-        <div class="vE-num"><small data-nl="Lek 03 · Zwakke advertenties">Leak 03 · Weak listings</small><b>88%</b></div>
-        <div class="vE-viz" aria-hidden="true">
-          <div class="vE-split"><i style="--w:88%"><span data-nl="Zwak 88%">Weak 88%</span></i><i class="s"><span>12%</span></i></div>
-        </div>
-        <div class="vE-txt"><h3 data-nl="De meeste advertenties verkopen zichzelf tekort.">Most listings undersell.</h3><p data-nl="88% heeft zwakke foto’s, tekst of details. De andere 12% presteert vaker beter dan hun markt.">88% have weak photos, copy or details. The other 12% are likelier to beat their market.</p></div>
-      </div>
-    </div>
-    <div class="vE-foot">
-      <span data-nl="Waar sta jij?">Where do you stand?</span><a class="btn" href="#check" data-cta="↓">Compare your revenue ↓</a>
-      <p class="src" data-nl="Bron: PriceLabs">Source: PriceLabs</p>
-    </div>
-  </div>
-</section>
-
-<!-- REVENUE CHECK -->
-<section class="rc" id="check">
-  <!-- IMAGE SLOT: assets/bg-revenue-check.jpg (texture, shown faintly) -->
-  <img class="slot slot-bg" src="assets/bg-revenue-check.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
-  <div class="wrap rcf">
-    <div class="eyebrow" data-nl="Gratis Omzetcheck">Free Revenue Check</div>
-    <h2 id="fHead"></h2>
-    <div class="fbig" id="fBig"></div>
-    <p class="fbignote" id="fBigNote"></p>
-
-    <div class="fbar" aria-hidden="true">
-      <div class="ftrack"></div>
-      <div class="ffill" id="fFill"></div>
-      <div class="fmark med" id="fMed"><i></i><span data-nl="Gemiddelde omzet">Typical earnings</span><b id="fMedV"></b></div>
-      <div class="fmark top" id="fTop"><i></i><span data-nl="Omzet beste 25%">Top 25% earnings</span><b id="fTopV"></b></div>
-      <div class="fyou" id="fYou" hidden><span id="fYouV"></span><i></i></div>
-    </div>
-
-    <form class="fpanel" id="checkForm" novalidate>
-
-      <div id="fStep1">
-        <div class="fstep">
-          <div class="ff">
-            <span class="fl" data-nl="Slaapkamers">Bedrooms</span>
-            <div class="fpills" id="estSize" role="group" aria-label="Bedrooms">
-              
-              <button type="button" data-a="br1" data-nl="1 slk">1BR</button>
-              <button type="button" data-a="br2" data-nl="2 slk">2BR</button>
-              <button type="button" class="on" data-a="br3" data-nl="3 slk">3BR</button>
-              <button type="button" data-a="br4" data-nl="4 slk">4BR</button>
-              <button type="button" data-a="br5" data-nl="5 slk">5BR</button>
-              <button type="button" data-a="br6" data-nl="6+ slk">6+BR</button>
-            </div>
-          </div>
-          <div class="ff">
-            <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
-            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Get free Revenue Potential Report →</button></div>
-          </div>
-        </div>
-        <div class="fcard" id="fCard">
-          <div class="fcardtxt">
-            <div class="fcardeye" data-nl="Inbegrepen in je gratis Omzetpotentie-rapport">Included in your Free Revenue Potential Report</div>
-            <div class="fitems">
-              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
-              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
-              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div id="fStep2" hidden>
-        <div class="fprompt" id="fPrompt">
-          <span class="fpi" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
-          <div><b data-nl="Laatste stap: vul het formulier hieronder in.">Last step: fill in the form below.</b> <span class="fgets" data-nl="Je krijgt <i class=&quot;fokm&quot; aria-hidden=&quot;true&quot;><svg width=&quot;9&quot; height=&quot;9&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12l5 5L20 7&quot;/></svg></i>je belangrijkste concurrenten. <i class=&quot;fokm&quot; aria-hidden=&quot;true&quot;><svg width=&quot;9&quot; height=&quot;9&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12l5 5L20 7&quot;/></svg></i>Wat zij verdienen. <i class=&quot;fokm&quot; aria-hidden=&quot;true&quot;><svg width=&quot;9&quot; height=&quot;9&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12l5 5L20 7&quot;/></svg></i>Hoe je het gat dicht.">You’ll get <i class="fokm" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>your top competitors. <i class="fokm" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>What they earn. <i class="fokm" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>How to close the gap.</span></div>
-        </div>
-        <div class="fgroup">
-          <div class="fgh" data-nl="1 · Je woning">1 · Your property</div>
-          <div class="fgrid">
-          <div class="ff"><label class="fl" for="cStatus" data-nl="Status">Status</label><select class="fsel" id="cStatus" name="status"><option value="" disabled selected data-nl="Kies">Select</option><option value="live" data-nl="Live en boekbaar">Live and bookable</option><option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option><option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option></select></div>
-          <div class="ff w3 flive" hidden><span class="fl" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span><div class="fchips" id="cPlat" role="group" aria-label="Where is it listed?"><button type="button" class="fchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="fchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="fchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="fchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="fchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="fchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
-          <div class="ff w2 flive flink1" hidden><label class="fl" for="cListing" id="cListLab"></label><input class="finp" id="cListing" type="url" placeholder="https://airbnb.com/rooms/..."/></div>
-          <div class="ff"><label class="fl" for="cArea" data-nl="Straat en wijk">Street and neighbourhood</label><input class="finp" id="cArea" name="area" autocomplete="off" placeholder="e.g. Kaya Karibe, Jan Thiel" data-nl-ph="bijv. Kaya Karibe, Jan Thiel"/></div>
-          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
-          <div class="ff fsoon" hidden><label class="fl" for="cType" data-nl="Type woning">Property type</label><select class="fsel" id="cType" name="propertyType"><option value="" disabled selected data-nl="Kies">Select</option><option value="guesthouse" data-nl="Guesthouse">Guesthouse</option><option value="villa" data-nl="Vrijstaand huis">Standalone house</option><option value="apartment" data-nl="Appartement of condo">Condo</option><option value="other" data-nl="Anders">Other</option></select></div>
-          <div class="ff"><label class="fl" for="cMgmt" data-nl="Wie regelt het nu?">Who runs it today?</label><select class="fsel" id="cMgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
-          <div class="ff"><label class="fl" for="cPrice" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label><select class="fsel" id="cPrice" name="pricing"><option value="" disabled selected data-nl="Kies">Select</option><option value="flat" data-nl="Eén vast tarief">One flat rate</option><option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option><option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option><option value="platform" data-nl="De suggesties van het boekingsplatform">The booking platform's suggestions</option></select></div>
-          <div class="ff fsoon" hidden><span class="fl" data-nl="Heeft de woning">Does it have</span><div class="fcks"><label class="fck"><input type="checkbox" id="cPool"/><span data-nl="Privézwembad">Private pool</span></label><label class="fck"><input type="checkbox" id="cSea"/><span data-nl="Zeezicht">Sea view</span></label></div></div>
-          </div>
-        </div>
-        <div class="fgroup">
-          <div class="fgh" data-nl="2 · Waar we het naartoe sturen">2 · Where we send it</div>
-          <div class="fgrid">
-          <div class="ff"><label class="fl" for="cName" data-nl="Naam">Name</label><input class="finp" id="cName" name="name" autocomplete="name"/></div>
-          <div class="ff"><label class="fl" for="cEmail">Email</label><input class="finp" id="cEmail" name="email" type="email" autocomplete="email" inputmode="email"/></div>
-          <div class="ff fwa2"><label class="fl" for="cWa">WhatsApp <em data-nl="(optioneel)">(optional)</em></label><div class="fwa"><select class="fsel fcc" id="cCc" aria-label="Country code"></select><input class="finp" id="cWa" name="whatsapp" type="tel" autocomplete="tel-national" placeholder="9 123 4567"/></div></div>
-          <div class="ff"><label class="fl" for="cMsg"><span data-nl="Nog iets?">Anything else?</span> <em data-nl="(optioneel)">(optional)</em></label><textarea class="finp fta" id="cMsg" name="message"></textarea></div>
-          </div>
-        </div>
-        <div class="factions">
-          <button type="submit" class="btn fsend" id="fSend" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</button>
-        </div>
-      </div>
-
-      <p class="ferr" id="fErr" role="alert"></p>
-      <div class="fdone" id="fDone" hidden></div>
-    </form>
-
-    <div class="ftrust">
-      <div class="ftrustline"><span class="fbadge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
-      <p class="fmethod" id="fMethod" hidden></p>
-    </div>
-  </div>
-</section>
-
-<!-- THE GAP -->
 <section class="gap" id="gap">
   <div class="wrap">
     <div class="gap-head">
@@ -1280,7 +1172,6 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- LEVERS CAROUSEL -->
 <section id="levers">
   <div class="wrap">
     <div class="intro">
@@ -1405,23 +1296,21 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- PRICING -->
 <section class="dark" id="modules">
   <!-- IMAGE SLOT: assets/bg-pricing.jpg (texture, shown faintly) -->
   <img class="slot slot-bg" src="assets/bg-pricing.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
   <div class="wrap pq">
     <div class="pq-copy">
       <div class="eyebrow" data-nl="Prijzen">Pricing</div>
-      <h2 data-nl="Eerst de data.<br/>Dan een offerte.">Data first.<br/>Then a quote.</h2>
-      <p data-nl="We offreren het werk dat volgens de marktdata het meest oplevert.">We quote the work the market data says is most likely to pay off.</p>
+      <h2 class="pq-h" data-nl="Zie wat erin zit voordat je een dollar uitgeeft.">See the upside before you spend a dollar.</h2>
       <div class="pq-steps">
-        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Omzetcheck">Revenue Check</span></div>
-        <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span></div>
-        <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span></div>
+        <div class="on"><small data-nl="01 · Gratis">01 · Free</small><span data-nl="Omzetpotentie-rapport">Revenue Potential Report</span><p data-nl="Waar jouw woning geld laat liggen.">Where your home is leaving money on the table.</p></div>
+        <div><small data-nl="02 · Vast">02 · Fixed</small><span data-nl="Je offerte">Your quote</span><p data-nl="Is het de moeite waard, dan lopen we samen een helder, vast plan door.">If it's worth pursuing, we walk you through a clear, fixed plan.</p></div>
+        <div><small data-nl="03 · Jouw keuze">03 · Your call</small><span data-nl="Wij voeren het uit">We implement</span><p data-nl="Jij beslist wat we voor je oppakken, als er al iets is.">You decide what, if anything, we take care of.</p></div>
       </div>
       <div class="pq-cta">
         <a class="btn check" href="#check" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</a>
-        <span><a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
+        <span><span data-nl="Eerst vragen?">Questions first?</span> <a class="wa2" id="waLink2" href="#" target="_blank" rel="noopener" data-nl="Stuur ons een WhatsApp ↗">Message us on WhatsApp ↗</a></span>
       </div>
     </div>
     <div class="pq-card" aria-label="Sample quote">
@@ -1431,7 +1320,7 @@ window.slotMiss = function (img) {
       </div>
       <div class="qline"><span data-nl="Prijsstrategie">Pricing Strategy</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline"><span data-nl="Fotografie">Photography</span><span data-nl="Vaste prijs">Fixed fee</span></div>
-      <div class="qline"><span data-nl="Teksten en berichten (EN · NL · ES)">Copy &amp; messaging (EN · NL · ES)</span><span data-nl="Vaste prijs">Fixed fee</span></div>
+      <div class="qline"><span data-nl="Directe boekingssite">Direct Booking Site</span><span data-nl="Vaste prijs">Fixed fee</span></div>
       <div class="qline strong"><span data-nl="Je investering">Your investment</span><span data-nl="Eén helder totaal">One clear total</span></div>
       <div class="pq-return">
         <div><small data-nl="Geschatte groei">Estimated upside</small><span data-nl="Op basis van marktdata">Based on market data</span></div>
@@ -1441,7 +1330,6 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- PHILOSOPHY / BIO -->
 <section class="light" id="about">
   <div class="wrap ph">
     <div class="ph-top">
@@ -1461,7 +1349,100 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- FAQ -->
+<section class="rc" id="check">
+  <!-- IMAGE SLOT: assets/bg-revenue-check.jpg (texture, shown faintly) -->
+  <img class="slot slot-bg" src="assets/bg-revenue-check.jpg" alt="" aria-hidden="true" decoding="async" onload="this.classList.add('on')" onerror="slotMiss(this)"/>
+  <div class="wrap rcf">
+    <div class="eyebrow" data-nl="Gratis Omzetcheck">Free Revenue Check</div>
+    <h2 id="fHead"></h2>
+    <div class="fbig" id="fBig"></div>
+    <p class="fbignote" id="fBigNote"></p>
+
+    <div class="fbar" aria-hidden="true">
+      <div class="ftrack"></div>
+      <div class="ffill" id="fFill"></div>
+      <div class="fmark med" id="fMed"><i></i><span data-nl="Gemiddelde omzet">Typical earnings</span><b id="fMedV"></b></div>
+      <div class="fmark top" id="fTop"><i></i><span data-nl="Omzet beste 25%">Top 25% earnings</span><b id="fTopV"></b></div>
+      <div class="fyou" id="fYou" hidden><span id="fYouV"></span><i></i></div>
+    </div>
+
+    <form class="fpanel" id="checkForm" novalidate>
+
+      <div id="fStep1">
+        <div class="fstep">
+          <div class="ff">
+            <span class="fl" data-nl="Slaapkamers">Bedrooms</span>
+            <div class="fpills" id="estSize" role="group" aria-label="Bedrooms">
+              
+              <button type="button" data-a="br1" data-nl="1 slk">1BR</button>
+              <button type="button" data-a="br2" data-nl="2 slk">2BR</button>
+              <button type="button" class="on" data-a="br3" data-nl="3 slk">3BR</button>
+              <button type="button" data-a="br4" data-nl="4 slk">4BR</button>
+              <button type="button" data-a="br5" data-nl="5 slk">5BR</button>
+              <button type="button" data-a="br6" data-nl="6+ slk">6+BR</button>
+            </div>
+          </div>
+          <div class="ff">
+            <label class="fl" for="eIn" data-nl="Jouw gemiddelde omzet per maand">Your average monthly revenue</label>
+            <div class="finrow"><div class="fin"><span>$</span><input id="eIn" type="number" min="0" step="50" inputmode="numeric" placeholder="3500"/></div><button type="button" class="btn fnext" id="fNext">Get free Revenue Potential Report →</button></div>
+          </div>
+        </div>
+        <div class="fcard" id="fCard">
+          <div class="fcardtxt">
+            <div class="fcardeye" data-nl="Inbegrepen in je gratis Omzetpotentie-rapport">Included in your Free Revenue Potential Report</div>
+            <div class="fitems">
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Je echte concurrentie.">Your real competition.</b><span data-nl="De woningen waar gasten jou mee vergelijken, op grootte, ligging en voorzieningen.">The homes guests weigh you against, matched on size, area and amenities.</span></span></div>
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Wat zij verdienen.">What they earn.</b><span data-nl="Hun nachtprijs, bezetting en omzet, naast die van jou.">Their nightly rates, occupancy and revenue, next to yours.</span></span></div>
+              <div class="fitem"><span class="fok"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span><b data-nl="Hoe je het gat dicht.">How to close the gap.</b><span data-nl="De veranderingen die jouw cijfers het meest vooruit helpen, op volgorde.">The changes that move your numbers most, in order.</span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="fStep2" hidden>
+        <div class="fprompt" id="fPrompt">
+          <span class="fpi" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></span>
+          <div><b data-nl="Laatste stap: vul het formulier hieronder in.">Last step: fill in the form below.</b> <span class="fgets" data-nl="Je krijgt <i class=&quot;fokm&quot; aria-hidden=&quot;true&quot;><svg width=&quot;9&quot; height=&quot;9&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12l5 5L20 7&quot;/></svg></i>je belangrijkste concurrenten. <i class=&quot;fokm&quot; aria-hidden=&quot;true&quot;><svg width=&quot;9&quot; height=&quot;9&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12l5 5L20 7&quot;/></svg></i>Wat zij verdienen. <i class=&quot;fokm&quot; aria-hidden=&quot;true&quot;><svg width=&quot;9&quot; height=&quot;9&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;3.4&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;><path d=&quot;M5 12l5 5L20 7&quot;/></svg></i>Hoe je het gat dicht.">You’ll get <i class="fokm" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>your top competitors. <i class="fokm" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>What they earn. <i class="fokm" aria-hidden="true"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></i>How to close the gap.</span></div>
+        </div>
+        <div class="fgroup">
+          <div class="fgh" data-nl="1 · Je woning">1 · Your property</div>
+          <div class="fgrid">
+          <div class="ff"><label class="fl" for="cStatus" data-nl="Status">Status</label><select class="fsel" id="cStatus" name="status"><option value="" disabled selected data-nl="Kies">Select</option><option value="live" data-nl="Live en boekbaar">Live and bookable</option><option value="soon" data-nl="Start binnen 90 dagen">Launching within 90 days</option><option value="later" data-nl="Later dan 90 dagen">More than 90 days away</option></select></div>
+          <div class="ff w3 flive" hidden><span class="fl" data-nl="Waar staat de woning online? (kies alles wat klopt)">Where is it listed? (pick all that apply)</span><div class="fchips" id="cPlat" role="group" aria-label="Where is it listed?"><button type="button" class="fchip" data-p="airbnb" aria-pressed="false">Airbnb</button><button type="button" class="fchip" data-p="booking" aria-pressed="false">Booking.com</button><button type="button" class="fchip" data-p="vrbo" aria-pressed="false">Vrbo</button><button type="button" class="fchip" data-p="google" aria-pressed="false">Google Vacation Rentals</button><button type="button" class="fchip" data-p="micazu" aria-pressed="false">Micazu</button><button type="button" class="fchip" data-p="direct" aria-pressed="false" data-nl="Eigen boekingssite">Direct booking site</button></div></div>
+          <div class="ff w2 flive flink1" hidden><label class="fl" for="cListing" id="cListLab"></label><input class="finp" id="cListing" type="url" placeholder="https://airbnb.com/rooms/..."/></div>
+          <div class="ff"><label class="fl" for="cArea" data-nl="Straat en wijk">Street and neighbourhood</label><input class="finp" id="cArea" name="area" autocomplete="off" placeholder="e.g. Kaya Karibe, Jan Thiel" data-nl-ph="bijv. Kaya Karibe, Jan Thiel"/></div>
+          <div class="ff"><label class="fl" for="cBeds" data-nl="Slaapkamers">Bedrooms</label><select class="fsel" id="cBeds"><option value="br1">1</option><option value="br2">2</option><option value="br3" selected>3</option><option value="br4">4</option><option value="br5">5</option><option value="br6">6+</option></select></div>
+          <div class="ff fsoon" hidden><label class="fl" for="cType" data-nl="Type woning">Property type</label><select class="fsel" id="cType" name="propertyType"><option value="" disabled selected data-nl="Kies">Select</option><option value="guesthouse" data-nl="Guesthouse">Guesthouse</option><option value="villa" data-nl="Vrijstaand huis">Standalone house</option><option value="apartment" data-nl="Appartement of condo">Condo</option><option value="other" data-nl="Anders">Other</option></select></div>
+          <div class="ff"><label class="fl" for="cMgmt" data-nl="Wie regelt het nu?">Who runs it today?</label><select class="fsel" id="cMgmt" name="management"><option value="" disabled selected data-nl="Kies">Select</option><option value="self" data-nl="Ikzelf">I do</option><option value="cohost" data-nl="Een co-host of beheerder helpt">A co-host or caretaker helps</option><option value="pm" data-nl="Een volledige beheerder">A full-service property manager</option></select></div>
+          <div class="ff"><label class="fl" for="cPrice" data-nl="Hoe bepaal je nu je prijs?">How do you price today?</label><select class="fsel" id="cPrice" name="pricing"><option value="" disabled selected data-nl="Kies">Select</option><option value="flat" data-nl="Eén vast tarief">One flat rate</option><option value="seasonal" data-nl="Handmatig per seizoen">Seasonal, set by hand</option><option value="dynamic" data-nl="Een dynamische pricing tool">A dynamic pricing tool</option><option value="platform" data-nl="De suggesties van het boekingsplatform">The booking platform's suggestions</option></select></div>
+          <div class="ff fsoon" hidden><span class="fl" data-nl="Heeft de woning">Does it have</span><div class="fcks"><label class="fck"><input type="checkbox" id="cPool"/><span data-nl="Privézwembad">Private pool</span></label><label class="fck"><input type="checkbox" id="cSea"/><span data-nl="Zeezicht">Sea view</span></label></div></div>
+          </div>
+        </div>
+        <div class="fgroup">
+          <div class="fgh" data-nl="2 · Waar we het naartoe sturen">2 · Where we send it</div>
+          <div class="fgrid">
+          <div class="ff"><label class="fl" for="cName" data-nl="Naam">Name</label><input class="finp" id="cName" name="name" autocomplete="name"/></div>
+          <div class="ff"><label class="fl" for="cEmail">Email</label><input class="finp" id="cEmail" name="email" type="email" autocomplete="email" inputmode="email"/></div>
+          <div class="ff fwa2"><label class="fl" for="cWa">WhatsApp <em data-nl="(optioneel)">(optional)</em></label><div class="fwa"><select class="fsel fcc" id="cCc" aria-label="Country code"></select><input class="finp" id="cWa" name="whatsapp" type="tel" autocomplete="tel-national" placeholder="9 123 4567"/></div></div>
+          <div class="ff"><label class="fl" for="cMsg"><span data-nl="Nog iets?">Anything else?</span> <em data-nl="(optioneel)">(optional)</em></label><textarea class="finp fta" id="cMsg" name="message"></textarea></div>
+          </div>
+        </div>
+        <div class="factions">
+          <button type="submit" class="btn fsend" id="fSend" data-nl="Ontvang je gratis Omzetpotentie-rapport →">Get free Revenue Potential Report →</button>
+        </div>
+      </div>
+
+      <p class="ferr" id="fErr" role="alert"></p>
+      <div class="fdone" id="fDone" hidden></div>
+    </form>
+
+    <div class="ftrust">
+      <div class="ftrustline"><span class="fbadge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span><span id="eNote"></span><button type="button" class="fhow" id="fHow" aria-expanded="false" data-nl="Hoe we dit berekenen">How we calculate this</button></div>
+      <p class="fmethod" id="fMethod" hidden></p>
+    </div>
+  </div>
+</section>
+
 <section class="beige" id="faq">
   <div class="wrap faq">
     <div><div class="eyebrow" data-nl="Veelgestelde vragen">Frequently asked questions</div><h2 data-nl="Goed om te weten.">Good to know.</h2>
@@ -1476,7 +1457,6 @@ window.slotMiss = function (img) {
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="dark" id="contact">
   <div class="wrap contact">
     <div>
@@ -2059,6 +2039,15 @@ const goStep = n => {
     if (n === 2) $('#cStatus').focus({ preventScroll: true });
   }, 30);
 };
+/* Every link to the Revenue Check: "Get free Revenue Potential Report" opens step 2 (form already open),
+   "Compare your revenue" (and anything else) lands on step 1 */
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[href="#check"]');
+  if (!a) return;
+  e.preventDefault();
+  goStep(/Potential Report|Omzetpotentie/i.test(a.textContent) ? 2 : 1);
+});
+
 const setSize = k => {
   estSize = k;
   $('#cBeds').value = k;
